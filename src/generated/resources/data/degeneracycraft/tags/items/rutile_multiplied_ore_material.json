@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:raw_rutile_ore",
+    "degeneracycraft:rutile_dust",
+    "degeneracycraft:rutile_puredust",
+    "degeneracycraft:rutile_leachate",
+    "degeneracycraft:rutile_concentrate",
+    "degeneracycraft:rutile_plasma",
+    "degeneracycraft:rutile_degeneratematter",
+    "degeneracycraft:rutile_soup",
+    "degeneracycraft:rutile_imaginarymatter",
+    "degeneracycraft:stable_rutile_imaginarymatter",
+    "degeneracycraft:rutile_tachyon",
+    "degeneracycraft:rutile_antimatter",
+    "degeneracycraft:rutile_ultrahotplasma",
+    "degeneracycraft:rutile_hyperfluid",
+    "degeneracycraft:rutile_crystal",
+    "degeneracycraft:rutile_precipitate",
+    "degeneracycraft:rutile_washeddust",
+    "degeneracycraft:rutile_oresinter",
+    "degeneracycraft:rutile_ingot"
+  ]
+}

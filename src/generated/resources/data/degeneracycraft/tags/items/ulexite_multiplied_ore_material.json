@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:raw_ulexite_ore",
+    "degeneracycraft:ulexite_dust",
+    "degeneracycraft:ulexite_puredust",
+    "degeneracycraft:ulexite_leachate",
+    "degeneracycraft:ulexite_concentrate",
+    "degeneracycraft:ulexite_plasma",
+    "degeneracycraft:ulexite_degeneratematter",
+    "degeneracycraft:ulexite_soup",
+    "degeneracycraft:ulexite_imaginarymatter",
+    "degeneracycraft:stable_ulexite_imaginarymatter",
+    "degeneracycraft:ulexite_tachyon",
+    "degeneracycraft:ulexite_antimatter",
+    "degeneracycraft:ulexite_ultrahotplasma",
+    "degeneracycraft:ulexite_hyperfluid",
+    "degeneracycraft:ulexite_crystal",
+    "degeneracycraft:ulexite_precipitate",
+    "degeneracycraft:ulexite_washeddust",
+    "degeneracycraft:ulexite_oresinter",
+    "degeneracycraft:ulexite_ingot"
+  ]
+}

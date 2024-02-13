@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:raw_graphite_ore",
+    "degeneracycraft:graphite_dust",
+    "degeneracycraft:graphite_puredust",
+    "degeneracycraft:graphite_leachate",
+    "degeneracycraft:graphite_concentrate",
+    "degeneracycraft:graphite_plasma",
+    "degeneracycraft:graphite_degeneratematter",
+    "degeneracycraft:graphite_soup",
+    "degeneracycraft:graphite_imaginarymatter",
+    "degeneracycraft:stable_graphite_imaginarymatter",
+    "degeneracycraft:graphite_tachyon",
+    "degeneracycraft:graphite_antimatter",
+    "degeneracycraft:graphite_ultrahotplasma",
+    "degeneracycraft:graphite_hyperfluid",
+    "degeneracycraft:graphite_crystal",
+    "degeneracycraft:graphite_precipitate",
+    "degeneracycraft:graphite_washeddust",
+    "degeneracycraft:graphite_oresinter",
+    "degeneracycraft:graphite_ingot"
+  ]
+}

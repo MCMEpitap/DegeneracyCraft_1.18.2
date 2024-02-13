@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:raw_beryl_ore",
+    "degeneracycraft:beryl_dust",
+    "degeneracycraft:beryl_puredust",
+    "degeneracycraft:beryl_leachate",
+    "degeneracycraft:beryl_concentrate",
+    "degeneracycraft:beryl_plasma",
+    "degeneracycraft:beryl_degeneratematter",
+    "degeneracycraft:beryl_soup",
+    "degeneracycraft:beryl_imaginarymatter",
+    "degeneracycraft:stable_beryl_imaginarymatter",
+    "degeneracycraft:beryl_tachyon",
+    "degeneracycraft:beryl_antimatter",
+    "degeneracycraft:beryl_ultrahotplasma",
+    "degeneracycraft:beryl_hyperfluid",
+    "degeneracycraft:beryl_crystal",
+    "degeneracycraft:beryl_precipitate",
+    "degeneracycraft:beryl_washeddust",
+    "degeneracycraft:beryl_oresinter",
+    "degeneracycraft:beryl_ingot"
+  ]
+}

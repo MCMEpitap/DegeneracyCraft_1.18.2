@@ -1,0 +1,7 @@
+{
+	"parent": "degeneracycraft:block/pipe_extract",
+	"textures": {
+		"0": "degeneracycraft:block/basic_item_pipe",
+		"particle": "degeneracycraft:block/basic_item_pipe"
+	}
+}

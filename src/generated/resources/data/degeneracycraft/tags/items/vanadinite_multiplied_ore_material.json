@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:raw_vanadinite_ore",
+    "degeneracycraft:vanadinite_dust",
+    "degeneracycraft:vanadinite_puredust",
+    "degeneracycraft:vanadinite_leachate",
+    "degeneracycraft:vanadinite_concentrate",
+    "degeneracycraft:vanadinite_plasma",
+    "degeneracycraft:vanadinite_degeneratematter",
+    "degeneracycraft:vanadinite_soup",
+    "degeneracycraft:vanadinite_imaginarymatter",
+    "degeneracycraft:stable_vanadinite_imaginarymatter",
+    "degeneracycraft:vanadinite_tachyon",
+    "degeneracycraft:vanadinite_antimatter",
+    "degeneracycraft:vanadinite_ultrahotplasma",
+    "degeneracycraft:vanadinite_hyperfluid",
+    "degeneracycraft:vanadinite_crystal",
+    "degeneracycraft:vanadinite_precipitate",
+    "degeneracycraft:vanadinite_washeddust",
+    "degeneracycraft:vanadinite_oresinter",
+    "degeneracycraft:vanadinite_ingot"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Iron Ingot",
+  "icon": "minecraft:iron_ingot",
+  "category": "degeneracycraft:item_list",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "minecraft:iron_ingot",
+      "title": "Iron Ingot"
+    }
+    ]
+}

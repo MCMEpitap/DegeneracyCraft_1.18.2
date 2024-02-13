@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:copper_bolt",
+    "degeneracycraft:copper_key",
+    "degeneracycraft:copper_rod",
+    "degeneracycraft:copper_spring",
+    "degeneracycraft:copper_bearing",
+    "degeneracycraft:copper_plate",
+    "degeneracycraft:copper_gear",
+    "degeneracycraft:copper_joint",
+    "degeneracycraft:copper_nut",
+    "degeneracycraft:copper_pipe",
+    "degeneracycraft:copper_pipejoint",
+    "degeneracycraft:copper_cam",
+    "degeneracycraft:copper_shaft",
+    "degeneracycraft:copper_shaftcoupling",
+    "degeneracycraft:copper_shapesteel",
+    "degeneracycraft:copper_chain"
+  ]
+}

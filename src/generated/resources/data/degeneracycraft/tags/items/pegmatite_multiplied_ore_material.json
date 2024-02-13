@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:raw_pegmatite_ore",
+    "degeneracycraft:pegmatite_dust",
+    "degeneracycraft:pegmatite_puredust",
+    "degeneracycraft:pegmatite_leachate",
+    "degeneracycraft:pegmatite_concentrate",
+    "degeneracycraft:pegmatite_plasma",
+    "degeneracycraft:pegmatite_degeneratematter",
+    "degeneracycraft:pegmatite_soup",
+    "degeneracycraft:pegmatite_imaginarymatter",
+    "degeneracycraft:stable_pegmatite_imaginarymatter",
+    "degeneracycraft:pegmatite_tachyon",
+    "degeneracycraft:pegmatite_antimatter",
+    "degeneracycraft:pegmatite_ultrahotplasma",
+    "degeneracycraft:pegmatite_hyperfluid",
+    "degeneracycraft:pegmatite_crystal",
+    "degeneracycraft:pegmatite_precipitate",
+    "degeneracycraft:pegmatite_washeddust",
+    "degeneracycraft:pegmatite_oresinter",
+    "degeneracycraft:pegmatite_ingot"
+  ]
+}

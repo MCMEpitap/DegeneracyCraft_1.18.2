@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:raw_chromite_ore",
+    "degeneracycraft:chromite_dust",
+    "degeneracycraft:chromite_puredust",
+    "degeneracycraft:chromite_leachate",
+    "degeneracycraft:chromite_concentrate",
+    "degeneracycraft:chromite_plasma",
+    "degeneracycraft:chromite_degeneratematter",
+    "degeneracycraft:chromite_soup",
+    "degeneracycraft:chromite_imaginarymatter",
+    "degeneracycraft:stable_chromite_imaginarymatter",
+    "degeneracycraft:chromite_tachyon",
+    "degeneracycraft:chromite_antimatter",
+    "degeneracycraft:chromite_ultrahotplasma",
+    "degeneracycraft:chromite_hyperfluid",
+    "degeneracycraft:chromite_crystal",
+    "degeneracycraft:chromite_precipitate",
+    "degeneracycraft:chromite_washeddust",
+    "degeneracycraft:chromite_oresinter",
+    "degeneracycraft:chromite_ingot"
+  ]
+}

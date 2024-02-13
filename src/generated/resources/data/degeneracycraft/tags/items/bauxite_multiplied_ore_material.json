@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:raw_bauxite_ore",
+    "degeneracycraft:bauxite_dust",
+    "degeneracycraft:bauxite_puredust",
+    "degeneracycraft:bauxite_leachate",
+    "degeneracycraft:bauxite_concentrate",
+    "degeneracycraft:bauxite_plasma",
+    "degeneracycraft:bauxite_degeneratematter",
+    "degeneracycraft:bauxite_soup",
+    "degeneracycraft:bauxite_imaginarymatter",
+    "degeneracycraft:stable_bauxite_imaginarymatter",
+    "degeneracycraft:bauxite_tachyon",
+    "degeneracycraft:bauxite_antimatter",
+    "degeneracycraft:bauxite_ultrahotplasma",
+    "degeneracycraft:bauxite_hyperfluid",
+    "degeneracycraft:bauxite_crystal",
+    "degeneracycraft:bauxite_precipitate",
+    "degeneracycraft:bauxite_washeddust",
+    "degeneracycraft:bauxite_oresinter",
+    "degeneracycraft:bauxite_ingot"
+  ]
+}

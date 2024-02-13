@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:raw_sylvite_ore",
+    "degeneracycraft:sylvite_dust",
+    "degeneracycraft:sylvite_puredust",
+    "degeneracycraft:sylvite_leachate",
+    "degeneracycraft:sylvite_concentrate",
+    "degeneracycraft:sylvite_plasma",
+    "degeneracycraft:sylvite_degeneratematter",
+    "degeneracycraft:sylvite_soup",
+    "degeneracycraft:sylvite_imaginarymatter",
+    "degeneracycraft:stable_sylvite_imaginarymatter",
+    "degeneracycraft:sylvite_tachyon",
+    "degeneracycraft:sylvite_antimatter",
+    "degeneracycraft:sylvite_ultrahotplasma",
+    "degeneracycraft:sylvite_hyperfluid",
+    "degeneracycraft:sylvite_crystal",
+    "degeneracycraft:sylvite_precipitate",
+    "degeneracycraft:sylvite_washeddust",
+    "degeneracycraft:sylvite_oresinter",
+    "degeneracycraft:sylvite_ingot"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "degeneracycraft:redstone_powered_machine_component_manufacture_machine_block"
+    },
+    "title": {
+      "translate": "advancements.Awakening with \"The Fool\".title"
+    },
+    "description": {
+      "translate": "advancements.Awakening with \"The Fool\".description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "degeneracycraft:degeneracycraft/degeneracycraft",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "degeneracycraft:redstone_powered_machine_component_manufacture_machine_block"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

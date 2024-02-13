@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:raw_spodumene_ore",
+    "degeneracycraft:spodumene_dust",
+    "degeneracycraft:spodumene_puredust",
+    "degeneracycraft:spodumene_leachate",
+    "degeneracycraft:spodumene_concentrate",
+    "degeneracycraft:spodumene_plasma",
+    "degeneracycraft:spodumene_degeneratematter",
+    "degeneracycraft:spodumene_soup",
+    "degeneracycraft:spodumene_imaginarymatter",
+    "degeneracycraft:stable_spodumene_imaginarymatter",
+    "degeneracycraft:spodumene_tachyon",
+    "degeneracycraft:spodumene_antimatter",
+    "degeneracycraft:spodumene_ultrahotplasma",
+    "degeneracycraft:spodumene_hyperfluid",
+    "degeneracycraft:spodumene_crystal",
+    "degeneracycraft:spodumene_precipitate",
+    "degeneracycraft:spodumene_washeddust",
+    "degeneracycraft:spodumene_oresinter",
+    "degeneracycraft:spodumene_ingot"
+  ]
+}

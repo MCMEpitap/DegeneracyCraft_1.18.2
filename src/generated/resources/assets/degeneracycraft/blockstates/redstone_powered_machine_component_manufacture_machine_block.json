@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "degeneracycraft:block/redstone_powered_machine_component_manufacture_machine_block",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "degeneracycraft:block/redstone_powered_machine_component_manufacture_machine_block",
+      "x": -90
+    },
+    "facing=north": {
+      "model": "degeneracycraft:block/redstone_powered_machine_component_manufacture_machine_block"
+    },
+    "facing=south": {
+      "model": "degeneracycraft:block/redstone_powered_machine_component_manufacture_machine_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "degeneracycraft:block/redstone_powered_machine_component_manufacture_machine_block",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "degeneracycraft:block/redstone_powered_machine_component_manufacture_machine_block",
+      "y": 90
+    }
+  }
+}

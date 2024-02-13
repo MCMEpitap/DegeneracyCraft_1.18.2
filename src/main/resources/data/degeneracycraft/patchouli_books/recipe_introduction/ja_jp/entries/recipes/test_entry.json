@@ -1,0 +1,24 @@
+{
+  "name": "加工レシピ一覧",
+  "icon": "minecraft:writable_book",
+  "category":"degeneracycraft:recipes",
+  "pages": [
+    {
+      "type": "image",
+      "width": "0",
+      "height": "0",
+      "title": "Samples",
+      "images": ["degeneracycraft:textures/gui/entries/universal_assembler_phase1_entry.png"],
+      "texture_width": "200",
+      "texture_height": "200",
+      "scale": "1",
+      "border": "true"
+    },
+    {
+      "type": "relations",
+      "entries": ["degeneracycraft:item_list/iron_ingot"],
+      "title" : "レシピアイテム紹介",
+      "text": "$(br) 1.$(l:item_list/iron_ingot)$(#FFFFFF)鉄のインゴット×2$()$(br)"
+    }
+  ]
+}

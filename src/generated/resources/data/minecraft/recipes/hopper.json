@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "degeneracycraft",
+  "pattern": [
+    "iWi",
+    "iWi",
+    " i "
+  ],
+  "key": {
+    "W": {
+      "tag": "minecraft:logs"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "minecraft:hopper"
+  }
+}

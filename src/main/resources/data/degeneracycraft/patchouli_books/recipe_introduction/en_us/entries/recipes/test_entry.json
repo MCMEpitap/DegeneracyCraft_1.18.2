@@ -1,0 +1,22 @@
+{
+  "name": "Test Entry",
+  "icon": "minecraft:writable_book",
+  "category": "degeneracycraft:recipes",
+  "pages": [
+    {
+      "type": "image",
+      "width": "0",
+      "height": "0",
+      "title": "Samples",
+      "images": ["degeneracycraft:textures/gui/entries/universal_assembler_phase1_entry.png"],
+      "texture_width": "200",
+      "texture_height": "200",
+      "scale": "1"
+    },
+    {
+      "type": "relations",
+      "entries": ["degeneracycraft:item_list/iron_ingot"],
+      "title" : "Recipe Item Introduction"
+    }
+  ]
+}

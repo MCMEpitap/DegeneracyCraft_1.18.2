@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:iron_dust",
+    "degeneracycraft:iron_puredust",
+    "degeneracycraft:iron_leachate",
+    "degeneracycraft:iron_concentrate",
+    "degeneracycraft:iron_plasma",
+    "degeneracycraft:iron_degeneratematter",
+    "degeneracycraft:iron_soup",
+    "degeneracycraft:iron_imaginarymatter",
+    "degeneracycraft:stable_iron_imaginarymatter",
+    "degeneracycraft:iron_tachyon",
+    "degeneracycraft:iron_antimatter",
+    "degeneracycraft:iron_ultrahotplasma",
+    "degeneracycraft:iron_hyperfluid",
+    "degeneracycraft:iron_crystal",
+    "degeneracycraft:iron_precipitate",
+    "degeneracycraft:iron_washeddust",
+    "degeneracycraft:iron_oresinter"
+  ]
+}

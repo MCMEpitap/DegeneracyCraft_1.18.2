@@ -1,0 +1,6 @@
+About Item Pipe and Energy Pipe's by henkelmax
+https://github.com/henkelmax/pipez
+About Multiblock display in JEI by mikerooni
+https://github.com/GregTechCEu/GregTech-Modern/tree/1.19.2
+About Multiblock display in JEI by yefancy
+https://github.com/Low-Drag-MC/LDLib

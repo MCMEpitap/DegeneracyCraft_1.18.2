@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:raw_phosphorite_ore",
+    "degeneracycraft:phosphorite_dust",
+    "degeneracycraft:phosphorite_puredust",
+    "degeneracycraft:phosphorite_leachate",
+    "degeneracycraft:phosphorite_concentrate",
+    "degeneracycraft:phosphorite_plasma",
+    "degeneracycraft:phosphorite_degeneratematter",
+    "degeneracycraft:phosphorite_soup",
+    "degeneracycraft:phosphorite_imaginarymatter",
+    "degeneracycraft:stable_phosphorite_imaginarymatter",
+    "degeneracycraft:phosphorite_tachyon",
+    "degeneracycraft:phosphorite_antimatter",
+    "degeneracycraft:phosphorite_ultrahotplasma",
+    "degeneracycraft:phosphorite_hyperfluid",
+    "degeneracycraft:phosphorite_crystal",
+    "degeneracycraft:phosphorite_precipitate",
+    "degeneracycraft:phosphorite_washeddust",
+    "degeneracycraft:phosphorite_oresinter",
+    "degeneracycraft:phosphorite_ingot"
+  ]
+}

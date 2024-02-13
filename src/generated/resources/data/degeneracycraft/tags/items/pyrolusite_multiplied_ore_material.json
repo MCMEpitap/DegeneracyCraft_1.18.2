@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:raw_pyrolusite_ore",
+    "degeneracycraft:pyrolusite_dust",
+    "degeneracycraft:pyrolusite_puredust",
+    "degeneracycraft:pyrolusite_leachate",
+    "degeneracycraft:pyrolusite_concentrate",
+    "degeneracycraft:pyrolusite_plasma",
+    "degeneracycraft:pyrolusite_degeneratematter",
+    "degeneracycraft:pyrolusite_soup",
+    "degeneracycraft:pyrolusite_imaginarymatter",
+    "degeneracycraft:stable_pyrolusite_imaginarymatter",
+    "degeneracycraft:pyrolusite_tachyon",
+    "degeneracycraft:pyrolusite_antimatter",
+    "degeneracycraft:pyrolusite_ultrahotplasma",
+    "degeneracycraft:pyrolusite_hyperfluid",
+    "degeneracycraft:pyrolusite_crystal",
+    "degeneracycraft:pyrolusite_precipitate",
+    "degeneracycraft:pyrolusite_washeddust",
+    "degeneracycraft:pyrolusite_oresinter",
+    "degeneracycraft:pyrolusite_ingot"
+  ]
+}

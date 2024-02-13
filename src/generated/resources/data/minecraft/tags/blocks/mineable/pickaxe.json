@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:overworld_gravitation_ore",
+    "degeneracycraft:overworld_cassiterite_ore",
+    "degeneracycraft:deepslate_cassiterite_ore",
+    "degeneracycraft:nether_cassiterite_ore",
+    "degeneracycraft:end_cassiterite_ore"
+  ]
+}

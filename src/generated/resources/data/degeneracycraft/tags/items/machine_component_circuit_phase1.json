@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:bolt_inscribed_basic_precision_circuit",
+    "degeneracycraft:key_inscribed_basic_precision_circuit",
+    "degeneracycraft:rod_inscribed_basic_precision_circuit",
+    "degeneracycraft:spring_inscribed_basic_precision_circuit",
+    "degeneracycraft:bearing_inscribed_basic_precision_circuit",
+    "degeneracycraft:plate_inscribed_basic_precision_circuit",
+    "degeneracycraft:gear_inscribed_basic_precision_circuit",
+    "degeneracycraft:joint_inscribed_basic_precision_circuit",
+    "degeneracycraft:nut_inscribed_basic_precision_circuit",
+    "degeneracycraft:pipe_inscribed_basic_precision_circuit",
+    "degeneracycraft:pipejoint_inscribed_basic_precision_circuit",
+    "degeneracycraft:cam_inscribed_basic_precision_circuit",
+    "degeneracycraft:shaft_inscribed_basic_precision_circuit",
+    "degeneracycraft:shaftcoupling_inscribed_basic_precision_circuit",
+    "degeneracycraft:shapesteel_inscribed_basic_precision_circuit",
+    "degeneracycraft:chain_inscribed_basic_precision_circuit"
+  ]
+}

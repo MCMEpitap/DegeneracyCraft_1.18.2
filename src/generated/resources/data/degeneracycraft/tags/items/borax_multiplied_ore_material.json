@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:raw_borax_ore",
+    "degeneracycraft:borax_dust",
+    "degeneracycraft:borax_puredust",
+    "degeneracycraft:borax_leachate",
+    "degeneracycraft:borax_concentrate",
+    "degeneracycraft:borax_plasma",
+    "degeneracycraft:borax_degeneratematter",
+    "degeneracycraft:borax_soup",
+    "degeneracycraft:borax_imaginarymatter",
+    "degeneracycraft:stable_borax_imaginarymatter",
+    "degeneracycraft:borax_tachyon",
+    "degeneracycraft:borax_antimatter",
+    "degeneracycraft:borax_ultrahotplasma",
+    "degeneracycraft:borax_hyperfluid",
+    "degeneracycraft:borax_crystal",
+    "degeneracycraft:borax_precipitate",
+    "degeneracycraft:borax_washeddust",
+    "degeneracycraft:borax_oresinter",
+    "degeneracycraft:borax_ingot"
+  ]
+}

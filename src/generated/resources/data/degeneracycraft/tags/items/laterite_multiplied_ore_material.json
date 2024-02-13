@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:raw_laterite_ore",
+    "degeneracycraft:laterite_dust",
+    "degeneracycraft:laterite_puredust",
+    "degeneracycraft:laterite_leachate",
+    "degeneracycraft:laterite_concentrate",
+    "degeneracycraft:laterite_plasma",
+    "degeneracycraft:laterite_degeneratematter",
+    "degeneracycraft:laterite_soup",
+    "degeneracycraft:laterite_imaginarymatter",
+    "degeneracycraft:stable_laterite_imaginarymatter",
+    "degeneracycraft:laterite_tachyon",
+    "degeneracycraft:laterite_antimatter",
+    "degeneracycraft:laterite_ultrahotplasma",
+    "degeneracycraft:laterite_hyperfluid",
+    "degeneracycraft:laterite_crystal",
+    "degeneracycraft:laterite_precipitate",
+    "degeneracycraft:laterite_washeddust",
+    "degeneracycraft:laterite_oresinter",
+    "degeneracycraft:laterite_ingot"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Recipe Introduction",
+  "landing_text": "This book introduces machine component,machine part, etc...",
+  "version": 1,
+  "book_texture": "degeneracycraft:textures/gui/recipe_introduction_background.png",
+  "crafting_texture":"degeneracycraft:textures/gui/recipe_introduction_crafting.png",
+  "text_overflow_mode":"resize",
+  "text_color": "FFFFFF",
+  "header_color": "FFFFFF",
+  "nameplate_color": "FFFFFF",
+  "link_color": "FFFFFF",
+  "link_hover_color": "FFAAFF"
+}

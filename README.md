@@ -5,4 +5,14 @@ The mod seeks to romanticize industry and proceeds in 7 main areas and 10 phases
 
 ## "A"stronomy
 
-## ""
+## "B"iology
+
+## "C"hemistry
+
+## "D"ynamics Physics
+
+## "E"ngineering
+
+## "F"aux Magic Engineering
+
+## "G"eo Science

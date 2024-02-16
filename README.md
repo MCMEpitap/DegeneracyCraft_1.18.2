@@ -7,6 +7,7 @@ The mod seeks to romanticize industry and proceeds in 7 main areas and 10 phases
 ![Astronomy Icon](https://github.com/MCMEpitap/DegeneracyCraft_1.18.2/blob/master/github_astronomy_icon.png)
 ## "B"iology (生物)
 ![Biology Icon](https://github.com/MCMEpitap/DegeneracyCraft_1.18.2/blob/master/github_biology_icon.png)
+## "C"hemistry (化学)
 ## "D"ynamics Physics (動的物理学)
 
 ## "E"ngineering (工学)

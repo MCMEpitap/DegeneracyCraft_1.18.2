@@ -295,7 +295,8 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
 
         boolean a, b, c, d, e, f, g, h, i;
 
-        a = level.getBlockState(blockpos.relative(reX, -1).relative(reZ, -3).above(0)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
+        a = level.getBlockState(blockpos.relative(reX, -1).relative(reZ, -3).above(0))
+                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
         b = level.getBlockState(blockpos.relative(reX, 0).relative(reZ, -3).above(0)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get());
         c = level.getBlockState(blockpos.relative(reX, 1).relative(reZ, -3).above(0)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
         d = level.getBlockState(blockpos.relative(reX, -1).relative(reZ, -2).above(0)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get());

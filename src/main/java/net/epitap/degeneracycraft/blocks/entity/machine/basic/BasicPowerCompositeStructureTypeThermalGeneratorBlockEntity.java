@@ -323,15 +323,19 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
 
-        boolean a, b, c, d, e;
-        a = level.getBlockState(blockpos.relative(reX, -1).relative(reZ, -3).above(1)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-        b = level.getBlockState(blockpos.relative(reX, 0).relative(reZ, -2).above(1)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-        c = level.getBlockState(blockpos.relative(reX, 1).relative(reZ, -2).above(1)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-        d = level.getBlockState(blockpos.relative(reX, -1).relative(reZ, -2).above(1)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-        e = level.getBlockState(blockpos.relative(reX, 0).relative(reZ, -2).above(1)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
+        boolean pos0 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z_3.xPos).above(MBPPos.x0y1z_3.yPos).relative(reZ, MBPPos.x0y1z_3.zPos))
+                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
+        boolean pos1 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y1z_2.xPos).above(MBPPos.x_1y1z_2.yPos).relative(reZ, MBPPos.x_1y1z_2.zPos))
+                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
+        boolean pos2 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z_2.xPos).above(MBPPos.x0y1z_2.yPos).relative(reZ, MBPPos.x0y1z_2.zPos))
+                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
+        boolean pos3 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y1z_2.xPos).above(MBPPos.x1y1z_2.yPos).relative(reZ, MBPPos.x1y1z_2.zPos))
+                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
+        boolean pos4 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z_1.xPos).above(MBPPos.x0y1z_1.yPos).relative(reZ, MBPPos.x0y1z_1.zPos))
+                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
 
         setChanged(level, pos, state);
-        return formed2 = a && b && c && d && e;
+        return formed2 = pos0 && pos1 && pos2 && pos3 && pos4;
     }
 
     public boolean formed0;

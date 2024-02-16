@@ -2,8 +2,10 @@ package net.epitap.degeneracycraft.blocks.entity.machine.basic;
 
 import net.epitap.degeneracycraft.blocks.block.DCBlocks;
 import net.epitap.degeneracycraft.blocks.block.DCHoloBlocks;
+import net.epitap.degeneracycraft.blocks.block.machine.basic.BasicPowerCompositeStructureTypeThermalGeneratorBlock;
 import net.epitap.degeneracycraft.blocks.entity.DCBlockEntities;
 import net.epitap.degeneracycraft.blocks.menu.machine.basic.BasicPowerCompositeStructureTypeThermalGeneratorMenu;
+import net.epitap.degeneracycraft.dcenum.MBPPos;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.item.DCItems;
@@ -39,8 +41,6 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Map;
-
-import static net.epitap.degeneracycraft.blocks.block.machine.basic.BasicPowerCompositeStructureTypeThermalGeneratorBlock.FACING;
 
 public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends BlockEntity implements MenuProvider {
 
@@ -150,7 +150,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
                 return lazyItemHandler.cast();
             }
             if (directionWrappedHandlerMap.containsKey(side)) {
-                Direction localDir = this.getBlockState().getValue(FACING);
+                Direction localDir = this.getBlockState().getValue(BasicPowerCompositeStructureTypeThermalGeneratorBlock.FACING);
 
                 if (side == Direction.UP || side == Direction.DOWN) {
                     return directionWrappedHandlerMap.get(side).cast();
@@ -255,30 +255,39 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
 
     public boolean hologram;
 
-        public boolean isFormed0(Level level, BlockPos pos, BlockState state) {
-        Direction dir = state.getValue(FACING);
+    public boolean isFormed0(Level level, BlockPos pos, BlockState state) {
+        Direction dir = state.getValue(BasicPowerCompositeStructureTypeThermalGeneratorBlock.FACING);
         BlockPos blockpos = new BlockPos(this.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
 
-        boolean a, b, c, d, e, f, g, h, i, j;
+        boolean pos0 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_3.xPos).above(MBPPos.x_1y_1z_3.yPos).relative(reZ, MBPPos.x_1y_1z_3.zPos))
+                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
+        boolean pos1 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z_3.xPos).above(MBPPos.x0y_1z_3.yPos).relative(reZ, MBPPos.x0y_1z_3.zPos))
+                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
+        boolean pos2 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y_1z_3.xPos).above(MBPPos.x1y_1z_3.yPos).relative(reZ, MBPPos.x1y_1z_3.zPos))
+                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
+        boolean pos3 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_2.xPos).above(MBPPos.x_1y_1z_2.yPos).relative(reZ, MBPPos.x_1y_1z_2.zPos))
+                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
+        boolean pos4 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z_2.xPos).above(MBPPos.x0y_1z_2.yPos).relative(reZ, MBPPos.x0y_1z_2.zPos))
+                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
+        boolean pos5 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y_1z_2.xPos).above(MBPPos.x1y_1z_2.yPos).relative(reZ, MBPPos.x1y_1z_2.zPos))
+                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
+        boolean pos6 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_1.xPos).above(MBPPos.x_1y_1z_1.yPos).relative(reZ, MBPPos.x_1y_1z_1.zPos))
+                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
+        boolean pos7 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z_1.xPos).above(MBPPos.x0y_1z_1.yPos).relative(reZ, MBPPos.x0y_1z_1.zPos))
+                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
+        boolean pos8 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y_1z_1.xPos).above(MBPPos.x1y_1z_1.yPos).relative(reZ, MBPPos.x1y_1z_1.zPos))
+                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
+        boolean pos9 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z0.xPos).above(MBPPos.x0y_1z0.yPos).relative(reZ, MBPPos.x0y_1z0.zPos))
+                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
 
-            a = level.getBlockState(blockpos.relative(reX, -1).relative(reZ, -3).above(-1)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
-            b = level.getBlockState(blockpos.relative(reX, 0).relative(reZ, -3).above(-1)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-            c = level.getBlockState(blockpos.relative(reX, 1).relative(reZ, -3).above(-1)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
-            d = level.getBlockState(blockpos.relative(reX, -1).relative(reZ, -2).above(-1)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-            e = level.getBlockState(blockpos.relative(reX, 0).relative(reZ, -2).above(-1)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-            f = level.getBlockState(blockpos.relative(reX, 1).relative(reZ, -2).above(-1)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-            g = level.getBlockState(blockpos.relative(reX, -1).relative(reZ, -1).above(-1)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
-            h = level.getBlockState(blockpos.relative(reX, 0).relative(reZ, -1).above(-1)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-            i = level.getBlockState(blockpos.relative(reX, 1).relative(reZ, -1).above(-1)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
-            j = level.getBlockState(blockpos.relative(reX, 0).relative(reZ, 0).above(-1)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
-
-        return formed0 = a && b && c && d && e && f && g && h && i && j;
+        setChanged(level, pos, state);
+        return formed0 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6 && pos7 && pos8 && pos9;
     }
 
     public boolean isFormed1(Level level, BlockPos pos, BlockState state) {
-        Direction dir = state.getValue(FACING);
+        Direction dir = state.getValue(BasicPowerCompositeStructureTypeThermalGeneratorBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(this.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -296,11 +305,12 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         h = level.getBlockState(blockpos.relative(reX, 0).relative(reZ, -1).above(0)).isAir();
         i = level.getBlockState(blockpos.relative(reX, 1).relative(reZ, -1).above(0)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
 
+        setChanged(level, pos, state);
         return formed1 = a && b && c && d && e && f && g && h && i;
     }
 
     public boolean isFormed2(Level level, BlockPos pos, BlockState state) {
-        Direction dir = state.getValue(FACING);
+        Direction dir = state.getValue(BasicPowerCompositeStructureTypeThermalGeneratorBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(this.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -312,7 +322,8 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         c = level.getBlockState(blockpos.relative(reX, 1).relative(reZ, -2).above(1)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
         d = level.getBlockState(blockpos.relative(reX, -1).relative(reZ, -2).above(1)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
         e = level.getBlockState(blockpos.relative(reX, 0).relative(reZ, -2).above(1)).is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-        
+
+        setChanged(level, pos, state);
         return formed2 = a && b && c && d && e;
     }
 
@@ -324,68 +335,127 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
     }
     public boolean isFormed;
     public void hologram(Level level, BlockPos pos, BlockState state, BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity pEntity) {
-        Direction dir = state.getValue(FACING);
+        Direction dir = state.getValue(BasicPowerCompositeStructureTypeThermalGeneratorBlock.FACING);
         BlockPos blockpos = new BlockPos(this.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
-        BlockPos a, b, c, d, e, f, g, h, i, j;
 
-        a = blockpos.relative(reX, -1).relative(reZ, -3).above(-1);
-        b = blockpos.relative(reX, 0).relative(reZ, -3).above(-1);
-        c = blockpos.relative(reX, 1).relative(reZ, -3).above(-1);
-        d = blockpos.relative(reX, -1).relative(reZ, -2).above(-1);
-        e = blockpos.relative(reX, 0).relative(reZ, -2).above(-1);
-        f = blockpos.relative(reX, 1).relative(reZ, -2).above(-1);
-        g = blockpos.relative(reX, -1).relative(reZ, -1).above(-1);
-        h = blockpos.relative(reX, 0).relative(reZ, -1).above(-1);
-        i = blockpos.relative(reX, 1).relative(reZ, -1).above(-1);
-        j = blockpos.relative(reX, 0).relative(reZ, 0).above(-1);
+        BlockPos a = blockpos.relative(reX, -1).relative(reZ, -3).above(-1);
+        BlockPos b = blockpos.relative(reX, 0).relative(reZ, -3).above(-1);
+        BlockPos c = blockpos.relative(reX, 1).relative(reZ, -3).above(-1);
+        BlockPos d = blockpos.relative(reX, -1).relative(reZ, -2).above(-1);
+        BlockPos e = blockpos.relative(reX, 0).relative(reZ, -2).above(-1);
+        BlockPos f = blockpos.relative(reX, 1).relative(reZ, -2).above(-1);
+        BlockPos g = blockpos.relative(reX, -1).relative(reZ, -1).above(-1);
+        BlockPos h = blockpos.relative(reX, 0).relative(reZ, -1).above(-1);
+        BlockPos i = blockpos.relative(reX, 1).relative(reZ, -1).above(-1);
+        BlockPos j = blockpos.relative(reX, 0).relative(reZ, 0).above(-1);
+        BlockPos k = blockpos.relative(reX, -1).relative(reZ, -3).above(0);
+        BlockPos l = blockpos.relative(reX, 0).relative(reZ, -3).above(0);
+        BlockPos m = blockpos.relative(reX, 1).relative(reZ, -3).above(0);
+        BlockPos n = blockpos.relative(reX, -1).relative(reZ, -2).above(0);
+        BlockPos o = blockpos.relative(reX, 1).relative(reZ, -2).above(0);
+        BlockPos p = blockpos.relative(reX, -1).relative(reZ, -1).above(0);
+        BlockPos q = blockpos.relative(reX, 1).relative(reZ, -1).above(0);
+        BlockPos r = blockpos.relative(reX, 0).relative(reZ, -3).above(1);
+        BlockPos s = blockpos.relative(reX, -1).relative(reZ, -2).above(1);
+        BlockPos t = blockpos.relative(reX, 0).relative(reZ, -2).above(1);
+        BlockPos u = blockpos.relative(reX, 1).relative(reZ, -2).above(1);
+        BlockPos v = blockpos.relative(reX, 0).relative(reZ, -3).above(1);
 
         if (pEntity.itemHandler.getStackInSlot(1).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())) {
-            if(level.getBlockState(a).isAir()){
+            if (level.getBlockState(a).isAir()) {
                 level.setBlock(a, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
                 setChanged(level, pos, state);
             }
-            if(level.getBlockState(b).isAir()){
+            if (level.getBlockState(b).isAir()) {
                 level.setBlock(b, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
                 setChanged(level, pos, state);
             }
-            if(level.getBlockState(c).isAir()){
+            if (level.getBlockState(c).isAir()) {
                 level.setBlock(c, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
                 setChanged(level, pos, state);
             }
-            if(level.getBlockState(d).isAir()){
+            if (level.getBlockState(d).isAir()) {
                 level.setBlock(d, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
                 setChanged(level, pos, state);
             }
-            if(level.getBlockState(e).isAir()){
+            if (level.getBlockState(e).isAir()) {
                 level.setBlock(e, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
                 setChanged(level, pos, state);
             }
-            if(level.getBlockState(f).isAir()){
+            if (level.getBlockState(f).isAir()) {
                 level.setBlock(f, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
                 setChanged(level, pos, state);
             }
-            if(level.getBlockState(g).isAir()){
+            if (level.getBlockState(g).isAir()) {
                 level.setBlock(g, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
                 setChanged(level, pos, state);
             }
-            if(level.getBlockState(h).isAir()){
+            if (level.getBlockState(h).isAir()) {
                 level.setBlock(h, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
                 setChanged(level, pos, state);
             }
-            if(level.getBlockState(i).isAir()){
+            if (level.getBlockState(i).isAir()) {
                 level.setBlock(i, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
                 setChanged(level, pos, state);
             }
-            if(level.getBlockState(j).isAir()){
+            if (level.getBlockState(j).isAir()) {
                 level.setBlock(j, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
                 setChanged(level, pos, state);
             }
 
-
             if (pEntity.formed0) {
-
+                if (level.getBlockState(k).isAir()) {
+                    level.setBlock(k, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
+                    setChanged(level, pos, state);
+                }
+                if (level.getBlockState(l).isAir()) {
+                    level.setBlock(l, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get().defaultBlockState(), 1);
+                    setChanged(level, pos, state);
+                }
+                if (level.getBlockState(m).isAir()) {
+                    level.setBlock(m, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
+                    setChanged(level, pos, state);
+                }
+                if (level.getBlockState(n).isAir()) {
+                    level.setBlock(n, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get().defaultBlockState(), 1);
+                    setChanged(level, pos, state);
+                }
+                if (level.getBlockState(o).isAir()) {
+                    level.setBlock(o, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get().defaultBlockState(), 1);
+                    setChanged(level, pos, state);
+                }
+                if (level.getBlockState(p).isAir()) {
+                    level.setBlock(p, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
+                    setChanged(level, pos, state);
+                }
+                if (level.getBlockState(q).isAir()) {
+                    level.setBlock(q, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
+                    setChanged(level, pos, state);
+                }
+                if (formed2) {
+                    if (level.getBlockState(r).isAir()) {
+                        level.setBlock(r, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
+                        setChanged(level, pos, state);
+                    }
+                    if (level.getBlockState(s).isAir()) {
+                        level.setBlock(s, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
+                        setChanged(level, pos, state);
+                    }
+                    if (level.getBlockState(t).isAir()) {
+                        level.setBlock(t, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
+                        setChanged(level, pos, state);
+                    }
+                    if (level.getBlockState(u).isAir()) {
+                        level.setBlock(u, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
+                        setChanged(level, pos, state);
+                    }
+                    if (level.getBlockState(v).isAir()) {
+                        level.setBlock(v, DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
+                        setChanged(level, pos, state);
+                    }
+                }
             }
         }
         setChanged(level, pos, state);
@@ -837,5 +907,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
 //        }
 //        setChanged(level, pos, state);
 //        return false;
-        }
+    }
+
+
 }

@@ -223,8 +223,6 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         pEntity.formed1 = pEntity.isFormed1(level, pos, state);
         pEntity.formed2 = pEntity.isFormed2(level, pos, state);
         pEntity.isFormed = pEntity.isFormed();
-        pEntity.hologram(level, pos, state, pEntity);
-
         pEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         pEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
 
@@ -253,8 +251,6 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         }
         setChanged(level, pos, state);
     }
-
-    public boolean hologram;
 
     public boolean isFormed0(Level level, BlockPos pos, BlockState state) {
         Direction dir = state.getValue(BasicPowerCompositeStructureTypeThermalGeneratorBlock.FACING);

@@ -5,7 +5,7 @@ The mod seeks to romanticize industry and proceeds in 7 main areas and 10 phases
 
 ## "A"stronomy (天文学)
 ![Astronomy Icon](https://github.com/MCMEpitap/DegeneracyCraft_1.18.2/blob/master/github_astronomy_icon.png) <br>
-**他の星も四角いだろうか？**
+**他の星も四角いだろうか？** <br>
 **Would the other stars be cubic?**
 ## "B"iology (生物)
 ![Biology Icon](https://github.com/MCMEpitap/DegeneracyCraft_1.18.2/blob/master/github_biology_icon.png)

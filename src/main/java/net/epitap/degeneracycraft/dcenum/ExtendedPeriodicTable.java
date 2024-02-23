@@ -1,7 +1,9 @@
 package net.epitap.degeneracycraft.dcenum;
 
 public enum ExtendedPeriodicTable {
-    HYDROGEN("hydrogen", 1, 1.008, 14.01, 20.28, "H", 1);
+    HYDROGEN("hydrogen", 1, 1.008, 14.01, 20.28, "H", 1),
+    HELIUM("helium", 2, 4.003, 0, 4.222, "He", 5);
+
 
     public final String name;
     public final int number;

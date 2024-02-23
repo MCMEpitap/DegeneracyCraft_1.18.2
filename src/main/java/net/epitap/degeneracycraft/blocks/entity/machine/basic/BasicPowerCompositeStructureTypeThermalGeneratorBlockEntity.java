@@ -27,6 +27,7 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.ForgeHooks;
@@ -392,12 +393,11 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
                 level.setBlock(blockpos.relative(reX, MBPPos.x0y_1z0.xPos).above(MBPPos.x0y_1z0.yPos).relative(reZ, MBPPos.x0y_1z0.zPos),
                         DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
             }
-
+            setChanged(level, pos, state);
             if (pEntity.formed0) {
                 if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_3.xPos).above(MBPPos.x_1y0z_3.yPos).relative(reZ, MBPPos.x_1y0z_3.zPos)).isAir()) {
                     level.setBlock(blockpos.relative(reX, MBPPos.x_1y0z_3.xPos).above(MBPPos.x_1y0z_3.yPos).relative(reZ, MBPPos.x_1y0z_3.zPos),
                             DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-
                 }
                 if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y0z_3.xPos).above(MBPPos.x0y0z_3.yPos).relative(reZ, MBPPos.x0y0z_3.zPos)).isAir()) {
                     level.setBlock(blockpos.relative(reX, MBPPos.x0y0z_3.xPos).above(MBPPos.x0y0z_3.yPos).relative(reZ, MBPPos.x0y0z_3.zPos),
@@ -423,6 +423,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
                     level.setBlock(blockpos.relative(reX, MBPPos.x1y0z_1.xPos).above(MBPPos.x1y0z_1.yPos).relative(reZ, MBPPos.x1y0z_1.zPos),
                             DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
                 }
+                setChanged(level, pos, state);
                 if (formed1) {
                     if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z_3.xPos).above(MBPPos.x0y1z_3.yPos).relative(reZ, MBPPos.x0y1z_3.zPos)).isAir()) {
                         level.setBlock(blockpos.relative(reX, MBPPos.x0y1z_3.xPos).above(MBPPos.x0y1z_3.yPos).relative(reZ, MBPPos.x0y1z_3.zPos),
@@ -446,457 +447,48 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
                     }
                 }
             }
+        } else {
+            if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_3.xPos).above(MBPPos.x_1y_1z_3.yPos).relative(reZ, MBPPos.x_1y_1z_3.zPos))
+                    .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get())) {
+                level.setBlock(blockpos.relative(reX, MBPPos.x_1y_1z_3.xPos).above(MBPPos.x_1y_1z_3.yPos).relative(reZ, MBPPos.x_1y_1z_3.zPos), Blocks.AIR.defaultBlockState(), 1);
+            }
+            if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z_3.xPos).above(MBPPos.x0y_1z_3.yPos).relative(reZ, MBPPos.x0y_1z_3.zPos))
+                    .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
+                level.setBlock(blockpos.relative(reX, MBPPos.x0y_1z_3.xPos).above(MBPPos.x0y_1z_3.yPos).relative(reZ, MBPPos.x0y_1z_3.zPos), Blocks.AIR.defaultBlockState(), 1);
+            }
+            if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y_1z_3.xPos).above(MBPPos.x1y_1z_3.yPos).relative(reZ, MBPPos.x1y_1z_3.zPos))
+                    .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get())) {
+                level.setBlock(blockpos.relative(reX, MBPPos.x1y_1z_3.xPos).above(MBPPos.x1y_1z_3.yPos).relative(reZ, MBPPos.x1y_1z_3.zPos), Blocks.AIR.defaultBlockState(), 1);
+            }
+            if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_2.xPos).above(MBPPos.x_1y_1z_2.yPos).relative(reZ, MBPPos.x_1y_1z_2.zPos))
+                    .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
+                level.setBlock(blockpos.relative(reX, MBPPos.x_1y_1z_2.xPos).above(MBPPos.x_1y_1z_2.yPos).relative(reZ, MBPPos.x_1y_1z_2.zPos), Blocks.AIR.defaultBlockState(), 1);
+            }
+            if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z_2.xPos).above(MBPPos.x0y_1z_2.yPos).relative(reZ, MBPPos.x0y_1z_2.zPos))
+                    .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
+                level.setBlock(blockpos.relative(reX, MBPPos.x0y_1z_2.xPos).above(MBPPos.x0y_1z_2.yPos).relative(reZ, MBPPos.x0y_1z_2.zPos), Blocks.AIR.defaultBlockState(), 1);
+            }
+            if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y_1z_2.xPos).above(MBPPos.x1y_1z_2.yPos).relative(reZ, MBPPos.x1y_1z_2.zPos))
+                    .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
+                level.setBlock(blockpos.relative(reX, MBPPos.x1y_1z_2.xPos).above(MBPPos.x1y_1z_2.yPos).relative(reZ, MBPPos.x1y_1z_2.zPos), Blocks.AIR.defaultBlockState(), 1);
+            }
+            if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_1.xPos).above(MBPPos.x_1y_1z_1.yPos).relative(reZ, MBPPos.x_1y_1z_1.zPos))
+                    .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get())) {
+                level.setBlock(blockpos.relative(reX, MBPPos.x_1y_1z_1.xPos).above(MBPPos.x_1y_1z_1.yPos).relative(reZ, MBPPos.x_1y_1z_1.zPos), Blocks.AIR.defaultBlockState(), 1);
+            }
+            if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z_1.xPos).above(MBPPos.x0y_1z_1.yPos).relative(reZ, MBPPos.x0y_1z_1.zPos))
+                    .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
+                level.setBlock(blockpos.relative(reX, MBPPos.x0y_1z_1.xPos).above(MBPPos.x0y_1z_1.yPos).relative(reZ, MBPPos.x0y_1z_1.zPos), Blocks.AIR.defaultBlockState(), 1);
+            }
+            if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y_1z_1.xPos).above(MBPPos.x1y_1z_1.yPos).relative(reZ, MBPPos.x1y_1z_1.zPos))
+                    .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get())) {
+                level.setBlock(blockpos.relative(reX, MBPPos.x1y_1z_1.xPos).above(MBPPos.x1y_1z_1.yPos).relative(reZ, MBPPos.x1y_1z_1.zPos), Blocks.AIR.defaultBlockState(), 1);
+            }
+            if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z0.xPos).above(MBPPos.x0y_1z0.yPos).relative(reZ, MBPPos.x0y_1z0.zPos))
+                    .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get())) {
+                level.setBlock(blockpos.relative(reX, MBPPos.x0y_1z0.xPos).above(MBPPos.x0y_1z0.yPos).relative(reZ, MBPPos.x0y_1z0.zPos), Blocks.AIR.defaultBlockState(), 1);
+            }
         }
         setChanged(level, pos, state);
-//            for (y = -1; y < 2; y++) {
-//                switch (y) {
-//                    case -1 -> {
-//                        for (x = -1; x < 2; x++) {
-//                            switch (x) {
-//                                case -1 ,1-> {
-//                                    for (z = -3; z < 1; z++) {
-//                                        switch (z) {
-//                                            case -3, -1 -> {
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                        .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get())) {
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z)).isAir()) {
-//                                                    Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                            DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                            }
-//                                            case -2 -> {
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                        .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get())) {
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z)).isAir()) {
-//                                                    Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                            DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//                                case 0 -> {
-//                                    for (z = -3; z < 1; z++) {
-//                                        switch (z) {
-//                                            case -3, -2, -1 -> {
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                        .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get())) {
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z)).isAir()) {
-//                                                    Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                            DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                            }
-//                                            case 0 -> {
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                        .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get())) {
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z)).isAir()) {
-//                                                    Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                            DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    }
-//                    case 0 -> {
-//                        if (pEntity.formed0) {
-//                            for (x = -1; x < 2; x++) {
-//                                switch (x) {
-//                                    case -1, 1 -> {
-//                                        for (z = -3; z < 1; z++) {
-//                                            switch (z) {
-//                                                case -3, -1 -> {
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                            .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get())) {
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z)).isAir()) {
-//                                                        Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                                DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                }
-//                                                case -2 -> {
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                            .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get())) {
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z)).isAir()) {
-//                                                        Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                                DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get().defaultBlockState(), 1);
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                    case 0 -> {
-//                                        for (z = -3; z < 1; z++) {
-//                                            switch (z) {
-//                                                case -3 -> {
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                            .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get())) {
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z)).isAir()) {
-//                                                        Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                                DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get().defaultBlockState(), 1);
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                }
-//                                                case -2, -1 -> {
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                            .isAir()) {
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//                            }
-//                        } else {
-//                            for (x = -1; x < 2; x++) {
-//                                switch (x) {
-//                                    case -1, 1 -> {
-//                                        for (z = -3; z < 1; z++) {
-//                                            switch (z) {
-//                                                case -3, -1 -> {
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                            .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-//                                                        Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                                Blocks.AIR.defaultBlockState(), 1);
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                }
-//                                                case -2 -> {
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                            .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get())) {
-//                                                        Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                                Blocks.AIR.defaultBlockState(), 1);
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                    case 0 -> {
-//                                        for (z = -3; z < 1; z++) {
-//                                            if (z == -3) {
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                        .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get())) {
-//                                                    Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                            Blocks.AIR.defaultBlockState(), 1);
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    }
-//                    case 1 -> {
-//                        if (pEntity.formed0 && pEntity.formed1) {
-//                            for (x = -1; x < 2; x++) {
-//                                switch (x) {
-//                                    case -1, 1 -> {
-//                                        for (z = -3; z < 1; z++) {
-//                                            if (z == -2) {
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                        .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get())) {
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z)).isAir()) {
-//                                                    Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                            DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                    case 0 -> {
-//                                        for (z = -3; z < 1; z++) {
-//                                            switch (z) {
-//                                                case -3, -2, -1 -> {
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                            .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get())) {
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z)).isAir()) {
-//                                                        Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                                DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//                            }
-//                        } else {
-//                            for (x = -1; x < 2; x++) {
-//                                switch (x) {
-//                                    case -1, 1 -> {
-//                                        for (z = -3; z < 1; z++) {
-//                                            if (z == -2) {
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                        .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-//                                                    Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                            Blocks.AIR.defaultBlockState(), 1);
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                    case 0 -> {
-//                                        for (z = -3; z < 1; z++) {
-//                                            switch (z) {
-//                                                case -3, -2, -1 -> {
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                            .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-//                                                        Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                                Blocks.AIR.defaultBlockState(), 1);
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//        else {
-//            for (y = -1; y < 2; y++) {
-//                switch (y) {
-//                    case -1 -> {
-//                        for (x = -1; x < 2; x++) {
-//                            switch (x) {
-//                                case -1, 1 -> {
-//                                    for (z = -3; z < 1; z++) {
-//                                        switch (z) {
-//                                            case -3, -1 -> {
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                        .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get())) {
-//                                                    Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                            Blocks.AIR.defaultBlockState(), 1);
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                            }
-//                                            case -2 -> {
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                        .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-//                                                    Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                            Blocks.AIR.defaultBlockState(), 1);
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//                                case 0 -> {
-//                                    for (z = -3; z < 1; z++) {
-//                                        switch (z) {
-//                                            case -3, -2, -1 -> {
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                        .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-//                                                    Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                            Blocks.AIR.defaultBlockState(), 1);
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                            }
-//                                            case 0 -> {
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                        .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get())) {
-//                                                    Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                            Blocks.AIR.defaultBlockState(), 1);
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    }
-//                    case 0 -> {
-//                        if (pEntity.formed0) {
-//                            for (x = -1; x < 2; x++) {
-//                                switch (x) {
-//                                    case -1, 1 -> {
-//                                        for (z = -3; z < 1; z++) {
-//                                            switch (z) {
-//                                                case -3, -1 -> {
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                            .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-//                                                        Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                                Blocks.AIR.defaultBlockState(), 1);
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                }
-//                                                case -2 -> {
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                            .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get())) {
-//                                                        Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                                Blocks.AIR.defaultBlockState(), 1);
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                    case 0 -> {
-//                                        for (z = -3; z < 1; z++) {
-//                                            switch (z) {
-//                                                case -3 -> {
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                            .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get())) {
-//                                                        Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                                Blocks.AIR.defaultBlockState(), 1);
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                }
-//                                                case -2, -1 -> {
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                            .isAir()) {
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//                            }
-//                        } else {
-//                            for (x = -1; x < 2; x++) {
-//                                switch (x) {
-//                                    case -1, 1 -> {
-//                                        for (z = -3; z < 1; z++) {
-//                                            switch (z) {
-//                                                case -3, -1 -> {
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                            .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-//                                                        Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                                Blocks.AIR.defaultBlockState(), 1);
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                }
-//                                                case -2 -> {
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                            .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get())) {
-//                                                        Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                                Blocks.AIR.defaultBlockState(), 1);
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                    case 0 -> {
-//                                        for (z = -3; z < 1; z++) {
-//                                            if (z == -3) {
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                        .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get())) {
-//                                                    Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                            Blocks.AIR.defaultBlockState(), 1);
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    }
-//                    case 1 -> {
-//                        if (pEntity.formed0 && pEntity.formed1) {
-//                            for (x = -1; x < 2; x++) {
-//                                switch (x) {
-//                                    case -1, 1 -> {
-//                                        for (z = -3; z < 1; z++) {
-//                                            if (z == -2) {
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                        .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-//                                                    Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                            Blocks.AIR.defaultBlockState(), 1);
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                    case 0 -> {
-//                                        for (z = -3; z < 1; z++) {
-//                                            switch (z) {
-//                                                case -3, -2, -1 -> {
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                            .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-//                                                        Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                                Blocks.AIR.defaultBlockState(), 1);
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//                            }
-//                        } else {
-//                            for (x = -1; x < 2; x++) {
-//                                switch (x) {
-//                                    case -1, 1 -> {
-//                                        for (z = -3; z < 1; z++) {
-//                                            if (z == -2) {
-//                                                if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                        .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-//                                                    Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                            Blocks.AIR.defaultBlockState(), 1);
-//                                                    setChanged(level, pos, state);
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                    case 0 -> {
-//                                        for (z = -3; z < 1; z++) {
-//                                            switch (z) {
-//                                                case -3, -2, -1 -> {
-//                                                    if (level.getBlockState(blockpos.relative(reX, x).above(y).relative(reZ, z))
-//                                                            .is(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-//                                                        Objects.requireNonNull(pEntity.level).setBlock(blockpos.relative(reX, x).above(y).relative(reZ, z),
-//                                                                Blocks.AIR.defaultBlockState(), 1);
-//                                                        setChanged(level, pos, state);
-//                                                    }
-//                                                }
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//        setChanged(level, pos, state);
-//        return false;
     }
-
-
 }

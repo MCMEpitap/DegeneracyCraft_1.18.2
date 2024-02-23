@@ -48,7 +48,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
     public float BP_CS_T_THERMAL_GENERATOR_CAPACITY = 40000F;
     public float BP_CS_T_THERMAL_GENERATOR_TRANSFER = 40000F;
     public float BP_CS_T_THERMAL_GENERATOR_OUTPUT = 16F;
-    public float BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED = 40000F * 20;
+    public float BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED = 32F;
     private final ItemStackHandler itemHandler = new ItemStackHandler(2) {
 
         @Override

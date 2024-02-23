@@ -69,9 +69,9 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorScreen extends Abst
 
     public List<Component> PowerOutputTooltips() {
         if (menu.blockEntity.isFormed) {
-            return List.of(Component.nullToEmpty(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED / 20 + " FE/t"));
+            return List.of(Component.nullToEmpty(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED + " FE/t"));
         }
-        return List.of(Component.nullToEmpty(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT / 20 + " FE/t"));
+        return List.of(Component.nullToEmpty(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT + " FE/t"));
     }
 
     private void renderEnergyAreaTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {

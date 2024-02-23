@@ -1,12 +1,14 @@
 
 # DegeneracyCraft
-このMODは工業のロマンを求め、主に7つの分野と10個の段階で進行します！<br>
-The mod seeks to romanticize industry and proceeds in 7 main areas and 10 phases!
+このMODは工業のロマンを求め、主に7つの分野と10個の工業段階で進行します！<br>
+The mod seeks to romanticize industry and proceeds in 7 fields and 10 industrial phases!　<br>
+7つの分野は以下のように分かれています。 <br>
+The 7 fields are divided as follows.
 
 ## "A"stronomy (天文学)
 ![Astronomy Icon](https://github.com/MCMEpitap/DegeneracyCraft_1.18.2/blob/master/github_astronomy_icon.png) <br>
 **他の星は四角いだろうか？** <br>
-**Would the other stars be cubic?**
+**Would the other stars be cubic?** <br>
 ## "B"iology (生物)
 ![Biology Icon](https://github.com/MCMEpitap/DegeneracyCraft_1.18.2/blob/master/github_biology_icon.png) <br>
 **クリーパー以上の異常は存在するのだろうか？** <br>

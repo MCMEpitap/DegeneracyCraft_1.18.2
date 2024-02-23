@@ -46,7 +46,7 @@ import java.util.Map;
 public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends BlockEntity implements MenuProvider {
 
     public float BP_CS_T_THERMAL_GENERATOR_CAPACITY = 40000F;
-    public float BP_CS_T_THERMAL_GENERATOR_TRANSFER = 400F;
+    public float BP_CS_T_THERMAL_GENERATOR_TRANSFER = 40000F;
     public float BP_CS_T_THERMAL_GENERATOR_OUTPUT = 16F;
     public float BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED = 40000F * 20;
     private final ItemStackHandler itemHandler = new ItemStackHandler(2) {

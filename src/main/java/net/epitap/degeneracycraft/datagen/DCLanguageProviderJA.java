@@ -2,6 +2,7 @@ package net.epitap.degeneracycraft.datagen;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.block.DCBlocks;
+import net.epitap.degeneracycraft.blocks.block.DCHoloBlocks;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.pipe.block.PipeBlocks;
 import net.minecraft.data.DataGenerator;
@@ -630,21 +631,25 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK.get(),"レッドストーン動力機械要素製作機");
 
 
+        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "基本強度多重構造機械用基礎骨組ブロック");
+        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "基本強度多重構造用機械骨組ブロック");
+        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "基本強度多重構造機械用構造骨組ブロック");
+        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), "基本強度多重構造機械用ガラスブロック");
+        add(PipeBlocks.BASIC_ITEM_PIPE_BLOCK, "基本アイテムパイプ");
+        add(PipeBlocks.BASIC_ENERGY_PIPE_BLOCK, "基本エネルギーパイプ");
 
-        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK.get(),"基本強度多重構造機械用基礎骨組ブロック");
-        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),"基本強度多重構造用機械骨組ブロック");
-        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(),"基本強度多重構造機械用構造骨組ブロック");
-        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(),"基本強度多重構造機械用ガラスブロック");
-        add(PipeBlocks.BASIC_ITEM_PIPE_BLOCK,"基本アイテムパイプ");
-        add(PipeBlocks.BASIC_ENERGY_PIPE_BLOCK,"基本エネルギーパイプ");
+        add(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "基本強度多重構造機械用基礎骨組ブロック (ホログラム)");
+        add(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), "基本強度多重構造用機械骨組ブロック (ホログラム)");
+        add(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "基本強度多重構造機械用構造骨組ブロック (ホログラム)");
+        add(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "基本強度多重構造機械用ガラスブロック (ホログラム)");
 
 //        add(DCBlocks.LOW_STERNGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),"低強度機械用フレーム");
-        add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get(),"低強度多構造機械用フレーム");
-        add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get(),"低強度多構造機械用ガラス");
+        add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get(), "低強度多構造機械用フレーム");
+        add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get(), "低強度多構造機械用ガラス");
 
-        add("message." + "degeneracycraft_redstone_powered_machine_component_manufacture_machine","Phase 0 まずこれを");
-        add("screen." + "degeneracycraft_pulverizer","粉砕機 画面");
-        add("jei." + "degeneracycraft_redstone_powered_machine_component_manufacture_machine","レッドストーン動力機械要素製作機 レシピ");
+        add("message." + "degeneracycraft_redstone_powered_machine_component_manufacture_machine", "Phase 0 まずこれを");
+        add("screen." + "degeneracycraft_pulverizer", "粉砕機 画面");
+        add("jei." + "degeneracycraft_redstone_powered_machine_component_manufacture_machine", "レッドストーン動力機械要素製作機 レシピ");
 
         add("itemGroup." + "degeneracycraft_machine_component", "縮退クラフト 機械要素");
         add("itemGroup." + "degeneracycraft_multiplied_ore_material", "縮退クラフト 鉱石倍化素材");

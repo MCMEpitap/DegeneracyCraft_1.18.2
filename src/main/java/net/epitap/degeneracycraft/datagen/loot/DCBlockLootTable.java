@@ -1,6 +1,7 @@
 package net.epitap.degeneracycraft.datagen.loot;
 
 import net.epitap.degeneracycraft.blocks.block.DCBlocks;
+import net.epitap.degeneracycraft.blocks.block.DCHoloBlocks;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.level.block.Block;
@@ -30,12 +31,16 @@ public class DCBlockLootTable extends BlockLoot {
         this.add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get(), block -> createSingleItemTable(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get()));
         this.add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get()));
 
+
+        this.add(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), block -> noDrop());
+
+
         this.add(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get()));
         this.add(DCBlocks.BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_BLOCK.get()));
 
 
-        this.add(DCBlocks.PULVERIZER_BLOCK.get(),block -> createSingleItemTable(DCBlocks.PULVERIZER_BLOCK.get()));
-        this.add(DCBlocks.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK.get(),block -> createSingleItemTable(DCBlocks.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK.get()));
+        this.add(DCBlocks.PULVERIZER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.PULVERIZER_BLOCK.get()));
+        this.add(DCBlocks.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK.get(), block -> createSingleItemTable(DCBlocks.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK.get()));
 
 //        this.add(DCBlocks.TEST.get(),block -> createSingleItemTable(DCBlocks.TEST.get()));
 

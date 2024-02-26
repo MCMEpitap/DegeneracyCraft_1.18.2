@@ -12,7 +12,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.*;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -23,11 +26,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class DCItems extends CreativeModeTab {
-
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Degeneracycraft.MOD_ID);
-
     public static final RegistryObject<Item> GRAVITATION_INGOT = ITEMS.register("gravitation_ingot",()-> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-
     public static final TagKey<Item> BAUXITE_MULTIPLIED_ORE_MATERIAL =TagKey.create(Registry.ITEM_REGISTRY,new ResourceLocation(Degeneracycraft.MOD_ID,"bauxite_multiplied_ore_material"));
     public static final TagKey<Item> BERYL_MULTIPLIED_ORE_MATERIAL =TagKey.create(Registry.ITEM_REGISTRY,new ResourceLocation(Degeneracycraft.MOD_ID,"beryl_multiplied_ore_material"));
     public static final TagKey<Item> BORAX_MULTIPLIED_ORE_MATERIAL =TagKey.create(Registry.ITEM_REGISTRY,new ResourceLocation(Degeneracycraft.MOD_ID,"borax_multiplied_ore_material"));

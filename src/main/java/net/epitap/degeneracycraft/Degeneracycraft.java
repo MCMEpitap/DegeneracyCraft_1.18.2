@@ -12,14 +12,14 @@ import net.epitap.degeneracycraft.blocks.screen.UniversalAssemblerPhase1Screen;
 import net.epitap.degeneracycraft.blocks.screen.basic.BasicPowerCompositeStructureTypeThermalGeneratorScreen;
 import net.epitap.degeneracycraft.blocks.screen.infinity.InfinityPoweredAllInOneCompressorMachineScreen;
 import net.epitap.degeneracycraft.blocks.screen.initial.RedstonePoweredMachineComponentManufactureMachineScreen;
+import net.epitap.degeneracycraft.integration.jei.DCRecipeTypes;
 import net.epitap.degeneracycraft.item.DCAdvancementIcon;
 import net.epitap.degeneracycraft.item.DCItems;
-import net.epitap.degeneracycraft.integration.jei.DCRecipeTypes;
 import net.epitap.degeneracycraft.networking.DCMessages;
-import net.epitap.degeneracycraft.pipe.entity.PipeBlockClickEvent;
-import net.epitap.degeneracycraft.pipe.render.PipeModelRegistry;
-import net.epitap.degeneracycraft.pipe.entity.PipeBlockEntities;
 import net.epitap.degeneracycraft.pipe.block.PipeBlocks;
+import net.epitap.degeneracycraft.pipe.entity.PipeBlockClickEvent;
+import net.epitap.degeneracycraft.pipe.entity.PipeBlockEntities;
+import net.epitap.degeneracycraft.pipe.render.PipeModelRegistry;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -37,13 +37,11 @@ import org.slf4j.Logger;
 
 @Mod(Degeneracycraft.MOD_ID)
 public class Degeneracycraft {
-    // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
     public static final String MOD_ID = "degeneracycraft";
     public static final org.apache.logging.log4j.Logger logger = LogManager.getLogger(MOD_ID);
     public static Config config;
     public Degeneracycraft() {
-        // Register the setup method for modloading
         final IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         DCItems.register(eventBus);
@@ -58,25 +56,13 @@ public class Degeneracycraft {
         FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Block.class, PipeBlocks::registerBlocks);
         FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(BlockEntityType.class, PipeBlockEntities::registerBlockEntities);
 
-
-//        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(MenuType.class, DCContainers::registerContainers);
-
-//        SERVER_CONFIG = DCCommonRegistry.registerConfig(ModConfig.Type.SERVER, DCServerConfig.class);
-
-
         eventBus.addListener(this::setup);
         eventBus.addListener(this::commonSetup);
         eventBus.addListener(this::clientSetup);
 
-        // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
-
         FMLJavaModLoadingContext.get().getModEventBus().addListener(PipeModelRegistry::onModelRegister);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(PipeModelRegistry::onModelBake);
-
-
-
-
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

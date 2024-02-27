@@ -696,7 +696,7 @@ public class DCItems extends CreativeModeTab {
 
 
 
-    public static final RegistryObject<Item> DEGENERACYCRAFT_INTRODUCTION = ITEMS.register("degeneracycraft_introduction", () -> new Item(new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> DEGENERACYCRAFT_INTRODUCTION = ITEMS.register("degeneracycraft_introduction", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB).stacksTo(1)));
 
     public DCItems(String label) {
         super(label);

@@ -1,9 +1,11 @@
 {
-  "name": "DC Introduction",
-  "landing_text": "This book introduces machine component,machine part, etc...",
+  "name": "degeneracycraft_introduction.title",
+  "landing_text": "degeneracycraft_introduction.landing",
   "version": 1,
   "book_texture": "degeneracycraft:textures/gui/degeneracycraft_introduction_background.png",
   "crafting_texture": "degeneracycraft:textures/gui/degeneracycraft_introduction_crafting.png",
+  "creative_tab": "degeneracycraft",
+  "custom_book_item": "degeneracycraft:degeneracycraft_introduction",
   "text_overflow_mode": "resize",
   "text_color": "FFFFFF",
   "header_color": "FFFFFF",

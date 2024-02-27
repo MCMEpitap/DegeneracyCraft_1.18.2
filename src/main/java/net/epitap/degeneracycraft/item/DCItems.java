@@ -681,7 +681,6 @@ public class DCItems extends CreativeModeTab {
 
     public static final RegistryObject<Item> RAW_GRAVITATION_ORE = ITEMS.register("raw_gravitation_ore", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINECOMPONENT_TAB)));
 
-    //    public static final RegistryObject<Item> CAMMDA_TIER1 = ITEMS.register("commda_tier1",()-> new PickaxeItem(DCTier.CAMMDA_TIER1,1,1,new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB).stacksTo(1)));
     public static final RegistryObject<Item> CAMMDA_TIER1 = ITEMS.register("cammda_tier1", () -> new CAMMDA_Tier1(DCTier.CAMMDA_TIER1, 0, 0, new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB).stacksTo(1)));
 
     public static final RegistryObject<Item> WRENCH = ITEMS.register("wrench", () -> new WrenchItem(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB).stacksTo(1)));
@@ -693,8 +692,6 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> BASIC_REDSTONE_BATTERY = ITEMS.register("basic_redstone_battery", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB)));
     public static final RegistryObject<Item> BASIC_REINFORCEDPLATE = ITEMS.register("basic_reinforcedplate", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB)));
     public static final RegistryObject<Item> BASIC_TURBINE = ITEMS.register("basic_turbine", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB)));
-
-
 
     public static final RegistryObject<Item> DEGENERACYCRAFT_INTRODUCTION = ITEMS.register("degeneracycraft_introduction", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB).stacksTo(1)));
 

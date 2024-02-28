@@ -813,7 +813,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("advancements." + "Awakening with \"The Fool\"" + ".description", "Make a Redstone Powered Machine Component Manufacture Machine");
 
 
-        add("degeneracycraft_introduction" + ".title", "DCpedia");
+        add("degeneracycraft_introduction" + ".title", "DCraftPedia");
     }
 
 }

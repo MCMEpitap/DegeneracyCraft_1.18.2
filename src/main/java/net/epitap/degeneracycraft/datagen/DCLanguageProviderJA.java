@@ -813,7 +813,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("advancements." + "Awakening with \"The Fool\"" + ".description", "レッドストーン動力機械要素製作機を作成");
 
 
-        add("degeneracycraft_introduction" + ".title", "DCpedia");
+        add("degeneracycraft_introduction" + ".title", "DCraftPedia");
 //        add("degeneracycraft_introduction" + ".landing", "");
 
 

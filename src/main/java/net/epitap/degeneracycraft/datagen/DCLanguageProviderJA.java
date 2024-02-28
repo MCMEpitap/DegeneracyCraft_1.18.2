@@ -809,10 +809,13 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("advancements." + "degeneracycraft" + ".geo_science" + ".description", "大地を知ろう");
 
 
-
-
         add("advancements." + "Awakening with \"The Fool\"" + ".title", "ある\"愚者\"の目覚め");
         add("advancements." + "Awakening with \"The Fool\"" + ".description", "レッドストーン動力機械要素製作機を作成");
+
+
+        add("degeneracycraft_introduction" + ".title", "DCpedia");
+//        add("degeneracycraft_introduction" + ".landing", "");
+
 
     }
 

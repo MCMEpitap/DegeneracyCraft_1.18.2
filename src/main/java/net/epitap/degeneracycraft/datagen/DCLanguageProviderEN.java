@@ -809,13 +809,11 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("advancements." + "degeneracycraft" + ".geoscience" + ".description", "Knowing The Earth");
 
 
-
-
-
-
         add("advancements." + "Awakening with \"The Fool\"" + ".title", "Awakening with \"The Fool\"");
         add("advancements." + "Awakening with \"The Fool\"" + ".description", "Make a Redstone Powered Machine Component Manufacture Machine");
 
+
+        add("degeneracycraft_introduction" + ".title", "DCpedia");
     }
 
 }

@@ -815,7 +815,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add("degeneracycraft_introduction" + ".title", "DegeneracyCraftPedia");
         add("degeneracycraft_introduction" + ".landing",
-                "This DegeneracyCraft is a mod for industrial romance! It consists of 7 main areas and 10 phases. This DCraftPedia is the instruction manual for DegeneracyCraft.");
+                "This DegeneracyCraft is a mod for industrial romance! <br>It consists of 7 main areas and 10 phases!<br>This DCraftPedia is the instruction manual for DegeneracyCraft!");
     }
 
 }

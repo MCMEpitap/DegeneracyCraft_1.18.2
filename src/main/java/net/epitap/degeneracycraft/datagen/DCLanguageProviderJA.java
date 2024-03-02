@@ -815,7 +815,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
         add("degeneracycraft_introduction" + ".title", "DegeneracyCraftPedia");
         add("degeneracycraft_introduction" + ".landing",
-                "このDegeneracyCraftは工業のロマンを求めたMODです！ 主に7つの分野と10段階のフェーズで構成されています。このDCraftPediaはDegeneracyCraftの説明書です。");
+                "このDegeneracyCraftは工業のロマンを求めたMODです！<br>主に7つの分野と10段階のフェーズで構成されています!<br>このDCraftPediaはDegeneracyCraftの説明書です!");
 
 
     }

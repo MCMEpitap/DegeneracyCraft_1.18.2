@@ -813,7 +813,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("advancements." + "Awakening with \"The Fool\"" + ".description", "Make a Redstone Powered Machine Component Manufacture Machine");
 
 
-        add("degeneracycraft_introduction" + ".title", "DCraftPedia");
+        add("degeneracycraft_introduction" + ".title", "DegeneracyCraftPedia");
         add("degeneracycraft_introduction" + ".landing",
                 "This DegeneracyCraft is a mod for industrial romance! It consists of 7 main areas and 10 phases. This DCraftPedia is the instruction manual for DegeneracyCraft.");
     }

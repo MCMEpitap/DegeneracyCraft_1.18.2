@@ -813,7 +813,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("advancements." + "Awakening with \"The Fool\"" + ".description", "レッドストーン動力機械要素製作機を作成");
 
 
-        add("degeneracycraft_introduction" + ".title", "DCraftPedia");
+        add("degeneracycraft_introduction" + ".title", "DegeneracyCraftPedia");
         add("degeneracycraft_introduction" + ".landing",
                 "このDegeneracyCraftは工業のロマンを求めたMODです！ 主に7つの分野と10段階のフェーズで構成されています。このDCraftPediaはDegeneracyCraftの説明書です。");
 

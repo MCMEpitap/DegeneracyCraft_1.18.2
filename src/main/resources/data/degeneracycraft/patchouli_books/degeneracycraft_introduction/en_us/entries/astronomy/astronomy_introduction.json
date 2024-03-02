@@ -4,17 +4,9 @@
   "category": "degeneracycraft:astronomy",
   "pages": [
     {
-      "type": "image",
-      "width": "0",
-      "height": "0",
-      "title": "Samples",
-      "images": [
-        "degeneracycraft:textures/item/astronomy_icon.png"
-      ],
-      "texture_width": "200",
-      "texture_height": "200",
-      "scale": "0.8",
-      "border": "true",
+      "type": "spotlight",
+      "item": "degeneracycraft:astronomy_icon",
+      "title": "天文学",
       "text": "Aim at interstellar flight"
     },
     {

@@ -788,25 +788,25 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("advancements." + "degeneracycraft" + ".astronomy" + ".description", "目指せ、星間飛行");
 
         add("advancements." + "degeneracycraft" + ".biology" + ".title", "生物学(Biology)");
-        add("advancements." + "degeneracycraft" + ".biology" + ".description", "生物の設計図を紐解く");
+        add("advancements." + "degeneracycraft" + ".biology" + ".description", "目指せ、螺旋復号");
 
         add("advancements." + "degeneracycraft" + ".chemistry" + ".title", "化学(Chemistry)");
-        add("advancements." + "degeneracycraft" + ".chemistry" + ".description", "化学構造を見定めて");
+        add("advancements." + "degeneracycraft" + ".chemistry" + ".description", "目指せ、反応臨界");
 
         add("advancements." + "degeneracycraft" + ".title", "DegeneracyCraft");
         add("advancements." + "degeneracycraft" + ".description", "DegeneracyCraft始動");
 
         add("advancements." + "degeneracycraft" + ".dynamic_physics" + ".title", "動的物理学(Dynamics Physics)");
-        add("advancements." + "degeneracycraft" + ".dynamic_physics" + ".description", "物理現象の利用を");
+        add("advancements." + "degeneracycraft" + ".dynamic_physics" + ".description", "目指せ、現象集約");
 
         add("advancements." + "degeneracycraft" + ".engineering" + ".title", "工学(Engineering)");
-        add("advancements." + "degeneracycraft" + ".engineering" + ".description", "作ろう, 工学と共に");
+        add("advancements." + "degeneracycraft" + ".engineering" + ".description", "目指せ、工学集積");
 
         add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".title", "模造魔道工学(Faux Magic Engineering)");
-        add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".description", "作ろう, 工学と共に");
+        add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".description", "目指せ、神秘解読");
 
         add("advancements." + "degeneracycraft" + ".geo_science" + ".title", "地学(Geo Science)");
-        add("advancements." + "degeneracycraft" + ".geo_science" + ".description", "大地を知ろう");
+        add("advancements." + "degeneracycraft" + ".geo_science" + ".description", "目指せ、層鉱処理");
 
 
         add("advancements." + "Awakening with \"The Fool\"" + ".title", "ある\"愚者\"の目覚め");

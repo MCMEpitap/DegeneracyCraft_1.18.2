@@ -788,25 +788,25 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("advancements." + "degeneracycraft" + ".astronomy" + ".description", "Aim at interstellar flight");
 
         add("advancements." + "degeneracycraft" + ".biology" + ".title", "Biology");
-        add("advancements." + "degeneracycraft" + ".biology" + ".description", "Unlocking Blueprint of Living");
+        add("advancements." + "degeneracycraft" + ".biology" + ".description", "Aim at helix decoding");
 
         add("advancements." + "degeneracycraft" + ".chemistry" + ".title", "Chemistry");
-        add("advancements." + "degeneracycraft" + ".chemistry" + ".description", "Determining Chemical Structure");
+        add("advancements." + "degeneracycraft" + ".chemistry" + ".description", "Aim at reaction criticality");
 
         add("advancements." + "degeneracycraft" + ".title", "DegeneracyCraft");
         add("advancements." + "degeneracycraft" + ".description", "Beginning DegeneracyCraft");
 
         add("advancements." + "degeneracycraft" + ".dynamic_physics" + ".title", "Dynamic Physics");
-        add("advancements." + "degeneracycraft" + ".dynamic_physics" + ".description", "Using Physical Phenomena");
+        add("advancements." + "degeneracycraft" + ".dynamic_physics" + ".description", "Aim at phenomenon aggregation");
 
         add("advancements." + "degeneracycraft" + ".engineering" + ".title", "Engineering");
-        add("advancements." + "degeneracycraft" + ".engineering" + ".description", "Crafting with Engineering");
+        add("advancements." + "degeneracycraft" + ".engineering" + ".description", "Aim for engineering integration");
 
         add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".title", "Faux Magic Engineering");
-        add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".description", "作ろう, 工学と共に");
+        add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".description", "Aim at deciphering the mysteries");
 
         add("advancements." + "degeneracycraft" + ".geoscience" + ".title", "Geo Science");
-        add("advancements." + "degeneracycraft" + ".geoscience" + ".description", "Knowing The Earth");
+        add("advancements." + "degeneracycraft" + ".geoscience" + ".description", "Aim at strata ore processing");
 
 
         add("advancements." + "Awakening with \"The Fool\"" + ".title", "Awakening with \"The Fool\"");

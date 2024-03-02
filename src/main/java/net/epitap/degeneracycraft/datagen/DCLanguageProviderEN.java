@@ -785,7 +785,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
 
         add("advancements." + "degeneracycraft" + ".astronomy" + ".title", "Astronomy");
-        add("advancements." + "degeneracycraft" + ".astronomy" + ".description", "Going Beyond Starry Sky");
+        add("advancements." + "degeneracycraft" + ".astronomy" + ".description", "Aim at interstellar flight");
 
         add("advancements." + "degeneracycraft" + ".biology" + ".title", "Biology");
         add("advancements." + "degeneracycraft" + ".biology" + ".description", "Unlocking Blueprint of Living");
@@ -815,7 +815,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add("degeneracycraft_introduction" + ".title", "DegeneracyCraftPedia");
         add("degeneracycraft_introduction" + ".landing",
-                "This DegeneracyCraft is a mod for industrial romance! <br>It consists of 7 main areas and 10 phases!<br>This DCraftPedia is the instruction manual for DegeneracyCraft!");
+                "This DegeneracyCraft is a mod for industrial romance! <br>It consists of 7 main areas and 10 phases!<br>This DegeneracyCraftPedia is the instruction manual for DegeneracyCraft!");
     }
 
 }

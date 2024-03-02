@@ -785,7 +785,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
         add("advancements." + "degeneracycraft" + ".astronomy" + ".title", "天文学(Astronomy)");
-        add("advancements." + "degeneracycraft" + ".astronomy" + ".description", "");
+        add("advancements." + "degeneracycraft" + ".astronomy" + ".description", "目指せ、星間飛行");
 
         add("advancements." + "degeneracycraft" + ".biology" + ".title", "生物学(Biology)");
         add("advancements." + "degeneracycraft" + ".biology" + ".description", "生物の設計図を紐解く");
@@ -815,7 +815,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
         add("degeneracycraft_introduction" + ".title", "DegeneracyCraftPedia");
         add("degeneracycraft_introduction" + ".landing",
-                "このDegeneracyCraftは工業のロマンを求めたMODです！<br>主に7つの分野と10段階のフェーズで構成されています!<br>このDCraftPediaはDegeneracyCraftの説明書です!");
+                "このDegeneracyCraftは工業のロマンを求めたMODです！<br>主に7つの分野と10段階のフェーズで構成されています!<br>このDegeneracyCraftPediaはDegeneracyCraftの説明書です!");
 
 
     }

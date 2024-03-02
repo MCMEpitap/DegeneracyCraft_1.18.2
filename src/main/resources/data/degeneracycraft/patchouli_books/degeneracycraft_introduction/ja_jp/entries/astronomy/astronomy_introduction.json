@@ -1,0 +1,21 @@
+{
+  "name": "錫石の超高温プラズマ",
+  "icon": "degeneracycraft:astronomy_icon",
+  "category": "degeneracycraft:astronomy",
+  "pages": [
+    {
+      "type": "image",
+      "width": "0",
+      "height": "0",
+      "title": "Samples",
+      "images": [
+        "degeneracycraft:textures/item/astronomy_icon.png"
+      ],
+      "texture_width": "200",
+      "texture_height": "200",
+      "scale": "1",
+      "border": "true",
+      "text": "目指せ、星間飛行"
+    }
+  ]
+}

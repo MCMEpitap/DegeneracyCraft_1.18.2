@@ -1,5 +1,6 @@
 {
   "name": "アイテム一覧",
   "description": "これはテストです！",
-  "icon": "minecraft:writable_book"
+  "icon": "minecraft:writable_book",
+  "sortnum": 10
 }

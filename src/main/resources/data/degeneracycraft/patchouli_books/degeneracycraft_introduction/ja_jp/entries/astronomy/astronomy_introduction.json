@@ -13,9 +13,9 @@
       ],
       "texture_width": "200",
       "texture_height": "200",
-      "scale": "1",
+      "scale": "0.8",
       "border": "true",
-      "text": "Aim at interstellar flight"
+      "text": "目指せ、星間飛行"
     },
     {
       "type": "text",

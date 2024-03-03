@@ -4,14 +4,17 @@
   "category": "degeneracycraft:astronomy",
   "pages": [
     {
-      "type": "spotlight",
-      "item": "degeneracycraft:astronomy_icon",
-      "title": "天文学",
-      "text": "Aim at interstellar flight"
+      "type": "image",
+      "title": "Samples",
+      "images": [
+        "degeneracycraft:textures/gui/entries/astronomy_introduction_icon.png"
+      ],
+      "text": "$(l)Aim at interstellar flight"
     },
     {
       "type": "text",
-      "text": ""
+      "max_width": 1,
+      "text": "DegeneracyCraftでの天文学は他の星の調査、研究はもちろん、他の星や危険な天体(技術力が上がれば現実味のない天体にも…)に上陸することも含まれます!$(br)また、ロケットより良い、重力に縛られない空間移動手段が存在するでしょう!"
     }
   ]
 }

@@ -5,7 +5,7 @@
   "pages": [
     {
       "type": "image",
-      "title": "Samples",
+      "title": "天文学アイコン",
       "images": [
         "degeneracycraft:textures/gui/entries/astronomy_introduction_icon.png"
       ],

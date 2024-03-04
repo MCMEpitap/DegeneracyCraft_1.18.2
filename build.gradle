@@ -52,7 +52,7 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 // Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 apply plugin:'eclipse'
 apply plugin:'maven-publish'
-    // This should be below the net.minecraftforge.gradle plugin
+// This should be below the net.minecraftforge.gradle plugin
 
 
 version = '1.0'

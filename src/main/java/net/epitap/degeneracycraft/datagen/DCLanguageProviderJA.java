@@ -611,24 +611,30 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_PRECISION_KEY_INSCRIBED_CIRCUIT.get(),"基本精度 キー刻印回路");
         add(DCItems.BASIC_PRECISION_NUT_INSCRIBED_CIRCUIT.get(),"基本精度 ナット刻印回路");
         add(DCItems.BASIC_PRECISION_PIPE_INSCRIBED_CIRCUIT.get(),"基本精度 管刻印回路");
-        add(DCItems.BASIC_PRECISION_PIPEJOINT_INSCRIBED_CIRCUIT.get(),"基本精度 管継手刻印回路");
-        add(DCItems.BASIC_PRECISION_PLATE_INSCRIBED_CIRCUIT.get(),"基本精度 板刻印回路");
-        add(DCItems.BASIC_PRECISION_ROD_INSCRIBED_CIRCUIT.get(),"基本精度 棒刻印回路");
-        add(DCItems.BASIC_PRECISION_SHAFT_INSCRIBED_CIRCUIT.get(),"基本精度 軸刻印回路");
-        add(DCItems.BASIC_PRECISION_SHAFTCOUPLING_INSCRIBED_CIRCUIT.get(),"基本精度 軸継手刻印回路");
-        add(DCItems.BASIC_PRECISION_SHAPESTEEL_INSCRIBED_CIRCUIT.get(),"基本精度 型鋼刻印回路");
-        add(DCItems.BASIC_PRECISION_SPRING_INSCRIBED_CIRCUIT.get(),"基本精度 バネ刻印回路");
+        add(DCItems.BASIC_PRECISION_PIPEJOINT_INSCRIBED_CIRCUIT.get(), "基本精度 管継手刻印回路");
+        add(DCItems.BASIC_PRECISION_PLATE_INSCRIBED_CIRCUIT.get(), "基本精度 板刻印回路");
+        add(DCItems.BASIC_PRECISION_ROD_INSCRIBED_CIRCUIT.get(), "基本精度 棒刻印回路");
+        add(DCItems.BASIC_PRECISION_SHAFT_INSCRIBED_CIRCUIT.get(), "基本精度 軸刻印回路");
+        add(DCItems.BASIC_PRECISION_SHAFTCOUPLING_INSCRIBED_CIRCUIT.get(), "基本精度 軸継手刻印回路");
+        add(DCItems.BASIC_PRECISION_SHAPESTEEL_INSCRIBED_CIRCUIT.get(), "基本精度 型鋼刻印回路");
+        add(DCItems.BASIC_PRECISION_SPRING_INSCRIBED_CIRCUIT.get(), "基本精度 バネ刻印回路");
 
 
-        add(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(),"マルチブロック設備ホログラム投影機");
+        add(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "マルチブロック設備ホログラム投影機");
+        add(DCItems.BASIC_MACHINE_SCREEN.get(), "基本等級機械スクリーン");
+        add(DCItems.BASIC_MOTOR.get(), "基本等級モーター");
+        add(DCItems.BASIC_REDSTONE_BATTERY.get(), "基本等級レッドストーン電池");
+        add(DCItems.BASIC_REINFORCEDPLATE.get(), "基本等級強化プレート");
+        add(DCItems.BASIC_TURBINE.get(), "基本等級タービン");
+
+        add(DCItems.BASIC_PRECISION_CIRCUIT.get(), "基本精度回路");
 
 
+        add(DCBlocks.PULVERIZER_BLOCK.get(), "粉砕機");
+        add(DCBlocks.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK.get(), "汎用組立機 Phase1");
 
-        add(DCBlocks.PULVERIZER_BLOCK.get(),"粉砕機");
-        add(DCBlocks.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK.get(),"汎用組立機 Phase1");
 
-
-        add(DCBlocks.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK.get(),"レッドストーン動力機械要素製作機");
+        add(DCBlocks.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK.get(), "レッドストーン動力機械要素製作機");
 
 
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "基本強度多重構造機械用基礎骨組ブロック");

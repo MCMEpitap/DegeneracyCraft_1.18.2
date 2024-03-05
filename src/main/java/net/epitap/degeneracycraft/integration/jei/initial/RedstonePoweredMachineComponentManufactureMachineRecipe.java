@@ -48,7 +48,7 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipe implements 
 
     @Override
     public boolean matches(SimpleContainer pContainer, Level level) {
-        return  energy == getRequiredEnergy() && time == getRequiredTime()
+        return energy == getRequiredEnergy() && time == getRequiredTime()
                 && input0.is(pContainer.getItem(0).getItem())
                 && input1.is(pContainer.getItem(1).getItem())
                 && input2.is(pContainer.getItem(2).getItem())
@@ -57,8 +57,9 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipe implements 
                 && input5.is(pContainer.getItem(5).getItem())
                 && input6.is(pContainer.getItem(6).getItem())
                 && input7.is(pContainer.getItem(7).getItem())
-                && input8.is(pContainer.getItem(8).getItem())
-                ;
+                && input8.is(pContainer.getItem(8).getItem());
+
+
     }
 
     @Override
@@ -105,11 +106,9 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipe implements 
     public ItemStack getInput8Item() {
         return input8;
     }
-
     public ItemStack getOutput0Item() {
         return output0;
     }
-
     @Override
     public ItemStack getResultItem() {
         return output0;
@@ -171,6 +170,7 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipe implements 
             float energy = pBuffer.readFloat();
             float time = pBuffer.readFloat();
             ItemStack input0 = pBuffer.readItem();
+            int inputAmount0 = pBuffer.readInt();
             ItemStack input1 = pBuffer.readItem();
             ItemStack input2 = pBuffer.readItem();
             ItemStack input3 = pBuffer.readItem();
@@ -188,7 +188,7 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipe implements 
         public void toNetwork(FriendlyByteBuf pBuffer, RedstonePoweredMachineComponentManufactureMachineRecipe pRecipe) {
 
             pBuffer.writeFloat(pRecipe.energy);
-            pBuffer.writeFloat(pRecipe.time).readFloat();
+            pBuffer.writeFloat(pRecipe.time);
             pBuffer.writeItem(pRecipe.input0.getContainerItem());
             pBuffer.writeItem(pRecipe.input1.getContainerItem());
             pBuffer.writeItem(pRecipe.input2.getContainerItem());
@@ -199,6 +199,7 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipe implements 
             pBuffer.writeItem(pRecipe.input7.getContainerItem());
             pBuffer.writeItem(pRecipe.input8.getContainerItem());
             pBuffer.writeItem(pRecipe.output0.getContainerItem());
+
         }
     }
 }

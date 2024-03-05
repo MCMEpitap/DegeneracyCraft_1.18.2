@@ -619,6 +619,10 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.BASIC_REINFORCEDPLATE.get());
         simpleItem(DCItems.BASIC_TURBINE.get());
 
+
+        simpleItem(DCItems.BASIC_PRECISION_CIRCUIT.get());
+
+
         simpleItem(DCItems.RAW_GRAVITATION_ORE.get());
 
         withExistingParent(DCBlocks.OVERWORLD_GRAVITATION_ORE.getId().getPath(),

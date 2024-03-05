@@ -48,11 +48,6 @@ public class RedstonePoweredMachineComponentManufactureMachineMenu extends Abstr
     }
 
     public float getProgressPercent() {
-//        if(recipe.getRequiredTime() == null) {
-//            return (blockEntity.data.get(0) / recipe.getRequiredTime()) * 20;
-//        }
-//        return 0;
-
         return blockEntity.getProgressPercent();
     }
 

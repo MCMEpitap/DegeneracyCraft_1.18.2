@@ -29,7 +29,6 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory imp
     private final IDrawable background;
     private final IDrawable icon;
 
-
     public RedstonePoweredMachineComponentManufactureMachineRecipeCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 151);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK.get()));
@@ -44,7 +43,6 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory imp
     public Class<? extends RedstonePoweredMachineComponentManufactureMachineRecipe> getRecipeClass() {
         return RedstonePoweredMachineComponentManufactureMachineRecipe.class;
     }
-
 
     @Override
     public Component getTitle() {
@@ -108,6 +106,7 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory imp
         builder.addSlot(RecipeIngredientRole.INPUT, 26, 43).addItemStack(recipe.getInput7Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 44, 43).addItemStack(recipe.getInput8Item());
         builder.addSlot(RecipeIngredientRole.OUTPUT,116,25).addItemStack(recipe.getOutput0Item());
+
     }
 }
 

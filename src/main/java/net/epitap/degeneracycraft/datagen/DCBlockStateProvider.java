@@ -75,8 +75,6 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> modelBasicPowerCompositeStructureTypeThermalGenerator);
     }
 
-
-
     private void orientedBlock(Block block, Function<BlockState, ModelFile> modelFunc) {
         getVariantBuilder(block)
                 .forAllStates(state -> {

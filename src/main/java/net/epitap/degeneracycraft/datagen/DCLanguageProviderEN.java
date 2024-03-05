@@ -614,21 +614,28 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_PRECISION_JOINT_INSCRIBED_CIRCUIT.get(),"Basic Precision Joint Inscribed Circuit");
         add(DCItems.BASIC_PRECISION_NUT_INSCRIBED_CIRCUIT.get(),"Basic Precision Nut Inscribed Circuit");
         add(DCItems.BASIC_PRECISION_PIPE_INSCRIBED_CIRCUIT.get(),"Basic Precision Pipe Inscribed Circuit");
-        add(DCItems.BASIC_PRECISION_PIPEJOINT_INSCRIBED_CIRCUIT.get(),"Basic Precision Pipejoint Inscribed Circuit");
-        add(DCItems.BASIC_PRECISION_PLATE_INSCRIBED_CIRCUIT.get(),"Basic Precision Plate Inscribed Circuit");
-        add(DCItems.BASIC_PRECISION_ROD_INSCRIBED_CIRCUIT.get(),"Basic Precision Rod Inscribed Circuit");
-        add(DCItems.BASIC_PRECISION_SHAFT_INSCRIBED_CIRCUIT.get(),"Basic Precision Shaft Inscribed Circuit");
-        add(DCItems.BASIC_PRECISION_SHAFTCOUPLING_INSCRIBED_CIRCUIT.get(),"Basic Precision Shaftcoupling Inscribed Circuit");
-        add(DCItems.BASIC_PRECISION_SHAPESTEEL_INSCRIBED_CIRCUIT.get(),"Basic Precision Shapesteel Inscribed Circuit");
-        add(DCItems.BASIC_PRECISION_SPRING_INSCRIBED_CIRCUIT.get(),"Basic Precision Spring Inscribed Circuit");
+        add(DCItems.BASIC_PRECISION_PIPEJOINT_INSCRIBED_CIRCUIT.get(), "Basic Precision Pipejoint Inscribed Circuit");
+        add(DCItems.BASIC_PRECISION_PLATE_INSCRIBED_CIRCUIT.get(), "Basic Precision Plate Inscribed Circuit");
+        add(DCItems.BASIC_PRECISION_ROD_INSCRIBED_CIRCUIT.get(), "Basic Precision Rod Inscribed Circuit");
+        add(DCItems.BASIC_PRECISION_SHAFT_INSCRIBED_CIRCUIT.get(), "Basic Precision Shaft Inscribed Circuit");
+        add(DCItems.BASIC_PRECISION_SHAFTCOUPLING_INSCRIBED_CIRCUIT.get(), "Basic Precision Shaftcoupling Inscribed Circuit");
+        add(DCItems.BASIC_PRECISION_SHAPESTEEL_INSCRIBED_CIRCUIT.get(), "Basic Precision Shapesteel Inscribed Circuit");
+        add(DCItems.BASIC_PRECISION_SPRING_INSCRIBED_CIRCUIT.get(), "Basic Precision Spring Inscribed Circuit");
 
 
-        add(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(),"Multiblock Structure Hologram Visualizer");
+        add(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "Multiblock Structure Hologram Visualizer");
+        add(DCItems.BASIC_MACHINE_SCREEN.get(), "Basic Machine Screen");
+        add(DCItems.BASIC_MOTOR.get(), "Basic Motor");
+        add(DCItems.BASIC_REDSTONE_BATTERY.get(), "Basic Redstone Battery");
+        add(DCItems.BASIC_REINFORCEDPLATE.get(), "Basic Reinforced Plate");
+        add(DCItems.BASIC_TURBINE.get(), "Basic Turbine");
 
 
-        add(DCBlocks.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK.get(),"Redstone Powered Machine Component Manufacture Machine");
+        add(DCItems.BASIC_PRECISION_CIRCUIT.get(), "Basic Precision Circuit");
 
-        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK.get(),"Basic Strength Multiblock Base Frame Block");
+        add(DCBlocks.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Component Manufacture Machine");
+
+        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Multiblock Base Frame Block");
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Multiblock Machine Frame Block");
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "Basic Strength Multiblock Structure Frame Block");
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), "Basic Strength Multiblock Structure Glass Block");

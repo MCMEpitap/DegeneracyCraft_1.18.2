@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei.initial;
+package net.epitap.degeneracycraft.integration.jei.basic;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.constants.VanillaTypes;
@@ -20,30 +20,34 @@ import net.minecraft.world.item.ItemStack;
 
 import javax.annotation.Nonnull;
 
-public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory implements IRecipeCategory<RedstonePoweredMachineComponentManufactureMachineRecipe> {
-    public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "redstone_powered_machine_component_manufacture_machine_recipe");
+public class BasicMachinePartProcessorRecipeCategory implements IRecipeCategory<BasicMachinePartProcessorRecipe> {
+    public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_machine_part_processor_recipe");
     public final static ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_component_manufacture_machine_uid.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic_machine_part_processor_uid.png");
 
     private final IDrawable background;
     private final IDrawable icon;
 
-    public RedstonePoweredMachineComponentManufactureMachineRecipeCategory(IGuiHelper helper) {
+    public BasicMachinePartProcessorRecipeCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 151);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK.get()));
     }
+
     @Override
     public ResourceLocation getUid() {
         return UID;
     }
+
     @Override
-    public Class<? extends RedstonePoweredMachineComponentManufactureMachineRecipe> getRecipeClass() {
-        return RedstonePoweredMachineComponentManufactureMachineRecipe.class;
+    public Class<? extends BasicMachinePartProcessorRecipe> getRecipeClass() {
+        return BasicMachinePartProcessorRecipe.class;
     }
+
     @Override
     public Component getTitle() {
         return new TranslatableComponent("jei.degeneracycraft_redstone_powered_machine_component_manufacture_machine");
     }
+
     @Override
     public IDrawable getBackground() {
         return this.background;
@@ -55,11 +59,11 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory imp
     }
 
     @Override
-    public void draw(RedstonePoweredMachineComponentManufactureMachineRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
+    public void draw(BasicMachinePartProcessorRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
         drawPhase(stack);
-        drawRequiredEnergy(recipe,stack);
-        drawRequiredEnergyUsage(recipe,stack);
-        drawRequiredTime(recipe,stack);
+        drawRequiredEnergy(recipe, stack);
+        drawRequiredEnergyUsage(recipe, stack);
+        drawRequiredTime(recipe, stack);
     }
 
     protected void drawPhase(PoseStack poseStack) {
@@ -67,14 +71,15 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory imp
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("screen." + "degeneracycraft" + ".phase0"), 15, 67, 0xFFFFFF);
     }
-    protected void drawRequiredEnergy(RedstonePoweredMachineComponentManufactureMachineRecipe recipe, PoseStack poseStack) {
+
+    protected void drawRequiredEnergy(BasicMachinePartProcessorRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergy."), 17, 87, 0xFFFFFF);
         fontRenderer.draw(poseStack, (recipe.getRequiredEnergy() + " FE"), 17, 97, 0xFFFFFF);
     }
 
-    protected void drawRequiredEnergyUsage(RedstonePoweredMachineComponentManufactureMachineRecipe recipe, PoseStack poseStack) {
+    protected void drawRequiredEnergyUsage(BasicMachinePartProcessorRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergyusage."), 17, 107, 0xFFFFFF);
@@ -82,16 +87,16 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory imp
 
     }
 
-    protected void drawRequiredTime(RedstonePoweredMachineComponentManufactureMachineRecipe recipe, PoseStack poseStack) {
+    protected void drawRequiredTime(BasicMachinePartProcessorRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredtime."), 17, 127, 0xFFFFFF);
-        fontRenderer.draw(poseStack, recipe.getRequiredTime() * 20 + " tick" + " " +  "(" + recipe.getRequiredTime() + " Sec" + ")" , 17, 137, 0xFFFFFF);
+        fontRenderer.draw(poseStack, recipe.getRequiredTime() * 20 + " tick" + " " + "(" + recipe.getRequiredTime() + " Sec" + ")", 17, 137, 0xFFFFFF);
     }
 
 
     @Override
-    public void setRecipe(@Nonnull IRecipeLayoutBuilder builder, @Nonnull RedstonePoweredMachineComponentManufactureMachineRecipe recipe, @Nonnull IFocusGroup focusGroup) {
+    public void setRecipe(@Nonnull IRecipeLayoutBuilder builder, @Nonnull BasicMachinePartProcessorRecipe recipe, @Nonnull IFocusGroup focusGroup) {
         builder.addSlot(RecipeIngredientRole.INPUT, 8, 7).addItemStack(recipe.getInput0Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 26, 7).addItemStack(recipe.getInput1Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 44, 7).addItemStack(recipe.getInput2Item());
@@ -101,7 +106,7 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory imp
         builder.addSlot(RecipeIngredientRole.INPUT, 8, 43).addItemStack(recipe.getInput6Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 26, 43).addItemStack(recipe.getInput7Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 44, 43).addItemStack(recipe.getInput8Item());
-        builder.addSlot(RecipeIngredientRole.OUTPUT,116,25).addItemStack(recipe.getOutput0Item());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 25).addItemStack(recipe.getOutput0Item());
 
     }
 }

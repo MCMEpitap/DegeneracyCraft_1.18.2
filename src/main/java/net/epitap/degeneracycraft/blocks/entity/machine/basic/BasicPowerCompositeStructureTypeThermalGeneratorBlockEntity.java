@@ -44,7 +44,6 @@ import javax.annotation.Nullable;
 import java.util.Map;
 
 public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends BlockEntity implements MenuProvider {
-
     public float BP_CS_T_THERMAL_GENERATOR_CAPACITY = 40000F;
     public float BP_CS_T_THERMAL_GENERATOR_TRANSFER = 40000F;
     public float BP_CS_T_THERMAL_GENERATOR_OUTPUT = 16F;
@@ -214,10 +213,6 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
 
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
-
-
-
-
     public static void tick(Level level, BlockPos pos, BlockState state, BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity pEntity) {
         pEntity.formed0 = pEntity.isFormed0(level, pos, state);
         pEntity.formed1 = pEntity.isFormed1(level, pos, state);

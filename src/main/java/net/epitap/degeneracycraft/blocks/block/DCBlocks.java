@@ -2,9 +2,10 @@ package net.epitap.degeneracycraft.blocks.block;
 
 
 import net.epitap.degeneracycraft.Degeneracycraft;
-//import net.epitap.degeneracycraft.EC.AAABlock;
-import net.epitap.degeneracycraft.blocks.block.machine.*;
 import net.epitap.degeneracycraft.blocks.block.machine.BoltManufactureMachineBlock.BasicPhaseBoltManufactureMachineBlock;
+import net.epitap.degeneracycraft.blocks.block.machine.PulverizerBlock;
+import net.epitap.degeneracycraft.blocks.block.machine.UniversalAssemblerPhase1Block;
+import net.epitap.degeneracycraft.blocks.block.machine.basic.BasicMachinePartProcessorBlock;
 import net.epitap.degeneracycraft.blocks.block.machine.basic.BasicPowerCompositeStructureTypeThermalGeneratorBlock;
 import net.epitap.degeneracycraft.blocks.block.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlock;
 import net.epitap.degeneracycraft.blocks.block.machine.initial.RedstonePoweredMachineComponentManufactureMachineBlock;
@@ -54,8 +55,10 @@ public class DCBlocks {
     public static final RegistryObject<Block> LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK = registerBlock("low_strength_multiblock_structure_glass_block",()->  new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
 
 
+
     public static final RegistryObject<Block> UNIVERSAL_ASSEMBLER_PHASE1_BLOCK = registerBlock("universal_assembler_phase1",()-> new UniversalAssemblerPhase1Block(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
             DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+
 //    public static final RegistryObject<Block> UNIVERSAL_ASSEMBLER_PHASE2_BLOCK = registerBlock("universal_assembler_phase2",()-> new UniversalAssemblerPhase2Block(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
 //            DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
 //    public static final RegistryObject<Block> UNIVERSAL_ASSEMBLER_PHASE3_BLOCK = registerBlock("universal_assembler_phase3",()-> new UniversalAssemblerPhase3Block(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
@@ -75,14 +78,16 @@ public class DCBlocks {
 //            DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
 
 
-
-    public static final RegistryObject<Block> REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK = registerBlock("redstone_powered_machine_component_manufacture_machine_block",()->
+    public static final RegistryObject<Block> REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK = registerBlock("redstone_powered_machine_component_manufacture_machine_block", () ->
                     new RedstonePoweredMachineComponentManufactureMachineBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
             DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK = registerBlock("basic_power_composite_structure_type_thermal_generator_block",()-> new BasicPowerCompositeStructureTypeThermalGeneratorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
+    public static final RegistryObject<Block> BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK = registerBlock("basic_power_composite_structure_type_thermal_generator_block", () -> new BasicPowerCompositeStructureTypeThermalGeneratorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
             DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
 
-    public static final RegistryObject<Block> BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_BLOCK = registerBlock("basic_phase_bolt_manufacture_machine_block",()-> new BasicPhaseBoltManufactureMachineBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
+    public static final RegistryObject<Block> BASIC_MACHINE_PART_PROCESSOR_BLOCK = registerBlock("basic_machine_part_processor_block", () -> new BasicMachinePartProcessorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
+            DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+
+    public static final RegistryObject<Block> BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_BLOCK = registerBlock("basic_phase_bolt_manufacture_machine_block", () -> new BasicPhaseBoltManufactureMachineBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
             DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
 
 

@@ -1,11 +1,11 @@
 package net.epitap.degeneracycraft.blocks.entity;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
-//import net.epitap.degeneracycraft.EC.AAABlockEntity;
 import net.epitap.degeneracycraft.blocks.block.DCBlocks;
-//import net.epitap.degeneracycraft.PipePara.pipeA.PipeBlocks;
-import net.epitap.degeneracycraft.blocks.entity.machine.*;
 import net.epitap.degeneracycraft.blocks.entity.machine.BoltManufactureMachineBlockEntity.BasicPhaseBoltManufactureMachineBlockEntity;
+import net.epitap.degeneracycraft.blocks.entity.machine.PulverizerBlockEntity;
+import net.epitap.degeneracycraft.blocks.entity.machine.UniversalAssemblerPhase1BlockEntity;
+import net.epitap.degeneracycraft.blocks.entity.machine.basic.BasicMachinePartProcessorBlockEntity;
 import net.epitap.degeneracycraft.blocks.entity.machine.basic.BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity;
 import net.epitap.degeneracycraft.blocks.entity.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.entity.machine.initial.RedstonePoweredMachineComponentManufactureMachineBlockEntity;
@@ -36,13 +36,16 @@ public class DCBlockEntities {
                     BlockEntityType.Builder.of(RedstonePoweredMachineComponentManufactureMachineBlockEntity::new, DCBlocks.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<BasicPhaseBoltManufactureMachineBlockEntity>> BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_phase_bolt_manufacture_machine_block_entity",()->
+            BLOCK_ENTITIES.register("basic_phase_bolt_manufacture_machine_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPhaseBoltManufactureMachineBlockEntity::new, DCBlocks.BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_BLOCK.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity>> BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_power_composite_structure_type_thermal_generator_block_entity",()->
+            BLOCK_ENTITIES.register("basic_power_composite_structure_type_thermal_generator_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity::new, DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<BasicMachinePartProcessorBlockEntity>> BASIC_MACHINE_PART_PROCESSOR_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_machine_part_processor_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicMachinePartProcessorBlockEntity::new, DCBlocks.BASIC_MACHINE_PART_PROCESSOR_BLOCK.get()).build(null));
 
 
 

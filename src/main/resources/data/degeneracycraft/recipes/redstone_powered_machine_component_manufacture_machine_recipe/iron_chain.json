@@ -1,7 +1,7 @@
 {
   "type": "degeneracycraft:redstone_powered_machine_component_manufacture_machine_recipe",
   "energy": 0.0,
-  "time": 5.0,
+  "time": 10.0,
   "input0": {
     "item": "minecraft:iron_ingot",
     "count": 2

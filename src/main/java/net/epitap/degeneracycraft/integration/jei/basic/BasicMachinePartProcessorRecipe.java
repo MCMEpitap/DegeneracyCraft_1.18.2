@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei.initial;
+package net.epitap.degeneracycraft.integration.jei.basic;
 
 import com.google.gson.JsonObject;
 import net.epitap.degeneracycraft.Degeneracycraft;
@@ -15,8 +15,7 @@ import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 import org.jetbrains.annotations.Nullable;
 
-public class RedstonePoweredMachineComponentManufactureMachineRecipe implements Recipe<SimpleContainer> {
-    private final ResourceLocation id;
+public class BasicMachinePartProcessorRecipe implements Recipe<SimpleContainer> {
     final float energy;
     final float time;
     final ItemStack input0;
@@ -29,8 +28,9 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipe implements 
     final ItemStack input7;
     final ItemStack input8;
     final ItemStack output0;
+    private final ResourceLocation id;
 
-    public RedstonePoweredMachineComponentManufactureMachineRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack input1, ItemStack input2, ItemStack input3, ItemStack input4, ItemStack input5, ItemStack input6, ItemStack input7, ItemStack input8, ItemStack output0) {
+    public BasicMachinePartProcessorRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack input1, ItemStack input2, ItemStack input3, ItemStack input4, ItemStack input5, ItemStack input6, ItemStack input7, ItemStack input8, ItemStack output0) {
         this.id = id;
         this.energy = energy;
         this.time = time;
@@ -46,6 +46,10 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipe implements 
         this.output0 = output0;
     }
 
+    public static ItemStack itemStackFromJson(JsonObject pStackObject) {
+        return CraftingHelper.getItemStack(pStackObject, true, false);
+    }
+
     @Override
     public boolean matches(SimpleContainer pContainer, Level level) {
         return energy == getRequiredEnergy() && time == getRequiredTime()
@@ -58,8 +62,6 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipe implements 
                 && input6.is(pContainer.getItem(6).getItem())
                 && input7.is(pContainer.getItem(7).getItem())
                 && input8.is(pContainer.getItem(8).getItem());
-
-
     }
 
     @Override
@@ -75,6 +77,7 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipe implements 
     public float getRequiredEnergy() {
         return energy;
     }
+
     public float getRequiredTime() {
         return time;
     }
@@ -82,33 +85,43 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipe implements 
     public ItemStack getInput0Item() {
         return input0;
     }
+
     public ItemStack getInput1Item() {
         return input1;
     }
+
     public ItemStack getInput2Item() {
         return input2;
     }
+
     public ItemStack getInput3Item() {
         return input3;
     }
+
     public ItemStack getInput4Item() {
         return input4;
     }
+
     public ItemStack getInput5Item() {
         return input5;
     }
+
     public ItemStack getInput6Item() {
         return input6;
     }
+
     public ItemStack getInput7Item() {
         return input7;
     }
+
     public ItemStack getInput8Item() {
         return input8;
     }
+
     public ItemStack getOutput0Item() {
         return output0;
     }
+
     @Override
     public ItemStack getResultItem() {
         return output0;
@@ -121,55 +134,53 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipe implements 
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return Serializer.INSTANCE;
-    }
-
-
-    public static ItemStack itemStackFromJson(JsonObject pStackObject) {
-        return CraftingHelper.getItemStack(pStackObject, true, false);
+        return BasicMachinePartProcessorRecipe.Serializer.INSTANCE;
     }
 
     @Override
     public RecipeType<?> getType() {
-        return Type.INSTANCE;
+        return BasicMachinePartProcessorRecipe.Type.INSTANCE;
     }
 
-    public static class Type implements RecipeType<RedstonePoweredMachineComponentManufactureMachineRecipe> {
-        private Type() { }
-        public static final Type INSTANCE = new Type();
-        public static final String ID = "redstone_powered_machine_component_manufacture_machine_recipe";
+    public static class Type implements RecipeType<BasicMachinePartProcessorRecipe> {
+        public static final BasicMachinePartProcessorRecipe.Type INSTANCE = new BasicMachinePartProcessorRecipe.Type();
+        public static final String ID = "basic_machine_part_processor_recipe";
+
+        private Type() {
+        }
     }
 
 
-    public static class Serializer extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<RedstonePoweredMachineComponentManufactureMachineRecipe> {
-        public static final Serializer INSTANCE = new Serializer();
+    public static class Serializer extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<BasicMachinePartProcessorRecipe> {
+        public static final BasicMachinePartProcessorRecipe.Serializer INSTANCE = new BasicMachinePartProcessorRecipe.Serializer();
 
         public static final ResourceLocation ID =
-                new ResourceLocation(Degeneracycraft.MOD_ID, "redstone_powered_machine_component_manufacture_machine_recipe");
+                new ResourceLocation(Degeneracycraft.MOD_ID, "basic_machine_part_processor_recipe");
 
-        public RedstonePoweredMachineComponentManufactureMachineRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
+        public BasicMachinePartProcessorRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
 
             float energy = GsonHelper.getAsFloat(pJson, "energy", 1);
             float time = GsonHelper.getAsFloat(pJson, "time", 1);
-            ItemStack input0 = RedstonePoweredMachineComponentManufactureMachineRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input0"));
-            ItemStack input1 = RedstonePoweredMachineComponentManufactureMachineRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input1"));
-            ItemStack input2 = RedstonePoweredMachineComponentManufactureMachineRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input2"));
-            ItemStack input3 = RedstonePoweredMachineComponentManufactureMachineRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input3"));
-            ItemStack input4 = RedstonePoweredMachineComponentManufactureMachineRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input4"));
-            ItemStack input5 = RedstonePoweredMachineComponentManufactureMachineRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input5"));
-            ItemStack input6 = RedstonePoweredMachineComponentManufactureMachineRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input6"));
-            ItemStack input7 = RedstonePoweredMachineComponentManufactureMachineRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input7"));
-            ItemStack input8 = RedstonePoweredMachineComponentManufactureMachineRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input8"));
-            ItemStack output0 = RedstonePoweredMachineComponentManufactureMachineRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output0"));
+            ItemStack input0 = BasicMachinePartProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input0"));
+            ItemStack input1 = BasicMachinePartProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input1"));
+            ItemStack input2 = BasicMachinePartProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input2"));
+            ItemStack input3 = BasicMachinePartProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input3"));
+            ItemStack input4 = BasicMachinePartProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input4"));
+            ItemStack input5 = BasicMachinePartProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input5"));
+            ItemStack input6 = BasicMachinePartProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input6"));
+            ItemStack input7 = BasicMachinePartProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input7"));
+            ItemStack input8 = BasicMachinePartProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input8"));
+            ItemStack output0 = BasicMachinePartProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output0"));
 
-            return new RedstonePoweredMachineComponentManufactureMachineRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, input5, input6, input7, input8, output0);
+            return new BasicMachinePartProcessorRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, input5, input6, input7, input8, output0);
         }
 
         @Override
-        public @Nullable RedstonePoweredMachineComponentManufactureMachineRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
+        public @Nullable BasicMachinePartProcessorRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
             float energy = pBuffer.readFloat();
             float time = pBuffer.readFloat();
             ItemStack input0 = pBuffer.readItem();
+            int inputAmount0 = pBuffer.readInt();
             ItemStack input1 = pBuffer.readItem();
             ItemStack input2 = pBuffer.readItem();
             ItemStack input3 = pBuffer.readItem();
@@ -180,11 +191,11 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipe implements 
             ItemStack input8 = pBuffer.readItem();
             ItemStack output0 = pBuffer.readItem();
 
-            return new RedstonePoweredMachineComponentManufactureMachineRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, input5, input6, input7, input8, output0);
+            return new BasicMachinePartProcessorRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, input5, input6, input7, input8, output0);
         }
 
         @Override
-        public void toNetwork(FriendlyByteBuf pBuffer, RedstonePoweredMachineComponentManufactureMachineRecipe pRecipe) {
+        public void toNetwork(FriendlyByteBuf pBuffer, BasicMachinePartProcessorRecipe pRecipe) {
 
             pBuffer.writeFloat(pRecipe.energy);
             pBuffer.writeFloat(pRecipe.time);

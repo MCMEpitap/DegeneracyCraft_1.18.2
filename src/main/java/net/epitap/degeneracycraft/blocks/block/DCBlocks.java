@@ -77,7 +77,6 @@ public class DCBlocks {
 //    public static final RegistryObject<Block> UNIVERSAL_ASSEMBLER_PHASEMAX_BLOCK = registerBlock("universal_assembler_phasemax",()-> new UniversalAssemblerPhasemaxBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
 //            DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
 
-
     public static final RegistryObject<Block> REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK = registerBlock("redstone_powered_machine_component_manufacture_machine_block", () ->
                     new RedstonePoweredMachineComponentManufactureMachineBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
             DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);

@@ -23,14 +23,14 @@ import javax.annotation.Nonnull;
 public class BasicMachinePartProcessorRecipeCategory implements IRecipeCategory<BasicMachinePartProcessorRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_machine_part_processor_recipe");
     public final static ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic_machine_part_processor_uid.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_component_manufacture_machine_uid.png");
 
     private final IDrawable background;
     private final IDrawable icon;
 
     public BasicMachinePartProcessorRecipeCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 151);
-        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK.get()));
+        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.BASIC_MACHINE_PART_PROCESSOR_BLOCK.get()));
     }
 
     @Override
@@ -45,7 +45,7 @@ public class BasicMachinePartProcessorRecipeCategory implements IRecipeCategory<
 
     @Override
     public Component getTitle() {
-        return new TranslatableComponent("jei.degeneracycraft_redstone_powered_machine_component_manufacture_machine");
+        return new TranslatableComponent("jei.degeneracycraft_basic_machine_part_processor");
     }
 
     @Override

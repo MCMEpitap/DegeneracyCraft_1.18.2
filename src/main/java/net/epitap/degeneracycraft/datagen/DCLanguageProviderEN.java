@@ -659,6 +659,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("message." + "degeneracycraft_redstone_powered_machine_component_manufacture_machine", "Phase 0 Initial");
         add("screen." + "degeneracycraft_pulverizer", "Pulverizer Screen");
         add("jei." + "degeneracycraft_redstone_powered_machine_component_manufacture_machine", "Redstone Powered Machine Component Manufacture Machine Recipe");
+        add("jei." + "degeneracycraft_basic_machine_part_processor", "Basic Machine Part Processor Recipe");
 
         add("itemGroup." + "degeneracycraft_machine_component", "DegeneracyCraft Machine Component");
         add("itemGroup." + "degeneracycraft_multiplied_ore_material", "DegeneracyCraft Multiplied Ore Material");

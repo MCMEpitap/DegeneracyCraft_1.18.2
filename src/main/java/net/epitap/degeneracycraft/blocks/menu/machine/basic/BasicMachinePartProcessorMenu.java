@@ -18,20 +18,18 @@ public class BasicMachinePartProcessorMenu extends AbstractContainerMenu {
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
+    private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_SLOT_COUNT = 10;
     public final BasicMachinePartProcessorBlockEntity blockEntity;
     public final Level level;
     public final ContainerData data;
     public BasicMachinePartProcessorRecipe recipe;
-
     public BasicMachinePartProcessorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
         this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
-
     public BasicMachinePartProcessorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
         super(DCMenuTypes.BASIC_MACHINE_PART_PROCESSOR_MACHINE_MENU.get(), id);
         blockEntity = (BasicMachinePartProcessorBlockEntity) entity;
@@ -51,19 +49,15 @@ public class BasicMachinePartProcessorMenu extends AbstractContainerMenu {
 
         addDataSlots(data);
     }
-
     public boolean isCrafting() {
         return data.get(0) > 0;
     }
-
     public float getProgressPercent() {
         return blockEntity.getProgressPercent();
     }
-
     public BasicMachinePartProcessorBlockEntity getBlockEntity() {
         return this.blockEntity;
     }
-
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {
         Slot sourceSlot = slots.get(index);
@@ -100,7 +94,7 @@ public class BasicMachinePartProcessorMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, DCBlocks.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK.get());
+                player, DCBlocks.BASIC_MACHINE_PART_PROCESSOR_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

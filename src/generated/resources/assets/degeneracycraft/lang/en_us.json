@@ -435,6 +435,7 @@
   "itemGroup.degeneracycraft_machine_component": "DegeneracyCraft Machine Component",
   "itemGroup.degeneracycraft_multiplied_ore_material": "DegeneracyCraft Multiplied Ore Material",
   "itemGroup.degeneracycraft_ore": "DegeneracyCraft Ore",
+  "jei.degeneracycraft_basic_machine_part_processor": "Basic Machine Part Processor Recipe",
   "jei.degeneracycraft_redstone_powered_machine_component_manufacture_machine": "Redstone Powered Machine Component Manufacture Machine Recipe",
   "message.degeneracycraft_redstone_powered_machine_component_manufacture_machine": "Phase 0 Initial",
   "screen.degeneracycraft.phase0": "Phase 0",

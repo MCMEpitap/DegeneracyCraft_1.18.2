@@ -16,6 +16,7 @@ import net.minecraftforge.registries.ForgeRegistryEntry;
 import org.jetbrains.annotations.Nullable;
 
 public class BasicMachinePartProcessorRecipe implements Recipe<SimpleContainer> {
+    private final ResourceLocation id;
     final float energy;
     final float time;
     final ItemStack input0;
@@ -28,7 +29,6 @@ public class BasicMachinePartProcessorRecipe implements Recipe<SimpleContainer> 
     final ItemStack input7;
     final ItemStack input8;
     final ItemStack output0;
-    private final ResourceLocation id;
 
     public BasicMachinePartProcessorRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack input1, ItemStack input2, ItemStack input3, ItemStack input4, ItemStack input5, ItemStack input6, ItemStack input7, ItemStack input8, ItemStack output0) {
         this.id = id;
@@ -46,10 +46,6 @@ public class BasicMachinePartProcessorRecipe implements Recipe<SimpleContainer> 
         this.output0 = output0;
     }
 
-    public static ItemStack itemStackFromJson(JsonObject pStackObject) {
-        return CraftingHelper.getItemStack(pStackObject, true, false);
-    }
-
     @Override
     public boolean matches(SimpleContainer pContainer, Level level) {
         return energy == getRequiredEnergy() && time == getRequiredTime()
@@ -63,7 +59,6 @@ public class BasicMachinePartProcessorRecipe implements Recipe<SimpleContainer> 
                 && input7.is(pContainer.getItem(7).getItem())
                 && input8.is(pContainer.getItem(8).getItem());
     }
-
     @Override
     public ItemStack assemble(SimpleContainer pContainer) {
         return output0;
@@ -77,7 +72,6 @@ public class BasicMachinePartProcessorRecipe implements Recipe<SimpleContainer> 
     public float getRequiredEnergy() {
         return energy;
     }
-
     public float getRequiredTime() {
         return time;
     }
@@ -85,39 +79,30 @@ public class BasicMachinePartProcessorRecipe implements Recipe<SimpleContainer> 
     public ItemStack getInput0Item() {
         return input0;
     }
-
     public ItemStack getInput1Item() {
         return input1;
     }
-
     public ItemStack getInput2Item() {
         return input2;
     }
-
     public ItemStack getInput3Item() {
         return input3;
     }
-
     public ItemStack getInput4Item() {
         return input4;
     }
-
     public ItemStack getInput5Item() {
         return input5;
     }
-
     public ItemStack getInput6Item() {
         return input6;
     }
-
     public ItemStack getInput7Item() {
         return input7;
     }
-
     public ItemStack getInput8Item() {
         return input8;
     }
-
     public ItemStack getOutput0Item() {
         return output0;
     }
@@ -132,6 +117,10 @@ public class BasicMachinePartProcessorRecipe implements Recipe<SimpleContainer> 
         return id;
     }
 
+    public static ItemStack itemStackFromJson(JsonObject pStackObject) {
+        return CraftingHelper.getItemStack(pStackObject, true, false);
+    }
+
     @Override
     public RecipeSerializer<?> getSerializer() {
         return BasicMachinePartProcessorRecipe.Serializer.INSTANCE;
@@ -143,11 +132,10 @@ public class BasicMachinePartProcessorRecipe implements Recipe<SimpleContainer> 
     }
 
     public static class Type implements RecipeType<BasicMachinePartProcessorRecipe> {
-        public static final BasicMachinePartProcessorRecipe.Type INSTANCE = new BasicMachinePartProcessorRecipe.Type();
-        public static final String ID = "basic_machine_part_processor_recipe";
-
         private Type() {
         }
+        public static final BasicMachinePartProcessorRecipe.Type INSTANCE = new BasicMachinePartProcessorRecipe.Type();
+        public static final String ID = "basic_machine_part_processor_recipe";
     }
 
 
@@ -180,7 +168,6 @@ public class BasicMachinePartProcessorRecipe implements Recipe<SimpleContainer> 
             float energy = pBuffer.readFloat();
             float time = pBuffer.readFloat();
             ItemStack input0 = pBuffer.readItem();
-            int inputAmount0 = pBuffer.readInt();
             ItemStack input1 = pBuffer.readItem();
             ItemStack input2 = pBuffer.readItem();
             ItemStack input3 = pBuffer.readItem();

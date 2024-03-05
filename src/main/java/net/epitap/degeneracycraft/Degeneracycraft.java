@@ -87,6 +87,7 @@ public class Degeneracycraft {
         MenuScreens.register(DCMenuTypes.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_MENU.get(), RedstonePoweredMachineComponentManufactureMachineScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_MENU.get(), BasicPowerCompositeStructureTypeThermalGeneratorScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_MACHINE_PART_PROCESSOR_MACHINE_MENU.get(), BasicMachinePartProcessorScreen::new);
+
         MenuScreens.register(DCMenuTypes.BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_MENU.get(), BasicPhaseBoltManufactureMachineScreen::new);
 
         ItemBlockRenderTypes.setRenderLayer(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());

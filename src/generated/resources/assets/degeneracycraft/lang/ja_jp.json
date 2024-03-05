@@ -436,6 +436,7 @@
   "itemGroup.degeneracycraft_machine_component": "\u7E2E\u9000\u30AF\u30E9\u30D5\u30C8 \u6A5F\u68B0\u8981\u7D20",
   "itemGroup.degeneracycraft_multiplied_ore_material": "\u7E2E\u9000\u30AF\u30E9\u30D5\u30C8 \u9271\u77F3\u500D\u5316\u7D20\u6750",
   "itemGroup.degeneracycraft_ore": "\u7E2E\u9000\u30AF\u30E9\u30D5\u30C8 \u9271\u77F3",
+  "jei.degeneracycraft_basic_machine_part_processor": "\u57FA\u672C\u7CBE\u5EA6\u6A5F\u68B0\u8981\u7D20\u52A0\u5DE5\u6A5F \u30EC\u30B7\u30D4",
   "jei.degeneracycraft_redstone_powered_machine_component_manufacture_machine": "\u30EC\u30C3\u30C9\u30B9\u30C8\u30FC\u30F3\u52D5\u529B\u6A5F\u68B0\u8981\u7D20\u88FD\u4F5C\u6A5F \u30EC\u30B7\u30D4",
   "message.degeneracycraft_redstone_powered_machine_component_manufacture_machine": "Phase 0 \u307E\u305A\u3053\u308C\u3092",
   "screen.degeneracycraft.phase0": "Phase 0",

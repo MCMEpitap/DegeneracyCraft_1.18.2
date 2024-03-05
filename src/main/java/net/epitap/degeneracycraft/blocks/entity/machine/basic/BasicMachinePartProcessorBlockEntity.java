@@ -93,6 +93,56 @@ public class BasicMachinePartProcessorBlockEntity extends BlockEntity implements
 
     }
 
+    private static boolean hasNotReachedStackLimit(BasicMachinePartProcessorBlockEntity pBlockEntity) {
+        return pBlockEntity.itemHandler.getStackInSlot(9).getCount() < pBlockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
+    }
+
+    @Override
+    public Component getDisplayName() {
+        return new TranslatableComponent("");
+    }
+
+    @Nullable
+    @Override
+    public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
+        return new BasicMachinePartProcessorMenu(pContainerId, pInventory, this, this.data);
+    }
+
+    @Override
+    public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+            if (side == null) {
+                return lazyItemHandler.cast();
+            }
+            if (directionWrappedHandlerMap.containsKey(side)) {
+                Direction localDir = this.getBlockState().getValue(BasicMachinePartProcessorBlock.FACING);
+
+                if (side == Direction.UP || side == Direction.DOWN) {
+                    return directionWrappedHandlerMap.get(side).cast();
+                }
+                return switch (localDir) {
+                    default -> directionWrappedHandlerMap.get(side.getOpposite()).cast();
+                    case EAST -> directionWrappedHandlerMap.get(side.getClockWise()).cast();
+                    case SOUTH -> directionWrappedHandlerMap.get(side).cast();
+                    case WEST -> directionWrappedHandlerMap.get(side.getCounterClockWise()).cast();
+                };
+            }
+        }
+        return super.getCapability(cap, side);
+    }
+
+    @Override
+    public void onLoad() {
+        super.onLoad();
+        lazyItemHandler = LazyOptional.of(() -> itemHandler);
+    }
+
+    @Override
+    public void invalidateCaps() {
+        super.invalidateCaps();
+        lazyItemHandler.invalidate();
+    }
+
     public static void tick(Level level, BlockPos pPos, BlockState pState, BasicMachinePartProcessorBlockEntity blockEntity) {
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity)) {
             if (hasNotReachedStackLimit(blockEntity)) {
@@ -189,65 +239,6 @@ public class BasicMachinePartProcessorBlockEntity extends BlockEntity implements
         }
     }
 
-    private static boolean hasNotReachedStackLimit(BasicMachinePartProcessorBlockEntity pBlockEntity) {
-        return pBlockEntity.itemHandler.getStackInSlot(9).getCount() < pBlockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
-    }
-
-    @Override
-    public Component getDisplayName() {
-        return new TranslatableComponent("");
-    }
-
-    @Nullable
-    @Override
-    public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return new BasicMachinePartProcessorMenu(pContainerId, pInventory, this, this.data);
-    }
-
-    @Override
-    public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
-            if (side == null) {
-                return lazyItemHandler.cast();
-            }
-            if (directionWrappedHandlerMap.containsKey(side)) {
-                Direction localDir = this.getBlockState().getValue(BasicMachinePartProcessorBlock.FACING);
-
-                if (side == Direction.UP || side == Direction.DOWN) {
-                    return directionWrappedHandlerMap.get(side).cast();
-                }
-                return switch (localDir) {
-                    default -> directionWrappedHandlerMap.get(side.getOpposite()).cast();
-                    case EAST -> directionWrappedHandlerMap.get(side.getClockWise()).cast();
-                    case SOUTH -> directionWrappedHandlerMap.get(side).cast();
-                    case WEST -> directionWrappedHandlerMap.get(side.getCounterClockWise()).cast();
-                };
-            }
-        }
-        return super.getCapability(cap, side);
-    }
-
-    @Override
-    public void onLoad() {
-        super.onLoad();
-        lazyItemHandler = LazyOptional.of(() -> itemHandler);
-    }
-
-    @Override
-    public void invalidateCaps() {
-        super.invalidateCaps();
-        lazyItemHandler.invalidate();
-    }
-
-    public void drops() {
-        SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
-        for (int i = 0; i < itemHandler.getSlots(); i++) {
-            inventory.setItem(i, itemHandler.getStackInSlot(i));
-        }
-
-        Containers.dropContents(this.level, this.worldPosition, inventory);
-    }
-
     public float getProgressPercent() {
         Level level = this.level;
         SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
@@ -268,4 +259,12 @@ public class BasicMachinePartProcessorBlockEntity extends BlockEntity implements
         this.progress = 0;
     }
 
+    public void drops() {
+        SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
+        for (int i = 0; i < itemHandler.getSlots(); i++) {
+            inventory.setItem(i, itemHandler.getStackInSlot(i));
+        }
+
+        Containers.dropContents(this.level, this.worldPosition, inventory);
+    }
 }

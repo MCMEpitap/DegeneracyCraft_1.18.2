@@ -656,6 +656,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("message." + "degeneracycraft_redstone_powered_machine_component_manufacture_machine", "Phase 0 まずこれを");
         add("screen." + "degeneracycraft_pulverizer", "粉砕機 画面");
         add("jei." + "degeneracycraft_redstone_powered_machine_component_manufacture_machine", "レッドストーン動力機械要素製作機 レシピ");
+        add("jei." + "degeneracycraft_basic_machine_part_processor", "基本精度機械要素加工機 レシピ");
 
         add("itemGroup." + "degeneracycraft_machine_component", "縮退クラフト 機械要素");
         add("itemGroup." + "degeneracycraft_multiplied_ore_material", "縮退クラフト 鉱石倍化素材");

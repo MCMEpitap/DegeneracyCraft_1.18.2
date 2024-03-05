@@ -32,13 +32,15 @@ public class DCBlockLootTable extends BlockLoot {
 
         this.add(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get()));
         this.add(DCBlocks.BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_BLOCK.get()));
+        this.add(DCBlocks.BASIC_MACHINE_PART_PROCESSOR_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_MACHINE_PART_PROCESSOR_BLOCK.get()));
+
 
         this.add(DCBlocks.PULVERIZER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.PULVERIZER_BLOCK.get()));
         this.add(DCBlocks.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK.get(), block -> createSingleItemTable(DCBlocks.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK.get()));
 
 //        this.add(DCBlocks.TEST.get(),block -> createSingleItemTable(DCBlocks.TEST.get()));
 
-        this.add(DCBlocks.INFINITY_POWERED_ALL_IN_ONE_COMPRESSOR_MACHINE_BLOCK.get(),block -> createSingleItemTable(DCBlocks.INFINITY_POWERED_ALL_IN_ONE_COMPRESSOR_MACHINE_BLOCK.get()));
+        this.add(DCBlocks.INFINITY_POWERED_ALL_IN_ONE_COMPRESSOR_MACHINE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.INFINITY_POWERED_ALL_IN_ONE_COMPRESSOR_MACHINE_BLOCK.get()));
 
 
     }

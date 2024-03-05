@@ -14,13 +14,12 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class BasicMachinePartProcessorScreen extends AbstractContainerScreen<BasicMachinePartProcessorMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic_machine_part_processor_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_component_manufacture_machine_gui.png");
 
 
     public BasicMachinePartProcessorScreen(BasicMachinePartProcessorMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }
-
 
     @Override
     protected void renderBg(PoseStack pPoseStack, float pPartialTick, int pMouseX, int pMouseY) {

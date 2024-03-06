@@ -2,33 +2,35 @@
   "type": "degeneracycraft:basic_machine_part_processor_recipe",
   "energy": 0.0,
   "time": 5.0,
-  "input0": {
-    "item": "minecraft:air"
-  },
-  "input1": {
-    "item": "minecraft:iron_ingot"
-  },
-  "input2": {
-    "item": "minecraft:air"
-  },
-  "input3": {
-    "item": "minecraft:iron_ingot"
-  },
-  "input4": {
-    "item": "minecraft:air"
-  },
-  "input5": {
-    "item": "minecraft:iron_ingot"
-  },
-  "input6": {
-    "item": "minecraft:air"
-  },
-  "input7": {
-    "item": "minecraft:iron_ingot"
-  },
-  "input8": {
-    "item": "minecraft:air"
-  },
+  "ingredients": [
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    },
+    {
+      "item": "minecraft:iron_ingot"
+    },
+    {
+      "item": "minecraft:gold_ingot"
+    }
+  ],
   "output0": {
     "item": "degeneracycraft:iron_bearing"
   }

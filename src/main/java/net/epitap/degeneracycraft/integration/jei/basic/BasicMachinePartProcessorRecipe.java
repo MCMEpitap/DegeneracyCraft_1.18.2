@@ -66,6 +66,7 @@ public class BasicMachinePartProcessorRecipe implements Recipe<SimpleContainer> 
 //                && input8.is(pContainer.getItem(8).getItem());
 
         return recipeItems.get(0).test(pContainer.getItem(0));
+
     }
     @Override
     public ItemStack assemble(SimpleContainer pContainer) {

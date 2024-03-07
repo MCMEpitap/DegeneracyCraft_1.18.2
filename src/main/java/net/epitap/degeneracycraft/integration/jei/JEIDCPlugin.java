@@ -7,7 +7,6 @@ import mezz.jei.api.registration.*;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.block.DCBlocks;
 import net.epitap.degeneracycraft.blocks.menu.machine.basic.BasicMachinePartProcessorMenu;
-import net.epitap.degeneracycraft.blocks.menu.machine.initial.RedstonePoweredMachineComponentManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.screen.basic.BasicMachinePartProcessorScreen;
 import net.epitap.degeneracycraft.blocks.screen.initial.RedstonePoweredMachineComponentManufactureMachineScreen;
 import net.epitap.degeneracycraft.integration.jei.basic.BasicMachinePartProcessorRecipe;
@@ -70,13 +69,6 @@ public class JEIDCPlugin implements IModPlugin {
 
     @Override
     public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
-        registration.addRecipeTransferHandler(RedstonePoweredMachineComponentManufactureMachineMenu.class, RedstonePoweredMachineComponentManufactureMachineRecipeCategory.UID,1,9,10,36);
-        registration.addRecipeTransferHandler(BasicMachinePartProcessorMenu.class, BasicMachinePartProcessorRecipeCategory.UID,1,9,10,36);
+        registration.addRecipeTransferHandler(BasicMachinePartProcessorMenu.class, BasicMachinePartProcessorRecipeCategory.TYPE, 0, 9, 10, 36);
     }
-
-
-//    @Override
-//    public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
-//        IModPlugin.super.registerRecipeTransferHandlers(registration);
-//    }
 }

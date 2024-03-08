@@ -33,6 +33,7 @@ public class BasicMachinePartProcessorMenu extends AbstractContainerMenu {
     public BasicMachinePartProcessorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
         super(DCMenuTypes.BASIC_MACHINE_PART_PROCESSOR_MACHINE_MENU.get(), id);
         blockEntity = (BasicMachinePartProcessorBlockEntity) entity;
+        checkContainerSize(inv, 10);
         this.level = inv.player.level;
         this.data = data;
         addPlayerInventory(inv);

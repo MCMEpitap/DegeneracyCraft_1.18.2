@@ -67,10 +67,10 @@ public class BasicMachinePartProcessorRecipeCategory implements IRecipeCategory<
 
     @Override
     public void draw(BasicMachinePartProcessorRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
-        drawPhase(stack);
-        drawRequiredEnergy(recipe, stack);
-        drawRequiredEnergyUsage(recipe, stack);
-        drawRequiredTime(recipe, stack);
+//        drawPhase(stack);
+//        drawRequiredEnergy(recipe, stack);
+//        drawRequiredEnergyUsage(recipe, stack);
+//        drawRequiredTime(recipe, stack);
     }
 
     protected void drawPhase(PoseStack poseStack) {

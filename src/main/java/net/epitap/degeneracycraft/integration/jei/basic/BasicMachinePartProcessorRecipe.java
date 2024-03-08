@@ -153,6 +153,9 @@ public class BasicMachinePartProcessorRecipe implements Recipe<SimpleContainer> 
 
 
     public static class Serializer extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<BasicMachinePartProcessorRecipe> {
+        public Serializer() {
+        }
+
         public static final BasicMachinePartProcessorRecipe.Serializer INSTANCE = new BasicMachinePartProcessorRecipe.Serializer();
 
         public static final ResourceLocation ID =

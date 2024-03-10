@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei.basic;
+package net.epitap.degeneracycraft.integration.jei;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.constants.VanillaTypes;
@@ -12,6 +12,7 @@ import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.block.DCBlocks;
+import net.epitap.degeneracycraft.integration.jei.basic.BasicMachinePartProcessorRecipe;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.network.chat.Component;
@@ -19,13 +20,11 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
-import javax.annotation.Nonnull;
-
 public class BasicMachinePartProcessorRecipeCategory implements IRecipeCategory<BasicMachinePartProcessorRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_machine_part_processor_recipe");
     public final static ResourceLocation TEXTURE =
             new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_component_manufacture_machine_uid.png");
-    public static final RecipeType<BasicMachinePartProcessorRecipe> TYPE = new RecipeType<>(UID, BasicMachinePartProcessorRecipe.class);
+    static final RecipeType<BasicMachinePartProcessorRecipe> TYPE = new RecipeType<>(UID, BasicMachinePartProcessorRecipe.class);
 
     private final IDrawable background;
     private final IDrawable icon;
@@ -67,10 +66,10 @@ public class BasicMachinePartProcessorRecipeCategory implements IRecipeCategory<
 
     @Override
     public void draw(BasicMachinePartProcessorRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
-//        drawPhase(stack);
-//        drawRequiredEnergy(recipe, stack);
-//        drawRequiredEnergyUsage(recipe, stack);
-//        drawRequiredTime(recipe, stack);
+        drawPhase(stack);
+        drawRequiredEnergy(recipe, stack);
+        drawRequiredEnergyUsage(recipe, stack);
+        drawRequiredTime(recipe, stack);
     }
 
     protected void drawPhase(PoseStack poseStack) {
@@ -103,18 +102,18 @@ public class BasicMachinePartProcessorRecipeCategory implements IRecipeCategory<
 
 
     @Override
-    public void setRecipe(@Nonnull IRecipeLayoutBuilder builder, @Nonnull BasicMachinePartProcessorRecipe recipe, @Nonnull IFocusGroup focusGroup) {
+    public void setRecipe(IRecipeLayoutBuilder builder, BasicMachinePartProcessorRecipe recipe, IFocusGroup focusGroup) {
 
-        builder.addSlot(RecipeIngredientRole.INPUT, 8, 7).addIngredients(recipe.getIngredients().get(0));
-        builder.addSlot(RecipeIngredientRole.INPUT, 26, 7).addIngredients(recipe.getIngredients().get(1));
-        builder.addSlot(RecipeIngredientRole.INPUT, 44, 7).addIngredients(recipe.getIngredients().get(2));
-        builder.addSlot(RecipeIngredientRole.INPUT, 8, 25).addIngredients(recipe.getIngredients().get(3));
-        builder.addSlot(RecipeIngredientRole.INPUT, 26, 25).addIngredients(recipe.getIngredients().get(4));
-        builder.addSlot(RecipeIngredientRole.INPUT, 44, 25).addIngredients(recipe.getIngredients().get(5));
-        builder.addSlot(RecipeIngredientRole.INPUT, 8, 43).addIngredients(recipe.getIngredients().get(6));
-        builder.addSlot(RecipeIngredientRole.INPUT, 26, 43).addIngredients(recipe.getIngredients().get(7));
-        builder.addSlot(RecipeIngredientRole.INPUT, 44, 43).addIngredients(recipe.getIngredients().get(8));
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 25).addItemStack(recipe.getOutput0Item());
+        builder.addSlot(RecipeIngredientRole.INPUT, 8, 7).addIngredients(recipe.at(0));
+        builder.addSlot(RecipeIngredientRole.INPUT, 26, 7).addIngredients(recipe.at(1));
+        builder.addSlot(RecipeIngredientRole.INPUT, 44, 7).addIngredients(recipe.at(2));
+        builder.addSlot(RecipeIngredientRole.INPUT, 8, 25).addIngredients(recipe.at(3));
+        builder.addSlot(RecipeIngredientRole.INPUT, 26, 25).addIngredients(recipe.at(4));
+        builder.addSlot(RecipeIngredientRole.INPUT, 44, 25).addIngredients(recipe.at(5));
+        builder.addSlot(RecipeIngredientRole.INPUT, 8, 43).addIngredients(recipe.at(6));
+        builder.addSlot(RecipeIngredientRole.INPUT, 26, 43).addIngredients(recipe.at(7));
+        builder.addSlot(RecipeIngredientRole.INPUT, 44, 43).addIngredients(recipe.at(8));
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 25).addIngredients(recipe.at(9));
 
     }
 }

@@ -65,7 +65,17 @@ public class BasicMachinePartProcessorRecipe implements Recipe<SimpleContainer> 
 //                && input7.is(pContainer.getItem(7).getItem())
 //                && input8.is(pContainer.getItem(8).getItem());
 
-        return recipeItems.get(0).test(pContainer.getItem(0));
+        return recipeItems.get(0).test(pContainer.getItem(0))
+                && recipeItems.get(1).test(pContainer.getItem(1))
+                && recipeItems.get(2).test(pContainer.getItem(2))
+                && recipeItems.get(3).test(pContainer.getItem(3))
+                && recipeItems.get(4).test(pContainer.getItem(4))
+                && recipeItems.get(5).test(pContainer.getItem(5))
+                && recipeItems.get(6).test(pContainer.getItem(6))
+                && recipeItems.get(7).test(pContainer.getItem(7))
+                && recipeItems.get(8).test(pContainer.getItem(8))
+
+                ;
 
     }
     @Override
@@ -116,6 +126,7 @@ public class BasicMachinePartProcessorRecipe implements Recipe<SimpleContainer> 
     public NonNullList<Ingredient> getIngredients() {
         return recipeItems;
     }
+
     public ItemStack getOutput0Item() {
         return output0;
     }
@@ -123,6 +134,10 @@ public class BasicMachinePartProcessorRecipe implements Recipe<SimpleContainer> 
     @Override
     public ItemStack getResultItem() {
         return output0;
+    }
+
+    public Ingredient at(int slot) {
+        return recipeItems.get(slot);
     }
 
     @Override
@@ -180,7 +195,7 @@ public class BasicMachinePartProcessorRecipe implements Recipe<SimpleContainer> 
 
 
             JsonArray ingredients = GsonHelper.getAsJsonArray(pJson, "ingredients");
-            NonNullList<Ingredient> inputs = NonNullList.withSize(9, Ingredient.EMPTY);
+            NonNullList<Ingredient> inputs = NonNullList.withSize(10, Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
@@ -203,7 +218,7 @@ public class BasicMachinePartProcessorRecipe implements Recipe<SimpleContainer> 
 //            ItemStack input8 = pBuffer.readItem();
             ItemStack output0 = pBuffer.readItem();
 //
-            NonNullList<Ingredient> inputs = NonNullList.withSize(9, Ingredient.EMPTY);
+            NonNullList<Ingredient> inputs = NonNullList.withSize(10, Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
                 inputs.set(i, Ingredient.fromNetwork(pBuffer));

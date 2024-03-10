@@ -17,6 +17,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -234,10 +235,12 @@ public class BasicMachinePartProcessorBlockEntity extends BlockEntity implements
 //            pBlockEntity.itemHandler.extractItem(7, match.get().getInput7Item().getCount(), false);
 //            pBlockEntity.itemHandler.extractItem(8, match.get().getInput8Item().getCount(), false);
             int i;
-            for (i = 0; i < 9; i++){
+            for (i = 0; i < 9; i++) {
                 pBlockEntity.itemHandler.extractItem(i, 1, false);
             }
-            pBlockEntity.itemHandler.setStackInSlot(9, new ItemStack(match.get().getOutput0Item().getItem(),
+//            pBlockEntity.itemHandler.setStackInSlot(9, new ItemStack(match.get().getOutput0Item().getItem(),
+//                    pBlockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
+            pBlockEntity.itemHandler.setStackInSlot(9, new ItemStack((ItemLike) match.get().at(9),
                     pBlockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
 
             pBlockEntity.resetProgress();

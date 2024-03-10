@@ -1,7 +1,7 @@
 package net.epitap.degeneracycraft.datagen;
 
 
-import net.epitap.degeneracycraft.blocks.block.DCBlocks;
+import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;

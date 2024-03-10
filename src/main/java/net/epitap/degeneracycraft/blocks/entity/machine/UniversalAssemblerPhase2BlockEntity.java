@@ -1,6 +1,6 @@
 //package net.epitap.degeneracycraft.blocks.entity.machine;
 //
-//import net.epitap.degeneracycraft.blocks.entity.DCBlockEntities;
+//import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 //import net.epitap.degeneracycraft.blocks.menu.machine.UniversalAssemblerPhase2Menu;
 //import net.minecraft.core.BlockPos;
 //import net.minecraft.core.Direction;

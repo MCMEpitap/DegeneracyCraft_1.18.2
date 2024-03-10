@@ -1,6 +1,6 @@
 package net.epitap.degeneracycraft.datagen.loot;
 
-import net.epitap.degeneracycraft.blocks.block.DCBlocks;
+import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.world.level.block.Block;

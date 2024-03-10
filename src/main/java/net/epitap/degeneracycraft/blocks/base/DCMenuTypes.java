@@ -1,13 +1,13 @@
-package net.epitap.degeneracycraft.blocks.menu;
+package net.epitap.degeneracycraft.blocks.base;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
+import net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor.BasicMachinePartProcessorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.basic_power_composite_structure_type_thermal_generator.BasicPowerCompositeStructureTypeThermalGeneratorMenu;
+import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_component_manufacture_machine.RedstonePoweredMachineComponentManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.menu.machine.BoltManufactureMachineMenu.BasicPhaseBoltManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.menu.machine.PulverizerMenu;
 import net.epitap.degeneracycraft.blocks.menu.machine.UniversalAssemblerPhase1Menu;
-import net.epitap.degeneracycraft.blocks.menu.machine.basic.BasicMachinePartProcessorMenu;
-import net.epitap.degeneracycraft.blocks.menu.machine.basic.BasicPowerCompositeStructureTypeThermalGeneratorMenu;
 import net.epitap.degeneracycraft.blocks.menu.machine.infinity.InfinityPoweredAllInOneCompressorMachineMenu;
-import net.epitap.degeneracycraft.blocks.menu.machine.initial.RedstonePoweredMachineComponentManufactureMachineMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;

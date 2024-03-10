@@ -1,6 +1,6 @@
 package net.epitap.degeneracycraft.blocks.entity.machine;
 
-import net.epitap.degeneracycraft.blocks.entity.DCBlockEntities;
+import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.blocks.menu.machine.PulverizerMenu;
 import net.epitap.degeneracycraft.integration.jei.Pulverization;
 import net.minecraft.core.BlockPos;

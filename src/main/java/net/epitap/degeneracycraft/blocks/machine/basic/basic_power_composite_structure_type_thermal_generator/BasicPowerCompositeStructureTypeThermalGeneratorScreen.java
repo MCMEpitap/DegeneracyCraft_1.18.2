@@ -1,9 +1,8 @@
-package net.epitap.degeneracycraft.blocks.screen.basic;
+package net.epitap.degeneracycraft.blocks.machine.basic.basic_power_composite_structure_type_thermal_generator;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.epitap.degeneracycraft.Degeneracycraft;
-import net.epitap.degeneracycraft.blocks.menu.machine.basic.BasicPowerCompositeStructureTypeThermalGeneratorMenu;
 import net.epitap.degeneracycraft.blocks.screen.render.EnergyInfoArea;
 import net.epitap.degeneracycraft.util.MouseUtil;
 import net.minecraft.client.Minecraft;

@@ -1,6 +1,6 @@
 //package net.epitap.degeneracycraft.blocks.block.machine;
 //
-//import net.epitap.degeneracycraft.blocks.entity.DCBlockEntities;
+//import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 //import net.minecraft.ChatFormatting;
 //import net.minecraft.core.BlockPos;
 //import net.minecraft.network.chat.Component;

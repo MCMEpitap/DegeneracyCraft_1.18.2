@@ -1,7 +1,7 @@
 package net.epitap.degeneracycraft.blocks.entity.machine;
 
+import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.blocks.block.machine.UniversalAssemblerPhase1Block;
-import net.epitap.degeneracycraft.blocks.entity.DCBlockEntities;
 import net.epitap.degeneracycraft.blocks.menu.machine.UniversalAssemblerPhase1Menu;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.util.WrappedHandler;
@@ -9,7 +9,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.world.*;
+import net.minecraft.world.Containers;
+import net.minecraft.world.MenuProvider;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -44,7 +46,6 @@ public class UniversalAssemblerPhase1BlockEntity extends BlockEntity implements 
             return super.isItemValid(slot, stack);
         }
 
-        ;
     };
 
 

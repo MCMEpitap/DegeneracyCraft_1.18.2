@@ -1,8 +1,8 @@
 package net.epitap.degeneracycraft.blocks.menu.machine;
 
-import net.epitap.degeneracycraft.blocks.block.DCBlocks;
+import net.epitap.degeneracycraft.blocks.base.DCBlocks;
+import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
 import net.epitap.degeneracycraft.blocks.entity.machine.PulverizerBlockEntity;
-import net.epitap.degeneracycraft.blocks.menu.DCMenuTypes;
 import net.epitap.degeneracycraft.blocks.screen.slot.DCResultSlot;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;

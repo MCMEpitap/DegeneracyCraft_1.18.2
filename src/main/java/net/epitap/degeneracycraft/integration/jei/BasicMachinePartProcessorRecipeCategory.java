@@ -11,7 +11,7 @@ import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.epitap.degeneracycraft.Degeneracycraft;
-import net.epitap.degeneracycraft.blocks.block.DCBlocks;
+import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.integration.jei.basic.BasicMachinePartProcessorRecipe;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;

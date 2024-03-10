@@ -1,9 +1,8 @@
-package net.epitap.degeneracycraft.blocks.screen.basic;
+package net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.epitap.degeneracycraft.Degeneracycraft;
-import net.epitap.degeneracycraft.blocks.menu.machine.basic.BasicMachinePartProcessorMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;

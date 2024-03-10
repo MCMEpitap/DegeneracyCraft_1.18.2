@@ -1,8 +1,7 @@
-package net.epitap.degeneracycraft.blocks.block.machine.basic;
+package net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor;
 
-import net.epitap.degeneracycraft.blocks.block.machine.BlockBase;
-import net.epitap.degeneracycraft.blocks.entity.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.entity.machine.basic.BasicMachinePartProcessorBlockEntity;
+import net.epitap.degeneracycraft.blocks.base.BlockBase;
+import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;

@@ -1,7 +1,6 @@
-package net.epitap.degeneracycraft.blocks.block.machine.BoltManufactureMachineBlock;
+package net.epitap.degeneracycraft.blocks.machine.basic.basic_phase_bolt_manufacture_machine;
 
-import net.epitap.degeneracycraft.blocks.entity.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.entity.machine.BoltManufactureMachineBlockEntity.BasicPhaseBoltManufactureMachineBlockEntity;
+import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;

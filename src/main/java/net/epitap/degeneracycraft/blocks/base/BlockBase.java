@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.block.machine;
+package net.epitap.degeneracycraft.blocks.base;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.context.BlockPlaceContext;

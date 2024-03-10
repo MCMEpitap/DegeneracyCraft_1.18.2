@@ -1,8 +1,6 @@
-package net.epitap.degeneracycraft.blocks.entity.machine.initial;
+package net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_component_manufacture_machine;
 
-import net.epitap.degeneracycraft.blocks.block.machine.initial.RedstonePoweredMachineComponentManufactureMachineBlock;
-import net.epitap.degeneracycraft.blocks.entity.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.menu.machine.initial.RedstonePoweredMachineComponentManufactureMachineMenu;
+import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.integration.jei.initial.RedstonePoweredMachineComponentManufactureMachineRecipe;
 import net.epitap.degeneracycraft.util.WrappedHandler;
 import net.minecraft.core.BlockPos;

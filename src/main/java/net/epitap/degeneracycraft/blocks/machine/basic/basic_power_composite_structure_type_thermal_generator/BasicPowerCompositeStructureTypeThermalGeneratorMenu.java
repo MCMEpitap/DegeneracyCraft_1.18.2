@@ -1,9 +1,8 @@
-package net.epitap.degeneracycraft.blocks.menu.machine.initial;
+package net.epitap.degeneracycraft.blocks.machine.basic.basic_power_composite_structure_type_thermal_generator;
 
-import net.epitap.degeneracycraft.blocks.block.DCBlocks;
-import net.epitap.degeneracycraft.blocks.entity.machine.initial.RedstonePoweredMachineComponentManufactureMachineBlockEntity;
-import net.epitap.degeneracycraft.blocks.menu.DCMenuTypes;
-import net.epitap.degeneracycraft.integration.jei.initial.RedstonePoweredMachineComponentManufactureMachineRecipe;
+import net.epitap.degeneracycraft.blocks.base.DCBlocks;
+import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
+import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -14,56 +13,51 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class RedstonePoweredMachineComponentManufactureMachineMenu extends AbstractContainerMenu {
-    public final RedstonePoweredMachineComponentManufactureMachineBlockEntity blockEntity;
-    public RedstonePoweredMachineComponentManufactureMachineRecipe recipe;
-    public final Level level;
-    public final ContainerData data;
+public class BasicPowerCompositeStructureTypeThermalGeneratorMenu extends AbstractContainerMenu {
+    private static final int HOTBAR_SLOT_COUNT = 9;
+    private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
+    private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
+    private static final int VANILLA_FIRST_SLOT_INDEX = 0;
+    private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
+    private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
+    private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
+    private static final int TE_INVENTORY_SLOT_COUNT = 10;
+    public final BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity blockEntity;
+    private final Level level;
+    private final ContainerData data;
 
-    public RedstonePoweredMachineComponentManufactureMachineMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+    public BasicPowerCompositeStructureTypeThermalGeneratorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(1));
     }
 
-    public RedstonePoweredMachineComponentManufactureMachineMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_MENU.get(), id);
-        blockEntity = (RedstonePoweredMachineComponentManufactureMachineBlockEntity) entity;
+    public BasicPowerCompositeStructureTypeThermalGeneratorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(DCMenuTypes.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_MENU.get(), id);
+        blockEntity = (BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            for (int i = 0; i < 3; ++i) {
-                for (int l = 0; l < 3; ++l) {
-                    this.addSlot(new SlotItemHandler(handler, (l + i * 3), 8 + l * 18, 7 + i * 18));                }
-            }
-            this.addSlot(new SlotItemHandler(handler, 9, 116, 25));
+            this.addSlot(new SlotItemHandler(handler, 0, 26, 25));
+            this.addSlot(new SlotItemHandler(handler, 1, 71, 59));
         });
-
         addDataSlots(data);
     }
 
-    public boolean isCrafting() {
-        return data.get(0) > 0;
+
+    public int getBurnTime() {
+        int getBurnTime = this.data.get(0);
+        return getBurnTime / 20;
     }
 
-    public float getProgressPercent() {
-        return blockEntity.getProgressPercent();
+    public DCIEnergyStorageFloat getEnergy() {
+        return blockEntity.getEnergyStorage();
     }
 
-    public RedstonePoweredMachineComponentManufactureMachineBlockEntity getBlockEntity() {
+    public BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity getBlockEntity() {
         return this.blockEntity;
     }
-
-    private static final int HOTBAR_SLOT_COUNT = 9;
-    private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
-    private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
-    private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
-    private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
-    private static final int VANILLA_FIRST_SLOT_INDEX = 0;
-    private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 10;
-
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {
         Slot sourceSlot = slots.get(index);
@@ -100,7 +94,7 @@ public class RedstonePoweredMachineComponentManufactureMachineMenu extends Abstr
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, DCBlocks.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK.get());
+                player, DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

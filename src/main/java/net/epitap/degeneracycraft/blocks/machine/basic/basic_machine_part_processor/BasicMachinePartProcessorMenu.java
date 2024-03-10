@@ -1,8 +1,7 @@
-package net.epitap.degeneracycraft.blocks.menu.machine.basic;
+package net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor;
 
-import net.epitap.degeneracycraft.blocks.block.DCBlocks;
-import net.epitap.degeneracycraft.blocks.entity.machine.basic.BasicMachinePartProcessorBlockEntity;
-import net.epitap.degeneracycraft.blocks.menu.DCMenuTypes;
+import net.epitap.degeneracycraft.blocks.base.DCBlocks;
+import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
 import net.epitap.degeneracycraft.integration.jei.basic.BasicMachinePartProcessorRecipe;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;

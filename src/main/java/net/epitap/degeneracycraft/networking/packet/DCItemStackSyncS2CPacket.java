@@ -1,6 +1,6 @@
 package net.epitap.degeneracycraft.networking.packet;
 
-import net.epitap.degeneracycraft.blocks.entity.machine.basic.BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.basic_power_composite_structure_type_thermal_generator.BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;

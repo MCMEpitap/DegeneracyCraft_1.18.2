@@ -1,9 +1,8 @@
-package net.epitap.degeneracycraft.blocks.screen.initial;
+package net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_component_manufacture_machine;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.epitap.degeneracycraft.Degeneracycraft;
-import net.epitap.degeneracycraft.blocks.menu.machine.initial.RedstonePoweredMachineComponentManufactureMachineMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;

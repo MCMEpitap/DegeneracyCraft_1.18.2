@@ -8,9 +8,9 @@ import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.epitap.degeneracycraft.Degeneracycraft;
-import net.epitap.degeneracycraft.blocks.block.DCBlocks;
-import net.epitap.degeneracycraft.blocks.screen.basic.BasicMachinePartProcessorScreen;
-import net.epitap.degeneracycraft.blocks.screen.initial.RedstonePoweredMachineComponentManufactureMachineScreen;
+import net.epitap.degeneracycraft.blocks.base.DCBlocks;
+import net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor.BasicMachinePartProcessorScreen;
+import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_component_manufacture_machine.RedstonePoweredMachineComponentManufactureMachineScreen;
 import net.epitap.degeneracycraft.integration.jei.basic.BasicMachinePartProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.RedstonePoweredMachineComponentManufactureMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.RedstonePoweredMachineComponentManufactureMachineRecipeCategory;
@@ -66,6 +66,5 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK.get()), RedstonePoweredMachineComponentManufactureMachineRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_MACHINE_PART_PROCESSOR_BLOCK.get()), BasicMachinePartProcessorRecipeCategory.UID);
     }
-
 
 }

@@ -1,7 +1,6 @@
-package net.epitap.degeneracycraft.blocks.entity.machine.infinity;
+package net.epitap.degeneracycraft.blocks.machine.infinity;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.menu.machine.infinity.InfinityPoweredAllInOneCompressorMachineMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;

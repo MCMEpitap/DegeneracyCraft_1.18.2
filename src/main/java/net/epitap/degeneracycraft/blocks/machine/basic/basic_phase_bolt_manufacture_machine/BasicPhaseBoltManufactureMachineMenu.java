@@ -1,8 +1,7 @@
-package net.epitap.degeneracycraft.blocks.menu.machine.BoltManufactureMachineMenu;
+package net.epitap.degeneracycraft.blocks.machine.basic.basic_phase_bolt_manufacture_machine;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
-import net.epitap.degeneracycraft.blocks.machine.basic.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineBlockEntity;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;

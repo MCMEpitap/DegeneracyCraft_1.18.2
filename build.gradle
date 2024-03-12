@@ -115,6 +115,7 @@ repositories {
 minecraft {
 
     mappings channel: 'parchment', version: '2022.11.06-1.18.2'
+//    mappings channel: 'official', version: '1.18.2'
 
 
     runs {
@@ -265,10 +266,11 @@ repositories {
 
 
 dependencies {
+//
+    implementation 'org.projectlombok:lombok:1.18.22'
+    implementation 'org.projectlombok:lombok:1.18.22'
+    minecraft 'net.minecraftforge:forge:1.18.2-40.2.0'
 
-    implementation 'org.projectlombok:lombok:1.18.22'
-    implementation 'org.projectlombok:lombok:1.18.22'
-    minecraft 'net.minecraftforge:forge:1.18.2-40.1.51'
     dependencies {
         /* minecraft dependency is here */
         /* JEI 10+ is here */

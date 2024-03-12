@@ -4,14 +4,15 @@ import com.electronwill.nightconfig.core.Config;
 import com.mojang.logging.LogUtils;
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
+import net.epitap.degeneracycraft.blocks.base.DCHoloBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
 import net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor.BasicMachinePartProcessorScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.basic_power_composite_structure_type_thermal_generator.BasicPowerCompositeStructureTypeThermalGeneratorScreen;
+import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineScreen;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_component_manufacture_machine.RedstonePoweredMachineComponentManufactureMachineScreen;
-import net.epitap.degeneracycraft.blocks.screen.BoltManufactureMachineScreen.BasicPhaseBoltManufactureMachineScreen;
 import net.epitap.degeneracycraft.blocks.screen.PulverizerScreen;
 import net.epitap.degeneracycraft.blocks.screen.UniversalAssemblerPhase1Screen;
-import net.epitap.degeneracycraft.blocks.screen.infinity.InfinityPoweredAllInOneCompressorMachineScreen;
 import net.epitap.degeneracycraft.integration.jei.DCRecipeTypes;
 import net.epitap.degeneracycraft.item.DCAdvancementIcon;
 import net.epitap.degeneracycraft.item.DCItems;
@@ -47,7 +48,7 @@ public class Degeneracycraft {
         DCItems.register(eventBus);
         DCAdvancementIcon.register(eventBus);
         DCBlocks.register(eventBus);
-        DCBlocks.register(eventBus);
+        DCHoloBlocks.register(eventBus);
         DCBlockEntities.register(eventBus);
         DCMenuTypes.register(eventBus);
         DCRecipeTypes.register(eventBus);
@@ -88,10 +89,10 @@ public class Degeneracycraft {
         MenuScreens.register(DCMenuTypes.BASIC_MACHINE_PART_PROCESSOR_MACHINE_MENU.get(), BasicMachinePartProcessorScreen::new);
 
         MenuScreens.register(DCMenuTypes.BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_MENU.get(), BasicPhaseBoltManufactureMachineScreen::new);
-
-        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), RenderType.translucent());
+//
+//        ItemBlockRenderTypes.setRenderLayer(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
+//        ItemBlockRenderTypes.setRenderLayer(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
+//        ItemBlockRenderTypes.setRenderLayer(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), RenderType.translucent());
 
         MenuScreens.register(DCMenuTypes.INFINITY_POWERED_ALL_IN_ONE_COMPRESSOR_MACHINE_BLOCK_MENU.get(), InfinityPoweredAllInOneCompressorMachineScreen::new);
         PipeBlockEntities.clientSetup();

@@ -1,8 +1,7 @@
-package net.epitap.degeneracycraft.blocks.menu.machine.infinity;
+package net.epitap.degeneracycraft.blocks.machine.infinity;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
-import net.epitap.degeneracycraft.blocks.entity.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlockEntity;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;

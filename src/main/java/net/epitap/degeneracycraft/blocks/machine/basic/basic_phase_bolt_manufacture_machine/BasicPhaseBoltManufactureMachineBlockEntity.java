@@ -1,7 +1,6 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.basic_phase_bolt_manufacture_machine;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.menu.machine.BoltManufactureMachineMenu.BasicPhaseBoltManufactureMachineMenu;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

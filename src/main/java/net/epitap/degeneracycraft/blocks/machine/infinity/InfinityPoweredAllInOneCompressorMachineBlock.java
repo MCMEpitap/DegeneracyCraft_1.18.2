@@ -1,7 +1,6 @@
-package net.epitap.degeneracycraft.blocks.block.machine.infinity;
+package net.epitap.degeneracycraft.blocks.machine.infinity;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.entity.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;

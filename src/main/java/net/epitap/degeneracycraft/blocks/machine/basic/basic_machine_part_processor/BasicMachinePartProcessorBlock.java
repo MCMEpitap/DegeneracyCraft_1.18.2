@@ -8,7 +8,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -21,7 +20,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class BasicMachinePartProcessorBlock extends BlockBase implements EntityBlock {
+public class BasicMachinePartProcessorBlock extends BlockBase {
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
 
     public BasicMachinePartProcessorBlock(Properties properties) {

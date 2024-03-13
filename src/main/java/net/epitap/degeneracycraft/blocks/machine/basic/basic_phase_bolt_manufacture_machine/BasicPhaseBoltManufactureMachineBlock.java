@@ -25,7 +25,7 @@ import net.minecraftforge.network.NetworkHooks;
 
 import javax.annotation.Nullable;
 
-public class BasicPhaseBoltManufactureMachineBlock extends BaseEntityBlock{
+public class BasicPhaseBoltManufactureMachineBlock extends BaseEntityBlock {
 
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 

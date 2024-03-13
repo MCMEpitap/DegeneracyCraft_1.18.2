@@ -127,7 +127,6 @@ public class BasicPhaseBoltManufactureMachineBlockEntity extends BlockEntity imp
 
 
     public static void tick(Level level, BlockPos pPos, BlockState pState, BasicPhaseBoltManufactureMachineBlockEntity blockEntity) {
-
         if ((copper_boltRecipe(blockEntity)
                 || iron_boltRecipe(blockEntity)
                 && hasNotReachedStackLimit(blockEntity))) {

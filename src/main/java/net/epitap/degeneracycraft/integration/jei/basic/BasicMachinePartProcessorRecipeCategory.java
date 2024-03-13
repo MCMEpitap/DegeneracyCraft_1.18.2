@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei;
+package net.epitap.degeneracycraft.integration.jei.basic;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.constants.VanillaTypes;
@@ -12,7 +12,6 @@ import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
-import net.epitap.degeneracycraft.integration.jei.basic.BasicMachinePartProcessorRecipe;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.network.chat.Component;
@@ -103,28 +102,18 @@ public class BasicMachinePartProcessorRecipeCategory implements IRecipeCategory<
 
     @Override
     public void setRecipe(IRecipeLayoutBuilder builder, BasicMachinePartProcessorRecipe recipe, IFocusGroup focusGroup) {
-
-        builder.addSlot(RecipeIngredientRole.INPUT, 8, 7).addIngredients(recipe.at(0));
-        builder.addSlot(RecipeIngredientRole.INPUT, 26, 7).addIngredients(recipe.at(1));
-        builder.addSlot(RecipeIngredientRole.INPUT, 44, 7).addIngredients(recipe.at(2));
-        builder.addSlot(RecipeIngredientRole.INPUT, 8, 25).addIngredients(recipe.at(3));
-        builder.addSlot(RecipeIngredientRole.INPUT, 26, 25).addIngredients(recipe.at(4));
-        builder.addSlot(RecipeIngredientRole.INPUT, 44, 25).addIngredients(recipe.at(5));
-        builder.addSlot(RecipeIngredientRole.INPUT, 8, 43).addIngredients(recipe.at(6));
-        builder.addSlot(RecipeIngredientRole.INPUT, 26, 43).addIngredients(recipe.at(7));
-        builder.addSlot(RecipeIngredientRole.INPUT, 44, 43).addIngredients(recipe.at(8));
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 25).addIngredients(recipe.at(9));
-
+        builder.addSlot(RecipeIngredientRole.INPUT, 8, 7).addItemStack(recipe.getInput0Item());
+        builder.addSlot(RecipeIngredientRole.INPUT, 26, 7).addItemStack(recipe.getInput1Item());
+        builder.addSlot(RecipeIngredientRole.INPUT, 44, 7).addItemStack(recipe.getInput2Item());
+        builder.addSlot(RecipeIngredientRole.INPUT, 8, 25).addItemStack(recipe.getInput3Item());
+        builder.addSlot(RecipeIngredientRole.INPUT, 26, 25).addItemStack(recipe.getInput4Item());
+        builder.addSlot(RecipeIngredientRole.INPUT, 44, 25).addItemStack(recipe.getInput5Item());
+        builder.addSlot(RecipeIngredientRole.INPUT, 8, 43).addItemStack(recipe.getInput6Item());
+        builder.addSlot(RecipeIngredientRole.INPUT, 26, 43).addItemStack(recipe.getInput7Item());
+        builder.addSlot(RecipeIngredientRole.INPUT, 44, 43).addItemStack(recipe.getInput8Item());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 25).addItemStack(recipe.getOutput0Item());
     }
 }
-//        builder.addSlot(RecipeIngredientRole.INPUT, 8, 7).addItemStack(recipe.getInput0Item());
-//        builder.addSlot(RecipeIngredientRole.INPUT, 26, 7).addItemStack(recipe.getInput1Item());
-//        builder.addSlot(RecipeIngredientRole.INPUT, 44, 7).addItemStack(recipe.getInput2Item());
-//        builder.addSlot(RecipeIngredientRole.INPUT, 8, 25).addItemStack(recipe.getInput3Item());
-//        builder.addSlot(RecipeIngredientRole.INPUT, 26, 25).addItemStack(recipe.getInput4Item());
-//        builder.addSlot(RecipeIngredientRole.INPUT, 44, 25).addItemStack(recipe.getInput5Item());
-//        builder.addSlot(RecipeIngredientRole.INPUT, 8, 43).addItemStack(recipe.getInput6Item());
-//        builder.addSlot(RecipeIngredientRole.INPUT, 26, 43).addItemStack(recipe.getInput7Item());
-//        builder.addSlot(RecipeIngredientRole.INPUT, 44, 43).addItemStack(recipe.getInput8Item());
+
 
 

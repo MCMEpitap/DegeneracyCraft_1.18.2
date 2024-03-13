@@ -12,6 +12,7 @@ import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor.BasicMachinePartProcessorScreen;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_component_manufacture_machine.RedstonePoweredMachineComponentManufactureMachineScreen;
 import net.epitap.degeneracycraft.integration.jei.basic.BasicMachinePartProcessorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.BasicMachinePartProcessorRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.initial.RedstonePoweredMachineComponentManufactureMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.RedstonePoweredMachineComponentManufactureMachineRecipeCategory;
 import net.minecraft.client.Minecraft;

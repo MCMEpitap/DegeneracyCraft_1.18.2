@@ -136,6 +136,26 @@ public class BasicMachinePartProcessorBlockEntity extends BlockEntity implements
         lazyItemHandler = LazyOptional.of(() -> itemHandler);
     }
 
+    private static boolean hasAmountRecipe(BasicMachinePartProcessorBlockEntity pBlockEntity) {
+        Level level = pBlockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(pBlockEntity.itemHandler.getSlots());
+        for (int i = 0; i < pBlockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, pBlockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicMachinePartProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicMachinePartProcessorRecipe.Type.INSTANCE, inventory, level);
+
+        return pBlockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
+                && pBlockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
+                && pBlockEntity.itemHandler.getStackInSlot(2).getCount() >= match.get().getInput2Item().getCount()
+                && pBlockEntity.itemHandler.getStackInSlot(3).getCount() >= match.get().getInput3Item().getCount()
+                && pBlockEntity.itemHandler.getStackInSlot(4).getCount() >= match.get().getInput4Item().getCount()
+                && pBlockEntity.itemHandler.getStackInSlot(5).getCount() >= match.get().getInput5Item().getCount()
+                && pBlockEntity.itemHandler.getStackInSlot(6).getCount() >= match.get().getInput6Item().getCount()
+                && pBlockEntity.itemHandler.getStackInSlot(7).getCount() >= match.get().getInput7Item().getCount()
+                && pBlockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
+    }
     @Override
     public void invalidateCaps() {
         super.invalidateCaps();
@@ -178,26 +198,14 @@ public class BasicMachinePartProcessorBlockEntity extends BlockEntity implements
         return false;
     }
 
-//    private static boolean hasAmountRecipe(BasicMachinePartProcessorBlockEntity pBlockEntity) {
-//        Level level = pBlockEntity.level;
-//        SimpleContainer inventory = new SimpleContainer(pBlockEntity.itemHandler.getSlots());
-//        for (int i = 0; i < pBlockEntity.itemHandler.getSlots(); i++) {
-//            inventory.setItem(i, pBlockEntity.itemHandler.getStackInSlot(i));
-//        }
-//
-//        Optional<BasicMachinePartProcessorRecipe> match = level.getRecipeManager()
-//                .getRecipeFor(BasicMachinePartProcessorRecipe.Type.INSTANCE, inventory, level);
-//
-//        return pBlockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
-//                && pBlockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
-//                && pBlockEntity.itemHandler.getStackInSlot(2).getCount() >= match.get().getInput2Item().getCount()
-//                && pBlockEntity.itemHandler.getStackInSlot(3).getCount() >= match.get().getInput3Item().getCount()
-//                && pBlockEntity.itemHandler.getStackInSlot(4).getCount() >= match.get().getInput4Item().getCount()
-//                && pBlockEntity.itemHandler.getStackInSlot(5).getCount() >= match.get().getInput5Item().getCount()
-//                && pBlockEntity.itemHandler.getStackInSlot(6).getCount() >= match.get().getInput6Item().getCount()
-//                && pBlockEntity.itemHandler.getStackInSlot(7).getCount() >= match.get().getInput7Item().getCount()
-//                && pBlockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
-//    }
+    public void drops() {
+        SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
+        for (int i = 0; i < itemHandler.getSlots(); i++) {
+            inventory.setItem(i, itemHandler.getStackInSlot(i));
+        }
+
+        Containers.dropContents(this.level, this.worldPosition, inventory);
+    }
 
     private static boolean hasRecipe(BasicMachinePartProcessorBlockEntity pBlockEntity) {
         Level level = pBlockEntity.level;
@@ -263,14 +271,5 @@ public class BasicMachinePartProcessorBlockEntity extends BlockEntity implements
 
     public void resetProgress() {
         this.progress = 0;
-    }
-
-    public void drops() {
-        SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
-        for (int i = 0; i < itemHandler.getSlots(); i++) {
-            inventory.setItem(i, itemHandler.getStackInSlot(i));
-        }
-
-        Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 }

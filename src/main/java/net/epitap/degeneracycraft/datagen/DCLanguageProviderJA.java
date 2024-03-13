@@ -2,7 +2,6 @@ package net.epitap.degeneracycraft.datagen;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
-import net.epitap.degeneracycraft.blocks.base.DCHoloBlocks;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.pipe.block.PipeBlocks;
 import net.minecraft.data.DataGenerator;
@@ -644,10 +643,10 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(PipeBlocks.BASIC_ITEM_PIPE_BLOCK, "基本アイテムパイプ");
         add(PipeBlocks.BASIC_ENERGY_PIPE_BLOCK, "基本エネルギーパイプ");
 
-        add(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "基本強度多重構造機械用基礎骨組ブロック (ホログラム)");
-        add(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), "基本強度多重構造用機械骨組ブロック (ホログラム)");
-        add(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "基本強度多重構造機械用構造骨組ブロック (ホログラム)");
-        add(DCHoloBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "基本強度多重構造機械用ガラスブロック (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "基本強度多重構造機械用基礎骨組ブロック (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), "基本強度多重構造用機械骨組ブロック (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "基本強度多重構造機械用構造骨組ブロック (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "基本強度多重構造機械用ガラスブロック (ホログラム)");
 
 //        add(DCBlocks.LOW_STERNGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),"低強度機械用フレーム");
         add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get(), "低強度多構造機械用フレーム");

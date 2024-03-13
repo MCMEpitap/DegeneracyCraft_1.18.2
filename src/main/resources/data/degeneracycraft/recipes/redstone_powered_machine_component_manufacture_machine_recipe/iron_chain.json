@@ -3,8 +3,7 @@
   "energy": 0.0,
   "time": 10.0,
   "input0": {
-    "item": "minecraft:iron_ingot",
-    "count": 2
+    "item": "minecraft:iron_ingot"
   },
   "input1": {
     "item": "minecraft:iron_ingot"

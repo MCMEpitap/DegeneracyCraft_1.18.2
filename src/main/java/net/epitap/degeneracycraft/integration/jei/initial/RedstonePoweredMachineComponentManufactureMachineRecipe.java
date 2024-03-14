@@ -58,8 +58,6 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipe implements 
                 && input6.is(pContainer.getItem(6).getItem())
                 && input7.is(pContainer.getItem(7).getItem())
                 && input8.is(pContainer.getItem(8).getItem());
-
-
     }
 
     @Override

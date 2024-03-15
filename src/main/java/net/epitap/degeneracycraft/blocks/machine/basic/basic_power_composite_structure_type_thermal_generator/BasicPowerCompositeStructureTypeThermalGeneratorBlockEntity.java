@@ -92,9 +92,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
 
     private LazyOptional<DCIEnergyStorageFloat> lazyEnergyHandler = LazyOptional.empty();
     private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
-            Map.of(Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (in, stack) -> false))
-            );
+            Map.of(Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))));
 
     public BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity(BlockPos pos, BlockState state) {
         super(DCBlockEntities.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK_ENTITY.get(), pos, state);
@@ -158,7 +156,6 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         return super.getCapability(cap, side);
     }
 
-
     public void setHandler(ItemStackHandler itemStackHandler) {
         for (int i = 0; i < itemStackHandler.getSlots(); i++) {
             itemHandler.setStackInSlot(i, itemStackHandler.getStackInSlot(i));
@@ -212,9 +209,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
     public boolean isFormed() {
         return isFormed = formed0 && formed1 && formed2;
     }
-
     public boolean isFormed;
-
     public static void tick(Level level, BlockPos pos, BlockState state, BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity blockEntity) {
         blockEntity.formed0 = blockEntity.isFormed0(level, pos, state);
         blockEntity.formed1 = blockEntity.isFormed1(level, pos, state);

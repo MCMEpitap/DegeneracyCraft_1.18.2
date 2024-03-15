@@ -50,7 +50,6 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
             Map.of(Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (in, stack) -> false))
             );
-
     private final ItemStackHandler itemHandler = new ItemStackHandler(2) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -93,9 +92,9 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
     }
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
-    public int counter;
-    private LazyOptional<DCIEnergyStorageFloat> lazyEnergyHandler = LazyOptional.empty();
 
+    private LazyOptional<DCIEnergyStorageFloat> lazyEnergyHandler = LazyOptional.empty();
+    public int counter;
     public BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity(BlockPos pos, BlockState state) {
         super(DCBlockEntities.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK_ENTITY.get(), pos, state);
         this.data = new ContainerData() {
@@ -121,9 +120,38 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         };
     }
 
-    @Override
-    public Component getDisplayName() {
-        return new TextComponent("CS-T Thermal Generator Tier1");
+    public static void tick(Level level, BlockPos pos, BlockState state, BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity blockEntity) {
+        blockEntity.formed0 = blockEntity.isFormed0(level, pos, state);
+        blockEntity.formed1 = blockEntity.isFormed1(level, pos, state);
+        blockEntity.formed2 = blockEntity.isFormed2(level, pos, state);
+        blockEntity.isFormed = blockEntity.isFormed();
+        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
+        blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
+        blockEntity.hologram(level, pos, state, blockEntity);
+        if (level.isClientSide()) {
+            return;
+        }
+
+        if (blockEntity.counter > 0) {
+            if (blockEntity.isFormed) {
+                blockEntity.counter--;
+                blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED, false);
+                setChanged(level, pos, state);
+            } else {
+                blockEntity.counter--;
+                blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT, false);
+                setChanged(level, pos, state);
+            }
+        } else {
+            ItemStack stack = blockEntity.itemHandler.getStackInSlot(0);
+            int burnTime = ForgeHooks.getBurnTime(stack, RecipeType.SMELTING);
+            if (burnTime > 0) {
+                blockEntity.itemHandler.extractItem(0, 1, false);
+                blockEntity.counter = burnTime;
+            }
+            setChanged(level, pos, state);
+        }
+        setChanged(level, pos, state);
     }
 
     @Nullable
@@ -204,38 +232,10 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
 
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
-    public static void tick(Level level, BlockPos pos, BlockState state, BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity pEntity) {
-        pEntity.formed0 = pEntity.isFormed0(level, pos, state);
-        pEntity.formed1 = pEntity.isFormed1(level, pos, state);
-        pEntity.formed2 = pEntity.isFormed2(level, pos, state);
-        pEntity.isFormed = pEntity.isFormed();
-        pEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
-        pEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
-        pEntity.hologram(level, pos, state, pEntity);
-        if (level.isClientSide()) {
-            return;
-        }
 
-        if (pEntity.counter > 0) {
-            if (pEntity.isFormed) {
-                pEntity.counter--;
-                pEntity.ENERGY_STORAGE.receiveEnergyFloat(pEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED, false);
-                setChanged(level, pos, state);
-            } else {
-                pEntity.counter--;
-                pEntity.ENERGY_STORAGE.receiveEnergyFloat(pEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT, false);
-                setChanged(level, pos, state);
-            }
-        } else {
-            ItemStack stack = pEntity.itemHandler.getStackInSlot(0);
-            int burnTime = ForgeHooks.getBurnTime(stack, RecipeType.SMELTING);
-            if (burnTime > 0) {
-                pEntity.itemHandler.extractItem(0, 1, false);
-                pEntity.counter = burnTime;
-            }
-            setChanged(level, pos, state);
-        }
-        setChanged(level, pos, state);
+    @Override
+    public Component getDisplayName() {
+        return new TextComponent("BP-CS-T Thermal Generator");
     }
 
     public boolean isFormed0(Level level, BlockPos pos, BlockState state) {
@@ -328,13 +328,14 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         return isFormed = formed0 && formed1 && formed2;
     }
     public boolean isFormed;
-    public void hologram(Level level, BlockPos pos, BlockState state, BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity pEntity) {
+
+    public void hologram(Level level, BlockPos pos, BlockState state, BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity blockEntity) {
         Direction dir = state.getValue(BasicPowerCompositeStructureTypeThermalGeneratorBlock.FACING);
         BlockPos blockpos = new BlockPos(this.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
 
-        if (pEntity.itemHandler.getStackInSlot(1).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())) {
+        if (blockEntity.itemHandler.getStackInSlot(1).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())) {
             if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_3.xPos).above(MBPPos.x_1y_1z_3.yPos).relative(reZ, MBPPos.x_1y_1z_3.zPos)).isAir()) {
                 level.setBlock(blockpos.relative(reX, MBPPos.x_1y_1z_3.xPos).above(MBPPos.x_1y_1z_3.yPos).relative(reZ, MBPPos.x_1y_1z_3.zPos),
                         DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
@@ -376,7 +377,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
                         DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
             }
             setChanged(level, pos, state);
-            if (pEntity.formed0) {
+            if (blockEntity.formed0) {
                 if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_3.xPos).above(MBPPos.x_1y0z_3.yPos).relative(reZ, MBPPos.x_1y0z_3.zPos)).isAir()) {
                     level.setBlock(blockpos.relative(reX, MBPPos.x_1y0z_3.xPos).above(MBPPos.x_1y0z_3.yPos).relative(reZ, MBPPos.x_1y0z_3.zPos),
                             DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);

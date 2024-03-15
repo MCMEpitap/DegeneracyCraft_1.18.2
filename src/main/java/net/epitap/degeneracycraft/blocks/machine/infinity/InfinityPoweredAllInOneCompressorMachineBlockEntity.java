@@ -124,13 +124,13 @@ public class InfinityPoweredAllInOneCompressorMachineBlockEntity extends BlockEn
     }
 
 
-    public static void tick(Level level, BlockPos pPos, BlockState pState, InfinityPoweredAllInOneCompressorMachineBlockEntity pBlockEntity) {
+    public static void tick(Level level, BlockPos pPos, BlockState pState, InfinityPoweredAllInOneCompressorMachineBlockEntity blockEntity) {
 
-        if ((copper_boltRecipe(pBlockEntity)
-                || iron_boltRecipe(pBlockEntity)
-                && hasNotReachedStackLimit(pBlockEntity))) {
+        if ((copper_boltRecipe(blockEntity)
+                || iron_boltRecipe(blockEntity)
+                && hasNotReachedStackLimit(blockEntity))) {
             setChanged(level, pPos, pState);
-            pBlockEntity.progress++;
+            blockEntity.progress++;
 
 //            if (copper_boltRecipe(pBlockEntity) && pBlockEntity.progress > pBlockEntity.maxProgress
 //                    && ((pBlockEntity.itemHandler.getStackInSlot(2).getItem() == DCItems.COPPER_BOLT.get())
@@ -151,7 +151,7 @@ public class InfinityPoweredAllInOneCompressorMachineBlockEntity extends BlockEn
 
 
         } else {
-            pBlockEntity.resetProgress();
+            blockEntity.resetProgress();
             setChanged(level, pPos, pState);
         }
     }

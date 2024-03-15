@@ -1,6 +1,6 @@
 {
   "type": "degeneracycraft:basic_machine_part_processor_recipe",
-  "energy": 0.0,
+  "energy": 1000.0,
   "time": 5.0,
   "input0": {
     "item": "minecraft:air"

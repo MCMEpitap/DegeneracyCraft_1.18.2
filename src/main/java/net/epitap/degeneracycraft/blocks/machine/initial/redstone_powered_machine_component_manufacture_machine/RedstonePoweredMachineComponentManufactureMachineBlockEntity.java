@@ -184,33 +184,11 @@ public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extend
         }
         return false;
     }
-
-    private static boolean hasAmountRecipe(RedstonePoweredMachineComponentManufactureMachineBlockEntity pBlockEntity) {
-        Level level = pBlockEntity.level;
-        SimpleContainer inventory = new SimpleContainer(pBlockEntity.itemHandler.getSlots());
-        for (int i = 0; i < pBlockEntity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, pBlockEntity.itemHandler.getStackInSlot(i));
-        }
-
-        Optional<RedstonePoweredMachineComponentManufactureMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(RedstonePoweredMachineComponentManufactureMachineRecipe.Type.INSTANCE, inventory, level);
-
-        return pBlockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
-                && pBlockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
-                && pBlockEntity.itemHandler.getStackInSlot(2).getCount() >= match.get().getInput2Item().getCount()
-                && pBlockEntity.itemHandler.getStackInSlot(3).getCount() >= match.get().getInput3Item().getCount()
-                && pBlockEntity.itemHandler.getStackInSlot(4).getCount() >= match.get().getInput4Item().getCount()
-                && pBlockEntity.itemHandler.getStackInSlot(5).getCount() >= match.get().getInput5Item().getCount()
-                && pBlockEntity.itemHandler.getStackInSlot(6).getCount() >= match.get().getInput6Item().getCount()
-                && pBlockEntity.itemHandler.getStackInSlot(7).getCount() >= match.get().getInput7Item().getCount()
-                && pBlockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
-    }
-
-    private static boolean hasRecipe(RedstonePoweredMachineComponentManufactureMachineBlockEntity pBlockEntity) {
-        Level level = pBlockEntity.level;
-        SimpleContainer inventory = new SimpleContainer(pBlockEntity.itemHandler.getSlots());
-        for (int i = 0; i < pBlockEntity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, pBlockEntity.itemHandler.getStackInSlot(i));
+    private static boolean hasRecipe(RedstonePoweredMachineComponentManufactureMachineBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
         Optional<RedstonePoweredMachineComponentManufactureMachineRecipe> match = level.getRecipeManager()
@@ -218,32 +196,51 @@ public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extend
 
         return match.isPresent();
     }
+    public static boolean hasAmountRecipe(RedstonePoweredMachineComponentManufactureMachineBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
 
-    private static void craftItem(RedstonePoweredMachineComponentManufactureMachineBlockEntity pBlockEntity) {
-        Level level = pBlockEntity.level;
-        SimpleContainer inventory = new SimpleContainer(pBlockEntity.itemHandler.getSlots());
-        for (int i = 0; i < pBlockEntity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, pBlockEntity.itemHandler.getStackInSlot(i));
+        Optional<RedstonePoweredMachineComponentManufactureMachineRecipe> match = level.getRecipeManager()
+                .getRecipeFor(RedstonePoweredMachineComponentManufactureMachineRecipe.Type.INSTANCE, inventory, level);
+
+        return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(2).getCount() >= match.get().getInput2Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(3).getCount() >= match.get().getInput3Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(4).getCount() >= match.get().getInput4Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(5).getCount() >= match.get().getInput5Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(6).getCount() >= match.get().getInput6Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(7).getCount() >= match.get().getInput7Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
+    }
+    private static void craftItem(RedstonePoweredMachineComponentManufactureMachineBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
         Optional<RedstonePoweredMachineComponentManufactureMachineRecipe> match = level.getRecipeManager()
                 .getRecipeFor(RedstonePoweredMachineComponentManufactureMachineRecipe.Type.INSTANCE, inventory, level);
 
         if(match.isPresent()) {
-            pBlockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
-            pBlockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
-            pBlockEntity.itemHandler.extractItem(2, match.get().getInput2Item().getCount(), false);
-            pBlockEntity.itemHandler.extractItem(3, match.get().getInput3Item().getCount(), false);
-            pBlockEntity.itemHandler.extractItem(4, match.get().getInput4Item().getCount(), false);
-            pBlockEntity.itemHandler.extractItem(5, match.get().getInput5Item().getCount(), false);
-            pBlockEntity.itemHandler.extractItem(6, match.get().getInput6Item().getCount(), false);
-            pBlockEntity.itemHandler.extractItem(7, match.get().getInput7Item().getCount(), false);
-            pBlockEntity.itemHandler.extractItem(8, match.get().getInput8Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(2, match.get().getInput2Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(3, match.get().getInput3Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(4, match.get().getInput4Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(5, match.get().getInput5Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(6, match.get().getInput6Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(7, match.get().getInput7Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(8, match.get().getInput8Item().getCount(), false);
 
-            pBlockEntity.itemHandler.setStackInSlot(9, new ItemStack(match.get().getOutput0Item().getItem(),
-                    pBlockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
+            blockEntity.itemHandler.setStackInSlot(9, new ItemStack(match.get().getOutput0Item().getItem(),
+                    blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
 
-            pBlockEntity.resetProgress();
+            blockEntity.resetProgress();
         }
     }
 
@@ -267,8 +264,8 @@ public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extend
         this.progress = 0;
     }
 
-    private static boolean hasNotReachedStackLimit(RedstonePoweredMachineComponentManufactureMachineBlockEntity pBlockEntity) {
-        return pBlockEntity.itemHandler.getStackInSlot(9).getCount() < pBlockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
+    private static boolean hasNotReachedStackLimit(RedstonePoweredMachineComponentManufactureMachineBlockEntity blockEntity) {
+        return blockEntity.itemHandler.getStackInSlot(9).getCount() < blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
     }
 
 }

@@ -35,9 +35,7 @@ import java.util.Map;
 import java.util.Optional;
 
 public class BasicMachinePartProcessorBlockEntity extends BlockEntity implements MenuProvider {
-    private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
-            Map.of(Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (in, stack) -> itemHandler.isItemValid(1, stack))),
-                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))));
+
     public float BM_PART_PROCESSOR_CAPACITY = 40000F;
     public final ItemStackHandler itemHandler = new ItemStackHandler(10) {
         @Override
@@ -58,7 +56,9 @@ public class BasicMachinePartProcessorBlockEntity extends BlockEntity implements
             DCMessages.sendToClients(new DCEnergySyncS2CPacket(this.energy, getBlockPos()));
         }
     };
-
+    private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
+            Map.of(Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (in, stack) -> itemHandler.isItemValid(1, stack))),
+                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))));
     public static void tick(Level level, BlockPos pPos, BlockState pState, BasicMachinePartProcessorBlockEntity blockEntity) {
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity)) {
             if (hasNotReachedStackLimit(blockEntity)) {

@@ -287,7 +287,7 @@ public class BasicMachinePartProcessorBlockEntity extends BlockEntity implements
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         nbt.put("inventory", itemHandler.serializeNBT());
-        nbt.putFloat("bp_cs_t_thermal_generator.energy", ENERGY_STORAGE.getEnergyStoredFloat());
+        nbt.putFloat("b_mp_processor.energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
         super.saveAdditional(nbt);
     }

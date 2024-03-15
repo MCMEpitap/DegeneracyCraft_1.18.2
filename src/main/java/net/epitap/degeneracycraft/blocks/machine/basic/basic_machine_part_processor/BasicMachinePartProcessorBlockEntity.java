@@ -1,7 +1,11 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
+import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
+import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.BasicMachinePartProcessorRecipe;
+import net.epitap.degeneracycraft.networking.DCMessages;
+import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
 import net.epitap.degeneracycraft.util.WrappedHandler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -15,7 +19,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -32,6 +35,10 @@ import java.util.Map;
 import java.util.Optional;
 
 public class BasicMachinePartProcessorBlockEntity extends BlockEntity implements MenuProvider {
+    private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
+            Map.of(Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (in, stack) -> itemHandler.isItemValid(1, stack))),
+                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))));
+    public float BM_PART_PROCESSOR_CAPACITY = 40000F;
     public final ItemStackHandler itemHandler = new ItemStackHandler(10) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -43,14 +50,63 @@ public class BasicMachinePartProcessorBlockEntity extends BlockEntity implements
             return super.isItemValid(slot, stack);
         }
     };
+    public float BM_PART_PROCESSOR_TRANSFER = 40000F;
+    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BM_PART_PROCESSOR_CAPACITY, BM_PART_PROCESSOR_TRANSFER) {
+        @Override
+        public void onEnergyChanged() {
+            setChanged();
+            DCMessages.sendToClients(new DCEnergySyncS2CPacket(this.energy, getBlockPos()));
+        }
+    };
+
+    public static void tick(Level level, BlockPos pPos, BlockState pState, BasicMachinePartProcessorBlockEntity blockEntity) {
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity)) {
+            if (hasNotReachedStackLimit(blockEntity)) {
+                blockEntity.progress++;
+                setChanged(level, pPos, pState);
+                if (craftCheck(blockEntity)) {
+                    craftItem(blockEntity);
+                }
+            } else {
+                blockEntity.resetProgress();
+                setChanged(level, pPos, pState);
+            }
+        } else {
+            blockEntity.resetProgress();
+            setChanged(level, pPos, pState);
+        }
+    }
 
     public final ContainerData data;
-    private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
-            Map.of(Direction.DOWN, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 2, (in, stack) -> false)),
-                    Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 1, (in, stack) -> itemHandler.isItemValid(1, stack))),
-                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (in, stack) -> false)),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 1, (in, stack) -> itemHandler.isItemValid(1, stack))),
-                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 1 || out == 2, (in, stack) -> itemHandler.isItemValid(1, stack) || itemHandler.isItemValid(2, stack))));
+
+    private static void craftItem(BasicMachinePartProcessorBlockEntity pBlockEntity) {
+        Level level = pBlockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(pBlockEntity.itemHandler.getSlots());
+        for (int i = 0; i < pBlockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, pBlockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicMachinePartProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicMachinePartProcessorRecipe.Type.INSTANCE, inventory, level);
+
+        if (match.isPresent()) {
+            pBlockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
+            pBlockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
+            pBlockEntity.itemHandler.extractItem(2, match.get().getInput2Item().getCount(), false);
+            pBlockEntity.itemHandler.extractItem(3, match.get().getInput3Item().getCount(), false);
+            pBlockEntity.itemHandler.extractItem(4, match.get().getInput4Item().getCount(), false);
+            pBlockEntity.itemHandler.extractItem(5, match.get().getInput5Item().getCount(), false);
+            pBlockEntity.itemHandler.extractItem(6, match.get().getInput6Item().getCount(), false);
+            pBlockEntity.itemHandler.extractItem(7, match.get().getInput7Item().getCount(), false);
+            pBlockEntity.itemHandler.extractItem(8, match.get().getInput8Item().getCount(), false);
+            pBlockEntity.itemHandler.setStackInSlot(9, new ItemStack(match.get().getOutput0Item().getItem(),
+                    pBlockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
+
+
+            pBlockEntity.resetProgress();
+        }
+    }
+
     public int progress = 0;
     public float maxProgress = 100;
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
@@ -156,30 +212,15 @@ public class BasicMachinePartProcessorBlockEntity extends BlockEntity implements
                 && pBlockEntity.itemHandler.getStackInSlot(7).getCount() >= match.get().getInput7Item().getCount()
                 && pBlockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
     }
+
     @Override
     public void invalidateCaps() {
         super.invalidateCaps();
         lazyItemHandler.invalidate();
     }
 
-    public static void tick(Level level, BlockPos pPos, BlockState pState, BasicMachinePartProcessorBlockEntity blockEntity) {
-        if (hasRecipe(blockEntity)
-//                && hasAmountRecipe(blockEntity)
-                ){
-            if (hasNotReachedStackLimit(blockEntity)) {
-                blockEntity.progress++;
-                setChanged(level, pPos, pState);
-                if (craftCheck(blockEntity)) {
-                    craftItem(blockEntity);
-                }
-            } else {
-                blockEntity.resetProgress();
-                setChanged(level, pPos, pState);
-            }
-        } else {
-            blockEntity.resetProgress();
-            setChanged(level, pPos, pState);
-        }
+    public DCIEnergyStorageFloat getEnergyStorage() {
+        return ENERGY_STORAGE;
     }
 
     public static boolean craftCheck(BasicMachinePartProcessorBlockEntity blockEntity) {
@@ -220,37 +261,8 @@ public class BasicMachinePartProcessorBlockEntity extends BlockEntity implements
         return match.isPresent();
     }
 
-    private static void craftItem(BasicMachinePartProcessorBlockEntity pBlockEntity) {
-        Level level = pBlockEntity.level;
-        SimpleContainer inventory = new SimpleContainer(pBlockEntity.itemHandler.getSlots());
-        for (int i = 0; i < pBlockEntity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, pBlockEntity.itemHandler.getStackInSlot(i));
-        }
-
-        Optional<BasicMachinePartProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicMachinePartProcessorRecipe.Type.INSTANCE, inventory, level);
-
-        if (match.isPresent()) {
-//            pBlockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
-//            pBlockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
-//            pBlockEntity.itemHandler.extractItem(2, match.get().getInput2Item().getCount(), false);
-//            pBlockEntity.itemHandler.extractItem(3, match.get().getInput3Item().getCount(), false);
-//            pBlockEntity.itemHandler.extractItem(4, match.get().getInput4Item().getCount(), false);
-//            pBlockEntity.itemHandler.extractItem(5, match.get().getInput5Item().getCount(), false);
-//            pBlockEntity.itemHandler.extractItem(6, match.get().getInput6Item().getCount(), false);
-//            pBlockEntity.itemHandler.extractItem(7, match.get().getInput7Item().getCount(), false);
-//            pBlockEntity.itemHandler.extractItem(8, match.get().getInput8Item().getCount(), false);
-            int i;
-            for (i = 0; i < 9; i++) {
-                pBlockEntity.itemHandler.extractItem(i, 1, false);
-            }
-//            pBlockEntity.itemHandler.setStackInSlot(9, new ItemStack(match.get().getOutput0Item().getItem(),
-//                    pBlockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
-            pBlockEntity.itemHandler.setStackInSlot(9, new ItemStack((ItemLike) match.get().at(9),
-                    pBlockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
-
-            pBlockEntity.resetProgress();
-        }
+    public void setEnergyLevel(float energy) {
+        this.ENERGY_STORAGE.setEnergyFloat(energy);
     }
 
     public float getProgressPercent() {

@@ -45,8 +45,13 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
     public float BP_CS_T_THERMAL_GENERATOR_TRANSFER = 40000F;
     public float BP_CS_T_THERMAL_GENERATOR_OUTPUT = 16F;
     public float BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED = 32F;
-    private final ItemStackHandler itemHandler = new ItemStackHandler(2) {
+    protected final ContainerData data;
+    private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
+            Map.of(Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (in, stack) -> false))
+            );
 
+    private final ItemStackHandler itemHandler = new ItemStackHandler(2) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -60,7 +65,6 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
                 default -> super.isItemValid(slot, stack);
             };
         }
-
         @Nonnull
         @Override
         public ItemStack insertItem(int slot, @Nonnull ItemStack stack, boolean simulate) {
@@ -72,8 +76,6 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
             return super.insertItem(slot, stack, simulate);
         }
     };
-
-
     private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BP_CS_T_THERMAL_GENERATOR_CAPACITY, BP_CS_T_THERMAL_GENERATOR_TRANSFER) {
         @Override
         public void onEnergyChanged() {
@@ -91,16 +93,8 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
     }
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
-
-
-    private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
-            Map.of(Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack)))
-            );
-
-    private LazyOptional<DCIEnergyStorageFloat> lazyEnergyHandler = LazyOptional.empty();
-
-    protected final ContainerData data;
     public int counter;
+    private LazyOptional<DCIEnergyStorageFloat> lazyEnergyHandler = LazyOptional.empty();
 
     public BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity(BlockPos pos, BlockState state) {
         super(DCBlockEntities.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK_ENTITY.get(), pos, state);
@@ -140,7 +134,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
 
     @Override
     public <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-        if (cap == CapabilityEnergy.ENERGY) {
+        if (cap == CapabilityEnergy.ENERGY && (side == Direction.UP || side == Direction.DOWN || side == Direction.NORTH)) {
             return lazyEnergyHandler.cast();
         } else if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
             if (side == null) {
@@ -218,7 +212,6 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         pEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         pEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
         pEntity.hologram(level, pos, state, pEntity);
-
         if (level.isClientSide()) {
             return;
         }

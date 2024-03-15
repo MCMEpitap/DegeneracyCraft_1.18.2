@@ -8,7 +8,6 @@ import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
-import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
@@ -23,8 +22,6 @@ public class BasicMachinePartProcessorRecipeCategory implements IRecipeCategory<
     public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_machine_part_processor_recipe");
     public final static ResourceLocation TEXTURE =
             new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_component_manufacture_machine_uid.png");
-    static final RecipeType<BasicMachinePartProcessorRecipe> TYPE = new RecipeType<>(UID, BasicMachinePartProcessorRecipe.class);
-
     private final IDrawable background;
     private final IDrawable icon;
 
@@ -41,11 +38,6 @@ public class BasicMachinePartProcessorRecipeCategory implements IRecipeCategory<
     @Override
     public Class<? extends BasicMachinePartProcessorRecipe> getRecipeClass() {
         return BasicMachinePartProcessorRecipe.class;
-    }
-
-    @Override
-    public RecipeType<BasicMachinePartProcessorRecipe> getRecipeType() {
-        return TYPE;
     }
 
     @Override

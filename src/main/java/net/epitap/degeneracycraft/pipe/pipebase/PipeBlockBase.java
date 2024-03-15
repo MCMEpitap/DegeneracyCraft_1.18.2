@@ -1,12 +1,12 @@
 package net.epitap.degeneracycraft.pipe.pipebase;
 
+import net.epitap.degeneracycraft.item.DCCreativeTab;
 import net.epitap.degeneracycraft.item.tool.WrenchItem;
 import net.epitap.degeneracycraft.pipe.entity.IItemBlock;
 import net.epitap.degeneracycraft.pipe.entity.PipeBlockEntityTicker;
+import net.epitap.degeneracycraft.pipe.render.PipeVoxelShape;
 import net.epitap.degeneracycraft.pipe.render.Value2D;
 import net.epitap.degeneracycraft.pipe.render.Value3D;
-import net.epitap.degeneracycraft.pipe.render.PipeVoxelShape;
-import net.epitap.degeneracycraft.item.DCCreativeTab;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.FluidTags;
@@ -20,7 +20,10 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -119,6 +122,7 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
                 setPipeDisconnected(level, pos, side, false);
                 setPipeDisconnected(level, pos.relative(side), side.getOpposite(), false);
             }
+
         }
 
         PipeBlockEntityBase.detectPipeBlock(level, pos);
@@ -366,8 +370,7 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        if (context instanceof EntityCollisionContext) {
-            EntityCollisionContext collisionContext = (EntityCollisionContext) context;
+        if (context instanceof EntityCollisionContext collisionContext) {
             if (collisionContext.getEntity() instanceof Player player) {
                 if (player.level.isClientSide) {
                     return getSelectionShape(state, level, pos, player);

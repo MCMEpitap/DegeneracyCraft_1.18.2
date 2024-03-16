@@ -100,7 +100,6 @@ public class BasicMachinePartProcessorBlockEntity extends BlockEntity implements
                         break;
                 }
             }
-
             public int getCount() {
                 return 2;
             }
@@ -188,8 +187,6 @@ public class BasicMachinePartProcessorBlockEntity extends BlockEntity implements
     }
 
     public static void tick(Level level, BlockPos pPos, BlockState pState, BasicMachinePartProcessorBlockEntity blockEntity) {
-
-
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
@@ -202,7 +199,7 @@ public class BasicMachinePartProcessorBlockEntity extends BlockEntity implements
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity)) {
             if (hasNotReachedStackLimit(blockEntity)) {
                 blockEntity.progress++;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime(),false);
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
                 setChanged(level, pPos, pState);
                 if (craftCheck(blockEntity)) {
                     craftItem(blockEntity);

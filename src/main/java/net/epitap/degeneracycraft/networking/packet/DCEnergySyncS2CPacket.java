@@ -1,5 +1,7 @@
 package net.epitap.degeneracycraft.networking.packet;
 
+import net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor.BasicMachinePartProcessorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor.BasicMachinePartProcessorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.basic_power_composite_structure_type_thermal_generator.BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.basic_power_composite_structure_type_thermal_generator.BasicPowerCompositeStructureTypeThermalGeneratorMenu;
 import net.minecraft.client.Minecraft;
@@ -31,10 +33,18 @@ public class DCEnergySyncS2CPacket {
     public boolean handle(Supplier<NetworkEvent.Context> supplier) {
         NetworkEvent.Context context = supplier.get();
         context.enqueueWork(() -> {
-            if(Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity blockEntity) {
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity blockEntity) {
                 blockEntity.setEnergyLevel(energy);
 
-                if(Minecraft.getInstance().player.containerMenu instanceof BasicPowerCompositeStructureTypeThermalGeneratorMenu menu &&
+                if (Minecraft.getInstance().player.containerMenu instanceof BasicPowerCompositeStructureTypeThermalGeneratorMenu menu &&
+                        menu.getBlockEntity().getBlockPos().equals(pos)) {
+                    blockEntity.setEnergyLevel(energy);
+                }
+            }
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicMachinePartProcessorBlockEntity blockEntity) {
+                blockEntity.setEnergyLevel(energy);
+
+                if (Minecraft.getInstance().player.containerMenu instanceof BasicMachinePartProcessorMenu menu &&
                         menu.getBlockEntity().getBlockPos().equals(pos)) {
                     blockEntity.setEnergyLevel(energy);
                 }

@@ -27,10 +27,7 @@ public class BasicMachinePartProcessorBlock extends BlockBase {
         super(properties);
     }
 
-    @Nullable
-    protected static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(BlockEntityType<A> pServerType, BlockEntityType<E> pClientType, BlockEntityTicker<? super E> pTicker) {
-        return pClientType == pServerType ? (BlockEntityTicker<A>) pTicker : null;
-    }
+
 
     @Override
     public void onRemove(BlockState pState, Level level, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
@@ -72,5 +69,10 @@ public class BasicMachinePartProcessorBlock extends BlockBase {
                                                                   @NotNull BlockEntityType<T> type) {
         return createTickerHelper(type, DCBlockEntities.BASIC_MACHINE_PART_PROCESSOR_BLOCK_ENTITY.get(),
                 BasicMachinePartProcessorBlockEntity::tick);
+    }
+
+    @Nullable
+    protected static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(BlockEntityType<A> pServerType, BlockEntityType<E> pClientType, BlockEntityTicker<? super E> pTicker) {
+        return pClientType == pServerType ? (BlockEntityTicker<A>) pTicker : null;
     }
 }

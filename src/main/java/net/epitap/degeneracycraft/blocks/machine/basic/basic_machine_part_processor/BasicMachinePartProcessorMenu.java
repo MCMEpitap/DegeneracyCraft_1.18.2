@@ -2,7 +2,7 @@ package net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_proce
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
-import net.epitap.degeneracycraft.integration.jei.basic.BasicMachinePartProcessorRecipe;
+import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -25,7 +25,7 @@ public class BasicMachinePartProcessorMenu extends AbstractContainerMenu {
     public final BasicMachinePartProcessorBlockEntity blockEntity;
     public final Level level;
     public final ContainerData data;
-    public BasicMachinePartProcessorRecipe recipe;
+
     public BasicMachinePartProcessorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
         this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
@@ -49,15 +49,23 @@ public class BasicMachinePartProcessorMenu extends AbstractContainerMenu {
 
         addDataSlots(data);
     }
+
     public boolean isCrafting() {
         return data.get(0) > 0;
     }
+
     public float getProgressPercent() {
         return blockEntity.getProgressPercent();
     }
+
+    public DCIEnergyStorageFloat getEnergy() {
+        return blockEntity.getEnergyStorage();
+    }
+
     public BasicMachinePartProcessorBlockEntity getBlockEntity() {
         return this.blockEntity;
     }
+
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {
         Slot sourceSlot = slots.get(index);

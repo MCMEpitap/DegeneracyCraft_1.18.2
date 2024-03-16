@@ -31,6 +31,9 @@ import java.util.Map;
 import java.util.Optional;
 
 public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extends BlockEntity implements MenuProvider {
+    public final ContainerData data;
+    public int progress = 0;
+    public int maxProgress = 100;
     public final ItemStackHandler itemHandler = new ItemStackHandler(10) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -42,15 +45,17 @@ public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extend
             return super.isItemValid(slot, stack);
         }
     };
+    private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
-    public final ContainerData data;
+    private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
+            Map.of(Direction.DOWN, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 2, (in, stack) -> false)),
+                    Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 1, (in, stack) -> itemHandler.isItemValid(1, stack))),
+                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (in, stack) -> false)),
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 1, (in, stack) -> itemHandler.isItemValid(1, stack))),
+                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 1 || out == 2, (in, stack) -> itemHandler.isItemValid(1, stack) || itemHandler.isItemValid(2, stack))));
 
     public RedstonePoweredMachineComponentManufactureMachineBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(DCBlockEntities.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
-        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
-        for (int i = 0; i < 9; i++) {
-            inventory.setItem(i, this.itemHandler.getStackInSlot(i));
-        }
 
         this.data = new ContainerData() {
             public int get(int index) {
@@ -58,7 +63,7 @@ public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extend
                     case 0:
                         return RedstonePoweredMachineComponentManufactureMachineBlockEntity.this.progress;
                     case 1:
-                        return (int) RedstonePoweredMachineComponentManufactureMachineBlockEntity.this.maxProgress;
+                        return RedstonePoweredMachineComponentManufactureMachineBlockEntity.this.maxProgress;
                     default:
                         return 0;
                 }
@@ -81,21 +86,6 @@ public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extend
         };
 
     }
-
-    private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
-
-    private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
-            Map.of(Direction.DOWN, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 2, (in, stack) -> false)),
-                    Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 1, (in, stack) -> itemHandler.isItemValid(1, stack))),
-                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (in, stack) -> false)),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 1, (in, stack) -> itemHandler.isItemValid(1, stack))),
-                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 1 || out == 2, (in, stack) -> itemHandler.isItemValid(1, stack) || itemHandler.isItemValid(2, stack))));
-
-
-    public int progress = 0;
-
-    public float maxProgress = 100;
-
     @Override
     public Component getDisplayName() {
         return new TranslatableComponent("");

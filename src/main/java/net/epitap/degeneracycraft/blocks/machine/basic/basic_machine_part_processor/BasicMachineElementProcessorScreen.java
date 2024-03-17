@@ -15,12 +15,12 @@ import net.minecraft.world.entity.player.Inventory;
 
 import java.util.Optional;
 
-public class BasicMachinePartProcessorScreen extends AbstractContainerScreen<BasicMachinePartProcessorMenu> {
+public class BasicMachineElementProcessorScreen extends AbstractContainerScreen<BasicMachineElementProcessorMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_component_manufacture_machine_gui.png");
     private EnergyInfoArea energyInfoArea;
 
-    public BasicMachinePartProcessorScreen(BasicMachinePartProcessorMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public BasicMachineElementProcessorScreen(BasicMachineElementProcessorMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }
 
@@ -63,6 +63,7 @@ public class BasicMachinePartProcessorScreen extends AbstractContainerScreen<Bas
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
         this.blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight);
+        energyInfoArea.draw(pPoseStack);
     }
 
     private void renderEnergyAreaTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {

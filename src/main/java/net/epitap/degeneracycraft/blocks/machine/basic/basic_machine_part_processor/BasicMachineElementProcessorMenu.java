@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class BasicMachinePartProcessorMenu extends AbstractContainerMenu {
+public class BasicMachineElementProcessorMenu extends AbstractContainerMenu {
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
@@ -22,17 +22,17 @@ public class BasicMachinePartProcessorMenu extends AbstractContainerMenu {
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
     private static final int TE_INVENTORY_SLOT_COUNT = 10;
-    public final BasicMachinePartProcessorBlockEntity blockEntity;
+    public final BasicMachineElementProcessorBlockEntity blockEntity;
     public final Level level;
     public final ContainerData data;
 
-    public BasicMachinePartProcessorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+    public BasicMachineElementProcessorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
         this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
 
-    public BasicMachinePartProcessorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_MACHINE_PART_PROCESSOR_MACHINE_MENU.get(), id);
-        blockEntity = (BasicMachinePartProcessorBlockEntity) entity;
+    public BasicMachineElementProcessorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(DCMenuTypes.BASIC_MACHINE_ELEMENT_PROCESSOR_MACHINE_MENU.get(), id);
+        blockEntity = (BasicMachineElementProcessorBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
         addPlayerInventory(inv);
@@ -62,7 +62,7 @@ public class BasicMachinePartProcessorMenu extends AbstractContainerMenu {
         return blockEntity.getEnergyStorage();
     }
 
-    public BasicMachinePartProcessorBlockEntity getBlockEntity() {
+    public BasicMachineElementProcessorBlockEntity getBlockEntity() {
         return this.blockEntity;
     }
 
@@ -102,7 +102,7 @@ public class BasicMachinePartProcessorMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, DCBlocks.BASIC_MACHINE_PART_PROCESSOR_BLOCK.get());
+                player, DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

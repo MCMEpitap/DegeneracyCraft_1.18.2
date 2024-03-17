@@ -9,10 +9,10 @@ import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
-import net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor.BasicMachinePartProcessorScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor.BasicMachineElementProcessorScreen;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_component_manufacture_machine.RedstonePoweredMachineComponentManufactureMachineScreen;
-import net.epitap.degeneracycraft.integration.jei.basic.BasicMachinePartProcessorRecipe;
-import net.epitap.degeneracycraft.integration.jei.basic.BasicMachinePartProcessorRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.BasicMachineElementProcessorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.BasicMachineElementProcessorRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.initial.RedstonePoweredMachineComponentManufactureMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.RedstonePoweredMachineComponentManufactureMachineRecipeCategory;
 import net.minecraft.client.Minecraft;
@@ -38,7 +38,7 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeCategories(new
                 RedstonePoweredMachineComponentManufactureMachineRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
-                BasicMachinePartProcessorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+                BasicMachineElementProcessorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
     }
 
@@ -50,22 +50,22 @@ public class JEIDCPlugin implements IModPlugin {
         List<RedstonePoweredMachineComponentManufactureMachineRecipe> redstonePoweredMachineComponentManufactureMachineRecipes =
                 rm.getAllRecipesFor(RedstonePoweredMachineComponentManufactureMachineRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(RedstonePoweredMachineComponentManufactureMachineRecipeCategory.UID, RedstonePoweredMachineComponentManufactureMachineRecipe.class), redstonePoweredMachineComponentManufactureMachineRecipes);
-        List<BasicMachinePartProcessorRecipe> basicMachinePartProcessorRecipes =
-                rm.getAllRecipesFor(BasicMachinePartProcessorRecipe.Type.INSTANCE);
-        registration.addRecipes(new RecipeType<>(BasicMachinePartProcessorRecipeCategory.UID, BasicMachinePartProcessorRecipe.class), basicMachinePartProcessorRecipes);
+        List<BasicMachineElementProcessorRecipe> basicMachineElementProcessorRecipes =
+                rm.getAllRecipesFor(BasicMachineElementProcessorRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicMachineElementProcessorRecipeCategory.UID, BasicMachineElementProcessorRecipe.class), basicMachineElementProcessorRecipes);
 
     }
 
     @Override
     public void registerGuiHandlers(IGuiHandlerRegistration registration) {
         registration.addRecipeClickArea(RedstonePoweredMachineComponentManufactureMachineScreen.class, 64, 20, 29, 8, RedstonePoweredMachineComponentManufactureMachineRecipeCategory.UID);
-        registration.addRecipeClickArea(BasicMachinePartProcessorScreen.class, 64, 20, 29, 8, BasicMachinePartProcessorRecipeCategory.UID);
+        registration.addRecipeClickArea(BasicMachineElementProcessorScreen.class, 64, 20, 29, 8, BasicMachineElementProcessorRecipeCategory.UID);
     }
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK.get()), RedstonePoweredMachineComponentManufactureMachineRecipeCategory.UID);
-        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_MACHINE_PART_PROCESSOR_BLOCK.get()), BasicMachinePartProcessorRecipeCategory.UID);
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get()), BasicMachineElementProcessorRecipeCategory.UID);
     }
 
 }

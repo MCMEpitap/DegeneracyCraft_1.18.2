@@ -41,15 +41,29 @@ public class EnergyInfoArea extends InfoArea {
                 return List.of(Component.nullToEmpty(energy.getEnergyStoredFloat()/1000000F + " MFE" + "/" + energy.getMaxEnergyStoredFloat() /1000000F + " MFE"));
             }
             if (energy.getEnergyStoredFloat() < 1000000F && energy.getEnergyStoredFloat() >= 1000F) {
-                return List.of(Component.nullToEmpty(energy.getEnergyStoredFloat()/1000F + " KFE" + "/" + energy.getMaxEnergyStoredFloat() / 1000000F + " MFE"));
+                return List.of(Component.nullToEmpty(energy.getEnergyStoredFloat() / 1000F + " KFE" + "/" + energy.getMaxEnergyStoredFloat() / 1000000F + " MFE"));
             }
             if (energy.getEnergyStoredFloat() <= 0.00000001F && energy.getEnergyStoredFloat() >= 0F) {
                 return List.of(Component.nullToEmpty(0 + " FE" + "/" + energy.getMaxEnergyStoredFloat() / 1000000F + " MFE"));
             }
-
             return List.of(Component.nullToEmpty(energy.getEnergyStoredFloat() + "/" + energy.getMaxEnergyStoredFloat() / 1000000F + " MFE"));
         }
 
+        if (energy.getMaxEnergyStoredFloat() < 1000000000000F && energy.getMaxEnergyStoredFloat() >= 1000000000F) {
+            if (energy.getEnergyStoredFloat() < 1000000000000F && energy.getEnergyStoredFloat() >= 1000000000F) {
+                return List.of(Component.nullToEmpty(energy.getEnergyStoredFloat() / 1000000000F + " GFE" + "/" + energy.getMaxEnergyStoredFloat() / 1000000000F + " GFE"));
+            }
+            if (energy.getEnergyStoredFloat() < 1000000000F && energy.getEnergyStoredFloat() >= 1000000F) {
+                return List.of(Component.nullToEmpty(energy.getEnergyStoredFloat() / 1000000F + " MFE" + "/" + energy.getMaxEnergyStoredFloat() / 1000000F + " MFE"));
+            }
+            if (energy.getEnergyStoredFloat() < 1000000F && energy.getEnergyStoredFloat() >= 1000F) {
+                return List.of(Component.nullToEmpty(energy.getEnergyStoredFloat() / 1000F + " KFE" + "/" + energy.getMaxEnergyStoredFloat() / 1000000F + " MFE"));
+            }
+            if (energy.getEnergyStoredFloat() <= 0.00000001F && energy.getEnergyStoredFloat() >= 0F) {
+                return List.of(Component.nullToEmpty(0 + " FE" + "/" + energy.getMaxEnergyStoredFloat() / 1000000F + " MFE"));
+            }
+            return List.of(Component.nullToEmpty(energy.getEnergyStoredFloat() + "/" + energy.getMaxEnergyStoredFloat() / 1000000F + " MFE"));
+        }
         return List.of(Component.nullToEmpty(energy.getEnergyStoredFloat() + " FE" + "/" + energy.getMaxEnergyStoredFloat() + " FE"));
 
     }
@@ -57,7 +71,7 @@ public class EnergyInfoArea extends InfoArea {
     @Override
     public void draw(PoseStack transform) {
         final int height = area.getHeight();
-        int stored = (int) (height * (energy.getEnergyStoredFloat() / (float) energy.getMaxEnergyStoredFloat()));
+        int stored = (int) (height * (energy.getEnergyStoredFloat() / energy.getMaxEnergyStoredFloat()));
         fillGradient(
                 transform,
                 area.getX(), area.getY() + (height - stored),

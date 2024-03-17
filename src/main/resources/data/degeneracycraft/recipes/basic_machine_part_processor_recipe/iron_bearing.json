@@ -1,5 +1,5 @@
 {
-  "type": "degeneracycraft:basic_machine_part_processor_recipe",
+  "type": "degeneracycraft:basic_machine_element_processor_recipe",
   "energy": 1000.0,
   "time": 5.0,
   "input0": {

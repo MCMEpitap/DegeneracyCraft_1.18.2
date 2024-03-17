@@ -3,7 +3,7 @@ package net.epitap.degeneracycraft.blocks.base;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.entity.machine.PulverizerBlockEntity;
 import net.epitap.degeneracycraft.blocks.entity.machine.UniversalAssemblerPhase1BlockEntity;
-import net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor.BasicMachinePartProcessorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor.BasicMachineElementProcessorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.basic_power_composite_structure_type_thermal_generator.BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlockEntity;
@@ -42,9 +42,9 @@ public class DCBlockEntities {
             BLOCK_ENTITIES.register("basic_power_composite_structure_type_thermal_generator_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity::new, DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get()).build(null));
 
-    public static final RegistryObject<BlockEntityType<BasicMachinePartProcessorBlockEntity>> BASIC_MACHINE_PART_PROCESSOR_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_machine_part_processor_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicMachinePartProcessorBlockEntity::new, DCBlocks.BASIC_MACHINE_PART_PROCESSOR_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicMachineElementProcessorBlockEntity>> BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_machine_element_processor_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicMachineElementProcessorBlockEntity::new, DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get()).build(null));
 
 
 

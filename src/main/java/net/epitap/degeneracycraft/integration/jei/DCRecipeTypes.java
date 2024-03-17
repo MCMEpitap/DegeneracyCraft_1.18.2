@@ -1,7 +1,7 @@
 package net.epitap.degeneracycraft.integration.jei;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
-import net.epitap.degeneracycraft.integration.jei.basic.BasicMachinePartProcessorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.BasicMachineElementProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.RedstonePoweredMachineComponentManufactureMachineRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -21,16 +21,16 @@ public class DCRecipeTypes {
             SERIALIZERS.register("redstone_powered_machine_component_manufacture_machine_recipe", () -> RedstonePoweredMachineComponentManufactureMachineRecipe.Serializer.INSTANCE);
 
 
-    public static final RegistryObject<RecipeSerializer<BasicMachinePartProcessorRecipe>> BASIC_MACHINE_PART_PROCESSOR_SERIALIZER =
-            SERIALIZERS.register("basic_machine_part_processor_recipe", () -> BasicMachinePartProcessorRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<BasicMachineElementProcessorRecipe>> BASIC_MACHINE_ELEMENT_PROCESSOR_SERIALIZER =
+            SERIALIZERS.register("basic_machine_element_processor_recipe", () -> BasicMachineElementProcessorRecipe.Serializer.INSTANCE);
 
     public static final RegistryObject<RecipeSerializer<UniversalAssemblerPhase1Recipe>> ASSEMBLER_TIER1_SERIALIZER =
-            SERIALIZERS.register("universal_assembler_phase1_recipe",()-> UniversalAssemblerPhase1Recipe.Serializer.INSTANCE);
+            SERIALIZERS.register("universal_assembler_phase1_recipe", () -> UniversalAssemblerPhase1Recipe.Serializer.INSTANCE);
 
 //    public static final RegistryObject<RecipeSerializer<testRecipe>> test_recipeSERIALIZER =
 //            SERIALIZERS.register("test_recipe",()-> testRecipe.Serializer.INSTANCE);
 
-    public static void register(IEventBus eventBus){
+    public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
     }
 }

@@ -20,21 +20,19 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class BasicMachinePartProcessorBlock extends BlockBase {
+public class BasicMachineElementProcessorBlock extends BlockBase {
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
 
-    public BasicMachinePartProcessorBlock(Properties properties) {
+    public BasicMachineElementProcessorBlock(Properties properties) {
         super(properties);
     }
-
-
 
     @Override
     public void onRemove(BlockState pState, Level level, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = level.getBlockEntity(pPos);
-            if (blockEntity instanceof BasicMachinePartProcessorBlockEntity) {
-                ((BasicMachinePartProcessorBlockEntity) blockEntity).drops();
+            if (blockEntity instanceof BasicMachineElementProcessorBlockEntity) {
+                ((BasicMachineElementProcessorBlockEntity) blockEntity).drops();
             }
         }
         super.onRemove(pState, level, pPos, pNewState, pIsMoving);
@@ -46,9 +44,8 @@ public class BasicMachinePartProcessorBlock extends BlockBase {
         if (!level.isClientSide()) {
             BlockEntity entity = level.getBlockEntity(pPos);
 
-            if (entity instanceof BasicMachinePartProcessorBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer) pPlayer), (BasicMachinePartProcessorBlockEntity) entity, pPos);
-
+            if (entity instanceof BasicMachineElementProcessorBlockEntity) {
+                NetworkHooks.openGui(((ServerPlayer) pPlayer), (BasicMachineElementProcessorBlockEntity) entity, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
@@ -60,15 +57,15 @@ public class BasicMachinePartProcessorBlock extends BlockBase {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new BasicMachinePartProcessorBlockEntity(pos, state);
+        return new BasicMachineElementProcessorBlockEntity(pos, state);
     }
 
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level level, @NotNull BlockState state,
                                                                   @NotNull BlockEntityType<T> type) {
-        return createTickerHelper(type, DCBlockEntities.BASIC_MACHINE_PART_PROCESSOR_BLOCK_ENTITY.get(),
-                BasicMachinePartProcessorBlockEntity::tick);
+        return createTickerHelper(type, DCBlockEntities.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK_ENTITY.get(),
+                BasicMachineElementProcessorBlockEntity::tick);
     }
 
     @Nullable

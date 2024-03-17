@@ -1,7 +1,7 @@
 package net.epitap.degeneracycraft.networking.packet;
 
-import net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor.BasicMachinePartProcessorBlockEntity;
-import net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor.BasicMachinePartProcessorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor.BasicMachineElementProcessorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor.BasicMachineElementProcessorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.basic_power_composite_structure_type_thermal_generator.BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.basic_power_composite_structure_type_thermal_generator.BasicPowerCompositeStructureTypeThermalGeneratorMenu;
 import net.minecraft.client.Minecraft;
@@ -41,10 +41,10 @@ public class DCEnergySyncS2CPacket {
                     blockEntity.setEnergyLevel(energy);
                 }
             }
-            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicMachinePartProcessorBlockEntity blockEntity) {
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicMachineElementProcessorBlockEntity blockEntity) {
                 blockEntity.setEnergyLevel(energy);
 
-                if (Minecraft.getInstance().player.containerMenu instanceof BasicMachinePartProcessorMenu menu &&
+                if (Minecraft.getInstance().player.containerMenu instanceof BasicMachineElementProcessorMenu menu &&
                         menu.getBlockEntity().getBlockPos().equals(pos)) {
                     blockEntity.setEnergyLevel(energy);
                 }

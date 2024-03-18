@@ -187,7 +187,7 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
         Optional<BasicMachineElementProcessorRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && checkButton) {
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity)) {
             if (hasNotReachedStackLimit(blockEntity)) {
                 blockEntity.progress++;
                 if (craftCheck(blockEntity)) {
@@ -266,10 +266,6 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
                 .getRecipeFor(BasicMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime();
-    }
-
-    private static boolean checkButton(BasicMachineElementProcessorBlockEntity blockEntity) {
-
     }
 
     private static void craftItem(BasicMachineElementProcessorBlockEntity blockEntity) {

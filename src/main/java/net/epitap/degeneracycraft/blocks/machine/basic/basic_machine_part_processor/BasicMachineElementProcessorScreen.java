@@ -20,6 +20,7 @@ public class BasicMachineElementProcessorScreen extends AbstractContainerScreen<
             new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_component_manufacture_machine_gui.png");
     private EnergyInfoArea energyInfoArea;
 
+
     public BasicMachineElementProcessorScreen(BasicMachineElementProcessorMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }
@@ -53,6 +54,8 @@ public class BasicMachineElementProcessorScreen extends AbstractContainerScreen<
         }
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, (int) menu.getProgressPercent() + " %",
                 80, 11, 0xFFFFFF);
+
+
     }
 
     @Override

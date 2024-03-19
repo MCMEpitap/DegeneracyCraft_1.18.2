@@ -80,8 +80,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         modelBasicPowerCompositeStructureTypeThermalGenerator.parent(models().getExistingFile(mcLoc("cube")));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/basic_machine_element_processor_block_side_down"));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/basic_machine_element_processor_block_side_down"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("north", modLoc("block/basic_machine_element_processor_block_side_energy"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/basic_machine_element_processor_block_front"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("north", modLoc("block/basic_machine_element_processor_block_front"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/basic_machine_element_processor_block_side_energy"));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/basic_machine_element_processor_block_side_export"));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/basic_machine_element_processor_block_side_import"));
         orientedBlock(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(),

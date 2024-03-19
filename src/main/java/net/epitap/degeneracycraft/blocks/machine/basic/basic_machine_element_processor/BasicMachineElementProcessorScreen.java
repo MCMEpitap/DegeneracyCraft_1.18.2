@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_part_processor;
+package net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_element_processor;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -17,7 +17,7 @@ import java.util.Optional;
 
 public class BasicMachineElementProcessorScreen extends AbstractContainerScreen<BasicMachineElementProcessorMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_component_manufacture_machine_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic_machine_element_processor_gui.png");
     private EnergyInfoArea energyInfoArea;
 
 
@@ -43,8 +43,8 @@ public class BasicMachineElementProcessorScreen extends AbstractContainerScreen<
         int y = (height - imageHeight) / 2;
 
         renderEnergyAreaTooltips(pPoseStack, pMouseX, pMouseY, x, y);
-        drawString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase0"),
-                15, 67, 0xFFFFFF);
+        drawString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"),
+                15, 67, 0xFF0000);
         if (menu.isCrafting()) {
             drawString(pPoseStack, Minecraft.getInstance().font, "Work!",
                     67, 30, 0x00FF00);
@@ -55,7 +55,8 @@ public class BasicMachineElementProcessorScreen extends AbstractContainerScreen<
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, (int) menu.getProgressPercent() + " %",
                 80, 11, 0xFFFFFF);
 
-
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".abort"),
+                132, 66, 0xFFFFFF);
     }
 
     @Override

@@ -43,12 +43,13 @@ public class DCBlockStateProvider extends BlockStateProvider {
         simpleBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get());
 
 
-        redisterRedstonePoweredMachineComponentManufactureMachine();
-        redisterBasicPowerCompositeStructureTypeThermalGenerator();
+        registerRedstonePoweredMachineComponentManufactureMachine();
+        registerBasicPowerCompositeStructureTypeThermalGenerator();
+        registerBasicMachineElementProcessor();
     }
 
 
-    private void redisterRedstonePoweredMachineComponentManufactureMachine() {
+    private void registerRedstonePoweredMachineComponentManufactureMachine() {
         BlockModelBuilder modelRedstonePoweredMachineComponentManufactureMachine = models().getBuilder("block/redstone_powered_machine_component_manufacture_machine_block");
         modelRedstonePoweredMachineComponentManufactureMachine.parent(models().getExistingFile(mcLoc("cube")));
         modelRedstonePoweredMachineComponentManufactureMachine.texture("down", modLoc("block/redstone_powered_machine_component_manufacture_machine_down"));
@@ -61,7 +62,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> modelRedstonePoweredMachineComponentManufactureMachine);
     }
 
-    private void redisterBasicPowerCompositeStructureTypeThermalGenerator() {
+    private void registerBasicPowerCompositeStructureTypeThermalGenerator() {
         BlockModelBuilder modelBasicPowerCompositeStructureTypeThermalGenerator = models().getBuilder("block/basic_power_composite_structure_type_thermal_generator_block");
         modelBasicPowerCompositeStructureTypeThermalGenerator.parent(models().getExistingFile(mcLoc("cube")));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/basic_strength_multiblock_structure_frame_block"));
@@ -71,6 +72,19 @@ public class DCBlockStateProvider extends BlockStateProvider {
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/basic_strength_multiblock_machine_flame_importblock"));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/basic_strength_multiblock_machine_flame_exportblock"));
         orientedBlock(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get(),
+                state -> modelBasicPowerCompositeStructureTypeThermalGenerator);
+    }
+
+    private void registerBasicMachineElementProcessor() {
+        BlockModelBuilder modelBasicPowerCompositeStructureTypeThermalGenerator = models().getBuilder("block/basic_machine_element_processor_block");
+        modelBasicPowerCompositeStructureTypeThermalGenerator.parent(models().getExistingFile(mcLoc("cube")));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/basic_machine_element_processor_block_side_down"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/basic_machine_element_processor_block_side_down"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("north", modLoc("block/basic_machine_element_processor_block_side_energy"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/basic_machine_element_processor_block_front"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/basic_machine_element_processor_block_side_export"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/basic_machine_element_processor_block_side_import"));
+        orientedBlock(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(),
                 state -> modelBasicPowerCompositeStructureTypeThermalGenerator);
     }
 

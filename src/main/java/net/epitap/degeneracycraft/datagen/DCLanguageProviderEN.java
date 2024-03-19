@@ -650,6 +650,9 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "Basic Strength Multiblock Structure Frame Block (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "Basic Strength Multiblock Structure Glass Block (Hologram)");
 
+        add(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get(), "Basic Power Composite Structure Type Thermal Generator");
+        add(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(), "Basic Machine Element Processor");
+
 
         add(DCBlocks.PULVERIZER_BLOCK.get(), "Pulverizer");
         add(DCBlocks.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK.get(), "Universal Assembler Phase1");

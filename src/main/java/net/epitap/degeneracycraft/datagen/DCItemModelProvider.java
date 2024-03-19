@@ -661,8 +661,8 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.getId().getPath(),
                 modLoc("block/basic_power_composite_structure_type_thermal_generator_block"));
 
-//        withExistingParent(DCBlocks.BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_BLOCK.getId().getPath(),
-//                modLoc("block/basic_phase_bolt_manufacture_machine_block"));
+        withExistingParent(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.getId().getPath(),
+                modLoc("block/basic_machine_element_processor_block"));
 
 //        withExistingParent(DCBlocks.OVERWORLD_CASSITERITE_ORE.getId().getPath(),
 //                modLoc("block/overworld_cassiterite_ore"));

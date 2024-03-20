@@ -611,6 +611,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.BASIC_PRECISION_CHAIN_INSCRIBED_CIRCUIT.get());
 
         simpleItem(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+        simpleItem(DCItems.MACHINE_HALT_DEVICE.get());
 
         simpleItem(DCItems.BASIC_MACHINE_SCREEN.get());
         simpleItem(DCItems.BASIC_MOTOR.get());

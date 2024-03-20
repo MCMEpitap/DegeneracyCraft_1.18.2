@@ -254,6 +254,7 @@ public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extend
         this.progress = 0;
     }
 
+
     private static boolean hasNotReachedStackLimit(RedstonePoweredMachineComponentManufactureMachineBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(9).getCount() < blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
     }

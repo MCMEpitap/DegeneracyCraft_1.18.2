@@ -4,6 +4,7 @@ import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.BasicMachineElementProcessorRecipe;
+import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
 import net.epitap.degeneracycraft.util.WrappedHandler;
@@ -43,7 +44,7 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
     public int counter;
     public int progress = 0;
 
-    public final ItemStackHandler itemHandler = new ItemStackHandler(10) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(12) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -51,7 +52,27 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            return super.isItemValid(slot, stack);
+            return switch (slot) {
+                case 10 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
+                case 11 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
+                default -> super.isItemValid(slot, stack);
+            };
+        }
+
+        @Nonnull
+        @Override
+        public ItemStack insertItem(int slot, @Nonnull ItemStack stack, boolean simulate) {
+            if (slot == 10) {
+                if (stack.getItem() != DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()) {
+                    return stack;
+                }
+            }
+            if (slot == 11) {
+                if (stack.getItem() != DCItems.MACHINE_HALT_DEVICE.get()) {
+                    return stack;
+                }
+            }
+            return super.insertItem(slot, stack, simulate);
         }
     };
     private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BM_PART_PROCESSOR_CAPACITY, BM_PART_PROCESSOR_TRANSFER) {
@@ -188,7 +209,7 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
                 .getRecipeFor(BasicMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity)) {
-            if (hasNotReachedStackLimit(blockEntity)) {
+            if (hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
                 blockEntity.progress++;
                 if (craftCheck(blockEntity)) {
                     craftItem(blockEntity);
@@ -313,6 +334,10 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
 
     public void resetProgress() {
         this.progress = 0;
+    }
+
+    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
+        return inventory.getItem(9).getItem() == output.getItem() || inventory.getItem(9).isEmpty();
     }
 
     private static boolean hasNotReachedStackLimit(BasicMachineElementProcessorBlockEntity blockEntity) {

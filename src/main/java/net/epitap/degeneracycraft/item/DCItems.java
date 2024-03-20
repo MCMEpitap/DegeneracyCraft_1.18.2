@@ -685,6 +685,7 @@ public class DCItems extends CreativeModeTab {
 
     public static final RegistryObject<Item> WRENCH = ITEMS.register("wrench", () -> new WrenchItem(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB).stacksTo(1)));
     public static final RegistryObject<Item> MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER = ITEMS.register("multiblock_structure_hologram_visualizer", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB)));
+    public static final RegistryObject<Item> MACHINE_HALT_DEVICE = ITEMS.register("machine_halt_device", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB)));
 
     public static final RegistryObject<Item> BASIC_MACHINE_SCREEN = ITEMS.register("basic_machine_screen", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB)));
     public static final RegistryObject<Item> BASIC_MOTOR = ITEMS.register("basic_motor", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB)));
@@ -693,7 +694,6 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> BASIC_REINFORCEDPLATE = ITEMS.register("basic_reinforcedplate", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB)));
     public static final RegistryObject<Item> BASIC_TURBINE = ITEMS.register("basic_turbine", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB)));
 
-//    public static final RegistryObject<Item> DEGENERACYCRAFT_INTRODUCTION = ITEMS.register("degeneracycraft_introduction", () -> new Item(new Item.Properties().stacksTo(1)));
 
     public DCItems(String label) {
         super(label);

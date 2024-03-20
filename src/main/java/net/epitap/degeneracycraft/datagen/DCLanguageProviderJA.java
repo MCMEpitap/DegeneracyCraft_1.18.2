@@ -620,6 +620,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
         add(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "マルチブロック設備ホログラム投影機");
+        add(DCItems.MACHINE_HALT_DEVICE.get(), "機械停止デバイス");
+
         add(DCItems.BASIC_MACHINE_SCREEN.get(), "基本等級機械スクリーン");
         add(DCItems.BASIC_MOTOR.get(), "基本等級モーター");
         add(DCItems.BASIC_REDSTONE_BATTERY.get(), "基本等級レッドストーン電池");
@@ -669,7 +671,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("screen." + "degeneracycraft" + ".phase0", "Phase 0");
         add("screen." + "degeneracycraft" + ".phase1", "Phase 1");
 
-        add("screen." + "degeneracycraft" + ".abort", "強制停止");
+        add("screen." + "degeneracycraft" + ".halt", "停止中");
 
         add("screen." + "degeneracycraft_besic_power_composite_structure_type_thermal_generator" + ".burntime", "燃焼時間");
 

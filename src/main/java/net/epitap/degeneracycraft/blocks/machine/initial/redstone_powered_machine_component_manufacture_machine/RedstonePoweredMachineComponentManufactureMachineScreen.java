@@ -33,14 +33,14 @@ public class RedstonePoweredMachineComponentManufactureMachineScreen extends Abs
 
     @Override
     public void renderLabels(PoseStack pPoseStack,int pMouseX, int pMouseY) {
-        drawString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase0"),
-                15, 67, 0xFFFFFF);
-        if(menu.isCrafting()){
-            drawString(pPoseStack, Minecraft.getInstance().font, "Work!",
-                    67, 30, 0x00FF00);
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase0"),
+                35, 67, 0xFFFFFF);
+        if (menu.isCrafting()) {
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, "Work!",
+                    80, 30, 0x00FF00);
         } else {
-            drawString(pPoseStack, Minecraft.getInstance().font, "Stop!",
-                    67, 30, 0xFF0000);
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, "Stop!",
+                    80, 30, 0xFF0000);
         }
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, (int) menu.getProgressPercent() + " %",
                 80, 11, 0xFFFFFF);

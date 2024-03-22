@@ -57,19 +57,9 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
             return switch (slot) {
                 case 0 -> ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
-                case 1 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
+                case 1 -> itemHandler.getStackInSlot(1).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
                 default -> super.isItemValid(slot, stack);
             };
-        }
-        @Nonnull
-        @Override
-        public ItemStack insertItem(int slot, @Nonnull ItemStack stack, boolean simulate) {
-            if (slot == 0) {
-                if (ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) <= 0) {
-                    return stack;
-                }
-            }
-            return super.insertItem(slot, stack, simulate);
         }
     };
     private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BP_CS_T_THERMAL_GENERATOR_CAPACITY, BP_CS_T_THERMAL_GENERATOR_TRANSFER) {
@@ -209,7 +199,13 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
     public boolean isFormed() {
         return isFormed = formed0 && formed1 && formed2;
     }
+
     public boolean isFormed;
+
+    public boolean isVisualizer() {
+        return this.itemHandler.getStackInSlot(1).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+    }
+
     public static void tick(Level level, BlockPos pos, BlockState state, BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity blockEntity) {
         blockEntity.formed0 = blockEntity.isFormed0(level, pos, state);
         blockEntity.formed1 = blockEntity.isFormed1(level, pos, state);

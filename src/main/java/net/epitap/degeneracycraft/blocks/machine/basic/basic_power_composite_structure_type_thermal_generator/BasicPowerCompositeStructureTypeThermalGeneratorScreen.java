@@ -57,7 +57,8 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorScreen extends Abst
 
         renderPowerOutputTooltips(pPoseStack, pMouseX, pMouseY, x, y);
         renderEnergyAreaTooltips(pPoseStack, pMouseX, pMouseY, x, y);
-        renderburnTime(pPoseStack,pMouseX,pMouseY);
+        renderPowerModifierTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+        renderburnTime(pPoseStack, pMouseX, pMouseY);
     }
 
     private void renderPowerOutputTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
@@ -74,36 +75,66 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorScreen extends Abst
     }
 
     private void renderEnergyAreaTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
-        if(isMouseAboveArea(pMouseX, pMouseY, x, y, 155, 10, 9, 64)) {
+        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 155, 10, 9, 64)) {
             renderTooltip(pPoseStack, energyInfoArea.getTooltips(),
                     Optional.empty(), pMouseX - x, pMouseY - y);
         }
     }
 
+    private void renderPowerModifierTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
+        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 60, 15, 48, 10))
+            renderTooltip(pPoseStack, this.PowerModifierTooltips(),
+                    Optional.empty(), pMouseX - x, pMouseY - y);
+    }
+
+    public List<Component> PowerModifierTooltips() {
+        if (menu.blockEntity.isFormed) {
+            return List.of(Component.nullToEmpty("×2.00"));
+        }
+        return List.of(Component.nullToEmpty("×1.00"));
+    }
 
     private void renderburnTime(PoseStack pPoseStack, int pMouseX, int pMouseY) {
-        drawString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"),
-                15, 66, 0xff0000);
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"),
+                35, 66, 0xff0000);
 
-        drawString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_besic_power_composite_structure_type_thermal_generator" + ".burntime"),
-                103, 15, 0xffffff);
-        drawString(pPoseStack, Minecraft.getInstance().font, menu.getBurnTime() + " Sec",
-                103, 25, 0xffffff);
-        drawString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".output"),
-                103, 35, 0xffffff);
-        drawString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".modifier"),
-                103, 55, 0xffffff);
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_besic_power_composite_structure_type_thermal_generator" + ".burntime"),
+                130, 15, 0xffffff);
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, (int) menu.getBurnTime() + " Sec",
+                130, 25, 0xffffff);
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".output"),
+                130, 35, 0xffffff);
+//        drawString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".modifier"),
+//                103, 55, 0xffffff);
 
-        if(menu.blockEntity.isFormed){
-            drawString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED + " FE/t"),
-                    103, 45, 0xffffff);
-            drawString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".power_modifier_2"),
-                    103, 65, 0xffffff);
+        if (menu.getBurnTime() > 0) {
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, "Work!",
+                    80, 30, 0x00FF00);
         } else {
-            drawString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT + " FE/t"),
-                    103, 45, 0xffffff);
-            drawString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".power_modifier_1"),
-                    103, 65, 0xffffff);
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, "Stop!",
+                    80, 30, 0xFF0000);
+        }
+
+        if (menu.blockEntity.isFormed) {
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED + " FE/t"),
+                    130, 45, 0xffffff);
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".power_modifier_2"),
+                    80, 11, 0xffffff);
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, "ON",
+                    80, 47, 0x00FF00);
+        } else {
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT + " FE/t"),
+                    130, 45, 0xffffff);
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".power_modifier_1"),
+                    80, 11, 0xffffff);
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, "OFF",
+                    80, 47, 0xFF0000);
+        }
+
+        if (menu.blockEntity.isVisualizer()) {
+
+        } else {
+
         }
     }
     private boolean isMouseAboveArea(int pMouseX, int pMouseY, int x, int y, int offsetX, int offsetY, int width, int height) {

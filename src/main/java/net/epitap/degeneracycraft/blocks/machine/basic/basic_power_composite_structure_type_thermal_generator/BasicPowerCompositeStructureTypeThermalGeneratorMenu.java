@@ -46,9 +46,9 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorMenu extends Abstra
     }
 
 
-    public int getBurnTime() {
+    public float getBurnTime() {
         int getBurnTime = this.data.get(0);
-        return getBurnTime / 20;
+        return getBurnTime / 20F;
     }
 
     public DCIEnergyStorageFloat getEnergy() {

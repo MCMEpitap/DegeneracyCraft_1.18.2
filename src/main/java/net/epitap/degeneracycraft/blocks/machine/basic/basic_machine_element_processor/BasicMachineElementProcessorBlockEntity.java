@@ -52,27 +52,18 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            return switch (slot) {
-                case 10 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
-                case 11 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
-                default -> super.isItemValid(slot, stack);
-            };
-        }
-
-        @Nonnull
-        @Override
-        public ItemStack insertItem(int slot, @Nonnull ItemStack stack, boolean simulate) {
-            if (slot == 10) {
-                if (stack.getItem() != DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()) {
-                    return stack;
+            for (int i = 0; i < 10; i++) {
+                if (slot == i && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()) && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
+                    return true;
                 }
+            }
+            if (slot == 10) {
+                return stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
             }
             if (slot == 11) {
-                if (stack.getItem() != DCItems.MACHINE_HALT_DEVICE.get()) {
-                    return stack;
-                }
+                return stack.is(DCItems.MACHINE_HALT_DEVICE.get());
             }
-            return super.insertItem(slot, stack, simulate);
+            return false;
         }
     };
     private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BM_PART_PROCESSOR_CAPACITY, BM_PART_PROCESSOR_TRANSFER) {
@@ -94,7 +85,7 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     private LazyOptional<DCIEnergyStorageFloat> lazyEnergyHandler = LazyOptional.empty();
     private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
-            Map.of(Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (in, stack) -> itemHandler.isItemValid(1, stack))),
+            Map.of(Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (in, stack) -> itemHandler.isItemValid(9, stack))),
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))));
 
     public BasicMachineElementProcessorBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {

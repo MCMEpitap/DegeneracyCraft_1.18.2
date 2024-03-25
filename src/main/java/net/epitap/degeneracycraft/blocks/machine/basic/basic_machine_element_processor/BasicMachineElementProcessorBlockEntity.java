@@ -43,7 +43,7 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
     public final ContainerData data;
     public int counter;
     public int progress = 0;
-
+    public static boolean noHaltDevice;
     public final ItemStackHandler itemHandler = new ItemStackHandler(12) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -73,6 +73,7 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
             DCMessages.sendToClients(new DCEnergySyncS2CPacket(this.energy, getBlockPos()));
         }
     };
+
 
     public DCIEnergyStorageFloat getEnergyStorage() {
         return ENERGY_STORAGE;
@@ -199,7 +200,7 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
         Optional<BasicMachineElementProcessorRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity)) {
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && noHaltDevice(blockEntity)) {
             if (hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
                 blockEntity.progress++;
                 if (craftCheck(blockEntity)) {
@@ -278,6 +279,10 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
                 .getRecipeFor(BasicMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime();
+    }
+
+    public static boolean noHaltDevice(BasicMachineElementProcessorBlockEntity blockEntity) {
+        return noHaltDevice == !blockEntity.itemHandler.getStackInSlot(11).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
     private static void craftItem(BasicMachineElementProcessorBlockEntity blockEntity) {

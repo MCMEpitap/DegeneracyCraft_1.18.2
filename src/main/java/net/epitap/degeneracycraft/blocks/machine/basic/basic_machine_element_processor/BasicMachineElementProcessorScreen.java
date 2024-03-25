@@ -55,8 +55,11 @@ public class BasicMachineElementProcessorScreen extends AbstractContainerScreen<
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, (int) menu.getProgressPercent() + " %",
                 80, 11, 0xFFFFFF);
 
-        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".halt"),
-                133, 66, 0xFFFFFF);
+
+        if (BasicMachineElementProcessorBlockEntity.noHaltDevice) {
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".halt"),
+                    133, 66, 0xFFFFFF);
+        }
     }
 
     @Override

@@ -21,7 +21,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorMenu extends Abstra
     private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 2;
+    private static final int TE_INVENTORY_SLOT_COUNT = 3;
     public final BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
@@ -41,6 +41,8 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorMenu extends Abstra
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
             this.addSlot(new SlotItemHandler(handler, 0, 26, 25));
             this.addSlot(new SlotItemHandler(handler, 1, 71, 59));
+            this.addSlot(new SlotItemHandler(handler, 2, 98, 62));
+
         });
         addDataSlots(data);
     }

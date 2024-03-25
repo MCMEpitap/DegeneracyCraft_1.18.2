@@ -47,7 +47,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
     public float BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED = 32F;
     protected final ContainerData data;
     public int counter;
-    private final ItemStackHandler itemHandler = new ItemStackHandler(2) {
+    private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -55,11 +55,16 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
 
         @Override
         public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
-            return switch (slot) {
-                case 0 -> ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
-                case 1 -> itemHandler.getStackInSlot(1).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
-                default -> super.isItemValid(slot, stack);
-            };
+            if (slot == 0 && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()) && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
+                return ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
+            }
+            if (slot == 1) {
+                return stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+            }
+            if (slot == 2) {
+                return stack.is(DCItems.MACHINE_HALT_DEVICE.get());
+            }
+            return false;
         }
     };
     private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BP_CS_T_THERMAL_GENERATOR_CAPACITY, BP_CS_T_THERMAL_GENERATOR_TRANSFER) {

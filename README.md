@@ -11,7 +11,7 @@ The 7 fields are divided as follows.
 **Would the other stars be cubic?** <br>
 ## "B"iology (生物)
 ![Biology Icon](https://github.com/MCMEpitap/DegeneracyCraft_1.18.2/blob/master/github_biology_icon.png) <br>
-**クリーパー以上の異常は存在するのだろうか？** <br>
+**クリーパー以上の異常存在は存在するのだろうか？** <br>
 **Would there be more anomalies than a creeper?**
 ## "C"hemistry (化学)
 ![Chemistry Icon](https://github.com/MCMEpitap/DegeneracyCraft_1.18.2/blob/master/github_chemistry_icon.png) <br>

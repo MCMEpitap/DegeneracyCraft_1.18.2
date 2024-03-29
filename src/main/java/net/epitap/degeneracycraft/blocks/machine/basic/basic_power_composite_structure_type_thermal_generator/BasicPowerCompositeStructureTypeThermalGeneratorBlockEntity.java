@@ -207,8 +207,8 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
 
     public boolean isFormed;
 
-    public boolean isVisualizer() {
-        return this.itemHandler.getStackInSlot(1).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+    public static boolean isHaltDevice(BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity blockEntity) {
+        return blockEntity.itemHandler.getStackInSlot(2).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity blockEntity) {
@@ -222,23 +222,25 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         if (level.isClientSide()) {
             return;
         }
-
-        if (blockEntity.counter > 0) {
-            if (blockEntity.isFormed) {
-                blockEntity.counter--;
-                blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED, false);
-                setChanged(level, pos, state);
+        if (isHaltDevice(blockEntity)) {
+            if (blockEntity.counter > 0) {
+                if (blockEntity.isFormed) {
+                    blockEntity.counter--;
+                    blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED, false);
+                    setChanged(level, pos, state);
+                } else {
+                    blockEntity.counter--;
+                    blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT, false);
+                    setChanged(level, pos, state);
+                }
             } else {
-                blockEntity.counter--;
-                blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT, false);
+                ItemStack stack = blockEntity.itemHandler.getStackInSlot(0);
+                int burnTime = ForgeHooks.getBurnTime(stack, RecipeType.SMELTING);
+                if (burnTime > 0) {
+                    blockEntity.itemHandler.extractItem(0, 1, false);
+                    blockEntity.counter = burnTime;
+                }
                 setChanged(level, pos, state);
-            }
-        } else {
-            ItemStack stack = blockEntity.itemHandler.getStackInSlot(0);
-            int burnTime = ForgeHooks.getBurnTime(stack, RecipeType.SMELTING);
-            if (burnTime > 0) {
-                blockEntity.itemHandler.extractItem(0, 1, false);
-                blockEntity.counter = burnTime;
             }
             setChanged(level, pos, state);
         }

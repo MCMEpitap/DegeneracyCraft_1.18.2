@@ -56,7 +56,7 @@ public class BasicMachineElementProcessorScreen extends AbstractContainerScreen<
                 80, 11, 0xFFFFFF);
 
 
-        if (BasicMachineElementProcessorBlockEntity.noHaltDevice) {
+        if (BasicMachineElementProcessorBlockEntity.isHaltDevice(menu.blockEntity)) {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".halt"),
                     133, 66, 0xFFFFFF);
         }

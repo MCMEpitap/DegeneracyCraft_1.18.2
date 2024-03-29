@@ -62,7 +62,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorScreen extends Abst
     }
 
     private void renderPowerOutputTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
-        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 103, 45, 48, 10))
+        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 97, 45, 48, 10))
             renderTooltip(pPoseStack, this.PowerOutputTooltips(),
                     Optional.empty(), pMouseX - x, pMouseY - y);
     }
@@ -131,10 +131,9 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorScreen extends Abst
                     80, 47, 0xFF0000);
         }
 
-        if (menu.blockEntity.isVisualizer()) {
-
-        } else {
-
+        if (BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity.isHaltDevice(menu.blockEntity)) {
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".halt"),
+                    133, 66, 0xFFFFFF);
         }
     }
     private boolean isMouseAboveArea(int pMouseX, int pMouseY, int x, int y, int offsetX, int offsetY, int width, int height) {

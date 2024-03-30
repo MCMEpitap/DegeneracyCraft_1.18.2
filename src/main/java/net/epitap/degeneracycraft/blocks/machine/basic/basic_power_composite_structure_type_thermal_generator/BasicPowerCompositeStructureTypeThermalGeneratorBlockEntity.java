@@ -47,6 +47,11 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
     public float BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED = 32F;
     protected final ContainerData data;
     public int counter;
+    public boolean formed0;
+    public boolean formed1;
+    public boolean formed2;
+    public boolean isFormed;
+
     private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -196,21 +201,9 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
 
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
-
-    public boolean formed0;
-    public boolean formed1;
-    public boolean formed2;
-
     public boolean isFormed() {
         return isFormed = formed0 && formed1 && formed2;
     }
-
-    public boolean isFormed;
-
-    public static boolean isHaltDevice(BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(2).is(DCItems.MACHINE_HALT_DEVICE.get());
-    }
-
     public static void tick(Level level, BlockPos pos, BlockState state, BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity blockEntity) {
         blockEntity.formed0 = blockEntity.isFormed0(level, pos, state);
         blockEntity.formed1 = blockEntity.isFormed1(level, pos, state);
@@ -222,7 +215,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         if (level.isClientSide()) {
             return;
         }
-        if (isHaltDevice(blockEntity)) {
+        if (!isHaltDevice(blockEntity)) {
             if (blockEntity.counter > 0) {
                 if (blockEntity.isFormed) {
                     blockEntity.counter--;
@@ -245,6 +238,10 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
             setChanged(level, pos, state);
         }
         setChanged(level, pos, state);
+    }
+
+    public static boolean isHaltDevice(BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity blockEntity) {
+        return blockEntity.itemHandler.getStackInSlot(2).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
     public boolean isFormed0(Level level, BlockPos pos, BlockState state) {

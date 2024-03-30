@@ -62,7 +62,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorScreen extends Abst
     }
 
     private void renderPowerOutputTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
-        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 97, 45, 48, 10))
+        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 66, 9, 26, 10))
             renderTooltip(pPoseStack, this.PowerOutputTooltips(),
                     Optional.empty(), pMouseX - x, pMouseY - y);
     }
@@ -104,8 +104,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorScreen extends Abst
                 125, 25, 0xffffff);
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".output"),
                 125, 35, 0xffffff);
-//        drawString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".modifier"),
-//                103, 55, 0xffffff);
+
 
         if (menu.getBurnTime() > 0) {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, "Work!",

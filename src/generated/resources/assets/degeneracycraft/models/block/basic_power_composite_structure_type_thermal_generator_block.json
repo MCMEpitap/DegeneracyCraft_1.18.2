@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down": "degeneracycraft:block/basic_strength_multiblock_structure_frame_block",
-    "up": "degeneracycraft:block/basic_strength_multiblock_machine_flame_energyblock",
-    "north": "degeneracycraft:block/basic_power_composite_structure_type_thermal_generator_block",
-    "south": "degeneracycraft:block/basic_strength_multiblock_machine_flame_energyblock",
-    "east": "degeneracycraft:block/basic_strength_multiblock_machine_flame_importblock",
-    "west": "degeneracycraft:block/basic_strength_multiblock_machine_flame_exportblock"
+    "down": "degeneracycraft:block/basic_machine_block_side_down",
+    "up": "degeneracycraft:block/basic_power_composite_structure_type_thermal_generator_side_up",
+    "north": "degeneracycraft:block/basic_power_composite_structure_type_thermal_generator_front",
+    "south": "degeneracycraft:block/basic_power_composite_structure_type_thermal_generator_side_en",
+    "east": "degeneracycraft:block/basic_power_composite_structure_type_thermal_generator_side_im",
+    "west": "degeneracycraft:block/basic_power_composite_structure_type_thermal_generator_side_ex"
   }
 }

@@ -65,12 +65,12 @@ public class DCBlockStateProvider extends BlockStateProvider {
     private void registerBasicPowerCompositeStructureTypeThermalGenerator() {
         BlockModelBuilder modelBasicPowerCompositeStructureTypeThermalGenerator = models().getBuilder("block/basic_power_composite_structure_type_thermal_generator_block");
         modelBasicPowerCompositeStructureTypeThermalGenerator.parent(models().getExistingFile(mcLoc("cube")));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/basic_strength_multiblock_structure_frame_block"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/basic_strength_multiblock_machine_flame_energyblock"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("north", modLoc("block/basic_power_composite_structure_type_thermal_generator_block"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/basic_strength_multiblock_machine_flame_energyblock"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/basic_strength_multiblock_machine_flame_importblock"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/basic_strength_multiblock_machine_flame_exportblock"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/basic_machine_block_side_down"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/basic_power_composite_structure_type_thermal_generator_side_up"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("north", modLoc("block/basic_power_composite_structure_type_thermal_generator_front"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/basic_power_composite_structure_type_thermal_generator_side_en"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/basic_power_composite_structure_type_thermal_generator_side_im"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/basic_power_composite_structure_type_thermal_generator_side_ex"));
         orientedBlock(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get(),
                 state -> modelBasicPowerCompositeStructureTypeThermalGenerator);
     }
@@ -78,8 +78,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
     private void registerBasicMachineElementProcessor() {
         BlockModelBuilder modelBasicPowerCompositeStructureTypeThermalGenerator = models().getBuilder("block/basic_machine_element_processor_block");
         modelBasicPowerCompositeStructureTypeThermalGenerator.parent(models().getExistingFile(mcLoc("cube")));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/basic_machine_element_processor_block_side_down"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/basic_machine_element_processor_block_side_down"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/basic_machine_block_side_down"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/basic_machine_element_processor_block_side_energy"));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("north", modLoc("block/basic_machine_element_processor_block_front"));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/basic_machine_element_processor_block_side_energy"));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/basic_machine_element_processor_block_side_import"));
@@ -98,6 +98,5 @@ public class DCBlockStateProvider extends BlockStateProvider {
                             .rotationY(dir.getAxis() != Direction.Axis.Y ? ((dir.get2DDataValue() + 2) % 4) * 90 : 0)
                             .build();
                 });
-
     }
 }

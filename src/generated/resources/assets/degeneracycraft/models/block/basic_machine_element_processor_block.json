@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down": "degeneracycraft:block/basic_machine_element_processor_block_side_down",
-    "up": "degeneracycraft:block/basic_machine_element_processor_block_side_down",
+    "down": "degeneracycraft:block/basic_machine_block_side_down",
+    "up": "degeneracycraft:block/basic_machine_element_processor_block_side_energy",
     "north": "degeneracycraft:block/basic_machine_element_processor_block_front",
     "south": "degeneracycraft:block/basic_machine_element_processor_block_side_energy",
     "east": "degeneracycraft:block/basic_machine_element_processor_block_side_import",

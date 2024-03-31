@@ -803,6 +803,9 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft" + ".structure" + ".off", "マルチブロック構造非検知");
         add("tooltip." + "degeneracycraft" + ".work", "機械稼働中!");
         add("tooltip." + "degeneracycraft" + ".stop", "機械停止中!");
+        add("tooltip." + "degeneracycraft" + ".power_modifier_1", "出力倍率 ×1.00");
+        add("tooltip." + "degeneracycraft" + ".power_modifier_2", "出力倍率 ×2.00");
+
         add("tooltip." + "degeneracycraft" + ".halt", "機械強制停止中");
 
         add("advancements." + "degeneracycraft" + ".astronomy" + ".title", "天文学(Astronomy)");

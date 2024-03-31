@@ -487,6 +487,8 @@
   "tooltip.degeneracycraft.msmultiplication.iron_shaftcoupling.phase0": "\u8A2D\u5099\u751F\u7523\u500D\u7387:\u00D71 ~ \u00D71",
   "tooltip.degeneracycraft.msmultiplication.iron_shapesteel.phase0": "\u8A2D\u5099\u751F\u7523\u500D\u7387:\u00D71 ~ \u00D71",
   "tooltip.degeneracycraft.msmultiplication.iron_spring.phase0": "\u8A2D\u5099\u751F\u7523\u500D\u7387:\u00D71 ~ \u00D71",
+  "tooltip.degeneracycraft.power_modifier_1": "\u51FA\u529B\u500D\u7387 \u00D71.00",
+  "tooltip.degeneracycraft.power_modifier_2": "\u51FA\u529B\u500D\u7387 \u00D72.00",
   "tooltip.degeneracycraft.requiredenergy.": "\u8981\u6C42\u96FB\u529B\u7DCF\u91CF:",
   "tooltip.degeneracycraft.requiredenergy.iron_bearing.phase0": "\u8981\u6C42\u96FB\u529B\u7DCF\u91CF:0 FE",
   "tooltip.degeneracycraft.requiredenergy.iron_bolt.phase0": "\u8981\u6C42\u96FB\u529B\u7DCF\u91CF:0 FE",

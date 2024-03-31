@@ -682,8 +682,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("screen." + "degeneracycraft_generator" + ".power_output_16", "16 FE/t");
         add("screen." + "degeneracycraft_generator" + ".power_output_32", "32 FE/t");
 
-        add("screen." + "degeneracycraft_generator" + ".power_modifier_1", "×1.00");
-        add("screen." + "degeneracycraft_generator" + ".power_modifier_2", "×2.00");
+        add("screen." + "degeneracycraft" + ".power_modifier_1", "×1.00");
+        add("screen." + "degeneracycraft" + ".power_modifier_2", "×2.00");
 
 
         add("tooltip." + "degeneracycraft" + ".wrench", "Export → Import → DisConnection → Export... Pipe Mode change by shift light click");
@@ -693,7 +693,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "ipp." + "initial", "Industrial Progress Phase:Phase0");
         add("tooltip." + "degeneracycraft." + "ipp." + "basic", "Industrial Progress Phase:Phase1");
         add("tooltip." + "degeneracycraft." + "ipp." + "low", "Industrial Progress Phase:Phase2");
-        add("tooltip." + "degeneracycraft." + "ipp." +"medium", "Industrial Progress Phase:Phase3");
+        add("tooltip." + "degeneracycraft." + "ipp." + "medium", "Industrial Progress Phase:Phase3");
         add("tooltip." + "degeneracycraft." + "ipp." +"high", "Industrial Progress Phase:Phase4");
         add("tooltip." + "degeneracycraft." + "ipp." +"super", "Industrial Progress Phase:Phase5");
         add("tooltip." + "degeneracycraft." + "ipp." +"hyper", "Industrial Progress Phase:Phase6");
@@ -718,6 +718,9 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft" + ".structure" + ".off", "No Multiblock Structure");
         add("tooltip." + "degeneracycraft" + ".work", "Machine Working!");
         add("tooltip." + "degeneracycraft" + ".stop", "Machine Stopping!");
+        add("tooltip." + "degeneracycraft" + ".power_modifier_1", "Power Modifier ×1.00");
+        add("tooltip." + "degeneracycraft" + ".power_modifier_2", "Power Modifier ×2.00");
+
         add("tooltip." + "degeneracycraft" + ".halt", "Machine Forced Stop");
 
 

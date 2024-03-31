@@ -671,6 +671,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("screen." + "degeneracycraft" + ".phase0", "Phase 0");
         add("screen." + "degeneracycraft" + ".phase1", "Phase 1");
 
+
         add("screen." + "degeneracycraft" + ".halt", "Halt");
 
         add("screen." + "degeneracycraft_besic_power_composite_structure_type_thermal_generator" + ".burntime", "BurnTime");
@@ -683,6 +684,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add("screen." + "degeneracycraft_generator" + ".power_modifier_1", "×1.00");
         add("screen." + "degeneracycraft_generator" + ".power_modifier_2", "×2.00");
+
 
         add("tooltip." + "degeneracycraft" + ".wrench", "Export → Import → DisConnection → Export... Pipe Mode change by shift light click");
         add("tooltip." + "degeneracycraft" + ".wrenchitem", "Show Wrench Detail by shift key");
@@ -712,7 +714,11 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "requiredtime.", "Required time:");
         add("tooltip." + "degeneracycraft." + "sec.", " Sec");
 
-
+        add("tooltip." + "degeneracycraft" + ".structure" + ".on", "Correct Multiblock Structure Detected!");
+        add("tooltip." + "degeneracycraft" + ".structure" + ".off", "No Multiblock Structure");
+        add("tooltip." + "degeneracycraft" + ".work", "Machine Working!");
+        add("tooltip." + "degeneracycraft" + ".stop", "Machine Stopping!");
+        add("tooltip." + "degeneracycraft" + ".halt", "Machine Forced Stop");
 
 
         add("tooltip." + "degeneracycraft." + "requiredenergy." + "iron_bearing" + ".phase0", "Required Energy:0 FE");

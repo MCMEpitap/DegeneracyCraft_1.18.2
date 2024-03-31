@@ -799,6 +799,12 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "msmultiplication." + "iron_spring" + ".phase0", "設備生産倍率:×1 ~ ×1");
 
 
+        add("tooltip." + "degeneracycraft" + ".structure" + ".on", "正確なマルチブロック構造を検知!");
+        add("tooltip." + "degeneracycraft" + ".structure" + ".off", "マルチブロック構造非検知");
+        add("tooltip." + "degeneracycraft" + ".work", "機械稼働中!");
+        add("tooltip." + "degeneracycraft" + ".stop", "機械停止中!");
+        add("tooltip." + "degeneracycraft" + ".halt", "機械強制停止中");
+
         add("advancements." + "degeneracycraft" + ".astronomy" + ".title", "天文学(Astronomy)");
         add("advancements." + "degeneracycraft" + ".astronomy" + ".description", "目指せ、星間飛行");
 

@@ -452,6 +452,7 @@
   "screen.degeneracycraft_generator.power_output_16": "16 FE/t",
   "screen.degeneracycraft_generator.power_output_32": "32 FE/t",
   "screen.degeneracycraft_pulverizer": "Pulverizer Screen",
+  "tooltip.degeneracycraft.halt": "Machine Forced Stop",
   "tooltip.degeneracycraft.ipp.anti": "Industrial Progress Phase:Phase8",
   "tooltip.degeneracycraft.ipp.basic": "Industrial Progress Phase:Phase1",
   "tooltip.degeneracycraft.ipp.high": "Industrial Progress Phase:Phase4",
@@ -537,7 +538,11 @@
   "tooltip.degeneracycraft.requiredtime.iron_shapesteel.phase0": "Required time:100 tick (5 sec)",
   "tooltip.degeneracycraft.requiredtime.iron_spring.phase0": "Required time:100 tick (5 sec)",
   "tooltip.degeneracycraft.sec.": " Sec",
+  "tooltip.degeneracycraft.stop": "Machine Stopping!",
+  "tooltip.degeneracycraft.structure.off": "No Multiblock Structure",
+  "tooltip.degeneracycraft.structure.on": "Correct Multiblock Structure Detected!",
   "tooltip.degeneracycraft.tooltipitem": "Show Material Detail by shift key",
+  "tooltip.degeneracycraft.work": "Machine Working!",
   "tooltip.degeneracycraft.wrench": "Export \u2192 Import \u2192 DisConnection \u2192 Export... Pipe Mode change by shift light click",
   "tooltip.degeneracycraft.wrenchitem": "Show Wrench Detail by shift key"
 }

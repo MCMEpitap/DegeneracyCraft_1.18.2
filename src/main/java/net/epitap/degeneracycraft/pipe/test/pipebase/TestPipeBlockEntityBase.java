@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.pipe.pipebase;
+package net.epitap.degeneracycraft.pipe.test.pipebase;
 
 import net.epitap.degeneracycraft.pipe.parametor.GettingDirection;
 import net.epitap.degeneracycraft.pipe.parametor.ITickBlockEntity;
@@ -24,14 +24,14 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public abstract class PipeBlockEntityBase extends BlockEntity implements ITickBlockEntity {
+public abstract class TestPipeBlockEntityBase extends BlockEntity implements ITickBlockEntity {
     @Nullable
     protected List<Connection> connectionList;
     protected boolean[] extractingSides;
     protected boolean[] disconnectedSides;
     private int invalidateCountdown;
 
-    public PipeBlockEntityBase(BlockEntityType<?> blockEntityType, BlockPos pos, BlockState state) {
+    public TestPipeBlockEntityBase(BlockEntityType<?> blockEntityType, BlockPos pos, BlockState state) {
         super(blockEntityType, pos, state);
         extractingSides = new boolean[Direction.values().length];
         disconnectedSides = new boolean[Direction.values().length];
@@ -54,11 +54,11 @@ public abstract class PipeBlockEntityBase extends BlockEntity implements ITickBl
         List<BlockPos> pipePositions = new ArrayList<>();
         LinkedList<BlockPos> blockPosList = new LinkedList<>();
         Block block = world.getBlockState(pos).getBlock();
-        if (!(block instanceof PipeBlockBase pipeBlock)) {
+        if (!(block instanceof TestPipeBlockBase pipeBlock)) {
             return;
         }
 
-        PipeBlockEntityBase pipeBlockBlockEntity = pipeBlock.getBlockEntity(world, pos);
+        TestPipeBlockEntityBase pipeBlockBlockEntity = pipeBlock.getBlockEntity(world, pos);
         if (pipeBlockBlockEntity != null) {
             for (Direction side : Direction.values()) {
                 if (pipeBlockBlockEntity.pipeExtracting(side)) {
@@ -78,20 +78,20 @@ public abstract class PipeBlockEntityBase extends BlockEntity implements ITickBl
         while (blockPosList.size() > 0) {
             BlockPos blockPos = blockPosList.removeFirst();
             block = world.getBlockState(blockPos).getBlock();
-            if (block instanceof PipeBlockBase) {
-                addSerialPipeList(world, blockPos, (PipeBlockBase) block, pipePositions, blockPosList);
+            if (block instanceof TestPipeBlockBase) {
+                addSerialPipeList(world, blockPos, (TestPipeBlockBase) block, pipePositions, blockPosList);
             }
         }
         for (BlockPos position : pipePositions) {
             BlockEntity te = world.getBlockEntity(position);
-            if (!(te instanceof PipeBlockEntityBase pipe)) {
+            if (!(te instanceof TestPipeBlockEntityBase pipe)) {
                 continue;
             }
             pipe.connectionList = null;
         }
     }
 
-    private static void addSerialPipeList(Level world, BlockPos pos, PipeBlockBase pipeBlock, List<BlockPos> travelPositions, LinkedList<BlockPos> pipePos) {
+    private static void addSerialPipeList(Level world, BlockPos pos, TestPipeBlockBase pipeBlock, List<BlockPos> travelPositions, LinkedList<BlockPos> pipePos) {
         for (Direction direction : Direction.values()) {
             if (pipeBlock.pipeConnected(world, pos, direction)) {
                 BlockPos blockPos = pos.relative(direction);
@@ -105,7 +105,7 @@ public abstract class PipeBlockEntityBase extends BlockEntity implements ITickBl
 
     private void updateList() {
         BlockState blockState = getBlockState();
-        if (!(blockState.getBlock() instanceof PipeBlockBase)) {
+        if (!(blockState.getBlock() instanceof TestPipeBlockBase)) {
             connectionList = null;
             return;
         }
@@ -133,7 +133,7 @@ public abstract class PipeBlockEntityBase extends BlockEntity implements ITickBl
 
     public void addPipeList(Level world, BlockPos position, Map<BlockPos, Integer> list, List<BlockPos> travelPositions, Map<GettingDirection, Integer> insertPositions, int distance) {
         Block block = world.getBlockState(position).getBlock();
-        if (!(block instanceof PipeBlockBase pipeBlock)) {
+        if (!(block instanceof TestPipeBlockBase pipeBlock)) {
             return;
         }
         for (Direction direction : Direction.values()) {
@@ -159,7 +159,7 @@ public abstract class PipeBlockEntityBase extends BlockEntity implements ITickBl
 
     public boolean canPipeInsertMode(BlockPos pos, Direction direction) {
         BlockEntity pipeBlockEntity = level.getBlockEntity(pos);
-        if (pipeBlockEntity instanceof PipeBlockEntityBase pipe) {
+        if (pipeBlockEntity instanceof TestPipeBlockEntityBase pipe) {
             if (pipe.pipeExtracting(direction)) {
                 return false;
             }
@@ -169,7 +169,7 @@ public abstract class PipeBlockEntityBase extends BlockEntity implements ITickBl
         if (blockentity == null) {
             return false;
         }
-        if (blockentity instanceof PipeBlockEntityBase) {
+        if (blockentity instanceof TestPipeBlockEntityBase) {
             return false;
         }
         return canPipeInsertMode(blockentity, direction.getOpposite());
@@ -292,12 +292,12 @@ public abstract class PipeBlockEntityBase extends BlockEntity implements ITickBl
 
     public record Connection(BlockPos pos, Direction direction, int distance) {
         @Override
-            public String toString() {
-                return "Connection{" +
-                        "pos=" + pos +
-                        ", direction=" + direction +
-                        ", distance=" + distance +
-                        '}';
-            }
+        public String toString() {
+            return "Connection{" +
+                    "pos=" + pos +
+                    ", direction=" + direction +
+                    ", distance=" + distance +
+                    '}';
         }
+    }
 }

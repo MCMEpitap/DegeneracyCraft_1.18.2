@@ -16,10 +16,14 @@ import net.epitap.degeneracycraft.integration.jei.DCRecipeTypes;
 import net.epitap.degeneracycraft.item.DCAdvancementIcon;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
+import net.epitap.degeneracycraft.pipe.block.PipeBlockClickEvent;
 import net.epitap.degeneracycraft.pipe.block.PipeBlocks;
-import net.epitap.degeneracycraft.pipe.entity.PipeBlockClickEvent;
 import net.epitap.degeneracycraft.pipe.entity.PipeBlockEntities;
 import net.epitap.degeneracycraft.pipe.render.PipeModelRegistry;
+import net.epitap.degeneracycraft.pipe.test.blocks.TestPipeBlockClickEvent;
+import net.epitap.degeneracycraft.pipe.test.blocks.TestPipeBlocks;
+import net.epitap.degeneracycraft.pipe.test.entities.TestPipeBlockEntities;
+import net.epitap.degeneracycraft.pipe.test.render.TestPipeModelRegistry;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -62,11 +66,18 @@ public class Degeneracycraft {
         MinecraftForge.EVENT_BUS.register(this);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(PipeModelRegistry::onModelRegister);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(PipeModelRegistry::onModelBake);
+
+        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Item.class, TestPipeBlocks::registerItems);
+        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Block.class, TestPipeBlocks::registerBlocks);
+        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(BlockEntityType.class, TestPipeBlockEntities::registerBlockEntities);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(TestPipeModelRegistry::onModelRegister);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(TestPipeModelRegistry::onModelBake);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(DCMessages::register);
         MinecraftForge.EVENT_BUS.register(new PipeBlockClickEvent());
+        MinecraftForge.EVENT_BUS.register(new TestPipeBlockClickEvent());
     }
 
 
@@ -93,7 +104,10 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), RenderType.translucent());
 
         MenuScreens.register(DCMenuTypes.INFINITY_POWERED_ALL_IN_ONE_COMPRESSOR_MACHINE_BLOCK_MENU.get(), InfinityPoweredAllInOneCompressorMachineScreen::new);
+
         PipeBlockEntities.clientSetup();
+        TestPipeBlockEntities.clientSetup();
+
     }
 
 }

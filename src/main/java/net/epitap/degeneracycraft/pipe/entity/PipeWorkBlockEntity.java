@@ -5,6 +5,8 @@ import net.epitap.degeneracycraft.pipe.energy.BasicEnergyPipeType;
 import net.epitap.degeneracycraft.pipe.energy.PipeFloatEnergyStorage;
 import net.epitap.degeneracycraft.pipe.energy.PipeIntEnergyStorage;
 import net.epitap.degeneracycraft.pipe.energy.floa.FloatEnergyPipeType;
+import net.epitap.degeneracycraft.pipe.parametor.PipeItemHandler;
+import net.epitap.degeneracycraft.pipe.parametor.PipeSetLazyOptional;
 import net.epitap.degeneracycraft.pipe.pipebase.PipeBlockEntityBase;
 import net.epitap.degeneracycraft.pipe.pipebase.PipeTypeBase;
 import net.minecraft.core.BlockPos;

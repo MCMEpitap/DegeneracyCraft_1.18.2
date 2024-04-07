@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.pipe.entity;
+package net.epitap.degeneracycraft.pipe.parametor;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

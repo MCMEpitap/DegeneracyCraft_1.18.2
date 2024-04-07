@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.pipe.pipebase;
+package net.epitap.degeneracycraft.pipe.test.pipebase;
 
 import net.epitap.degeneracycraft.item.DCCreativeTab;
 import net.epitap.degeneracycraft.item.tool.WrenchItem;
@@ -42,7 +42,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Arrays;
 import java.util.List;
 
-public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleWaterloggedBlock,EntityBlock {
+public abstract class TestPipeBlockBase extends Block implements IItemBlock, SimpleWaterloggedBlock, EntityBlock {
     public static final BooleanProperty DOWN = BooleanProperty.create("down");
     public static final BooleanProperty UP = BooleanProperty.create("up");
     public static final BooleanProperty NORTH = BooleanProperty.create("north");
@@ -52,7 +52,7 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
     public static final BooleanProperty HAS_DATA = BooleanProperty.create("has_data");
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-    protected PipeBlockBase() {
+    protected TestPipeBlockBase() {
         super(Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(0.5F));
 
         registerDefaultState(stateDefinition.any()
@@ -125,7 +125,7 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
 
         }
 
-        PipeBlockEntityBase.detectPipeBlock(level, pos);
+        TestPipeBlockEntityBase.detectPipeBlock(level, pos);
         return InteractionResult.SUCCESS;
     }
 
@@ -161,7 +161,7 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
     }
 
     public boolean pipeExtracting(LevelAccessor world, BlockPos pos, Direction side) {
-        PipeBlockEntityBase pipe = getBlockEntity(world, pos);
+        TestPipeBlockEntityBase pipe = getBlockEntity(world, pos);
         if (pipe == null) {
             return false;
         }
@@ -169,7 +169,7 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
     }
 
     public boolean pipeDisconnected(LevelAccessor world, BlockPos pos, Direction side) {
-        PipeBlockEntityBase pipe = getBlockEntity(world, pos);
+        TestPipeBlockEntityBase pipe = getBlockEntity(world, pos);
         if (pipe == null) {
             return false;
         }
@@ -182,7 +182,7 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
     }
 
     public void setPipeExtracting(Level world, BlockPos pos, Direction side, boolean extracting) {
-        PipeBlockEntityBase pipeEntity = getBlockEntity(world, pos);
+        TestPipeBlockEntityBase pipeEntity = getBlockEntity(world, pos);
         if (pipeEntity == null) {
             if (extracting) {
                 setHasData(world, pos, true);
@@ -205,7 +205,7 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
     }
 
     public void setPipeDisconnected(Level world, BlockPos pos, Direction side, boolean disconnected) {
-        PipeBlockEntityBase pipeEntity = getBlockEntity(world, pos);
+        TestPipeBlockEntityBase pipeEntity = getBlockEntity(world, pos);
         if (pipeEntity == null) {
             if (disconnected) {
                 setHasData(world, pos, true);
@@ -224,10 +224,10 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
         }
     }
 
-    public PipeBlockEntityBase getBlockEntity(LevelAccessor world, BlockPos pos) {
+    public TestPipeBlockEntityBase getBlockEntity(LevelAccessor world, BlockPos pos) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
-        if (blockEntity instanceof PipeBlockEntityBase) {
-            return (PipeBlockEntityBase) blockEntity;
+        if (blockEntity instanceof TestPipeBlockEntityBase) {
+            return (TestPipeBlockEntityBase) blockEntity;
         }
         return null;
     }
@@ -255,8 +255,8 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
     }
 
     public boolean pipeConnected(LevelAccessor world, BlockPos pos, Direction facing) {
-        PipeBlockEntityBase pipe = getBlockEntity(world, pos);
-        PipeBlockEntityBase other = getBlockEntity(world, pos.relative(facing));
+        TestPipeBlockEntityBase pipe = getBlockEntity(world, pos);
+        TestPipeBlockEntityBase other = getBlockEntity(world, pos.relative(facing));
 
         if (!enableConnect(world, pos, facing)) {
             return false;
@@ -291,7 +291,7 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
         BlockState newState = getBlockState(world, toPos, state);
         if (!state.getProperties().stream().allMatch(property -> state.getValue(property).equals(newState.getValue(property)))) {
             world.setBlockAndUpdate(toPos, newState);
-            PipeBlockEntityBase.detectPipeBlock(world, toPos);
+            TestPipeBlockEntityBase.detectPipeBlock(world, toPos);
         }
     }
 
@@ -301,23 +301,23 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
     }
 
 
-    public static final VoxelShape SHAPE_NORTH = Block.box(7D, 7D, 0D, 9D, 9D, 5D);
-    public static final VoxelShape SHAPE_SOUTH = Block.box(7D, 7D, 11D, 9D, 9D, 16D);
-    public static final VoxelShape SHAPE_EAST = Block.box(11D, 7D, 7D, 16D, 9D, 9D);
-    public static final VoxelShape SHAPE_WEST = Block.box(0D, 7D, 7D, 5D, 9D, 9D);
-    public static final VoxelShape SHAPE_UP = Block.box(7D, 11D, 7D, 9D, 16D, 9D);
-    public static final VoxelShape SHAPE_DOWN = Block.box(7D, 0D, 7D, 9D, 5D, 9D);
+    public static final VoxelShape SHAPE_NORTH = Block.box(2D, 2D, 0D, 14D, 14D, 1D);
+    public static final VoxelShape SHAPE_SOUTH = Block.box(2D, 2D, 15D, 14D, 14D, 16D);
+    public static final VoxelShape SHAPE_EAST = Block.box(15D, 2D, 2D, 16D, 14D, 14D);
+    public static final VoxelShape SHAPE_WEST = Block.box(0D, 2D, 2D, 1D, 14D, 14D);
+    public static final VoxelShape SHAPE_UP = Block.box(2D, 15D, 2D, 14D, 16D, 14D);
+    public static final VoxelShape SHAPE_DOWN = Block.box(2D, 0D, 2D, 14D, 1D, 14D);
     public static final VoxelShape SHAPE_CORE = Block.box(5D, 5D, 5D, 11D, 11D, 11D);
-    public static final VoxelShape SHAPE_EXTRACT_NORTH = PipeVoxelShape.combine(SHAPE_NORTH, Block.box(4D, 4D, 0D, 12D, 12D, 1D));
-    public static final VoxelShape SHAPE_EXTRACT_SOUTH = PipeVoxelShape.combine(SHAPE_SOUTH, Block.box(4D, 4D, 15D, 12D, 12D, 16D));
-    public static final VoxelShape SHAPE_EXTRACT_EAST = PipeVoxelShape.combine(SHAPE_EAST, Block.box(15D, 4D, 4D, 16D, 12D, 12D));
-    public static final VoxelShape SHAPE_EXTRACT_WEST = PipeVoxelShape.combine(SHAPE_WEST, Block.box(0D, 4D, 4D, 1D, 12D, 12D));
-    public static final VoxelShape SHAPE_EXTRACT_UP = PipeVoxelShape.combine(SHAPE_UP, Block.box(4D, 15D, 4D, 12D, 16D, 12D));
-    public static final VoxelShape SHAPE_EXTRACT_DOWN = PipeVoxelShape.combine(SHAPE_DOWN, Block.box(4D, 0D, 4D, 12D, 1D, 12D));
+    public static final VoxelShape SHAPE_EXTRACT_NORTH = PipeVoxelShape.combine(SHAPE_NORTH, Block.box(0D, 0D, 0D, 16D, 16D, 1D));
+    public static final VoxelShape SHAPE_EXTRACT_SOUTH = PipeVoxelShape.combine(SHAPE_SOUTH, Block.box(0D, 0D, 15D, 16D, 16D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_EAST = PipeVoxelShape.combine(SHAPE_EAST, Block.box(15D, 0D, 0D, 16D, 16D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_WEST = PipeVoxelShape.combine(SHAPE_WEST, Block.box(0D, 0D, 0D, 1D, 16D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_UP = PipeVoxelShape.combine(SHAPE_UP, Block.box(0D, 15D, 0D, 16D, 16D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_DOWN = PipeVoxelShape.combine(SHAPE_DOWN, Block.box(0D, 0D, 0D, 16D, 1D, 16D));
 
 
     public VoxelShape getShape(BlockGetter blockReader, BlockPos pos, BlockState state, boolean advanced) {
-        PipeBlockEntityBase pipe = null;
+        TestPipeBlockEntityBase pipe = null;
         if (advanced && blockReader instanceof LevelAccessor) {
             pipe = getBlockEntity((LevelAccessor) blockReader, pos);
         }
@@ -431,7 +431,7 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
             return new Value2D<>(direction, voxelShape);
         }
 
-        PipeBlockEntityBase pipe = getBlockEntity((LevelAccessor) blockReader, pos);
+        TestPipeBlockEntityBase pipe = getBlockEntity((LevelAccessor) blockReader, pos);
 
         for (int i = 0; i < Direction.values().length; i++) {
             Value2D<VoxelShape, Direction> extract = EXTRACT_SHAPES.get(i);
@@ -471,7 +471,7 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
         return blockRayTraceResult.getLocation().distanceTo(start);
     }
 
-    private double checkShape(BlockState state, BlockGetter world, BlockPos pos, Vec3 start, Vec3 end, VoxelShape shape, @Nullable PipeBlockEntityBase pipe, Direction side) {
+    private double checkShape(BlockState state, BlockGetter world, BlockPos pos, Vec3 start, Vec3 end, VoxelShape shape, @Nullable TestPipeBlockEntityBase pipe, Direction side) {
         if (pipe != null && !pipe.pipeExtracting(side)) {
             return Double.MAX_VALUE;
         }

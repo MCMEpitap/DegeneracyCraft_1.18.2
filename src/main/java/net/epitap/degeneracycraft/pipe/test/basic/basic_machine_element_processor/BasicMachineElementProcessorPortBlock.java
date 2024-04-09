@@ -1,7 +1,7 @@
-package net.epitap.degeneracycraft.pipe.test.basic;
+package net.epitap.degeneracycraft.pipe.test.basic.basic_machine_element_processor;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
-import net.epitap.degeneracycraft.pipe.test.pipebase.TestPipeBlockBase;
+import net.epitap.degeneracycraft.pipe.test.pipebase.PortBlockBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
@@ -15,8 +15,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.items.CapabilityItemHandler;
 
-public class TestBasicItemPipeBlock extends TestPipeBlockBase {
-    protected TestBasicItemPipeBlock() {
+public class BasicMachineElementProcessorPortBlock extends PortBlockBase {
+    protected BasicMachineElementProcessorPortBlock() {
         setRegistryName(new ResourceLocation(Degeneracycraft.MOD_ID, "test_basic_item_pipe"));
     }
 
@@ -34,13 +34,13 @@ public class TestBasicItemPipeBlock extends TestPipeBlockBase {
 
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new TestBasicItemPipeEntity(pos, state);
+        return new BasicMachineElementProcessorPortBlockEntity(pos, state);
     }
 
     @Override
     public InteractionResult pipeSideLaunch(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, Direction direction) {
         BlockEntity blockentity = level.getBlockEntity(pos);
-        if ((blockentity instanceof TestBasicItemPipeEntity) && pipeExtracting(level, pos, direction)) {
+        if ((blockentity instanceof BasicMachineElementProcessorPortBlockEntity) && pipeExtracting(level, pos, direction)) {
             if (level.isClientSide) {
                 return InteractionResult.SUCCESS;
             }

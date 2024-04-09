@@ -1,9 +1,9 @@
-package net.epitap.degeneracycraft.pipe.test.basic;
+package net.epitap.degeneracycraft.pipe.test.basic.basic_machine_element_processor;
 
 import net.epitap.degeneracycraft.item.DCItems;
-import net.epitap.degeneracycraft.pipe.test.entities.TestPipeWorkBlockEntity;
-import net.epitap.degeneracycraft.pipe.test.pipebase.TestPipeBlockEntityBase;
-import net.epitap.degeneracycraft.pipe.test.pipebase.TestPipeTypeBase;
+import net.epitap.degeneracycraft.pipe.test.entities.PortWorkBlockEntity;
+import net.epitap.degeneracycraft.pipe.test.pipebase.PortBlockEntityBase;
+import net.epitap.degeneracycraft.pipe.test.pipebase.PortTypeBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.Item;
@@ -16,8 +16,8 @@ import net.minecraftforge.items.ItemHandlerHelper;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class TestBasicItemPipeType extends TestPipeTypeBase<Item> {
-    public static final TestBasicItemPipeType INSTANCE = new TestBasicItemPipeType();
+public class BasicMachineElementProcessorPortType extends PortTypeBase<Item> {
+    public static final BasicMachineElementProcessorPortType INSTANCE = new BasicMachineElementProcessorPortType();
 
     @Override
     public String getKey() {
@@ -41,7 +41,7 @@ public class TestBasicItemPipeType extends TestPipeTypeBase<Item> {
     }
 
     @Override
-    public void tick(TestPipeWorkBlockEntity blockEntity) {
+    public void tick(PortWorkBlockEntity blockEntity) {
         for (Direction side : Direction.values()) {
             if (blockEntity.getLevel().getGameTime() % getTransferItemTickSpeed(blockEntity, side) != 0) {
                 continue;
@@ -54,14 +54,14 @@ public class TestBasicItemPipeType extends TestPipeTypeBase<Item> {
                 continue;
             }
 
-            List<TestPipeWorkBlockEntity.Connection> connections = blockEntity.getSortedConnections(side, this);
+            List<PortWorkBlockEntity.Connection> connections = blockEntity.getSortedConnections(side, this);
 
             importItem(blockEntity, side, connections, itemHandler);
         }
     }
 
 
-    protected void importItem(TestPipeWorkBlockEntity blockEntity, Direction side, List<TestPipeBlockEntityBase.Connection> connections, IItemHandler itemHandler) {
+    protected void importItem(PortWorkBlockEntity blockEntity, Direction side, List<PortBlockEntityBase.Connection> connections, IItemHandler itemHandler) {
         if (connections.isEmpty()) {
             return;
         }
@@ -69,7 +69,7 @@ public class TestBasicItemPipeType extends TestPipeTypeBase<Item> {
         boolean[] inventoriesFull = new boolean[connections.size()];
         int p = blockEntity.get3dData(side, this) % connections.size();
         while (itemsToTransfer > 0 && hasNotImported(inventoriesFull)) {
-            TestPipeBlockEntityBase.Connection connection = connections.get(p);
+            PortBlockEntityBase.Connection connection = connections.get(p);
             IItemHandler destination = getItemHandler(blockEntity, connection.pos(), connection.direction());
             boolean hasImported = false;
             if (destination != null && !inventoriesFull[p] && !judgeFull(destination)) {
@@ -117,7 +117,7 @@ public class TestBasicItemPipeType extends TestPipeTypeBase<Item> {
     }
 
     @Nullable
-    private IItemHandler getItemHandler(TestPipeWorkBlockEntity blockEntity, BlockPos pos, Direction direction) {
+    private IItemHandler getItemHandler(PortWorkBlockEntity blockEntity, BlockPos pos, Direction direction) {
         BlockEntity blockentity = blockEntity.getLevel().getBlockEntity(pos);
         if (blockentity == null) {
             return null;
@@ -125,7 +125,7 @@ public class TestBasicItemPipeType extends TestPipeTypeBase<Item> {
         return blockentity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, direction).orElse(null);
     }
 
-    public int getTransferItemTickSpeed(TestPipeWorkBlockEntity blockEntity, Direction direction) {
+    public int getTransferItemTickSpeed(PortWorkBlockEntity blockEntity, Direction direction) {
         return getTransferItemTickSpeed();
     }
 

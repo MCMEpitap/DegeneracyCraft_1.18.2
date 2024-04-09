@@ -20,9 +20,9 @@ import net.epitap.degeneracycraft.pipe.block.PipeBlockClickEvent;
 import net.epitap.degeneracycraft.pipe.block.PipeBlocks;
 import net.epitap.degeneracycraft.pipe.entity.PipeBlockEntities;
 import net.epitap.degeneracycraft.pipe.render.PipeModelRegistry;
-import net.epitap.degeneracycraft.pipe.test.blocks.TestPipeBlockClickEvent;
-import net.epitap.degeneracycraft.pipe.test.blocks.TestPipeBlocks;
-import net.epitap.degeneracycraft.pipe.test.entities.TestPipeBlockEntities;
+import net.epitap.degeneracycraft.pipe.test.blocks.PortBlockClickEvent;
+import net.epitap.degeneracycraft.pipe.test.blocks.PortBlocks;
+import net.epitap.degeneracycraft.pipe.test.entities.PortBlockEntities;
 import net.epitap.degeneracycraft.pipe.test.render.TestPipeModelRegistry;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -67,9 +67,9 @@ public class Degeneracycraft {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(PipeModelRegistry::onModelRegister);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(PipeModelRegistry::onModelBake);
 
-        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Item.class, TestPipeBlocks::registerItems);
-        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Block.class, TestPipeBlocks::registerBlocks);
-        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(BlockEntityType.class, TestPipeBlockEntities::registerBlockEntities);
+        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Item.class, PortBlocks::registerItems);
+        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Block.class, PortBlocks::registerBlocks);
+        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(BlockEntityType.class, PortBlockEntities::registerBlockEntities);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(TestPipeModelRegistry::onModelRegister);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(TestPipeModelRegistry::onModelBake);
     }
@@ -77,7 +77,7 @@ public class Degeneracycraft {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(DCMessages::register);
         MinecraftForge.EVENT_BUS.register(new PipeBlockClickEvent());
-        MinecraftForge.EVENT_BUS.register(new TestPipeBlockClickEvent());
+        MinecraftForge.EVENT_BUS.register(new PortBlockClickEvent());
     }
 
 
@@ -106,7 +106,7 @@ public class Degeneracycraft {
         MenuScreens.register(DCMenuTypes.INFINITY_POWERED_ALL_IN_ONE_COMPRESSOR_MACHINE_BLOCK_MENU.get(), InfinityPoweredAllInOneCompressorMachineScreen::new);
 
         PipeBlockEntities.clientSetup();
-        TestPipeBlockEntities.clientSetup();
+        PortBlockEntities.clientSetup();
 
     }
 

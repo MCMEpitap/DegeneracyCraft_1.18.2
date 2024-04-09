@@ -12,14 +12,14 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public abstract class TestPipeGetSideListBase<T> {
-    private final Map<TestPipeTypeBase<?>, T>[] savedSideValues;
+public abstract class PortGetSideListBase<T> {
+    private final Map<PortTypeBase<?>, T>[] savedSideValues;
     protected Supplier<NonNullList<ItemStack>> upgradeInventory;
     protected String key;
-    protected Function<TestPipeTypeBase<?>, T> defaultValue;
+    protected Function<PortTypeBase<?>, T> defaultValue;
     protected Runnable blockList;
 
-    public TestPipeGetSideListBase(Supplier<NonNullList<ItemStack>> upgradeInventory, String key, Function<TestPipeTypeBase<?>, T> defaultValue, Runnable runnable) {
+    public PortGetSideListBase(Supplier<NonNullList<ItemStack>> upgradeInventory, String key, Function<PortTypeBase<?>, T> defaultValue, Runnable runnable) {
         this.upgradeInventory = upgradeInventory;
         this.key = key;
         this.defaultValue = defaultValue;
@@ -27,8 +27,8 @@ public abstract class TestPipeGetSideListBase<T> {
         this.savedSideValues = new HashMap[Direction.values().length];
     }
 
-    public T getValue(Direction side, TestPipeTypeBase<?> pipeType) {
-        Map<TestPipeTypeBase<?>, T> map = this.savedSideValues[side.ordinal()];
+    public T getValue(Direction side, PortTypeBase<?> pipeType) {
+        Map<PortTypeBase<?>, T> map = this.savedSideValues[side.ordinal()];
         if (map == null) {
             map = new HashMap();
             this.savedSideValues[side.ordinal()] = map;
@@ -41,15 +41,15 @@ public abstract class TestPipeGetSideListBase<T> {
             if (!itemStack.isEmpty() && itemStack.hasTag()) {
                 CompoundTag itemStackTag = itemStack.getTag();
                 if (!itemStackTag.contains(pipeType.getKey(), 10)) {
-                    return (T) this.putDefault(pipeType, map);
+                    return this.putDefault(pipeType, map);
                 } else {
                     CompoundTag compound = itemStackTag.getCompound(pipeType.getKey());
                     if (!compound.contains(this.key)) {
-                        return (T) this.putDefault(pipeType, map);
+                        return this.putDefault(pipeType, map);
                     } else {
                         T value = this.deserialize(pipeType, compound.get(this.key));
                         if (value == null) {
-                            return (T) this.putDefault(pipeType, map);
+                            return this.putDefault(pipeType, map);
                         } else {
                             ((Map) map).put(pipeType, value);
                             return value;
@@ -57,19 +57,19 @@ public abstract class TestPipeGetSideListBase<T> {
                     }
                 }
             } else {
-                return (T) this.putDefault(pipeType, map);
+                return this.putDefault(pipeType, map);
             }
         }
     }
 
-    public T putDefault(TestPipeTypeBase<?> pipeType, Map<TestPipeTypeBase<?>, T> map) {
+    public T putDefault(PortTypeBase<?> pipeType, Map<PortTypeBase<?>, T> map) {
         T def = this.defaultValue.apply(pipeType);
         map.put(pipeType, def);
         return def;
     }
 
-    public void setValue(Direction side, TestPipeTypeBase<?> pipeType, T value) {
-        Map<TestPipeTypeBase<?>, T> map = this.savedSideValues[side.ordinal()];
+    public void setValue(Direction side, PortTypeBase<?> pipeType, T value) {
+        Map<PortTypeBase<?>, T> map = this.savedSideValues[side.ordinal()];
         if (map == null) {
             map = new HashMap();
             this.savedSideValues[side.ordinal()] = map;
@@ -97,7 +97,7 @@ public abstract class TestPipeGetSideListBase<T> {
         int var2 = var1.length;
 
         for (int var3 = 0; var3 < var2; ++var3) {
-            Map<TestPipeTypeBase<?>, T> map = var1[var3];
+            Map<PortTypeBase<?>, T> map = var1[var3];
             if (map != null) {
                 map.clear();
             }
@@ -108,5 +108,5 @@ public abstract class TestPipeGetSideListBase<T> {
     public abstract Tag serialize(T var1);
 
     @Nullable
-    public abstract T deserialize(TestPipeTypeBase<?> var1, Tag var2);
+    public abstract T deserialize(PortTypeBase<?> var1, Tag var2);
 }

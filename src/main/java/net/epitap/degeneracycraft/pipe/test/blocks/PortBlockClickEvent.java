@@ -1,6 +1,6 @@
 package net.epitap.degeneracycraft.pipe.test.blocks;
 
-import net.epitap.degeneracycraft.pipe.test.pipebase.TestPipeBlockBase;
+import net.epitap.degeneracycraft.pipe.test.pipebase.PortBlockBase;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.level.block.state.BlockState;
@@ -8,7 +8,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
-public class TestPipeBlockClickEvent {
+public class PortBlockClickEvent {
     @SubscribeEvent
     public void blockClick(PlayerInteractEvent.RightClickBlock event) {
         pipeClick(event);
@@ -16,7 +16,7 @@ public class TestPipeBlockClickEvent {
 
     private void pipeClick(PlayerInteractEvent.RightClickBlock event) {
         BlockState state = event.getWorld().getBlockState(event.getPos());
-        if (!(state.getBlock() instanceof TestPipeBlockBase pipe)) {
+        if (!(state.getBlock() instanceof PortBlockBase pipe)) {
             return;
         }
 

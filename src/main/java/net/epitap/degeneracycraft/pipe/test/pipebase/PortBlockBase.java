@@ -42,7 +42,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Arrays;
 import java.util.List;
 
-public abstract class TestPipeBlockBase extends Block implements IItemBlock, SimpleWaterloggedBlock, EntityBlock {
+public abstract class PortBlockBase extends Block implements IItemBlock, SimpleWaterloggedBlock, EntityBlock {
     public static final BooleanProperty DOWN = BooleanProperty.create("down");
     public static final BooleanProperty UP = BooleanProperty.create("up");
     public static final BooleanProperty NORTH = BooleanProperty.create("north");
@@ -52,7 +52,7 @@ public abstract class TestPipeBlockBase extends Block implements IItemBlock, Sim
     public static final BooleanProperty HAS_DATA = BooleanProperty.create("has_data");
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-    protected TestPipeBlockBase() {
+    protected PortBlockBase() {
         super(Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(0.5F));
 
         registerDefaultState(stateDefinition.any()
@@ -125,7 +125,7 @@ public abstract class TestPipeBlockBase extends Block implements IItemBlock, Sim
 
         }
 
-        TestPipeBlockEntityBase.detectPipeBlock(level, pos);
+        PortBlockEntityBase.detectPipeBlock(level, pos);
         return InteractionResult.SUCCESS;
     }
 
@@ -161,7 +161,7 @@ public abstract class TestPipeBlockBase extends Block implements IItemBlock, Sim
     }
 
     public boolean pipeExtracting(LevelAccessor world, BlockPos pos, Direction side) {
-        TestPipeBlockEntityBase pipe = getBlockEntity(world, pos);
+        PortBlockEntityBase pipe = getBlockEntity(world, pos);
         if (pipe == null) {
             return false;
         }
@@ -169,7 +169,7 @@ public abstract class TestPipeBlockBase extends Block implements IItemBlock, Sim
     }
 
     public boolean pipeDisconnected(LevelAccessor world, BlockPos pos, Direction side) {
-        TestPipeBlockEntityBase pipe = getBlockEntity(world, pos);
+        PortBlockEntityBase pipe = getBlockEntity(world, pos);
         if (pipe == null) {
             return false;
         }
@@ -182,7 +182,7 @@ public abstract class TestPipeBlockBase extends Block implements IItemBlock, Sim
     }
 
     public void setPipeExtracting(Level world, BlockPos pos, Direction side, boolean extracting) {
-        TestPipeBlockEntityBase pipeEntity = getBlockEntity(world, pos);
+        PortBlockEntityBase pipeEntity = getBlockEntity(world, pos);
         if (pipeEntity == null) {
             if (extracting) {
                 setHasData(world, pos, true);
@@ -205,7 +205,7 @@ public abstract class TestPipeBlockBase extends Block implements IItemBlock, Sim
     }
 
     public void setPipeDisconnected(Level world, BlockPos pos, Direction side, boolean disconnected) {
-        TestPipeBlockEntityBase pipeEntity = getBlockEntity(world, pos);
+        PortBlockEntityBase pipeEntity = getBlockEntity(world, pos);
         if (pipeEntity == null) {
             if (disconnected) {
                 setHasData(world, pos, true);
@@ -224,10 +224,10 @@ public abstract class TestPipeBlockBase extends Block implements IItemBlock, Sim
         }
     }
 
-    public TestPipeBlockEntityBase getBlockEntity(LevelAccessor world, BlockPos pos) {
+    public PortBlockEntityBase getBlockEntity(LevelAccessor world, BlockPos pos) {
         BlockEntity blockEntity = world.getBlockEntity(pos);
-        if (blockEntity instanceof TestPipeBlockEntityBase) {
-            return (TestPipeBlockEntityBase) blockEntity;
+        if (blockEntity instanceof PortBlockEntityBase) {
+            return (PortBlockEntityBase) blockEntity;
         }
         return null;
     }
@@ -255,8 +255,8 @@ public abstract class TestPipeBlockBase extends Block implements IItemBlock, Sim
     }
 
     public boolean pipeConnected(LevelAccessor world, BlockPos pos, Direction facing) {
-        TestPipeBlockEntityBase pipe = getBlockEntity(world, pos);
-        TestPipeBlockEntityBase other = getBlockEntity(world, pos.relative(facing));
+        PortBlockEntityBase pipe = getBlockEntity(world, pos);
+        PortBlockEntityBase other = getBlockEntity(world, pos.relative(facing));
 
         if (!enableConnect(world, pos, facing)) {
             return false;
@@ -291,7 +291,7 @@ public abstract class TestPipeBlockBase extends Block implements IItemBlock, Sim
         BlockState newState = getBlockState(world, toPos, state);
         if (!state.getProperties().stream().allMatch(property -> state.getValue(property).equals(newState.getValue(property)))) {
             world.setBlockAndUpdate(toPos, newState);
-            TestPipeBlockEntityBase.detectPipeBlock(world, toPos);
+            PortBlockEntityBase.detectPipeBlock(world, toPos);
         }
     }
 
@@ -317,7 +317,7 @@ public abstract class TestPipeBlockBase extends Block implements IItemBlock, Sim
 
 
     public VoxelShape getShape(BlockGetter blockReader, BlockPos pos, BlockState state, boolean advanced) {
-        TestPipeBlockEntityBase pipe = null;
+        PortBlockEntityBase pipe = null;
         if (advanced && blockReader instanceof LevelAccessor) {
             pipe = getBlockEntity((LevelAccessor) blockReader, pos);
         }
@@ -431,7 +431,7 @@ public abstract class TestPipeBlockBase extends Block implements IItemBlock, Sim
             return new Value2D<>(direction, voxelShape);
         }
 
-        TestPipeBlockEntityBase pipe = getBlockEntity((LevelAccessor) blockReader, pos);
+        PortBlockEntityBase pipe = getBlockEntity((LevelAccessor) blockReader, pos);
 
         for (int i = 0; i < Direction.values().length; i++) {
             Value2D<VoxelShape, Direction> extract = EXTRACT_SHAPES.get(i);
@@ -471,7 +471,7 @@ public abstract class TestPipeBlockBase extends Block implements IItemBlock, Sim
         return blockRayTraceResult.getLocation().distanceTo(start);
     }
 
-    private double checkShape(BlockState state, BlockGetter world, BlockPos pos, Vec3 start, Vec3 end, VoxelShape shape, @Nullable TestPipeBlockEntityBase pipe, Direction side) {
+    private double checkShape(BlockState state, BlockGetter world, BlockPos pos, Vec3 start, Vec3 end, VoxelShape shape, @Nullable PortBlockEntityBase pipe, Direction side) {
         if (pipe != null && !pipe.pipeExtracting(side)) {
             return Double.MAX_VALUE;
         }

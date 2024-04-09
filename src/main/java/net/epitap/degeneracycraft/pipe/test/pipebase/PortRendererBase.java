@@ -19,20 +19,20 @@ import net.minecraftforge.client.model.data.EmptyModelData;
 
 import java.util.List;
 
-public abstract class TestPipeRendererBase implements BlockEntityRenderer<TestPipeBlockEntityBase> {
+public abstract class PortRendererBase implements BlockEntityRenderer<PortBlockEntityBase> {
 
     protected Minecraft minecraft;
     protected BlockEntityRendererProvider.Context renderer;
     protected PipeModelValue<BakedModel> cachedModel;
 
-    public TestPipeRendererBase(BlockEntityRendererProvider.Context renderer) {
+    public PortRendererBase(BlockEntityRendererProvider.Context renderer) {
         this.renderer = renderer;
         minecraft = Minecraft.getInstance();
         cachedModel = getModel().getCachedModel();
     }
 
     @Override
-    public void render(TestPipeBlockEntityBase pipe, float partialTicks, PoseStack matrixStack, MultiBufferSource buffer, int combinedLight, int combinedOverlay) {
+    public void render(PortBlockEntityBase pipe, float partialTicks, PoseStack matrixStack, MultiBufferSource buffer, int combinedLight, int combinedOverlay) {
         BakedModel iBakedModel = cachedModel.get();
         List<BakedQuad> quads = iBakedModel.getQuads(null, null, minecraft.level.random, EmptyModelData.INSTANCE);
         VertexConsumer b = buffer.getBuffer(RenderType.solid());

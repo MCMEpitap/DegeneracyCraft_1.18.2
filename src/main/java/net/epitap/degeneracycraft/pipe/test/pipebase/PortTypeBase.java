@@ -1,6 +1,6 @@
 package net.epitap.degeneracycraft.pipe.test.pipebase;
 
-import net.epitap.degeneracycraft.pipe.test.entities.TestPipeWorkBlockEntity;
+import net.epitap.degeneracycraft.pipe.test.entities.PortWorkBlockEntity;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -11,10 +11,10 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import java.util.HashSet;
 import java.util.Set;
 
-public abstract class TestPipeTypeBase<T> {
+public abstract class PortTypeBase<T> {
     public abstract String getKey();
 
-    public abstract void tick(TestPipeWorkBlockEntity blockEntity);
+    public abstract void tick(PortWorkBlockEntity blockEntity);
 
     public abstract float getTickRate();
 
@@ -24,7 +24,7 @@ public abstract class TestPipeTypeBase<T> {
 
     public abstract ItemStack getIcon();
 
-    public float getTickRate(TestPipeWorkBlockEntity blockEntity, Direction direction) {
+    public float getTickRate(PortWorkBlockEntity blockEntity, Direction direction) {
         return getTickRate();
     }
 

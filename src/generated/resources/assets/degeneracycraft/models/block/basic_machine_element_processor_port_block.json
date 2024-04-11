@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "degeneracycraft:block/basic_machine_element_processor_port_block"
+  }
+}

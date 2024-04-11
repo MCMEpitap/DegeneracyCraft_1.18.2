@@ -276,7 +276,6 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
     public abstract boolean enabledConnectTo(LevelAccessor world, BlockPos pos, Direction facing);
 
     public abstract boolean judgePipe(LevelAccessor world, BlockPos pos, Direction facing);
-
     @Override
     public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
         if (stateIn.getValue(WATERLOGGED)) {
@@ -299,7 +298,6 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(UP, DOWN, NORTH, SOUTH, EAST, WEST, HAS_DATA, WATERLOGGED);
     }
-
 
     public static final VoxelShape SHAPE_NORTH = Block.box(7D, 7D, 0D, 9D, 9D, 5D);
     public static final VoxelShape SHAPE_SOUTH = Block.box(7D, 7D, 11D, 9D, 9D, 16D);
@@ -535,6 +533,7 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
             return null;
         }
     }
+
 
     public abstract BlockEntity createBlockEntity(BlockPos pos, BlockState state);
 }

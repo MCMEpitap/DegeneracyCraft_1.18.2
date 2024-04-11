@@ -11,6 +11,6 @@ public class BasicMachineElementProcessorPortRenderer extends PortRendererBase {
 
     @Override
     public TestDCModel getModel() {
-        return TestDCModel.TEST_BASIC_ENERGY_PIPE_BLOCK_EXTRACT;
+        return TestDCModel.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK_EXTRACT;
     }
 }

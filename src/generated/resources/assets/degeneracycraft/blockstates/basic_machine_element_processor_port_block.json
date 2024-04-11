@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "degeneracycraft:block/basic_machine_element_processor_port_block"
+    }
+  }
+}

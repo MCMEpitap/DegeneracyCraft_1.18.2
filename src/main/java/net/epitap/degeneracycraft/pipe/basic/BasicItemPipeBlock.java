@@ -16,7 +16,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.items.CapabilityItemHandler;
 
 public class BasicItemPipeBlock extends PipeBlockBase {
-    protected BasicItemPipeBlock() {
+    public BasicItemPipeBlock() {
         setRegistryName(new ResourceLocation(Degeneracycraft.MOD_ID, "basic_item_pipe"));
     }
 
@@ -31,7 +31,6 @@ public class BasicItemPipeBlock extends PipeBlockBase {
         BlockState blockState = world.getBlockState(pos.relative(facing));
         return blockState.getBlock().equals(this);
     }
-
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return new BasicItemPipeEntity(pos, state);

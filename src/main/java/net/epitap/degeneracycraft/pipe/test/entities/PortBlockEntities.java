@@ -12,18 +12,18 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.RegistryEvent;
 
 public class PortBlockEntities {
-    public static BlockEntityType<BasicMachineElementProcessorPortBlockEntity> TEST_BASIC_ITEM_PIPE_BLOCK_ENTITY;
+    public static BlockEntityType<BasicMachineElementProcessorPortBlockEntity> BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK;
 
     public static void registerBlockEntities(RegistryEvent.Register<BlockEntityType<?>> register) {
 
-        TEST_BASIC_ITEM_PIPE_BLOCK_ENTITY = BlockEntityType.Builder.of(BasicMachineElementProcessorPortBlockEntity::new, PortBlocks.TEST_BASIC_ITEM_PIPE_BLOCK).build(null);
-        TEST_BASIC_ITEM_PIPE_BLOCK_ENTITY.setRegistryName(new ResourceLocation(Degeneracycraft.MOD_ID, "test_basic_item_pipe"));
-        register.getRegistry().register(TEST_BASIC_ITEM_PIPE_BLOCK_ENTITY);
+        BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK = BlockEntityType.Builder.of(BasicMachineElementProcessorPortBlockEntity::new, PortBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK).build(null);
+        BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.setRegistryName(new ResourceLocation(Degeneracycraft.MOD_ID, "basic_machine_element_processor_port_block_entity"));
+        register.getRegistry().register(BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK);
 
     }
 
     @OnlyIn(Dist.CLIENT)
     public static void clientSetup() {
-        BlockEntityRenderers.register(TEST_BASIC_ITEM_PIPE_BLOCK_ENTITY, BasicMachineElementProcessorPortRenderer::new);
+        BlockEntityRenderers.register(BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK, BasicMachineElementProcessorPortRenderer::new);
     }
 }

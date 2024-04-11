@@ -12,7 +12,7 @@ import net.minecraftforge.client.model.ForgeModelBakery;
 
 public class TestPipeModelRegistry {
     public enum TestDCModel {
-        TEST_BASIC_ENERGY_PIPE_BLOCK_EXTRACT("block/test_basic_energy_pipe_extract");
+        BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK_EXTRACT("block/basic_machine_element_processor_port_block_extract");
 
         private final ResourceLocation resource;
         private final PipeModelValue<BakedModel> cachedModel;

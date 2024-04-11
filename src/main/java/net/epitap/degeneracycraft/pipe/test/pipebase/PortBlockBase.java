@@ -124,8 +124,7 @@ public abstract class PortBlockBase extends Block implements IItemBlock, SimpleW
             }
 
         }
-
-        PortBlockEntityBase.detectPipeBlock(level, pos);
+        PortBlockEntityBase.detectPortBlock(level, pos);
         return InteractionResult.SUCCESS;
     }
 
@@ -270,12 +269,12 @@ public abstract class PortBlockBase extends Block implements IItemBlock, SimpleW
     }
 
     public boolean enableConnect(LevelAccessor world, BlockPos pos, Direction facing) {
-        return judgePipe(world, pos, facing) || enabledConnectTo(world, pos, facing);
+        return judgePort(world, pos, facing) || enabledConnectTo(world, pos, facing);
     }
 
     public abstract boolean enabledConnectTo(LevelAccessor world, BlockPos pos, Direction facing);
 
-    public abstract boolean judgePipe(LevelAccessor world, BlockPos pos, Direction facing);
+    public abstract boolean judgePort(LevelAccessor world, BlockPos pos, Direction facing);
 
     @Override
     public BlockState updateShape(BlockState stateIn, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
@@ -291,7 +290,7 @@ public abstract class PortBlockBase extends Block implements IItemBlock, SimpleW
         BlockState newState = getBlockState(world, toPos, state);
         if (!state.getProperties().stream().allMatch(property -> state.getValue(property).equals(newState.getValue(property)))) {
             world.setBlockAndUpdate(toPos, newState);
-            PortBlockEntityBase.detectPipeBlock(world, toPos);
+            PortBlockEntityBase.detectPortBlock(world, toPos);
         }
     }
 
@@ -300,20 +299,19 @@ public abstract class PortBlockBase extends Block implements IItemBlock, SimpleW
         builder.add(UP, DOWN, NORTH, SOUTH, EAST, WEST, HAS_DATA, WATERLOGGED);
     }
 
-
-    public static final VoxelShape SHAPE_NORTH = Block.box(2D, 2D, 0D, 14D, 14D, 1D);
-    public static final VoxelShape SHAPE_SOUTH = Block.box(2D, 2D, 15D, 14D, 14D, 16D);
-    public static final VoxelShape SHAPE_EAST = Block.box(15D, 2D, 2D, 16D, 14D, 14D);
-    public static final VoxelShape SHAPE_WEST = Block.box(0D, 2D, 2D, 1D, 14D, 14D);
-    public static final VoxelShape SHAPE_UP = Block.box(2D, 15D, 2D, 14D, 16D, 14D);
-    public static final VoxelShape SHAPE_DOWN = Block.box(2D, 0D, 2D, 14D, 1D, 14D);
-    public static final VoxelShape SHAPE_CORE = Block.box(5D, 5D, 5D, 11D, 11D, 11D);
-    public static final VoxelShape SHAPE_EXTRACT_NORTH = PipeVoxelShape.combine(SHAPE_NORTH, Block.box(0D, 0D, 0D, 16D, 16D, 1D));
-    public static final VoxelShape SHAPE_EXTRACT_SOUTH = PipeVoxelShape.combine(SHAPE_SOUTH, Block.box(0D, 0D, 15D, 16D, 16D, 16D));
-    public static final VoxelShape SHAPE_EXTRACT_EAST = PipeVoxelShape.combine(SHAPE_EAST, Block.box(15D, 0D, 0D, 16D, 16D, 16D));
-    public static final VoxelShape SHAPE_EXTRACT_WEST = PipeVoxelShape.combine(SHAPE_WEST, Block.box(0D, 0D, 0D, 1D, 16D, 16D));
-    public static final VoxelShape SHAPE_EXTRACT_UP = PipeVoxelShape.combine(SHAPE_UP, Block.box(0D, 15D, 0D, 16D, 16D, 16D));
-    public static final VoxelShape SHAPE_EXTRACT_DOWN = PipeVoxelShape.combine(SHAPE_DOWN, Block.box(0D, 0D, 0D, 16D, 1D, 16D));
+    public static final VoxelShape SHAPE_NORTH = Block.box(2D, 2D, 0D, 14D, 14D, 2D);
+    public static final VoxelShape SHAPE_SOUTH = Block.box(2D, 2D, 14D, 14D, 14D, 16D);
+    public static final VoxelShape SHAPE_EAST = Block.box(14D, 2D, 2D, 16D, 14D, 14D);
+    public static final VoxelShape SHAPE_WEST = Block.box(0D, 2D, 2D, 2D, 14D, 14D);
+    public static final VoxelShape SHAPE_UP = Block.box(2D, 14D, 2D, 14D, 16D, 14D);
+    public static final VoxelShape SHAPE_DOWN = Block.box(2D, 0D, 2D, 14D, 2D, 14D);
+    public static final VoxelShape SHAPE_CORE = Block.box(2D, 2D, 2D, 14D, 14D, 14D);
+    public static final VoxelShape SHAPE_EXTRACT_NORTH = PipeVoxelShape.combine(SHAPE_NORTH, Block.box(0D, 0D, 0D, 16D, 16D, 2D));
+    public static final VoxelShape SHAPE_EXTRACT_SOUTH = PipeVoxelShape.combine(SHAPE_SOUTH, Block.box(0D, 0D, 14D, 16D, 16D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_EAST = PipeVoxelShape.combine(SHAPE_EAST, Block.box(14D, 0D, 0D, 16D, 16D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_WEST = PipeVoxelShape.combine(SHAPE_WEST, Block.box(0D, 0D, 0D, 2D, 16D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_UP = PipeVoxelShape.combine(SHAPE_UP, Block.box(0D, 14D, 0D, 16D, 16D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_DOWN = PipeVoxelShape.combine(SHAPE_DOWN, Block.box(0D, 0D, 0D, 16D, 2D, 16D));
 
 
     public VoxelShape getShape(BlockGetter blockReader, BlockPos pos, BlockState state, boolean advanced) {

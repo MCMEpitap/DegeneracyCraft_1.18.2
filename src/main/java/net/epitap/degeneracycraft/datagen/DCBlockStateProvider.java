@@ -2,6 +2,7 @@ package net.epitap.degeneracycraft.datagen;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
+import net.epitap.degeneracycraft.pipe.test.blocks.PortBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;
@@ -42,6 +43,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         simpleBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get());
         simpleBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get());
 
+        simpleBlock(PortBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK);
 
         registerRedstonePoweredMachineComponentManufactureMachine();
         registerBasicPowerCompositeStructureTypeThermalGenerator();

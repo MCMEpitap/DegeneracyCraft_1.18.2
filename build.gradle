@@ -297,7 +297,7 @@ dependencies {
 //        implementation fg.deobf("com.lowdragmc.ldlib:LowDragLib:1.18.2-0.8.1.a")
 //        implementation fg.deobf("com.lowdragmc.multiblocked:Multiblocked:1.18.2-0.13.2")
 
-//        implementation fg.deobf("com.lowdragmc.ldlib:LowDragLib:1.18.2-1.0.6.a")
+//        implementation fg.deobf("com.lowdragmc.ldlib:LowDragLib:1.18.2-1.0.6.a") //1.18.2-40.1.51
 //        implementation fg.deobf("com.lowdragmc.multiblocked:Multiblocked:1.18.2-1.0.4.a")
 
 //        implementation fg.deobf("com.lowdragmc.ldlib:LowDragLib:1.18.2-1.0.5")
@@ -314,10 +314,10 @@ dependencies {
         compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.18.2-71.1:api")
         runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.18.2-71.1")
 
-//        runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}")// core
+        runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}")// core
+        runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}:generators")// Mekanism: Generators
+        runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}:tools")// Mekanism: Tools
 ////        runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}:additions")// Mekanism: Additions
-//        runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}:generators")// Mekanism: Generators
-//        runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}:tools")// Mekanism: Tools
 
         implementation fg.deobf("curse.maven:exponential-power-254249:3863542")
 //        implementation fg.deobf("curse.maven:AdditionalEnchantedMiner-1.18.2-18.20.jar-282837:4724064")

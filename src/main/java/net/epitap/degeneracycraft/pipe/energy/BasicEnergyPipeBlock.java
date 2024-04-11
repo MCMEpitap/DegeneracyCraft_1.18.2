@@ -29,7 +29,6 @@ public class BasicEnergyPipeBlock extends PipeBlockBase {
         BlockState state = world.getBlockState(pos.relative(facing));
         return state.getBlock().equals(this);
     }
-
     public boolean judgePort(LevelAccessor world, BlockPos pos, Direction facing) {
         BlockState state = world.getBlockState(pos.relative(facing));
         return state.getBlock().equals(this);

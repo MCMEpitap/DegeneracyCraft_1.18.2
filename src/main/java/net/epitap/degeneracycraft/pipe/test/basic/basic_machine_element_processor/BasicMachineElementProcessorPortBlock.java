@@ -27,7 +27,6 @@ public class BasicMachineElementProcessorPortBlock extends PortBlockBase {
         return (blockEntity != null && (blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, facing.getOpposite()).isPresent()
                 || blockEntity.getBlockState().is(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get())));
     }
-
     @Override
     public boolean judgePort(LevelAccessor world, BlockPos pos, Direction facing) {
         BlockState blockState = world.getBlockState(pos.relative(facing));

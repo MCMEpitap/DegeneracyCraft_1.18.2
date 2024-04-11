@@ -104,7 +104,6 @@ public abstract class PortBlockEntityBase extends BlockEntity implements ITickBl
             }
         }
     }
-
     public static void detectPortBlock(Level world, BlockPos pos) {
         List<BlockPos> pipePositions = new ArrayList<>();
         LinkedList<BlockPos> blockPosList = new LinkedList<>();

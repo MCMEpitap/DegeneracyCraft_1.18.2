@@ -157,7 +157,6 @@ public abstract class PipeBlockEntityBase extends BlockEntity implements ITickBl
             }
         }
     }
-
     private void updateList() {
         BlockState blockState = getBlockState();
         if (!(blockState.getBlock() instanceof PipeBlockBase)) {

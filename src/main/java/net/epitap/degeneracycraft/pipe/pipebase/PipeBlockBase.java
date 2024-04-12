@@ -299,13 +299,13 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
         builder.add(UP, DOWN, NORTH, SOUTH, EAST, WEST, HAS_DATA, WATERLOGGED);
     }
 
-    public static final VoxelShape SHAPE_NORTH = Block.box(7D, 7D, 0D, 9D, 9D, 5D);
-    public static final VoxelShape SHAPE_SOUTH = Block.box(7D, 7D, 11D, 9D, 9D, 16D);
-    public static final VoxelShape SHAPE_EAST = Block.box(11D, 7D, 7D, 16D, 9D, 9D);
-    public static final VoxelShape SHAPE_WEST = Block.box(0D, 7D, 7D, 5D, 9D, 9D);
-    public static final VoxelShape SHAPE_UP = Block.box(7D, 11D, 7D, 9D, 16D, 9D);
+    public static final VoxelShape SHAPE_NORTH = Block.box(7D, 7D, 0D, 9D, 9D, 4D);
+    public static final VoxelShape SHAPE_SOUTH = Block.box(7D, 7D, 12D, 9D, 9D, 16D);
+    public static final VoxelShape SHAPE_EAST = Block.box(12D, 7D, 7D, 16D, 9D, 9D);
+    public static final VoxelShape SHAPE_WEST = Block.box(0D, 7D, 7D, 4D, 9D, 9D);
+    public static final VoxelShape SHAPE_UP = Block.box(7D, 12D, 7D, 9D, 16D, 9D);
     public static final VoxelShape SHAPE_DOWN = Block.box(7D, 0D, 7D, 9D, 5D, 9D);
-    public static final VoxelShape SHAPE_CORE = Block.box(5D, 5D, 5D, 11D, 11D, 11D);
+    public static final VoxelShape SHAPE_CORE = Block.box(4D, 4D, 4D, 12D, 12D, 12D);
     public static final VoxelShape SHAPE_EXTRACT_NORTH = PipeVoxelShape.combine(SHAPE_NORTH, Block.box(4D, 4D, 0D, 12D, 12D, 1D));
     public static final VoxelShape SHAPE_EXTRACT_SOUTH = PipeVoxelShape.combine(SHAPE_SOUTH, Block.box(4D, 4D, 15D, 12D, 12D, 16D));
     public static final VoxelShape SHAPE_EXTRACT_EAST = PipeVoxelShape.combine(SHAPE_EAST, Block.box(15D, 4D, 4D, 16D, 12D, 12D));

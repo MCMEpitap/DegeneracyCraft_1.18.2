@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.pipe.test.pipebase;
+package net.epitap.degeneracycraft.pipe.test.portbase;
 
 import net.epitap.degeneracycraft.item.DCCreativeTab;
 import net.epitap.degeneracycraft.item.tool.WrenchItem;

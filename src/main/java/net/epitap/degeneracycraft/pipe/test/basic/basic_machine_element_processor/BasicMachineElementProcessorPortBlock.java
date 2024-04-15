@@ -2,7 +2,7 @@ package net.epitap.degeneracycraft.pipe.test.basic.basic_machine_element_process
 
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
-import net.epitap.degeneracycraft.pipe.test.pipebase.PortBlockBase;
+import net.epitap.degeneracycraft.pipe.test.portbase.PortBlockBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;

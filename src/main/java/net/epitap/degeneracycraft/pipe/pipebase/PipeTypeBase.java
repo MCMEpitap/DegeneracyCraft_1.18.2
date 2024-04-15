@@ -29,12 +29,10 @@ public abstract class PipeTypeBase<T> {
     }
 
     public boolean deepExactCompare(Tag tag, Tag item) {
-        if (tag instanceof CompoundTag) {
-            if (!(item instanceof CompoundTag)) {
+        if (tag instanceof CompoundTag compoundTag) {
+            if (!(item instanceof CompoundTag compoundItemTag)) {
                 return false;
             }
-            CompoundTag compoundTag = (CompoundTag) tag;
-            CompoundTag compoundItemTag = (CompoundTag) item;
             Set<String> allKeys = new HashSet<>();
             allKeys.addAll(compoundTag.getAllKeys());
             allKeys.addAll(compoundItemTag.getAllKeys());
@@ -53,31 +51,24 @@ public abstract class PipeTypeBase<T> {
                 }
             }
             return true;
-        } else if (tag instanceof ListTag) {
-            ListTag listTag = (ListTag) tag;
-            if (!(item instanceof ListTag)) {
+        } else if (tag instanceof ListTag listTag) {
+            if (!(item instanceof ListTag listItemTag)) {
                 return false;
             }
-            ListTag listItemTag = (ListTag) item;
             if (!listTag.stream().allMatch(itemTag -> listItemTag.stream().anyMatch(listItemTagMatch -> deepExactCompare(itemTag, listItemTagMatch)))) {
                 return false;
             }
-            if (!listItemTag.stream().allMatch(itemTag -> listTag.stream().anyMatch(listItemTagMatch -> deepExactCompare(itemTag, listItemTagMatch)))) {
-                return false;
-            }
-            return true;
+            return listItemTag.stream().allMatch(itemTag -> listTag.stream().anyMatch(listItemTagMatch -> deepExactCompare(itemTag, listItemTagMatch)));
         } else {
             return tag != null && tag.equals(item);
         }
     }
 
     public boolean deepFuzzyCompare(Tag tag, Tag item) {
-        if (tag instanceof CompoundTag) {
-            if (!(item instanceof CompoundTag)) {
+        if (tag instanceof CompoundTag compoundTag) {
+            if (!(item instanceof CompoundTag compoundItemTag)) {
                 return false;
             }
-            CompoundTag compoundTag = (CompoundTag) tag;
-            CompoundTag compoundItemTag = (CompoundTag) item;
             for (String key : compoundTag.getAllKeys()) {
                 Tag nbt = compoundTag.get(key);
                 if (compoundItemTag.contains(key, nbt.getId())) {
@@ -89,25 +80,23 @@ public abstract class PipeTypeBase<T> {
                 }
             }
             return true;
-        } else if (tag instanceof ListTag) {
-            ListTag listTag = (ListTag) tag;
-            if (!(item instanceof ListTag)) {
+        } else if (tag instanceof ListTag listTag) {
+            if (!(item instanceof ListTag listItemTag)) {
                 return false;
             }
-            ListTag listItemTag = (ListTag) item;
             return listTag.stream().allMatch(itemTag -> listItemTag.stream().anyMatch(listItemTagMatch -> deepFuzzyCompare(itemTag, listItemTagMatch)));
         } else {
             return tag != null && tag.equals(item);
         }
     }
-
-    public static int getConnectionsNotFullCount(boolean[] connections) {
-        int count = 0;
-        for (boolean connection : connections) {
-            if (!connection) {
-                count++;
-            }
-        }
-        return count;
-    }
+//
+//    public static int getConnectionsNotFullCount(boolean[] connections) {
+//        int count = 0;
+//        for (boolean connection : connections) {
+//            if (!connection) {
+//                count++;
+//            }
+//        }
+//        return count;
+//    }
 }

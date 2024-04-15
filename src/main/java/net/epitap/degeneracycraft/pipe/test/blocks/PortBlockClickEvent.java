@@ -1,6 +1,6 @@
 package net.epitap.degeneracycraft.pipe.test.blocks;
 
-import net.epitap.degeneracycraft.pipe.test.pipebase.PortBlockBase;
+import net.epitap.degeneracycraft.pipe.test.portbase.PortBlockBase;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.level.block.state.BlockState;

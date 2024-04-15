@@ -2,7 +2,7 @@ package net.epitap.degeneracycraft.pipe.test.basic.basic_machine_element_process
 
 import net.epitap.degeneracycraft.pipe.test.entities.PortBlockEntities;
 import net.epitap.degeneracycraft.pipe.test.entities.PortWorkBlockEntity;
-import net.epitap.degeneracycraft.pipe.test.pipebase.PortTypeBase;
+import net.epitap.degeneracycraft.pipe.test.portbase.PortTypeBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 

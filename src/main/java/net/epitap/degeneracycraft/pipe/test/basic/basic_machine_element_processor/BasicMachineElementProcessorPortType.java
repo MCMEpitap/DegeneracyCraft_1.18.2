@@ -2,8 +2,8 @@ package net.epitap.degeneracycraft.pipe.test.basic.basic_machine_element_process
 
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.pipe.test.entities.PortWorkBlockEntity;
-import net.epitap.degeneracycraft.pipe.test.pipebase.PortBlockEntityBase;
-import net.epitap.degeneracycraft.pipe.test.pipebase.PortTypeBase;
+import net.epitap.degeneracycraft.pipe.test.portbase.PortBlockEntityBase;
+import net.epitap.degeneracycraft.pipe.test.portbase.PortTypeBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.Item;

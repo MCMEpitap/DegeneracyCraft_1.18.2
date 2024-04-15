@@ -2,8 +2,6 @@ package net.epitap.degeneracycraft.pipe.pipebase;
 
 import net.epitap.degeneracycraft.pipe.parametor.GettingDirection;
 import net.epitap.degeneracycraft.pipe.parametor.ITickBlockEntity;
-import net.epitap.degeneracycraft.pipe.test.pipebase.PortBlockBase;
-import net.epitap.degeneracycraft.pipe.test.pipebase.PortBlockEntityBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.ByteTag;
@@ -105,68 +103,68 @@ public abstract class PipeBlockEntityBase extends BlockEntity implements ITickBl
         }
     }
 
-    public static void detectPortBlock(Level world, BlockPos pos) {
-        List<BlockPos> pipePositions = new ArrayList<>();
-        LinkedList<BlockPos> blockPosList = new LinkedList<>();
-        Block block = world.getBlockState(pos).getBlock();
-        if (!(block instanceof PortBlockBase pipeBlock)) {
-            return;
-        }
-
-        PortBlockEntityBase pipeBlockBlockEntity = pipeBlock.getBlockEntity(world, pos);
-        if (pipeBlockBlockEntity != null) {
-            for (Direction side : Direction.values()) {
-                if (pipeBlockBlockEntity.pipeExtracting(side)) {
-                    if (!pipeBlock.enabledConnectTo(world, pos, side)) {
-                        pipeBlockBlockEntity.setPipeExtracting(side, false);
-                        if (!pipeBlockBlockEntity.hasReasonToStay()) {
-                            pipeBlock.setHasData(world, pos, false);
-                        }
-                        pipeBlockBlockEntity.syncData();
-                    }
-                }
-            }
-        }
-
-        pipePositions.add(pos);
-        addSerialPortList(world, pos, pipeBlock, pipePositions, blockPosList);
-        while (blockPosList.size() > 0) {
-            BlockPos blockPos = blockPosList.removeFirst();
-            block = world.getBlockState(blockPos).getBlock();
-            if (block instanceof PortBlockBase) {
-                addSerialPortList(world, blockPos, (PortBlockBase) block, pipePositions, blockPosList);
-            }
-        }
-        for (BlockPos position : pipePositions) {
-            BlockEntity te = world.getBlockEntity(position);
-            if (!(te instanceof PortBlockEntityBase pipe)) {
-                continue;
-            }
-            pipe.connectionList = null;
-        }
+//    public static void detectPortBlock(Level world, BlockPos pos) {
+//        List<BlockPos> pipePositions = new ArrayList<>();
+//        LinkedList<BlockPos> blockPosList = new LinkedList<>();
+//        Block block = world.getBlockState(pos).getBlock();
+//        if (!(block instanceof PortBlockBase pipeBlock)) {
+//            return;
+//        }
+//
+//        PortBlockEntityBase pipeBlockBlockEntity = pipeBlock.getBlockEntity(world, pos);
+//        if (pipeBlockBlockEntity != null) {
+//            for (Direction side : Direction.values()) {
+//                if (pipeBlockBlockEntity.pipeExtracting(side)) {
+//                    if (!pipeBlock.enabledConnectTo(world, pos, side)) {
+//                        pipeBlockBlockEntity.setPipeExtracting(side, false);
+//                        if (!pipeBlockBlockEntity.hasReasonToStay()) {
+//                            pipeBlock.setHasData(world, pos, false);
+//                        }
+//                        pipeBlockBlockEntity.syncData();
+//                    }
+//                }
+//            }
+//        }
+//
+//        pipePositions.add(pos);
+//        addSerialPortList(world, pos, pipeBlock, pipePositions, blockPosList);
+//        while (blockPosList.size() > 0) {
+//            BlockPos blockPos = blockPosList.removeFirst();
+//            block = world.getBlockState(blockPos).getBlock();
+//            if (block instanceof PortBlockBase) {
+//                addSerialPortList(world, blockPos, (PortBlockBase) block, pipePositions, blockPosList);
+//            }
+//        }
+//        for (BlockPos position : pipePositions) {
+//            BlockEntity te = world.getBlockEntity(position);
+//            if (!(te instanceof PortBlockEntityBase pipe)) {
+//                continue;
+//            }
+//            pipe.connectionList = null;
+//        }
+//    }
+//
+//    private static void addSerialPortList(Level world, BlockPos pos, PortBlockBase pipeBlock, List<BlockPos> travelPositions, LinkedList<BlockPos> pipePos) {
+//        for (Direction direction : Direction.values()) {
+//            if (pipeBlock.pipeConnected(world, pos, direction)) {
+//                BlockPos blockPos = pos.relative(direction);
+//                if (!travelPositions.contains(blockPos) && !pipePos.contains(blockPos)) {
+//                    travelPositions.add(blockPos);
+//                    pipePos.add(blockPos);
+//                }
+//            }
+//        }
+//    }
+private void updateList() {
+    BlockState blockState = getBlockState();
+    if (!(blockState.getBlock() instanceof PipeBlockBase)) {
+        connectionList = null;
+        return;
     }
-
-    private static void addSerialPortList(Level world, BlockPos pos, PortBlockBase pipeBlock, List<BlockPos> travelPositions, LinkedList<BlockPos> pipePos) {
-        for (Direction direction : Direction.values()) {
-            if (pipeBlock.pipeConnected(world, pos, direction)) {
-                BlockPos blockPos = pos.relative(direction);
-                if (!travelPositions.contains(blockPos) && !pipePos.contains(blockPos)) {
-                    travelPositions.add(blockPos);
-                    pipePos.add(blockPos);
-                }
-            }
-        }
+    if (!pipeExtracting()) {
+        connectionList = null;
+        return;
     }
-    private void updateList() {
-        BlockState blockState = getBlockState();
-        if (!(blockState.getBlock() instanceof PipeBlockBase)) {
-            connectionList = null;
-            return;
-        }
-        if (!pipeExtracting()) {
-            connectionList = null;
-            return;
-        }
 
         Map<GettingDirection, Integer> connections = new HashMap<>();
 

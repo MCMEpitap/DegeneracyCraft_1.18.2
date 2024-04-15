@@ -71,7 +71,7 @@ public class BasicEnergyPipeType extends PipeTypeBase<Void> {
 
             for(int i = 0; i < connections.size(); ++i) {
                 int index = (i + p) % connections.size();
-                PipeBlockEntityBase.Connection connection = (PipeBlockEntityBase.Connection)connections.get(index);
+                PipeBlockEntityBase.Connection connection = connections.get(index);
                 IEnergyStorage destination = this.getEnergyStorage(blockEntity, connection.pos(), connection.direction());
                 if (destination != null && destination.canReceive() && destination.receiveEnergy(1, true) >= 1) {
                     destinations.add(destination);
@@ -127,24 +127,24 @@ public class BasicEnergyPipeType extends PipeTypeBase<Void> {
         }
     }
 
-    private boolean hasNotInserted(boolean[] inventoriesFull) {
-        boolean[] var2 = inventoriesFull;
-        int var3 = inventoriesFull.length;
-
-        for(int var4 = 0; var4 < var3; ++var4) {
-            boolean b = var2[var4];
-            if (!b) {
-                return true;
-            }
-        }
-
-        return false;
-    }
+//    private boolean hasNotInserted(boolean[] inventoriesFull) {
+//        boolean[] var2 = inventoriesFull;
+//        int var3 = inventoriesFull.length;
+//
+//        for(int var4 = 0; var4 < var3; ++var4) {
+//            boolean b = var2[var4];
+//            if (!b) {
+//                return true;
+//            }
+//        }
+//
+//        return false;
+//    }
 
     @Nullable
     private IEnergyStorage getEnergyStorage(PipeWorkBlockEntity blockEntity, BlockPos pos, Direction direction) {
         BlockEntity energyBlockEntity = blockEntity.getLevel().getBlockEntity(pos);
-        return energyBlockEntity == null ? null : energyBlockEntity.getCapability(CapabilityEnergy.ENERGY, direction).orElse((IEnergyStorage) null);
+        return energyBlockEntity == null ? null : energyBlockEntity.getCapability(CapabilityEnergy.ENERGY, direction).orElse(null);
     }
 
     public float getTickRate() {

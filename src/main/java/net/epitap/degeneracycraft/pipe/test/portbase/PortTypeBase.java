@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.pipe.test.pipebase;
+package net.epitap.degeneracycraft.pipe.test.portbase;
 
 import net.epitap.degeneracycraft.pipe.test.entities.PortWorkBlockEntity;
 import net.minecraft.core.Direction;

@@ -3,7 +3,7 @@ package net.epitap.degeneracycraft.datagen;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.item.DCItems;
-import net.epitap.degeneracycraft.pipe.block.PipeBlocks;
+import net.epitap.degeneracycraft.transport.pipe.blocks.PipeBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 

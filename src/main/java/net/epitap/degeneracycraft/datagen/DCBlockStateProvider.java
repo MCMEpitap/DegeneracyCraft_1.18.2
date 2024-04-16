@@ -2,7 +2,7 @@ package net.epitap.degeneracycraft.datagen;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
-import net.epitap.degeneracycraft.pipe.test.blocks.PortBlocks;
+import net.epitap.degeneracycraft.transport.port.blocks.PortBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;

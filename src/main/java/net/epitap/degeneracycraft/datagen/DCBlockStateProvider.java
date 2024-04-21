@@ -68,7 +68,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         BlockModelBuilder modelBasicPowerCompositeStructureTypeThermalGenerator = models().getBuilder("block/basic_power_composite_structure_type_thermal_generator_block");
         modelBasicPowerCompositeStructureTypeThermalGenerator.parent(models().getExistingFile(mcLoc("cube")));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/basic_machine_block_side_down"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/basic_power_composite_structure_type_thermal_generator_side_up"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/basic_power_composite_structure_type_thermal_generator_side_en"));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("north", modLoc("block/basic_power_composite_structure_type_thermal_generator_front"));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/basic_power_composite_structure_type_thermal_generator_side_en"));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/basic_power_composite_structure_type_thermal_generator_side_im"));

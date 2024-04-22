@@ -257,7 +257,7 @@ public class DCItemTooltip extends Item {
                 tooltip.add(new TranslatableComponent("tooltip.degeneracycraft.iron_melting").withStyle(ChatFormatting.BLUE));
                 tooltip.add(new TranslatableComponent("tooltip.degeneracycraft.iron_boiling").withStyle(ChatFormatting.RED));
                 tooltip.add(new TranslatableComponent("tooltip.degeneracycraft.iron_formula").withStyle(ChatFormatting.AQUA));
-            } else if (this == IRON_HYPERFLUID.get()) {
+            } else if (this == IRON_OVERFLUID.get()) {
                 tooltip.add(new TranslatableComponent("tooltip.degeneracycraft.phase6").withStyle(ChatFormatting.AQUA));
                 tooltip.add(new TranslatableComponent("tooltip.degeneracycraft.iron_name").withStyle(ChatFormatting.WHITE));
                 tooltip.add(new TranslatableComponent("tooltip.degeneracycraft.iron_number").withStyle(ChatFormatting.GOLD));

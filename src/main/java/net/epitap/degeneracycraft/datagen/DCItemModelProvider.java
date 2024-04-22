@@ -44,7 +44,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.BAUXITE_TACHYON.get());
         simpleItem(DCItems.BAUXITE_ANTIMATTER.get());
         simpleItem(DCItems.BAUXITE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.BAUXITE_HYPERFLUID.get());
+        simpleItem(DCItems.BAUXITE_OVERFLUID.get());
         simpleItem(DCItems.BAUXITE_CRYSTAL.get());
         simpleItem(DCItems.BAUXITE_PRECIPITATE.get());
         simpleItem(DCItems.BAUXITE_WASHEDDUST.get());
@@ -64,7 +64,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.BERYL_TACHYON.get());
         simpleItem(DCItems.BERYL_ANTIMATTER.get());
         simpleItem(DCItems.BERYL_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.BERYL_HYPERFLUID.get());
+        simpleItem(DCItems.BERYL_OVERFLUID.get());
         simpleItem(DCItems.BERYL_CRYSTAL.get());
         simpleItem(DCItems.BERYL_PRECIPITATE.get());
         simpleItem(DCItems.BERYL_WASHEDDUST.get());
@@ -84,7 +84,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.BORAX_TACHYON.get());
         simpleItem(DCItems.BORAX_ANTIMATTER.get());
         simpleItem(DCItems.BORAX_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.BORAX_HYPERFLUID.get());
+        simpleItem(DCItems.BORAX_OVERFLUID.get());
         simpleItem(DCItems.BORAX_CRYSTAL.get());
         simpleItem(DCItems.BORAX_PRECIPITATE.get());
         simpleItem(DCItems.BORAX_WASHEDDUST.get());
@@ -104,7 +104,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.CASSITERITE_TACHYON.get());
         simpleItem(DCItems.CASSITERITE_ANTIMATTER.get());
         simpleItem(DCItems.CASSITERITE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.CASSITERITE_HYPERFLUID.get());
+        simpleItem(DCItems.CASSITERITE_OVERFLUID.get());
         simpleItem(DCItems.CASSITERITE_CRYSTAL.get());
         simpleItem(DCItems.CASSITERITE_PRECIPITATE.get());
         simpleItem(DCItems.CASSITERITE_WASHEDDUST.get());
@@ -124,7 +124,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.CHROMITE_TACHYON.get());
         simpleItem(DCItems.CHROMITE_ANTIMATTER.get());
         simpleItem(DCItems.CHROMITE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.CHROMITE_HYPERFLUID.get());
+        simpleItem(DCItems.CHROMITE_OVERFLUID.get());
         simpleItem(DCItems.CHROMITE_CRYSTAL.get());
         simpleItem(DCItems.CHROMITE_PRECIPITATE.get());
         simpleItem(DCItems.CHROMITE_WASHEDDUST.get());
@@ -144,7 +144,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.FLUORITE_TACHYON.get());
         simpleItem(DCItems.FLUORITE_ANTIMATTER.get());
         simpleItem(DCItems.FLUORITE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.FLUORITE_HYPERFLUID.get());
+        simpleItem(DCItems.FLUORITE_OVERFLUID.get());
         simpleItem(DCItems.FLUORITE_CRYSTAL.get());
         simpleItem(DCItems.FLUORITE_PRECIPITATE.get());
         simpleItem(DCItems.FLUORITE_WASHEDDUST.get());
@@ -164,7 +164,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.GRAPHITE_TACHYON.get());
         simpleItem(DCItems.GRAPHITE_ANTIMATTER.get());
         simpleItem(DCItems.GRAPHITE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.GRAPHITE_HYPERFLUID.get());
+        simpleItem(DCItems.GRAPHITE_OVERFLUID.get());
         simpleItem(DCItems.GRAPHITE_CRYSTAL.get());
         simpleItem(DCItems.GRAPHITE_PRECIPITATE.get());
         simpleItem(DCItems.GRAPHITE_WASHEDDUST.get());
@@ -183,7 +183,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.IRON_TACHYON.get());
         simpleItem(DCItems.IRON_ANTIMATTER.get());
         simpleItem(DCItems.IRON_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.IRON_HYPERFLUID.get());
+        simpleItem(DCItems.IRON_OVERFLUID.get());
         simpleItem(DCItems.IRON_CRYSTAL.get());
         simpleItem(DCItems.IRON_PRECIPITATE.get());
         simpleItem(DCItems.IRON_WASHEDDUST.get());
@@ -202,7 +202,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.LATERITE_TACHYON.get());
         simpleItem(DCItems.LATERITE_ANTIMATTER.get());
         simpleItem(DCItems.LATERITE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.LATERITE_HYPERFLUID.get());
+        simpleItem(DCItems.LATERITE_OVERFLUID.get());
         simpleItem(DCItems.LATERITE_CRYSTAL.get());
         simpleItem(DCItems.LATERITE_PRECIPITATE.get());
         simpleItem(DCItems.LATERITE_WASHEDDUST.get());
@@ -222,7 +222,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.LIMESTONE_TACHYON.get());
         simpleItem(DCItems.LIMESTONE_ANTIMATTER.get());
         simpleItem(DCItems.LIMESTONE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.LIMESTONE_HYPERFLUID.get());
+        simpleItem(DCItems.LIMESTONE_OVERFLUID.get());
         simpleItem(DCItems.LIMESTONE_CRYSTAL.get());
         simpleItem(DCItems.LIMESTONE_PRECIPITATE.get());
         simpleItem(DCItems.LIMESTONE_WASHEDDUST.get());
@@ -242,7 +242,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.PEGMATITE_TACHYON.get());
         simpleItem(DCItems.PEGMATITE_ANTIMATTER.get());
         simpleItem(DCItems.PEGMATITE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.PEGMATITE_HYPERFLUID.get());
+        simpleItem(DCItems.PEGMATITE_OVERFLUID.get());
         simpleItem(DCItems.PEGMATITE_CRYSTAL.get());
         simpleItem(DCItems.PEGMATITE_PRECIPITATE.get());
         simpleItem(DCItems.PEGMATITE_WASHEDDUST.get());
@@ -262,7 +262,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.PHOSPHORITE_TACHYON.get());
         simpleItem(DCItems.PHOSPHORITE_ANTIMATTER.get());
         simpleItem(DCItems.PHOSPHORITE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.PHOSPHORITE_HYPERFLUID.get());
+        simpleItem(DCItems.PHOSPHORITE_OVERFLUID.get());
         simpleItem(DCItems.PHOSPHORITE_CRYSTAL.get());
         simpleItem(DCItems.PHOSPHORITE_PRECIPITATE.get());
         simpleItem(DCItems.PHOSPHORITE_WASHEDDUST.get());
@@ -282,7 +282,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.PYROLUSITE_TACHYON.get());
         simpleItem(DCItems.PYROLUSITE_ANTIMATTER.get());
         simpleItem(DCItems.PYROLUSITE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.PYROLUSITE_HYPERFLUID.get());
+        simpleItem(DCItems.PYROLUSITE_OVERFLUID.get());
         simpleItem(DCItems.PYROLUSITE_CRYSTAL.get());
         simpleItem(DCItems.PYROLUSITE_PRECIPITATE.get());
         simpleItem(DCItems.PYROLUSITE_WASHEDDUST.get());
@@ -302,7 +302,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.RUTILE_TACHYON.get());
         simpleItem(DCItems.RUTILE_ANTIMATTER.get());
         simpleItem(DCItems.RUTILE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.RUTILE_HYPERFLUID.get());
+        simpleItem(DCItems.RUTILE_OVERFLUID.get());
         simpleItem(DCItems.RUTILE_CRYSTAL.get());
         simpleItem(DCItems.RUTILE_PRECIPITATE.get());
         simpleItem(DCItems.RUTILE_WASHEDDUST.get());
@@ -322,7 +322,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.SPODUMENE_TACHYON.get());
         simpleItem(DCItems.SPODUMENE_ANTIMATTER.get());
         simpleItem(DCItems.SPODUMENE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.SPODUMENE_HYPERFLUID.get());
+        simpleItem(DCItems.SPODUMENE_OVERFLUID.get());
         simpleItem(DCItems.SPODUMENE_CRYSTAL.get());
         simpleItem(DCItems.SPODUMENE_PRECIPITATE.get());
         simpleItem(DCItems.SPODUMENE_WASHEDDUST.get());
@@ -342,7 +342,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.SYLVITE_TACHYON.get());
         simpleItem(DCItems.SYLVITE_ANTIMATTER.get());
         simpleItem(DCItems.SYLVITE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.SYLVITE_HYPERFLUID.get());
+        simpleItem(DCItems.SYLVITE_OVERFLUID.get());
         simpleItem(DCItems.SYLVITE_CRYSTAL.get());
         simpleItem(DCItems.SYLVITE_PRECIPITATE.get());
         simpleItem(DCItems.SYLVITE_WASHEDDUST.get());
@@ -362,7 +362,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.ULEXITE_TACHYON.get());
         simpleItem(DCItems.ULEXITE_ANTIMATTER.get());
         simpleItem(DCItems.ULEXITE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.ULEXITE_HYPERFLUID.get());
+        simpleItem(DCItems.ULEXITE_OVERFLUID.get());
         simpleItem(DCItems.ULEXITE_CRYSTAL.get());
         simpleItem(DCItems.ULEXITE_PRECIPITATE.get());
         simpleItem(DCItems.ULEXITE_WASHEDDUST.get());
@@ -382,7 +382,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.VANADINITE_TACHYON.get());
         simpleItem(DCItems.VANADINITE_ANTIMATTER.get());
         simpleItem(DCItems.VANADINITE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.VANADINITE_HYPERFLUID.get());
+        simpleItem(DCItems.VANADINITE_OVERFLUID.get());
         simpleItem(DCItems.VANADINITE_CRYSTAL.get());
         simpleItem(DCItems.VANADINITE_PRECIPITATE.get());
         simpleItem(DCItems.VANADINITE_WASHEDDUST.get());
@@ -508,22 +508,22 @@ public class DCItemModelProvider extends ItemModelProvider {
 //        simpleItem(DCItems.SUPER_CLASS_IRON_SHAPESTEEL.get());
 //        simpleItem(DCItems.SUPER_CLASS_IRON_SPRING.get());
 //
-//        simpleItem(DCItems.HYPER_CLASS_IRON_BEARING.get());
-//        simpleItem(DCItems.HYPER_CLASS_IRON_BOLT.get());
-//        simpleItem(DCItems.HYPER_CLASS_IRON_CAM.get());
-//        simpleItem(DCItems.HYPER_CLASS_IRON_CHAIN.get());
-//        simpleItem(DCItems.HYPER_CLASS_IRON_GEAR.get());
-//        simpleItem(DCItems.HYPER_CLASS_IRON_JOINT.get());
-//        simpleItem(DCItems.HYPER_CLASS_IRON_KEY.get());
-//        simpleItem(DCItems.HYPER_CLASS_IRON_NUT.get());
-//        simpleItem(DCItems.HYPER_CLASS_IRON_PIPE.get());
-//        simpleItem(DCItems.HYPER_CLASS_IRON_PIPEJOINT.get());
-//        simpleItem(DCItems.HYPER_CLASS_IRON_PLATE.get());
-//        simpleItem(DCItems.HYPER_CLASS_IRON_ROD.get());
-//        simpleItem(DCItems.HYPER_CLASS_IRON_SHAFT.get());
-//        simpleItem(DCItems.HYPER_CLASS_IRON_SHAFTCOUPLING.get());
-//        simpleItem(DCItems.HYPER_CLASS_IRON_SHAPESTEEL.get());
-//        simpleItem(DCItems.HYPER_CLASS_IRON_SPRING.get());
+//        simpleItem(DCItems.OVER_CLASS_IRON_BEARING.get());
+//        simpleItem(DCItems.OVER_CLASS_IRON_BOLT.get());
+//        simpleItem(DCItems.OVER_CLASS_IRON_CAM.get());
+//        simpleItem(DCItems.OVER_CLASS_IRON_CHAIN.get());
+//        simpleItem(DCItems.OVER_CLASS_IRON_GEAR.get());
+//        simpleItem(DCItems.OVER_CLASS_IRON_JOINT.get());
+//        simpleItem(DCItems.OVER_CLASS_IRON_KEY.get());
+//        simpleItem(DCItems.OVER_CLASS_IRON_NUT.get());
+//        simpleItem(DCItems.OVER_CLASS_IRON_PIPE.get());
+//        simpleItem(DCItems.OVER_CLASS_IRON_PIPEJOINT.get());
+//        simpleItem(DCItems.OVER_CLASS_IRON_PLATE.get());
+//        simpleItem(DCItems.OVER_CLASS_IRON_ROD.get());
+//        simpleItem(DCItems.OVER_CLASS_IRON_SHAFT.get());
+//        simpleItem(DCItems.OVER_CLASS_IRON_SHAFTCOUPLING.get());
+//        simpleItem(DCItems.OVER_CLASS_IRON_SHAPESTEEL.get());
+//        simpleItem(DCItems.OVER_CLASS_IRON_SPRING.get());
 //
 //        simpleItem(DCItems.ULTRA_CLASS_IRON_BEARING.get());
 //        simpleItem(DCItems.ULTRA_CLASS_IRON_BOLT.get());

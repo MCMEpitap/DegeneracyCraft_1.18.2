@@ -1,6 +1,7 @@
 package net.epitap.degeneracycraft.transport.pipe.render;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
+import net.epitap.degeneracycraft.transport.parametor.TransportModelValue;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.BlockModelRotation;
 import net.minecraft.client.resources.model.UnbakedModel;
@@ -14,12 +15,12 @@ public class PipeModelRegistry {
         BASIC_ITEM_PIPE_BLOCK_EXTRACT("block/basic_item_pipe_extract"),
         FLOAT_ENERGY_PIPE_BLOCK_EXTRACT("block/basic_energy_pipe_extract");
 
-    private final ResourceLocation resource;
-    private final PipeModelValue<BakedModel> cachedModel;
+        private final ResourceLocation resource;
+        private final TransportModelValue<BakedModel> cachedModel;
 
     DCModel(String name) {
         resource = new ResourceLocation(Degeneracycraft.MOD_ID, name);
-        cachedModel = new PipeModelValue<>(() -> {
+        cachedModel = new TransportModelValue<>(() -> {
             UnbakedModel modelOrMissing = ForgeModelBakery.instance().getModelOrMissing(resource);
             return modelOrMissing.bake(ForgeModelBakery.instance(), ForgeModelBakery.instance().getSpriteMap()::getSprite, BlockModelRotation.X0_Y0, resource);
         });
@@ -29,9 +30,9 @@ public class PipeModelRegistry {
         return resource;
     }
 
-    public PipeModelValue<BakedModel> getCachedModel() {
-        return cachedModel;
-    }
+        public TransportModelValue<BakedModel> getCachedModel() {
+            return cachedModel;
+        }
 }
 
     public static void onModelRegister(ModelRegistryEvent registryEvent) {

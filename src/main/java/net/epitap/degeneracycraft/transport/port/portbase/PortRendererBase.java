@@ -5,8 +5,8 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
-import net.epitap.degeneracycraft.transport.pipe.render.PipeModelValue;
-import net.epitap.degeneracycraft.transport.port.render.TestPipeModelRegistry.TestDCModel;
+import net.epitap.degeneracycraft.transport.parametor.TransportModelValue;
+import net.epitap.degeneracycraft.transport.port.render.PortModelRegistry.DCPortModel;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -23,7 +23,7 @@ public abstract class PortRendererBase implements BlockEntityRenderer<PortBlockE
 
     protected Minecraft minecraft;
     protected BlockEntityRendererProvider.Context renderer;
-    protected PipeModelValue<BakedModel> cachedModel;
+    protected TransportModelValue<BakedModel> cachedModel;
 
     public PortRendererBase(BlockEntityRendererProvider.Context renderer) {
         this.renderer = renderer;
@@ -81,6 +81,6 @@ public abstract class PortRendererBase implements BlockEntityRenderer<PortBlockE
         }
     }
 
-    public abstract TestDCModel getModel();
+    public abstract DCPortModel getModel();
 
 }

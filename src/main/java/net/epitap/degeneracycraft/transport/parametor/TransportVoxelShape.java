@@ -1,9 +1,9 @@
-package net.epitap.degeneracycraft.transport.pipe.render;
+package net.epitap.degeneracycraft.transport.parametor;
 
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class PipeVoxelShape {
+public class TransportVoxelShape {
     public static VoxelShape combine(VoxelShape... shapes) {
         if (shapes.length <= 0) {
             return Shapes.empty();

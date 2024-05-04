@@ -2,11 +2,7 @@ package net.epitap.degeneracycraft.transport.port.portbase;
 
 import net.epitap.degeneracycraft.item.DCCreativeTab;
 import net.epitap.degeneracycraft.item.tool.WrenchItem;
-import net.epitap.degeneracycraft.transport.parametor.IItemBlock;
-import net.epitap.degeneracycraft.transport.parametor.PipeBlockEntityTicker;
-import net.epitap.degeneracycraft.transport.pipe.render.PipeVoxelShape;
-import net.epitap.degeneracycraft.transport.pipe.render.Value2D;
-import net.epitap.degeneracycraft.transport.pipe.render.Value3D;
+import net.epitap.degeneracycraft.transport.parametor.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.FluidTags;
@@ -306,12 +302,12 @@ public abstract class PortBlockBase extends Block implements IItemBlock, SimpleW
     public static final VoxelShape SHAPE_UP = Block.box(0D, 15D, 0D, 16D, 16D, 16D);
     public static final VoxelShape SHAPE_DOWN = Block.box(0D, 0D, 0D, 16D, 1D, 16D);
     public static final VoxelShape SHAPE_CORE = Block.box(1D, 1D, 1D, 15D, 15D, 15D);
-    public static final VoxelShape SHAPE_EXTRACT_NORTH = PipeVoxelShape.combine(SHAPE_NORTH, Block.box(0D, 0D, 0D, 16D, 16D, 2D));
-    public static final VoxelShape SHAPE_EXTRACT_SOUTH = PipeVoxelShape.combine(SHAPE_SOUTH, Block.box(0D, 0D, 14D, 16D, 16D, 16D));
-    public static final VoxelShape SHAPE_EXTRACT_EAST = PipeVoxelShape.combine(SHAPE_EAST, Block.box(14D, 0D, 0D, 16D, 16D, 16D));
-    public static final VoxelShape SHAPE_EXTRACT_WEST = PipeVoxelShape.combine(SHAPE_WEST, Block.box(0D, 0D, 0D, 2D, 16D, 16D));
-    public static final VoxelShape SHAPE_EXTRACT_UP = PipeVoxelShape.combine(SHAPE_UP, Block.box(0D, 14D, 0D, 16D, 16D, 16D));
-    public static final VoxelShape SHAPE_EXTRACT_DOWN = PipeVoxelShape.combine(SHAPE_DOWN, Block.box(0D, 0D, 0D, 16D, 2D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_NORTH = TransportVoxelShape.combine(SHAPE_NORTH, Block.box(0D, 0D, 0D, 16D, 16D, 2D));
+    public static final VoxelShape SHAPE_EXTRACT_SOUTH = TransportVoxelShape.combine(SHAPE_SOUTH, Block.box(0D, 0D, 14D, 16D, 16D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_EAST = TransportVoxelShape.combine(SHAPE_EAST, Block.box(14D, 0D, 0D, 16D, 16D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_WEST = TransportVoxelShape.combine(SHAPE_WEST, Block.box(0D, 0D, 0D, 2D, 16D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_UP = TransportVoxelShape.combine(SHAPE_UP, Block.box(0D, 14D, 0D, 16D, 16D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_DOWN = TransportVoxelShape.combine(SHAPE_DOWN, Block.box(0D, 0D, 0D, 16D, 2D, 16D));
 
 
     public VoxelShape getShape(BlockGetter blockReader, BlockPos pos, BlockState state, boolean advanced) {
@@ -323,44 +319,44 @@ public abstract class PortBlockBase extends Block implements IItemBlock, SimpleW
         VoxelShape shape = SHAPE_CORE;
         if (state.getValue(UP)) {
             if (port != null && port.portExtracting(Direction.UP)) {
-                shape = PipeVoxelShape.combine(shape, SHAPE_EXTRACT_UP);
+                shape = TransportVoxelShape.combine(shape, SHAPE_EXTRACT_UP);
             } else {
-                shape = PipeVoxelShape.combine(shape, SHAPE_UP);
+                shape = TransportVoxelShape.combine(shape, SHAPE_UP);
             }
         }
         if (state.getValue(DOWN)) {
             if (port != null && port.portExtracting(Direction.DOWN)) {
-                shape = PipeVoxelShape.combine(shape, SHAPE_EXTRACT_DOWN);
+                shape = TransportVoxelShape.combine(shape, SHAPE_EXTRACT_DOWN);
             } else {
-                shape = PipeVoxelShape.combine(shape, SHAPE_DOWN);
+                shape = TransportVoxelShape.combine(shape, SHAPE_DOWN);
             }
         }
         if (state.getValue(SOUTH)) {
             if (port != null && port.portExtracting(Direction.SOUTH)) {
-                shape = PipeVoxelShape.combine(shape, SHAPE_EXTRACT_SOUTH);
+                shape = TransportVoxelShape.combine(shape, SHAPE_EXTRACT_SOUTH);
             } else {
-                shape = PipeVoxelShape.combine(shape, SHAPE_SOUTH);
+                shape = TransportVoxelShape.combine(shape, SHAPE_SOUTH);
             }
         }
         if (state.getValue(NORTH)) {
             if (port != null && port.portExtracting(Direction.NORTH)) {
-                shape = PipeVoxelShape.combine(shape, SHAPE_EXTRACT_NORTH);
+                shape = TransportVoxelShape.combine(shape, SHAPE_EXTRACT_NORTH);
             } else {
-                shape = PipeVoxelShape.combine(shape, SHAPE_NORTH);
+                shape = TransportVoxelShape.combine(shape, SHAPE_NORTH);
             }
         }
         if (state.getValue(EAST)) {
             if (port != null && port.portExtracting(Direction.EAST)) {
-                shape = PipeVoxelShape.combine(shape, SHAPE_EXTRACT_EAST);
+                shape = TransportVoxelShape.combine(shape, SHAPE_EXTRACT_EAST);
             } else {
-                shape = PipeVoxelShape.combine(shape, SHAPE_EAST);
+                shape = TransportVoxelShape.combine(shape, SHAPE_EAST);
             }
         }
         if (state.getValue(WEST)) {
             if (port != null && port.portExtracting(Direction.WEST)) {
-                shape = PipeVoxelShape.combine(shape, SHAPE_EXTRACT_WEST);
+                shape = TransportVoxelShape.combine(shape, SHAPE_EXTRACT_WEST);
             } else {
-                shape = PipeVoxelShape.combine(shape, SHAPE_WEST);
+                shape = TransportVoxelShape.combine(shape, SHAPE_WEST);
             }
         }
         return shape;

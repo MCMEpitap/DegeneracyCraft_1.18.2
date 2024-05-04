@@ -12,6 +12,7 @@ import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOn
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_component_manufacture_machine.RedstonePoweredMachineComponentManufactureMachineScreen;
 import net.epitap.degeneracycraft.blocks.screen.PulverizerScreen;
 import net.epitap.degeneracycraft.blocks.screen.UniversalAssemblerPhase1Screen;
+import net.epitap.degeneracycraft.blocks.storage.basic.materialstorage.basic_strength_multiblock_material_storage.BasicStrengthMultiblockMaterialStorageScreen;
 import net.epitap.degeneracycraft.integration.jei.DCRecipeTypes;
 import net.epitap.degeneracycraft.item.DCAdvancementIcon;
 import net.epitap.degeneracycraft.item.DCItems;
@@ -94,6 +95,9 @@ public class Degeneracycraft {
 
 
         MenuScreens.register(DCMenuTypes.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_MENU.get(), RedstonePoweredMachineComponentManufactureMachineScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_MENU.get(), BasicStrengthMultiblockMaterialStorageScreen::new);
+
+
         MenuScreens.register(DCMenuTypes.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_MENU.get(), BasicPowerCompositeStructureTypeThermalGeneratorScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_MACHINE_ELEMENT_PROCESSOR_MACHINE_MENU.get(), BasicMachineElementProcessorScreen::new);
 

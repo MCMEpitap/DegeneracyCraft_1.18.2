@@ -8,6 +8,7 @@ import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOn
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_component_manufacture_machine.RedstonePoweredMachineComponentManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.menu.machine.PulverizerMenu;
 import net.epitap.degeneracycraft.blocks.menu.machine.UniversalAssemblerPhase1Menu;
+import net.epitap.degeneracycraft.blocks.storage.basic.materialstorage.basic_strength_multiblock_material_storage.BasicStrengthMultiblockMaterialStorageMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
@@ -34,9 +35,11 @@ public class DCMenuTypes {
     public static final RegistryObject<MenuType<RedstonePoweredMachineComponentManufactureMachineMenu>> REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_MENU =
             registerMenuType(RedstonePoweredMachineComponentManufactureMachineMenu::new, "redstone_powered_machine_component_manufacture_machine_menu");
 
-
     public static final RegistryObject<MenuType<BasicPowerCompositeStructureTypeThermalGeneratorMenu>> BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_MENU =
             registerMenuType(BasicPowerCompositeStructureTypeThermalGeneratorMenu::new, "basic_power_composite_structure_type_thermal_generator_menu");
+
+    public static final RegistryObject<MenuType<BasicStrengthMultiblockMaterialStorageMenu>> BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_MENU =
+            registerMenuType(BasicStrengthMultiblockMaterialStorageMenu::new, "basic_strength_multiblock_material_storage_menu");
 
     public static final RegistryObject<MenuType<BasicMachineElementProcessorMenu>> BASIC_MACHINE_ELEMENT_PROCESSOR_MACHINE_MENU =
             registerMenuType(BasicMachineElementProcessorMenu::new, "basic_machine_element_processor_menu");

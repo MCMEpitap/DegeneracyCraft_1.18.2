@@ -9,6 +9,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.basic_phase_bolt_manufact
 import net.epitap.degeneracycraft.blocks.machine.basic.basic_power_composite_structure_type_thermal_generator.BasicPowerCompositeStructureTypeThermalGeneratorBlock;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlock;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_component_manufacture_machine.RedstonePoweredMachineComponentManufactureMachineBlock;
+import net.epitap.degeneracycraft.blocks.storage.basic.materialstorage.basic_strength_multiblock_material_storage.BasicStrengthMultiblockMaterialStorageBlock;
 import net.epitap.degeneracycraft.holoblock.DCHoloBlock;
 import net.epitap.degeneracycraft.item.DCCreativeTab;
 import net.epitap.degeneracycraft.item.DCItems;
@@ -42,22 +43,25 @@ public class DCBlocks {
     public static final RegistryObject<Block> END_CASSITERITE_ORE = registerBlock("end_cassiterite_ore",()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()),DCCreativeTab.DEGENERACYCRAFT_ORE_TAB);
     public static final TagKey<Block> CASSITERITE_ORE = TagKey.create(Registry.BLOCK_REGISTRY ,new ResourceLocation(Degeneracycraft.MOD_ID,"cassiterite_ore"));
 
-    public static final RegistryObject<Block> OVERWORLD_GRAVITATION_ORE = registerBlock("overworld_gravitation_ore",()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()),DCCreativeTab.DEGENERACYCRAFT_ORE_TAB);
+    public static final RegistryObject<Block> OVERWORLD_GRAVITATION_ORE = registerBlock("overworld_gravitation_ore", () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_ORE_TAB);
 
-    public static final RegistryObject<Block> PULVERIZER_BLOCK = registerBlock("pulverizer",()-> new PulverizerBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
+    public static final RegistryObject<Block> PULVERIZER_BLOCK = registerBlock("pulverizer", () -> new PulverizerBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
             DCCreativeTab.DEGENERACYCRAFT_TAB);
 
-    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK = registerBlock("basic_strength_multiblock_base_frame_block",()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK = registerBlock("basic_strength_multiblock_machine_frame_block",()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK = registerBlock("basic_strength_multiblock_structure_frame_block",()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK = registerBlock("basic_strength_multiblock_structure_glass_block",()->  new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(4.0f)), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK = registerBlock("basic_strength_multiblock_base_frame_block", () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK = registerBlock("basic_strength_multiblock_machine_frame_block", () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK = registerBlock("basic_strength_multiblock_structure_frame_block", () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK = registerBlock("basic_strength_multiblock_structure_glass_block", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(4.0f)), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
 
-    public static final RegistryObject<Block> LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK = registerBlock("low_strength_multiblock_structure_frame_block",()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK = registerBlock("low_strength_multiblock_structure_glass_block",()->  new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK = registerBlock("basic_strength_multiblock_material_storage_block", () -> new BasicStrengthMultiblockMaterialStorageBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion())
+            , DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
 
 
+    public static final RegistryObject<Block> LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK = registerBlock("low_strength_multiblock_structure_frame_block", () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK = registerBlock("low_strength_multiblock_structure_glass_block", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
 
-    public static final RegistryObject<Block> UNIVERSAL_ASSEMBLER_PHASE1_BLOCK = registerBlock("universal_assembler_phase1",()-> new UniversalAssemblerPhase1Block(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
+
+    public static final RegistryObject<Block> UNIVERSAL_ASSEMBLER_PHASE1_BLOCK = registerBlock("universal_assembler_phase1", () -> new UniversalAssemblerPhase1Block(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
             DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
 
 //    public static final RegistryObject<Block> UNIVERSAL_ASSEMBLER_PHASE2_BLOCK = registerBlock("universal_assembler_phase2",()-> new UniversalAssemblerPhase2Block(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),

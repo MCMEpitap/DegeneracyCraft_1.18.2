@@ -42,6 +42,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         simpleBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get());
         simpleBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get());
         simpleBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get());
+        simpleBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get());
+
 
         simpleBlock(PortBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK);
 

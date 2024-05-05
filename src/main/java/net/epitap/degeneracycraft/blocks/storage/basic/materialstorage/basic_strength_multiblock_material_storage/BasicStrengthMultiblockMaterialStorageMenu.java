@@ -20,14 +20,14 @@ public class BasicStrengthMultiblockMaterialStorageMenu extends AbstractContaine
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 10;
+    private static final int TE_INVENTORY_SLOT_COUNT = 9;
 
     public final BasicStrengthMultiblockMaterialStorageBlockEntity blockEntity;
     public final Level level;
     public final ContainerData data;
 
     public BasicStrengthMultiblockMaterialStorageMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(0));
     }
 
     public BasicStrengthMultiblockMaterialStorageMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {

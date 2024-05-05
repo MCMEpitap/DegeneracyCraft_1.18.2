@@ -15,7 +15,7 @@ public class DCBlockLootTable extends BlockLoot {
         this.add(DCBlocks.OVERWORLD_GRAVITATION_ORE.get(),(Block)-> createOreDrop(DCBlocks.OVERWORLD_GRAVITATION_ORE.get(), DCItems.RAW_GRAVITATION_ORE.get()));
 
         this.add(DCBlocks.OVERWORLD_CASSITERITE_ORE.get(),(Block)-> createOreDrop(DCBlocks.OVERWORLD_CASSITERITE_ORE.get(),DCItems.RAW_CASSITERITE_ORE.get()));
-        this.add(DCBlocks.DEEPSLATE_CASSITERITE_ORE.get(),(Block)-> createOreDrop(DCBlocks.DEEPSLATE_CASSITERITE_ORE.get(),DCItems.RAW_CASSITERITE_ORE.get()));
+        this.add(DCBlocks.DEEPSLATE_CASSITERITE_ORE.get(), (Block) -> createOreDrop(DCBlocks.DEEPSLATE_CASSITERITE_ORE.get(), DCItems.RAW_CASSITERITE_ORE.get()));
         this.add(DCBlocks.NETHER_CASSITERITE_ORE.get(), (Block) -> createOreDrop(DCBlocks.NETHER_CASSITERITE_ORE.get(), DCItems.RAW_CASSITERITE_ORE.get()));
         this.add(DCBlocks.END_CASSITERITE_ORE.get(), (Block) -> createOreDrop(DCBlocks.END_CASSITERITE_ORE.get(), DCItems.RAW_CASSITERITE_ORE.get()));
 
@@ -25,6 +25,8 @@ public class DCBlockLootTable extends BlockLoot {
         this.add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get()));
         this.add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
         this.add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get()));
+        this.add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
+
 
         this.add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), block -> noDrop());
         this.add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), block -> noDrop());

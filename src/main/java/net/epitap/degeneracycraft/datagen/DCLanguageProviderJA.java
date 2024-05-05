@@ -642,7 +642,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "基本強度多重構造用機械骨組ブロック");
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "基本強度多重構造機械用構造骨組ブロック");
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), "基本強度多重構造機械用ガラスブロック");
-        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "基本強度多重構造機械用アイテムストレージ");
+        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "基本強度多重構造機械用材料ストレージ");
 
         add(PipeBlocks.BASIC_ITEM_PIPE_BLOCK, "基本アイテムパイプ");
         add(PipeBlocks.BASIC_ENERGY_PIPE_BLOCK, "基本エネルギーパイプ");

@@ -15,6 +15,8 @@ import net.epitap.degeneracycraft.integration.jei.basic.BasicMachineElementProce
 import net.epitap.degeneracycraft.integration.jei.basic.BasicMachineElementProcessorRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.initial.RedstonePoweredMachineComponentManufactureMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.RedstonePoweredMachineComponentManufactureMachineRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.test.BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure;
+import net.epitap.degeneracycraft.integration.jei.test.BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructureCategory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -40,11 +42,15 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeCategories(new
                 BasicMachineElementProcessorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
+        registration.addRecipeCategories(new
+                BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructureCategory(registration.getJeiHelpers().getGuiHelper()));
+
     }
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         RecipeManager rm = Objects.requireNonNull(Minecraft.getInstance().level).getRecipeManager();
+
         List<Pulverization> recipes = rm.getAllRecipesFor(Pulverization.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(PulverizationRecipeCategory.UID, Pulverization.class), recipes);
         List<RedstonePoweredMachineComponentManufactureMachineRecipe> redstonePoweredMachineComponentManufactureMachineRecipes =
@@ -53,6 +59,10 @@ public class JEIDCPlugin implements IModPlugin {
         List<BasicMachineElementProcessorRecipe> basicMachineElementProcessorRecipes =
                 rm.getAllRecipesFor(BasicMachineElementProcessorRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicMachineElementProcessorRecipeCategory.UID, BasicMachineElementProcessorRecipe.class), basicMachineElementProcessorRecipes);
+
+        List<BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure> basicPowerCompositeStructureTypeThermalGeneratorMultiblockStructures =
+                rm.getAllRecipesFor(BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructureCategory.UID, BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.class), basicPowerCompositeStructureTypeThermalGeneratorMultiblockStructures);
 
     }
 

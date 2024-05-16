@@ -5,6 +5,7 @@ import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.dcenum.MBPPos;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
+import net.epitap.degeneracycraft.integration.jei.test.BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -39,6 +40,7 @@ import org.jetbrains.annotations.NotNull;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Map;
+import java.util.Optional;
 
 public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends BlockEntity implements MenuProvider {
     public float BP_CS_T_THERMAL_GENERATOR_CAPACITY = 40000F;
@@ -250,6 +252,10 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
 
+        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+        Optional<BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure> match = level.getRecipeManager()
+                .getRecipeFor(BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.Type.INSTANCE, inventory, level);
+
         boolean pos0 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_3.xPos).above(MBPPos.x_1y_1z_3.yPos).relative(reZ, MBPPos.x_1y_1z_3.zPos))
                 .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
         boolean pos1 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z_3.xPos).above(MBPPos.x0y_1z_3.yPos).relative(reZ, MBPPos.x0y_1z_3.zPos))
@@ -281,6 +287,11 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         BlockPos blockpos = new BlockPos(this.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
+
+        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+        Optional<BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure> match = level.getRecipeManager()
+                .getRecipeFor(BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.Type.INSTANCE, inventory, level);
+
 
         boolean pos0 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_3.xPos).above(MBPPos.x_1y0z_3.yPos).relative(reZ, MBPPos.x_1y0z_3.zPos))
                 .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());

@@ -3,6 +3,7 @@ package net.epitap.degeneracycraft.integration.jei;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.integration.jei.basic.BasicMachineElementProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.RedstonePoweredMachineComponentManufactureMachineRecipe;
+import net.epitap.degeneracycraft.integration.jei.test.BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -26,6 +27,10 @@ public class DCRecipeTypes {
 
     public static final RegistryObject<RecipeSerializer<UniversalAssemblerPhase1Recipe>> ASSEMBLER_TIER1_SERIALIZER =
             SERIALIZERS.register("universal_assembler_phase1_recipe", () -> UniversalAssemblerPhase1Recipe.Serializer.INSTANCE);
+
+    public static final RegistryObject<RecipeSerializer<BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure>> BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_MULTIBLOCK_STRUCTURE_SERIALIZER =
+            SERIALIZERS.register("basic_power_composite_structure_type_thermal_generator_multiblock_structure", () -> BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.Serializer.INSTANCE);
+
 
 //    public static final RegistryObject<RecipeSerializer<testRecipe>> test_recipeSERIALIZER =
 //            SERIALIZERS.register("test_recipe",()-> testRecipe.Serializer.INSTANCE);

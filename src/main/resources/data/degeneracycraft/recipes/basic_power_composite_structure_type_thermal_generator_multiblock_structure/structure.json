@@ -1,0 +1,35 @@
+{
+  "type": "degeneracycraft:basic_power_composite_structure_type_thermal_generator_multiblock_structure",
+  "energy": 1000.0,
+  "time": 5.0,
+  "input0": {
+    "item": "minecraft:air"
+  },
+  "input1": {
+    "item": "minecraft:iron_ingot"
+  },
+  "input2": {
+    "item": "minecraft:air"
+  },
+  "input3": {
+    "item": "minecraft:iron_ingot"
+  },
+  "input4": {
+    "item": "minecraft:air"
+  },
+  "input5": {
+    "item": "minecraft:iron_ingot"
+  },
+  "input6": {
+    "item": "minecraft:air"
+  },
+  "input7": {
+    "item": "minecraft:iron_ingot"
+  },
+  "input8": {
+    "item": "minecraft:air"
+  },
+  "output0": {
+    "item": "degeneracycraft:iron_bearing"
+  }
+}

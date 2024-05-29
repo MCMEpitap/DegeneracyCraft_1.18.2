@@ -2,6 +2,7 @@ package net.epitap.degeneracycraft.blocks.storage.basic.energystorage.basic_stre
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
+import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -48,6 +49,10 @@ public class BasicStrengthMultiblockEnergyStorageMenu extends AbstractContainerM
 
         });
         addDataSlots(data);
+    }
+
+    public DCIEnergyStorageFloat getEnergy() {
+        return blockEntity.getEnergyStorage();
     }
 
     public BasicStrengthMultiblockEnergyStorageBlockEntity getBlockEntity() {

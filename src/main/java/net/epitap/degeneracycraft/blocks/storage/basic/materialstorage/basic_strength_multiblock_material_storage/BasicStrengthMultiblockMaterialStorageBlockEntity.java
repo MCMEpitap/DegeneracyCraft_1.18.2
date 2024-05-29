@@ -3,6 +3,7 @@ package net.epitap.degeneracycraft.blocks.storage.basic.materialstorage.basic_st
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.Containers;
@@ -25,6 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class BasicStrengthMultiblockMaterialStorageBlockEntity extends BlockEntity implements MenuProvider {
+
     public final ContainerData data;
     public final ItemStackHandler itemHandler = new ItemStackHandler(9) {
         @Override
@@ -37,6 +39,7 @@ public class BasicStrengthMultiblockMaterialStorageBlockEntity extends BlockEnti
             return super.isItemValid(slot, stack);
         }
     };
+
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
     public BasicStrengthMultiblockMaterialStorageBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
@@ -79,16 +82,34 @@ public class BasicStrengthMultiblockMaterialStorageBlockEntity extends BlockEnti
         return super.getCapability(cap, side);
     }
 
+    public void setHandler(ItemStackHandler itemStackHandler) {
+        for (int i = 0; i < itemStackHandler.getSlots(); i++) {
+            itemHandler.setStackInSlot(i, itemStackHandler.getStackInSlot(i));
+        }
+    }
+
     @Override
     public void onLoad() {
-        super.onLoad();
         lazyItemHandler = LazyOptional.of(() -> itemHandler);
+        super.onLoad();
     }
 
     @Override
     public void invalidateCaps() {
-        super.invalidateCaps();
         lazyItemHandler.invalidate();
+        super.invalidateCaps();
+    }
+
+    @Override
+    protected void saveAdditional(CompoundTag nbt) {
+        nbt.put("inventory", itemHandler.serializeNBT());
+        super.saveAdditional(nbt);
+    }
+
+    @Override
+    public void load(CompoundTag nbt) {
+        itemHandler.deserializeNBT(nbt.getCompound("inventory"));
+        super.load(nbt);
     }
 
     public void drops() {
@@ -102,7 +123,5 @@ public class BasicStrengthMultiblockMaterialStorageBlockEntity extends BlockEnti
 
     public static void tick(Level level, BlockPos pPos, BlockState pState, BasicStrengthMultiblockMaterialStorageBlockEntity blockEntity) {
     }
-
-
 }
 

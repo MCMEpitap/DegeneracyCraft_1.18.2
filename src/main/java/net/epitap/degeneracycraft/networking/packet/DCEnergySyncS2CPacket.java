@@ -4,6 +4,8 @@ import net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_element_pro
 import net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_element_processor.BasicMachineElementProcessorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.basic_power_composite_structure_type_thermal_generator.BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.basic_power_composite_structure_type_thermal_generator.BasicPowerCompositeStructureTypeThermalGeneratorMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.energystorage.basic_strength_multiblock_energy_storage.BasicStrengthMultiblockEnergyStorageBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.energystorage.basic_strength_multiblock_energy_storage.BasicStrengthMultiblockEnergyStorageMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
@@ -33,14 +35,23 @@ public class DCEnergySyncS2CPacket {
     public boolean handle(Supplier<NetworkEvent.Context> supplier) {
         NetworkEvent.Context context = supplier.get();
         context.enqueueWork(() -> {
+
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthMultiblockEnergyStorageBlockEntity blockEntity) {
+                blockEntity.setEnergyLevel(energy);
+                if (Minecraft.getInstance().player.containerMenu instanceof BasicStrengthMultiblockEnergyStorageMenu menu &&
+                        menu.getBlockEntity().getBlockPos().equals(pos)) {
+                    blockEntity.setEnergyLevel(energy);
+                }
+            }
+
             if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity blockEntity) {
                 blockEntity.setEnergyLevel(energy);
-
                 if (Minecraft.getInstance().player.containerMenu instanceof BasicPowerCompositeStructureTypeThermalGeneratorMenu menu &&
                         menu.getBlockEntity().getBlockPos().equals(pos)) {
                     blockEntity.setEnergyLevel(energy);
                 }
             }
+
             if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicMachineElementProcessorBlockEntity blockEntity) {
                 blockEntity.setEnergyLevel(energy);
 

@@ -132,6 +132,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure
         return CraftingHelper.getItemStack(pStackObject, true, false);
     }
 
+
     @Override
     public RecipeSerializer<?> getSerializer() {
         return BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.Serializer.INSTANCE;

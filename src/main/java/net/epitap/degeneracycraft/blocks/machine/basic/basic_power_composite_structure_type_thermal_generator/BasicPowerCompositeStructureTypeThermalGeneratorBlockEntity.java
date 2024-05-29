@@ -78,6 +78,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         @Override
         public void onEnergyChanged() {
             setChanged();
+            getLevel().sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
             DCMessages.sendToClients(new DCEnergySyncS2CPacket(this.energy, getBlockPos()));
         }
     };
@@ -166,17 +167,16 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
 
     @Override
     public void onLoad() {
-        super.onLoad();
         lazyItemHandler = LazyOptional.of(() -> itemHandler);
         lazyEnergyHandler = LazyOptional.of(() -> ENERGY_STORAGE);
-
+        super.onLoad();
     }
 
     @Override
     public void invalidateCaps() {
-        super.invalidateCaps();
         lazyItemHandler.invalidate();
         lazyEnergyHandler.invalidate();
+        super.invalidateCaps();
     }
 
     @Override
@@ -189,10 +189,10 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
 
     @Override
     public void load(CompoundTag nbt) {
-        super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("bp_cs_t_thermal_generator.energy"));
         counter = nbt.getInt("counter");
+        super.load(nbt);
     }
 
     public void drops() {
@@ -200,7 +200,6 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         for (int i = 0; i < itemHandler.getSlots(); i++) {
             inventory.setItem(i, itemHandler.getStackInSlot(i));
         }
-
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
     public boolean isFormed() {
@@ -309,8 +308,6 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
                 .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
         boolean pos7 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y0z_1.xPos).above(MBPPos.x0y0z_1.yPos).relative(reZ, MBPPos.x0y0z_1.zPos))
                 .isAir();
-//        boolean pos7 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y0z_1.xPos).above(MBPPos.x0y0z_1.yPos).relative(reZ, MBPPos.x0y0z_1.zPos).rotate(Rotation.COUNTERCLOCKWISE_90))
-//                .is(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get());
         boolean pos8 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z_1.xPos).above(MBPPos.x1y0z_1.yPos).relative(reZ, MBPPos.x1y0z_1.zPos))
                 .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
 

@@ -314,7 +314,7 @@ dependencies {
         compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.18.2-71.1:api")
         runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.18.2-71.1")
 
-        runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}")// core
+//        runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}")// core
 //        runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}:generators")// Mekanism: Generators
 //        runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}:tools")// Mekanism: Tools
 ////        runtimeOnly fg.deobf("mekanism:Mekanism:${mekanism_version}:additions")// Mekanism: Additions

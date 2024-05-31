@@ -12,13 +12,13 @@ public class DCCreativeTab {
             return new ItemStack(DCItems.GRAVITATION_INGOT.get());
         }
     };
-    public static final CreativeModeTab DEGENERACYCRAFT_MACHINECOMPONENT_TAB = new CreativeModeTab("degeneracycraft_machine_component") {
+    public static final CreativeModeTab DEGENERACYCRAFT_MACHINECOMPONENT_TAB = new CreativeModeTab("degeneracycraft_machine_components") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(DCItems.IRON_GEAR.get());
         }
     };
-    public static final CreativeModeTab DEGENERACYCRAFT_MACHINEPART_TAB = new CreativeModeTab("degeneracycraft_machine") {
+    public static final CreativeModeTab DEGENERACYCRAFT_MACHINEPART_TAB = new CreativeModeTab("degeneracycraft_machine_part") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(DCItems.BASIC_MOTOR.get());

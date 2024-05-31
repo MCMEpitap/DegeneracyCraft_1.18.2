@@ -12,14 +12,16 @@ public class DCBlockLootTable extends BlockLoot {
 
     @Override
     protected void addTables() {
-        this.add(DCBlocks.OVERWORLD_GRAVITATION_ORE.get(),(Block)-> createOreDrop(DCBlocks.OVERWORLD_GRAVITATION_ORE.get(), DCItems.RAW_GRAVITATION_ORE.get()));
+        this.add(DCBlocks.OVERWORLD_GRAVITATION_ORE.get(), (Block) -> createOreDrop(DCBlocks.OVERWORLD_GRAVITATION_ORE.get(), DCItems.RAW_GRAVITATION_ORE.get()));
 
-        this.add(DCBlocks.OVERWORLD_CASSITERITE_ORE.get(),(Block)-> createOreDrop(DCBlocks.OVERWORLD_CASSITERITE_ORE.get(),DCItems.RAW_CASSITERITE_ORE.get()));
+        this.add(DCBlocks.OVERWORLD_CASSITERITE_ORE.get(), (Block) -> createOreDrop(DCBlocks.OVERWORLD_CASSITERITE_ORE.get(), DCItems.RAW_CASSITERITE_ORE.get()));
         this.add(DCBlocks.DEEPSLATE_CASSITERITE_ORE.get(), (Block) -> createOreDrop(DCBlocks.DEEPSLATE_CASSITERITE_ORE.get(), DCItems.RAW_CASSITERITE_ORE.get()));
         this.add(DCBlocks.NETHER_CASSITERITE_ORE.get(), (Block) -> createOreDrop(DCBlocks.NETHER_CASSITERITE_ORE.get(), DCItems.RAW_CASSITERITE_ORE.get()));
         this.add(DCBlocks.END_CASSITERITE_ORE.get(), (Block) -> createOreDrop(DCBlocks.END_CASSITERITE_ORE.get(), DCItems.RAW_CASSITERITE_ORE.get()));
 
         this.add(DCBlocks.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK.get()));
+        this.add(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get()));
+
 
         this.add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK.get()));
         this.add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get()));

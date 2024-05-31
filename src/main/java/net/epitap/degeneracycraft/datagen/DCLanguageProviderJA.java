@@ -14,7 +14,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        add("itemGroup." + "degeneracycraft", "縮退クラフト");
+        add("itemGroup." + "degeneracycraft", "Degeneracy Craft");
 //        add(MESSAGE_THERMAL_POWER_GENERATOR,"Thermal Power Generator generating %s RF per tick");
 //        add(SCREEN_DEGENERACYCRAFT_THERMAL_POWER_GENERATOR,"Thermal Power Generator Screen");
 //        add(DCBlocks.THERMAL_POWER_GENERATOR_BLOCK.get(), "Thermal Power Generator");
@@ -668,9 +668,12 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("jei." + "degeneracycraft_redstone_powered_machine_component_manufacture_machine", "レッドストーン動力機械要素製作機 レシピ");
         add("jei." + "degeneracycraft_basic_machine_element_processor", "基本精度機械要素加工機 レシピ");
 
-        add("itemGroup." + "degeneracycraft_machine_component", "縮退クラフト 機械要素");
-        add("itemGroup." + "degeneracycraft_multiplied_ore_material", "縮退クラフト 鉱石倍化素材");
-        add("itemGroup." + "degeneracycraft_ore", "縮退クラフト 鉱石");
+        add("itemGroup." + "degeneracycraft_machine_component", "Degeneracy Craft 機械要素");
+        add("itemGroup." + "degeneracycraft_machine_part", "Degeneracy Craft 機械部品");
+
+        add("itemGroup." + "degeneracycraft_machine", "Degeneracy Craft 機械");
+        add("itemGroup." + "degeneracycraft_multiplied_ore_material", "Degeneracy Craft 鉱石倍化素材");
+        add("itemGroup." + "degeneracycraft_ore", "Degeneracy Craft 鉱石");
 
         add("screen." + "degeneracycraft" + ".phase0", "Phase 0");
         add("screen." + "degeneracycraft" + ".phase1", "Phase 1");

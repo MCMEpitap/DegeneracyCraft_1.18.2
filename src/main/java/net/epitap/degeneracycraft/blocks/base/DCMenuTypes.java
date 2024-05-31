@@ -6,6 +6,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.basic_phase_bolt_manufact
 import net.epitap.degeneracycraft.blocks.machine.basic.basic_power_composite_structure_type_thermal_generator.BasicPowerCompositeStructureTypeThermalGeneratorMenu;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_component_manufacture_machine.RedstonePoweredMachineComponentManufactureMachineMenu;
+import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.menu.machine.PulverizerMenu;
 import net.epitap.degeneracycraft.blocks.menu.machine.UniversalAssemblerPhase1Menu;
 import net.epitap.degeneracycraft.blocks.storage.basic.energystorage.basic_strength_multiblock_energy_storage.BasicStrengthMultiblockEnergyStorageMenu;
@@ -28,7 +29,7 @@ public class DCMenuTypes {
             registerMenuType(PulverizerMenu::new,"pulverizer_menu");
 
     public static final RegistryObject<MenuType<UniversalAssemblerPhase1Menu>> UNIVERSAL_ASSEMBLER_Phase1_MENU =
-            registerMenuType(UniversalAssemblerPhase1Menu::new,"universal_assembler_phase1_menu");
+            registerMenuType(UniversalAssemblerPhase1Menu::new, "universal_assembler_phase1_menu");
 //    public static final RegistryObject<MenuType<UniversalAssemblerPhase2Menu>> UNIVERSAL_ASSEMBLER_Phase2_MENU =
 //            registerMenuType(UniversalAssemblerPhase2Menu::new,"universal_assembler_phase2_menu");
 
@@ -36,6 +37,8 @@ public class DCMenuTypes {
     public static final RegistryObject<MenuType<RedstonePoweredMachineComponentManufactureMachineMenu>> REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_MENU =
             registerMenuType(RedstonePoweredMachineComponentManufactureMachineMenu::new, "redstone_powered_machine_component_manufacture_machine_menu");
 
+    public static final RegistryObject<MenuType<RedstonePoweredMachinePartManufactureMachineMenu>> REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_MENU =
+            registerMenuType(RedstonePoweredMachinePartManufactureMachineMenu::new, "redstone_powered_machine_part_manufacture_machine_menu");
     public static final RegistryObject<MenuType<BasicPowerCompositeStructureTypeThermalGeneratorMenu>> BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_MENU =
             registerMenuType(BasicPowerCompositeStructureTypeThermalGeneratorMenu::new, "basic_power_composite_structure_type_thermal_generator_menu");
 

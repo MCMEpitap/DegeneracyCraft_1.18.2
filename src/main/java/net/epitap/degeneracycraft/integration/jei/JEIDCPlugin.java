@@ -13,8 +13,10 @@ import net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_element_pro
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_component_manufacture_machine.RedstonePoweredMachineComponentManufactureMachineScreen;
 import net.epitap.degeneracycraft.integration.jei.basic.BasicMachineElementProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.BasicMachineElementProcessorRecipeCategory;
-import net.epitap.degeneracycraft.integration.jei.initial.RedstonePoweredMachineComponentManufactureMachineRecipe;
-import net.epitap.degeneracycraft.integration.jei.initial.RedstonePoweredMachineComponentManufactureMachineRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_component_manufacture_machine.RedstonePoweredMachineComponentManufactureMachineRecipe;
+import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_component_manufacture_machine.RedstonePoweredMachineComponentManufactureMachineRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineRecipe;
+import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.test.BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure;
 import net.epitap.degeneracycraft.integration.jei.test.BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructureCategory;
 import net.minecraft.client.Minecraft;
@@ -56,6 +58,10 @@ public class JEIDCPlugin implements IModPlugin {
         List<RedstonePoweredMachineComponentManufactureMachineRecipe> redstonePoweredMachineComponentManufactureMachineRecipes =
                 rm.getAllRecipesFor(RedstonePoweredMachineComponentManufactureMachineRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(RedstonePoweredMachineComponentManufactureMachineRecipeCategory.UID, RedstonePoweredMachineComponentManufactureMachineRecipe.class), redstonePoweredMachineComponentManufactureMachineRecipes);
+        List<RedstonePoweredMachinePartManufactureMachineRecipe> redstonePoweredMachineParttManufactureMachineRecipes =
+                rm.getAllRecipesFor(RedstonePoweredMachinePartManufactureMachineRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(RedstonePoweredMachinePartManufactureMachineRecipeCategory.UID, RedstonePoweredMachinePartManufactureMachineRecipe.class), redstonePoweredMachineParttManufactureMachineRecipes);
+
         List<BasicMachineElementProcessorRecipe> basicMachineElementProcessorRecipes =
                 rm.getAllRecipesFor(BasicMachineElementProcessorRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicMachineElementProcessorRecipeCategory.UID, BasicMachineElementProcessorRecipe.class), basicMachineElementProcessorRecipes);

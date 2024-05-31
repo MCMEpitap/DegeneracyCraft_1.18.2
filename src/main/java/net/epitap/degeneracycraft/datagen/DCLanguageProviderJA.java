@@ -834,7 +834,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".description", "目指せ、神秘解読");
 
         add("advancements." + "degeneracycraft" + ".geo_science" + ".title", "地学(Geo Science)");
-        add("advancements." + "degeneracycraft" + ".geo_science" + ".description", "目指せ、層鉱処理");
+        add("advancements." + "degeneracycraft" + ".geo_science" + ".description", "目指せ、鉱石探究");
 
 
         add("advancements." + "Awakening with \"The Fool\"" + ".title", "ある\"愚者\"の目覚め");

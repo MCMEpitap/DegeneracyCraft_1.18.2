@@ -11,7 +11,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.SlotItemHandler;
 
 public class BasicStrengthMultiblockEnergyStorageMenu extends AbstractContainerMenu {
     private static final int HOTBAR_SLOT_COUNT = 9;
@@ -45,7 +44,7 @@ public class BasicStrengthMultiblockEnergyStorageMenu extends AbstractContainerM
 //                    this.addSlot(new SlotItemHandler(handler, (l + i * 3), 8 + l * 18, 7 + i * 18));
 //                }
 //            }
-            this.addSlot(new SlotItemHandler(handler, 0, 8, 7));
+//            this.addSlot(new SlotItemHandler(handler, 0, 8, 7));
 
         });
         addDataSlots(data);

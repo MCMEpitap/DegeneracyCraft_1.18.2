@@ -831,7 +831,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".description", "Aim at deciphering the mysteries");
 
         add("advancements." + "degeneracycraft" + ".geoscience" + ".title", "Geo Science");
-        add("advancements." + "degeneracycraft" + ".geoscience" + ".description", "Aim at strata ore processing");
+        add("advancements." + "degeneracycraft" + ".geoscience" + ".description", "Aim at ores research");
 
 
         add("advancements." + "Awakening with \"The Fool\"" + ".title", "Awakening with \"The Fool\"");

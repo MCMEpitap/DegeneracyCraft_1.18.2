@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "degeneracycraft:basic_power_composite_structure_type_thermal_generator_block"
+    },
+    "title": {
+      "translate": "advancements.Call of Industry.title"
+    },
+    "description": {
+      "translate": "advancements.Call of Industry.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "degeneracycraft:degeneracycraft/the_fool",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "degeneracycraft:basic_power_composite_structure_type_thermal_generator_block"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

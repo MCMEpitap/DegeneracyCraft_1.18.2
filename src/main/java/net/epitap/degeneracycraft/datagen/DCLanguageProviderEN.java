@@ -837,6 +837,9 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("advancements." + "Awakening with \"The Fool\"" + ".title", "Awakening with \"The Fool\"");
         add("advancements." + "Awakening with \"The Fool\"" + ".description", "Make a Redstone Powered Machine Component Manufacture Machine");
 
+        add("advancements." + "Call of Industry" + ".title", "Call of Industry");
+        add("advancements." + "Call of Industry" + ".description", "Make a Basic Power Composite Structure Type Thermal Generator");
+
 
         add("degeneracycraft_introduction" + ".title", "DegeneracyCraftPedia");
         add("degeneracycraft_introduction" + ".landing",

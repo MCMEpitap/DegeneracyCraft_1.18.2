@@ -840,6 +840,9 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("advancements." + "Awakening with \"The Fool\"" + ".title", "ある\"愚者\"の目覚め");
         add("advancements." + "Awakening with \"The Fool\"" + ".description", "レッドストーン動力機械要素製作機を作成");
 
+        add("advancements." + "Call of Industry" + ".title", "工業の呼び声");
+        add("advancements." + "Call of Industry" + ".description", "基本出力複合構造型火力発電機を作成");
+
 
         add("degeneracycraft_introduction" + ".title", "DegeneracyCraftPedia");
         add("degeneracycraft_introduction" + ".landing",

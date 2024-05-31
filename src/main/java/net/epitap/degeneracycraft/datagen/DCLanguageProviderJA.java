@@ -668,8 +668,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("jei." + "degeneracycraft_redstone_powered_machine_component_manufacture_machine", "レッドストーン動力機械要素製作機 レシピ");
         add("jei." + "degeneracycraft_basic_machine_element_processor", "基本精度機械要素加工機 レシピ");
 
-        add("itemGroup." + "degeneracycraft_machine_component", "Degeneracy Craft 機械要素");
-        add("itemGroup." + "degeneracycraft_machine_part", "Degeneracy Craft 機械部品");
+        add("itemGroup." + "degeneracycraft_machine_components", "Degeneracy Craft 機械要素");
+        add("itemGroup." + "degeneracycraft_machine_parts", "Degeneracy Craft 機械部品");
 
         add("itemGroup." + "degeneracycraft_machine", "Degeneracy Craft 機械");
         add("itemGroup." + "degeneracycraft_multiplied_ore_material", "Degeneracy Craft 鉱石倍化素材");

@@ -18,7 +18,7 @@ public class DCCreativeTab {
             return new ItemStack(DCItems.IRON_GEAR.get());
         }
     };
-    public static final CreativeModeTab DEGENERACYCRAFT_MACHINEPART_TAB = new CreativeModeTab("degeneracycraft_machine_part") {
+    public static final CreativeModeTab DEGENERACYCRAFT_MACHINEPART_TAB = new CreativeModeTab("degeneracycraft_machine_parts") {
         @Override
         public ItemStack makeIcon() {
             return new ItemStack(DCItems.BASIC_MOTOR.get());

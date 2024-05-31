@@ -39,8 +39,12 @@ public class JEIDCPlugin implements IModPlugin {
     public void registerCategories(IRecipeCategoryRegistration registration) {
         registration.addRecipeCategories(new
                 PulverizationRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+
         registration.addRecipeCategories(new
                 RedstonePoweredMachineComponentManufactureMachineRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new
+                RedstonePoweredMachinePartManufactureMachineRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+
         registration.addRecipeCategories(new
                 BasicMachineElementProcessorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 

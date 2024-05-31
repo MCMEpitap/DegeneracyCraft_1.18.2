@@ -45,14 +45,16 @@ public class BasicStrengthMultiblockEnergyStorageScreen extends AbstractContaine
         int y = (height - imageHeight) / 2;
         this.blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight);
         energyInfoArea.draw(pPoseStack);
-        renderEnergyAreaTooltips(pPoseStack, pMouseX, pMouseY, x, y);
     }
 
 
     @Override
     public void renderLabels(PoseStack pPoseStack, int pMouseX, int pMouseY) {
+        int x = (width - imageWidth) / 2;
+        int y = (height - imageHeight) / 2;
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase0"),
                 35, 67, 0xFFFFFF);
+        renderEnergyAreaTooltips(pPoseStack, pMouseX, pMouseY, x, y);
     }
 
     private void renderEnergyAreaTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {

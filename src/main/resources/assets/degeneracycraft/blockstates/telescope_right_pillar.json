@@ -1,17 +1,25 @@
 {
   "variants": {
-    "facing=north": {
-      "model": "degeneracycraft:block/telescope_right_pillar"
-    },
-    "facing=east": {
+    "facing=down": {
       "model": "degeneracycraft:block/telescope_right_pillar",
-      "y": 90
+      "x": 90
     },
-    "facing=south": {
+    "facing=up": {
+      "model": "degeneracycraft:block/telescope_right_pillar",
+      "x": -90
+    },
+    "facing=north": {
       "model": "degeneracycraft:block/telescope_right_pillar",
       "y": 180
     },
+    "facing=south": {
+      "model": "degeneracycraft:block/telescope_right_pillar"
+    },
     "facing=west": {
+      "model": "degeneracycraft:block/telescope_right_pillar",
+      "y": 90
+    },
+    "facing=east": {
       "model": "degeneracycraft:block/telescope_right_pillar",
       "y": 270
     }

@@ -49,34 +49,34 @@ public class DCBlockStateProvider extends BlockStateProvider {
 
         simpleBlock(PortBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK);
 
-        registerRedstonePoweredMachineComponentManufactureMachine();
+        registerRedstonePoweredMachineElementManufactureMachine();
         registerBasicPowerCompositeStructureTypeThermalGenerator();
         registerBasicMachineElementProcessor();
     }
 
 
-    private void registerRedstonePoweredMachineComponentManufactureMachine() {
-        BlockModelBuilder modelRedstonePoweredMachineComponentManufactureMachine = models().getBuilder("block/redstone_powered_machine_component_manufacture_machine_block");
-        modelRedstonePoweredMachineComponentManufactureMachine.parent(models().getExistingFile(mcLoc("cube")));
-        modelRedstonePoweredMachineComponentManufactureMachine.texture("down", modLoc("block/redstone_powered_machine_component_manufacture_machine_down"));
-        modelRedstonePoweredMachineComponentManufactureMachine.texture("up", modLoc("block/redstone_powered_machine_component_manufacture_machine_top"));
-        modelRedstonePoweredMachineComponentManufactureMachine.texture("north", modLoc("block/redstone_powered_machine_component_manufacture_machine_block"));
-        modelRedstonePoweredMachineComponentManufactureMachine.texture("south", modLoc("block/redstone_powered_machine_component_manufacture_machine_block"));
-        modelRedstonePoweredMachineComponentManufactureMachine.texture("east", modLoc("block/redstone_powered_machine_component_manufacture_machine_side"));
-        modelRedstonePoweredMachineComponentManufactureMachine.texture("west", modLoc("block/redstone_powered_machine_component_manufacture_machine_side"));
-        orientedBlock(DCBlocks.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK.get(),
-                state -> modelRedstonePoweredMachineComponentManufactureMachine);
+    private void registerRedstonePoweredMachineElementManufactureMachine() {
+        BlockModelBuilder modelRedstonePoweredMachineElementManufactureMachine = models().getBuilder("block/redstone_powered_machine_element_manufacture_machine_block");
+        modelRedstonePoweredMachineElementManufactureMachine.parent(models().getExistingFile(mcLoc("cube")));
+        modelRedstonePoweredMachineElementManufactureMachine.texture("down", modLoc("block/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_down"));
+        modelRedstonePoweredMachineElementManufactureMachine.texture("up", modLoc("block/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_top"));
+        modelRedstonePoweredMachineElementManufactureMachine.texture("north", modLoc("block/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_block"));
+        modelRedstonePoweredMachineElementManufactureMachine.texture("south", modLoc("block/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_block"));
+        modelRedstonePoweredMachineElementManufactureMachine.texture("east", modLoc("block/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_side"));
+        modelRedstonePoweredMachineElementManufactureMachine.texture("west", modLoc("block/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_side"));
+        orientedBlock(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get(),
+                state -> modelRedstonePoweredMachineElementManufactureMachine);
     }
 
     private void registerBasicPowerCompositeStructureTypeThermalGenerator() {
         BlockModelBuilder modelBasicPowerCompositeStructureTypeThermalGenerator = models().getBuilder("block/basic_power_composite_structure_type_thermal_generator_block");
         modelBasicPowerCompositeStructureTypeThermalGenerator.parent(models().getExistingFile(mcLoc("cube")));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/basic_machine_block_side_down"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/basic_power_composite_structure_type_thermal_generator_side_en"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("north", modLoc("block/basic_power_composite_structure_type_thermal_generator_front"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/basic_power_composite_structure_type_thermal_generator_side_en"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/basic_power_composite_structure_type_thermal_generator_side_im"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/basic_power_composite_structure_type_thermal_generator_side_ex"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/basic/basic_power_composite_structure_type_thermal_generator/basic_machine_block_side_down"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side_en"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("north", modLoc("block/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_front"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side_en"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side_im"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side_ex"));
         orientedBlock(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get(),
                 state -> modelBasicPowerCompositeStructureTypeThermalGenerator);
     }

@@ -629,8 +629,8 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.OVERWORLD_GRAVITATION_ORE.getId().getPath(),
                 modLoc("block/overworld_gravitation_ore"));
 
-        withExistingParent(DCBlocks.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK.getId().getPath(),
-                modLoc("block/redstone_powered_machine_component_manufacture_machine_block"));
+        withExistingParent(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.getId().getPath(),
+                modLoc("block/redstone_powered_machine_element_manufacture_machine_block"));
 
 
         withExistingParent(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK.getId().getPath(),

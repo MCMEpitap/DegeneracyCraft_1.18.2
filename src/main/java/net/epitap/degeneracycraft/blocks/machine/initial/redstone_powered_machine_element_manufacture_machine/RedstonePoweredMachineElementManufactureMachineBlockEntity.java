@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_component_manufacture_machine;
+package net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_component_manufacture_machine.RedstonePoweredMachineComponentManufactureMachineRecipe;
@@ -30,7 +30,7 @@ import javax.annotation.Nonnull;
 import java.util.Map;
 import java.util.Optional;
 
-public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extends BlockEntity implements MenuProvider {
+public class RedstonePoweredMachineElementManufactureMachineBlockEntity extends BlockEntity implements MenuProvider {
     public final ContainerData data;
     public int progress = 0;
     public int maxProgress = 100;
@@ -54,16 +54,16 @@ public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extend
                     Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 1, (in, stack) -> itemHandler.isItemValid(1, stack))),
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 1 || out == 2, (in, stack) -> itemHandler.isItemValid(1, stack) || itemHandler.isItemValid(2, stack))));
 
-    public RedstonePoweredMachineComponentManufactureMachineBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
+    public RedstonePoweredMachineElementManufactureMachineBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(DCBlockEntities.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
 
         this.data = new ContainerData() {
             public int get(int index) {
                 switch (index) {
                     case 0:
-                        return RedstonePoweredMachineComponentManufactureMachineBlockEntity.this.progress;
+                        return RedstonePoweredMachineElementManufactureMachineBlockEntity.this.progress;
                     case 1:
-                        return RedstonePoweredMachineComponentManufactureMachineBlockEntity.this.maxProgress;
+                        return RedstonePoweredMachineElementManufactureMachineBlockEntity.this.maxProgress;
                     default:
                         return 0;
                 }
@@ -72,10 +72,10 @@ public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extend
             public void set(int index, int value) {
                 switch (index) {
                     case 0:
-                        RedstonePoweredMachineComponentManufactureMachineBlockEntity.this.progress = value;
+                        RedstonePoweredMachineElementManufactureMachineBlockEntity.this.progress = value;
                         break;
                     case 1:
-                        RedstonePoweredMachineComponentManufactureMachineBlockEntity.this.maxProgress = value;
+                        RedstonePoweredMachineElementManufactureMachineBlockEntity.this.maxProgress = value;
                         break;
                 }
             }
@@ -94,7 +94,7 @@ public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extend
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return new RedstonePoweredMachineComponentManufactureMachineMenu(pContainerId, pInventory, this, this.data);
+        return new RedstonePoweredMachineElementManufactureMachineMenu(pContainerId, pInventory, this, this.data);
     }
 
     @Override
@@ -104,7 +104,7 @@ public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extend
                 return lazyItemHandler.cast();
             }
             if (directionWrappedHandlerMap.containsKey(side)) {
-                Direction localDir = this.getBlockState().getValue(RedstonePoweredMachineComponentManufactureMachineBlock.FACING);
+                Direction localDir = this.getBlockState().getValue(RedstonePoweredMachineElementManufactureMachineBlock.FACING);
 
                 if (side == Direction.UP || side == Direction.DOWN) {
                     return directionWrappedHandlerMap.get(side).cast();
@@ -141,7 +141,7 @@ public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extend
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
-    public static void tick(Level level, BlockPos pPos, BlockState pState, RedstonePoweredMachineComponentManufactureMachineBlockEntity blockEntity) {
+    public static void tick(Level level, BlockPos pPos, BlockState pState, RedstonePoweredMachineElementManufactureMachineBlockEntity blockEntity) {
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity)) {
             if (hasNotReachedStackLimit(blockEntity)) {
                 blockEntity.progress++;
@@ -159,7 +159,7 @@ public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extend
         }
     }
 
-    public static boolean craftCheck(RedstonePoweredMachineComponentManufactureMachineBlockEntity blockEntity) {
+    public static boolean craftCheck(RedstonePoweredMachineElementManufactureMachineBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -174,7 +174,8 @@ public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extend
         }
         return false;
     }
-    private static boolean hasRecipe(RedstonePoweredMachineComponentManufactureMachineBlockEntity blockEntity) {
+
+    private static boolean hasRecipe(RedstonePoweredMachineElementManufactureMachineBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -186,7 +187,8 @@ public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extend
 
         return match.isPresent();
     }
-    public static boolean hasAmountRecipe(RedstonePoweredMachineComponentManufactureMachineBlockEntity blockEntity) {
+
+    public static boolean hasAmountRecipe(RedstonePoweredMachineElementManufactureMachineBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -206,7 +208,8 @@ public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extend
                 && blockEntity.itemHandler.getStackInSlot(7).getCount() >= match.get().getInput7Item().getCount()
                 && blockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
     }
-    private static void craftItem(RedstonePoweredMachineComponentManufactureMachineBlockEntity blockEntity) {
+
+    private static void craftItem(RedstonePoweredMachineElementManufactureMachineBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -216,7 +219,7 @@ public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extend
         Optional<RedstonePoweredMachineComponentManufactureMachineRecipe> match = level.getRecipeManager()
                 .getRecipeFor(RedstonePoweredMachineComponentManufactureMachineRecipe.Type.INSTANCE, inventory, level);
 
-        if(match.isPresent()) {
+        if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
             blockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
             blockEntity.itemHandler.extractItem(2, match.get().getInput2Item().getCount(), false);
@@ -255,7 +258,7 @@ public class RedstonePoweredMachineComponentManufactureMachineBlockEntity extend
     }
 
 
-    private static boolean hasNotReachedStackLimit(RedstonePoweredMachineComponentManufactureMachineBlockEntity blockEntity) {
+    private static boolean hasNotReachedStackLimit(RedstonePoweredMachineElementManufactureMachineBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(9).getCount() < blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
     }
 

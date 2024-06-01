@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "degeneracycraft:redstone_powered_machine_component_manufacture_machine_block"
+      "degeneracycraft:redstone_powered_machine_element_manufacture_machine_block"
     ]
   },
   "criteria": {
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "degeneracycraft:redstone_powered_machine_component_manufacture_machine_block"
+        "recipe": "degeneracycraft:redstone_powered_machine_element_manufacture_machine_block"
       }
     }
   },

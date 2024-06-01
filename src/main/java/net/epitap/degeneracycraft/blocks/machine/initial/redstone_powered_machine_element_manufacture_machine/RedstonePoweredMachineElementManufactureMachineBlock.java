@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_component_manufacture_machine;
+package net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine;
 
 import net.epitap.degeneracycraft.blocks.base.BlockBase;
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
@@ -18,9 +18,9 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class RedstonePoweredMachineComponentManufactureMachineBlock extends BlockBase {
+public class RedstonePoweredMachineElementManufactureMachineBlock extends BlockBase {
 
-    public RedstonePoweredMachineComponentManufactureMachineBlock(Properties properties) {
+    public RedstonePoweredMachineElementManufactureMachineBlock(Properties properties) {
         super(properties);
     }
 
@@ -28,8 +28,8 @@ public class RedstonePoweredMachineComponentManufactureMachineBlock extends Bloc
     public void onRemove(BlockState pState, Level level, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = level.getBlockEntity(pPos);
-            if (blockEntity instanceof RedstonePoweredMachineComponentManufactureMachineBlockEntity) {
-                ((RedstonePoweredMachineComponentManufactureMachineBlockEntity) blockEntity).drops();
+            if (blockEntity instanceof RedstonePoweredMachineElementManufactureMachineBlockEntity) {
+                ((RedstonePoweredMachineElementManufactureMachineBlockEntity) blockEntity).drops();
             }
         }
         super.onRemove(pState, level, pPos, pNewState, pIsMoving);
@@ -40,8 +40,8 @@ public class RedstonePoweredMachineComponentManufactureMachineBlock extends Bloc
                                  Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!level.isClientSide()) {
             BlockEntity entity = level.getBlockEntity(pPos);
-            if(entity instanceof RedstonePoweredMachineComponentManufactureMachineBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer)pPlayer), (RedstonePoweredMachineComponentManufactureMachineBlockEntity)entity, pPos);
+            if (entity instanceof RedstonePoweredMachineElementManufactureMachineBlockEntity) {
+                NetworkHooks.openGui(((ServerPlayer) pPlayer), (RedstonePoweredMachineElementManufactureMachineBlockEntity) entity, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
@@ -53,7 +53,7 @@ public class RedstonePoweredMachineComponentManufactureMachineBlock extends Bloc
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new RedstonePoweredMachineComponentManufactureMachineBlockEntity(pos, state);
+        return new RedstonePoweredMachineElementManufactureMachineBlockEntity(pos, state);
     }
 
     @Nullable
@@ -61,7 +61,7 @@ public class RedstonePoweredMachineComponentManufactureMachineBlock extends Bloc
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level level, @NotNull BlockState state,
                                                                   @NotNull BlockEntityType<T> type) {
         return createTickerHelper(type, DCBlockEntities.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK_ENTITY.get(),
-                RedstonePoweredMachineComponentManufactureMachineBlockEntity::tick);
+                RedstonePoweredMachineElementManufactureMachineBlockEntity::tick);
     }
 
     @Nullable

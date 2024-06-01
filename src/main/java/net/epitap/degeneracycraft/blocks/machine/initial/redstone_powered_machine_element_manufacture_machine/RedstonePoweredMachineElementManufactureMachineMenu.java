@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_component_manufacture_machine;
+package net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class RedstonePoweredMachineComponentManufactureMachineMenu extends AbstractContainerMenu {
+public class RedstonePoweredMachineElementManufactureMachineMenu extends AbstractContainerMenu {
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
@@ -23,18 +23,18 @@ public class RedstonePoweredMachineComponentManufactureMachineMenu extends Abstr
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
     private static final int TE_INVENTORY_SLOT_COUNT = 10;
 
-    public final RedstonePoweredMachineComponentManufactureMachineBlockEntity blockEntity;
+    public final RedstonePoweredMachineElementManufactureMachineBlockEntity blockEntity;
     public RedstonePoweredMachineComponentManufactureMachineRecipe recipe;
     public final Level level;
     public final ContainerData data;
 
-    public RedstonePoweredMachineComponentManufactureMachineMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+    public RedstonePoweredMachineElementManufactureMachineMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
         this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
 
-    public RedstonePoweredMachineComponentManufactureMachineMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
+    public RedstonePoweredMachineElementManufactureMachineMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
         super(DCMenuTypes.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_MENU.get(), id);
-        blockEntity = (RedstonePoweredMachineComponentManufactureMachineBlockEntity) entity;
+        blockEntity = (RedstonePoweredMachineElementManufactureMachineBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
         addPlayerInventory(inv);
@@ -59,9 +59,10 @@ public class RedstonePoweredMachineComponentManufactureMachineMenu extends Abstr
         return blockEntity.getProgressPercent();
     }
 
-    public RedstonePoweredMachineComponentManufactureMachineBlockEntity getBlockEntity() {
+    public RedstonePoweredMachineElementManufactureMachineBlockEntity getBlockEntity() {
         return this.blockEntity;
     }
+
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {
         Slot sourceSlot = slots.get(index);
@@ -98,7 +99,7 @@ public class RedstonePoweredMachineComponentManufactureMachineMenu extends Abstr
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, DCBlocks.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK.get());
+                player, DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

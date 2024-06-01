@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_component_manufacture_machine;
+package net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -11,12 +11,12 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class RedstonePoweredMachineComponentManufactureMachineScreen extends AbstractContainerScreen<RedstonePoweredMachineComponentManufactureMachineMenu> {
+public class RedstonePoweredMachineElementManufactureMachineScreen extends AbstractContainerScreen<RedstonePoweredMachineElementManufactureMachineMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID,"textures/gui/redstone_powered_machine_component_manufacture_machine_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_component_manufacture_machine_gui.png");
 
 
-    public RedstonePoweredMachineComponentManufactureMachineScreen(RedstonePoweredMachineComponentManufactureMachineMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public RedstonePoweredMachineElementManufactureMachineScreen(RedstonePoweredMachineElementManufactureMachineMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }
 

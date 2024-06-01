@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "degeneracycraft:block/telescope_right_pillar"
+    },
+    "facing=east": {
+      "model": "degeneracycraft:block/telescope_right_pillar",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "degeneracycraft:block/telescope_right_pillar",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "degeneracycraft:block/telescope_right_pillar",
+      "y": 270
+    }
+  }
+}

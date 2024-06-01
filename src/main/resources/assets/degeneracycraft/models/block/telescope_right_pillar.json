@@ -1,0 +1,367 @@
+{
+  "credit": "Made with Blockbench",
+  "textures": {
+    "1": "degeneracycraft:block/unique/texture1",
+    "2": "degeneracycraft:block/unique/texture2",
+    "3": "degeneracycraft:block/unique/texture3",
+    "4": "degeneracycraft:block/unique/texture4",
+    "particle": "degeneracycraft:block/unique/texture3"
+  },
+  "elements": [
+    {
+      "name": "cube1",
+      "from": [
+        6,
+        0,
+        6
+      ],
+      "to": [
+        10,
+        15,
+        10
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          7,
+          0,
+          7
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            2,
+            7.5
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            2,
+            0,
+            4,
+            7.5
+          ],
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            4,
+            0,
+            6,
+            7.5
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            6,
+            0,
+            8,
+            7.5
+          ],
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            2,
+            9.5,
+            0,
+            7.5
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            4,
+            7.5,
+            2,
+            9.5
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "cube2",
+      "from": [
+        7,
+        15,
+        7
+      ],
+      "to": [
+        9,
+        16,
+        9
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          7,
+          15,
+          7
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            2,
+            0,
+            4,
+            1
+          ],
+          "texture": "#2"
+        },
+        "east": {
+          "uv": [
+            2,
+            1,
+            4,
+            2
+          ],
+          "texture": "#2"
+        },
+        "south": {
+          "uv": [
+            2,
+            2,
+            4,
+            3
+          ],
+          "texture": "#2"
+        },
+        "west": {
+          "uv": [
+            2,
+            3,
+            4,
+            4
+          ],
+          "texture": "#2"
+        },
+        "up": {
+          "uv": [
+            2,
+            2,
+            0,
+            0
+          ],
+          "texture": "#2"
+        },
+        "down": {
+          "uv": [
+            2,
+            2,
+            0,
+            4
+          ],
+          "texture": "#2"
+        }
+      }
+    },
+    {
+      "name": "cube3",
+      "from": [
+        2,
+        8,
+        7
+      ],
+      "to": [
+        6,
+        10,
+        9
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          0,
+          8,
+          7
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            0,
+            0,
+            4,
+            2
+          ],
+          "texture": "#3"
+        },
+        "east": {
+          "uv": [
+            4,
+            2,
+            6,
+            4
+          ],
+          "texture": "#3"
+        },
+        "south": {
+          "uv": [
+            0,
+            2,
+            4,
+            4
+          ],
+          "texture": "#3"
+        },
+        "west": {
+          "uv": [
+            4,
+            4,
+            6,
+            6
+          ],
+          "texture": "#3"
+        },
+        "up": {
+          "uv": [
+            4,
+            6,
+            0,
+            4
+          ],
+          "texture": "#3"
+        },
+        "down": {
+          "uv": [
+            8,
+            0,
+            4,
+            2
+          ],
+          "texture": "#3"
+        }
+      }
+    },
+    {
+      "name": "cube4",
+      "from": [
+        0,
+        7,
+        6
+      ],
+      "to": [
+        2,
+        11,
+        10
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          0,
+          9,
+          8
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            0,
+            6,
+            4
+          ],
+          "texture": "#4"
+        },
+        "east": {
+          "uv": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "texture": "#4"
+        },
+        "south": {
+          "uv": [
+            4,
+            4,
+            6,
+            8
+          ],
+          "texture": "#4"
+        },
+        "west": {
+          "uv": [
+            0,
+            4,
+            4,
+            8
+          ],
+          "texture": "#4"
+        },
+        "up": {
+          "uv": [
+            8,
+            4,
+            6,
+            0
+          ],
+          "texture": "#4"
+        },
+        "down": {
+          "uv": [
+            8,
+            4,
+            6,
+            8
+          ],
+          "texture": "#4"
+        }
+      }
+    }
+  ],
+  "display": {
+    "firstperson_righthand": {
+      "translation": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ]
+    },
+    "gui": {
+      "rotation": [
+        20,
+        20,
+        0
+      ],
+      "translation": [
+        2,
+        0,
+        0
+      ]
+    }
+  },
+  "groups": [
+    {
+      "name": "VoxelShapes",
+      "origin": [
+        8,
+        8,
+        8
+      ],
+      "color": 0,
+      "children": [
+        0,
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}

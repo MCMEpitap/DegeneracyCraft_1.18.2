@@ -1,7 +1,7 @@
 package net.epitap.degeneracycraft.blocks.base;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
-import net.epitap.degeneracycraft.blocks.unique.basic.TelescopeRightPillarBlock;
+import net.epitap.degeneracycraft.blocks.unique.basic.telescope.TelescopeRightPillarBlock;
 import net.epitap.degeneracycraft.item.DCCreativeTab;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.minecraft.network.chat.Component;
@@ -24,7 +24,8 @@ public class DCUniqueBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Degeneracycraft.MOD_ID);
     public static final RegistryObject<Block> TELESCOPE_RIGHT_PILLAR = registerUniqueBlock("telescope_right_pillar",
             () -> new TelescopeRightPillarBlock(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-
+    public static final RegistryObject<Block> TELESCOPE_LEFT_PILLAR = registerUniqueBlock("telescope_left_pillar",
+            () -> new TelescopeRightPillarBlock(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
 
     private static <T extends Block> RegistryObject<T> registerUniqueBlock(String name, Supplier<T> block, CreativeModeTab tab, String tooltip) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

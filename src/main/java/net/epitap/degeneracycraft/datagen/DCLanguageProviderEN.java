@@ -2,6 +2,7 @@ package net.epitap.degeneracycraft.datagen;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
+import net.epitap.degeneracycraft.blocks.base.DCUniqueBlocks;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.transport.pipe.blocks.PipeBlocks;
 import net.minecraft.data.DataGenerator;
@@ -634,6 +635,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_PRECISION_CIRCUIT.get(), "Basic Precision Circuit");
 
         add(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Component Manufacture Machine");
+        add(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Part Manufacture Machine");
 
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Multiblock Base Frame Block");
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Multiblock Machine Frame Block");
@@ -662,6 +664,9 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.PULVERIZER_BLOCK.get(), "Pulverizer");
         add(DCBlocks.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK.get(), "Universal Assembler Phase1");
 
+
+        add(DCUniqueBlocks.SIMPLE_TELESCOPE_RIGHT_PILLAR.get(), "Simple Telescope Right Pillar");
+        add(DCUniqueBlocks.SIMPLE_TELESCOPE_LEFT_PILLAR.get(), "Simple Telescope Left Pillar");
 
         add("message." + "degeneracycraft_redstone_powered_machine_component_manufacture_machine", "Phase 0 Initial");
         add("screen." + "degeneracycraft_pulverizer", "Pulverizer Screen");

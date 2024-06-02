@@ -11,8 +11,8 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class TelescopeLeftPillarBlock extends UniqueBlockBase {
-    public TelescopeLeftPillarBlock(Properties properties) {
+public class SimpleTelescopeLeftPillarBlock extends UniqueBlockBase {
+    public SimpleTelescopeLeftPillarBlock(Properties properties) {
         super(properties);
     }
 

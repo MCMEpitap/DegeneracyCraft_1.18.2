@@ -15,7 +15,7 @@
     "item": "degeneracycraft:iron_plate"
   },
   "input4": {
-    "item": "degeneracycraft:redstone_powered_machine_element_manufacture_machine"
+    "item": "minecraft:air"
   },
   "input5": {
     "item": "degeneracycraft:iron_plate"
@@ -30,6 +30,6 @@
     "item": "degeneracycraft:iron_nut"
   },
   "output0": {
-    "item": "degeneracycraft:redstone_powered_machine_part_manufacture_machine"
+    "item": "degeneracycraft:redstone_powered_machine_part_manufacture_machine_block"
   }
 }

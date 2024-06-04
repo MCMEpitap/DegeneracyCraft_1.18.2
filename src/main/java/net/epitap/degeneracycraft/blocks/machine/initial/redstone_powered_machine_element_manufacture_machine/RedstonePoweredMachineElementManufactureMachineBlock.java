@@ -60,7 +60,7 @@ public class RedstonePoweredMachineElementManufactureMachineBlock extends BlockB
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level level, @NotNull BlockState state,
                                                                   @NotNull BlockEntityType<T> type) {
-        return createTickerHelper(type, DCBlockEntities.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK_ENTITY.get(),
+        return createTickerHelper(type, DCBlockEntities.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK_ENTITY.get(),
                 RedstonePoweredMachineElementManufactureMachineBlockEntity::tick);
     }
 

@@ -55,7 +55,7 @@ public class RedstonePoweredMachineElementManufactureMachineBlockEntity extends 
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 1 || out == 2, (in, stack) -> itemHandler.isItemValid(1, stack) || itemHandler.isItemValid(2, stack))));
 
     public RedstonePoweredMachineElementManufactureMachineBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+        super(DCBlockEntities.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
 
         this.data = new ContainerData() {
             public int get(int index) {

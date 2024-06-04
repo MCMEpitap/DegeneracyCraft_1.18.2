@@ -33,7 +33,7 @@ public class RedstonePoweredMachineElementManufactureMachineMenu extends Abstrac
     }
 
     public RedstonePoweredMachineElementManufactureMachineMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_MENU.get(), id);
+        super(DCMenuTypes.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_MENU.get(), id);
         blockEntity = (RedstonePoweredMachineElementManufactureMachineBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;

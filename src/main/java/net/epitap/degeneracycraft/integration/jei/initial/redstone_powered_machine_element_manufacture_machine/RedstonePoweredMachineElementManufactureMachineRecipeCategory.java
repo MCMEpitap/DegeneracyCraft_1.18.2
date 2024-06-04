@@ -20,7 +20,7 @@ import net.minecraft.world.item.ItemStack;
 
 import javax.annotation.Nonnull;
 
-public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory implements IRecipeCategory<RedstonePoweredMachineElementManufactureMachineRecipe> {
+public class RedstonePoweredMachineElementManufactureMachineRecipeCategory implements IRecipeCategory<RedstonePoweredMachineElementManufactureMachineRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "redstone_powered_machine_element_manufacture_machine_recipe");
     public final static ResourceLocation TEXTURE =
             new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/initial/redstone_powered_machine_element_manufacture_machine_uid.png");
@@ -28,7 +28,7 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory imp
     private final IDrawable background;
     private final IDrawable icon;
 
-    public RedstonePoweredMachineComponentManufactureMachineRecipeCategory(IGuiHelper helper) {
+    public RedstonePoweredMachineElementManufactureMachineRecipeCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 151);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get()));
     }

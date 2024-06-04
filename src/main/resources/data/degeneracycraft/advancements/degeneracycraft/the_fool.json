@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "degeneracycraft:redstone_powered_machine_component_manufacture_machine_block"
+      "item": "degeneracycraft:redstone_powered_machine_element_manufacture_machine_block"
     },
     "title": {
       "translate": "advancements.Awakening with \"The Fool\".title"
@@ -22,7 +22,7 @@
         "items": [
           {
             "items": [
-              "degeneracycraft:redstone_powered_machine_component_manufacture_machine_block"
+              "degeneracycraft:redstone_powered_machine_element_manufacture_machine_block"
             ]
           }
         ]

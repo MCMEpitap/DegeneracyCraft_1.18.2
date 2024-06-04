@@ -98,7 +98,7 @@ public class Degeneracycraft {
         MenuScreens.register(DCMenuTypes.UNIVERSAL_ASSEMBLER_Phase1_MENU.get(), UniversalAssemblerPhase1Screen::new);
 
 
-        MenuScreens.register(DCMenuTypes.REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_MENU.get(), RedstonePoweredMachineElementManufactureMachineScreen::new);
+        MenuScreens.register(DCMenuTypes.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_MENU.get(), RedstonePoweredMachineElementManufactureMachineScreen::new);
         MenuScreens.register(DCMenuTypes.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_MENU.get(), RedstonePoweredMachinePartManufactureMachineScreen::new);
 
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_BLOCK_MENU.get(), BasicStrengthMultiblockEnergyStorageScreen::new);

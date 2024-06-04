@@ -20,7 +20,7 @@ public class DCRecipeTypes {
 
 
     public static final RegistryObject<RecipeSerializer<RedstonePoweredMachineElementManufactureMachineRecipe>> REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_SERIALIZER =
-            SERIALIZERS.register("redstone_powered_machine_component_manufacture_machine_recipe", () -> RedstonePoweredMachineElementManufactureMachineRecipe.Serializer.INSTANCE);
+            SERIALIZERS.register("redstone_powered_machine_element_manufacture_machine_recipe", () -> RedstonePoweredMachineElementManufactureMachineRecipe.Serializer.INSTANCE);
 
 
     public static final RegistryObject<RecipeSerializer<RedstonePoweredMachinePartManufactureMachineRecipe>> REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_SERIALIZER =

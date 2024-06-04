@@ -26,15 +26,15 @@ public class DCBlockEntities {
                     BlockEntityType.Builder.of(PulverizerBlockEntity::new, DCBlocks.PULVERIZER_BLOCK.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<UniversalAssemblerPhase1BlockEntity>> UNIVERSAL_ASSEMBLER_PHASE1_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("universal_assembler_phase1_block_entity",()->
+            BLOCK_ENTITIES.register("universal_assembler_phase1_block_entity", () ->
                     BlockEntityType.Builder.of(UniversalAssemblerPhase1BlockEntity::new, DCBlocks.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK.get()).build(null));
 //    public static final RegistryObject<BlockEntityType<UniversalAssemblerPhase2BlockEntity>> UNIVERSAL_ASSEMBLER_PHASE2_BLOCK_ENTITY =
 //            BLOCK_ENTITIES.register("universal_assembler_phase2_block_entity",()->
 //                    BlockEntityType.Builder.of(UniversalAssemblerPhase2BlockEntity::new, DCBlocks.UNIVERSAL_ASSEMBLER_PHASE2_BLOCK.get()).build(null));
 
 
-    public static final RegistryObject<BlockEntityType<RedstonePoweredMachineElementManufactureMachineBlockEntity>> REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("redstone_powered_machine_component_manufacture_machine_block_entity", () ->
+    public static final RegistryObject<BlockEntityType<RedstonePoweredMachineElementManufactureMachineBlockEntity>> REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("redstone_powered_machine_element_manufacture_machine_block_entity", () ->
                     BlockEntityType.Builder.of(RedstonePoweredMachineElementManufactureMachineBlockEntity::new, DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<RedstonePoweredMachinePartManufactureMachineBlockEntity>> REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK_ENTITY =

@@ -668,7 +668,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCUniqueBlocks.SIMPLE_TELESCOPE_RIGHT_PILLAR.get(), "Simple Telescope Right Pillar");
         add(DCUniqueBlocks.SIMPLE_TELESCOPE_LEFT_PILLAR.get(), "Simple Telescope Left Pillar");
 
-        add("message." + "degeneracycraft_redstone_powered_machine_component_manufacture_machine", "Phase 0 Initial");
+        add("message." + "degeneracycraft_redstone_powered_machine_element_manufacture_machine", "Phase 0 Initial");
         add("screen." + "degeneracycraft_pulverizer", "Pulverizer Screen");
         add("jei." + "degeneracycraft_redstone_powered_machine_element_manufacture_machine", "Redstone Powered Machine Element Manufacture Machine Recipe");
         add("jei." + "degeneracycraft_redstone_powered_machine_part_manufacture_machine", "Redstone Powered Machine Part Manufacture Machine Recipe");

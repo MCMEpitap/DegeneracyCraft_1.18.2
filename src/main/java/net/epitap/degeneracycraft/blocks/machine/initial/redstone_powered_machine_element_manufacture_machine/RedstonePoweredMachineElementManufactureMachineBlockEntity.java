@@ -1,7 +1,7 @@
 package net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
-import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineComponentManufactureMachineRecipe;
+import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipe;
 import net.epitap.degeneracycraft.util.WrappedHandler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -166,8 +166,8 @@ public class RedstonePoweredMachineElementManufactureMachineBlockEntity extends 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<RedstonePoweredMachineComponentManufactureMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(RedstonePoweredMachineComponentManufactureMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<RedstonePoweredMachineElementManufactureMachineRecipe> match = level.getRecipeManager()
+                .getRecipeFor(RedstonePoweredMachineElementManufactureMachineRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return blockEntity.data.get(0) > match.get().getRequiredTime() * 20;
@@ -182,8 +182,8 @@ public class RedstonePoweredMachineElementManufactureMachineBlockEntity extends 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<RedstonePoweredMachineComponentManufactureMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(RedstonePoweredMachineComponentManufactureMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<RedstonePoweredMachineElementManufactureMachineRecipe> match = level.getRecipeManager()
+                .getRecipeFor(RedstonePoweredMachineElementManufactureMachineRecipe.Type.INSTANCE, inventory, level);
 
         return match.isPresent();
     }
@@ -195,8 +195,8 @@ public class RedstonePoweredMachineElementManufactureMachineBlockEntity extends 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<RedstonePoweredMachineComponentManufactureMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(RedstonePoweredMachineComponentManufactureMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<RedstonePoweredMachineElementManufactureMachineRecipe> match = level.getRecipeManager()
+                .getRecipeFor(RedstonePoweredMachineElementManufactureMachineRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
                 && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
@@ -216,8 +216,8 @@ public class RedstonePoweredMachineElementManufactureMachineBlockEntity extends 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<RedstonePoweredMachineComponentManufactureMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(RedstonePoweredMachineComponentManufactureMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<RedstonePoweredMachineElementManufactureMachineRecipe> match = level.getRecipeManager()
+                .getRecipeFor(RedstonePoweredMachineElementManufactureMachineRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
@@ -244,8 +244,8 @@ public class RedstonePoweredMachineElementManufactureMachineBlockEntity extends 
             inventory.setItem(i, this.itemHandler.getStackInSlot(i));
         }
 
-        Optional<RedstonePoweredMachineComponentManufactureMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(RedstonePoweredMachineComponentManufactureMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<RedstonePoweredMachineElementManufactureMachineRecipe> match = level.getRecipeManager()
+                .getRecipeFor(RedstonePoweredMachineElementManufactureMachineRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return (this.data.get(0) / (match.get().getRequiredTime() * 20)) * 100;

@@ -1,15 +1,15 @@
 {
-  "type": "degeneracycraft:redstone_powered_machine_component_manufacture_machine_recipe",
+  "type": "degeneracycraft:redstone_powered_machine_element_manufacture_machine_recipe",
   "energy": 0.0,
   "time": 10.0,
   "input0": {
-    "item": "minecraft:iron_ingot"
-  },
-  "input1": {
     "item": "minecraft:air"
   },
-  "input2": {
+  "input1": {
     "item": "minecraft:iron_ingot"
+  },
+  "input2": {
+    "item": "minecraft:air"
   },
   "input3": {
     "item": "minecraft:air"
@@ -21,15 +21,15 @@
     "item": "minecraft:air"
   },
   "input6": {
-    "item": "minecraft:iron_ingot"
+    "item": "minecraft:air"
   },
   "input7": {
     "item": "minecraft:air"
   },
   "input8": {
-    "item": "minecraft:iron_ingot"
+    "item": "minecraft:air"
   },
   "output0": {
-    "item": "degeneracycraft:iron_joint"
+    "item": "degeneracycraft:iron_bolt"
   }
 }

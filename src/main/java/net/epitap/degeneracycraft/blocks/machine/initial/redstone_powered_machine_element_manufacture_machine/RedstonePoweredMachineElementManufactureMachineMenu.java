@@ -2,7 +2,7 @@ package net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machi
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
-import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineComponentManufactureMachineRecipe;
+import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipe;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -24,7 +24,7 @@ public class RedstonePoweredMachineElementManufactureMachineMenu extends Abstrac
     private static final int TE_INVENTORY_SLOT_COUNT = 10;
 
     public final RedstonePoweredMachineElementManufactureMachineBlockEntity blockEntity;
-    public RedstonePoweredMachineComponentManufactureMachineRecipe recipe;
+    public RedstonePoweredMachineElementManufactureMachineRecipe recipe;
     public final Level level;
     public final ContainerData data;
 

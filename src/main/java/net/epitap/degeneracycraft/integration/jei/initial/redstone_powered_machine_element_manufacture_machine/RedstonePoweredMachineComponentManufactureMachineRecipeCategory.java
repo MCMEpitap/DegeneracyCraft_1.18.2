@@ -20,7 +20,7 @@ import net.minecraft.world.item.ItemStack;
 
 import javax.annotation.Nonnull;
 
-public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory implements IRecipeCategory<RedstonePoweredMachineComponentManufactureMachineRecipe> {
+public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory implements IRecipeCategory<RedstonePoweredMachineElementManufactureMachineRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "redstone_powered_machine_element_manufacture_machine_recipe");
     public final static ResourceLocation TEXTURE =
             new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/initial/redstone_powered_machine_element_manufacture_machine_uid.png");
@@ -32,14 +32,17 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory imp
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 151);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get()));
     }
+
     @Override
     public ResourceLocation getUid() {
         return UID;
     }
+
     @Override
-    public Class<? extends RedstonePoweredMachineComponentManufactureMachineRecipe> getRecipeClass() {
-        return RedstonePoweredMachineComponentManufactureMachineRecipe.class;
+    public Class<? extends RedstonePoweredMachineElementManufactureMachineRecipe> getRecipeClass() {
+        return RedstonePoweredMachineElementManufactureMachineRecipe.class;
     }
+
     @Override
     public Component getTitle() {
         return new TranslatableComponent("jei.degeneracycraft_redstone_powered_machine_element_manufacture_machine");
@@ -55,11 +58,11 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory imp
     }
 
     @Override
-    public void draw(RedstonePoweredMachineComponentManufactureMachineRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
+    public void draw(RedstonePoweredMachineElementManufactureMachineRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
         drawPhase(stack);
-        drawRequiredEnergy(recipe,stack);
-        drawRequiredEnergyUsage(recipe,stack);
-        drawRequiredTime(recipe,stack);
+        drawRequiredEnergy(recipe, stack);
+        drawRequiredEnergyUsage(recipe, stack);
+        drawRequiredTime(recipe, stack);
     }
 
     protected void drawPhase(PoseStack poseStack) {
@@ -67,14 +70,15 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory imp
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("screen." + "degeneracycraft" + ".phase0"), 15, 67, 0xFFFFFF);
     }
-    protected void drawRequiredEnergy(RedstonePoweredMachineComponentManufactureMachineRecipe recipe, PoseStack poseStack) {
+
+    protected void drawRequiredEnergy(RedstonePoweredMachineElementManufactureMachineRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergy."), 17, 87, 0xFFFFFF);
         fontRenderer.draw(poseStack, (recipe.getRequiredEnergy() + " FE"), 17, 97, 0xFFFFFF);
     }
 
-    protected void drawRequiredEnergyUsage(RedstonePoweredMachineComponentManufactureMachineRecipe recipe, PoseStack poseStack) {
+    protected void drawRequiredEnergyUsage(RedstonePoweredMachineElementManufactureMachineRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergyusage."), 17, 107, 0xFFFFFF);
@@ -82,16 +86,16 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory imp
 
     }
 
-    protected void drawRequiredTime(RedstonePoweredMachineComponentManufactureMachineRecipe recipe, PoseStack poseStack) {
+    protected void drawRequiredTime(RedstonePoweredMachineElementManufactureMachineRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredtime."), 17, 127, 0xFFFFFF);
-        fontRenderer.draw(poseStack, recipe.getRequiredTime() * 20 + " tick" + " " +  "(" + recipe.getRequiredTime() + " Sec" + ")" , 17, 137, 0xFFFFFF);
+        fontRenderer.draw(poseStack, recipe.getRequiredTime() * 20 + " tick" + " " + "(" + recipe.getRequiredTime() + " Sec" + ")", 17, 137, 0xFFFFFF);
     }
 
 
     @Override
-    public void setRecipe(@Nonnull IRecipeLayoutBuilder builder, @Nonnull RedstonePoweredMachineComponentManufactureMachineRecipe recipe, @Nonnull IFocusGroup focusGroup) {
+    public void setRecipe(@Nonnull IRecipeLayoutBuilder builder, @Nonnull RedstonePoweredMachineElementManufactureMachineRecipe recipe, @Nonnull IFocusGroup focusGroup) {
         builder.addSlot(RecipeIngredientRole.INPUT, 8, 7).addItemStack(recipe.getInput0Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 26, 7).addItemStack(recipe.getInput1Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 44, 7).addItemStack(recipe.getInput2Item());
@@ -101,7 +105,7 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory imp
         builder.addSlot(RecipeIngredientRole.INPUT, 8, 43).addItemStack(recipe.getInput6Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 26, 43).addItemStack(recipe.getInput7Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 44, 43).addItemStack(recipe.getInput8Item());
-        builder.addSlot(RecipeIngredientRole.OUTPUT,116,25).addItemStack(recipe.getOutput0Item());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 25).addItemStack(recipe.getOutput0Item());
 
     }
 }

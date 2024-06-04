@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_component_manufacture_machine;
+package net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine;
 
 import com.google.gson.JsonObject;
 import net.epitap.degeneracycraft.Degeneracycraft;

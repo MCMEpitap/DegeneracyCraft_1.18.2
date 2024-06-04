@@ -1,8 +1,8 @@
 package net.epitap.degeneracycraft.blocks.base;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
-import net.epitap.degeneracycraft.blocks.unique.basic.telescope.SimpleTelescopeLeftPillarBlock;
-import net.epitap.degeneracycraft.blocks.unique.basic.telescope.SimpleTelescopeRightPillarBlock;
+import net.epitap.degeneracycraft.blocks.unique.basic.simple_telescope.SimpleTelescopeLeftPillarBlock;
+import net.epitap.degeneracycraft.blocks.unique.basic.simple_telescope.SimpleTelescopeRightPillarBlock;
 import net.epitap.degeneracycraft.item.DCCreativeTab;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.minecraft.network.chat.Component;

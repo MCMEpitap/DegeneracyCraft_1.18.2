@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.unique.basic.telescope;
+package net.epitap.degeneracycraft.blocks.unique.basic.simple_telescope;
 
 import net.epitap.degeneracycraft.blocks.base.UniqueBlockBase;
 import net.minecraft.core.BlockPos;
@@ -11,15 +11,15 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class SimpleTelescopeRightPillarBlock extends UniqueBlockBase {
-    public SimpleTelescopeRightPillarBlock(Properties properties) {
+public class SimpleTelescopeLeftPillarBlock extends UniqueBlockBase {
+    public SimpleTelescopeLeftPillarBlock(Properties properties) {
         super(properties);
     }
 
-    private static final VoxelShape SHAPE_NORTH = Block.box(6, 0, 0, 16, 16, 16);
-    private static final VoxelShape SHAPE_SOUTH = Block.box(0, 0, 0, 10, 16, 16);
-    private static final VoxelShape SHAPE_EAST = Block.box(0, 0, 6, 16, 16, 16);
-    private static final VoxelShape SHAPE_WEST = Block.box(0, 0, 0, 16, 16, 10);
+    private static final VoxelShape SHAPE_NORTH = Block.box(0, 0, 0, 10, 16, 16);
+    private static final VoxelShape SHAPE_SOUTH = Block.box(6, 0, 0, 16, 16, 16);
+    private static final VoxelShape SHAPE_EAST = Block.box(0, 0, 0, 16, 16, 10);
+    private static final VoxelShape SHAPE_WEST = Block.box(0, 0, 6, 16, 16, 16);
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext pContext) {

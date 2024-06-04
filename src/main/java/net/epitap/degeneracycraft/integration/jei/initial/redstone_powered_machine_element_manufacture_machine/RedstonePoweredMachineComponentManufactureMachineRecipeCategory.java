@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_component_manufacture_machine;
+package net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.constants.VanillaTypes;
@@ -21,9 +21,9 @@ import net.minecraft.world.item.ItemStack;
 import javax.annotation.Nonnull;
 
 public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory implements IRecipeCategory<RedstonePoweredMachineComponentManufactureMachineRecipe> {
-    public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "redstone_powered_machine_component_manufacture_machine_recipe");
+    public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "redstone_powered_machine_element_manufacture_machine_recipe");
     public final static ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_component_manufacture_machine_uid.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_element_manufacture_machine_uid.png");
 
     private final IDrawable background;
     private final IDrawable icon;

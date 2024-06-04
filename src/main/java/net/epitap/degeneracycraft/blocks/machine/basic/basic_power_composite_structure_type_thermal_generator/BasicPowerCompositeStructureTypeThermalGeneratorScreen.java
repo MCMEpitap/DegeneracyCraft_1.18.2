@@ -18,7 +18,7 @@ import java.util.Optional;
 
 public class BasicPowerCompositeStructureTypeThermalGeneratorScreen extends AbstractContainerScreen<BasicPowerCompositeStructureTypeThermalGeneratorMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID,"textures/gui/basic_power_composite_structure_type_thermal_generator_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/basic_power_composite_structure_type_thermal_generator_gui.png");
 
     private EnergyInfoArea energyInfoArea;
 

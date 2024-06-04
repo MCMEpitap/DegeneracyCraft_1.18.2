@@ -23,7 +23,7 @@ import javax.annotation.Nonnull;
 public class RedstonePoweredMachinePartManufactureMachineRecipeCategory implements IRecipeCategory<RedstonePoweredMachinePartManufactureMachineRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "redstone_powered_machine_part_manufacture_machine_recipe");
     public final static ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_part_manufacture_machine_uid.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/initial/redstone_powered_machine_part_manufacture_machine_uid.png");
 
     private final IDrawable background;
     private final IDrawable icon;

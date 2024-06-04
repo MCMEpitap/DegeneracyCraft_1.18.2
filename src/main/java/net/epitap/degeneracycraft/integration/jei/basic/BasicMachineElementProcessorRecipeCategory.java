@@ -21,7 +21,7 @@ import net.minecraft.world.item.ItemStack;
 public class BasicMachineElementProcessorRecipeCategory implements IRecipeCategory<BasicMachineElementProcessorRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_machine_element_processor_recipe");
     public final static ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_component_manufacture_machine_uid.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_element_manufacture_machine_uid.png");
     private final IDrawable background;
     private final IDrawable icon;
 

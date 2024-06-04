@@ -17,7 +17,7 @@ import java.util.Optional;
 
 public class BasicMachineElementProcessorScreen extends AbstractContainerScreen<BasicMachineElementProcessorMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic_machine_element_processor_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/basic_machine_element_processor_gui.png");
     private EnergyInfoArea energyInfoArea;
 
 

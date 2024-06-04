@@ -13,7 +13,7 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class RedstonePoweredMachineElementManufactureMachineScreen extends AbstractContainerScreen<RedstonePoweredMachineElementManufactureMachineMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_component_manufacture_machine_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/initial/redstone_powered_machine_component_manufacture_machine_gui.png");
 
 
     public RedstonePoweredMachineElementManufactureMachineScreen(RedstonePoweredMachineElementManufactureMachineMenu pMenu, Inventory pPlayerInventory, Component pTitle) {

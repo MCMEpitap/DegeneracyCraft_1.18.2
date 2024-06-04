@@ -42,7 +42,7 @@ public class RedstonePoweredMachineComponentManufactureMachineRecipeCategory imp
     }
     @Override
     public Component getTitle() {
-        return new TranslatableComponent("jei.degeneracycraft_redstone_powered_machine_component_manufacture_machine");
+        return new TranslatableComponent("jei.degeneracycraft_redstone_powered_machine_element_manufacture_machine");
     }
     @Override
     public IDrawable getBackground() {

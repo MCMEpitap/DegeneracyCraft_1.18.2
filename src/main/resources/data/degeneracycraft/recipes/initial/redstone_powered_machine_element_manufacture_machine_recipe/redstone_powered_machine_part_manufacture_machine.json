@@ -1,7 +1,7 @@
 {
   "type": "degeneracycraft:redstone_powered_machine_element_manufacture_machine_recipe",
   "energy": 0.0,
-  "time": 50.0,
+  "time": 10000.0,
   "input0": {
     "item": "degeneracycraft:iron_bolt"
   },
@@ -15,7 +15,7 @@
     "item": "degeneracycraft:iron_plate"
   },
   "input4": {
-    "item": "minecraft:air"
+    "item": "degeneracycraft:redstone_powered_machine_element_manufacture_machine_block"
   },
   "input5": {
     "item": "degeneracycraft:iron_plate"

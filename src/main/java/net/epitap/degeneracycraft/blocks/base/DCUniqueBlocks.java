@@ -3,6 +3,7 @@ package net.epitap.degeneracycraft.blocks.base;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.unique.basic.simple_telescope.SimpleTelescopeLeftPillarBlock;
 import net.epitap.degeneracycraft.blocks.unique.basic.simple_telescope.SimpleTelescopeRightPillarBlock;
+import net.epitap.degeneracycraft.blocks.unique.basic.simple_telescope.simple_telescope_main.SimpleTelescopeMainBlock;
 import net.epitap.degeneracycraft.item.DCCreativeTab;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.minecraft.network.chat.Component;
@@ -23,6 +24,10 @@ import java.util.function.Supplier;
 
 public class DCUniqueBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Degeneracycraft.MOD_ID);
+
+    public static final RegistryObject<Block> SIMPLE_TELESCOPE_MAIN_BLOCK = registerUniqueBlock("simple_telescope_main_block",
+            () -> new SimpleTelescopeMainBlock(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+
     public static final RegistryObject<Block> SIMPLE_TELESCOPE_RIGHT_PILLAR = registerUniqueBlock("simple_telescope_right_pillar",
             () -> new SimpleTelescopeRightPillarBlock(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> SIMPLE_TELESCOPE_LEFT_PILLAR = registerUniqueBlock("simple_telescope_left_pillar",

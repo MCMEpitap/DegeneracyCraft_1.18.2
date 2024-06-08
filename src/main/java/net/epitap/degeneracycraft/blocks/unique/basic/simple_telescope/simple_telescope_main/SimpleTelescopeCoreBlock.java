@@ -20,10 +20,10 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class SimpleTelescopeMainBlock extends UniqueBlockBase {
+public class SimpleTelescopeCoreBlock extends UniqueBlockBase {
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
 
-    public SimpleTelescopeMainBlock(Properties properties) {
+    public SimpleTelescopeCoreBlock(Properties properties) {
         super(properties);
     }
 
@@ -31,8 +31,8 @@ public class SimpleTelescopeMainBlock extends UniqueBlockBase {
     public void onRemove(BlockState pState, Level level, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = level.getBlockEntity(pPos);
-            if (blockEntity instanceof SimpleTelescopeMainBlockEntity) {
-                ((SimpleTelescopeMainBlockEntity) blockEntity).drops();
+            if (blockEntity instanceof SimpleTelescopeCoreBlockEntity) {
+                ((SimpleTelescopeCoreBlockEntity) blockEntity).drops();
             }
         }
         super.onRemove(pState, level, pPos, pNewState, pIsMoving);
@@ -44,8 +44,8 @@ public class SimpleTelescopeMainBlock extends UniqueBlockBase {
         if (!level.isClientSide()) {
             BlockEntity entity = level.getBlockEntity(pPos);
 
-            if (entity instanceof SimpleTelescopeMainBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer) pPlayer), (SimpleTelescopeMainBlockEntity) entity, pPos);
+            if (entity instanceof SimpleTelescopeCoreBlockEntity) {
+                NetworkHooks.openGui(((ServerPlayer) pPlayer), (SimpleTelescopeCoreBlockEntity) entity, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
@@ -57,15 +57,15 @@ public class SimpleTelescopeMainBlock extends UniqueBlockBase {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new SimpleTelescopeMainBlockEntity(pos, state);
+        return new SimpleTelescopeCoreBlockEntity(pos, state);
     }
 
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level level, @NotNull BlockState state,
                                                                   @NotNull BlockEntityType<T> type) {
-        return createTickerHelper(type, DCUniqueBlockEntities.SIMPLE_TELESCOPE_MAIN_BLOCK_ENTITY.get(),
-                SimpleTelescopeMainBlockEntity::tick);
+        return createTickerHelper(type, DCUniqueBlockEntities.SIMPLE_TELESCOPE_CORE_BLOCK_ENTITY.get(),
+                SimpleTelescopeCoreBlockEntity::tick);
     }
 
     @Nullable

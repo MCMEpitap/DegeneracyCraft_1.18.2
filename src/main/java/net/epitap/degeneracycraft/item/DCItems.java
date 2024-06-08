@@ -3,6 +3,7 @@ package net.epitap.degeneracycraft.item;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.item.tool.CAMMDA_Tier1;
 import net.epitap.degeneracycraft.item.tool.WrenchItem;
+import net.epitap.degeneracycraft.item.tool.test.GunItem;
 import net.epitap.degeneracycraft.tier.DCTier;
 import net.epitap.degeneracycraft.tooltip.DCItemTooltip;
 import net.minecraft.ChatFormatting;
@@ -681,7 +682,6 @@ public class DCItems extends CreativeModeTab {
 
     public static final RegistryObject<Item> RAW_GRAVITATION_ORE = ITEMS.register("raw_gravitation_ore", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINECOMPONENT_TAB)));
 
-    public static final RegistryObject<Item> CAMMDA_TIER1 = ITEMS.register("cammda_tier1", () -> new CAMMDA_Tier1(DCTier.CAMMDA_TIER1, 0, 0, new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB).stacksTo(1)));
 
     public static final RegistryObject<Item> WRENCH = ITEMS.register("wrench", () -> new WrenchItem(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB).stacksTo(1)));
     public static final RegistryObject<Item> MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER = ITEMS.register("multiblock_structure_hologram_visualizer", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB)));
@@ -695,6 +695,9 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> BASIC_REINFORCEDPLATE = ITEMS.register("basic_reinforcedplate", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINEPART_TAB)));
     public static final RegistryObject<Item> BASIC_TURBINE = ITEMS.register("basic_turbine", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINEPART_TAB)));
 
+    public static final RegistryObject<Item> CAMMDA_TIER1 = ITEMS.register("cammda_tier1", () -> new CAMMDA_Tier1(DCTier.CAMMDA_TIER1, 0, 0, new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> GUN_ITEM = ITEMS.register("gun_item", () -> new GunItem(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB).stacksTo(1)));
 
     public DCItems(String label) {
         super(label);

@@ -13,6 +13,7 @@ import net.epitap.degeneracycraft.blocks.screen.PulverizerScreen;
 import net.epitap.degeneracycraft.blocks.screen.UniversalAssemblerPhase1Screen;
 import net.epitap.degeneracycraft.blocks.storage.basic.energystorage.basic_strength_multiblock_energy_storage.BasicStrengthMultiblockEnergyStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.materialstorage.basic_strength_multiblock_material_storage.BasicStrengthMultiblockMaterialStorageScreen;
+import net.epitap.degeneracycraft.blocks.unique.basic.simple_telescope.simple_telescope_main.SimpleTelescopeCoreScreen;
 import net.epitap.degeneracycraft.integration.jei.DCRecipeTypes;
 import net.epitap.degeneracycraft.item.DCAdvancementIcon;
 import net.epitap.degeneracycraft.item.DCItems;
@@ -114,6 +115,10 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), RenderType.translucent());
 
         MenuScreens.register(DCMenuTypes.INFINITY_POWERED_ALL_IN_ONE_COMPRESSOR_MACHINE_BLOCK_MENU.get(), InfinityPoweredAllInOneCompressorMachineScreen::new);
+
+
+        MenuScreens.register(DCUniqueMenuTypes.SIMPLE_TELESCOPE_CORE_MENU.get(), SimpleTelescopeCoreScreen::new);
+
 
         PipeBlockEntities.clientSetup();
         PortBlockEntities.clientSetup();

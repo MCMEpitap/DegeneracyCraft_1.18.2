@@ -25,7 +25,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class SimpleTelescopeMainBlockEntity extends BlockEntity implements MenuProvider {
+public class SimpleTelescopeCoreBlockEntity extends BlockEntity implements MenuProvider {
 
     public final ContainerData data;
     public final ItemStackHandler itemHandler = new ItemStackHandler(9) {
@@ -42,8 +42,8 @@ public class SimpleTelescopeMainBlockEntity extends BlockEntity implements MenuP
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
-    public SimpleTelescopeMainBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCUniqueBlockEntities.SIMPLE_TELESCOPE_MAIN_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+    public SimpleTelescopeCoreBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
+        super(DCUniqueBlockEntities.SIMPLE_TELESCOPE_CORE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int pIndex) {
@@ -70,7 +70,7 @@ public class SimpleTelescopeMainBlockEntity extends BlockEntity implements MenuP
     @org.jetbrains.annotations.Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return new SimpleTelescopeMainBlockMenu(pContainerId, pInventory, this, this.data);
+        return new SimpleTelescopeCoreMenu(pContainerId, pInventory, this, this.data);
     }
 
     @Override
@@ -121,7 +121,7 @@ public class SimpleTelescopeMainBlockEntity extends BlockEntity implements MenuP
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
-    public static void tick(Level level, BlockPos pPos, BlockState pState, SimpleTelescopeMainBlockEntity blockEntity) {
+    public static void tick(Level level, BlockPos pPos, BlockState pState, SimpleTelescopeCoreBlockEntity blockEntity) {
     }
 }
 

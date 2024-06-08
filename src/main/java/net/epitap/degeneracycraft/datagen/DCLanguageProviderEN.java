@@ -637,6 +637,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Component Manufacture Machine");
         add(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Part Manufacture Machine");
 
+        add(DCBlocks.REINFORCED_PLANKS.get(), "Reinforced Planks");
+
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Multiblock Base Frame Block");
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Multiblock Machine Frame Block");
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "Basic Strength Multiblock Structure Frame Block");

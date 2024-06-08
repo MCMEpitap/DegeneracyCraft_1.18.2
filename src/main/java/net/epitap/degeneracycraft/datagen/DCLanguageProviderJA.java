@@ -639,6 +639,9 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get(), "レッドストーン動力機械要素製作機");
         add(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(), "レッドストーン動力機械部品製作機");
 
+
+        add(DCBlocks.REINFORCED_PLANKS.get(), "強化木材");
+
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "基本強度多重構造機械用基礎骨組ブロック");
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "基本強度多重構造用機械骨組ブロック");
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "基本強度多重構造機械用構造骨組ブロック");

@@ -38,14 +38,17 @@ import java.util.function.Supplier;
 
 public class DCBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Degeneracycraft.MOD_ID);
-    public static final TagKey<Block> GRAVITATION_ORE = TagKey.create(Registry.BLOCK_REGISTRY ,new ResourceLocation(Degeneracycraft.MOD_ID,"gravitation_ore"));
-    public static final RegistryObject<Block> OVERWORLD_CASSITERITE_ORE = registerBlock("overworld_cassiterite_ore",()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()),DCCreativeTab.DEGENERACYCRAFT_ORE_TAB);
-    public static final RegistryObject<Block> DEEPSLATE_CASSITERITE_ORE = registerBlock("deepslate_cassiterite_ore",()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()),DCCreativeTab.DEGENERACYCRAFT_ORE_TAB);
-    public static final RegistryObject<Block> NETHER_CASSITERITE_ORE = registerBlock("nether_cassiterite_ore",()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()),DCCreativeTab.DEGENERACYCRAFT_ORE_TAB);
-    public static final RegistryObject<Block> END_CASSITERITE_ORE = registerBlock("end_cassiterite_ore",()-> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()),DCCreativeTab.DEGENERACYCRAFT_ORE_TAB);
-    public static final TagKey<Block> CASSITERITE_ORE = TagKey.create(Registry.BLOCK_REGISTRY ,new ResourceLocation(Degeneracycraft.MOD_ID,"cassiterite_ore"));
+    public static final TagKey<Block> GRAVITATION_ORE = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(Degeneracycraft.MOD_ID, "gravitation_ore"));
+    public static final RegistryObject<Block> OVERWORLD_CASSITERITE_ORE = registerBlock("overworld_cassiterite_ore", () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_ORE_TAB);
+    public static final RegistryObject<Block> DEEPSLATE_CASSITERITE_ORE = registerBlock("deepslate_cassiterite_ore", () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_ORE_TAB);
+    public static final RegistryObject<Block> NETHER_CASSITERITE_ORE = registerBlock("nether_cassiterite_ore", () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_ORE_TAB);
+    public static final RegistryObject<Block> END_CASSITERITE_ORE = registerBlock("end_cassiterite_ore", () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_ORE_TAB);
+    public static final TagKey<Block> CASSITERITE_ORE = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(Degeneracycraft.MOD_ID, "cassiterite_ore"));
 
     public static final RegistryObject<Block> OVERWORLD_GRAVITATION_ORE = registerBlock("overworld_gravitation_ore", () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_ORE_TAB);
+
+    public static final RegistryObject<Block> REINFORCED_PLANKS = registerBlock("reinforced_planks", () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(6.0f).destroyTime(10.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB);
+
 
     public static final RegistryObject<Block> PULVERIZER_BLOCK = registerBlock("pulverizer", () -> new PulverizerBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
             DCCreativeTab.DEGENERACYCRAFT_TAB);

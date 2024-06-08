@@ -30,6 +30,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         simpleBlock(DCBlocks.NETHER_CASSITERITE_ORE.get());
         simpleBlock(DCBlocks.END_CASSITERITE_ORE.get());
 
+        simpleBlock(DCBlocks.REINFORCED_PLANKS.get());
+
         simpleBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK.get());
         simpleBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
         simpleBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());

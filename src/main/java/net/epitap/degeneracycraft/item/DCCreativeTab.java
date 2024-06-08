@@ -25,6 +25,13 @@ public class DCCreativeTab {
         }
     };
 
+    public static final CreativeModeTab DEGENERACYCRAFT_MATERIAL_TAB = new CreativeModeTab("degeneracycraft_material") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(DCBlocks.REINFORCED_PLANKS.get());
+        }
+    };
+
     public static final CreativeModeTab DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB = new CreativeModeTab("degeneracycraft_multiplied_ore_material") {
         @Override
         public ItemStack makeIcon() {
@@ -35,7 +42,7 @@ public class DCCreativeTab {
     public static final CreativeModeTab DEGENERACYCRAFT_MACHINE_TAB = new CreativeModeTab("degeneracycraft_machine") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(DCBlocks.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK.get());
+            return new ItemStack(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get());
         }
     };
 

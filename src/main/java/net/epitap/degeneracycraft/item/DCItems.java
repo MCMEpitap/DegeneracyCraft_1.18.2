@@ -676,7 +676,7 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> BASIC_PRECISION_PLATE_INSCRIBED_CIRCUIT = ITEMS.register("plate_inscribed_basic_precision_circuit",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINECOMPONENT_TAB)));
     public static final RegistryObject<Item> BASIC_PRECISION_ROD_INSCRIBED_CIRCUIT = ITEMS.register("rod_inscribed_basic_precision_circuit",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINECOMPONENT_TAB)));
     public static final RegistryObject<Item> BASIC_PRECISION_SHAFT_INSCRIBED_CIRCUIT = ITEMS.register("shaft_inscribed_basic_precision_circuit",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINECOMPONENT_TAB)));
-    public static final RegistryObject<Item> BASIC_PRECISION_SHAFTCOUPLING_INSCRIBED_CIRCUIT = ITEMS.register("shaftcoupling_inscribed_basic_precision_circuit",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINECOMPONENT_TAB)));
+    public static final RegistryObject<Item> BASIC_PRECISION_SHAFTCOUPLING_INSCRIBED_CIRCUIT = ITEMS.register("shaftcoupling_inscribed_basic_precision_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINECOMPONENT_TAB)));
     public static final RegistryObject<Item> BASIC_PRECISION_SHAPESTEEL_INSCRIBED_CIRCUIT = ITEMS.register("shapesteel_inscribed_basic_precision_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINECOMPONENT_TAB)));
     public static final RegistryObject<Item> BASIC_PRECISION_SPRING_INSCRIBED_CIRCUIT = ITEMS.register("spring_inscribed_basic_precision_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINECOMPONENT_TAB)));
 
@@ -686,6 +686,9 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> WRENCH = ITEMS.register("wrench", () -> new WrenchItem(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB).stacksTo(1)));
     public static final RegistryObject<Item> MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER = ITEMS.register("multiblock_structure_hologram_visualizer", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB)));
     public static final RegistryObject<Item> MACHINE_HALT_DEVICE = ITEMS.register("machine_halt_device", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB)));
+    public static final RegistryObject<Item> COMPRESSED_PLANKS = ITEMS.register("compressed_planks", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
+    public static final RegistryObject<Item> SIMPLE_CONCAVE_LENS = ITEMS.register("simple_concave_lens", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
+    public static final RegistryObject<Item> SIMPLE_CONVEX_LENS = ITEMS.register("simple_convex_lens", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
 
 
     public static final RegistryObject<Item> BASIC_MACHINE_SCREEN = ITEMS.register("basic_machine_screen", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINEPART_TAB)));

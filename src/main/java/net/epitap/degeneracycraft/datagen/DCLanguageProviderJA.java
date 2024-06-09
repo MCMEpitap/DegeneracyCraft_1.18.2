@@ -609,8 +609,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_PRECISION_GEAR_INSCRIBED_CIRCUIT.get(),"基本精度 歯車刻印回路");
         add(DCItems.BASIC_PRECISION_JOINT_INSCRIBED_CIRCUIT.get(),"基本精度 継手刻印回路");
         add(DCItems.BASIC_PRECISION_KEY_INSCRIBED_CIRCUIT.get(),"基本精度 キー刻印回路");
-        add(DCItems.BASIC_PRECISION_NUT_INSCRIBED_CIRCUIT.get(),"基本精度 ナット刻印回路");
-        add(DCItems.BASIC_PRECISION_PIPE_INSCRIBED_CIRCUIT.get(),"基本精度 管刻印回路");
+        add(DCItems.BASIC_PRECISION_NUT_INSCRIBED_CIRCUIT.get(), "基本精度 ナット刻印回路");
+        add(DCItems.BASIC_PRECISION_PIPE_INSCRIBED_CIRCUIT.get(), "基本精度 管刻印回路");
         add(DCItems.BASIC_PRECISION_PIPEJOINT_INSCRIBED_CIRCUIT.get(), "基本精度 管継手刻印回路");
         add(DCItems.BASIC_PRECISION_PLATE_INSCRIBED_CIRCUIT.get(), "基本精度 板刻印回路");
         add(DCItems.BASIC_PRECISION_ROD_INSCRIBED_CIRCUIT.get(), "基本精度 棒刻印回路");
@@ -619,6 +619,9 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_PRECISION_SHAPESTEEL_INSCRIBED_CIRCUIT.get(), "基本精度 型鋼刻印回路");
         add(DCItems.BASIC_PRECISION_SPRING_INSCRIBED_CIRCUIT.get(), "基本精度 バネ刻印回路");
 
+        add(DCItems.COMPRESSED_PLANKS.get(), "圧縮木材");
+        add(DCItems.SIMPLE_CONVEX_LENS.get(), "簡易凸レンズ");
+        add(DCItems.SIMPLE_CONCAVE_LENS.get(), "簡易凹レンズ");
 
         add(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "マルチブロック設備ホログラム投影機");
         add(DCItems.MACHINE_HALT_DEVICE.get(), "機械停止デバイス");

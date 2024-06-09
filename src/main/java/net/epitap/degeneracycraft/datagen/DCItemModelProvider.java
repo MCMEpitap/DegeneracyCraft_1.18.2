@@ -614,6 +614,11 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
         simpleItem(DCItems.MACHINE_HALT_DEVICE.get());
 
+        simpleItem(DCItems.COMPRESSED_PLANKS.get());
+        simpleItem(DCItems.SIMPLE_CONVEX_LENS.get());
+        simpleItem(DCItems.SIMPLE_CONCAVE_LENS.get());
+
+
         simpleItem(DCItems.BASIC_MACHINE_SCREEN.get());
         simpleItem(DCItems.BASIC_MOTOR.get());
         simpleItem(DCItems.BASIC_REDSTONE_BATTERY.get());

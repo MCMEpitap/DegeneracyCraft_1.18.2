@@ -612,8 +612,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_PRECISION_CHAIN_INSCRIBED_CIRCUIT.get(),"Basic Precision Chain Inscribed Circuit");
         add(DCItems.BASIC_PRECISION_GEAR_INSCRIBED_CIRCUIT.get(),"Basic Precision Gear Inscribed Circuit");
         add(DCItems.BASIC_PRECISION_JOINT_INSCRIBED_CIRCUIT.get(),"Basic Precision Joint Inscribed Circuit");
-        add(DCItems.BASIC_PRECISION_NUT_INSCRIBED_CIRCUIT.get(),"Basic Precision Nut Inscribed Circuit");
-        add(DCItems.BASIC_PRECISION_PIPE_INSCRIBED_CIRCUIT.get(),"Basic Precision Pipe Inscribed Circuit");
+        add(DCItems.BASIC_PRECISION_NUT_INSCRIBED_CIRCUIT.get(), "Basic Precision Nut Inscribed Circuit");
+        add(DCItems.BASIC_PRECISION_PIPE_INSCRIBED_CIRCUIT.get(), "Basic Precision Pipe Inscribed Circuit");
         add(DCItems.BASIC_PRECISION_PIPEJOINT_INSCRIBED_CIRCUIT.get(), "Basic Precision Pipejoint Inscribed Circuit");
         add(DCItems.BASIC_PRECISION_PLATE_INSCRIBED_CIRCUIT.get(), "Basic Precision Plate Inscribed Circuit");
         add(DCItems.BASIC_PRECISION_ROD_INSCRIBED_CIRCUIT.get(), "Basic Precision Rod Inscribed Circuit");
@@ -622,6 +622,9 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_PRECISION_SHAPESTEEL_INSCRIBED_CIRCUIT.get(), "Basic Precision Shapesteel Inscribed Circuit");
         add(DCItems.BASIC_PRECISION_SPRING_INSCRIBED_CIRCUIT.get(), "Basic Precision Spring Inscribed Circuit");
 
+        add(DCItems.COMPRESSED_PLANKS.get(), "Compressed Planks");
+        add(DCItems.SIMPLE_CONVEX_LENS.get(), "Simple Convex Lens");
+        add(DCItems.SIMPLE_CONCAVE_LENS.get(), "Simple Concave Lens");
 
         add(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "Multiblock Structure Hologram Visualizer");
         add(DCItems.MACHINE_HALT_DEVICE.get(), "Machine Halt Device");
@@ -636,6 +639,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Component Manufacture Machine");
         add(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Part Manufacture Machine");
+
 
         add(DCBlocks.REINFORCED_PLANKS.get(), "Reinforced Planks");
 

@@ -3,31 +3,31 @@
   "energy": 0.0,
   "time": 30.0,
   "input0": {
-    "item": "minecraft:oak_planks"
+    "item": "degeneracycraft:compressed_planks"
   },
   "input1": {
     "item": "degeneracycraft:iron_shapesteel"
   },
   "input2": {
-    "item": "minecraft:oak_planks"
+    "item": "degeneracycraft:compressed_planks"
   },
   "input3": {
-    "item": "minecraft:oak_planks"
+    "item": "degeneracycraft:compressed_planks"
   },
   "input4": {
-    "item": "minecraft:oak_planks"
+    "item": "degeneracycraft:compressed_planks"
   },
   "input5": {
-    "item": "minecraft:oak_planks"
+    "item": "degeneracycraft:compressed_planks"
   },
   "input6": {
-    "item": "minecraft:oak_planks"
+    "item": "degeneracycraft:compressed_planks"
   },
   "input7": {
     "item": "degeneracycraft:iron_shapesteel"
   },
   "input8": {
-    "item": "minecraft:oak_planks"
+    "item": "degeneracycraft:compressed_planks"
   },
   "output0": {
     "item": "degeneracycraft:reinforced_planks",

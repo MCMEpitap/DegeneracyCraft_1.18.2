@@ -1,0 +1,36 @@
+{
+  "type": "degeneracycraft:redstone_powered_machine_part_manufacture_machine_recipe",
+  "energy": 0.0,
+  "time": 30.0,
+  "input0": {
+    "item": "minecraft:acacia_planks"
+  },
+  "input1": {
+    "item": "degeneracycraft:iron_shapesteel"
+  },
+  "input2": {
+    "item": "minecraft:acacia_planks"
+  },
+  "input3": {
+    "item": "minecraft:acacia_planks"
+  },
+  "input4": {
+    "item": "minecraft:acacia_planks"
+  },
+  "input5": {
+    "item": "minecraft:acacia_planks"
+  },
+  "input6": {
+    "item": "minecraft:acacia_planks"
+  },
+  "input7": {
+    "item": "degeneracycraft:iron_shapesteel"
+  },
+  "input8": {
+    "item": "minecraft:acacia_planks"
+  },
+  "output0": {
+    "item": "degeneracycraft:reinforced_planks",
+    "count": 3
+  }
+}

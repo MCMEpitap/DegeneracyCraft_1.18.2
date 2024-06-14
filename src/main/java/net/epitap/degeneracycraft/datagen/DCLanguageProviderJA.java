@@ -626,13 +626,13 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "マルチブロック設備ホログラム投影機");
         add(DCItems.MACHINE_HALT_DEVICE.get(), "機械停止デバイス");
 
-        add(DCItems.BASIC_MACHINE_SCREEN.get(), "基本等級機械スクリーン");
-        add(DCItems.BASIC_MOTOR.get(), "基本等級モーター");
-        add(DCItems.BASIC_REDSTONE_BATTERY.get(), "基本等級レッドストーン電池");
-        add(DCItems.BASIC_REINFORCEDPLATE.get(), "基本等級強化プレート");
-        add(DCItems.BASIC_TURBINE.get(), "基本等級タービン");
+        add(DCItems.BASIC_MACHINE_SCREEN.get(), "基本機械スクリーン");
+        add(DCItems.BASIC_MOTOR.get(), "基本モーター");
+        add(DCItems.BASIC_REDSTONE_BATTERY.get(), "基本レッドストーン電池");
+        add(DCItems.BASIC_REINFORCED_PLATE.get(), "基本強化プレート");
+        add(DCItems.BASIC_TURBINE.get(), "基本タービン");
 
-        add(DCItems.BASIC_PRECISION_CIRCUIT.get(), "基本精度回路");
+        add(DCItems.BASIC_CIRCUIT.get(), "基本回路");
 
 
         add(DCBlocks.PULVERIZER_BLOCK.get(), "粉砕機");

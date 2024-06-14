@@ -631,11 +631,11 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_MACHINE_SCREEN.get(), "Basic Machine Screen");
         add(DCItems.BASIC_MOTOR.get(), "Basic Motor");
         add(DCItems.BASIC_REDSTONE_BATTERY.get(), "Basic Redstone Battery");
-        add(DCItems.BASIC_REINFORCEDPLATE.get(), "Basic Reinforced Plate");
+        add(DCItems.BASIC_REINFORCED_PLATE.get(), "Basic Reinforced Plate");
         add(DCItems.BASIC_TURBINE.get(), "Basic Turbine");
 
 
-        add(DCItems.BASIC_PRECISION_CIRCUIT.get(), "Basic Precision Circuit");
+        add(DCItems.BASIC_CIRCUIT.get(), "Basic Circuit");
 
         add(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Component Manufacture Machine");
         add(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Part Manufacture Machine");

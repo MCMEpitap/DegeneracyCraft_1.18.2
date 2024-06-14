@@ -622,11 +622,11 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.BASIC_MACHINE_SCREEN.get());
         simpleItem(DCItems.BASIC_MOTOR.get());
         simpleItem(DCItems.BASIC_REDSTONE_BATTERY.get());
-        simpleItem(DCItems.BASIC_REINFORCEDPLATE.get());
+        simpleItem(DCItems.BASIC_REINFORCED_PLATE.get());
         simpleItem(DCItems.BASIC_TURBINE.get());
 
 
-        simpleItem(DCItems.BASIC_PRECISION_CIRCUIT.get());
+        simpleItem(DCItems.BASIC_CIRCUIT.get());
 
 
         simpleItem(DCItems.RAW_GRAVITATION_ORE.get());

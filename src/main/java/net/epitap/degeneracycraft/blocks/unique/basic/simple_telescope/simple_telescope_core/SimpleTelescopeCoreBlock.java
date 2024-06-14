@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.unique.basic.simple_telescope.simple_telescope_main;
+package net.epitap.degeneracycraft.blocks.unique.basic.simple_telescope.simple_telescope_core;
 
 import net.epitap.degeneracycraft.blocks.base.DCUniqueBlockEntities;
 import net.epitap.degeneracycraft.blocks.base.UniqueBlockBase;

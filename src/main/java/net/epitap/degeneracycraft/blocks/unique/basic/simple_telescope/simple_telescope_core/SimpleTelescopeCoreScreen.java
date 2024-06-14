@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.unique.basic.simple_telescope.simple_telescope_main;
+package net.epitap.degeneracycraft.blocks.unique.basic.simple_telescope.simple_telescope_core;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;

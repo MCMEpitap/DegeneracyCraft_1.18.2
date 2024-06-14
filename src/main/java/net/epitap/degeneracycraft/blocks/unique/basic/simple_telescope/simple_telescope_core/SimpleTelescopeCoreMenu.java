@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.unique.basic.simple_telescope.simple_telescope_main;
+package net.epitap.degeneracycraft.blocks.unique.basic.simple_telescope.simple_telescope_core;
 
 import net.epitap.degeneracycraft.blocks.base.DCUniqueBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCUniqueMenuTypes;

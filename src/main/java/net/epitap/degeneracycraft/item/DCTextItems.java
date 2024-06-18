@@ -22,6 +22,7 @@ public class DCTextItems extends CreativeModeTab {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Degeneracycraft.MOD_ID);
 
+
     public DCTextItems(String label) {
         super(label);
     }

@@ -17,6 +17,7 @@ import net.epitap.degeneracycraft.blocks.unique.basic.simple_telescope.simple_te
 import net.epitap.degeneracycraft.integration.jei.DCRecipeTypes;
 import net.epitap.degeneracycraft.item.DCAdvancementIcon;
 import net.epitap.degeneracycraft.item.DCItems;
+import net.epitap.degeneracycraft.item.DCTextItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.transport.pipe.blocks.PipeBlockClickEvent;
 import net.epitap.degeneracycraft.transport.pipe.blocks.PipeBlocks;
@@ -51,6 +52,7 @@ public class Degeneracycraft {
         final IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         DCItems.register(eventBus);
+        DCTextItems.register(eventBus);
         DCAdvancementIcon.register(eventBus);
         DCBlocks.register(eventBus);
         DCUniqueBlocks.register(eventBus);

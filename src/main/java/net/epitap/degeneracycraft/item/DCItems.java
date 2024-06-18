@@ -777,12 +777,8 @@ public class DCItems extends CreativeModeTab {
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }
-
-
     @Override
     public ItemStack makeIcon() {
         return null;
     }
-
-
 }

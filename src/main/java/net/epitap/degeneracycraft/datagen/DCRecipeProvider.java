@@ -2,6 +2,7 @@ package net.epitap.degeneracycraft.datagen;
 
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
+import net.epitap.degeneracycraft.item.DCItems;
 import net.minecraft.advancements.critereon.InventoryChangeTrigger;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -79,14 +80,20 @@ public class DCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy("ingots/iron", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_INGOT))
                 .save(pFinishedRecipeConsumer);
 
-//        ShapedRecipeBuilder.shaped(DCItems.COMPRESSED_PLANKS.get(), 3)
-//                .pattern(" p ")
-//                .pattern("ppp")
-//                .pattern(" p ")
-//                .define('p', ItemTags.PLANKS)
-//                .group("degeneracycraft")
-//                .unlockedBy("ingots/iron", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_INGOT))
-//                .save(pFinishedRecipeConsumer);
+        ShapedRecipeBuilder.shaped(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get())
+                .pattern("iSi")
+                .pattern("TMC")
+                .pattern("pBp")
+                .define('i', DCItems.IRON_PIPE.get())
+                .define('S', DCItems.BASIC_MACHINE_SCREEN.get())
+                .define('T', DCItems.BASIC_TURBINE.get())
+                .define('M', DCItems.BASIC_MOTOR.get())
+                .define('C', DCItems.BASIC_CIRCUIT.get())
+                .define('p', DCItems.IRON_PIPE.get())
+                .define('B', DCItems.BASIC_REDSTONE_BATTERY.get())
+                .group("degeneracycraft")
+                .unlockedBy("ingots/iron", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_INGOT))
+                .save(pFinishedRecipeConsumer);
 
 
     }

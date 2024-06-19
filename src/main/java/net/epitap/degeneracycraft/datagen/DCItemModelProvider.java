@@ -618,7 +618,8 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.SIMPLE_CONVEX_LENS.get());
         simpleItem(DCItems.SIMPLE_CONCAVE_LENS.get());
 
-
+        simpleItem(DCItems.BASIC_CIRCUIT.get());
+        simpleItem(DCItems.BASIC_INSCRIBED_CIRCUIT.get());
         simpleItem(DCItems.BASIC_MACHINE_SCREEN.get());
         simpleItem(DCItems.BASIC_MOTOR.get());
         simpleItem(DCItems.BASIC_REDSTONE_BATTERY.get());
@@ -626,7 +627,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.BASIC_TURBINE.get());
 
 
-        simpleItem(DCItems.BASIC_CIRCUIT.get());
+
 
 
         simpleItem(DCItems.RAW_GRAVITATION_ORE.get());

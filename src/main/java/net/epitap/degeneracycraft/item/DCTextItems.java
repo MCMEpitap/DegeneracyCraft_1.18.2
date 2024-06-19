@@ -22,12 +22,14 @@ public class DCTextItems extends CreativeModeTab {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Degeneracycraft.MOD_ID);
 
+//    public static final RegistryObject<Item>  = registerAtomicItem("iron_bearing",DCCreativeTab.DEGENERACYCRAFT_MACHINECOMPONENT_TAB,"iron","initial");
+
 
     public DCTextItems(String label) {
         super(label);
     }
 
-    private static <T extends Item> RegistryObject<Item> registerAtomicItem(String name, CreativeModeTab tab, String atomicname, String phase) {
+    private static <T extends Item> RegistryObject<Item> registerStarDataItem(String name, CreativeModeTab tab, String atomicname, String phase) {
         return DCItems.ITEMS.register(name, () -> new Item(new Item.Properties().tab(tab)) {
             @Override
             public void appendHoverText(ItemStack pStack, @Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {

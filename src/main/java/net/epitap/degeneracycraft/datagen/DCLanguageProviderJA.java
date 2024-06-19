@@ -620,20 +620,21 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_PRECISION_SPRING_INSCRIBED_CIRCUIT.get(), "基本精度 バネ刻印回路");
 
         add(DCItems.COMPRESSED_PLANKS.get(), "圧縮木材");
-        add(DCItems.SIMPLE_CONVEX_LENS.get(), "簡易凸レンズ");
-        add(DCItems.SIMPLE_CONCAVE_LENS.get(), "簡易凹レンズ");
+
 
         add(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "マルチブロック設備ホログラム投影機");
         add(DCItems.MACHINE_HALT_DEVICE.get(), "機械停止デバイス");
 
+        add(DCItems.BASIC_CIRCUIT.get(), "基本回路");
+        add(DCItems.BASIC_INSCRIBED_CIRCUIT.get(), "基本刻印回路");
         add(DCItems.BASIC_MACHINE_SCREEN.get(), "基本機械スクリーン");
         add(DCItems.BASIC_MOTOR.get(), "基本モーター");
         add(DCItems.BASIC_REDSTONE_BATTERY.get(), "基本レッドストーン電池");
         add(DCItems.BASIC_REINFORCED_PLATE.get(), "基本強化プレート");
         add(DCItems.BASIC_TURBINE.get(), "基本タービン");
 
-        add(DCItems.BASIC_CIRCUIT.get(), "基本回路");
-
+        add(DCItems.SIMPLE_CONVEX_LENS.get(), "簡易凸レンズ");
+        add(DCItems.SIMPLE_CONCAVE_LENS.get(), "簡易凹レンズ");
 
         add(DCBlocks.PULVERIZER_BLOCK.get(), "粉砕機");
         add(DCBlocks.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK.get(), "汎用組立機 Phase1");

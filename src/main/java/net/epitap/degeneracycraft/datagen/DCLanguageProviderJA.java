@@ -620,7 +620,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_PRECISION_SPRING_INSCRIBED_CIRCUIT.get(), "基本精度 バネ刻印回路");
 
         add(DCItems.COMPRESSED_PLANKS.get(), "圧縮木材");
-
+        add(DCItems.COMPRESSED_REDSTONE.get(), "圧縮レッドストーン");
 
         add(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "マルチブロック設備ホログラム投影機");
         add(DCItems.MACHINE_HALT_DEVICE.get(), "機械停止デバイス");
@@ -645,6 +645,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
         add(DCBlocks.REINFORCED_PLANKS.get(), "強化木材");
+
 
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "基本強度多重構造機械用基礎骨組ブロック");
         add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "基本強度多重構造用機械骨組ブロック");

@@ -623,6 +623,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_PRECISION_SPRING_INSCRIBED_CIRCUIT.get(), "Basic Precision Spring Inscribed Circuit");
 
         add(DCItems.COMPRESSED_PLANKS.get(), "Compressed Planks");
+        add(DCItems.COMPRESSED_REDSTONE.get(), "Compressed Redstone");
+
         add(DCItems.SIMPLE_CONVEX_LENS.get(), "Simple Convex Lens");
         add(DCItems.SIMPLE_CONCAVE_LENS.get(), "Simple Concave Lens");
 

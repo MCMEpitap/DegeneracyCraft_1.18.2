@@ -94,7 +94,5 @@ public class DCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .group("degeneracycraft")
                 .unlockedBy("ingots/iron", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_INGOT))
                 .save(pFinishedRecipeConsumer);
-
-
     }
 }

@@ -30,6 +30,6 @@
     "item": "minecraft:redstone"
   },
   "output0": {
-    "item": "degeneracycraft:basic_precision_circuit"
+    "item": "degeneracycraft:basic_circuit"
   }
 }

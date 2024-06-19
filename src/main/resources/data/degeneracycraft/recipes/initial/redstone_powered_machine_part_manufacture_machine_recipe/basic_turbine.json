@@ -12,24 +12,24 @@
     "item": "degeneracycraft:iron_rod"
   },
   "input3": {
-    "item": "degeneracycraft:iron_rod"
+    "item": "degeneracycraft:iron_plate"
   },
   "input4": {
-    "item": "degeneracycraft:basic_precision_circuit"
+    "item": "degeneracycraft:iron_bearing"
   },
   "input5": {
-    "item": "degeneracycraft:iron_rod"
+    "item": "degeneracycraft:iron_plate"
   },
   "input6": {
-    "item": "degeneracycraft:iron_shaft"
+    "item": "degeneracycraft:iron_rod"
   },
   "input7": {
-    "item": "degeneracycraft:iron_shaftcoupling"
+    "item": "degeneracycraft:iron_plate"
   },
   "input8": {
-    "item": "degeneracycraft:iron_shaft"
+    "item": "degeneracycraft:iron_rod"
   },
   "output0": {
-    "item": "degeneracycraft:basic_machine_screen"
+    "item": "degeneracycraft:basic_turbine"
   }
 }

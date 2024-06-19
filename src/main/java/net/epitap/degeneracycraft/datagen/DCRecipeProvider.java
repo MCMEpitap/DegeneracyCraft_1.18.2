@@ -89,7 +89,7 @@ public class DCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .define('T', DCItems.BASIC_TURBINE.get())
                 .define('M', DCItems.BASIC_MOTOR.get())
                 .define('C', DCItems.BASIC_CIRCUIT.get())
-                .define('p', DCItems.IRON_PIPE.get())
+                .define('p', DCItems.IRON_PLATE.get())
                 .define('B', DCItems.BASIC_REDSTONE_BATTERY.get())
                 .group("degeneracycraft")
                 .unlockedBy("ingots/iron", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_INGOT))

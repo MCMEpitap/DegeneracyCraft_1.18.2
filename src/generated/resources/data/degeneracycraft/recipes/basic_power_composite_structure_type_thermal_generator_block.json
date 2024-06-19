@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "degeneracycraft",
+  "pattern": [
+    "iSi",
+    "TMC",
+    "pBp"
+  ],
+  "key": {
+    "i": {
+      "item": "degeneracycraft:iron_pipe"
+    },
+    "S": {
+      "item": "degeneracycraft:basic_machine_screen"
+    },
+    "T": {
+      "item": "degeneracycraft:basic_turbine"
+    },
+    "M": {
+      "item": "degeneracycraft:basic_motor"
+    },
+    "C": {
+      "item": "degeneracycraft:basic_circuit"
+    },
+    "p": {
+      "item": "degeneracycraft:iron_pipe"
+    },
+    "B": {
+      "item": "degeneracycraft:basic_redstone_battery"
+    }
+  },
+  "result": {
+    "item": "degeneracycraft:basic_power_composite_structure_type_thermal_generator_block"
+  }
+}

@@ -849,6 +849,10 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("advancements." + "Rolling Gear" + ".title", "Rolling Gear(Girl)?");
         add("advancements." + "Rolling Gear" + ".description", "Make a Iron Gear");
 
+        add("advancements." + "As a Substitute for Wire" + ".title", "As a Substitute for Wire");
+        add("advancements." + "As a Substitute for Wire" + ".description", "Make a Iron Rod");
+
+
         add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".title", "Faux Magic Engineering");
         add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".description", "Aim at deciphering the mysteries");
 

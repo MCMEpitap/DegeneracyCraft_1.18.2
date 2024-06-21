@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "degeneracycraft:iron_rod"
+    },
+    "title": {
+      "translate": "advancements.As a Substitute for Wire.title"
+    },
+    "description": {
+      "translate": "advancements.As a Substitute for Wire.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "degeneracycraft:engineering/engineering",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "degeneracycraft:iron_rod"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

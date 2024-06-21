@@ -80,6 +80,18 @@ public class DCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy("ingots/iron", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_INGOT))
                 .save(pFinishedRecipeConsumer);
 
+        ShapedRecipeBuilder.shaped(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get())
+                .pattern(" i ")
+                .pattern("IcI")
+                .pattern(" R ")
+                .define('i', Items.IRON_INGOT)
+                .define('I', Items.IRON_BLOCK)
+                .define('c', Items.CRAFTING_TABLE)
+                .define('R', Items.REDSTONE_BLOCK)
+                .group("degeneracycraft")
+                .unlockedBy("ingots/iron", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_INGOT))
+                .save(pFinishedRecipeConsumer);
+
         ShapedRecipeBuilder.shaped(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get())
                 .pattern("iSi")
                 .pattern("TMC")

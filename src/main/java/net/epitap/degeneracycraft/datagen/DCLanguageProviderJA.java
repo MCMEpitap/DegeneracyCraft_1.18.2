@@ -849,6 +849,9 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("advancements." + "degeneracycraft" + ".engineering" + ".title", "工学(Engineering)");
         add("advancements." + "degeneracycraft" + ".engineering" + ".description", "目指せ、工学集積");
 
+        add("advancements." + "Rolling Gear" + ".title", "ローリンギァ－ル？");
+        add("advancements." + "Rolling Gear" + ".description", "鉄の歯車を作成");
+
         add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".title", "模造魔道工学(Faux Magic Engineering)");
         add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".description", "目指せ、神秘解読");
 

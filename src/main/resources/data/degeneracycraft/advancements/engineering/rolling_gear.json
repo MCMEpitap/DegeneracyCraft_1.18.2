@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "degeneracycraft:iron_gear"
+    },
+    "title": {
+      "translate": "advancements.Rolling Gear.title"
+    },
+    "description": {
+      "translate": "advancements.Rolling Gear.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "degeneracycraft:engineering/engineering",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "degeneracycraft:iron_gear"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

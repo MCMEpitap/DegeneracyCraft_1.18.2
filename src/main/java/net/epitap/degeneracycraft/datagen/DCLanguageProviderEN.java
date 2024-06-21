@@ -846,6 +846,9 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("advancements." + "degeneracycraft" + ".engineering" + ".title", "Engineering");
         add("advancements." + "degeneracycraft" + ".engineering" + ".description", "Aim for engineering integration");
 
+        add("advancements." + "Rolling Gear" + ".title", "Rolling Gear(Girl)?");
+        add("advancements." + "Rolling Gear" + ".description", "Make a Iron Gear");
+
         add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".title", "Faux Magic Engineering");
         add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".description", "Aim at deciphering the mysteries");
 

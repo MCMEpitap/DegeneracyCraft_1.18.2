@@ -84,7 +84,7 @@ public class DCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .pattern("bgb")
                 .pattern("pcp")
                 .pattern("nrn")
-                .define('i', DCItems.IRON_BOLT.get())
+                .define('b', DCItems.IRON_BOLT.get())
                 .define('g', DCItems.IRON_GEAR.get())
                 .define('p', DCItems.IRON_PLATE.get())
                 .define('c', Items.CRAFTING_TABLE)

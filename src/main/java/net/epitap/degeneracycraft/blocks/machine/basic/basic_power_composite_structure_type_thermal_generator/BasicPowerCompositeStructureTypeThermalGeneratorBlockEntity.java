@@ -44,7 +44,7 @@ import java.util.Optional;
 
 public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends BlockEntity implements MenuProvider {
     public float BP_CS_T_THERMAL_GENERATOR_CAPACITY = 40000F;
-    public float BP_CS_T_THERMAL_GENERATOR_TRANSFER = 40000F;
+    public float BP_CS_T_THERMAL_GENERATOR_TRANSFER = 16F;
     public float BP_CS_T_THERMAL_GENERATOR_OUTPUT = 16F;
     public float BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED = 32F;
     protected final ContainerData data;
@@ -202,9 +202,6 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         }
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
-    public boolean isFormed() {
-        return isFormed = formed0 && formed1 && formed2;
-    }
     public static void tick(Level level, BlockPos pos, BlockState state, BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity blockEntity) {
         blockEntity.formed0 = blockEntity.isFormed0(level, pos, state);
         blockEntity.formed1 = blockEntity.isFormed1(level, pos, state);
@@ -243,6 +240,10 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
 
     public static boolean isHaltDevice(BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(2).is(DCItems.MACHINE_HALT_DEVICE.get());
+    }
+
+    public boolean isFormed() {
+        return isFormed = formed0 && formed1 && formed2;
     }
 
     public boolean isFormed0(Level level, BlockPos pos, BlockState state) {

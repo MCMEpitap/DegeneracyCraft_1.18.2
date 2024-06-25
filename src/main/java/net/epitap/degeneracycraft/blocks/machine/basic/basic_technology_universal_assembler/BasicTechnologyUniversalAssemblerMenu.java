@@ -2,7 +2,6 @@ package net.epitap.degeneracycraft.blocks.machine.basic.basic_technology_univers
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
-import net.epitap.degeneracycraft.blocks.screen.slot.DCResultSlot;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -23,8 +22,7 @@ public class BasicTechnologyUniversalAssemblerMenu extends AbstractContainerMenu
     }
 
     public BasicTechnologyUniversalAssemblerMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.UNIVERSAL_ASSEMBLER_Phase1_MENU.get(), pContainerId);
-        checkContainerSize(inv, 10);
+        super(DCMenuTypes.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_MENU.get(), pContainerId);
         blockEntity = ((BasicTechnologyUniversalAssemblerBlockEntity) entity);
         this.level = inv.player.level;
         this.data = data;
@@ -32,15 +30,16 @@ public class BasicTechnologyUniversalAssemblerMenu extends AbstractContainerMenu
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
-
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
 
-            for(int i = 0; i < 3; ++i) {
-                for(int j = 0; j < 3; ++j) {
-                    this.addSlot(new SlotItemHandler(handler, (j + i * 3), 44 + j * 18, -36 + i * 18));
+            for (int i = 0; i < 3; ++i) {
+                for (int l = 0; l < 3; ++l) {
+                    this.addSlot(new SlotItemHandler(handler, (l + i * 3), 8 + l * 18, 7 + i * 18));
                 }
             }
-            this.addSlot(new DCResultSlot(handler, 9,  162, 36));
+            this.addSlot(new SlotItemHandler(handler, 9, 116, 25));
+            this.addSlot(new SlotItemHandler(handler, 10, 71, 59));
+            this.addSlot(new SlotItemHandler(handler, 11, 98, 62));
         });
 
         addDataSlots(data);
@@ -50,12 +49,8 @@ public class BasicTechnologyUniversalAssemblerMenu extends AbstractContainerMenu
         return data.get(0) > 0;
     }
 
-    public int getScaledProgress() {
-        int progress = this.data.get(0);
-        int maxProgress = this.data.get(1);  // Max Progress
-        int progressArrowSize = 35; // This is the height in pixels of your arrow
-
-        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+    public float getProgressPercent() {
+        return blockEntity.getProgressPercent();
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons

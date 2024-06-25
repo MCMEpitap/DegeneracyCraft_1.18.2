@@ -1,7 +1,6 @@
-package net.epitap.degeneracycraft.blocks.entity.machine;
+package net.epitap.degeneracycraft.blocks.machine.basic.basic_technology_universal_assembler;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.block.machine.UniversalAssemblerPhase1Block;
 import net.epitap.degeneracycraft.blocks.menu.machine.UniversalAssemblerPhase1Menu;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.util.WrappedHandler;
@@ -34,7 +33,7 @@ import javax.annotation.Nonnull;
 import java.util.Map;
 
 
-public class UniversalAssemblerPhase1BlockEntity extends BlockEntity implements MenuProvider {
+public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(10) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -64,15 +63,15 @@ public class UniversalAssemblerPhase1BlockEntity extends BlockEntity implements 
     private int maxProgress = 72;
 
 
-    public UniversalAssemblerPhase1BlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
+    public BasicTechnologyUniversalAssemblerBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(DCBlockEntities.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             public int get(int index) {
                 switch (index) {
                     case 0:
-                        return UniversalAssemblerPhase1BlockEntity.this.progress;
+                        return BasicTechnologyUniversalAssemblerBlockEntity.this.progress;
                     case 1:
-                        return UniversalAssemblerPhase1BlockEntity.this.maxProgress;
+                        return BasicTechnologyUniversalAssemblerBlockEntity.this.maxProgress;
                     default:
                         return 0;
                 }
@@ -81,10 +80,10 @@ public class UniversalAssemblerPhase1BlockEntity extends BlockEntity implements 
             public void set(int index, int value) {
                 switch (index) {
                     case 0:
-                        UniversalAssemblerPhase1BlockEntity.this.progress = value;
+                        BasicTechnologyUniversalAssemblerBlockEntity.this.progress = value;
                         break;
                     case 1:
-                        UniversalAssemblerPhase1BlockEntity.this.maxProgress = value;
+                        BasicTechnologyUniversalAssemblerBlockEntity.this.maxProgress = value;
                         break;
                 }
             }
@@ -116,7 +115,7 @@ public class UniversalAssemblerPhase1BlockEntity extends BlockEntity implements 
             }
 
             if (directionWrappedHandlerMap.containsKey(side)) {
-                Direction localDir = this.getBlockState().getValue(UniversalAssemblerPhase1Block.FACING);
+                Direction localDir = this.getBlockState().getValue(BasicTechnologyUniversalAssemblerBlock.FACING);
 
                 if (side == Direction.UP || side == Direction.DOWN) {
                     return directionWrappedHandlerMap.get(side).cast();
@@ -178,7 +177,7 @@ public class UniversalAssemblerPhase1BlockEntity extends BlockEntity implements 
     boolean formed;
 
 
-    public static void tick(Level level, BlockPos pPos, BlockState pState, UniversalAssemblerPhase1BlockEntity blockEntity) {
+    public static void tick(Level level, BlockPos pPos, BlockState pState, BasicTechnologyUniversalAssemblerBlockEntity blockEntity) {
         int i = pPos.getX();
         int j = pPos.getY();
         int k = pPos.getZ();
@@ -223,11 +222,11 @@ public class UniversalAssemblerPhase1BlockEntity extends BlockEntity implements 
     }
 
 
-    private static boolean iron_boltRecipe(UniversalAssemblerPhase1BlockEntity entity) {
+    private static boolean iron_boltRecipe(BasicTechnologyUniversalAssemblerBlockEntity entity) {
         boolean slot1 = entity.itemHandler.getStackInSlot(1).getItem() == Items.IRON_INGOT;
         boolean slot2 = entity.itemHandler.getStackInSlot(4).getItem() == Items.IRON_INGOT;
         boolean otherslot
-                 = entity.itemHandler.getStackInSlot(0).isEmpty()
+                = entity.itemHandler.getStackInSlot(0).isEmpty()
                 && entity.itemHandler.getStackInSlot(2).isEmpty()
                 && entity.itemHandler.getStackInSlot(3).isEmpty()
                 && entity.itemHandler.getStackInSlot(5).isEmpty()
@@ -238,13 +237,13 @@ public class UniversalAssemblerPhase1BlockEntity extends BlockEntity implements 
     }
 
 
-    private static void iron_boltCraft(UniversalAssemblerPhase1BlockEntity entity) {
+    private static void iron_boltCraft(BasicTechnologyUniversalAssemblerBlockEntity entity) {
         entity.itemHandler.extractItem(1, 1, false);
         entity.itemHandler.extractItem(4, 1, false);
         entity.resetProgress();
     }
 
-    private static boolean iron_keyRecipe(UniversalAssemblerPhase1BlockEntity entity) {
+    private static boolean iron_keyRecipe(BasicTechnologyUniversalAssemblerBlockEntity entity) {
         boolean slot1 = entity.itemHandler.getStackInSlot(3).getItem() == Items.IRON_INGOT;
         boolean slot2 = entity.itemHandler.getStackInSlot(4).getItem() == Items.IRON_INGOT;
         boolean slot3 = entity.itemHandler.getStackInSlot(5).getItem() == Items.IRON_INGOT;
@@ -252,14 +251,14 @@ public class UniversalAssemblerPhase1BlockEntity extends BlockEntity implements 
     }
 
 
-    private static void iron_keyCraft(UniversalAssemblerPhase1BlockEntity entity) {
+    private static void iron_keyCraft(BasicTechnologyUniversalAssemblerBlockEntity entity) {
         entity.itemHandler.extractItem(3, 1, false);
         entity.itemHandler.extractItem(4, 1, false);
         entity.itemHandler.extractItem(5, 1, false);
         entity.resetProgress();
     }
 
-    private static boolean iron_springRecipe(UniversalAssemblerPhase1BlockEntity entity) {
+    private static boolean iron_springRecipe(BasicTechnologyUniversalAssemblerBlockEntity entity) {
         boolean slot1 = entity.itemHandler.getStackInSlot(1).getItem() == Items.IRON_INGOT;
         boolean slot2 = entity.itemHandler.getStackInSlot(4).getItem() == Items.IRON_INGOT;
         boolean slot3 = entity.itemHandler.getStackInSlot(7).getItem() == Items.IRON_INGOT;
@@ -267,7 +266,7 @@ public class UniversalAssemblerPhase1BlockEntity extends BlockEntity implements 
     }
 
 
-    private static void iron_springCraft(UniversalAssemblerPhase1BlockEntity entity) {
+    private static void iron_springCraft(BasicTechnologyUniversalAssemblerBlockEntity entity) {
 
         entity.itemHandler.extractItem(1, 1, false);
         entity.itemHandler.extractItem(4, 1, false);
@@ -279,7 +278,7 @@ public class UniversalAssemblerPhase1BlockEntity extends BlockEntity implements 
         entity.resetProgress();
     }
 
-    private static boolean iron_rodRecipe(UniversalAssemblerPhase1BlockEntity entity) {
+    private static boolean iron_rodRecipe(BasicTechnologyUniversalAssemblerBlockEntity entity) {
         boolean slot1 = entity.itemHandler.getStackInSlot(2).getItem() == Items.IRON_INGOT;
         boolean slot2 = entity.itemHandler.getStackInSlot(4).getItem() == Items.IRON_INGOT;
         boolean slot3 = entity.itemHandler.getStackInSlot(6).getItem() == Items.IRON_INGOT;
@@ -287,7 +286,7 @@ public class UniversalAssemblerPhase1BlockEntity extends BlockEntity implements 
     }
 
 
-    private static void iron_rodCraft(UniversalAssemblerPhase1BlockEntity entity) {
+    private static void iron_rodCraft(BasicTechnologyUniversalAssemblerBlockEntity entity) {
 
         entity.itemHandler.extractItem(2, 1, false);
         entity.itemHandler.extractItem(4, 1, false);
@@ -299,7 +298,7 @@ public class UniversalAssemblerPhase1BlockEntity extends BlockEntity implements 
         entity.resetProgress();
     }
 
-    private static boolean iron_bearingRecipe(UniversalAssemblerPhase1BlockEntity entity) {
+    private static boolean iron_bearingRecipe(BasicTechnologyUniversalAssemblerBlockEntity entity) {
         boolean slot1 = entity.itemHandler.getStackInSlot(1).getItem() == Items.IRON_INGOT;
         boolean slot2 = entity.itemHandler.getStackInSlot(3).getItem() == Items.IRON_INGOT;
         boolean slot3 = entity.itemHandler.getStackInSlot(5).getItem() == Items.IRON_INGOT;
@@ -308,7 +307,7 @@ public class UniversalAssemblerPhase1BlockEntity extends BlockEntity implements 
     }
 
 
-    private static void iron_bearingCraft(UniversalAssemblerPhase1BlockEntity entity) {
+    private static void iron_bearingCraft(BasicTechnologyUniversalAssemblerBlockEntity entity) {
 
         entity.itemHandler.extractItem(1, 1, false);
         entity.itemHandler.extractItem(3, 1, false);
@@ -327,7 +326,7 @@ public class UniversalAssemblerPhase1BlockEntity extends BlockEntity implements 
     }
 
 
-    private static boolean hasNotReachedStackLimit(UniversalAssemblerPhase1BlockEntity entity) {
+    private static boolean hasNotReachedStackLimit(BasicTechnologyUniversalAssemblerBlockEntity entity) {
         return entity.itemHandler.getStackInSlot(9).getCount() < entity.itemHandler.getStackInSlot(9).getMaxStackSize();
     }
 

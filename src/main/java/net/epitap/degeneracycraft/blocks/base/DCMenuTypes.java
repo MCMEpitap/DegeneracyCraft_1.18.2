@@ -28,8 +28,8 @@ public class DCMenuTypes {
     public static final RegistryObject<MenuType<PulverizerMenu>> PULVERIZER_MENU =
             registerMenuType(PulverizerMenu::new, "pulverizer_menu");
 
-    public static final RegistryObject<MenuType<UniversalAssemblerPhase1Menu>> UNIVERSAL_ASSEMBLER_Phase1_MENU =
-            registerMenuType(UniversalAssemblerPhase1Menu::new, "universal_assembler_phase1_menu");
+    public static final RegistryObject<MenuType<UniversalAssemblerPhase1Menu>> BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_MENU =
+            registerMenuType(UniversalAssemblerPhase1Menu::new, "basic_technology_universal_assembler_menu");
 //    public static final RegistryObject<MenuType<UniversalAssemblerPhase2Menu>> UNIVERSAL_ASSEMBLER_Phase2_MENU =
 //            registerMenuType(UniversalAssemblerPhase2Menu::new,"universal_assembler_phase2_menu");
 

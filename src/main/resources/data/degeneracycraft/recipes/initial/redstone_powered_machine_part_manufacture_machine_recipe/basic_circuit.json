@@ -6,7 +6,7 @@
     "item": "minecraft:redstone"
   },
   "input1": {
-    "item": "minecraft:redstone"
+    "item": "degeneracycraft:copper_rod"
   },
   "input2": {
     "item": "minecraft:redstone"
@@ -24,7 +24,7 @@
     "item": "minecraft:redstone"
   },
   "input7": {
-    "item": "minecraft:redstone"
+    "item": "degeneracycraft:copper_rod"
   },
   "input8": {
     "item": "minecraft:redstone"

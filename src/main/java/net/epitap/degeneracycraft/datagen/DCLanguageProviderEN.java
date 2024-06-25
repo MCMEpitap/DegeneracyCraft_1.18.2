@@ -671,7 +671,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
 
         add(DCBlocks.PULVERIZER_BLOCK.get(), "Pulverizer");
-        add(DCBlocks.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK.get(), "Universal Assembler Phase1");
+        add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get(), "Basic Universal Assembler");
 
 
         add(DCUniqueBlocks.SIMPLE_TELESCOPE_RIGHT_PILLAR.get(), "Simple Telescope Right Pillar");

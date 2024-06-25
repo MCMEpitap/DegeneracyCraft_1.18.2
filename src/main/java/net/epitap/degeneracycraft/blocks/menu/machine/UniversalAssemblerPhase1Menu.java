@@ -2,7 +2,7 @@ package net.epitap.degeneracycraft.blocks.menu.machine;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
-import net.epitap.degeneracycraft.blocks.entity.machine.UniversalAssemblerPhase1BlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerBlockEntity;
 import net.epitap.degeneracycraft.blocks.screen.slot.DCResultSlot;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
@@ -15,7 +15,7 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
 public class UniversalAssemblerPhase1Menu extends AbstractContainerMenu {
-    private final UniversalAssemblerPhase1BlockEntity blockEntity;
+    private final BasicTechnologyUniversalAssemblerBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
@@ -26,7 +26,7 @@ public class UniversalAssemblerPhase1Menu extends AbstractContainerMenu {
     public UniversalAssemblerPhase1Menu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
         super(DCMenuTypes.UNIVERSAL_ASSEMBLER_Phase1_MENU.get(), pContainerId);
         checkContainerSize(inv, 10);
-        blockEntity = ((UniversalAssemblerPhase1BlockEntity) entity);
+        blockEntity = ((BasicTechnologyUniversalAssemblerBlockEntity) entity);
         this.level = inv.player.level;
         this.data = data;
 

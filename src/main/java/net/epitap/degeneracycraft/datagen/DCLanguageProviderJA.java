@@ -637,8 +637,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.SIMPLE_CONCAVE_LENS.get(), "簡易凹レンズ");
 
         add(DCBlocks.PULVERIZER_BLOCK.get(), "粉砕機");
-        add(DCBlocks.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK.get(), "汎用組立機 Phase1");
-
+        add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get(), "基本万能組立機");
 
         add(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get(), "レッドストーン動力機械要素製作機");
         add(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(), "レッドストーン動力機械部品製作機");

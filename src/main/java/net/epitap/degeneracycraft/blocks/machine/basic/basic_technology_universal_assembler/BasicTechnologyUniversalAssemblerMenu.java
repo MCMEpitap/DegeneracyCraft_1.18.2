@@ -107,7 +107,7 @@ public class BasicTechnologyUniversalAssemblerMenu extends AbstractContainerMenu
     @Override
     public boolean stillValid(Player pPlayer) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                pPlayer, DCBlocks.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK.get());
+                pPlayer, DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

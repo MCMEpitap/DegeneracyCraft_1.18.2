@@ -47,7 +47,6 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorMenu extends Abstra
         addDataSlots(data);
     }
 
-
     public float getBurnTime() {
         int getBurnTime = this.data.get(0);
         return getBurnTime / 20F;

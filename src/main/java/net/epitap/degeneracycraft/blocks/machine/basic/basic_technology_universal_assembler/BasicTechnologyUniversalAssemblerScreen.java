@@ -3,7 +3,6 @@ package net.epitap.degeneracycraft.blocks.machine.basic.basic_technology_univers
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.epitap.degeneracycraft.Degeneracycraft;
-import net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_element_processor.BasicMachineElementProcessorBlockEntity;
 import net.epitap.degeneracycraft.blocks.screen.render.EnergyInfoArea;
 import net.epitap.degeneracycraft.util.MouseUtil;
 import net.minecraft.client.Minecraft;
@@ -58,7 +57,7 @@ public class BasicTechnologyUniversalAssemblerScreen extends AbstractContainerSc
                 80, 11, 0xFFFFFF);
 
 
-        if (BasicMachineElementProcessorBlockEntity.isHaltDevice(menu.blockEntity)) {
+        if (BasicTechnologyUniversalAssemblerBlockEntity.isHaltDevice(menu.blockEntity)) {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".halt"),
                     133, 66, 0xFFFFFF);
         }

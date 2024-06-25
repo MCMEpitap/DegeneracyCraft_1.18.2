@@ -65,6 +65,7 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
             return false;
         }
     };
+
     private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BM_PART_PROCESSOR_CAPACITY, BM_PART_PROCESSOR_TRANSFER) {
         @Override
         public void onEnergyChanged() {

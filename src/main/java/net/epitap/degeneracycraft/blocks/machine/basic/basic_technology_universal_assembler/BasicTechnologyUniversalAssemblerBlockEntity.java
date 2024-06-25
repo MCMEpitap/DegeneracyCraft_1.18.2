@@ -1,7 +1,6 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.basic_technology_universal_assembler;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.menu.machine.UniversalAssemblerPhase1Menu;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.util.WrappedHandler;
 import net.minecraft.core.BlockPos;
@@ -34,7 +33,7 @@ import java.util.Map;
 
 
 public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity implements MenuProvider {
-    private final ItemStackHandler itemHandler = new ItemStackHandler(10) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(12) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -42,20 +41,27 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            return super.isItemValid(slot, stack);
+            for (int i = 0; i < 10; i++) {
+                if (slot == i && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()) && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
+                    return true;
+                }
+            }
+            if (slot == 10) {
+                return stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+            }
+            if (slot == 11) {
+                return stack.is(DCItems.MACHINE_HALT_DEVICE.get());
+            }
+            return false;
         }
-
     };
 
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
     private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
-            Map.of(Direction.DOWN, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 2, (in, stack) -> false)),
-                    Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 1, (in, stack) -> itemHandler.isItemValid(1, stack))),
-                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (in, stack) -> false)),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 1, (in, stack) -> itemHandler.isItemValid(1, stack))),
-                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 1 || out == 2, (in, stack) -> itemHandler.isItemValid(1, stack) || itemHandler.isItemValid(2, stack))));
+            Map.of(Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (in, stack) -> false)),
+                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))));
 
 
     protected final ContainerData data;
@@ -64,7 +70,7 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
 
 
     public BasicTechnologyUniversalAssemblerBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+        super(DCBlockEntities.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             public int get(int index) {
                 switch (index) {
@@ -103,7 +109,7 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return new UniversalAssemblerPhase1Menu(pContainerId, pInventory, this, this.data);
+        return new BasicTechnologyUniversalAssemblerMenu(pContainerId, pInventory, this, this.data);
     }
 
     @Nonnull

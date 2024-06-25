@@ -3,7 +3,7 @@ package net.epitap.degeneracycraft.blocks.screen;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.epitap.degeneracycraft.Degeneracycraft;
-import net.epitap.degeneracycraft.blocks.menu.machine.UniversalAssemblerPhase1Menu;
+import net.epitap.degeneracycraft.blocks.machine.basic.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.renderer.GameRenderer;
@@ -11,15 +11,13 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class UniversalAssemblerPhase1Screen extends AbstractContainerScreen<UniversalAssemblerPhase1Menu> {
+public class UniversalAssemblerPhase1Screen extends AbstractContainerScreen<BasicTechnologyUniversalAssemblerMenu> {
 
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID,"textures/gui/kilobyteworkbench_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/kilobyteworkbench_gui.png");
 
 
-
-
-    public UniversalAssemblerPhase1Screen(UniversalAssemblerPhase1Menu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public UniversalAssemblerPhase1Screen(BasicTechnologyUniversalAssemblerMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }
 

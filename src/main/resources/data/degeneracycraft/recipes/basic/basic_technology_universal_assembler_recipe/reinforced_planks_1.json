@@ -1,0 +1,36 @@
+{
+  "type": "degeneracycraft:basic_technology_universal_assembler_recipe",
+  "energy": 500.0,
+  "time": 30.0,
+  "input0": {
+    "item": "minecraft:oak_planks"
+  },
+  "input1": {
+    "item": "degeneracycraft:iron_shapesteel"
+  },
+  "input2": {
+    "item": "minecraft:oak_planks"
+  },
+  "input3": {
+    "item": "minecraft:oak_planks"
+  },
+  "input4": {
+    "item": "minecraft:oak_planks"
+  },
+  "input5": {
+    "item": "minecraft:oak_planks"
+  },
+  "input6": {
+    "item": "minecraft:oak_planks"
+  },
+  "input7": {
+    "item": "degeneracycraft:iron_shapesteel"
+  },
+  "input8": {
+    "item": "minecraft:oak_planks"
+  },
+  "output0": {
+    "item": "degeneracycraft:reinforced_planks",
+    "count": 3
+  }
+}

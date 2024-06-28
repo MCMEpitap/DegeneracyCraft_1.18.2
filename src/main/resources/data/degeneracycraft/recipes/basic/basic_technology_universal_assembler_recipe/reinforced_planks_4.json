@@ -1,6 +1,6 @@
 {
-  "type": "degeneracycraft:redstone_powered_machine_part_manufacture_machine_recipe",
-  "energy": 0.0,
+  "type": "degeneracycraft:basic_technology_universal_assembler_recipe",
+  "energy": 500.0,
   "time": 30.0,
   "input0": {
     "item": "minecraft:jungle_planks"

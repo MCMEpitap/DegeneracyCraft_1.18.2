@@ -18,7 +18,7 @@ import java.util.Optional;
 public class BasicTechnologyUniversalAssemblerScreen extends AbstractContainerScreen<BasicTechnologyUniversalAssemblerMenu> {
 
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/kilobyteworkbench_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic_technology_universal_assembler_gui.png");
     private EnergyInfoArea energyInfoArea;
 
 

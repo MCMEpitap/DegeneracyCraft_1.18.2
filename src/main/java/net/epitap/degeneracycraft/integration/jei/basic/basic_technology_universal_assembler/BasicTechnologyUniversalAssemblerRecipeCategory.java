@@ -29,8 +29,8 @@ public class BasicTechnologyUniversalAssemblerRecipeCategory implements IRecipeC
     private final IDrawable icon;
 
     public BasicTechnologyUniversalAssemblerRecipeCategory(IGuiHelper helper) {
-        this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 151);
-        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get()));
+        this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 154);
+        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get()));
     }
 
     @Override

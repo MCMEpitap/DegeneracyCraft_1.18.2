@@ -29,7 +29,7 @@ public class RedstonePoweredMachineElementManufactureMachineRecipeCategory imple
     private final IDrawable icon;
 
     public RedstonePoweredMachineElementManufactureMachineRecipeCategory(IGuiHelper helper) {
-        this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 151);
+        this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 154);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get()));
     }
 

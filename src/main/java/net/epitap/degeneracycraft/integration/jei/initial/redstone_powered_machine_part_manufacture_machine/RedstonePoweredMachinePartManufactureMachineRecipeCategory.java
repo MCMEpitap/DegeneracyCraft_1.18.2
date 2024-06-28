@@ -107,7 +107,6 @@ public class RedstonePoweredMachinePartManufactureMachineRecipeCategory implemen
         builder.addSlot(RecipeIngredientRole.INPUT, 26, 43).addItemStack(recipe.getInput7Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 44, 43).addItemStack(recipe.getInput8Item());
         builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 25).addItemStack(recipe.getOutput0Item());
-
     }
 }
 

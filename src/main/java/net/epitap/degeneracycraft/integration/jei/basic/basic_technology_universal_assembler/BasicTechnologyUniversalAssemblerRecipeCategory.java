@@ -20,7 +20,7 @@ import javax.annotation.Nonnull;
 public class BasicTechnologyUniversalAssemblerRecipeCategory implements IRecipeCategory<BasicTechnologyUniversalAssemblerRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_technology_universal_assembler_recipe");
     public final static ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/universal_assembler_phase1_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic_technology_universal_assembler_gui.png");
 
 
     private final IDrawable background;

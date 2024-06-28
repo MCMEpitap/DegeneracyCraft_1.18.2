@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei.basic.basic_technology_universal_assembler;//package net.epitap.degeneracycraft.jei;
+package net.epitap.degeneracycraft.integration.jei.basic.basic_technology_universal_assembler;
 
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;

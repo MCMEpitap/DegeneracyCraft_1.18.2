@@ -185,7 +185,6 @@ public class RedstonePoweredMachineElementManufactureMachineRecipe implements Re
 
         @Override
         public void toNetwork(FriendlyByteBuf pBuffer, RedstonePoweredMachineElementManufactureMachineRecipe pRecipe) {
-
             pBuffer.writeFloat(pRecipe.energy);
             pBuffer.writeFloat(pRecipe.time);
             pBuffer.writeItem(pRecipe.input0.getContainerItem());
@@ -198,7 +197,6 @@ public class RedstonePoweredMachineElementManufactureMachineRecipe implements Re
             pBuffer.writeItem(pRecipe.input7.getContainerItem());
             pBuffer.writeItem(pRecipe.input8.getContainerItem());
             pBuffer.writeItem(pRecipe.output0.getContainerItem());
-
         }
     }
 }

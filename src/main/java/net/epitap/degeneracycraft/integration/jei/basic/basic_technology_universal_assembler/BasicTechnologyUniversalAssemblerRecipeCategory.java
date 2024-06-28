@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei;//package net.epitap.degeneracycraft.jei;
+package net.epitap.degeneracycraft.integration.jei.basic.basic_technology_universal_assembler;//package net.epitap.degeneracycraft.jei;
 
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
@@ -17,9 +17,8 @@ import net.minecraft.world.item.ItemStack;
 import javax.annotation.Nonnull;
 
 
-
-public class UniversalAssemblerPhase1RecipeCategory implements IRecipeCategory<UniversalAssemblerPhase1Recipe> {
-    public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "universal_assembler_phase1_recipe");
+public class BasicTechnologyUniversalAssemblerRecipeCategory implements IRecipeCategory<BasicTechnologyUniversalAssemblerRecipe> {
+    public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_technology_universal_assembler_recipe");
     public final static ResourceLocation TEXTURE =
             new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/universal_assembler_phase1_gui.png");
 
@@ -27,14 +26,14 @@ public class UniversalAssemblerPhase1RecipeCategory implements IRecipeCategory<U
     private final IDrawable background;
     private final IDrawable icon;
 
-    public UniversalAssemblerPhase1RecipeCategory(IGuiHelper helper) {
+    public BasicTechnologyUniversalAssemblerRecipeCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 130);
-        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.UNIVERSAL_ASSEMBLER_PHASE1_BLOCK.get()));
+        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get()));
     }
 
     @Override
     public Component getTitle() {
-        return new TranslatableComponent("jei.degeneracycraft_universal_assembler_phase1_recipe");
+        return new TranslatableComponent("jei.basic_technology_universal_assembler_recipe");
     }
 
     @Override
@@ -53,8 +52,8 @@ public class UniversalAssemblerPhase1RecipeCategory implements IRecipeCategory<U
     }
 
     @Override
-    public Class<? extends UniversalAssemblerPhase1Recipe> getRecipeClass() {
-        return UniversalAssemblerPhase1Recipe.class;
+    public Class<? extends BasicTechnologyUniversalAssemblerRecipe> getRecipeClass() {
+        return BasicTechnologyUniversalAssemblerRecipe.class;
     }
 
 //    @Override
@@ -63,14 +62,14 @@ public class UniversalAssemblerPhase1RecipeCategory implements IRecipeCategory<U
 //    }
 
     @Override
-    public void setRecipe(@Nonnull IRecipeLayoutBuilder builder, @Nonnull UniversalAssemblerPhase1Recipe recipe, @Nonnull IFocusGroup focusGroup) {
+    public void setRecipe(@Nonnull IRecipeLayoutBuilder builder, @Nonnull BasicTechnologyUniversalAssemblerRecipe recipe, @Nonnull IFocusGroup focusGroup) {
 
 //            builder.addSlot(RecipeIngredientRole.INPUT, 44, 6).addItemStack(new ItemStack(Items.IRON_INGOT));
 //            builder.addSlot(RecipeIngredientRole.INPUT, 62, 6).addItemStack(new ItemStack(Items.IRON_INGOT));
 //            builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 6).addItemStack(new ItemStack(DCItems.IRON_BOLT.get()));
-            builder.addSlot(RecipeIngredientRole.INPUT,  44, 6).addIngredients(recipe.getIngredients().get(0));
-            builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 30).addItemStack(recipe.getResultItem());
-        }
+        builder.addSlot(RecipeIngredientRole.INPUT, 44, 6).addIngredients(recipe.getIngredients().get(0));
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 30).addItemStack(recipe.getResultItem());
+    }
 
     }
 

@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei;
+package net.epitap.degeneracycraft.integration.jei.basic.basic_technology_universal_assembler;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -14,15 +14,13 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
-public class UniversalAssemblerPhase1Recipe implements Recipe<SimpleContainer> {
+public class BasicTechnologyUniversalAssemblerRecipe implements Recipe<SimpleContainer> {
     private final ResourceLocation id;
     private final ItemStack output;
     private final NonNullList<Ingredient> recipeItems;
 
 
-
-
-    public UniversalAssemblerPhase1Recipe(ResourceLocation recipeId, NonNullList<Ingredient> inputs, ItemStack output) {
+    public BasicTechnologyUniversalAssemblerRecipe(ResourceLocation recipeId, NonNullList<Ingredient> inputs, ItemStack output) {
         this.id = recipeId;
         this.recipeItems = inputs;
         this.output = output;
@@ -66,19 +64,19 @@ public class UniversalAssemblerPhase1Recipe implements Recipe<SimpleContainer> {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return UniversalAssemblerPhase1Recipe.Serializer.INSTANCE;
+        return BasicTechnologyUniversalAssemblerRecipe.Serializer.INSTANCE;
     }
 
     @Override
     public RecipeType<?> getType() {
-        return UniversalAssemblerPhase1Recipe.Type.INSTANCE;
+        return BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE;
     }
 
-    public static class Type implements RecipeType<UniversalAssemblerPhase1Recipe> {
+    public static class Type implements RecipeType<BasicTechnologyUniversalAssemblerRecipe> {
         private Type() {
         }
 
-        public static final UniversalAssemblerPhase1Recipe.Type INSTANCE = new UniversalAssemblerPhase1Recipe.Type();
+        public static final BasicTechnologyUniversalAssemblerRecipe.Type INSTANCE = new BasicTechnologyUniversalAssemblerRecipe.Type();
         public static final String ID = "universal_assembler_phase1_recipe";
     }
 
@@ -98,13 +96,13 @@ public class UniversalAssemblerPhase1Recipe implements Recipe<SimpleContainer> {
     }
 
 
-    public static class Serializer implements RecipeSerializer<UniversalAssemblerPhase1Recipe> {
-        public static final UniversalAssemblerPhase1Recipe.Serializer INSTANCE = new UniversalAssemblerPhase1Recipe.Serializer();
+    public static class Serializer implements RecipeSerializer<BasicTechnologyUniversalAssemblerRecipe> {
+        public static final BasicTechnologyUniversalAssemblerRecipe.Serializer INSTANCE = new BasicTechnologyUniversalAssemblerRecipe.Serializer();
         public static final ResourceLocation ID =
                 new ResourceLocation(Degeneracycraft.MOD_ID, "universal_assembler_phase1_recipe");
 
         @Override
-        public UniversalAssemblerPhase1Recipe fromJson(ResourceLocation id, JsonObject json) {
+        public BasicTechnologyUniversalAssemblerRecipe fromJson(ResourceLocation id, JsonObject json) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
 
             JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredients");
@@ -115,14 +113,14 @@ public class UniversalAssemblerPhase1Recipe implements Recipe<SimpleContainer> {
             }
 
 
-            return new UniversalAssemblerPhase1Recipe(id, inputs, output);
+            return new BasicTechnologyUniversalAssemblerRecipe(id, inputs, output);
         }
 
 
 //        @Override
-//        public UniversalAssemblerPhase1Recipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
+//        public BasicTechnologyUniversalAssemblerRecipe fromJson(ResourceLocation pRecipeId, JsonObject pSerializedRecipe) {
 //            var map = ShapedRecipe.keyFromJson(GsonHelper.getAsJsonObject(pSerializedRecipe, "key"));
-//            var pattern = ShapedRecipe.shrink(UniversalAssemblerPhase1Recipe.patternFromJson(GsonHelper.getAsJsonArray(pSerializedRecipe, "pattern")));
+//            var pattern = ShapedRecipe.shrink(BasicTechnologyUniversalAssemblerRecipe.patternFromJson(GsonHelper.getAsJsonArray(pSerializedRecipe, "pattern")));
 //            int width = pattern[0].length();
 //            int height = pattern.length;
 //            var inputs = ShapedRecipe.dissolvePattern(pattern, map, width, height);
@@ -133,12 +131,12 @@ public class UniversalAssemblerPhase1Recipe implements Recipe<SimpleContainer> {
 //            if (tier != 0 && (width > size || height > size))
 //                throw new JsonSyntaxException("The pattern size is larger than the specified tier can support");
 //
-//            return new UniversalAssemblerPhase1Recipe(pRecipeId, width, height, inputs, output, tier);
+//            return new BasicTechnologyUniversalAssemblerRecipe(pRecipeId, width, height, inputs, output, tier);
 //        }
 
 
         @Override
-        public UniversalAssemblerPhase1Recipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
+        public BasicTechnologyUniversalAssemblerRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
@@ -146,11 +144,11 @@ public class UniversalAssemblerPhase1Recipe implements Recipe<SimpleContainer> {
             }
 
             ItemStack output = buf.readItem();
-            return new UniversalAssemblerPhase1Recipe(id, inputs, output);
+            return new BasicTechnologyUniversalAssemblerRecipe(id, inputs, output);
         }
 
         @Override
-        public void toNetwork(FriendlyByteBuf buf, UniversalAssemblerPhase1Recipe recipe) {
+        public void toNetwork(FriendlyByteBuf buf, BasicTechnologyUniversalAssemblerRecipe recipe) {
             buf.writeInt(recipe.getIngredients().size());
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.toNetwork(buf);
@@ -171,7 +169,7 @@ public class UniversalAssemblerPhase1Recipe implements Recipe<SimpleContainer> {
 
         @Override
         public Class<RecipeSerializer<?>> getRegistryType() {
-            return UniversalAssemblerPhase1Recipe.Serializer.castClass(RecipeSerializer.class);
+            return BasicTechnologyUniversalAssemblerRecipe.Serializer.castClass(RecipeSerializer.class);
         }
 
         @SuppressWarnings("unchecked") // Need this wrapper, because generics

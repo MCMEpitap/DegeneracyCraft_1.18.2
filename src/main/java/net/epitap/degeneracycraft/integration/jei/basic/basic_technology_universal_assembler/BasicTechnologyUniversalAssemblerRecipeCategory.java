@@ -45,7 +45,7 @@ public class BasicTechnologyUniversalAssemblerRecipeCategory implements IRecipeC
 
     @Override
     public Component getTitle() {
-        return new TranslatableComponent("jei.degeneracycraft_redstone_powered_machine_part_manufacture_machine");
+        return new TranslatableComponent("jei.degeneracycraft_basic_technology_universal_assembler");
     }
 
     @Override
@@ -69,7 +69,7 @@ public class BasicTechnologyUniversalAssemblerRecipeCategory implements IRecipeC
     protected void drawPhase(PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
-        fontRenderer.draw(poseStack, new TranslatableComponent("screen." + "degeneracycraft" + ".phase0"), 15, 67, 0xFFFFFF);
+        fontRenderer.draw(poseStack, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"), 15, 67, 0xFF0000);
     }
 
     protected void drawRequiredEnergy(BasicTechnologyUniversalAssemblerRecipe recipe, PoseStack poseStack) {

@@ -148,7 +148,7 @@ public class BasicTechnologyUniversalAssemblerRecipe implements Recipe<SimpleCon
         }
 
         public static final BasicTechnologyUniversalAssemblerRecipe.Type INSTANCE = new BasicTechnologyUniversalAssemblerRecipe.Type();
-        public static final String ID = "redstone_powered_machine_element_manufacture_machine_recipe";
+        public static final String ID = "basic_technology_universal_assembler_recipe";
     }
 
 
@@ -156,7 +156,7 @@ public class BasicTechnologyUniversalAssemblerRecipe implements Recipe<SimpleCon
         public static final BasicTechnologyUniversalAssemblerRecipe.Serializer INSTANCE = new BasicTechnologyUniversalAssemblerRecipe.Serializer();
 
         public static final ResourceLocation ID =
-                new ResourceLocation(Degeneracycraft.MOD_ID, "redstone_powered_machine_element_manufacture_machine_recipe");
+                new ResourceLocation(Degeneracycraft.MOD_ID, "basic_technology_universal_assembler_recipe");
 
         public BasicTechnologyUniversalAssemblerRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
 

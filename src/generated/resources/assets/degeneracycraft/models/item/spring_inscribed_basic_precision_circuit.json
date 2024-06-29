@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/spring_inscribed_basic_precision_circuit"
+    "layer0": "degeneracycraft:item/part/basic/inscribed_circuit/spring_inscribed_basic_precision_circuit"
   }
 }

@@ -594,22 +594,22 @@ public class DCItemModelProvider extends ItemModelProvider {
 //        simpleItem(DCItems.INFINITY_CLASS_IRON_SPRING.get());
 
 
-        simpleItem(DCItems.BASIC_PRECISION_BOLT_INSCRIBED_CIRCUIT.get());
-        simpleItem(DCItems.BASIC_PRECISION_KEY_INSCRIBED_CIRCUIT.get());
-        simpleItem(DCItems.BASIC_PRECISION_ROD_INSCRIBED_CIRCUIT.get());
-        simpleItem(DCItems.BASIC_PRECISION_SPRING_INSCRIBED_CIRCUIT.get());
-        simpleItem(DCItems.BASIC_PRECISION_BEARING_INSCRIBED_CIRCUIT.get());
-        simpleItem(DCItems.BASIC_PRECISION_PLATE_INSCRIBED_CIRCUIT.get());
-        simpleItem(DCItems.BASIC_PRECISION_GEAR_INSCRIBED_CIRCUIT.get());
-        simpleItem(DCItems.BASIC_PRECISION_JOINT_INSCRIBED_CIRCUIT.get());
-        simpleItem(DCItems.BASIC_PRECISION_NUT_INSCRIBED_CIRCUIT.get());
-        simpleItem(DCItems.BASIC_PRECISION_PIPE_INSCRIBED_CIRCUIT.get());
-        simpleItem(DCItems.BASIC_PRECISION_PIPEJOINT_INSCRIBED_CIRCUIT.get());
-        simpleItem(DCItems.BASIC_PRECISION_CAM_INSCRIBED_CIRCUIT.get());
-        simpleItem(DCItems.BASIC_PRECISION_SHAFT_INSCRIBED_CIRCUIT.get());
-        simpleItem(DCItems.BASIC_PRECISION_SHAFTCOUPLING_INSCRIBED_CIRCUIT.get());
-        simpleItem(DCItems.BASIC_PRECISION_SHAPESTEEL_INSCRIBED_CIRCUIT.get());
-        simpleItem(DCItems.BASIC_PRECISION_CHAIN_INSCRIBED_CIRCUIT.get());
+        basicInscribedCircuitItem(DCItems.BASIC_PRECISION_BOLT_INSCRIBED_CIRCUIT.get());
+        basicInscribedCircuitItem(DCItems.BASIC_PRECISION_KEY_INSCRIBED_CIRCUIT.get());
+        basicInscribedCircuitItem(DCItems.BASIC_PRECISION_ROD_INSCRIBED_CIRCUIT.get());
+        basicInscribedCircuitItem(DCItems.BASIC_PRECISION_SPRING_INSCRIBED_CIRCUIT.get());
+        basicInscribedCircuitItem(DCItems.BASIC_PRECISION_BEARING_INSCRIBED_CIRCUIT.get());
+        basicInscribedCircuitItem(DCItems.BASIC_PRECISION_PLATE_INSCRIBED_CIRCUIT.get());
+        basicInscribedCircuitItem(DCItems.BASIC_PRECISION_GEAR_INSCRIBED_CIRCUIT.get());
+        basicInscribedCircuitItem(DCItems.BASIC_PRECISION_JOINT_INSCRIBED_CIRCUIT.get());
+        basicInscribedCircuitItem(DCItems.BASIC_PRECISION_NUT_INSCRIBED_CIRCUIT.get());
+        basicInscribedCircuitItem(DCItems.BASIC_PRECISION_PIPE_INSCRIBED_CIRCUIT.get());
+        basicInscribedCircuitItem(DCItems.BASIC_PRECISION_PIPEJOINT_INSCRIBED_CIRCUIT.get());
+        basicInscribedCircuitItem(DCItems.BASIC_PRECISION_CAM_INSCRIBED_CIRCUIT.get());
+        basicInscribedCircuitItem(DCItems.BASIC_PRECISION_SHAFT_INSCRIBED_CIRCUIT.get());
+        basicInscribedCircuitItem(DCItems.BASIC_PRECISION_SHAFTCOUPLING_INSCRIBED_CIRCUIT.get());
+        basicInscribedCircuitItem(DCItems.BASIC_PRECISION_SHAPESTEEL_INSCRIBED_CIRCUIT.get());
+        basicInscribedCircuitItem(DCItems.BASIC_PRECISION_CHAIN_INSCRIBED_CIRCUIT.get());
 
         simpleItem(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
         simpleItem(DCItems.MACHINE_HALT_DEVICE.get());

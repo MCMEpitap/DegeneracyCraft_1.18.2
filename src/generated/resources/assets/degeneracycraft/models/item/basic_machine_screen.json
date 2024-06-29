@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/basic_machine_screen"
+    "layer0": "degeneracycraft:item/part/basic/basic_machine_screen"
   }
 }

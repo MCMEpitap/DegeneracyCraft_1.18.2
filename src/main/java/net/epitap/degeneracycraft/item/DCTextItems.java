@@ -22,7 +22,7 @@ public class DCTextItems extends CreativeModeTab {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Degeneracycraft.MOD_ID);
 
-//    public static final RegistryObject<Item>  = registerAtomicItem("iron_bearing",DCCreativeTab.DEGENERACYCRAFT_MACHINECOMPONENT_TAB,"iron","initial");
+//    public static final RegistryObject<Item>  = registerAtomicItem("iron_bearing",DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB,"iron","initial");
 
 
     public DCTextItems(String label) {

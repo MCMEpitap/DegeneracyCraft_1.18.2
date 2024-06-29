@@ -31,45 +31,45 @@ public class DCItemModelProvider extends ItemModelProvider {
 
         simpleItem(DCItems.GRAVITATION_INGOT.get());
         //
-        simpleItem(DCItems.RAW_BAUXITE_ORE.get());
-        simpleItem(DCItems.BAUXITE_DUST.get());
-        simpleItem(DCItems.BAUXITE_PUREDUST.get());
-        simpleItem(DCItems.BAUXITE_LEACHATE.get());
-        simpleItem(DCItems.BAUXITE_CONCENTRATE.get());
-        simpleItem(DCItems.BAUXITE_PLASMA.get());
-        simpleItem(DCItems.BAUXITE_DEGENERATEMATTER.get());
-        simpleItem(DCItems.BAUXITE_SOUP.get());
-        simpleItem(DCItems.BAUXITE_IMAGINARYMATTER.get());
-        simpleItem(DCItems.STABLE_BAUXITE_IMAGINARYMATTER.get());
-        simpleItem(DCItems.BAUXITE_TACHYON.get());
-        simpleItem(DCItems.BAUXITE_ANTIMATTER.get());
-        simpleItem(DCItems.BAUXITE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.BAUXITE_OVERFLUID.get());
-        simpleItem(DCItems.BAUXITE_CRYSTAL.get());
-        simpleItem(DCItems.BAUXITE_PRECIPITATE.get());
-        simpleItem(DCItems.BAUXITE_WASHEDDUST.get());
-        simpleItem(DCItems.BAUXITE_ORESINTER.get());
-        simpleItem(DCItems.BAUXITE_INGOT.get());
+        oreMaterialBauxiteItem(DCItems.RAW_BAUXITE_ORE.get());
+        oreMaterialBauxiteItem(DCItems.BAUXITE_DUST.get());
+        oreMaterialBauxiteItem(DCItems.BAUXITE_PUREDUST.get());
+        oreMaterialBauxiteItem(DCItems.BAUXITE_LEACHATE.get());
+        oreMaterialBauxiteItem(DCItems.BAUXITE_CONCENTRATE.get());
+        oreMaterialBauxiteItem(DCItems.BAUXITE_PLASMA.get());
+        oreMaterialBauxiteItem(DCItems.BAUXITE_DEGENERATEMATTER.get());
+        oreMaterialBauxiteItem(DCItems.BAUXITE_SOUP.get());
+        oreMaterialBauxiteItem(DCItems.BAUXITE_IMAGINARYMATTER.get());
+        oreMaterialBauxiteItem(DCItems.STABLE_BAUXITE_IMAGINARYMATTER.get());
+        oreMaterialBauxiteItem(DCItems.BAUXITE_TACHYON.get());
+        oreMaterialBauxiteItem(DCItems.BAUXITE_ANTIMATTER.get());
+        oreMaterialBauxiteItem(DCItems.BAUXITE_ULTRAHOTPLASMA.get());
+        oreMaterialBauxiteItem(DCItems.BAUXITE_OVERFLUID.get());
+        oreMaterialBauxiteItem(DCItems.BAUXITE_CRYSTAL.get());
+        oreMaterialBauxiteItem(DCItems.BAUXITE_PRECIPITATE.get());
+        oreMaterialBauxiteItem(DCItems.BAUXITE_WASHEDDUST.get());
+        oreMaterialBauxiteItem(DCItems.BAUXITE_ORESINTER.get());
+        oreMaterialBauxiteItem(DCItems.BAUXITE_INGOT.get());
         //
-        simpleItem(DCItems.RAW_BERYL_ORE.get());
-        simpleItem(DCItems.BERYL_DUST.get());
-        simpleItem(DCItems.BERYL_PUREDUST.get());
-        simpleItem(DCItems.BERYL_LEACHATE.get());
-        simpleItem(DCItems.BERYL_CONCENTRATE.get());
-        simpleItem(DCItems.BERYL_PLASMA.get());
-        simpleItem(DCItems.BERYL_DEGENERATEMATTER.get());
-        simpleItem(DCItems.BERYL_SOUP.get());
-        simpleItem(DCItems.BERYL_IMAGINARYMATTER.get());
-        simpleItem(DCItems.STABLE_BERYL_IMAGINARYMATTER.get());
-        simpleItem(DCItems.BERYL_TACHYON.get());
-        simpleItem(DCItems.BERYL_ANTIMATTER.get());
-        simpleItem(DCItems.BERYL_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.BERYL_OVERFLUID.get());
-        simpleItem(DCItems.BERYL_CRYSTAL.get());
-        simpleItem(DCItems.BERYL_PRECIPITATE.get());
-        simpleItem(DCItems.BERYL_WASHEDDUST.get());
-        simpleItem(DCItems.BERYL_ORESINTER.get());
-        simpleItem(DCItems.BERYL_INGOT.get());
+        oreMaterialBerylItem(DCItems.RAW_BERYL_ORE.get());
+        oreMaterialBerylItem(DCItems.BERYL_DUST.get());
+        oreMaterialBerylItem(DCItems.BERYL_PUREDUST.get());
+        oreMaterialBerylItem(DCItems.BERYL_LEACHATE.get());
+        oreMaterialBerylItem(DCItems.BERYL_CONCENTRATE.get());
+        oreMaterialBerylItem(DCItems.BERYL_PLASMA.get());
+        oreMaterialBerylItem(DCItems.BERYL_DEGENERATEMATTER.get());
+        oreMaterialBerylItem(DCItems.BERYL_SOUP.get());
+        oreMaterialBerylItem(DCItems.BERYL_IMAGINARYMATTER.get());
+        oreMaterialBerylItem(DCItems.STABLE_BERYL_IMAGINARYMATTER.get());
+        oreMaterialBerylItem(DCItems.BERYL_TACHYON.get());
+        oreMaterialBerylItem(DCItems.BERYL_ANTIMATTER.get());
+        oreMaterialBerylItem(DCItems.BERYL_ULTRAHOTPLASMA.get());
+        oreMaterialBerylItem(DCItems.BERYL_OVERFLUID.get());
+        oreMaterialBerylItem(DCItems.BERYL_CRYSTAL.get());
+        oreMaterialBerylItem(DCItems.BERYL_PRECIPITATE.get());
+        oreMaterialBerylItem(DCItems.BERYL_WASHEDDUST.get());
+        oreMaterialBerylItem(DCItems.BERYL_ORESINTER.get());
+        oreMaterialBerylItem(DCItems.BERYL_INGOT.get());
         //
         simpleItem(DCItems.RAW_BORAX_ORE.get());
         simpleItem(DCItems.BORAX_DUST.get());
@@ -703,20 +703,33 @@ public class DCItemModelProvider extends ItemModelProvider {
 //        withExistingParent(DCBlocks.UNIVERSAL_ASSEMBLER_PHASE9_BLOCK.getId().getPath(),
 //                modLoc("block/universal_assembler_phase9"));
     }
-    private ItemModelBuilder simpleItem(Item item){
+
+    private ItemModelBuilder simpleItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Degeneracycraft.MOD_ID,"item/"+item.getRegistryName().getPath()));
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/" + item.getRegistryName().getPath()));
     }
 
-    private ItemModelBuilder recipe_tooltip_item(Item item){
+    private ItemModelBuilder oreMaterialBauxiteItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Degeneracycraft.MOD_ID,"item/"+"recipe_tooltip"));
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/bauxite/" + item.getRegistryName().getPath()));
+    }
+
+    private ItemModelBuilder oreMaterialBerylItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/beryl/" + item.getRegistryName().getPath()));
+    }
+
+    private ItemModelBuilder recipe_tooltip_item(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/" + "recipe_tooltip"));
     }
 
 
-    private ItemModelBuilder phaseItem(Item item){
+    private ItemModelBuilder phaseItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID,"item/"+"ipp_tooltip"));

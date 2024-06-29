@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/bauxite_overfluid"
+    "layer0": "degeneracycraft:item/multiplied_ore_material/bauxite/bauxite_overfluid"
   }
 }

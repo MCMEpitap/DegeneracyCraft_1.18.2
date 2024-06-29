@@ -71,25 +71,25 @@ public class DCItemModelProvider extends ItemModelProvider {
         oreMaterialBerylItem(DCItems.BERYL_ORESINTER.get());
         oreMaterialBerylItem(DCItems.BERYL_INGOT.get());
         //
-        simpleItem(DCItems.RAW_BORAX_ORE.get());
-        simpleItem(DCItems.BORAX_DUST.get());
-        simpleItem(DCItems.BORAX_PUREDUST.get());
-        simpleItem(DCItems.BORAX_LEACHATE.get());
-        simpleItem(DCItems.BORAX_CONCENTRATE.get());
-        simpleItem(DCItems.BORAX_PLASMA.get());
-        simpleItem(DCItems.BORAX_DEGENERATEMATTER.get());
-        simpleItem(DCItems.BORAX_SOUP.get());
-        simpleItem(DCItems.BORAX_IMAGINARYMATTER.get());
-        simpleItem(DCItems.STABLE_BORAX_IMAGINARYMATTER.get());
-        simpleItem(DCItems.BORAX_TACHYON.get());
-        simpleItem(DCItems.BORAX_ANTIMATTER.get());
-        simpleItem(DCItems.BORAX_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.BORAX_OVERFLUID.get());
-        simpleItem(DCItems.BORAX_CRYSTAL.get());
-        simpleItem(DCItems.BORAX_PRECIPITATE.get());
-        simpleItem(DCItems.BORAX_WASHEDDUST.get());
-        simpleItem(DCItems.BORAX_ORESINTER.get());
-        simpleItem(DCItems.BORAX_INGOT.get());
+        oreMaterialBoraxItem(DCItems.RAW_BORAX_ORE.get());
+        oreMaterialBoraxItem(DCItems.BORAX_DUST.get());
+        oreMaterialBoraxItem(DCItems.BORAX_PUREDUST.get());
+        oreMaterialBoraxItem(DCItems.BORAX_LEACHATE.get());
+        oreMaterialBoraxItem(DCItems.BORAX_CONCENTRATE.get());
+        oreMaterialBoraxItem(DCItems.BORAX_PLASMA.get());
+        oreMaterialBoraxItem(DCItems.BORAX_DEGENERATEMATTER.get());
+        oreMaterialBoraxItem(DCItems.BORAX_SOUP.get());
+        oreMaterialBoraxItem(DCItems.BORAX_IMAGINARYMATTER.get());
+        oreMaterialBoraxItem(DCItems.STABLE_BORAX_IMAGINARYMATTER.get());
+        oreMaterialBoraxItem(DCItems.BORAX_TACHYON.get());
+        oreMaterialBoraxItem(DCItems.BORAX_ANTIMATTER.get());
+        oreMaterialBoraxItem(DCItems.BORAX_ULTRAHOTPLASMA.get());
+        oreMaterialBoraxItem(DCItems.BORAX_OVERFLUID.get());
+        oreMaterialBoraxItem(DCItems.BORAX_CRYSTAL.get());
+        oreMaterialBoraxItem(DCItems.BORAX_PRECIPITATE.get());
+        oreMaterialBoraxItem(DCItems.BORAX_WASHEDDUST.get());
+        oreMaterialBoraxItem(DCItems.BORAX_ORESINTER.get());
+        oreMaterialBoraxItem(DCItems.BORAX_INGOT.get());
         //
         simpleItem(DCItems.RAW_CASSITERITE_ORE.get());
         simpleItem(DCItems.CASSITERITE_DUST.get());
@@ -720,6 +720,12 @@ public class DCItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/beryl/" + item.getRegistryName().getPath()));
+    }
+
+    private ItemModelBuilder oreMaterialBoraxItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/borax/" + item.getRegistryName().getPath()));
     }
 
     private ItemModelBuilder recipe_tooltip_item(Item item) {

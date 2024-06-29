@@ -749,6 +749,12 @@ public class DCItemModelProvider extends ItemModelProvider {
     }
 
 
+    private ItemModelBuilder elementCopperItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/element/copper/" + item.getRegistryName().getPath()));
+    }
+
     private ItemModelBuilder basicPartItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",

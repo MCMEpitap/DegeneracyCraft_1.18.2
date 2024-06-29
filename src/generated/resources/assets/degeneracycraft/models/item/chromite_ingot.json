@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/chromite_ingot"
+    "layer0": "degeneracycraft:item/multiplied_ore_material/chromite/chromite_ingot"
   }
 }

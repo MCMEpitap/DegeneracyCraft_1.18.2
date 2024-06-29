@@ -742,6 +742,12 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/chromite/" + item.getRegistryName().getPath()));
     }
 
+    private ItemModelBuilder oreMaterialCobaliteItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/cobalite/" + item.getRegistryName().getPath()));
+    }
+
 
     private ItemModelBuilder basicPartItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),

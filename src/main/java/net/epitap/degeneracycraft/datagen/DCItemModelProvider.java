@@ -19,14 +19,14 @@ public class DCItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpleItem(DCAdvancementIcon.ASTRONOMY_ICON.get());
-        simpleItem(DCAdvancementIcon.BIOLOGY_ICON.get());
-        simpleItem(DCAdvancementIcon.CHEMISTRY_ICON.get());
-        simpleItem(DCAdvancementIcon.DEGENERACYCRAFT_ICON.get());
-        simpleItem(DCAdvancementIcon.DYNAMIC_PHYSICS_ICON.get());
-        simpleItem(DCAdvancementIcon.ENGINEERING_ICON.get());
-        simpleItem(DCAdvancementIcon.FAUX_MAGIC_ENGINEERING_ICON.get());
-        simpleItem(DCAdvancementIcon.GEO_SCIENCE_ICON.get());
+        iconItem(DCAdvancementIcon.ASTRONOMY_ICON.get());
+        iconItem(DCAdvancementIcon.BIOLOGY_ICON.get());
+        iconItem(DCAdvancementIcon.CHEMISTRY_ICON.get());
+        iconItem(DCAdvancementIcon.DEGENERACYCRAFT_ICON.get());
+        iconItem(DCAdvancementIcon.DYNAMIC_PHYSICS_ICON.get());
+        iconItem(DCAdvancementIcon.ENGINEERING_ICON.get());
+        iconItem(DCAdvancementIcon.FAUX_MAGIC_ENGINEERING_ICON.get());
+        iconItem(DCAdvancementIcon.GEO_SCIENCE_ICON.get());
 
 
         simpleItem(DCItems.GRAVITATION_INGOT.get());
@@ -710,10 +710,10 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/" + item.getRegistryName().getPath()));
     }
 
-    private ItemModelBuilder oreMaterialBoraxItem(Item item) {
+    private ItemModelBuilder iconItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/borax/" + item.getRegistryName().getPath()));
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/icon/" + item.getRegistryName().getPath()));
     }
 
     private ItemModelBuilder oreMaterialBauxiteItem(Item item) {

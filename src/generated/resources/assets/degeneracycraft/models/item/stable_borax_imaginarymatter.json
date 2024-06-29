@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/stable_borax_imaginarymatter"
+    "layer0": "degeneracycraft:item/multiplied_ore_material/borax/stable_borax_imaginarymatter"
   }
 }

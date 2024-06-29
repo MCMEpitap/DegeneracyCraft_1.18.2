@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/borax_overfluid"
+    "layer0": "degeneracycraft:item/multiplied_ore_material/borax/borax_overfluid"
   }
 }

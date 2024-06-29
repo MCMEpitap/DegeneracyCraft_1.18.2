@@ -91,45 +91,45 @@ public class DCItemModelProvider extends ItemModelProvider {
         oreMaterialBoraxItem(DCItems.BORAX_ORESINTER.get());
         oreMaterialBoraxItem(DCItems.BORAX_INGOT.get());
         //
-        simpleItem(DCItems.RAW_CASSITERITE_ORE.get());
-        simpleItem(DCItems.CASSITERITE_DUST.get());
-        simpleItem(DCItems.CASSITERITE_PUREDUST.get());
-        simpleItem(DCItems.CASSITERITE_LEACHATE.get());
-        simpleItem(DCItems.CASSITERITE_CONCENTRATE.get());
-        simpleItem(DCItems.CASSITERITE_PLASMA.get());
-        simpleItem(DCItems.CASSITERITE_DEGENERATEMATTER.get());
-        simpleItem(DCItems.CASSITERITE_SOUP.get());
-        simpleItem(DCItems.CASSITERITE_IMAGINARYMATTER.get());
-        simpleItem(DCItems.STABLE_CASSITERITE_IMAGINARYMATTER.get());
-        simpleItem(DCItems.CASSITERITE_TACHYON.get());
-        simpleItem(DCItems.CASSITERITE_ANTIMATTER.get());
-        simpleItem(DCItems.CASSITERITE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.CASSITERITE_OVERFLUID.get());
-        simpleItem(DCItems.CASSITERITE_CRYSTAL.get());
-        simpleItem(DCItems.CASSITERITE_PRECIPITATE.get());
-        simpleItem(DCItems.CASSITERITE_WASHEDDUST.get());
-        simpleItem(DCItems.CASSITERITE_ORESINTER.get());
-        simpleItem(DCItems.CASSITERITE_INGOT.get());
+        oreMaterialCassiteriteItem(DCItems.RAW_CASSITERITE_ORE.get());
+        oreMaterialCassiteriteItem(DCItems.CASSITERITE_DUST.get());
+        oreMaterialCassiteriteItem(DCItems.CASSITERITE_PUREDUST.get());
+        oreMaterialCassiteriteItem(DCItems.CASSITERITE_LEACHATE.get());
+        oreMaterialCassiteriteItem(DCItems.CASSITERITE_CONCENTRATE.get());
+        oreMaterialCassiteriteItem(DCItems.CASSITERITE_PLASMA.get());
+        oreMaterialCassiteriteItem(DCItems.CASSITERITE_DEGENERATEMATTER.get());
+        oreMaterialCassiteriteItem(DCItems.CASSITERITE_SOUP.get());
+        oreMaterialCassiteriteItem(DCItems.CASSITERITE_IMAGINARYMATTER.get());
+        oreMaterialCassiteriteItem(DCItems.STABLE_CASSITERITE_IMAGINARYMATTER.get());
+        oreMaterialCassiteriteItem(DCItems.CASSITERITE_TACHYON.get());
+        oreMaterialCassiteriteItem(DCItems.CASSITERITE_ANTIMATTER.get());
+        oreMaterialCassiteriteItem(DCItems.CASSITERITE_ULTRAHOTPLASMA.get());
+        oreMaterialCassiteriteItem(DCItems.CASSITERITE_OVERFLUID.get());
+        oreMaterialCassiteriteItem(DCItems.CASSITERITE_CRYSTAL.get());
+        oreMaterialCassiteriteItem(DCItems.CASSITERITE_PRECIPITATE.get());
+        oreMaterialCassiteriteItem(DCItems.CASSITERITE_WASHEDDUST.get());
+        oreMaterialCassiteriteItem(DCItems.CASSITERITE_ORESINTER.get());
+        oreMaterialCassiteriteItem(DCItems.CASSITERITE_INGOT.get());
         //
-        simpleItem(DCItems.RAW_CHROMITE_ORE.get());
-        simpleItem(DCItems.CHROMITE_DUST.get());
-        simpleItem(DCItems.CHROMITE_PUREDUST.get());
-        simpleItem(DCItems.CHROMITE_LEACHATE.get());
-        simpleItem(DCItems.CHROMITE_CONCENTRATE.get());
-        simpleItem(DCItems.CHROMITE_PLASMA.get());
-        simpleItem(DCItems.CHROMITE_DEGENERATEMATTER.get());
-        simpleItem(DCItems.CHROMITE_SOUP.get());
-        simpleItem(DCItems.CHROMITE_IMAGINARYMATTER.get());
-        simpleItem(DCItems.STABLE_CHROMITE_IMAGINARYMATTER.get());
-        simpleItem(DCItems.CHROMITE_TACHYON.get());
-        simpleItem(DCItems.CHROMITE_ANTIMATTER.get());
-        simpleItem(DCItems.CHROMITE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.CHROMITE_OVERFLUID.get());
-        simpleItem(DCItems.CHROMITE_CRYSTAL.get());
-        simpleItem(DCItems.CHROMITE_PRECIPITATE.get());
-        simpleItem(DCItems.CHROMITE_WASHEDDUST.get());
-        simpleItem(DCItems.CHROMITE_ORESINTER.get());
-        simpleItem(DCItems.CHROMITE_INGOT.get());
+        oreMaterialChromiteItem(DCItems.RAW_CHROMITE_ORE.get());
+        oreMaterialChromiteItem(DCItems.CHROMITE_DUST.get());
+        oreMaterialChromiteItem(DCItems.CHROMITE_PUREDUST.get());
+        oreMaterialChromiteItem(DCItems.CHROMITE_LEACHATE.get());
+        oreMaterialChromiteItem(DCItems.CHROMITE_CONCENTRATE.get());
+        oreMaterialChromiteItem(DCItems.CHROMITE_PLASMA.get());
+        oreMaterialChromiteItem(DCItems.CHROMITE_DEGENERATEMATTER.get());
+        oreMaterialChromiteItem(DCItems.CHROMITE_SOUP.get());
+        oreMaterialChromiteItem(DCItems.CHROMITE_IMAGINARYMATTER.get());
+        oreMaterialChromiteItem(DCItems.STABLE_CHROMITE_IMAGINARYMATTER.get());
+        oreMaterialChromiteItem(DCItems.CHROMITE_TACHYON.get());
+        oreMaterialChromiteItem(DCItems.CHROMITE_ANTIMATTER.get());
+        oreMaterialChromiteItem(DCItems.CHROMITE_ULTRAHOTPLASMA.get());
+        oreMaterialChromiteItem(DCItems.CHROMITE_OVERFLUID.get());
+        oreMaterialChromiteItem(DCItems.CHROMITE_CRYSTAL.get());
+        oreMaterialChromiteItem(DCItems.CHROMITE_PRECIPITATE.get());
+        oreMaterialChromiteItem(DCItems.CHROMITE_WASHEDDUST.get());
+        oreMaterialChromiteItem(DCItems.CHROMITE_ORESINTER.get());
+        oreMaterialChromiteItem(DCItems.CHROMITE_INGOT.get());
         //
         simpleItem(DCItems.RAW_FLUORITE_ORE.get());
         simpleItem(DCItems.FLUORITE_DUST.get());
@@ -712,7 +712,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/icon/" + item.getRegistryName().getPath()));
     }
-
     private ItemModelBuilder oreMaterialBauxiteItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
@@ -729,6 +728,18 @@ public class DCItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/borax/" + item.getRegistryName().getPath()));
+    }
+
+    private ItemModelBuilder oreMaterialCassiteriteItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/cassiterite/" + item.getRegistryName().getPath()));
+    }
+
+    private ItemModelBuilder oreMaterialChromiteItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/chromite/" + item.getRegistryName().getPath()));
     }
 
 

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/dynamic_physics_icon"
+    "layer0": "degeneracycraft:item/icon/dynamic_physics_icon"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/geo_science_icon"
+    "layer0": "degeneracycraft:item/icon/geo_science_icon"
   }
 }

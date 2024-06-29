@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/chemistry_icon"
+    "layer0": "degeneracycraft:item/icon/chemistry_icon"
   }
 }

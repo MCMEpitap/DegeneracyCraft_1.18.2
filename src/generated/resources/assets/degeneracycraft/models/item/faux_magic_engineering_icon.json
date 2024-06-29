@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/faux_magic_engineering_icon"
+    "layer0": "degeneracycraft:item/icon/faux_magic_engineering_icon"
   }
 }

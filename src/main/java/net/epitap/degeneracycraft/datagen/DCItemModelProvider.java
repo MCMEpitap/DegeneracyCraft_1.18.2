@@ -619,16 +619,13 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.SIMPLE_CONVEX_LENS.get());
         simpleItem(DCItems.SIMPLE_CONCAVE_LENS.get());
 
-        simpleItem(DCItems.BASIC_CIRCUIT.get());
-        simpleItem(DCItems.BASIC_INSCRIBED_CIRCUIT.get());
-        simpleItem(DCItems.BASIC_MACHINE_SCREEN.get());
-        simpleItem(DCItems.BASIC_MOTOR.get());
-        simpleItem(DCItems.BASIC_REDSTONE_BATTERY.get());
-        simpleItem(DCItems.BASIC_REINFORCED_PLATE.get());
-        simpleItem(DCItems.BASIC_TURBINE.get());
-
-
-
+        basicPartItem(DCItems.BASIC_CIRCUIT.get());
+        basicPartItem(DCItems.BASIC_INSCRIBED_CIRCUIT.get());
+        basicPartItem(DCItems.BASIC_MACHINE_SCREEN.get());
+        basicPartItem(DCItems.BASIC_MOTOR.get());
+        basicPartItem(DCItems.BASIC_REDSTONE_BATTERY.get());
+        basicPartItem(DCItems.BASIC_REINFORCED_PLATE.get());
+        basicPartItem(DCItems.BASIC_TURBINE.get());
 
 
         simpleItem(DCItems.RAW_GRAVITATION_ORE.get());
@@ -734,6 +731,18 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/borax/" + item.getRegistryName().getPath()));
     }
 
+
+    private ItemModelBuilder basicPartItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/" + item.getRegistryName().getPath()));
+    }
+
+    private ItemModelBuilder basicInscribedCircuitItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/inscribed_circuit/" + item.getRegistryName().getPath()));
+    }
 
     private ItemModelBuilder recipe_tooltip_item(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),

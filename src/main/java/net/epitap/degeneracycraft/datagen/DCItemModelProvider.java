@@ -38,6 +38,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         rawOreMaterialItem(DCItems.RAW_CHROMITE_ORE.get());
         rawOreMaterialItem(DCItems.RAW_GRAPHITE_ORE.get());
         rawOreMaterialItem(DCItems.RAW_LATERITE_ORE.get());
+        rawOreMaterialItem(DCItems.RAW_LIMESTONE_ORE.get());
 
 
         oreMaterialBauxiteItem(DCItems.BAUXITE_DUST.get());
@@ -210,25 +211,24 @@ public class DCItemModelProvider extends ItemModelProvider {
         oreMaterialLateriteItem(DCItems.LATERITE_ORESINTER.get());
         oreMaterialLateriteItem(DCItems.LATERITE_INGOT.get());
         //
-        simpleItem(DCItems.RAW_LIMESTONE_ORE.get());
-        simpleItem(DCItems.LIMESTONE_DUST.get());
-        simpleItem(DCItems.LIMESTONE_PUREDUST.get());
-        simpleItem(DCItems.LIMESTONE_LEACHATE.get());
-        simpleItem(DCItems.LIMESTONE_CONCENTRATE.get());
-        simpleItem(DCItems.LIMESTONE_PLASMA.get());
-        simpleItem(DCItems.LIMESTONE_DEGENERATEMATTER.get());
-        simpleItem(DCItems.LIMESTONE_SOUP.get());
-        simpleItem(DCItems.LIMESTONE_IMAGINARYMATTER.get());
-        simpleItem(DCItems.STABLE_LIMESTONE_IMAGINARYMATTER.get());
-        simpleItem(DCItems.LIMESTONE_TACHYON.get());
-        simpleItem(DCItems.LIMESTONE_ANTIMATTER.get());
-        simpleItem(DCItems.LIMESTONE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.LIMESTONE_OVERFLUID.get());
-        simpleItem(DCItems.LIMESTONE_CRYSTAL.get());
-        simpleItem(DCItems.LIMESTONE_PRECIPITATE.get());
-        simpleItem(DCItems.LIMESTONE_WASHEDDUST.get());
-        simpleItem(DCItems.LIMESTONE_ORESINTER.get());
-        simpleItem(DCItems.LIMESTONE_INGOT.get());
+        oreMaterialLimestoneItem(DCItems.LIMESTONE_DUST.get());
+        oreMaterialLimestoneItem(DCItems.LIMESTONE_PUREDUST.get());
+        oreMaterialLimestoneItem(DCItems.LIMESTONE_LEACHATE.get());
+        oreMaterialLimestoneItem(DCItems.LIMESTONE_CONCENTRATE.get());
+        oreMaterialLimestoneItem(DCItems.LIMESTONE_PLASMA.get());
+        oreMaterialLimestoneItem(DCItems.LIMESTONE_DEGENERATEMATTER.get());
+        oreMaterialLimestoneItem(DCItems.LIMESTONE_SOUP.get());
+        oreMaterialLimestoneItem(DCItems.LIMESTONE_IMAGINARYMATTER.get());
+        oreMaterialLimestoneItem(DCItems.STABLE_LIMESTONE_IMAGINARYMATTER.get());
+        oreMaterialLimestoneItem(DCItems.LIMESTONE_TACHYON.get());
+        oreMaterialLimestoneItem(DCItems.LIMESTONE_ANTIMATTER.get());
+        oreMaterialLimestoneItem(DCItems.LIMESTONE_ULTRAHOTPLASMA.get());
+        oreMaterialLimestoneItem(DCItems.LIMESTONE_OVERFLUID.get());
+        oreMaterialLimestoneItem(DCItems.LIMESTONE_CRYSTAL.get());
+        oreMaterialLimestoneItem(DCItems.LIMESTONE_PRECIPITATE.get());
+        oreMaterialLimestoneItem(DCItems.LIMESTONE_WASHEDDUST.get());
+        oreMaterialLimestoneItem(DCItems.LIMESTONE_ORESINTER.get());
+        oreMaterialLimestoneItem(DCItems.LIMESTONE_INGOT.get());
         //
         simpleItem(DCItems.RAW_PEGMATITE_ORE.get());
         simpleItem(DCItems.PEGMATITE_DUST.get());
@@ -780,6 +780,11 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/laterite/" + item.getRegistryName().getPath()));
     }
 
+    private ItemModelBuilder oreMaterialLimestoneItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/limestone/" + item.getRegistryName().getPath()));
+    }
 
     private ItemModelBuilder elementCopperItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),

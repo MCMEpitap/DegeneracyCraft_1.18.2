@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/multiplied_ore_material/sylvite/sylvite_ingot"
+    "layer0": "degeneracycraft:item/multiplied_ore_material/ingot/sylvite_ingot"
   }
 }

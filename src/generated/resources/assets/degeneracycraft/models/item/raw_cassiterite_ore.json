@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/multiplied_ore_material/raw_ore/raw_cassiterite_ore"
+    "layer0": "degeneracycraft:item/multiplied_ore_material/cassiterite/raw_cassiterite_ore"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/spodumene_crystal"
+    "layer0": "degeneracycraft:item/multiplied_ore_material/spodumene/spodumene_crystal"
   }
 }

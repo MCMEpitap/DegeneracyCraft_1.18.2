@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/phosphorite_dust"
+    "layer0": "degeneracycraft:item/multiplied_ore_material/phosphorite/phosphorite_dust"
   }
 }

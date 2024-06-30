@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/vanadinite_ingot"
+    "layer0": "degeneracycraft:item/multiplied_ore_material/vanadinite/vanadinite_ingot"
   }
 }

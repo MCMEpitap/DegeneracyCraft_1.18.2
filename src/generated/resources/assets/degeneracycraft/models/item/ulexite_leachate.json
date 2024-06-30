@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/ulexite_leachate"
+    "layer0": "degeneracycraft:item/multiplied_ore_material/ulexite/ulexite_leachate"
   }
 }

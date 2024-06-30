@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/spodumene_tachyon"
+    "layer0": "degeneracycraft:item/multiplied_ore_material/spodumene/spodumene_tachyon"
   }
 }

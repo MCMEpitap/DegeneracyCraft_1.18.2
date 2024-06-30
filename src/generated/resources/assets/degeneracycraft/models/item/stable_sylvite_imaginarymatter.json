@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/stable_sylvite_imaginarymatter"
+    "layer0": "degeneracycraft:item/multiplied_ore_material/sylvite/stable_sylvite_imaginarymatter"
   }
 }

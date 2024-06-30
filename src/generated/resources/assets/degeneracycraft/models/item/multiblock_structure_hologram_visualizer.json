@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/multiblock_structure_hologram_visualizer"
+    "layer0": "degeneracycraft:item/device/multiblock_structure_hologram_visualizer"
   }
 }

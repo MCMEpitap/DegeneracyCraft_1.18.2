@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/machine_halt_device"
+    "layer0": "degeneracycraft:item/device/machine_halt_device"
   }
 }

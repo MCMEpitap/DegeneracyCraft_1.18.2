@@ -41,6 +41,12 @@ public class DCItemModelProvider extends ItemModelProvider {
         rawOreMaterialItem(DCItems.RAW_LIMESTONE_ORE.get());
         rawOreMaterialItem(DCItems.RAW_PEGMATITE_ORE.get());
         rawOreMaterialItem(DCItems.RAW_PHOSPHORITE_ORE.get());
+        rawOreMaterialItem(DCItems.RAW_PYROLUSITE_ORE.get());
+        rawOreMaterialItem(DCItems.RAW_RUTILE_ORE.get());
+        rawOreMaterialItem(DCItems.RAW_SPODUMENE_ORE.get());
+        rawOreMaterialItem(DCItems.RAW_SYLVITE_ORE.get());
+        rawOreMaterialItem(DCItems.RAW_ULEXITE_ORE.get());
+        rawOreMaterialItem(DCItems.RAW_VANADINITE_ORE.get());
 
 
         oreMaterialBauxiteItem(DCItems.BAUXITE_DUST.get());
@@ -270,7 +276,6 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.PHOSPHORITE_ORESINTER.get());
         simpleItem(DCItems.PHOSPHORITE_INGOT.get());
         //
-        simpleItem(DCItems.RAW_PYROLUSITE_ORE.get());
         simpleItem(DCItems.PYROLUSITE_DUST.get());
         simpleItem(DCItems.PYROLUSITE_PUREDUST.get());
         simpleItem(DCItems.PYROLUSITE_LEACHATE.get());
@@ -290,7 +295,6 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.PYROLUSITE_ORESINTER.get());
         simpleItem(DCItems.PYROLUSITE_INGOT.get());
         //
-        simpleItem(DCItems.RAW_RUTILE_ORE.get());
         simpleItem(DCItems.RUTILE_DUST.get());
         simpleItem(DCItems.RUTILE_PUREDUST.get());
         simpleItem(DCItems.RUTILE_LEACHATE.get());
@@ -310,7 +314,6 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.RUTILE_ORESINTER.get());
         simpleItem(DCItems.RUTILE_INGOT.get());
         //
-        simpleItem(DCItems.RAW_SPODUMENE_ORE.get());
         simpleItem(DCItems.SPODUMENE_DUST.get());
         simpleItem(DCItems.SPODUMENE_PUREDUST.get());
         simpleItem(DCItems.SPODUMENE_LEACHATE.get());
@@ -330,7 +333,6 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.SPODUMENE_ORESINTER.get());
         simpleItem(DCItems.SPODUMENE_INGOT.get());
         //
-        simpleItem(DCItems.RAW_SYLVITE_ORE.get());
         simpleItem(DCItems.SYLVITE_DUST.get());
         simpleItem(DCItems.SYLVITE_PUREDUST.get());
         simpleItem(DCItems.SYLVITE_LEACHATE.get());
@@ -350,7 +352,6 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.SYLVITE_ORESINTER.get());
         simpleItem(DCItems.SYLVITE_INGOT.get());
         //
-        simpleItem(DCItems.RAW_ULEXITE_ORE.get());
         simpleItem(DCItems.ULEXITE_DUST.get());
         simpleItem(DCItems.ULEXITE_PUREDUST.get());
         simpleItem(DCItems.ULEXITE_LEACHATE.get());
@@ -370,7 +371,6 @@ public class DCItemModelProvider extends ItemModelProvider {
         simpleItem(DCItems.ULEXITE_ORESINTER.get());
         simpleItem(DCItems.ULEXITE_INGOT.get());
         //
-        simpleItem(DCItems.RAW_VANADINITE_ORE.get());
         simpleItem(DCItems.VANADINITE_DUST.get());
         simpleItem(DCItems.VANADINITE_PUREDUST.get());
         simpleItem(DCItems.VANADINITE_LEACHATE.get());

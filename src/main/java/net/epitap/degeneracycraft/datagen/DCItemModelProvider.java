@@ -780,6 +780,7 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/laterite/" + item.getRegistryName().getPath()));
     }
 
+
     private ItemModelBuilder elementCopperItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",

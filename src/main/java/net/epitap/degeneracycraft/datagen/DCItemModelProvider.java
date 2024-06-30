@@ -39,6 +39,8 @@ public class DCItemModelProvider extends ItemModelProvider {
         rawOreMaterialItem(DCItems.RAW_GRAPHITE_ORE.get());
         rawOreMaterialItem(DCItems.RAW_LATERITE_ORE.get());
         rawOreMaterialItem(DCItems.RAW_LIMESTONE_ORE.get());
+        rawOreMaterialItem(DCItems.RAW_PEGMATITE_ORE.get());
+        rawOreMaterialItem(DCItems.RAW_PHOSPHORITE_ORE.get());
 
 
         oreMaterialBauxiteItem(DCItems.BAUXITE_DUST.get());
@@ -230,27 +232,25 @@ public class DCItemModelProvider extends ItemModelProvider {
         oreMaterialLimestoneItem(DCItems.LIMESTONE_ORESINTER.get());
         oreMaterialLimestoneItem(DCItems.LIMESTONE_INGOT.get());
         //
-        simpleItem(DCItems.RAW_PEGMATITE_ORE.get());
-        simpleItem(DCItems.PEGMATITE_DUST.get());
-        simpleItem(DCItems.PEGMATITE_PUREDUST.get());
-        simpleItem(DCItems.PEGMATITE_LEACHATE.get());
-        simpleItem(DCItems.PEGMATITE_CONCENTRATE.get());
-        simpleItem(DCItems.PEGMATITE_PLASMA.get());
-        simpleItem(DCItems.PEGMATITE_DEGENERATEMATTER.get());
-        simpleItem(DCItems.PEGMATITE_SOUP.get());
-        simpleItem(DCItems.PEGMATITE_IMAGINARYMATTER.get());
-        simpleItem(DCItems.STABLE_PEGMATITE_IMAGINARYMATTER.get());
-        simpleItem(DCItems.PEGMATITE_TACHYON.get());
-        simpleItem(DCItems.PEGMATITE_ANTIMATTER.get());
-        simpleItem(DCItems.PEGMATITE_ULTRAHOTPLASMA.get());
-        simpleItem(DCItems.PEGMATITE_OVERFLUID.get());
-        simpleItem(DCItems.PEGMATITE_CRYSTAL.get());
-        simpleItem(DCItems.PEGMATITE_PRECIPITATE.get());
-        simpleItem(DCItems.PEGMATITE_WASHEDDUST.get());
-        simpleItem(DCItems.PEGMATITE_ORESINTER.get());
-        simpleItem(DCItems.PEGMATITE_INGOT.get());
+        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_DUST.get());
+        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_PUREDUST.get());
+        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_LEACHATE.get());
+        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_CONCENTRATE.get());
+        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_PLASMA.get());
+        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_DEGENERATEMATTER.get());
+        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_SOUP.get());
+        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_IMAGINARYMATTER.get());
+        oreMaterialPendlanditeItem(DCItems.STABLE_PENDLANDITE_IMAGINARYMATTER.get());
+        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_TACHYON.get());
+        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_ANTIMATTER.get());
+        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_ULTRAHOTPLASMA.get());
+        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_OVERFLUID.get());
+        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_CRYSTAL.get());
+        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_PRECIPITATE.get());
+        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_WASHEDDUST.get());
+        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_ORESINTER.get());
+        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_INGOT.get());
         //
-        simpleItem(DCItems.RAW_PHOSPHORITE_ORE.get());
         simpleItem(DCItems.PHOSPHORITE_DUST.get());
         simpleItem(DCItems.PHOSPHORITE_PUREDUST.get());
         simpleItem(DCItems.PHOSPHORITE_LEACHATE.get());
@@ -612,8 +612,8 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicInscribedCircuitItem(DCItems.BASIC_PRECISION_SHAPESTEEL_INSCRIBED_CIRCUIT.get());
         basicInscribedCircuitItem(DCItems.BASIC_PRECISION_CHAIN_INSCRIBED_CIRCUIT.get());
 
-        simpleItem(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
-        simpleItem(DCItems.MACHINE_HALT_DEVICE.get());
+        deviceItem(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+        deviceItem(DCItems.MACHINE_HALT_DEVICE.get());
 
         basicMaterialCommonItem(DCItems.COMPRESSED_PLANKS.get());
         basicMaterialCommonItem(DCItems.COMPRESSED_REDSTONE.get());
@@ -708,6 +708,12 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/" + item.getRegistryName().getPath()));
     }
 
+    private ItemModelBuilder deviceItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/device/" + item.getRegistryName().getPath()));
+    }
+
     private ItemModelBuilder iconItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
@@ -779,6 +785,13 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/laterite/" + item.getRegistryName().getPath()));
     }
+
+    private ItemModelBuilder oreMaterialPendlanditeItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/pendlandite/" + item.getRegistryName().getPath()));
+    }
+
 
     private ItemModelBuilder oreMaterialLimestoneItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/limestone_ultrahotplasma"
+    "layer0": "degeneracycraft:item/multiplied_ore_material/limestone/limestone_ultrahotplasma"
   }
 }

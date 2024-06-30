@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/compressed_redstone"
+    "layer0": "degeneracycraft:item/material/basic/common/compressed_redstone"
   }
 }

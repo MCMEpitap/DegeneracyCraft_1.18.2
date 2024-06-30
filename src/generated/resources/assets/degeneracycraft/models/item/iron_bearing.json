@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/iron_bearing"
+    "layer0": "degeneracycraft:item/element/iron/iron_bearing"
   }
 }

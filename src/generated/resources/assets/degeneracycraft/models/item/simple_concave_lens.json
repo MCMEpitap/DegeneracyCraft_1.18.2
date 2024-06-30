@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/simple_concave_lens"
+    "layer0": "degeneracycraft:item/material/basic/common/simple_concave_lens"
   }
 }

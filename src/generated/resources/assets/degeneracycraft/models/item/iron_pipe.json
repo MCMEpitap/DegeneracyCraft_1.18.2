@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/iron_pipe"
+    "layer0": "degeneracycraft:item/element/iron/iron_pipe"
   }
 }

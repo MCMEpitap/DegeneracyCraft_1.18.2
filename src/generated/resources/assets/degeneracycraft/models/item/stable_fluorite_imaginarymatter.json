@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/stable_fluorite_imaginarymatter"
+    "layer0": "degeneracycraft:item/multiplied_ore_material/fluorite/stable_fluorite_imaginarymatter"
   }
 }

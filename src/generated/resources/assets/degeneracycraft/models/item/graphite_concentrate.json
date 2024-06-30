@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/graphite_concentrate"
+    "layer0": "degeneracycraft:item/multiplied_ore_material/graphite/graphite_concentrate"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/graphite_crystal"
+    "layer0": "degeneracycraft:item/multiplied_ore_material/graphite/graphite_crystal"
   }
 }

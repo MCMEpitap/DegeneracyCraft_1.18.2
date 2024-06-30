@@ -232,24 +232,24 @@ public class DCItemModelProvider extends ItemModelProvider {
         oreMaterialLimestoneItem(DCItems.LIMESTONE_ORESINTER.get());
         oreMaterialLimestoneItem(DCItems.LIMESTONE_INGOT.get());
         //
-        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_DUST.get());
-        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_PUREDUST.get());
-        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_LEACHATE.get());
-        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_CONCENTRATE.get());
-        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_PLASMA.get());
-        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_DEGENERATEMATTER.get());
-        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_SOUP.get());
-        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_IMAGINARYMATTER.get());
-        oreMaterialPendlanditeItem(DCItems.STABLE_PENDLANDITE_IMAGINARYMATTER.get());
-        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_TACHYON.get());
-        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_ANTIMATTER.get());
-        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_ULTRAHOTPLASMA.get());
-        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_OVERFLUID.get());
-        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_CRYSTAL.get());
-        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_PRECIPITATE.get());
-        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_WASHEDDUST.get());
-        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_ORESINTER.get());
-        oreMaterialPendlanditeItem(DCItems.PENDLANDITE_INGOT.get());
+        oreMaterialPentlanditeItem(DCItems.PENTLANDITE_DUST.get());
+        oreMaterialPentlanditeItem(DCItems.PENTLANDITE_PUREDUST.get());
+        oreMaterialPentlanditeItem(DCItems.PENTLANDITE_LEACHATE.get());
+        oreMaterialPentlanditeItem(DCItems.PENTLANDITE_CONCENTRATE.get());
+        oreMaterialPentlanditeItem(DCItems.PENTLANDITE_PLASMA.get());
+        oreMaterialPentlanditeItem(DCItems.PENTLANDITE_DEGENERATEMATTER.get());
+        oreMaterialPentlanditeItem(DCItems.PENTLANDITE_SOUP.get());
+        oreMaterialPentlanditeItem(DCItems.PENTLANDITE_IMAGINARYMATTER.get());
+        oreMaterialPentlanditeItem(DCItems.STABLE_PENTLANDITE_IMAGINARYMATTER.get());
+        oreMaterialPentlanditeItem(DCItems.PENTLANDITE_TACHYON.get());
+        oreMaterialPentlanditeItem(DCItems.PENTLANDITE_ANTIMATTER.get());
+        oreMaterialPentlanditeItem(DCItems.PENTLANDITE_ULTRAHOTPLASMA.get());
+        oreMaterialPentlanditeItem(DCItems.PENTLANDITE_OVERFLUID.get());
+        oreMaterialPentlanditeItem(DCItems.PENTLANDITE_CRYSTAL.get());
+        oreMaterialPentlanditeItem(DCItems.PENTLANDITE_PRECIPITATE.get());
+        oreMaterialPentlanditeItem(DCItems.PENTLANDITE_WASHEDDUST.get());
+        oreMaterialPentlanditeItem(DCItems.PENTLANDITE_ORESINTER.get());
+        oreMaterialPentlanditeItem(DCItems.PENTLANDITE_INGOT.get());
         //
         simpleItem(DCItems.PHOSPHORITE_DUST.get());
         simpleItem(DCItems.PHOSPHORITE_PUREDUST.get());
@@ -786,17 +786,16 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/laterite/" + item.getRegistryName().getPath()));
     }
 
-    private ItemModelBuilder oreMaterialPendlanditeItem(Item item) {
-        return withExistingParent(item.getRegistryName().getPath(),
-                new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/pendlandite/" + item.getRegistryName().getPath()));
-    }
-
-
     private ItemModelBuilder oreMaterialLimestoneItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/limestone/" + item.getRegistryName().getPath()));
+    }
+
+    private ItemModelBuilder oreMaterialPentlanditeItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/pentlandite/" + item.getRegistryName().getPath()));
     }
 
     private ItemModelBuilder elementCopperItem(Item item) {

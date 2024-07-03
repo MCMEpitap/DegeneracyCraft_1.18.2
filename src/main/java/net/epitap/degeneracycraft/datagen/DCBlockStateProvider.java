@@ -2,7 +2,6 @@ package net.epitap.degeneracycraft.datagen;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
-import net.epitap.degeneracycraft.transport.port.blocks.PortBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.block.Block;
@@ -31,11 +30,6 @@ public class DCBlockStateProvider extends BlockStateProvider {
 
         simpleBlock(DCBlocks.REINFORCED_PLANKS.get());
 
-//        simpleBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK.get());
-//        simpleBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
-//        simpleBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-//        simpleBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get());
-
         simpleBlock(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get());
         simpleBlock(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get());
 
@@ -48,7 +42,6 @@ public class DCBlockStateProvider extends BlockStateProvider {
         simpleBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get());
 
 
-        simpleBlock(PortBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK);
 
         registerBasicStrengthMultiblockBaseFrame();
         registerBasicStrengthMultiblockMachineFrame();
@@ -59,6 +52,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerRedstonePoweredMachinePartManufactureMachine();
         registerBasicPowerCompositeStructureTypeThermalGenerator();
         registerBasicMachineElementProcessor();
+        registerBasicMachineElementProcessorPort();
     }
 
     private void registerBasicStrengthMultiblockBaseFrame() {
@@ -164,6 +158,20 @@ public class DCBlockStateProvider extends BlockStateProvider {
         orientedBlock(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(),
                 state -> modelBasicPowerCompositeStructureTypeThermalGenerator);
     }
+
+    private void registerBasicMachineElementProcessorPort() {
+        BlockModelBuilder modelBasicPowerCompositeStructureTypeThermalGenerator = models().getBuilder("block/basic_machine_element_processor_port_block");
+        modelBasicPowerCompositeStructureTypeThermalGenerator.parent(models().getExistingFile(mcLoc("cube")));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/basic/basic_machine_element_processor_port_block/basic_machine_element_processor_port_block"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/basic/basic_machine_element_processor_port_block/basic_machine_element_processor_port_block"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("north", modLoc("block/basic/basic_machine_element_processor_port_block/basic_machine_element_processor_port_block"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/basic/basic_machine_element_processor_port_block/basic_machine_element_processor_port_block"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/basic/basic_machine_element_processor_port_block/basic_machine_element_processor_port_block"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/basic/basic_machine_element_processor_port_block/basic_machine_element_processor_port_block"));
+        orientedBlock(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(),
+                state -> modelBasicPowerCompositeStructureTypeThermalGenerator);
+    }
+
 
     private void orientedBlock(Block block, Function<BlockState, ModelFile> modelFunc) {
         getVariantBuilder(block)

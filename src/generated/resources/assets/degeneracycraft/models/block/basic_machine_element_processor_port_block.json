@@ -1,6 +1,11 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "all": "degeneracycraft:block/basic_machine_element_processor_port_block"
+    "down": "degeneracycraft:block/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block",
+    "up": "degeneracycraft:block/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block",
+    "north": "degeneracycraft:block/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block",
+    "south": "degeneracycraft:block/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block",
+    "east": "degeneracycraft:block/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block",
+    "west": "degeneracycraft:block/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"
   }
 }

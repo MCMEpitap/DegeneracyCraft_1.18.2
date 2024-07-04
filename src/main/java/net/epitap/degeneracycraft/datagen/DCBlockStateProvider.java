@@ -48,6 +48,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthMultiblockStructureFrame();
         registerBasicStrengthMultiblockStructureGlass();
 
+
         registerRedstonePoweredMachineElementManufactureMachine();
         registerRedstonePoweredMachinePartManufactureMachine();
         registerBasicPowerCompositeStructureTypeThermalGenerator();
@@ -147,29 +148,29 @@ public class DCBlockStateProvider extends BlockStateProvider {
     }
 
     private void registerBasicMachineElementProcessor() {
-        BlockModelBuilder modelBasicPowerCompositeStructureTypeThermalGenerator = models().getBuilder("block/basic_machine_element_processor_block");
-        modelBasicPowerCompositeStructureTypeThermalGenerator.parent(models().getExistingFile(mcLoc("cube")));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/basic/basic_machine_element_processor/basic_machine_block_side_down"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/basic/basic_machine_element_processor/basic_machine_element_processor_block_side_energy"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("north", modLoc("block/basic/basic_machine_element_processor/basic_machine_element_processor_block_front"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/basic/basic_machine_element_processor/basic_machine_element_processor_block_side_energy"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/basic/basic_machine_element_processor/basic_machine_element_processor_block_side_import"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/basic/basic_machine_element_processor/basic_machine_element_processor_block_side_export"));
+        BlockModelBuilder modelBasicMachineElementProcessor = models().getBuilder("block/basic_machine_element_processor_block");
+        modelBasicMachineElementProcessor.parent(models().getExistingFile(mcLoc("cube")));
+        modelBasicMachineElementProcessor.texture("down", modLoc("block/basic/basic_machine_element_processor/basic_machine_block_side_down"));
+        modelBasicMachineElementProcessor.texture("up", modLoc("block/basic/basic_machine_element_processor/basic_machine_element_processor_block_side_energy"));
+        modelBasicMachineElementProcessor.texture("north", modLoc("block/basic/basic_machine_element_processor/basic_machine_element_processor_block_front"));
+        modelBasicMachineElementProcessor.texture("south", modLoc("block/basic/basic_machine_element_processor/basic_machine_element_processor_block_side_energy"));
+        modelBasicMachineElementProcessor.texture("east", modLoc("block/basic/basic_machine_element_processor/basic_machine_element_processor_block_side_import"));
+        modelBasicMachineElementProcessor.texture("west", modLoc("block/basic/basic_machine_element_processor/basic_machine_element_processor_block_side_export"));
         orientedBlock(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(),
-                state -> modelBasicPowerCompositeStructureTypeThermalGenerator);
+                state -> modelBasicMachineElementProcessor);
     }
 
     private void registerBasicMachineElementProcessorPort() {
-        BlockModelBuilder modelBasicPowerCompositeStructureTypeThermalGenerator = models().getBuilder("block/basic_machine_element_processor_port_block");
-        modelBasicPowerCompositeStructureTypeThermalGenerator.parent(models().getExistingFile(mcLoc("cube")));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/basic/basic_machine_element_processor_port_block/basic_machine_element_processor_port_block"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/basic/basic_machine_element_processor_port_block/basic_machine_element_processor_port_block"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("north", modLoc("block/basic/basic_machine_element_processor_port_block/basic_machine_element_processor_port_block"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/basic/basic_machine_element_processor_port_block/basic_machine_element_processor_port_block"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/basic/basic_machine_element_processor_port_block/basic_machine_element_processor_port_block"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/basic/basic_machine_element_processor_port_block/basic_machine_element_processor_port_block"));
-        orientedBlock(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(),
-                state -> modelBasicPowerCompositeStructureTypeThermalGenerator);
+        BlockModelBuilder modelBasicMachineElementProcessorPort = models().getBuilder("block/basic_machine_element_processor_port_block");
+        modelBasicMachineElementProcessorPort.parent(models().getExistingFile(mcLoc("cube")));
+        modelBasicMachineElementProcessorPort.texture("down", modLoc("block/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"));
+        modelBasicMachineElementProcessorPort.texture("up", modLoc("block/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"));
+        modelBasicMachineElementProcessorPort.texture("north", modLoc("block/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"));
+        modelBasicMachineElementProcessorPort.texture("south", modLoc("block/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"));
+        modelBasicMachineElementProcessorPort.texture("east", modLoc("block/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"));
+        modelBasicMachineElementProcessorPort.texture("west", modLoc("block/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"));
+        orientedBlock(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(),
+                state -> modelBasicMachineElementProcessorPort);
     }
 
 

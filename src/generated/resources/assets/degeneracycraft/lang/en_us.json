@@ -26,6 +26,7 @@
   "block.degeneracycraft.basic_energy_pipe": "Basic Energy Pipe",
   "block.degeneracycraft.basic_item_pipe": "Basic Item Pipe",
   "block.degeneracycraft.basic_machine_element_processor_block": "Basic Machine Element Processor",
+  "block.degeneracycraft.basic_machine_element_processor_port_block": "Basic Machine Element Processor Port",
   "block.degeneracycraft.basic_power_composite_structure_type_thermal_generator_block": "Basic Power Composite Structure Type Thermal Generator",
   "block.degeneracycraft.basic_strength_multiblock_base_frame_block": "Basic Strength Multiblock Base Frame Block",
   "block.degeneracycraft.basic_strength_multiblock_base_frame_holo_block": "Basic Strength Multiblock Base Frame Block (Hologram)",

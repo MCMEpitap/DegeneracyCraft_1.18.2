@@ -4,7 +4,6 @@ import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.item.DCAdvancementIcon;
 import net.epitap.degeneracycraft.item.DCItems;
-import net.epitap.degeneracycraft.transport.port.blocks.PortBlocks;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -685,7 +684,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.getId().getPath(),
                 modLoc("block/basic_machine_element_processor_block"));
 
-        withExistingParent(PortBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.getRegistryName().getPath(),
+        withExistingParent(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.getId().getPath(),
                 modLoc("block/basic_machine_element_processor_port_block"));
 
 //        withExistingParent(DCBlocks.OVERWORLD_CASSITERITE_ORE.getId().getPath(),

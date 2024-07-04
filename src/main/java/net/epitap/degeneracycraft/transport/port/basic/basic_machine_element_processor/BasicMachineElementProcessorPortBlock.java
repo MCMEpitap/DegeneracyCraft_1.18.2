@@ -1,11 +1,9 @@
 package net.epitap.degeneracycraft.transport.port.basic.basic_machine_element_processor;
 
-import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.transport.port.portbase.PortBlockBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -17,8 +15,9 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.items.CapabilityItemHandler;
 
 public class BasicMachineElementProcessorPortBlock extends PortBlockBase {
-    public BasicMachineElementProcessorPortBlock() {
-        setRegistryName(new ResourceLocation(Degeneracycraft.MOD_ID, "basic_machine_element_processor_port_block"));
+
+    public BasicMachineElementProcessorPortBlock(Properties properties) {
+        super(properties);
     }
 
     @Override
@@ -27,6 +26,7 @@ public class BasicMachineElementProcessorPortBlock extends PortBlockBase {
         return (blockEntity != null && (blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, facing.getOpposite()).isPresent()
                 || blockEntity.getBlockState().is(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get())));
     }
+
     @Override
     public boolean judgePort(LevelAccessor world, BlockPos pos, Direction facing) {
         BlockState blockState = world.getBlockState(pos.relative(facing));

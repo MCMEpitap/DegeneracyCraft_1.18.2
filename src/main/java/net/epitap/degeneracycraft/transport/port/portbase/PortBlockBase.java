@@ -27,7 +27,10 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.material.*;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -39,6 +42,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public abstract class PortBlockBase extends Block implements IItemBlock, SimpleWaterloggedBlock, EntityBlock {
+    public static final DirectionProperty FACING = BlockStateProperties.FACING;
     public static final BooleanProperty DOWN = BooleanProperty.create("down");
     public static final BooleanProperty UP = BooleanProperty.create("up");
     public static final BooleanProperty NORTH = BooleanProperty.create("north");
@@ -48,9 +52,8 @@ public abstract class PortBlockBase extends Block implements IItemBlock, SimpleW
     public static final BooleanProperty HAS_DATA = BooleanProperty.create("has_data");
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-    protected PortBlockBase() {
-        super(Properties.of(Material.METAL, MaterialColor.COLOR_GRAY).strength(0.5F));
-
+    protected PortBlockBase(Properties properties) {
+        super(properties);
         registerDefaultState(stateDefinition.any()
                 .setValue(UP, false)
                 .setValue(DOWN, false)
@@ -292,6 +295,7 @@ public abstract class PortBlockBase extends Block implements IItemBlock, SimpleW
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(FACING);
         builder.add(UP, DOWN, NORTH, SOUTH, EAST, WEST, HAS_DATA, WATERLOGGED);
     }
 

@@ -74,9 +74,14 @@ public class Degeneracycraft {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(PipeModelRegistry::onModelRegister);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(PipeModelRegistry::onModelBake);
 
-        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Item.class, PortBlocks::registerItems);
-        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Block.class, PortBlocks::registerBlocks);
-        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(BlockEntityType.class, PortBlockEntities::registerBlockEntities);
+//        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Item.class, PortBlocks::registerItems);
+//        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Block.class, PortBlocks::registerBlocks);
+//        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(BlockEntityType.class, PortBlockEntities::registerBlockEntities);
+
+        PortBlocks.register(eventBus);
+        PortBlockEntities.register(eventBus);
+
+
         FMLJavaModLoadingContext.get().getModEventBus().addListener(PortModelRegistry::onModelRegister);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(PortModelRegistry::onModelBake);
     }
@@ -123,7 +128,7 @@ public class Degeneracycraft {
 
 
         PipeBlockEntities.clientSetup();
-        PortBlockEntities.clientSetup();
+//        PortBlockEntities.clientSetup();
 
     }
 

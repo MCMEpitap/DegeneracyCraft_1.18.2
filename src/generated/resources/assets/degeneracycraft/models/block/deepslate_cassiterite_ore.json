@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "degeneracycraft:block/deepslate_cassiterite_ore"
-  }
-}

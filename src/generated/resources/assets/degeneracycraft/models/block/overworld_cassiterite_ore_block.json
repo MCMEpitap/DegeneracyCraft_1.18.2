@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/ore/cassiterite/overworld_cassiterite_ore",
+    "up": "degeneracycraft:block/ore/cassiterite/overworld_cassiterite_ore",
+    "north": "degeneracycraft:block/ore/cassiterite/overworld_cassiterite_ore",
+    "south": "degeneracycraft:block/ore/cassiterite/overworld_cassiterite_ore",
+    "east": "degeneracycraft:block/ore/cassiterite/overworld_cassiterite_ore",
+    "west": "degeneracycraft:block/ore/cassiterite/overworld_cassiterite_ore"
+  }
+}

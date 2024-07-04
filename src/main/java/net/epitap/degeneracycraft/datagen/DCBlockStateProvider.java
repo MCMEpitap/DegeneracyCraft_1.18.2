@@ -21,17 +21,16 @@ public class DCBlockStateProvider extends BlockStateProvider {
     }
     @Override
     protected void registerStatesAndModels() {
-        simpleBlock(DCBlocks.OVERWORLD_GRAVITATION_ORE.get());
-
-//        simpleBlock(DCBlocks.OVERWORLD_CASSITERITE_ORE.get());
-//        simpleBlock(DCBlocks.DEEPSLATE_CASSITERITE_ORE.get());
-//        simpleBlock(DCBlocks.NETHER_CASSITERITE_ORE.get());
-//        simpleBlock(DCBlocks.END_CASSITERITE_ORE.get());
-
         simpleBlock(DCBlocks.REINFORCED_PLANKS.get());
 
         simpleBlock(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get());
         simpleBlock(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get());
+
+        registerOverworldGravitationOre();
+        registerOverworldCassiteriteOre();
+        registerDeepslateCassiteriteOre();
+        registerNetherCassiteriteOre();
+        registerEndCassiteriteOre();
 
         registerBasicStrengthMultiblockBaseFrame();
         registerBasicStrengthMultiblockMachineFrame();
@@ -49,6 +48,71 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthMultiblockMachineFrameHolo();
         registerBasicStrengthMultiblockStructureFrameHolo();
         registerBasicStrengthMultiblockStructureGlassHolo();
+    }
+
+    private void registerOverworldGravitationOre() {
+        BlockModelBuilder modelOverworldGravitationOre = models().getBuilder("block/overorld_gravitation_ore_block");
+        modelOverworldGravitationOre.parent(models().getExistingFile(mcLoc("cube")));
+        modelOverworldGravitationOre.texture("down", modLoc("block/ore/gravitation_ore/overworld_gravitation_ore"));
+        modelOverworldGravitationOre.texture("up", modLoc("block/ore/gravitation_ore/overworld_gravitation_ore"));
+        modelOverworldGravitationOre.texture("north", modLoc("block/ore/gravitation_ore/overworld_gravitation_ore"));
+        modelOverworldGravitationOre.texture("south", modLoc("block/ore/gravitation_ore/overworld_gravitation_ore"));
+        modelOverworldGravitationOre.texture("east", modLoc("block/ore/gravitation_ore/overworld_gravitation_ore"));
+        modelOverworldGravitationOre.texture("west", modLoc("block/ore/gravitation_ore/overworld_gravitation_ore"));
+        orientedBlock(DCBlocks.OVERWORLD_GRAVITATION_ORE.get(),
+                state -> modelOverworldGravitationOre);
+    }
+
+    private void registerOverworldCassiteriteOre() {
+        BlockModelBuilder modelOverworldCassiteriteOre = models().getBuilder("block/overworld_cassiterite_ore_block");
+        modelOverworldCassiteriteOre.parent(models().getExistingFile(mcLoc("cube")));
+        modelOverworldCassiteriteOre.texture("down", modLoc("block/ore/cassiterite/overworld_cassiterite_ore"));
+        modelOverworldCassiteriteOre.texture("up", modLoc("block/ore/cassiterite/overworld_cassiterite_ore"));
+        modelOverworldCassiteriteOre.texture("north", modLoc("block/ore/cassiterite/overworld_cassiterite_ore"));
+        modelOverworldCassiteriteOre.texture("south", modLoc("block/ore/cassiterite/overworld_cassiterite_ore"));
+        modelOverworldCassiteriteOre.texture("east", modLoc("block/ore/cassiterite/overworld_cassiterite_ore"));
+        modelOverworldCassiteriteOre.texture("west", modLoc("block/ore/cassiterite/overworld_cassiterite_ore"));
+        orientedBlock(DCBlocks.OVERWORLD_CASSITERITE_ORE.get(),
+                state -> modelOverworldCassiteriteOre);
+    }
+
+    private void registerDeepslateCassiteriteOre() {
+        BlockModelBuilder modelDeepslateCassiteriteOre = models().getBuilder("block/deepslate_cassiterite_ore_block");
+        modelDeepslateCassiteriteOre.parent(models().getExistingFile(mcLoc("cube")));
+        modelDeepslateCassiteriteOre.texture("down", modLoc("block/ore/cassiterite/deepslate_cassiterite_ore"));
+        modelDeepslateCassiteriteOre.texture("up", modLoc("block/ore/cassiterite/deepslate_cassiterite_ore"));
+        modelDeepslateCassiteriteOre.texture("north", modLoc("block/ore/cassiterite/deepslate_cassiterite_ore"));
+        modelDeepslateCassiteriteOre.texture("south", modLoc("block/ore/cassiterite/deepslate_cassiterite_ore"));
+        modelDeepslateCassiteriteOre.texture("east", modLoc("block/ore/cassiterite/deepslate_cassiterite_ore"));
+        modelDeepslateCassiteriteOre.texture("west", modLoc("block/ore/cassiterite/deepslate_cassiterite_ore"));
+        orientedBlock(DCBlocks.DEEPSLATE_CASSITERITE_ORE.get(),
+                state -> modelDeepslateCassiteriteOre);
+    }
+
+    private void registerNetherCassiteriteOre() {
+        BlockModelBuilder modelNetherCassiteriteOre = models().getBuilder("block/nether_cassiterite_ore_block");
+        modelNetherCassiteriteOre.parent(models().getExistingFile(mcLoc("cube")));
+        modelNetherCassiteriteOre.texture("down", modLoc("block/ore/cassiterite/nether_cassiterite_ore"));
+        modelNetherCassiteriteOre.texture("up", modLoc("block/ore/cassiterite/nether_cassiterite_ore"));
+        modelNetherCassiteriteOre.texture("north", modLoc("block/ore/cassiterite/nether_cassiterite_ore"));
+        modelNetherCassiteriteOre.texture("south", modLoc("block/ore/cassiterite/nether_cassiterite_ore"));
+        modelNetherCassiteriteOre.texture("east", modLoc("block/ore/cassiterite/nether_cassiterite_ore"));
+        modelNetherCassiteriteOre.texture("west", modLoc("block/ore/cassiterite/nether_cassiterite_ore"));
+        orientedBlock(DCBlocks.NETHER_CASSITERITE_ORE.get(),
+                state -> modelNetherCassiteriteOre);
+    }
+
+    private void registerEndCassiteriteOre() {
+        BlockModelBuilder modelEndCassiteriteOre = models().getBuilder("block/end_cassiterite_ore_block");
+        modelEndCassiteriteOre.parent(models().getExistingFile(mcLoc("cube")));
+        modelEndCassiteriteOre.texture("down", modLoc("block/ore/cassiterite/end_cassiterite_ore"));
+        modelEndCassiteriteOre.texture("up", modLoc("block/ore/cassiterite/end_cassiterite_ore"));
+        modelEndCassiteriteOre.texture("north", modLoc("block/ore/cassiterite/end_cassiterite_ore"));
+        modelEndCassiteriteOre.texture("south", modLoc("block/ore/cassiterite/end_cassiterite_ore"));
+        modelEndCassiteriteOre.texture("east", modLoc("block/ore/cassiterite/end_cassiterite_ore"));
+        modelEndCassiteriteOre.texture("west", modLoc("block/ore/cassiterite/end_cassiterite_ore"));
+        orientedBlock(DCBlocks.END_CASSITERITE_ORE.get(),
+                state -> modelEndCassiteriteOre);
     }
 
     private void registerBasicStrengthMultiblockBaseFrame() {
@@ -104,7 +168,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
     }
 
     private void registerBasicStrengthMultiblockEnergyStorage() {
-        BlockModelBuilder registerBasicStrengthMultiblockEnergyStorage = models().getBuilder("block/basic_strength_multiblock_energy_storage");
+        BlockModelBuilder registerBasicStrengthMultiblockEnergyStorage = models().getBuilder("block/basic_strength_multiblock_energy_storage_block");
         registerBasicStrengthMultiblockEnergyStorage.parent(models().getExistingFile(mcLoc("cube")));
         registerBasicStrengthMultiblockEnergyStorage.texture("down", modLoc("block/multiblock/basic/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_block"));
         registerBasicStrengthMultiblockEnergyStorage.texture("up", modLoc("block/multiblock/basic/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_block"));
@@ -117,7 +181,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
     }
 
     private void registerBasicStrengthMultiblockMaterialStorage() {
-        BlockModelBuilder registerBasicStrengthMultiblockMaterialStorage = models().getBuilder("block/basic_strength_multiblock_material_storage");
+        BlockModelBuilder registerBasicStrengthMultiblockMaterialStorage = models().getBuilder("block/basic_strength_multiblock_material_storage_block");
         registerBasicStrengthMultiblockMaterialStorage.parent(models().getExistingFile(mcLoc("cube")));
         registerBasicStrengthMultiblockMaterialStorage.texture("down", modLoc("block/multiblock/basic/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_block"));
         registerBasicStrengthMultiblockMaterialStorage.texture("up", modLoc("block/multiblock/basic/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_block"));
@@ -125,19 +189,19 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthMultiblockMaterialStorage.texture("south", modLoc("block/multiblock/basic/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_block"));
         registerBasicStrengthMultiblockMaterialStorage.texture("east", modLoc("block/multiblock/basic/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_block"));
         registerBasicStrengthMultiblockMaterialStorage.texture("west", modLoc("block/multiblock/basic/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(),
+        orientedBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
                 state -> registerBasicStrengthMultiblockMaterialStorage);
     }
 
     private void registerRedstonePoweredMachineElementManufactureMachine() {
         BlockModelBuilder modelRedstonePoweredMachineElementManufactureMachine = models().getBuilder("block/redstone_powered_machine_element_manufacture_machine_block");
         modelRedstonePoweredMachineElementManufactureMachine.parent(models().getExistingFile(mcLoc("cube")));
-        modelRedstonePoweredMachineElementManufactureMachine.texture("down", modLoc("block/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_down"));
-        modelRedstonePoweredMachineElementManufactureMachine.texture("up", modLoc("block/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_top"));
-        modelRedstonePoweredMachineElementManufactureMachine.texture("north", modLoc("block/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_block"));
-        modelRedstonePoweredMachineElementManufactureMachine.texture("south", modLoc("block/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_block"));
-        modelRedstonePoweredMachineElementManufactureMachine.texture("east", modLoc("block/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_side"));
-        modelRedstonePoweredMachineElementManufactureMachine.texture("west", modLoc("block/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_side"));
+        modelRedstonePoweredMachineElementManufactureMachine.texture("down", modLoc("block/machine/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_down"));
+        modelRedstonePoweredMachineElementManufactureMachine.texture("up", modLoc("block/machine/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_top"));
+        modelRedstonePoweredMachineElementManufactureMachine.texture("north", modLoc("block/machine/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_block"));
+        modelRedstonePoweredMachineElementManufactureMachine.texture("south", modLoc("block/machine/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_block"));
+        modelRedstonePoweredMachineElementManufactureMachine.texture("east", modLoc("block/machine/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_side"));
+        modelRedstonePoweredMachineElementManufactureMachine.texture("west", modLoc("block/machine/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_side"));
         orientedBlock(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get(),
                 state -> modelRedstonePoweredMachineElementManufactureMachine);
     }
@@ -145,12 +209,12 @@ public class DCBlockStateProvider extends BlockStateProvider {
     private void registerRedstonePoweredMachinePartManufactureMachine() {
         BlockModelBuilder modelRedstonePoweredMachinePartManufactureMachine = models().getBuilder("block/redstone_powered_machine_part_manufacture_machine_block");
         modelRedstonePoweredMachinePartManufactureMachine.parent(models().getExistingFile(mcLoc("cube")));
-        modelRedstonePoweredMachinePartManufactureMachine.texture("down", modLoc("block/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_down"));
-        modelRedstonePoweredMachinePartManufactureMachine.texture("up", modLoc("block/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_top"));
-        modelRedstonePoweredMachinePartManufactureMachine.texture("north", modLoc("block/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_block"));
-        modelRedstonePoweredMachinePartManufactureMachine.texture("south", modLoc("block/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_block"));
-        modelRedstonePoweredMachinePartManufactureMachine.texture("east", modLoc("block/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_side"));
-        modelRedstonePoweredMachinePartManufactureMachine.texture("west", modLoc("block/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_side"));
+        modelRedstonePoweredMachinePartManufactureMachine.texture("down", modLoc("block/machine/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_down"));
+        modelRedstonePoweredMachinePartManufactureMachine.texture("up", modLoc("block/machine/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_top"));
+        modelRedstonePoweredMachinePartManufactureMachine.texture("north", modLoc("block/machine/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_block"));
+        modelRedstonePoweredMachinePartManufactureMachine.texture("south", modLoc("block/machine/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_block"));
+        modelRedstonePoweredMachinePartManufactureMachine.texture("east", modLoc("block/machine/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_side"));
+        modelRedstonePoweredMachinePartManufactureMachine.texture("west", modLoc("block/machine/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_side"));
         orientedBlock(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(),
                 state -> modelRedstonePoweredMachinePartManufactureMachine);
     }
@@ -158,12 +222,12 @@ public class DCBlockStateProvider extends BlockStateProvider {
     private void registerBasicPowerCompositeStructureTypeThermalGenerator() {
         BlockModelBuilder modelBasicPowerCompositeStructureTypeThermalGenerator = models().getBuilder("block/basic_power_composite_structure_type_thermal_generator_block");
         modelBasicPowerCompositeStructureTypeThermalGenerator.parent(models().getExistingFile(mcLoc("cube")));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/basic/basic_power_composite_structure_type_thermal_generator/basic_machine_block_side_down"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side_en"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("north", modLoc("block/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_front"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side_en"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side_im"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side_ex"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_machine_block_side_down"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side_en"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("north", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_front"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side_en"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side_im"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side_ex"));
         orientedBlock(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get(),
                 state -> modelBasicPowerCompositeStructureTypeThermalGenerator);
     }
@@ -190,12 +254,12 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthMultiblockStructureFrame.texture("south", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_frame/basic_strength_multiblock_structure_frame_holo_block"));
         registerBasicStrengthMultiblockStructureFrame.texture("east", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_frame/basic_strength_multiblock_structure_frame_holo_block"));
         registerBasicStrengthMultiblockStructureFrame.texture("west", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_frame/basic_strength_multiblock_structure_frame_holo_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(),
+        orientedBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(),
                 state -> registerBasicStrengthMultiblockStructureFrame);
     }
 
     private void registerBasicStrengthMultiblockStructureGlassHolo() {
-        BlockModelBuilder registerBasicStrengthMultiblockStructureGlass = models().getBuilder("block/basic_strength_multiblock_structure_glass_block");
+        BlockModelBuilder registerBasicStrengthMultiblockStructureGlass = models().getBuilder("block/basic_strength_multiblock_structure_glass_holo_block");
         registerBasicStrengthMultiblockStructureGlass.parent(models().getExistingFile(mcLoc("cube")));
         registerBasicStrengthMultiblockStructureGlass.texture("down", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_glass/basic_strength_multiblock_structure_glass_holo_block"));
         registerBasicStrengthMultiblockStructureGlass.texture("up", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_glass/basic_strength_multiblock_structure_glass_holo_block"));
@@ -203,7 +267,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthMultiblockStructureGlass.texture("south", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_glass/basic_strength_multiblock_structure_glass_holo_block"));
         registerBasicStrengthMultiblockStructureGlass.texture("east", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_glass/basic_strength_multiblock_structure_glass_holo_block"));
         registerBasicStrengthMultiblockStructureGlass.texture("west", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_glass/basic_strength_multiblock_structure_glass_holo_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(),
+        orientedBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(),
                 state -> registerBasicStrengthMultiblockStructureGlass);
     }
 
@@ -211,12 +275,12 @@ public class DCBlockStateProvider extends BlockStateProvider {
     private void registerBasicMachineElementProcessor() {
         BlockModelBuilder modelBasicMachineElementProcessor = models().getBuilder("block/basic_machine_element_processor_block");
         modelBasicMachineElementProcessor.parent(models().getExistingFile(mcLoc("cube")));
-        modelBasicMachineElementProcessor.texture("down", modLoc("block/basic/basic_machine_element_processor/basic_machine_block_side_down"));
-        modelBasicMachineElementProcessor.texture("up", modLoc("block/basic/basic_machine_element_processor/basic_machine_element_processor_block_side_energy"));
-        modelBasicMachineElementProcessor.texture("north", modLoc("block/basic/basic_machine_element_processor/basic_machine_element_processor_block_front"));
-        modelBasicMachineElementProcessor.texture("south", modLoc("block/basic/basic_machine_element_processor/basic_machine_element_processor_block_side_energy"));
-        modelBasicMachineElementProcessor.texture("east", modLoc("block/basic/basic_machine_element_processor/basic_machine_element_processor_block_side_import"));
-        modelBasicMachineElementProcessor.texture("west", modLoc("block/basic/basic_machine_element_processor/basic_machine_element_processor_block_side_export"));
+        modelBasicMachineElementProcessor.texture("down", modLoc("block/machine/basic/basic_machine_element_processor/basic_machine_block_side_down"));
+        modelBasicMachineElementProcessor.texture("up", modLoc("block/machine/basic/basic_machine_element_processor/basic_machine_element_processor_block_side_energy"));
+        modelBasicMachineElementProcessor.texture("north", modLoc("block/machine/basic/basic_machine_element_processor/basic_machine_element_processor_block_front"));
+        modelBasicMachineElementProcessor.texture("south", modLoc("block/machine/basic/basic_machine_element_processor/basic_machine_element_processor_block_side_energy"));
+        modelBasicMachineElementProcessor.texture("east", modLoc("block/machine/basic/basic_machine_element_processor/basic_machine_element_processor_block_side_import"));
+        modelBasicMachineElementProcessor.texture("west", modLoc("block/machine/basic/basic_machine_element_processor/basic_machine_element_processor_block_side_export"));
         orientedBlock(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(),
                 state -> modelBasicMachineElementProcessor);
     }
@@ -224,12 +288,12 @@ public class DCBlockStateProvider extends BlockStateProvider {
     private void registerBasicMachineElementProcessorPort() {
         BlockModelBuilder modelBasicMachineElementProcessorPort = models().getBuilder("block/basic_machine_element_processor_port_block");
         modelBasicMachineElementProcessorPort.parent(models().getExistingFile(mcLoc("cube")));
-        modelBasicMachineElementProcessorPort.texture("down", modLoc("block/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"));
-        modelBasicMachineElementProcessorPort.texture("up", modLoc("block/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"));
-        modelBasicMachineElementProcessorPort.texture("north", modLoc("block/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"));
-        modelBasicMachineElementProcessorPort.texture("south", modLoc("block/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"));
-        modelBasicMachineElementProcessorPort.texture("east", modLoc("block/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"));
-        modelBasicMachineElementProcessorPort.texture("west", modLoc("block/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"));
+        modelBasicMachineElementProcessorPort.texture("down", modLoc("block/machine/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"));
+        modelBasicMachineElementProcessorPort.texture("up", modLoc("block/machine/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"));
+        modelBasicMachineElementProcessorPort.texture("north", modLoc("block/machine/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"));
+        modelBasicMachineElementProcessorPort.texture("south", modLoc("block/machine/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"));
+        modelBasicMachineElementProcessorPort.texture("east", modLoc("block/machine/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"));
+        modelBasicMachineElementProcessorPort.texture("west", modLoc("block/machine/basic/basic_machine_element_processor_port/basic_machine_element_processor_port_block"));
         orientedBlock(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(),
                 state -> modelBasicMachineElementProcessorPort);
     }

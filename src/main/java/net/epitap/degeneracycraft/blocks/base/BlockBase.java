@@ -12,6 +12,8 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import javax.annotation.Nullable;
+
 
 public class BlockBase extends Block implements EntityBlock {
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
@@ -48,6 +50,7 @@ public class BlockBase extends Block implements EntityBlock {
         builder.add(FACING);
     }
 
+    @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return null;

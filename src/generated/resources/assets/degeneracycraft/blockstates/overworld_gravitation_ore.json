@@ -1,7 +1,27 @@
 {
   "variants": {
-    "": {
-      "model": "degeneracycraft:block/overworld_gravitation_ore"
+    "facing=down": {
+      "model": "degeneracycraft:block/overworld_gravitation_ore_block",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "degeneracycraft:block/overworld_gravitation_ore_block",
+      "x": -90
+    },
+    "facing=north": {
+      "model": "degeneracycraft:block/overworld_gravitation_ore_block"
+    },
+    "facing=south": {
+      "model": "degeneracycraft:block/overworld_gravitation_ore_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "degeneracycraft:block/overworld_gravitation_ore_block",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "degeneracycraft:block/overworld_gravitation_ore_block",
+      "y": 90
     }
   }
 }

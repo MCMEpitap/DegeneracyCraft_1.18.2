@@ -49,9 +49,11 @@ public class DCBlocks {
             DCCreativeTab.DEGENERACYCRAFT_ORE_TAB);
     public static final TagKey<Block> CASSITERITE_ORE = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(Degeneracycraft.MOD_ID, "cassiterite_ore"));
 
-    public static final RegistryObject<Block> OVERWORLD_GRAVITATION_ORE = registerBlock("overworld_gravitation_ore", () -> new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_ORE_TAB);
+    public static final RegistryObject<Block> OVERWORLD_GRAVITATION_ORE = registerBlock("overworld_gravitation_ore", () -> new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()),
+            DCCreativeTab.DEGENERACYCRAFT_ORE_TAB);
 
-    public static final RegistryObject<Block> REINFORCED_PLANKS = registerBlock("reinforced_planks", () -> new Block(BlockBehaviour.Properties.of(Material.WOOD).strength(4.0f, 10.0f)), DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB);
+    public static final RegistryObject<Block> REINFORCED_PLANKS = registerBlock("reinforced_planks", () -> new BlockBase(BlockBehaviour.Properties.of(Material.WOOD).strength(4.0f, 10.0f)),
+            DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB);
 
 
     public static final RegistryObject<Block> PULVERIZER_BLOCK = registerBlock("pulverizer", () -> new PulverizerBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),

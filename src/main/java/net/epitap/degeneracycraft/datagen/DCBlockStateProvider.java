@@ -21,10 +21,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
     }
     @Override
     protected void registerStatesAndModels() {
-        simpleBlock(DCBlocks.REINFORCED_PLANKS.get());
-
-        simpleBlock(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get());
-        simpleBlock(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get());
+        registerReinforcedPlanks();
 
         registerOverworldGravitationOre();
         registerOverworldCassiteriteOre();
@@ -50,8 +47,22 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthMultiblockStructureGlassHolo();
     }
 
+    private void registerReinforcedPlanks() {
+        BlockModelBuilder modelReinforcedPlanks = models().getBuilder("block/reinforced_planks");
+        modelReinforcedPlanks.parent(models().getExistingFile(mcLoc("cube")));
+        modelReinforcedPlanks.texture("down", modLoc("block/material/basic/common/reinforced_planks"));
+        modelReinforcedPlanks.texture("up", modLoc("block/material/basic/common/reinforced_planks"));
+        modelReinforcedPlanks.texture("north", modLoc("block/material/basic/common/reinforced_planks"));
+        modelReinforcedPlanks.texture("south", modLoc("block/material/basic/common/reinforced_planks"));
+        modelReinforcedPlanks.texture("east", modLoc("block/material/basic/common/reinforced_planks"));
+        modelReinforcedPlanks.texture("west", modLoc("block/material/basic/common/reinforced_planks"));
+        orientedBlock(DCBlocks.REINFORCED_PLANKS.get(),
+                state -> modelReinforcedPlanks);
+    }
+
+
     private void registerOverworldGravitationOre() {
-        BlockModelBuilder modelOverworldGravitationOre = models().getBuilder("block/overorld_gravitation_ore_block");
+        BlockModelBuilder modelOverworldGravitationOre = models().getBuilder("block/overworld_gravitation_ore_block");
         modelOverworldGravitationOre.parent(models().getExistingFile(mcLoc("cube")));
         modelOverworldGravitationOre.texture("down", modLoc("block/ore/gravitation_ore/overworld_gravitation_ore"));
         modelOverworldGravitationOre.texture("up", modLoc("block/ore/gravitation_ore/overworld_gravitation_ore"));

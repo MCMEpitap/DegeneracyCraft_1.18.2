@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "degeneracycraft:block/low_strength_multiblock_structure_glass_block"
-  }
-}

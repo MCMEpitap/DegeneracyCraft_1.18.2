@@ -1,6 +1,11 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "all": "degeneracycraft:block/reinforced_planks"
+    "down": "degeneracycraft:block/material/basic/common/reinforced_planks",
+    "up": "degeneracycraft:block/material/basic/common/reinforced_planks",
+    "north": "degeneracycraft:block/material/basic/common/reinforced_planks",
+    "south": "degeneracycraft:block/material/basic/common/reinforced_planks",
+    "east": "degeneracycraft:block/material/basic/common/reinforced_planks",
+    "west": "degeneracycraft:block/material/basic/common/reinforced_planks"
   }
 }

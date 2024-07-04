@@ -634,10 +634,11 @@ public class DCItemModelProvider extends ItemModelProvider {
 
         simpleItem(DCItems.RAW_GRAVITATION_ORE.get());
 
-        withExistingParent(DCBlocks.OVERWORLD_GRAVITATION_ORE.getId().getPath(),
-                modLoc("block/overworld_gravitation_ore"));
+
         withExistingParent(DCBlocks.REINFORCED_PLANKS.getId().getPath(),
                 modLoc("block/reinforced_planks"));
+        withExistingParent(DCBlocks.OVERWORLD_GRAVITATION_ORE.getId().getPath(),
+                modLoc("block/overworld_gravitation_ore_block"));
 
         withExistingParent(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.getId().getPath(),
                 modLoc("block/redstone_powered_machine_element_manufacture_machine_block"));
@@ -670,10 +671,10 @@ public class DCItemModelProvider extends ItemModelProvider {
 
 //        withExistingParent(DCBlocks.LOW_STERNGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.getId().getPath(),
 //                modLoc("block/low_strength_multiblock_machine_frame_block"));
-        withExistingParent(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.getId().getPath(),
-                modLoc("block/low_strength_multiblock_structure_frame_block"));
-        withExistingParent(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.getId().getPath(),
-                modLoc("block/low_strength_multiblock_structure_glass_block"));
+//        withExistingParent(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.getId().getPath(),
+//                modLoc("block/low_strength_multiblock_structure_frame_block"));
+//        withExistingParent(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.getId().getPath(),
+//                modLoc("block/low_strength_multiblock_structure_glass_block"));
 //
 //        withExistingParent(DCBlocks.TEST.getId().getPath(),
 //                modLoc("block/test"));

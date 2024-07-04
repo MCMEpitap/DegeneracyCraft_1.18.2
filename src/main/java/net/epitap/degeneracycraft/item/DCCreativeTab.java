@@ -38,6 +38,12 @@ public class DCCreativeTab {
             return new ItemStack(DCItems.BASIC_PRECISION_CAM_INSCRIBED_CIRCUIT.get());
         }
     };
+    public static final CreativeModeTab DEGENERACYCRAFT_INGOT_TAB = new CreativeModeTab("degeneracycraft_ingot") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(DCItems.GRAVITATION_INGOT.get());
+        }
+    };
 
     public static final CreativeModeTab DEGENERACYCRAFT_MACHINE_TAB = new CreativeModeTab("degeneracycraft_machine") {
         @Override

@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/ore/gravitation_ore/overworld_gravitation_ore",
+    "up": "degeneracycraft:block/ore/gravitation_ore/overworld_gravitation_ore",
+    "north": "degeneracycraft:block/ore/gravitation_ore/overworld_gravitation_ore",
+    "south": "degeneracycraft:block/ore/gravitation_ore/overworld_gravitation_ore",
+    "east": "degeneracycraft:block/ore/gravitation_ore/overworld_gravitation_ore",
+    "west": "degeneracycraft:block/ore/gravitation_ore/overworld_gravitation_ore"
+  }
+}

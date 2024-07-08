@@ -1,8 +1,8 @@
-package net.epitap.degeneracycraft.datagen;
+package net.epitap.degeneracycraft.datagen.loot;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.datafixers.util.Pair;
-import net.epitap.degeneracycraft.datagen.loot.DCBlockLootTable;
+import net.epitap.degeneracycraft.datagen.DCBlockLootTableProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -20,7 +20,7 @@ import java.util.function.Supplier;
 
 public class DCLootTableProvider extends LootTableProvider {
     private final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>>
-            loot_tables = ImmutableList.of(Pair.of(DCBlockLootTable::new, LootContextParamSets.BLOCK));
+            loot_tables = ImmutableList.of(Pair.of(DCBlockLootTableProvider::new, LootContextParamSets.BLOCK));
 
     public DCLootTableProvider(DataGenerator pGenerator) {
         super(pGenerator);

@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei.basic;
+package net.epitap.degeneracycraft.integration.jei.basic.basic_machine_element_processor;
 
 import com.google.gson.JsonObject;
 import net.epitap.degeneracycraft.Degeneracycraft;

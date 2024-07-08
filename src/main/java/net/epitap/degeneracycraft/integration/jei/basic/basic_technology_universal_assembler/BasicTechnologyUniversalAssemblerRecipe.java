@@ -209,7 +209,6 @@ public class BasicTechnologyUniversalAssemblerRecipe implements Recipe<SimpleCon
             pBuffer.writeItem(pRecipe.input7.getContainerItem());
             pBuffer.writeItem(pRecipe.input8.getContainerItem());
             pBuffer.writeItem(pRecipe.output0.getContainerItem());
-
         }
     }
 }

@@ -2,11 +2,10 @@ package net.epitap.degeneracycraft.blocks.machine.basic.basic_technology_univers
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
-import net.epitap.degeneracycraft.blocks.machine.basic.basic_power_composite_structure_type_thermal_generator.BasicPowerCompositeStructureTypeThermalGeneratorBlock;
 import net.epitap.degeneracycraft.dcenum.MBPPos;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.BasicMachineElementProcessorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.basic_machine_element_processor.BasicMachineElementProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.test.BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure;
 import net.epitap.degeneracycraft.item.DCItems;
@@ -138,7 +137,7 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
     }
 
     @Override
-    public <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @javax.annotation.Nullable Direction side) {
+    public <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
         if (cap == CapabilityEnergy.ENERGY && (side == Direction.UP || side == Direction.DOWN || side == Direction.NORTH)) {
             return lazyEnergyHandler.cast();
         } else if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
@@ -146,7 +145,7 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
                 return lazyItemHandler.cast();
             }
             if (directionWrappedHandlerMap.containsKey(side)) {
-                Direction localDir = this.getBlockState().getValue(BasicPowerCompositeStructureTypeThermalGeneratorBlock.FACING);
+                Direction localDir = this.getBlockState().getValue(BasicTechnologyUniversalAssemblerBlock.FACING);
 
                 if (side == Direction.UP || side == Direction.DOWN) {
                     return directionWrappedHandlerMap.get(side).cast();
@@ -370,7 +369,7 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
     }
 
     public boolean isFormed0(Level level, BlockPos pos, BlockState state) {
-        Direction dir = state.getValue(BasicPowerCompositeStructureTypeThermalGeneratorBlock.FACING);
+        Direction dir = state.getValue(BasicTechnologyUniversalAssemblerBlock.FACING);
         BlockPos blockpos = new BlockPos(this.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
@@ -405,7 +404,7 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
     }
 
     public boolean isFormed1(Level level, BlockPos pos, BlockState state) {
-        Direction dir = state.getValue(BasicPowerCompositeStructureTypeThermalGeneratorBlock.FACING);
+        Direction dir = state.getValue(BasicTechnologyUniversalAssemblerBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(this.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -440,7 +439,7 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
     }
 
     public boolean isFormed2(Level level, BlockPos pos, BlockState state) {
-        Direction dir = state.getValue(BasicPowerCompositeStructureTypeThermalGeneratorBlock.FACING);
+        Direction dir = state.getValue(BasicTechnologyUniversalAssemblerBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(this.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -462,7 +461,7 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
     }
 
     public void hologram(Level level, BlockPos pos, BlockState state, BasicTechnologyUniversalAssemblerBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPowerCompositeStructureTypeThermalGeneratorBlock.FACING);
+        Direction dir = state.getValue(BasicTechnologyUniversalAssemblerBlock.FACING);
         BlockPos blockpos = new BlockPos(this.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;

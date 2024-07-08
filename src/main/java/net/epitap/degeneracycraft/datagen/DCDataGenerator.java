@@ -1,10 +1,8 @@
 package net.epitap.degeneracycraft.datagen;
 
-import com.blakebr0.cucumber.inventory.BaseItemStackHandler;
 import net.epitap.degeneracycraft.Degeneracycraft;
+import net.epitap.degeneracycraft.datagen.loot.DCLootTableProvider;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.DataProvider;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

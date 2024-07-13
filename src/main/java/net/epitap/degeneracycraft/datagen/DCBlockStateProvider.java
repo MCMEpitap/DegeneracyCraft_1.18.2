@@ -273,12 +273,12 @@ public class DCBlockStateProvider extends BlockStateProvider {
     private void registerBasicPowerCompositeStructureTypeThermalGenerator() {
         BlockModelBuilder modelBasicPowerCompositeStructureTypeThermalGenerator = models().getBuilder("block/basic_power_composite_structure_type_thermal_generator_block");
         modelBasicPowerCompositeStructureTypeThermalGenerator.parent(models().getExistingFile(mcLoc("cube")));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_machine_block_side_down"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side_energy"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_down"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_up"));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("north", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_front"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side_energy"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side_import"));
-        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side_export"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side"));
         orientedBlock(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get(),
                 state -> modelBasicPowerCompositeStructureTypeThermalGenerator);
     }
@@ -286,12 +286,12 @@ public class DCBlockStateProvider extends BlockStateProvider {
     private void registerBasicTechnologyUniversalAssembler() {
         BlockModelBuilder modelBasicMachineElementProcessor = models().getBuilder("block/basic_technology_universal_assembler_block");
         modelBasicMachineElementProcessor.parent(models().getExistingFile(mcLoc("cube")));
-        modelBasicMachineElementProcessor.texture("down", modLoc("block/machine/basic/basic_technology_universal_assembler/basic_technology_universal_assembler_side_energy"));
-        modelBasicMachineElementProcessor.texture("up", modLoc("block/machine/basic/basic_technology_universal_assembler/basic_technology_universal_assembler_side_energy"));
+        modelBasicMachineElementProcessor.texture("down", modLoc("block/machine/basic/basic_technology_universal_assembler/basic_technology_universal_assembler_up"));
+        modelBasicMachineElementProcessor.texture("up", modLoc("block/machine/basic/basic_technology_universal_assembler/basic_technology_universal_assembler_down"));
         modelBasicMachineElementProcessor.texture("north", modLoc("block/machine/basic/basic_technology_universal_assembler/basic_technology_universal_assembler_front"));
-        modelBasicMachineElementProcessor.texture("south", modLoc("block/machine/basic/basic_technology_universal_assembler/basic_technology_universal_assembler_side_energy"));
-        modelBasicMachineElementProcessor.texture("east", modLoc("block/machine/basic/basic_technology_universal_assembler/basic_technology_universal_assembler_side_import"));
-        modelBasicMachineElementProcessor.texture("west", modLoc("block/machine/basic/basic_technology_universal_assembler/basic_technology_universal_assembler_side_export"));
+        modelBasicMachineElementProcessor.texture("south", modLoc("block/machine/basic/basic_technology_universal_assembler/basic_technology_universal_assembler_side"));
+        modelBasicMachineElementProcessor.texture("east", modLoc("block/machine/basic/basic_technology_universal_assembler/basic_technology_universal_assembler_side"));
+        modelBasicMachineElementProcessor.texture("west", modLoc("block/machine/basic/basic_technology_universal_assembler/basic_technology_universal_assembler_side"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get(),
                 state -> modelBasicMachineElementProcessor);
     }

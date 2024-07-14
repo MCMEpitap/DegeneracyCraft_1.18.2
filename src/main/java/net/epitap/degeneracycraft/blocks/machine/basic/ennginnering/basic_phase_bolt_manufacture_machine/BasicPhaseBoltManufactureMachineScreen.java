@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.basic_phase_bolt_manufacture_machine;
+package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_phase_bolt_manufacture_machine;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;

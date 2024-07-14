@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.basic_power_composite_structure_type_thermal_generator;
+package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_composite_structure_type_thermal_generator;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;

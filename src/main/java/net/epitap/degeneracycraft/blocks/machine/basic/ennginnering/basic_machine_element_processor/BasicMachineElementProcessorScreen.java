@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.basic_machine_element_processor;
+package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_machine_element_processor;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;

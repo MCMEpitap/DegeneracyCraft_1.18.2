@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.basic_technology_universal_assembler;
+package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_universal_assembler;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;

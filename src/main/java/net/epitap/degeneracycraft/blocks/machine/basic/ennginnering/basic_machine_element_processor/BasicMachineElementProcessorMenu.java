@@ -1,7 +1,8 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.basic_phase_bolt_manufacture_machine;
+package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_machine_element_processor;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
+import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -11,32 +12,43 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
-public class BasicPhaseBoltManufactureMachineMenu extends AbstractContainerMenu {
-    public final BasicPhaseBoltManufactureMachineBlockEntity blockEntity;
-    private final Level level;
-    private final ContainerData data;
 
-    public BasicPhaseBoltManufactureMachineMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+public class BasicMachineElementProcessorMenu extends AbstractContainerMenu {
+    private static final int HOTBAR_SLOT_COUNT = 9;
+    private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
+    private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
+    private static final int VANILLA_FIRST_SLOT_INDEX = 0;
+    private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
+    private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
+    private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
+    private static final int TE_INVENTORY_SLOT_COUNT = 12;
+    public final BasicMachineElementProcessorBlockEntity blockEntity;
+    public final Level level;
+    public final ContainerData data;
+
+    public BasicMachineElementProcessorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
         this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
 
-    public BasicPhaseBoltManufactureMachineMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_MENU.get(), id);
-        checkContainerSize(inv, 4);
-        blockEntity = (BasicPhaseBoltManufactureMachineBlockEntity) entity;
+    public BasicMachineElementProcessorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(DCMenuTypes.BASIC_MACHINE_ELEMENT_PROCESSOR_MACHINE_MENU.get(), id);
+        blockEntity = (BasicMachineElementProcessorBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
-
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler, 0, 12, 15));
-            this.addSlot(new SlotItemHandler(handler, 1, 86, 15));
-            this.addSlot(new SlotItemHandler(handler, 2, 86, 60));
-            this.addSlot(new SlotItemHandler(handler, 3, 112, 60));
-        });
+            for (int i = 0; i < 3; ++i) {
+                for (int l = 0; l < 3; ++l) {
+                    this.addSlot(new SlotItemHandler(handler, (l + i * 3), 8 + l * 18, 7 + i * 18));
+                }
+            }
+            this.addSlot(new SlotItemHandler(handler, 9, 116, 25));
+            this.addSlot(new SlotItemHandler(handler, 10, 71, 59));
+            this.addSlot(new SlotItemHandler(handler, 11, 98, 62));
 
+        });
         addDataSlots(data);
     }
 
@@ -44,24 +56,17 @@ public class BasicPhaseBoltManufactureMachineMenu extends AbstractContainerMenu 
         return data.get(0) > 0;
     }
 
-    public int getScaledProgress() {
-        int progress = this.data.get(0);
-        int maxProgress = this.data.get(1);  // Max Progress
-        int progressArrowSize = 26; // This is the height in pixels of your arrow
-
-        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+    public float getProgressPercent() {
+        return blockEntity.getProgressPercent();
     }
 
-    private static final int HOTBAR_SLOT_COUNT = 9;
-    private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
-    private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
-    private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
-    private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
-    private static final int VANILLA_FIRST_SLOT_INDEX = 0;
-    private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
+    public DCIEnergyStorageFloat getEnergy() {
+        return blockEntity.getEnergyStorage();
+    }
 
-    // THIS YOU HAVE TO DEFINE!
-    private static final int TE_INVENTORY_SLOT_COUNT = 4;  // must be the number of slots you have!
+    public BasicMachineElementProcessorBlockEntity getBlockEntity() {
+        return this.blockEntity;
+    }
 
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {
@@ -99,20 +104,20 @@ public class BasicPhaseBoltManufactureMachineMenu extends AbstractContainerMenu 
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, DCBlocks.BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_BLOCK.get());
+                player, DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 86 + i * 18));
+                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 84 + i * 18));
             }
         }
     }
 
     private void addPlayerHotbar(Inventory playerInventory) {
         for (int i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 144));
+            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
     }
 }

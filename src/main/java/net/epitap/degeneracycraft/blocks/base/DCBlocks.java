@@ -6,6 +6,7 @@ import net.epitap.degeneracycraft.blocks.block.machine.PulverizerBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_machine_element_processor.BasicMachineElementProcessorBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_composite_structure_type_thermal_generator.BasicPowerCompositeStructureTypeThermalGeneratorBlock;
+import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerBlock;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlock;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineBlock;
@@ -113,8 +114,8 @@ public class DCBlocks {
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK = registerBlock("basic_technology_universal_assembler_block", () ->
             new BasicTechnologyUniversalAssemblerBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
 
-//    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_MANUFACTURING_MACHINE_BLOCK = registerBlock("basic_technology_universal_assembler_block", () ->
-//            new BasicTechnologyUniversalAssemblerBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK = registerBlock("basic_technology_machine_manufacturer_block", () ->
+            new BasicTechnologyMachineManufacturerBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
 
     public static final RegistryObject<Block> BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK = registerBlock("basic_machine_element_processor_block", () ->
             new BasicMachineElementProcessorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);

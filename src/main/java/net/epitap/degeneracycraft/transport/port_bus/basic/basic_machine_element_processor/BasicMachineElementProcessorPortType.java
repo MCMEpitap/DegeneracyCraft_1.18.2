@@ -1,9 +1,9 @@
 package net.epitap.degeneracycraft.transport.port_bus.basic.basic_machine_element_processor;
 
 import net.epitap.degeneracycraft.item.DCItems;
-import net.epitap.degeneracycraft.transport.port_bus.portbase.PortBlockEntityBase;
-import net.epitap.degeneracycraft.transport.port_bus.portbase.PortTypeBase;
-import net.epitap.degeneracycraft.transport.port_bus.portbase.PortWorkBlockEntity;
+import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortBlockEntityBase;
+import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortTypeBase;
+import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortWorkBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.Item;

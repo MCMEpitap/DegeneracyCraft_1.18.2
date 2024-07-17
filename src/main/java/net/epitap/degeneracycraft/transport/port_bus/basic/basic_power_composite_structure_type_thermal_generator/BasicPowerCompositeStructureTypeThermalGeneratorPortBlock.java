@@ -1,7 +1,7 @@
 package net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
-import net.epitap.degeneracycraft.transport.port_bus.portbase.PortBlockBase;
+import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortBlockBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;

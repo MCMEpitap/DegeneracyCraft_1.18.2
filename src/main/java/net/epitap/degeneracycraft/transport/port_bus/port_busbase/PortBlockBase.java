@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.port_bus.portbase;
+package net.epitap.degeneracycraft.transport.port_bus.port_busbase;
 
 import net.epitap.degeneracycraft.item.DCCreativeTab;
 import net.epitap.degeneracycraft.item.tool.WrenchItem;

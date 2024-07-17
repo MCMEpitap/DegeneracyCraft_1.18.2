@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.port_bus.portbase;
+package net.epitap.degeneracycraft.transport.port_bus.port_busbase;
 
 import net.epitap.degeneracycraft.transport.parametor.GettingDirection;
 import net.epitap.degeneracycraft.transport.parametor.ITickBlockEntity;

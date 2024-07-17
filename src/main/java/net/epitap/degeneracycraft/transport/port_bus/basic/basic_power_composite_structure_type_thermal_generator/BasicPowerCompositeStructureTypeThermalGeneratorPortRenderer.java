@@ -1,6 +1,6 @@
 package net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator;
 
-import net.epitap.degeneracycraft.transport.port_bus.portbase.PortRendererBase;
+import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortRendererBase;
 import net.epitap.degeneracycraft.transport.port_bus.render.PortModelRegistry;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 

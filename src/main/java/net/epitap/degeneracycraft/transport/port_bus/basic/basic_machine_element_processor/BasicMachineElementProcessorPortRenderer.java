@@ -1,6 +1,6 @@
 package net.epitap.degeneracycraft.transport.port_bus.basic.basic_machine_element_processor;
 
-import net.epitap.degeneracycraft.transport.port_bus.portbase.PortRendererBase;
+import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortRendererBase;
 import net.epitap.degeneracycraft.transport.port_bus.render.PortModelRegistry;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 

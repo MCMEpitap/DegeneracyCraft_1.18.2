@@ -1,7 +1,9 @@
-package net.epitap.degeneracycraft.transport.port_bus.portbase;
+package net.epitap.degeneracycraft.transport.port_bus.port_busbase;
 
 import net.epitap.degeneracycraft.transport.parametor.PipeItemHandler;
 import net.epitap.degeneracycraft.transport.parametor.PipeSetLazyOptional;
+import net.epitap.degeneracycraft.transport.pipe.energy.PipeFloatEnergyStorage;
+import net.epitap.degeneracycraft.transport.pipe.energy.PipeIntEnergyStorage;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_machine_element_processor.BasicMachineElementProcessorPortType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.BasicPowerCompositeStructureTypeThermalGeneratorPortType;
 import net.minecraft.core.BlockPos;
@@ -25,8 +27,8 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
     protected PortTypeBase<?>[] portType;
     protected final int[][] index;
     protected PipeSetLazyOptional<PipeItemHandler> itemStored;
-    //    protected PortSetLazyOptional<PortIntEnergyStorage> intEnergyStored;
-//    protected PortSetLazyOptional<PortFloatEnergyStorage> floatEnergyStored;
+    protected PipeSetLazyOptional<PipeIntEnergyStorage> intEnergyStored;
+    protected PipeSetLazyOptional<PipeFloatEnergyStorage> floatEnergyStored;
     private int recursionDepth;
 
     public PortWorkBlockEntity(BlockEntityType<?> blockEntityType, PortTypeBase<?>[] portType, BlockPos pos, BlockState state) {
@@ -34,8 +36,8 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         this.portType = portType;
         index = new int[Direction.values().length][portType.length];
         itemStored = new PipeSetLazyOptional<>();
-//        intEnergyStored = new PortSetLazyOptional<>();
-//        floatEnergyStored = new PortSetLazyOptional<>();
+        intEnergyStored = new PipeSetLazyOptional<>();
+        floatEnergyStored = new PipeSetLazyOptional<>();
     }
 
     @Nonnull
@@ -137,8 +139,8 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
     @Override
     public void setRemoved() {
-//        intEnergyStored.invalidate();
-//        floatEnergyStored.invalidate();
+        intEnergyStored.invalidate();
+        floatEnergyStored.invalidate();
         itemStored.invalidate();
         super.setRemoved();
     }

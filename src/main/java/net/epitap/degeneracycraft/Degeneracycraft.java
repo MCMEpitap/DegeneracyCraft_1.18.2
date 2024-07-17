@@ -24,7 +24,7 @@ import net.epitap.degeneracycraft.transport.pipe.blocks.PipeBlockClickEvent;
 import net.epitap.degeneracycraft.transport.pipe.blocks.PipeBlocks;
 import net.epitap.degeneracycraft.transport.pipe.entities.PipeBlockEntities;
 import net.epitap.degeneracycraft.transport.pipe.render.PipeModelRegistry;
-import net.epitap.degeneracycraft.transport.port_bus.portbase.PortBlockClickEvent;
+import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortBlockClickEvent;
 import net.epitap.degeneracycraft.transport.port_bus.render.PortModelRegistry;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;

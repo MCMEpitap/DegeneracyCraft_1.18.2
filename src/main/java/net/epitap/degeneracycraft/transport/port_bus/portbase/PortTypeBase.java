@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.port.portbase;
+package net.epitap.degeneracycraft.transport.port_bus.portbase;
 
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;

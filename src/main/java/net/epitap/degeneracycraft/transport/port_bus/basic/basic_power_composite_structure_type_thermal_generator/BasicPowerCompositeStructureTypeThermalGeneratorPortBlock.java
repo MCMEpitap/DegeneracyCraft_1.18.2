@@ -1,7 +1,7 @@
-package net.epitap.degeneracycraft.transport.port.basic.basic_machine_element_processor;
+package net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
-import net.epitap.degeneracycraft.transport.port.portbase.PortBlockBase;
+import net.epitap.degeneracycraft.transport.port_bus.portbase.PortBlockBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -14,9 +14,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.items.CapabilityItemHandler;
 
-public class BasicMachineElementProcessorPortBlock extends PortBlockBase {
+public class BasicPowerCompositeStructureTypeThermalGeneratorPortBlock extends PortBlockBase {
 
-    public BasicMachineElementProcessorPortBlock(Properties properties) {
+    public BasicPowerCompositeStructureTypeThermalGeneratorPortBlock(Properties properties) {
         super(properties);
     }
 
@@ -24,7 +24,7 @@ public class BasicMachineElementProcessorPortBlock extends PortBlockBase {
     public boolean enabledConnectTo(LevelAccessor world, BlockPos pos, Direction facing) {
         BlockEntity blockEntity = world.getBlockEntity(pos.relative(facing));
         return (blockEntity != null && (blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, facing.getOpposite()).isPresent()
-                || blockEntity.getBlockState().is(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get())));
+                || blockEntity.getBlockState().is(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get())));
     }
 
     @Override
@@ -36,13 +36,13 @@ public class BasicMachineElementProcessorPortBlock extends PortBlockBase {
 
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new BasicMachineElementProcessorPortBlockEntity(pos, state);
+        return new BasicPowerCompositeStructureTypeThermalGeneratorPortBlockEntity(pos, state);
     }
 
     @Override
     public InteractionResult portSideLaunch(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, Direction direction) {
         BlockEntity blockentity = level.getBlockEntity(pos);
-        if ((blockentity instanceof BasicMachineElementProcessorPortBlockEntity) && portExtracting(level, pos, direction)) {
+        if ((blockentity instanceof BasicPowerCompositeStructureTypeThermalGeneratorPortBlockEntity) && portExtracting(level, pos, direction)) {
             if (level.isClientSide) {
                 return InteractionResult.SUCCESS;
             }

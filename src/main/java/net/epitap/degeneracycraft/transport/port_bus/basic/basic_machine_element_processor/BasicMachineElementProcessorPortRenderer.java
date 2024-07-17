@@ -1,7 +1,7 @@
-package net.epitap.degeneracycraft.transport.port.basic.basic_machine_element_processor;
+package net.epitap.degeneracycraft.transport.port_bus.basic.basic_machine_element_processor;
 
-import net.epitap.degeneracycraft.transport.port.portbase.PortRendererBase;
-import net.epitap.degeneracycraft.transport.port.render.PortModelRegistry;
+import net.epitap.degeneracycraft.transport.port_bus.portbase.PortRendererBase;
+import net.epitap.degeneracycraft.transport.port_bus.render.PortModelRegistry;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 
 public class BasicMachineElementProcessorPortRenderer extends PortRendererBase {

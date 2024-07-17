@@ -1,11 +1,11 @@
 package net.epitap.degeneracycraft.transport.port_bus.port_busbase;
 
+import net.epitap.degeneracycraft.transport.parametor.PipeFloatEnergyStorage;
+import net.epitap.degeneracycraft.transport.parametor.PipeIntEnergyStorage;
 import net.epitap.degeneracycraft.transport.parametor.PipeItemHandler;
 import net.epitap.degeneracycraft.transport.parametor.PipeSetLazyOptional;
-import net.epitap.degeneracycraft.transport.pipe.energy.PipeFloatEnergyStorage;
-import net.epitap.degeneracycraft.transport.pipe.energy.PipeIntEnergyStorage;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_machine_element_processor.BasicMachineElementProcessorPortType;
-import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.BasicPowerCompositeStructureTypeThermalGeneratorPortType;
+import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.port.BasicPowerCompositeStructureTypeThermalGeneratorPortType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;

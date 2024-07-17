@@ -1,5 +1,6 @@
-package net.epitap.degeneracycraft.transport.pipe.energy;
+package net.epitap.degeneracycraft.transport.parametor;
 
+import net.epitap.degeneracycraft.transport.pipe.energy.BasicEnergyPipeType;
 import net.epitap.degeneracycraft.transport.pipe.entities.PipeWorkBlockEntity;
 import net.minecraft.core.Direction;
 import net.minecraftforge.energy.IEnergyStorage;

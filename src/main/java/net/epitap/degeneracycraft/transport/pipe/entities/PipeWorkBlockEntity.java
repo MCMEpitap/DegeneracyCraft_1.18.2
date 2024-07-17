@@ -1,11 +1,11 @@
 package net.epitap.degeneracycraft.transport.pipe.entities;
 
+import net.epitap.degeneracycraft.transport.parametor.PipeFloatEnergyStorage;
+import net.epitap.degeneracycraft.transport.parametor.PipeIntEnergyStorage;
 import net.epitap.degeneracycraft.transport.parametor.PipeItemHandler;
 import net.epitap.degeneracycraft.transport.parametor.PipeSetLazyOptional;
 import net.epitap.degeneracycraft.transport.pipe.basic.BasicItemPipeType;
 import net.epitap.degeneracycraft.transport.pipe.energy.BasicEnergyPipeType;
-import net.epitap.degeneracycraft.transport.pipe.energy.PipeFloatEnergyStorage;
-import net.epitap.degeneracycraft.transport.pipe.energy.PipeIntEnergyStorage;
 import net.epitap.degeneracycraft.transport.pipe.energy.floa.FloatEnergyPipeType;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeBlockEntityBase;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeTypeBase;

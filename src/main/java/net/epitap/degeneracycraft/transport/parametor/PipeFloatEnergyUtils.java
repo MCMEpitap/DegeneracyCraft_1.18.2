@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.pipe.energy;
+package net.epitap.degeneracycraft.transport.parametor;
 
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.minecraft.core.BlockPos;

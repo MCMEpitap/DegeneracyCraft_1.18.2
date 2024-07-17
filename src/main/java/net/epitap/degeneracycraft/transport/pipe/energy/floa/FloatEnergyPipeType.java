@@ -1,8 +1,8 @@
 package net.epitap.degeneracycraft.transport.pipe.energy.floa;
 
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
+import net.epitap.degeneracycraft.transport.parametor.PipeFloatEnergyUtils;
 import net.epitap.degeneracycraft.transport.pipe.blocks.PipeBlocks;
-import net.epitap.degeneracycraft.transport.pipe.energy.PipeFloatEnergyUtils;
 import net.epitap.degeneracycraft.transport.pipe.entities.PipeWorkBlockEntity;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeBlockEntityBase;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeTypeBase;

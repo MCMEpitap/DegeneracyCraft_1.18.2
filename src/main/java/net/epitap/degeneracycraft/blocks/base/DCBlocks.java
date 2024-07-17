@@ -16,7 +16,7 @@ import net.epitap.degeneracycraft.blocks.storage.basic.materialstorage.basic_str
 import net.epitap.degeneracycraft.item.DCCreativeTab;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_machine_element_processor.BasicMachineElementProcessorPortBlock;
-import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.BasicPowerCompositeStructureTypeThermalGeneratorPortBlock;
+import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.port.BasicPowerCompositeStructureTypeThermalGeneratorPortBlock;
 import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;

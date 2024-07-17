@@ -1,10 +1,8 @@
-package net.epitap.degeneracycraft.transport.pipe.energy;
+package net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.bus;
 
-import net.epitap.degeneracycraft.Degeneracycraft;
-import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeBlockBase;
+import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortBlockBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -15,9 +13,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.energy.CapabilityEnergy;
 
-public class BasicEnergyPipeBlock extends PipeBlockBase {
-    protected BasicEnergyPipeBlock() {
-        this.setRegistryName(new ResourceLocation(Degeneracycraft.MOD_ID,"basic_energy_pipe"));
+public class BasicPowerCompositeStructureTypeThermalGeneratorBusBlock extends PortBlockBase {
+    public BasicPowerCompositeStructureTypeThermalGeneratorBusBlock(Properties properties) {
+        super(properties);
     }
 
     public boolean enabledConnectTo(LevelAccessor world, BlockPos pos, Direction facing) {
@@ -25,23 +23,23 @@ public class BasicEnergyPipeBlock extends PipeBlockBase {
         return blockEntity != null && blockEntity.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).isPresent();
     }
 
-    public boolean judgePipe(LevelAccessor world, BlockPos pos, Direction facing) {
+    public boolean judgePort(LevelAccessor world, BlockPos pos, Direction facing) {
         BlockState state = world.getBlockState(pos.relative(facing));
         return state.getBlock().equals(this);
     }
 
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new BasicEnergyPipeBlockEntity(pos, state);
+        return new BasicPowerCompositeStructureTypeThermalGeneratorBusBlockEntity(pos, state);
     }
 
     public InteractionResult pipeSideLaunch(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, Direction facing) {
         BlockEntity blockentity = world.getBlockEntity(pos);
-        if (blockentity instanceof BasicEnergyPipeBlockEntity && this.pipeExtracting(world, pos, facing)) {
+        if (blockentity instanceof BasicPowerCompositeStructureTypeThermalGeneratorBusBlockEntity && this.portExtracting(world, pos, facing)) {
             if (world.isClientSide) {
                 return InteractionResult.SUCCESS;
             }
             return InteractionResult.SUCCESS;
         }
-        return super.pipeSideLaunch(state, world, pos, player, hand, hit, facing);
+        return super.portSideLaunch(state, world, pos, player, hand, hit, facing);
     }
 }

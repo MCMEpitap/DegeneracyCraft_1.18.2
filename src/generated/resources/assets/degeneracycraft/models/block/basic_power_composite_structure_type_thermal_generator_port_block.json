@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/basic_power_composite_structure_type_thermal_generator_port/basic_power_composite_structure_type_thermal_generator_port_block",
+    "up": "degeneracycraft:block/machine/basic/basic_power_composite_structure_type_thermal_generator_port/basic_power_composite_structure_type_thermal_generator_port_block",
+    "north": "degeneracycraft:block/machine/basic/basic_power_composite_structure_type_thermal_generator_port/basic_power_composite_structure_type_thermal_generator_port_block",
+    "south": "degeneracycraft:block/machine/basic/basic_power_composite_structure_type_thermal_generator_port/basic_power_composite_structure_type_thermal_generator_port_block",
+    "east": "degeneracycraft:block/machine/basic/basic_power_composite_structure_type_thermal_generator_port/basic_power_composite_structure_type_thermal_generator_port_block",
+    "west": "degeneracycraft:block/machine/basic/basic_power_composite_structure_type_thermal_generator_port/basic_power_composite_structure_type_thermal_generator_port_block"
+  }
+}

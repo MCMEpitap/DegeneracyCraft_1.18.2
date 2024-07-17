@@ -681,6 +681,9 @@ public class DCItemModelProvider extends ItemModelProvider {
 //
         withExistingParent(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.getId().getPath(),
                 modLoc("block/basic_power_composite_structure_type_thermal_generator_block"));
+        withExistingParent(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_power_composite_structure_type_thermal_generator_port_block"));
+
 
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_universal_assembler_block"));

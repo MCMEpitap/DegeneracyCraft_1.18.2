@@ -1,6 +1,5 @@
 package net.epitap.degeneracycraft.transport.port.portbase;
 
-import net.epitap.degeneracycraft.transport.port.entities.PortWorkBlockEntity;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;

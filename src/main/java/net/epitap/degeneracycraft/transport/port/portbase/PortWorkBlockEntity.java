@@ -1,10 +1,9 @@
-package net.epitap.degeneracycraft.transport.port.entities;
+package net.epitap.degeneracycraft.transport.port.portbase;
 
 import net.epitap.degeneracycraft.transport.parametor.PipeItemHandler;
 import net.epitap.degeneracycraft.transport.parametor.PipeSetLazyOptional;
 import net.epitap.degeneracycraft.transport.port.basic.basic_machine_element_processor.BasicMachineElementProcessorPortType;
-import net.epitap.degeneracycraft.transport.port.portbase.PortBlockEntityBase;
-import net.epitap.degeneracycraft.transport.port.portbase.PortTypeBase;
+import net.epitap.degeneracycraft.transport.port.basic.basic_power_composite_structure_type_thermal_generator.BasicPowerCompositeStructureTypeThermalGeneratorPortType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -45,7 +44,11 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (remove) {
             return super.getCapability(cap, side);
         }
-        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicMachineElementProcessorPortType.INSTANCE)) {
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPowerCompositeStructureTypeThermalGeneratorPortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        } else if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicMachineElementProcessorPortType.INSTANCE)) {
             if (side != null) {
                 return itemStored.get(side).cast();
             }
@@ -100,6 +103,11 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
     @Override
     public void setPortExtracting(Direction side, boolean extracting) {
         super.setPortExtracting(side, extracting);
+        if (hasType(BasicPowerCompositeStructureTypeThermalGeneratorPortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PipeItemHandler.INSTANCE);
+        }
+
+
         if (hasType(BasicMachineElementProcessorPortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PipeItemHandler.INSTANCE);
         }
@@ -108,6 +116,10 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
     @Override
     public void load(CompoundTag tag) {
         super.load(tag);
+        if (hasType(BasicPowerCompositeStructureTypeThermalGeneratorPortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PipeItemHandler.INSTANCE);
+        }
+
 
         if (hasType(BasicMachineElementProcessorPortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PipeItemHandler.INSTANCE);

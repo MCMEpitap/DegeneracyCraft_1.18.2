@@ -299,19 +299,19 @@ public abstract class PortBlockBase extends Block implements IItemBlock, SimpleW
         builder.add(UP, DOWN, NORTH, SOUTH, EAST, WEST, HAS_DATA, WATERLOGGED);
     }
 
-    public static final VoxelShape SHAPE_NORTH = Block.box(0D, 0D, 0D, 16D, 16D, 1D);
-    public static final VoxelShape SHAPE_SOUTH = Block.box(0D, 0D, 15D, 16D, 16D, 16D);
-    public static final VoxelShape SHAPE_EAST = Block.box(15D, 0D, 0D, 16D, 16D, 16D);
-    public static final VoxelShape SHAPE_WEST = Block.box(0D, 0D, 0D, 1D, 16D, 16D);
-    public static final VoxelShape SHAPE_UP = Block.box(0D, 15D, 0D, 16D, 16D, 16D);
-    public static final VoxelShape SHAPE_DOWN = Block.box(0D, 0D, 0D, 16D, 1D, 16D);
+    public static final VoxelShape SHAPE_NORTH = Block.box(0D, 0D, 0D, 16D, 16D, 2D);
+    public static final VoxelShape SHAPE_SOUTH = Block.box(0D, 0D, 14D, 16D, 16D, 16D);
+    public static final VoxelShape SHAPE_EAST = Block.box(14D, 0D, 0D, 16D, 16D, 16D);
+    public static final VoxelShape SHAPE_WEST = Block.box(0D, 0D, 0D, 2D, 16D, 16D);
+    public static final VoxelShape SHAPE_UP = Block.box(0D, 14D, 0D, 16D, 16D, 16D);
+    public static final VoxelShape SHAPE_DOWN = Block.box(0D, 0D, 0D, 16D, 2D, 16D);
     public static final VoxelShape SHAPE_CORE = Block.box(1D, 1D, 1D, 15D, 15D, 15D);
-    public static final VoxelShape SHAPE_EXTRACT_NORTH = TransportVoxelShape.combine(SHAPE_NORTH, Block.box(0D, 0D, 0D, 16D, 16D, 2D));
-    public static final VoxelShape SHAPE_EXTRACT_SOUTH = TransportVoxelShape.combine(SHAPE_SOUTH, Block.box(0D, 0D, 14D, 16D, 16D, 16D));
-    public static final VoxelShape SHAPE_EXTRACT_EAST = TransportVoxelShape.combine(SHAPE_EAST, Block.box(14D, 0D, 0D, 16D, 16D, 16D));
-    public static final VoxelShape SHAPE_EXTRACT_WEST = TransportVoxelShape.combine(SHAPE_WEST, Block.box(0D, 0D, 0D, 2D, 16D, 16D));
-    public static final VoxelShape SHAPE_EXTRACT_UP = TransportVoxelShape.combine(SHAPE_UP, Block.box(0D, 14D, 0D, 16D, 16D, 16D));
-    public static final VoxelShape SHAPE_EXTRACT_DOWN = TransportVoxelShape.combine(SHAPE_DOWN, Block.box(0D, 0D, 0D, 16D, 2D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_NORTH = TransportVoxelShape.combine(SHAPE_NORTH, Block.box(0D, 0D, 0D, 16D, 16D, 3D));
+    public static final VoxelShape SHAPE_EXTRACT_SOUTH = TransportVoxelShape.combine(SHAPE_SOUTH, Block.box(0D, 0D, 13D, 16D, 16D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_EAST = TransportVoxelShape.combine(SHAPE_EAST, Block.box(13D, 0D, 0D, 16D, 16D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_WEST = TransportVoxelShape.combine(SHAPE_WEST, Block.box(0D, 0D, 0D, 3D, 16D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_UP = TransportVoxelShape.combine(SHAPE_UP, Block.box(0D, 13D, 0D, 16D, 16D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_DOWN = TransportVoxelShape.combine(SHAPE_DOWN, Block.box(0D, 0D, 0D, 16D, 3D, 16D));
 
 
     public VoxelShape getShape(BlockGetter blockReader, BlockPos pos, BlockState state, boolean advanced) {

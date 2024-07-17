@@ -1,6 +1,5 @@
-package net.epitap.degeneracycraft.transport.port.blocks;
+package net.epitap.degeneracycraft.transport.port.portbase;
 
-import net.epitap.degeneracycraft.transport.port.portbase.PortBlockBase;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.level.block.state.BlockState;

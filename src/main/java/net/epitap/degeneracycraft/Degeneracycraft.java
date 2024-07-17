@@ -25,8 +25,6 @@ import net.epitap.degeneracycraft.transport.pipe.blocks.PipeBlocks;
 import net.epitap.degeneracycraft.transport.pipe.entities.PipeBlockEntities;
 import net.epitap.degeneracycraft.transport.pipe.render.PipeModelRegistry;
 import net.epitap.degeneracycraft.transport.port.blocks.PortBlockClickEvent;
-import net.epitap.degeneracycraft.transport.port.blocks.PortBlocks;
-import net.epitap.degeneracycraft.transport.port.entities.PortBlockEntities;
 import net.epitap.degeneracycraft.transport.port.render.PortModelRegistry;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -79,8 +77,8 @@ public class Degeneracycraft {
 //        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Block.class, PortBlocks::registerBlocks);
 //        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(BlockEntityType.class, PortBlockEntities::registerBlockEntities);
 
-        PortBlocks.register(eventBus);
-        PortBlockEntities.register(eventBus);
+//        PortBlocks.register(eventBus);
+//        PortBlockEntities.register(eventBus);
 
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(PortModelRegistry::onModelRegister);

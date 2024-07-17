@@ -6,7 +6,6 @@ import net.epitap.degeneracycraft.dcenum.MBPPos;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipe;
-import net.epitap.degeneracycraft.integration.jei.test.BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -375,10 +374,6 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
 
-        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
-        Optional<BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure> match = level.getRecipeManager()
-                .getRecipeFor(BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.Type.INSTANCE, inventory, level);
-
         boolean pos0 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_3.xPos).above(MBPPos.x_1y_1z_3.yPos).relative(reZ, MBPPos.x_1y_1z_3.zPos))
                 .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
         boolean pos1 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z_3.xPos).above(MBPPos.x0y_1z_3.yPos).relative(reZ, MBPPos.x0y_1z_3.zPos))
@@ -410,11 +405,6 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
         BlockPos blockpos = new BlockPos(this.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
-
-        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
-        Optional<BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure> match = level.getRecipeManager()
-                .getRecipeFor(BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.Type.INSTANCE, inventory, level);
-
 
         boolean pos0 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_3.xPos).above(MBPPos.x_1y0z_3.yPos).relative(reZ, MBPPos.x_1y0z_3.zPos))
                 .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());

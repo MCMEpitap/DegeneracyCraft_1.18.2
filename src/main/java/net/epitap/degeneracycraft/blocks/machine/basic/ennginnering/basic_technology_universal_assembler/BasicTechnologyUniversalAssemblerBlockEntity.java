@@ -6,8 +6,7 @@ import net.epitap.degeneracycraft.dcenum.MBPPos;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.basic_machine_element_processor.BasicMachineElementProcessorRecipe;
-import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipe;
-import net.epitap.degeneracycraft.integration.jei.test.BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure;
+import net.epitap.degeneracycraft.integration.jei.basic.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipe;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -267,8 +266,8 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<RedstonePoweredMachineElementManufactureMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(RedstonePoweredMachineElementManufactureMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyUniversalAssemblerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return blockEntity.data.get(0) > match.get().getRequiredTime() * 20;
@@ -283,8 +282,8 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<RedstonePoweredMachineElementManufactureMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(RedstonePoweredMachineElementManufactureMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyUniversalAssemblerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE, inventory, level);
 
         return match.isPresent();
     }
@@ -296,8 +295,8 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<RedstonePoweredMachineElementManufactureMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(RedstonePoweredMachineElementManufactureMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyUniversalAssemblerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
                 && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
@@ -317,8 +316,8 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<RedstonePoweredMachineElementManufactureMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(RedstonePoweredMachineElementManufactureMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyUniversalAssemblerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
@@ -345,8 +344,8 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
             inventory.setItem(i, this.itemHandler.getStackInSlot(i));
         }
 
-        Optional<RedstonePoweredMachineElementManufactureMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(RedstonePoweredMachineElementManufactureMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyUniversalAssemblerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return (this.data.get(0) / (match.get().getRequiredTime() * 20)) * 100;
@@ -375,10 +374,6 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
         BlockPos blockpos = new BlockPos(this.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
-
-        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
-        Optional<BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure> match = level.getRecipeManager()
-                .getRecipeFor(BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.Type.INSTANCE, inventory, level);
 
         boolean pos0 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_3.xPos).above(MBPPos.x_1y_1z_3.yPos).relative(reZ, MBPPos.x_1y_1z_3.zPos))
                 .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
@@ -411,11 +406,6 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
         BlockPos blockpos = new BlockPos(this.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
-
-        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
-        Optional<BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure> match = level.getRecipeManager()
-                .getRecipeFor(BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.Type.INSTANCE, inventory, level);
-
 
         boolean pos0 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_3.xPos).above(MBPPos.x_1y0z_3.yPos).relative(reZ, MBPPos.x_1y0z_3.zPos))
                 .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());

@@ -3,7 +3,7 @@ package net.epitap.degeneracycraft.blocks.storage.basic.energystorage.basic_stre
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.epitap.degeneracycraft.Degeneracycraft;
-import net.epitap.degeneracycraft.blocks.screen.render.EnergyInfoArea;
+import net.epitap.degeneracycraft.blocks.base.render.MultiblockEnergyStorageInfoArea;
 import net.epitap.degeneracycraft.util.MouseUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -18,7 +18,7 @@ import java.util.Optional;
 public class BasicStrengthMultiblockEnergyStorageScreen extends AbstractContainerScreen<BasicStrengthMultiblockEnergyStorageMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic_power_composite_structure_type_thermal_generator_gui.png");
-    private EnergyInfoArea energyInfoArea;
+    private MultiblockEnergyStorageInfoArea energyInfoArea;
 
     public BasicStrengthMultiblockEnergyStorageScreen(BasicStrengthMultiblockEnergyStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
@@ -33,7 +33,7 @@ public class BasicStrengthMultiblockEnergyStorageScreen extends AbstractContaine
     private void assignEnergyInfoArea() {
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
-        energyInfoArea = new EnergyInfoArea(x + 157, y + 10, menu.getEnergy());
+        energyInfoArea = new MultiblockEnergyStorageInfoArea(x + 84, y + 10, menu.getEnergy());
     }
 
     @Override

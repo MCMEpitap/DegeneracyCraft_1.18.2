@@ -52,7 +52,6 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBusType extends Por
         }
     }
 
-
     public float receiveEnergy(PortWorkBlockEntity blockEntity, Direction side, float amount, boolean simulate) {
         if (!blockEntity.portExtracting(side)) {
             return 0;
@@ -62,7 +61,6 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBusType extends Por
             return this.exportEnergy(blockEntity, connections, maxTransfer, simulate);
         }
     }
-
     protected void importEnergy(PortWorkBlockEntity blockEntity, Direction side, List<PortBlockEntityBase.Connection> connections, IEnergyStorage energyStorage) {
         if (!connections.isEmpty()) {
             float completeAmount = this.getTickRate(blockEntity, side);
@@ -127,20 +125,6 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBusType extends Por
             return actuallyTransferred;
         }
     }
-
-//    private boolean hasNotInserted(boolean[] inventoriesFull) {
-//        boolean[] var2 = inventoriesFull;
-//        int var3 = inventoriesFull.length;
-//
-//        for(int var4 = 0; var4 < var3; ++var4) {
-//            boolean b = var2[var4];
-//            if (!b) {
-//                return true;
-//            }
-//        }
-//
-//        return false;
-//    }
 
     @Nullable
     private IEnergyStorage getEnergyStorage(PortWorkBlockEntity blockEntity, BlockPos pos, Direction direction) {

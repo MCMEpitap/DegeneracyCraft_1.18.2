@@ -1,5 +1,6 @@
 package net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.bus;
 
+import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortBlockBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -20,7 +21,8 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBusBlock extends Po
 
     public boolean enabledConnectTo(LevelAccessor world, BlockPos pos, Direction facing) {
         BlockEntity blockEntity = world.getBlockEntity(pos.relative(facing));
-        return blockEntity != null && blockEntity.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).isPresent();
+        return blockEntity != null && (blockEntity.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).isPresent()
+                || blockEntity.getBlockState().is(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get()));
     }
 
     public boolean judgePort(LevelAccessor world, BlockPos pos, Direction facing) {
@@ -32,7 +34,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBusBlock extends Po
         return new BasicPowerCompositeStructureTypeThermalGeneratorBusBlockEntity(pos, state);
     }
 
-    public InteractionResult pipeSideLaunch(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, Direction facing) {
+    public InteractionResult portSideLaunch(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, Direction facing) {
         BlockEntity blockentity = world.getBlockEntity(pos);
         if (blockentity instanceof BasicPowerCompositeStructureTypeThermalGeneratorBusBlockEntity && this.portExtracting(world, pos, facing)) {
             if (world.isClientSide) {

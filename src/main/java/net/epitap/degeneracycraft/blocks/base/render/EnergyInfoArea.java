@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.screen.render;
+package net.epitap.degeneracycraft.blocks.base.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;

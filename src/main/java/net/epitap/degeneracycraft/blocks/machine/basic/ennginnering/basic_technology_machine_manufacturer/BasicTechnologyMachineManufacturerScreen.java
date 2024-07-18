@@ -3,7 +3,7 @@ package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_techn
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.epitap.degeneracycraft.Degeneracycraft;
-import net.epitap.degeneracycraft.blocks.screen.render.EnergyInfoArea;
+import net.epitap.degeneracycraft.blocks.base.render.EnergyInfoArea;
 import net.epitap.degeneracycraft.util.MouseUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;

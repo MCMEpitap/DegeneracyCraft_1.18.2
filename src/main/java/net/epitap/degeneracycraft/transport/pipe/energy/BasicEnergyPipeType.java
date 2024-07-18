@@ -128,20 +128,6 @@ public class BasicEnergyPipeType extends PipeTypeBase<Void> {
         }
     }
 
-//    private boolean hasNotInserted(boolean[] inventoriesFull) {
-//        boolean[] var2 = inventoriesFull;
-//        int var3 = inventoriesFull.length;
-//
-//        for(int var4 = 0; var4 < var3; ++var4) {
-//            boolean b = var2[var4];
-//            if (!b) {
-//                return true;
-//            }
-//        }
-//
-//        return false;
-//    }
-
     @Nullable
     private IEnergyStorage getEnergyStorage(PipeWorkBlockEntity blockEntity, BlockPos pos, Direction direction) {
         BlockEntity energyBlockEntity = blockEntity.getLevel().getBlockEntity(pos);

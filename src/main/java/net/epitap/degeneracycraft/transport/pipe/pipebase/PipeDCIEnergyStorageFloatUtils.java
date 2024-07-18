@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.parametor;
+package net.epitap.degeneracycraft.transport.pipe.pipebase;
 
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.minecraft.core.BlockPos;
@@ -9,8 +9,8 @@ import net.minecraftforge.energy.CapabilityEnergy;
 
 import javax.annotation.Nullable;
 
-public class PipeFloatEnergyUtils {
-    public PipeFloatEnergyUtils() {
+public class PipeDCIEnergyStorageFloatUtils {
+    public PipeDCIEnergyStorageFloatUtils() {
     }
 
     public static float pushEnergy(DCIEnergyStorageFloat provider, DCIEnergyStorageFloat receiver, float maxAmount) {

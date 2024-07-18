@@ -21,7 +21,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorPortType extends Po
 
     @Override
     public String getKey() {
-        return "basic_power_composite_structure_type_thermal_generator_port_block";
+        return "basic_power_composite_structure_type_thermal_generator_port";
     }
 
     @Override
@@ -31,7 +31,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorPortType extends Po
 
     @Override
     public String getTranslationKey() {
-        return "basic_power_composite_structure_type_thermal_generator_port_block";
+        return "basic_power_composite_structure_type_thermal_generator_port";
     }
 
     @Override

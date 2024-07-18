@@ -1,16 +1,16 @@
-package net.epitap.degeneracycraft.transport.parametor;
+package net.epitap.degeneracycraft.transport.pipe.pipebase;
 
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.transport.pipe.energy.floa.FloatEnergyPipeType;
 import net.epitap.degeneracycraft.transport.pipe.entities.PipeWorkBlockEntity;
 import net.minecraft.core.Direction;
 
-public class PipeFloatEnergyStorage implements DCIEnergyStorageFloat {
+public class PipeDCIEnergyStorageFloat implements DCIEnergyStorageFloat {
     protected PipeWorkBlockEntity pipe;
     protected Direction side;
     protected float lastReceived;
 
-    public PipeFloatEnergyStorage(PipeWorkBlockEntity pipe, Direction side) {
+    public PipeDCIEnergyStorageFloat(PipeWorkBlockEntity pipe, Direction side) {
         this.pipe = pipe;
         this.side = side;
     }

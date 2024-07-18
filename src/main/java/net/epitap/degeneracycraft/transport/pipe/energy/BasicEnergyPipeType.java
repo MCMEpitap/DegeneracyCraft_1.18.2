@@ -1,9 +1,9 @@
 package net.epitap.degeneracycraft.transport.pipe.energy;
 
-import net.epitap.degeneracycraft.transport.parametor.PipeIntEnergyUtils;
 import net.epitap.degeneracycraft.transport.pipe.blocks.PipeBlocks;
 import net.epitap.degeneracycraft.transport.pipe.entities.PipeWorkBlockEntity;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeBlockEntityBase;
+import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeIntEnergyUtils;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeTypeBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

@@ -1,10 +1,11 @@
 package net.epitap.degeneracycraft.transport.port_bus.port_busbase;
 
-import net.epitap.degeneracycraft.transport.parametor.PipeFloatEnergyStorage;
-import net.epitap.degeneracycraft.transport.parametor.PipeIntEnergyStorage;
 import net.epitap.degeneracycraft.transport.parametor.PipeItemHandler;
 import net.epitap.degeneracycraft.transport.parametor.PipeSetLazyOptional;
+import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeDCIEnergyStorageFloat;
+import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeIntEnergyStorage;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_machine_element_processor.BasicMachineElementProcessorPortType;
+import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.bus.BasicPowerCompositeStructureTypeThermalGeneratorBusType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.port.BasicPowerCompositeStructureTypeThermalGeneratorPortType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -14,6 +15,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.items.CapabilityItemHandler;
 
 import javax.annotation.Nonnull;
@@ -28,7 +30,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
     protected final int[][] index;
     protected PipeSetLazyOptional<PipeItemHandler> itemStored;
     protected PipeSetLazyOptional<PipeIntEnergyStorage> intEnergyStored;
-    protected PipeSetLazyOptional<PipeFloatEnergyStorage> floatEnergyStored;
+    protected PipeSetLazyOptional<PipeDCIEnergyStorageFloat> floatEnergyStored;
     private int recursionDepth;
 
     public PortWorkBlockEntity(BlockEntityType<?> blockEntityType, PortTypeBase<?>[] portType, BlockPos pos, BlockState state) {
@@ -49,6 +51,10 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPowerCompositeStructureTypeThermalGeneratorPortType.INSTANCE)) {
             if (side != null) {
                 return itemStored.get(side).cast();
+            }
+        } else if (cap == CapabilityEnergy.ENERGY && hasType(BasicPowerCompositeStructureTypeThermalGeneratorBusType.INSTANCE)) {
+            if (side != null) {
+                return intEnergyStored.get(side).cast();
             }
         } else if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicMachineElementProcessorPortType.INSTANCE)) {
             if (side != null) {
@@ -96,9 +102,15 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (level.isClientSide) {
             return;
         }
-
         for (PortTypeBase<?> type : getPortTypes()) {
             type.tick(this);
+        }
+        if (hasType(BasicPowerCompositeStructureTypeThermalGeneratorBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    intEnergyStored.get(side).ifPresent(PipeIntEnergyStorage::tick);
+                }
+            }
         }
     }
 
@@ -108,7 +120,9 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicPowerCompositeStructureTypeThermalGeneratorPortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PipeItemHandler.INSTANCE);
         }
-
+        if (hasType(BasicPowerCompositeStructureTypeThermalGeneratorBusType.INSTANCE)) {
+            intEnergyStored.revalidate(side, storage -> extracting, (storage) -> new PipeIntEnergyStorage(this, storage));
+        }
 
         if (hasType(BasicMachineElementProcessorPortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PipeItemHandler.INSTANCE);
@@ -121,7 +135,9 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicPowerCompositeStructureTypeThermalGeneratorPortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PipeItemHandler.INSTANCE);
         }
-
+        if (hasType(BasicPowerCompositeStructureTypeThermalGeneratorBusType.INSTANCE)) {
+            intEnergyStored.revalidate(this::portExtracting, (side) -> new PipeIntEnergyStorage(this, side));
+        }
 
         if (hasType(BasicMachineElementProcessorPortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PipeItemHandler.INSTANCE);

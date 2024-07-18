@@ -1,10 +1,10 @@
 package net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.bus;
 
-import net.epitap.degeneracycraft.transport.parametor.PipeIntEnergyUtils;
-import net.epitap.degeneracycraft.transport.pipe.blocks.PipeBlocks;
-import net.epitap.degeneracycraft.transport.pipe.entities.PipeWorkBlockEntity;
-import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeBlockEntityBase;
-import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeTypeBase;
+import net.epitap.degeneracycraft.item.DCItems;
+import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeIntEnergyUtils;
+import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortBlockEntityBase;
+import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortTypeBase;
+import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortWorkBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
@@ -17,14 +17,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class BasicEnergyPipeType extends PipeTypeBase<Void> {
-    public static final BasicEnergyPipeType INSTANCE = new BasicEnergyPipeType();
+public class BasicPowerCompositeStructureTypeThermalGeneratorBusType extends PortTypeBase<Void> {
+    public static final BasicPowerCompositeStructureTypeThermalGeneratorBusType INSTANCE = new BasicPowerCompositeStructureTypeThermalGeneratorBusType();
 
-    public BasicEnergyPipeType() {
+    public BasicPowerCompositeStructureTypeThermalGeneratorBusType() {
     }
 
     public String getKey() {
-        return "basic_energy_pipe";
+        return "basic_power_composite_structure_type_thermal_generator_bus";
     }
 
     public boolean canImport(BlockEntity blockEntity, Direction direction) {
@@ -32,38 +32,38 @@ public class BasicEnergyPipeType extends PipeTypeBase<Void> {
     }
 
     public String getTranslationKey() {
-        return "basic_energy_pipe";
+        return "basic_power_composite_structure_type_thermal_generator_bus";
     }
 
     public ItemStack getIcon() {
-        return new ItemStack(PipeBlocks.BASIC_ENERGY_PIPE_BLOCK);
+        return new ItemStack(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
     }
 
-    public void tick(PipeWorkBlockEntity blockEntity) {
+    public void tick(PortWorkBlockEntity blockEntity) {
     }
 
-    public void extractEnergy(PipeWorkBlockEntity blockEntity, Direction side) {
-        if (blockEntity.pipeExtracting(side)) {
+    public void extractEnergy(PortWorkBlockEntity blockEntity, Direction side) {
+        if (blockEntity.portExtracting(side)) {
             IEnergyStorage energyStorage = this.getEnergyStorage(blockEntity, blockEntity.getBlockPos().relative(side), side.getOpposite());
             if (energyStorage != null && energyStorage.canExtract()) {
-                List<PipeBlockEntityBase.Connection> connections = blockEntity.getSortedConnections(side, this);
+                List<PortBlockEntityBase.Connection> connections = blockEntity.getSortedConnections(side, this);
                 this.importEnergy(blockEntity, side, connections, energyStorage);
             }
         }
     }
 
 
-    public float receiveEnergy(PipeWorkBlockEntity blockEntity, Direction side, float amount, boolean simulate) {
-        if (!blockEntity.pipeExtracting(side)) {
+    public float receiveEnergy(PortWorkBlockEntity blockEntity, Direction side, float amount, boolean simulate) {
+        if (!blockEntity.portExtracting(side)) {
             return 0;
         } else {
-            List<PipeBlockEntityBase.Connection> connections = blockEntity.getSortedConnections(side, this);
+            List<PortBlockEntityBase.Connection> connections = blockEntity.getSortedConnections(side, this);
             float maxTransfer = Math.min(this.getTickRate(blockEntity, side), amount);
             return this.exportEnergy(blockEntity, connections, maxTransfer, simulate);
         }
     }
 
-    protected void importEnergy(PipeWorkBlockEntity blockEntity, Direction side, List<PipeBlockEntityBase.Connection> connections, IEnergyStorage energyStorage) {
+    protected void importEnergy(PortWorkBlockEntity blockEntity, Direction side, List<PortBlockEntityBase.Connection> connections, IEnergyStorage energyStorage) {
         if (!connections.isEmpty()) {
             float completeAmount = this.getTickRate(blockEntity, side);
             float energyToTransfer = completeAmount;
@@ -72,7 +72,7 @@ public class BasicEnergyPipeType extends PipeTypeBase<Void> {
 
             for (int i = 0; i < connections.size(); ++i) {
                 int index = (i + p) % connections.size();
-                PipeBlockEntityBase.Connection connection = connections.get(index);
+                PortBlockEntityBase.Connection connection = connections.get(index);
                 IEnergyStorage destination = this.getEnergyStorage(blockEntity, connection.pos(), connection.direction());
                 if (destination != null && destination.canReceive() && destination.receiveEnergy(1, true) >= 1) {
                     destinations.add(destination);
@@ -101,7 +101,7 @@ public class BasicEnergyPipeType extends PipeTypeBase<Void> {
         }
     }
 
-    protected float exportEnergy(PipeWorkBlockEntity blockEntity, List<PipeBlockEntityBase.Connection> connections, float maxReceive, boolean simulate) {
+    protected float exportEnergy(PortWorkBlockEntity blockEntity, List<PortBlockEntityBase.Connection> connections, float maxReceive, boolean simulate) {
         if (blockEntity.pushRecursion()) {
             return 0;
         } else {
@@ -110,7 +110,7 @@ public class BasicEnergyPipeType extends PipeTypeBase<Void> {
             Iterator var8 = connections.iterator();
 
             while (var8.hasNext()) {
-                PipeBlockEntityBase.Connection connection = (PipeBlockEntityBase.Connection) var8.next();
+                PortBlockEntityBase.Connection connection = (PortBlockEntityBase.Connection) var8.next();
                 if (energyToTransfer <= 0) {
                     break;
                 }
@@ -143,7 +143,7 @@ public class BasicEnergyPipeType extends PipeTypeBase<Void> {
 //    }
 
     @Nullable
-    private IEnergyStorage getEnergyStorage(PipeWorkBlockEntity blockEntity, BlockPos pos, Direction direction) {
+    private IEnergyStorage getEnergyStorage(PortWorkBlockEntity blockEntity, BlockPos pos, Direction direction) {
         BlockEntity energyBlockEntity = blockEntity.getLevel().getBlockEntity(pos);
         return energyBlockEntity == null ? null : energyBlockEntity.getCapability(CapabilityEnergy.ENERGY, direction).orElse(null);
     }

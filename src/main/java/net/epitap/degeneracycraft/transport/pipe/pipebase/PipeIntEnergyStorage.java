@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.parametor;
+package net.epitap.degeneracycraft.transport.pipe.pipebase;
 
 import net.epitap.degeneracycraft.transport.pipe.energy.BasicEnergyPipeType;
 import net.epitap.degeneracycraft.transport.pipe.entities.PipeWorkBlockEntity;

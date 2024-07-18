@@ -3,7 +3,7 @@ package net.epitap.degeneracycraft.transport.pipe.energy;
 import net.epitap.degeneracycraft.transport.pipe.blocks.PipeBlocks;
 import net.epitap.degeneracycraft.transport.pipe.entities.PipeWorkBlockEntity;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeBlockEntityBase;
-import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeIntEnergyUtils;
+import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeIEnergyUtils;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeTypeBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -85,7 +85,7 @@ public class BasicEnergyPipeType extends PipeTypeBase<Void> {
                 IEnergyStorage destination = (IEnergyStorage)var13.next();
                 float simulatedExtract = energyStorage.extractEnergy((int) Math.min(Math.max(completeAmount / destinations.size(), 1), energyToTransfer), true);
                 if (simulatedExtract > 0) {
-                    float transferred = PipeIntEnergyUtils.pushEnergy(energyStorage, destination, simulatedExtract);
+                    float transferred = PipeIEnergyUtils.pushEnergy(energyStorage, destination, simulatedExtract);
                     if (transferred > 0) {
                         energyToTransfer -= transferred;
                     }

@@ -7,7 +7,7 @@ import net.epitap.degeneracycraft.transport.pipe.energy.BasicEnergyPipeType;
 import net.epitap.degeneracycraft.transport.pipe.energy.floa.FloatEnergyPipeType;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeBlockEntityBase;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeDCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeIntEnergyStorage;
+import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeIEnergyStorage;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeTypeBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -31,7 +31,7 @@ public class PipeWorkBlockEntity extends PipeBlockEntityBase {
     protected PipeTypeBase<?>[] pipeType;
     protected final int[][] index;
     protected PipeSetLazyOptional<PipeItemHandler> itemStored;
-    protected PipeSetLazyOptional<PipeIntEnergyStorage> intEnergyStored;
+    protected PipeSetLazyOptional<PipeIEnergyStorage> intEnergyStored;
     protected PipeSetLazyOptional<PipeDCIEnergyStorageFloat> floatEnergyStored;
     private int recursionDepth;
 
@@ -114,7 +114,7 @@ public class PipeWorkBlockEntity extends PipeBlockEntityBase {
         if (hasType(BasicEnergyPipeType.INSTANCE)) {
             for (Direction side : Direction.values()) {
                 if (pipeExtracting(side)) {
-                    intEnergyStored.get(side).ifPresent(PipeIntEnergyStorage::tick);
+                    intEnergyStored.get(side).ifPresent(PipeIEnergyStorage::tick);
                 }
             }
         }
@@ -133,7 +133,7 @@ public class PipeWorkBlockEntity extends PipeBlockEntityBase {
     public void setPipeExtracting(Direction side, boolean extracting) {
         super.setPipeExtracting(side, extracting);
         if (hasType(BasicEnergyPipeType.INSTANCE)) {
-            intEnergyStored.revalidate(side, storage -> extracting, (storage) -> new PipeIntEnergyStorage(this, storage));
+            intEnergyStored.revalidate(side, storage -> extracting, (storage) -> new PipeIEnergyStorage(this, storage));
         }
         if (hasType(FloatEnergyPipeType.INSTANCE))
             floatEnergyStored.revalidate(side, storage -> extracting, (storage) -> new PipeDCIEnergyStorageFloat(this, storage));
@@ -146,7 +146,7 @@ public class PipeWorkBlockEntity extends PipeBlockEntityBase {
     public void load(CompoundTag tag) {
         super.load(tag);
         if (hasType(BasicEnergyPipeType.INSTANCE)) {
-            intEnergyStored.revalidate(this::pipeExtracting, (side) -> new PipeIntEnergyStorage(this, side));
+            intEnergyStored.revalidate(this::pipeExtracting, (side) -> new PipeIEnergyStorage(this, side));
         }
         if (hasType(FloatEnergyPipeType.INSTANCE)) {
             floatEnergyStored.revalidate(this::pipeExtracting, (side) -> new PipeDCIEnergyStorageFloat(this, side));

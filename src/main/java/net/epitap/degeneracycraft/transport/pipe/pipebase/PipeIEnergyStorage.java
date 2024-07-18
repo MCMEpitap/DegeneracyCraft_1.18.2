@@ -5,12 +5,12 @@ import net.epitap.degeneracycraft.transport.pipe.entities.PipeWorkBlockEntity;
 import net.minecraft.core.Direction;
 import net.minecraftforge.energy.IEnergyStorage;
 
-public class PipeIntEnergyStorage implements IEnergyStorage{
+public class PipeIEnergyStorage implements IEnergyStorage {
     protected PipeWorkBlockEntity pipe;
     protected Direction side;
     protected float lastReceived;
 
-    public PipeIntEnergyStorage(PipeWorkBlockEntity pipe, Direction side) {
+    public PipeIEnergyStorage(PipeWorkBlockEntity pipe, Direction side) {
         this.pipe = pipe;
         this.side = side;
     }
@@ -60,8 +60,6 @@ public class PipeIntEnergyStorage implements IEnergyStorage{
     public int getMaxEnergyStored() {
         return Integer.MAX_VALUE;
     }
-
-
 
     public boolean canExtract() {
         return false;

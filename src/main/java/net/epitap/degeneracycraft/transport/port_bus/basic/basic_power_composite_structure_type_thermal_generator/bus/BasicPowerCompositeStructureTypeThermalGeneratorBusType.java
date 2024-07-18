@@ -1,7 +1,7 @@
 package net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.bus;
 
 import net.epitap.degeneracycraft.item.DCItems;
-import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeIntEnergyUtils;
+import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeIEnergyUtils;
 import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortBlockEntityBase;
 import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortTypeBase;
 import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortWorkBlockEntity;
@@ -85,7 +85,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBusType extends Por
                 IEnergyStorage destination = (IEnergyStorage) var13.next();
                 float simulatedExtract = energyStorage.extractEnergy((int) Math.min(Math.max(completeAmount / destinations.size(), 1), energyToTransfer), true);
                 if (simulatedExtract > 0) {
-                    float transferred = PipeIntEnergyUtils.pushEnergy(energyStorage, destination, simulatedExtract);
+                    float transferred = PipeIEnergyUtils.pushEnergy(energyStorage, destination, simulatedExtract);
                     if (transferred > 0) {
                         energyToTransfer -= transferred;
                     }

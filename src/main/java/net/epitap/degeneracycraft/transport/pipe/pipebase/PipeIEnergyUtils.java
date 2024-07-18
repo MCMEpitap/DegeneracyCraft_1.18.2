@@ -9,8 +9,8 @@ import net.minecraftforge.energy.IEnergyStorage;
 
 import javax.annotation.Nullable;
 
-public class PipeIntEnergyUtils {
-    public PipeIntEnergyUtils() {
+public class PipeIEnergyUtils {
+    public PipeIEnergyUtils() {
     }
 
     public static float pushEnergy(IEnergyStorage provider, IEnergyStorage receiver, float maxAmount) {

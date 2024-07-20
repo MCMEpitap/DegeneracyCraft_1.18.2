@@ -11,11 +11,11 @@ public class MultiblockEnergyStorageInfoArea extends InfoArea {
     private final DCIEnergyStorageFloat energy;
 
     public MultiblockEnergyStorageInfoArea(int xMin, int yMin) {
-        this(xMin, yMin, null, 80, 65);
+        this(xMin, yMin, null, 100, 65);
     }
 
     public MultiblockEnergyStorageInfoArea(int xMin, int yMin, DCIEnergyStorageFloat energy) {
-        this(xMin, yMin, energy, 80, 65);
+        this(xMin, yMin, energy, 100, 65);
     }
 
     public MultiblockEnergyStorageInfoArea(int xMin, int yMin, DCIEnergyStorageFloat energy, int width, int height) {

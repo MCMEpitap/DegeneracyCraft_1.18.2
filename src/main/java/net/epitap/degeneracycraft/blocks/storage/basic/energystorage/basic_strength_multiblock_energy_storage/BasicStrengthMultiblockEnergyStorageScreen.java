@@ -17,7 +17,7 @@ import java.util.Optional;
 
 public class BasicStrengthMultiblockEnergyStorageScreen extends AbstractContainerScreen<BasicStrengthMultiblockEnergyStorageMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic_power_composite_structure_type_thermal_generator_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui//basic/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_gui.png");
     private MultiblockEnergyStorageInfoArea energyInfoArea;
 
     public BasicStrengthMultiblockEnergyStorageScreen(BasicStrengthMultiblockEnergyStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
@@ -33,7 +33,7 @@ public class BasicStrengthMultiblockEnergyStorageScreen extends AbstractContaine
     private void assignEnergyInfoArea() {
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
-        energyInfoArea = new MultiblockEnergyStorageInfoArea(x + 84, y + 10, menu.getEnergy());
+        energyInfoArea = new MultiblockEnergyStorageInfoArea(x + 63, y + 10, menu.getEnergy());
     }
 
     @Override
@@ -52,13 +52,13 @@ public class BasicStrengthMultiblockEnergyStorageScreen extends AbstractContaine
     public void renderLabels(PoseStack pPoseStack, int pMouseX, int pMouseY) {
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
-        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase0"),
-                35, 67, 0xFFFFFF);
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"),
+                35, 67, 0xFF0000);
         renderEnergyAreaTooltips(pPoseStack, pMouseX, pMouseY, x, y);
     }
 
     private void renderEnergyAreaTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
-        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 155, 10, 9, 64)) {
+        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 63, 10, 100, 64)) {
             renderTooltip(pPoseStack, energyInfoArea.getTooltips(),
                     Optional.empty(), pMouseX - x, pMouseY - y);
         }

@@ -322,6 +322,9 @@ dependencies {
         implementation fg.deobf("curse.maven:exponential-power-254249:3863542")
 //        implementation fg.deobf("curse.maven:AdditionalEnchantedMiner-1.18.2-18.20.jar-282837:4724064")
 
+//        implementation fg.deobf("curse.maven:more-chests-737045:4199855")
+        //        implementation fg.deobf("curse.maven:iron-chests-228756:3966367")
+//        implementation fg.deobf("curse.maven:compactstorage-223703:4352472")
     }
 }
 // Example for how to get properties into the manifest for reading at runtime.

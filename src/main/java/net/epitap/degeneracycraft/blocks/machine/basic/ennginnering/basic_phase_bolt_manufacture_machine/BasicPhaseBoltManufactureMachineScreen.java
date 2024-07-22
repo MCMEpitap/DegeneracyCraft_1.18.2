@@ -15,6 +15,8 @@ public class BasicPhaseBoltManufactureMachineScreen extends AbstractContainerScr
 
     public BasicPhaseBoltManufactureMachineScreen(BasicPhaseBoltManufactureMachineMenu menu, Inventory inventory, Component component) {
         super(menu, inventory, component);
+        this.imageWidth = 176;
+        this.imageHeight = 166;
     }
 
     @Override

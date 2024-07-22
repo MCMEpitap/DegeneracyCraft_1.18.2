@@ -24,6 +24,8 @@ public class BasicTechnologyMachineManufacturerScreen extends AbstractContainerS
 
     public BasicTechnologyMachineManufacturerScreen(BasicTechnologyMachineManufacturerMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
+        this.imageWidth = 176;
+        this.imageHeight = 166;
     }
 
     @Override

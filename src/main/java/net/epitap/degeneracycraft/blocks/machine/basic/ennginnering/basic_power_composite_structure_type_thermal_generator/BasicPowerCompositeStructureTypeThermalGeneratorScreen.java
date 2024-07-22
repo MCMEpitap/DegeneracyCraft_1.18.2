@@ -24,6 +24,8 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorScreen extends Abst
 
     public BasicPowerCompositeStructureTypeThermalGeneratorScreen(BasicPowerCompositeStructureTypeThermalGeneratorMenu menu, Inventory inventory, Component component) {
         super(menu, inventory, component);
+        this.imageWidth = 176;
+        this.imageHeight = 166;
     }
 
     @Override

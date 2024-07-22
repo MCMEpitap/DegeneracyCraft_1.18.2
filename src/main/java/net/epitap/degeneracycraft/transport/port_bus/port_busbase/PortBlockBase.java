@@ -305,7 +305,7 @@ public abstract class PortBlockBase extends Block implements IItemBlock, SimpleW
     public static final VoxelShape SHAPE_WEST = Block.box(0D, 0D, 0D, 2D, 16D, 16D);
     public static final VoxelShape SHAPE_UP = Block.box(0D, 14D, 0D, 16D, 16D, 16D);
     public static final VoxelShape SHAPE_DOWN = Block.box(0D, 0D, 0D, 16D, 2D, 16D);
-    public static final VoxelShape SHAPE_CORE = Block.box(1D, 1D, 1D, 15D, 15D, 15D);
+    public static final VoxelShape SHAPE_CORE = Block.box(2D, 2D, 2D, 14D, 14D, 14D);
     public static final VoxelShape SHAPE_EXTRACT_NORTH = TransportVoxelShape.combine(SHAPE_NORTH, Block.box(0D, 0D, 0D, 16D, 16D, 3D));
     public static final VoxelShape SHAPE_EXTRACT_SOUTH = TransportVoxelShape.combine(SHAPE_SOUTH, Block.box(0D, 0D, 13D, 16D, 16D, 16D));
     public static final VoxelShape SHAPE_EXTRACT_EAST = TransportVoxelShape.combine(SHAPE_EAST, Block.box(13D, 0D, 0D, 16D, 16D, 16D));

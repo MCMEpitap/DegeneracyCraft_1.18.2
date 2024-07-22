@@ -13,11 +13,13 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class BasicStrengthMultiblockMaterialStorageScreen extends AbstractContainerScreen<BasicStrengthMultiblockMaterialStorageMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_component_manufacture_machine_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic_strength_multiblock_material_storage_block_gui.png");
 
 
     public BasicStrengthMultiblockMaterialStorageScreen(BasicStrengthMultiblockMaterialStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
+        this.imageWidth = 176;
+        this.imageHeight = 166;
     }
 
 

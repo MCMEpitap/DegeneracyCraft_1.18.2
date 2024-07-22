@@ -23,6 +23,8 @@ public class BasicMachineElementProcessorScreen extends AbstractContainerScreen<
 
     public BasicMachineElementProcessorScreen(BasicMachineElementProcessorMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
+        this.imageWidth = 176;
+        this.imageHeight = 166;
     }
 
     @Override

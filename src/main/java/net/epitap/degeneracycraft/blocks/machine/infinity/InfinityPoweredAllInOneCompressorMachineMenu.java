@@ -3,6 +3,7 @@ package net.epitap.degeneracycraft.blocks.machine.infinity;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
@@ -16,6 +17,7 @@ public class InfinityPoweredAllInOneCompressorMachineMenu extends AbstractContai
     public final InfinityPoweredAllInOneCompressorMachineBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
+    private Container inventory;
 
     public InfinityPoweredAllInOneCompressorMachineMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
         this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
@@ -27,83 +29,78 @@ public class InfinityPoweredAllInOneCompressorMachineMenu extends AbstractContai
         this.level = inv.player.level;
         this.data = data;
 
-//        addPlayerInventory(inv);
+//        TestCompactStorageInventoryImpl inv = (TestCompactStorageInventoryImpl) playerInventory.player.level.getBlockEntity(pos);
+
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-//            for (int i = 0; i < 3; ++i) {
-//                for (int l = 0; l < 3; ++l) {
-//                    this.addSlot(new SlotItemHandler(handler, (l + i * 3), -100 + l * 16, -36 + i * 16));                }
-//            }
-//            this.addSlot(new DCResultSlot(handler, 9, 134, 30));
-
-            this.addSlot(new SlotItemHandler(handler, 0, -115, -40));
-            this.addSlot(new SlotItemHandler(handler, 1, 173, -40));
+            this.addSlot(new SlotItemHandler(handler, 0, -115 + 99, -40));
+            this.addSlot(new SlotItemHandler(handler, 1, 173 + 99, -40));
             for (int i = 0; i < 2; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 2, -115 + i * 16, -24));
+                this.addSlot(new SlotItemHandler(handler, i + 2, -115 + 99 + i * 16, -24));
             }
             for (int i = 0; i < 6; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 4, 93 + i * 16, -24));
+                this.addSlot(new SlotItemHandler(handler, i + 4, 93 + 99 + i * 16, -24));
             }
             for (int i = 0; i < 2; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 10, -115 + i * 16, -8));
+                this.addSlot(new SlotItemHandler(handler, i + 10, -115 + 99 + i * 16, -8));
             }
             for (int i = 0; i < 6; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 12, 93 + i * 16, -8));
+                this.addSlot(new SlotItemHandler(handler, i + 12, 93 + 99 + i * 16, -8));
             }
             for (int i = 0; i < 2; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 18, -115 + i * 16, 8));
+                this.addSlot(new SlotItemHandler(handler, i + 18, -115 + 99 + i * 16, 8));
             }
             for (int i = 0; i < 16; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 20, -67 + i * 16, 8));
+                this.addSlot(new SlotItemHandler(handler, i + 20, -67 + 99 + i * 16, 8));
             }
             for (int i = 0; i < 2; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 36, -115 + i * 16, 24));
+                this.addSlot(new SlotItemHandler(handler, i + 36, -115 + 99 + i * 16, 24));
             }
             for (int i = 0; i < 16; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 38, -67 + i * 16, 24));
+                this.addSlot(new SlotItemHandler(handler, i + 38, -67 + 99 + i * 16, 24));
             }
             for (int i = 0; i < 2; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 54, -115 + i * 16, 40));
+                this.addSlot(new SlotItemHandler(handler, i + 54, -115 + 99 + i * 16, 40));
             }
             for (int i = 0; i < 15; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 56, -99 + i * 16, 104));
+                this.addSlot(new SlotItemHandler(handler, i + 56, -99 + 99 + i * 16, 104));
             }
             for (int i = 0; i < 15; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 71, -67 + i * 16, 40));
+                this.addSlot(new SlotItemHandler(handler, i + 71, -67 + 99 + i * 16, 40));
             }
             for (int i = 0; i < 2; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 86, -115 + i * 16, 56));
+                this.addSlot(new SlotItemHandler(handler, i + 86, -115 + 99 + i * 16, 56));
             }
             for (int i = 0; i < 15; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 88, -99 + i * 16, 120));
+                this.addSlot(new SlotItemHandler(handler, i + 88, -99 + 99 + i * 16, 120));
             }
             for (int i = 0; i < 15; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 103, -67 + i * 16, 56));
+                this.addSlot(new SlotItemHandler(handler, i + 103, -67 + 99 + i * 16, 56));
             }
             for (int i = 0; i < 2; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 118, -115 + i * 16, 72));
+                this.addSlot(new SlotItemHandler(handler, i + 118, -115 + 99 + i * 16, 72));
             }
             for (int i = 0; i < 18; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 120, -99 + i * 16, 136));
+                this.addSlot(new SlotItemHandler(handler, i + 120, -99 + 99 + i * 16, 136));
             }
             for (int i = 0; i < 15; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 138, -99 + i * 16, 152));
+                this.addSlot(new SlotItemHandler(handler, i + 138, -99 + 99 + i * 16, 152));
             }
             for (int i = 0; i < 15; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 153, -67 + i * 16, 72));
+                this.addSlot(new SlotItemHandler(handler, i + 153, -67 + 99 + i * 16, 72));
             }
             for (int i = 0; i < 2; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 168, -115 + i * 16, 88));
+                this.addSlot(new SlotItemHandler(handler, i + 168, -115 + 99 + i * 16, 88));
             }
             for (int i = 0; i < 18; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 170, -99 + i * 16, 168));
+                this.addSlot(new SlotItemHandler(handler, i + 170, -99 + 99 + i * 16, 168));
             }
             for (int i = 0; i < 15; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 188, -99 + i * 16, 184));
+                this.addSlot(new SlotItemHandler(handler, i + 188, -99 + 99 + i * 16, 184));
             }
             for (int i = 0; i < 15; ++i) {
-                this.addSlot(new SlotItemHandler(handler, i + 203, -115 + i * 16, 88));
+                this.addSlot(new SlotItemHandler(handler, i + 203, -115 + 99 + i * 16, 88));
             }
         });
 
@@ -117,7 +114,7 @@ public class InfinityPoweredAllInOneCompressorMachineMenu extends AbstractContai
     public int getScaledProgress() {
         int progress = this.data.get(0);
         int maxProgress = this.data.get(1);  // Max Progress
-        int progressArrowSize = 48; // This is the height in pixels of your arrow
+        int progressArrowSize = 54; // This is the height in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
@@ -134,7 +131,7 @@ public class InfinityPoweredAllInOneCompressorMachineMenu extends AbstractContai
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
 
-    private static final int TE_INVENTORY_SLOT_COUNT = 218;
+    private static final int TE_INVENTORY_SLOT_COUNT = 219;
 
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {
@@ -184,5 +181,4 @@ public class InfinityPoweredAllInOneCompressorMachineMenu extends AbstractContai
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 188));
         }
     }
-
 }

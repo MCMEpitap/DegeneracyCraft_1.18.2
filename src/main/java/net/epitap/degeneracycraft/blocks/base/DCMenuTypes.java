@@ -55,22 +55,19 @@ public class DCMenuTypes {
             registerMenuType(BasicPhaseBoltManufactureMachineMenu::new, "basic_phase_bolt_manufacture_menu");
 
 
+    public static final RegistryObject<MenuType<InfinityPoweredAllInOneCompressorMachineMenu>> INFINITY_POWERED_ALL_IN_ONE_COMPRESSOR_MACHINE_BLOCK_MENU =
+            registerMenuType(InfinityPoweredAllInOneCompressorMachineMenu::new, "infinity_powered_all_in_one_compressor_machine_menu");
 
 
+//    public static final RegistryObject<MenuType<TestBlockMenu>> TEST_MENU=
+//            registerMenuType(TestBlockMenu::new,"test_menu");
 
-
-
-
-    public static final RegistryObject<MenuType<InfinityPoweredAllInOneCompressorMachineMenu>> INFINITY_POWERED_ALL_IN_ONE_COMPRESSOR_MACHINE_BLOCK_MENU=
-            registerMenuType(InfinityPoweredAllInOneCompressorMachineMenu::new,"infinity_powered_all_in_one_compressor_machine_menu");
-
-
-    private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory,
-                                                                                                 String name){
-        return MENUS.register(name,()-> IForgeMenuType.create(factory));
+    private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory,
+                                                                                                  String name) {
+        return MENUS.register(name, () -> IForgeMenuType.create(factory));
     }
 
-    public static void register(IEventBus eventBus){
+    public static void register(IEventBus eventBus) {
         MENUS.register(eventBus);
     }
 

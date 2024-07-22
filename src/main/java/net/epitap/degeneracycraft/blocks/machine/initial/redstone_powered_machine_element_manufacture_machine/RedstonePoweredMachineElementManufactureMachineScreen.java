@@ -18,6 +18,8 @@ public class RedstonePoweredMachineElementManufactureMachineScreen extends Abstr
 
     public RedstonePoweredMachineElementManufactureMachineScreen(RedstonePoweredMachineElementManufactureMachineMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
+        this.imageWidth = 176;
+        this.imageHeight = 166;
     }
 
 

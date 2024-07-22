@@ -47,6 +47,7 @@ public class Degeneracycraft {
     public static final String MOD_ID = "degeneracycraft";
     public static final org.apache.logging.log4j.Logger logger = LogManager.getLogger(MOD_ID);
     public static Config config;
+
     public Degeneracycraft() {
         final IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
@@ -61,17 +62,17 @@ public class Degeneracycraft {
         DCUniqueMenuTypes.register(eventBus);
         DCRecipeTypes.register(eventBus);
 
-        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Item.class, PipeBlocks::registerItems);
-        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Block.class, PipeBlocks::registerBlocks);
-        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(BlockEntityType.class, PipeBlockEntities::registerBlockEntities);
+        eventBus.addGenericListener(Item.class, PipeBlocks::registerItems);
+        eventBus.addGenericListener(Block.class, PipeBlocks::registerBlocks);
+        eventBus.addGenericListener(BlockEntityType.class, PipeBlockEntities::registerBlockEntities);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::commonSetup);
         eventBus.addListener(this::clientSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(PipeModelRegistry::onModelRegister);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(PipeModelRegistry::onModelBake);
+        eventBus.addListener(PipeModelRegistry::onModelRegister);
+        eventBus.addListener(PipeModelRegistry::onModelBake);
 
 //        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Item.class, PortBlocks::registerItems);
 //        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Block.class, PortBlocks::registerBlocks);
@@ -79,10 +80,8 @@ public class Degeneracycraft {
 
 //        PortBlocks.register(eventBus);
 //        PortBlockEntities.register(eventBus);
-
-
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(PortModelRegistry::onModelRegister);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(PortModelRegistry::onModelBake);
+        eventBus.addListener(PortModelRegistry::onModelRegister);
+        eventBus.addListener(PortModelRegistry::onModelBake);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -133,6 +132,7 @@ public class Degeneracycraft {
 
         PipeBlockEntities.clientSetup();
 //        PortBlockEntities.clientSetup();
+
 
     }
 

@@ -28,7 +28,7 @@ import org.jetbrains.annotations.Nullable;
 public class BasicStrengthMultiblockMaterialStorageBlockEntity extends BlockEntity implements MenuProvider {
 
     public final ContainerData data;
-    public final ItemStackHandler itemHandler = new ItemStackHandler(9) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(18) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();

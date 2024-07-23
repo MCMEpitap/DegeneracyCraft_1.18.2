@@ -22,6 +22,8 @@ public class BasicStrengthMultiblockEnergyStorageScreen extends AbstractContaine
 
     public BasicStrengthMultiblockEnergyStorageScreen(BasicStrengthMultiblockEnergyStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
+        this.imageWidth = 176;
+        this.imageHeight = 166;
     }
 
     @Override

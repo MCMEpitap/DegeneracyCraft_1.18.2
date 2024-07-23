@@ -39,13 +39,6 @@ public class BasicStrengthMultiblockEnergyStorageMenu extends AbstractContainerM
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-//            for (int i = 0; i < 3; ++i) {
-//                for (int l = 0; l < 3; ++l) {
-//                    this.addSlot(new SlotItemHandler(handler, (l + i * 3), 8 + l * 18, 7 + i * 18));
-//                }
-//            }
-//            this.addSlot(new SlotItemHandler(handler, 0, 8, 7));
-
         });
         addDataSlots(data);
     }

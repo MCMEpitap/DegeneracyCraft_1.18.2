@@ -13,7 +13,7 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class BasicStrengthMultiblockMaterialStorageScreen extends AbstractContainerScreen<BasicStrengthMultiblockMaterialStorageMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic_strength_multiblock_material_storage_block_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/basic_strength_multiblock_material_storage?basic_strength_multiblock_material_storage_gui.png");
 
 
     public BasicStrengthMultiblockMaterialStorageScreen(BasicStrengthMultiblockMaterialStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
@@ -35,8 +35,8 @@ public class BasicStrengthMultiblockMaterialStorageScreen extends AbstractContai
 
     @Override
     public void renderLabels(PoseStack pPoseStack, int pMouseX, int pMouseY) {
-        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase0"),
-                35, 67, 0xFFFFFF);
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"),
+                35, 67, 0xFF0000);
     }
 
     @Override

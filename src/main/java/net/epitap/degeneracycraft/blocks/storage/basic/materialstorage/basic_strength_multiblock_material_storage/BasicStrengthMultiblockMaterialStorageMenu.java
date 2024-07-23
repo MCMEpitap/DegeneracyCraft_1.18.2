@@ -20,7 +20,7 @@ public class BasicStrengthMultiblockMaterialStorageMenu extends AbstractContaine
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 9;
+    private static final int TE_INVENTORY_SLOT_COUNT = 18;
 
     public final BasicStrengthMultiblockMaterialStorageBlockEntity blockEntity;
     public final Level level;
@@ -42,6 +42,11 @@ public class BasicStrengthMultiblockMaterialStorageMenu extends AbstractContaine
             for (int i = 0; i < 3; ++i) {
                 for (int l = 0; l < 3; ++l) {
                     this.addSlot(new SlotItemHandler(handler, (l + i * 3), 8 + l * 18, 7 + i * 18));
+                }
+            }
+            for (int i = 0; i < 3; ++i) {
+                for (int l = 0; l < 3; ++l) {
+                    this.addSlot(new SlotItemHandler(handler, 9 + (l + i * 3), 98 + l * 18, 7 + i * 18));
                 }
             }
         });

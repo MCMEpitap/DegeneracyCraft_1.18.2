@@ -31,10 +31,15 @@ public class DCBlockStateProvider extends BlockStateProvider {
 
         registerBasicStrengthMultiblockBaseFrame();
         registerBasicStrengthMultiblockMachineFrame();
+        registerBasicStrengthMultiblockMachineFrameHolo();
         registerBasicStrengthMultiblockStructureFrame();
+        registerBasicStrengthMultiblockStructureFrameHolo();
         registerBasicStrengthMultiblockStructureGlass();
+        registerBasicStrengthMultiblockStructureGlassHolo();
         registerBasicStrengthMultiblockEnergyStorage();
+        registerBasicStrengthMultiblockEnergyStorageHolo();
         registerBasicStrengthMultiblockMaterialStorage();
+        registerBasicStrengthMultiblockMaterialStorageHolo();
 
         registerRedstonePoweredMachineElementManufactureMachine();
         registerRedstonePoweredMachinePartManufactureMachine();
@@ -46,9 +51,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicMachineElementProcessor();
         registerBasicMachineElementProcessorPort();
 
-        registerBasicStrengthMultiblockMachineFrameHolo();
-        registerBasicStrengthMultiblockStructureFrameHolo();
-        registerBasicStrengthMultiblockStructureGlassHolo();
+
     }
 
     private void registerReinforcedPlanks() {
@@ -156,6 +159,19 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> modelBasicStrengthMultiblockMachineFrame);
     }
 
+    private void registerBasicStrengthMultiblockMachineFrameHolo() {
+        BlockModelBuilder modelBasicStrengthMultiblockMachineFrame = models().getBuilder("block/basic_strength_multiblock_machine_frame_holo_block");
+        modelBasicStrengthMultiblockMachineFrame.parent(models().getExistingFile(mcLoc("cube")));
+        modelBasicStrengthMultiblockMachineFrame.texture("down", modLoc("block/multiblock/basic/basic_strength_multiblock_machine_frame/basic_strength_multiblock_machine_frame_holo_block"));
+        modelBasicStrengthMultiblockMachineFrame.texture("up", modLoc("block/multiblock/basic/basic_strength_multiblock_machine_frame/basic_strength_multiblock_machine_frame_holo_block"));
+        modelBasicStrengthMultiblockMachineFrame.texture("north", modLoc("block/multiblock/basic/basic_strength_multiblock_machine_frame/basic_strength_multiblock_machine_frame_holo_block"));
+        modelBasicStrengthMultiblockMachineFrame.texture("south", modLoc("block/multiblock/basic/basic_strength_multiblock_machine_frame/basic_strength_multiblock_machine_frame_holo_block"));
+        modelBasicStrengthMultiblockMachineFrame.texture("east", modLoc("block/multiblock/basic/basic_strength_multiblock_machine_frame/basic_strength_multiblock_machine_frame_holo_block"));
+        modelBasicStrengthMultiblockMachineFrame.texture("west", modLoc("block/multiblock/basic/basic_strength_multiblock_machine_frame/basic_strength_multiblock_machine_frame_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(),
+                state -> modelBasicStrengthMultiblockMachineFrame);
+    }
+
     private void registerBasicStrengthMultiblockStructureFrame() {
         BlockModelBuilder registerBasicStrengthMultiblockStructureFrame = models().getBuilder("block/basic_strength_multiblock_structure_frame_block");
         registerBasicStrengthMultiblockStructureFrame.parent(models().getExistingFile(mcLoc("cube")));
@@ -166,6 +182,19 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthMultiblockStructureFrame.texture("east", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_frame/basic_strength_multiblock_structure_frame_block"));
         registerBasicStrengthMultiblockStructureFrame.texture("west", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_frame/basic_strength_multiblock_structure_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(),
+                state -> registerBasicStrengthMultiblockStructureFrame);
+    }
+
+    private void registerBasicStrengthMultiblockStructureFrameHolo() {
+        BlockModelBuilder registerBasicStrengthMultiblockStructureFrame = models().getBuilder("block/basic_strength_multiblock_structure_frame_holo_block");
+        registerBasicStrengthMultiblockStructureFrame.parent(models().getExistingFile(mcLoc("cube")));
+        registerBasicStrengthMultiblockStructureFrame.texture("down", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_frame/basic_strength_multiblock_structure_frame_holo_block"));
+        registerBasicStrengthMultiblockStructureFrame.texture("up", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_frame/basic_strength_multiblock_structure_frame_holo_block"));
+        registerBasicStrengthMultiblockStructureFrame.texture("north", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_frame/basic_strength_multiblock_structure_frame_holo_block"));
+        registerBasicStrengthMultiblockStructureFrame.texture("south", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_frame/basic_strength_multiblock_structure_frame_holo_block"));
+        registerBasicStrengthMultiblockStructureFrame.texture("east", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_frame/basic_strength_multiblock_structure_frame_holo_block"));
+        registerBasicStrengthMultiblockStructureFrame.texture("west", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_frame/basic_strength_multiblock_structure_frame_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(),
                 state -> registerBasicStrengthMultiblockStructureFrame);
     }
 
@@ -182,29 +211,68 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> registerBasicStrengthMultiblockStructureGlass);
     }
 
+    private void registerBasicStrengthMultiblockStructureGlassHolo() {
+        BlockModelBuilder registerBasicStrengthMultiblockStructureGlass = models().getBuilder("block/basic_strength_multiblock_structure_glass_holo_block");
+        registerBasicStrengthMultiblockStructureGlass.parent(models().getExistingFile(mcLoc("cube")));
+        registerBasicStrengthMultiblockStructureGlass.texture("down", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_glass/basic_strength_multiblock_structure_glass_holo_block"));
+        registerBasicStrengthMultiblockStructureGlass.texture("up", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_glass/basic_strength_multiblock_structure_glass_holo_block"));
+        registerBasicStrengthMultiblockStructureGlass.texture("north", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_glass/basic_strength_multiblock_structure_glass_holo_block"));
+        registerBasicStrengthMultiblockStructureGlass.texture("south", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_glass/basic_strength_multiblock_structure_glass_holo_block"));
+        registerBasicStrengthMultiblockStructureGlass.texture("east", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_glass/basic_strength_multiblock_structure_glass_holo_block"));
+        registerBasicStrengthMultiblockStructureGlass.texture("west", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_glass/basic_strength_multiblock_structure_glass_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(),
+                state -> registerBasicStrengthMultiblockStructureGlass);
+    }
+
     private void registerBasicStrengthMultiblockEnergyStorage() {
         BlockModelBuilder registerBasicStrengthMultiblockEnergyStorage = models().getBuilder("block/basic_strength_multiblock_energy_storage_block");
         registerBasicStrengthMultiblockEnergyStorage.parent(models().getExistingFile(mcLoc("cube")));
-        registerBasicStrengthMultiblockEnergyStorage.texture("down", modLoc("block/multiblock/basic/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_block"));
-        registerBasicStrengthMultiblockEnergyStorage.texture("up", modLoc("block/multiblock/basic/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_block"));
-        registerBasicStrengthMultiblockEnergyStorage.texture("north", modLoc("block/multiblock/basic/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_block"));
-        registerBasicStrengthMultiblockEnergyStorage.texture("south", modLoc("block/multiblock/basic/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_block"));
-        registerBasicStrengthMultiblockEnergyStorage.texture("east", modLoc("block/multiblock/basic/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_block"));
-        registerBasicStrengthMultiblockEnergyStorage.texture("west", modLoc("block/multiblock/basic/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_block"));
+        registerBasicStrengthMultiblockEnergyStorage.texture("down", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_block"));
+        registerBasicStrengthMultiblockEnergyStorage.texture("up", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_block"));
+        registerBasicStrengthMultiblockEnergyStorage.texture("north", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_block"));
+        registerBasicStrengthMultiblockEnergyStorage.texture("south", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_block"));
+        registerBasicStrengthMultiblockEnergyStorage.texture("east", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_block"));
+        registerBasicStrengthMultiblockEnergyStorage.texture("west", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(),
+                state -> registerBasicStrengthMultiblockEnergyStorage);
+    }
+
+    private void registerBasicStrengthMultiblockEnergyStorageHolo() {
+        BlockModelBuilder registerBasicStrengthMultiblockEnergyStorage = models().getBuilder("block/basic_strength_multiblock_energy_storage_block");
+        registerBasicStrengthMultiblockEnergyStorage.parent(models().getExistingFile(mcLoc("cube")));
+        registerBasicStrengthMultiblockEnergyStorage.texture("down", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_holo_block"));
+        registerBasicStrengthMultiblockEnergyStorage.texture("up", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_holo_block"));
+        registerBasicStrengthMultiblockEnergyStorage.texture("north", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_holo_block"));
+        registerBasicStrengthMultiblockEnergyStorage.texture("south", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_holo_block"));
+        registerBasicStrengthMultiblockEnergyStorage.texture("east", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_holo_block"));
+        registerBasicStrengthMultiblockEnergyStorage.texture("west", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(),
                 state -> registerBasicStrengthMultiblockEnergyStorage);
     }
 
     private void registerBasicStrengthMultiblockMaterialStorage() {
         BlockModelBuilder registerBasicStrengthMultiblockMaterialStorage = models().getBuilder("block/basic_strength_multiblock_material_storage_block");
         registerBasicStrengthMultiblockMaterialStorage.parent(models().getExistingFile(mcLoc("cube")));
-        registerBasicStrengthMultiblockMaterialStorage.texture("down", modLoc("block/multiblock/basic/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_block"));
-        registerBasicStrengthMultiblockMaterialStorage.texture("up", modLoc("block/multiblock/basic/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_block"));
-        registerBasicStrengthMultiblockMaterialStorage.texture("north", modLoc("block/multiblock/basic/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_block"));
-        registerBasicStrengthMultiblockMaterialStorage.texture("south", modLoc("block/multiblock/basic/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_block"));
-        registerBasicStrengthMultiblockMaterialStorage.texture("east", modLoc("block/multiblock/basic/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_block"));
-        registerBasicStrengthMultiblockMaterialStorage.texture("west", modLoc("block/multiblock/basic/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_block"));
+        registerBasicStrengthMultiblockMaterialStorage.texture("down", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_block"));
+        registerBasicStrengthMultiblockMaterialStorage.texture("up", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_block"));
+        registerBasicStrengthMultiblockMaterialStorage.texture("north", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_block"));
+        registerBasicStrengthMultiblockMaterialStorage.texture("south", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_block"));
+        registerBasicStrengthMultiblockMaterialStorage.texture("east", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_block"));
+        registerBasicStrengthMultiblockMaterialStorage.texture("west", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
+                state -> registerBasicStrengthMultiblockMaterialStorage);
+    }
+
+    private void registerBasicStrengthMultiblockMaterialStorageHolo() {
+        BlockModelBuilder registerBasicStrengthMultiblockMaterialStorage = models().getBuilder("block/basic_strength_multiblock_material_storage_holo_block");
+        registerBasicStrengthMultiblockMaterialStorage.parent(models().getExistingFile(mcLoc("cube")));
+        registerBasicStrengthMultiblockMaterialStorage.texture("down", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_holo_block"));
+        registerBasicStrengthMultiblockMaterialStorage.texture("up", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_holo_block"));
+        registerBasicStrengthMultiblockMaterialStorage.texture("north", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_holo_block"));
+        registerBasicStrengthMultiblockMaterialStorage.texture("south", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_holo_block"));
+        registerBasicStrengthMultiblockMaterialStorage.texture("east", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_holo_block"));
+        registerBasicStrengthMultiblockMaterialStorage.texture("west", modLoc("block/multiblock/basic/storage/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
                 state -> registerBasicStrengthMultiblockMaterialStorage);
     }
 
@@ -233,45 +301,6 @@ public class DCBlockStateProvider extends BlockStateProvider {
         orientedBlock(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(),
                 state -> modelRedstonePoweredMachinePartManufactureMachine);
     }
-    private void registerBasicStrengthMultiblockMachineFrameHolo() {
-        BlockModelBuilder modelBasicStrengthMultiblockMachineFrame = models().getBuilder("block/basic_strength_multiblock_machine_frame_holo_block");
-        modelBasicStrengthMultiblockMachineFrame.parent(models().getExistingFile(mcLoc("cube")));
-        modelBasicStrengthMultiblockMachineFrame.texture("down", modLoc("block/multiblock/basic/basic_strength_multiblock_machine_frame/basic_strength_multiblock_machine_frame_holo_block"));
-        modelBasicStrengthMultiblockMachineFrame.texture("up", modLoc("block/multiblock/basic/basic_strength_multiblock_machine_frame/basic_strength_multiblock_machine_frame_holo_block"));
-        modelBasicStrengthMultiblockMachineFrame.texture("north", modLoc("block/multiblock/basic/basic_strength_multiblock_machine_frame/basic_strength_multiblock_machine_frame_holo_block"));
-        modelBasicStrengthMultiblockMachineFrame.texture("south", modLoc("block/multiblock/basic/basic_strength_multiblock_machine_frame/basic_strength_multiblock_machine_frame_holo_block"));
-        modelBasicStrengthMultiblockMachineFrame.texture("east", modLoc("block/multiblock/basic/basic_strength_multiblock_machine_frame/basic_strength_multiblock_machine_frame_holo_block"));
-        modelBasicStrengthMultiblockMachineFrame.texture("west", modLoc("block/multiblock/basic/basic_strength_multiblock_machine_frame/basic_strength_multiblock_machine_frame_holo_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(),
-                state -> modelBasicStrengthMultiblockMachineFrame);
-    }
-
-    private void registerBasicStrengthMultiblockStructureFrameHolo() {
-        BlockModelBuilder registerBasicStrengthMultiblockStructureFrame = models().getBuilder("block/basic_strength_multiblock_structure_frame_holo_block");
-        registerBasicStrengthMultiblockStructureFrame.parent(models().getExistingFile(mcLoc("cube")));
-        registerBasicStrengthMultiblockStructureFrame.texture("down", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_frame/basic_strength_multiblock_structure_frame_holo_block"));
-        registerBasicStrengthMultiblockStructureFrame.texture("up", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_frame/basic_strength_multiblock_structure_frame_holo_block"));
-        registerBasicStrengthMultiblockStructureFrame.texture("north", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_frame/basic_strength_multiblock_structure_frame_holo_block"));
-        registerBasicStrengthMultiblockStructureFrame.texture("south", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_frame/basic_strength_multiblock_structure_frame_holo_block"));
-        registerBasicStrengthMultiblockStructureFrame.texture("east", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_frame/basic_strength_multiblock_structure_frame_holo_block"));
-        registerBasicStrengthMultiblockStructureFrame.texture("west", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_frame/basic_strength_multiblock_structure_frame_holo_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(),
-                state -> registerBasicStrengthMultiblockStructureFrame);
-    }
-
-    private void registerBasicStrengthMultiblockStructureGlassHolo() {
-        BlockModelBuilder registerBasicStrengthMultiblockStructureGlass = models().getBuilder("block/basic_strength_multiblock_structure_glass_holo_block");
-        registerBasicStrengthMultiblockStructureGlass.parent(models().getExistingFile(mcLoc("cube")));
-        registerBasicStrengthMultiblockStructureGlass.texture("down", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_glass/basic_strength_multiblock_structure_glass_holo_block"));
-        registerBasicStrengthMultiblockStructureGlass.texture("up", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_glass/basic_strength_multiblock_structure_glass_holo_block"));
-        registerBasicStrengthMultiblockStructureGlass.texture("north", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_glass/basic_strength_multiblock_structure_glass_holo_block"));
-        registerBasicStrengthMultiblockStructureGlass.texture("south", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_glass/basic_strength_multiblock_structure_glass_holo_block"));
-        registerBasicStrengthMultiblockStructureGlass.texture("east", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_glass/basic_strength_multiblock_structure_glass_holo_block"));
-        registerBasicStrengthMultiblockStructureGlass.texture("west", modLoc("block/multiblock/basic/basic_strength_multiblock_structure_glass/basic_strength_multiblock_structure_glass_holo_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(),
-                state -> registerBasicStrengthMultiblockStructureGlass);
-    }
-
     private void registerBasicPowerCompositeStructureTypeThermalGenerator() {
         BlockModelBuilder modelBasicPowerCompositeStructureTypeThermalGenerator = models().getBuilder("block/basic_power_composite_structure_type_thermal_generator_block");
         modelBasicPowerCompositeStructureTypeThermalGenerator.parent(models().getExistingFile(mcLoc("cube")));

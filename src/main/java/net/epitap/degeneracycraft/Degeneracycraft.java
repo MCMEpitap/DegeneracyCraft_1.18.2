@@ -119,10 +119,14 @@ public class Degeneracycraft {
 //
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK.get(), RenderType.translucent());
 
-
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
+
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(), RenderType.translucent());
 
         MenuScreens.register(DCMenuTypes.INFINITY_POWERED_ALL_IN_ONE_COMPRESSOR_MACHINE_BLOCK_MENU.get(), InfinityPoweredAllInOneCompressorMachineScreen::new);
 

@@ -44,9 +44,12 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerRedstonePoweredMachineElementManufactureMachine();
         registerRedstonePoweredMachinePartManufactureMachine();
         registerBasicPowerCompositeStructureTypeThermalGenerator();
+        registerBasicEnduranceHighTemperatureCombustionChamber();
+        registerBasicEnduranceHighTemperatureCombustionChamberHolo();
         registerBasicPowerCompositeStructureTypeThermalGeneratorPort();
         registerBasicPowerCompositeStructureTypeThermalGeneratorPortHolo();
         registerBasicPowerCompositeStructureTypeThermalGeneratorBus();
+        registerBasicPowerCompositeStructureTypeThermalGeneratorBusHolo();
 
         registerBasicTechnologyUniversalAssembler();
         registerBasicMachineElementProcessor();
@@ -312,6 +315,32 @@ public class DCBlockStateProvider extends BlockStateProvider {
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side"));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_side"));
         orientedBlock(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get(),
+                state -> modelBasicPowerCompositeStructureTypeThermalGenerator);
+    }
+
+    private void registerBasicEnduranceHighTemperatureCombustionChamber() {
+        BlockModelBuilder modelBasicPowerCompositeStructureTypeThermalGenerator = models().getBuilder("block/basic_endurance_high_temperature_combustion_chamber_block");
+        modelBasicPowerCompositeStructureTypeThermalGenerator.parent(models().getExistingFile(mcLoc("cube")));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/multiblock/basic/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/multiblock/basic/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("north", modLoc("block/multiblock/basic/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/multiblock/basic/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/multiblock/basic/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/multiblock/basic/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
+        orientedBlock(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(),
+                state -> modelBasicPowerCompositeStructureTypeThermalGenerator);
+    }
+
+    private void registerBasicEnduranceHighTemperatureCombustionChamberHolo() {
+        BlockModelBuilder modelBasicPowerCompositeStructureTypeThermalGenerator = models().getBuilder("block/basic_endurance_high_temperature_combustion_chamber_holo_block");
+        modelBasicPowerCompositeStructureTypeThermalGenerator.parent(models().getExistingFile(mcLoc("cube")));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("down", modLoc("block/multiblock/basic/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("up", modLoc("block/multiblock/basic/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("north", modLoc("block/multiblock/basic/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/multiblock/basic/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/multiblock/basic/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
+        modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/multiblock/basic/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
+        orientedBlock(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(),
                 state -> modelBasicPowerCompositeStructureTypeThermalGenerator);
     }
 

@@ -649,24 +649,24 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_strength_multiblock_base_frame_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_multiblock_machine_frame_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_multiblock_machine_frame_holo_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_multiblock_structure_frame_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_multiblock_structure_frame_holo_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_multiblock_structure_glass_block"));
-
-
+        withExistingParent(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_multiblock_structure_glass_holo_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_multiblock_energy_storage_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_multiblock_material_storage_block"));
 
 
-        withExistingParent(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_strength_multiblock_machine_frame_holo_block"));
-        withExistingParent(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_strength_multiblock_structure_frame_holo_block"));
-        withExistingParent(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_strength_multiblock_structure_glass_holo_block"));
+
+
 
 
 //        withExistingParent(DCBlocks.LOW_STERNGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.getId().getPath(),
@@ -681,6 +681,8 @@ public class DCItemModelProvider extends ItemModelProvider {
 //
         withExistingParent(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.getId().getPath(),
                 modLoc("block/basic_power_composite_structure_type_thermal_generator_block"));
+        withExistingParent(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.getId().getPath(),
+                modLoc("block/basic_endurance_high_temperature_combustion_chamber_block"));
         withExistingParent(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_PORT_BLOCK.getId().getPath(),
                 modLoc("block/basic_power_composite_structure_type_thermal_generator_port_block"));
         withExistingParent(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BUS_BLOCK.getId().getPath(),

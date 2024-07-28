@@ -667,6 +667,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get(), "Low Strength Multiblock Structure Glass Block");
 
         add(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get(), "Basic Power Composite Structure Type Thermal Generator");
+        add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), "Basic Endurance High Temperature Combustion Chamber");
+        add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), "Basic Endurance High Temperature Combustion Chamber (Hologram)");
         add(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BUS_BLOCK.get(), "Basic Power Composite Structure Type Thermal Generator Bus");
         add(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(), "Basic Power Composite Structure Type Thermal Generator Bus (Hologram)");
         add(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_PORT_BLOCK.get(), "Basic Power Composite Structure Type Thermal Generator Port");

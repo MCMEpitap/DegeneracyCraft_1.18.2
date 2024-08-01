@@ -411,16 +411,18 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.IRON_GEAR.get(),"鉄の歯車");
         add(DCItems.IRON_JOINT.get(),"鉄の継手");
         add(DCItems.IRON_KEY.get(),"鉄のキー");
-        add(DCItems.IRON_NUT.get(),"鉄のナット");
-        add(DCItems.IRON_PIPE.get(),"鉄の管");
-        add(DCItems.IRON_PIPEJOINT.get(),"鉄の管継手");
-        add(DCItems.IRON_PLATE.get(),"鉄の板");
-        add(DCItems.IRON_ROD.get(),"鉄の棒");
-        add(DCItems.IRON_SHAFT.get(),"鉄の軸");
-        add(DCItems.IRON_SHAFTCOUPLING.get(),"鉄の軸継手");
-        add(DCItems.IRON_SHAPESTEEL.get(),"鉄の型鋼");
-        add(DCItems.IRON_SPRING.get(),"鉄のバネ");
-        
+        add(DCItems.IRON_NUT.get(), "鉄のナット");
+        add(DCItems.IRON_PIPE.get(), "鉄の管");
+        add(DCItems.IRON_PIPEJOINT.get(), "鉄の管継手");
+        add(DCItems.IRON_PLATE.get(), "鉄の板");
+        add(DCItems.IRON_RIVET.get(), "鉄のリベット");
+        add(DCItems.IRON_ROD.get(), "鉄の棒");
+        add(DCItems.IRON_SHAFT.get(), "鉄の軸");
+        add(DCItems.IRON_SHAFTCOUPLING.get(), "鉄の軸継手");
+        add(DCItems.IRON_SHAPESTEEL.get(), "鉄の型鋼");
+        add(DCItems.IRON_SPRING.get(), "鉄のバネ");
+        add(DCItems.IRON_WIRE.get(), "鉄のワイヤー");
+
         //Basic Class Iron Machine Component
 //        add(DCItems.BASIC_CLASS_IRON_BEARING.get(),"基本等級 鉄の軸受");
 //        add(DCItems.BASIC_CLASS_IRON_BOLT.get(),"基本等級 鉄のボルト");

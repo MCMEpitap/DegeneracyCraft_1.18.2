@@ -416,13 +416,14 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.IRON_NUT.get(),"Iron Nut");
         add(DCItems.IRON_PIPE.get(),"Iron Pipe");
         add(DCItems.IRON_PIPEJOINT.get(),"Iron PipeJoint");
-        add(DCItems.IRON_PLATE.get(),"Iron Plate");
-        add(DCItems.IRON_ROD.get(),"Iron Rod");
+        add(DCItems.IRON_PLATE.get(), "Iron Plate");
+        add(DCItems.IRON_RIVET.get(), "Iron Rivet");
+        add(DCItems.IRON_ROD.get(), "Iron Rod");
         add(DCItems.IRON_SHAFT.get(),"Iron Shaft");
         add(DCItems.IRON_SHAFTCOUPLING.get(),"Iron ShaftCoupling");
         add(DCItems.IRON_SHAPESTEEL.get(),"Iron ShapeSteel");
-        add(DCItems.IRON_SPRING.get(),"Iron Spring");
-        
+        add(DCItems.IRON_SPRING.get(), "Iron Spring");
+        add(DCItems.IRON_WIRE.get(), "Iron Wire");
         
 //        //Basic Class Iron Machine Component
 //        add(DCItems.BASIC_CLASS_IRON_BEARING.get(),"Basic Class Iron Bearing");

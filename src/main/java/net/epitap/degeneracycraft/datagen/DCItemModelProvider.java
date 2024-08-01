@@ -421,12 +421,13 @@ public class DCItemModelProvider extends ItemModelProvider {
         elementIronItem(DCItems.IRON_PIPE.get());
         elementIronItem(DCItems.IRON_PIPEJOINT.get());
         elementIronItem(DCItems.IRON_PLATE.get());
+        elementIronItem(DCItems.IRON_RIVET.get());
         elementIronItem(DCItems.IRON_ROD.get());
         elementIronItem(DCItems.IRON_SHAFT.get());
         elementIronItem(DCItems.IRON_SHAFTCOUPLING.get());
         elementIronItem(DCItems.IRON_SHAPESTEEL.get());
         elementIronItem(DCItems.IRON_SPRING.get());
-
+        elementIronItem(DCItems.IRON_WIRE.get());
 //        simpleItem(DCItems.BASIC_CLASS_IRON_BEARING.get());
 //        simpleItem(DCItems.BASIC_CLASS_IRON_BOLT.get());
 //        simpleItem(DCItems.BASIC_CLASS_IRON_CAM.get());

@@ -497,11 +497,14 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> IRON_PIPE = registerAtomicItem("iron_pipe", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "iron", "initial");
     public static final RegistryObject<Item> IRON_PIPEJOINT = registerAtomicItem("iron_pipejoint", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "iron", "initial");
     public static final RegistryObject<Item> IRON_PLATE = registerAtomicItem("iron_plate", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "iron", "initial");
+    public static final RegistryObject<Item> IRON_RIVET = registerAtomicItem("iron_rivet", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "iron", "initial");
+
     public static final RegistryObject<Item> IRON_ROD = registerAtomicItem("iron_rod", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "iron", "initial");
     public static final RegistryObject<Item> IRON_SHAFT = registerAtomicItem("iron_shaft", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "iron", "initial");
     public static final RegistryObject<Item> IRON_SHAFTCOUPLING = registerAtomicItem("iron_shaftcoupling", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "iron", "initial");
     public static final RegistryObject<Item> IRON_SHAPESTEEL = registerAtomicItem("iron_shapesteel", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "iron", "initial");
     public static final RegistryObject<Item> IRON_SPRING = registerAtomicItem("iron_spring", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "iron", "initial");
+    public static final RegistryObject<Item> IRON_WIRE = registerAtomicItem("iron_wire", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "iron", "initial");
 
 //    public static final RegistryObject<Item> BASIC_CLASS_IRON_BEARING = ITEMS.register("basic_class_iron_bearing",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB)));
 //    public static final RegistryObject<Item> BASIC_CLASS_IRON_BOLT = ITEMS.register("basic_class_iron_bolt",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB)));

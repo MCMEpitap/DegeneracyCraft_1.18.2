@@ -5,7 +5,6 @@ import net.epitap.degeneracycraft.item.tool.CAMMDA_Tier1;
 import net.epitap.degeneracycraft.item.tool.WrenchItem;
 import net.epitap.degeneracycraft.item.tool.test.GunItem;
 import net.epitap.degeneracycraft.tier.DCTier;
-import net.epitap.degeneracycraft.tooltip.DCItemTooltip;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.Registry;
@@ -193,28 +192,28 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> GRAPHITE_ORESINTER = ITEMS.register("graphite_oresinter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> GRAPHITE_INGOT = ITEMS.register("graphite_ingot", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_INGOT_TAB)));
 
-    // Iron item group
-    public static final RegistryObject<Item> IRON_DUST  = ITEMS.register("iron_dust",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> IRON_PUREDUST  = ITEMS.register("iron_puredust",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> IRON_LEACHATE  = ITEMS.register("iron_leachate",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> IRON_CONCENTRATE  = ITEMS.register("iron_concentrate",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> IRON_PLASMA  = ITEMS.register("iron_plasma",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> IRON_DEGENERATEMATTER  = ITEMS.register("iron_degeneratematter",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> IRON_SOUP  = ITEMS.register("iron_soup",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> IRON_IMAGINARYMATTER  = ITEMS.register("iron_imaginarymatter",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> STABLE_IRON_IMAGINARYMATTER  = ITEMS.register("stable_iron_imaginarymatter",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> IRON_TACHYON  = ITEMS.register("iron_tachyon",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> IRON_ANTIMATTER  = ITEMS.register("iron_antimatter",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> IRON_ULTRAHOTPLASMA = ITEMS.register("iron_ultrahotplasma", () -> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> IRON_OVERFLUID = ITEMS.register("iron_overfluid", () -> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> IRON_CRYSTAL = ITEMS.register("iron_crystal", () -> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> IRON_PRECIPITATE  = ITEMS.register("iron_precipitate",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> IRON_WASHEDDUST  = ITEMS.register("iron_washeddust",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> IRON_ORESINTER  = ITEMS.register("iron_oresinter",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    
-    //Laterite item group
-    public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_laterite_ore",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> LATERITE_DUST = ITEMS.register("laterite_dust",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+//    // Iron item group
+//    public static final RegistryObject<Item> IRON_DUST  = ITEMS.register("iron_dust",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+//    public static final RegistryObject<Item> IRON_PUREDUST  = ITEMS.register("iron_puredust",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+//    public static final RegistryObject<Item> IRON_LEACHATE  = ITEMS.register("iron_leachate",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+//    public static final RegistryObject<Item> IRON_CONCENTRATE  = ITEMS.register("iron_concentrate",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+//    public static final RegistryObject<Item> IRON_PLASMA  = ITEMS.register("iron_plasma",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+//    public static final RegistryObject<Item> IRON_DEGENERATEMATTER  = ITEMS.register("iron_degeneratematter",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+//    public static final RegistryObject<Item> IRON_SOUP  = ITEMS.register("iron_soup",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+//    public static final RegistryObject<Item> IRON_IMAGINARYMATTER  = ITEMS.register("iron_imaginarymatter",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+//    public static final RegistryObject<Item> STABLE_IRON_IMAGINARYMATTER  = ITEMS.register("stable_iron_imaginarymatter",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+//    public static final RegistryObject<Item> IRON_TACHYON  = ITEMS.register("iron_tachyon",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+//    public static final RegistryObject<Item> IRON_ANTIMATTER  = ITEMS.register("iron_antimatter",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+//    public static final RegistryObject<Item> IRON_ULTRAHOTPLASMA = ITEMS.register("iron_ultrahotplasma", () -> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+//    public static final RegistryObject<Item> IRON_OVERFLUID = ITEMS.register("iron_overfluid", () -> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+//    public static final RegistryObject<Item> IRON_CRYSTAL = ITEMS.register("iron_crystal", () -> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+//    public static final RegistryObject<Item> IRON_PRECIPITATE  = ITEMS.register("iron_precipitate",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+//    public static final RegistryObject<Item> IRON_WASHEDDUST  = ITEMS.register("iron_washeddust",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+//    public static final RegistryObject<Item> IRON_ORESINTER  = ITEMS.register("iron_oresinter",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+//
+//Laterite item group
+public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_laterite_ore", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> LATERITE_DUST = ITEMS.register("laterite_dust", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> LATERITE_PUREDUST = ITEMS.register("laterite_puredust",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> LATERITE_LEACHATE = ITEMS.register("laterite_leachate",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> LATERITE_CONCENTRATE = ITEMS.register("laterite_concentrate",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));

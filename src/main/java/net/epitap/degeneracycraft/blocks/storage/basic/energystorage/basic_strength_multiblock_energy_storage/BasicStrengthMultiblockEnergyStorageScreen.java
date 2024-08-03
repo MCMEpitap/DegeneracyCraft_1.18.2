@@ -59,9 +59,9 @@ public class BasicStrengthMultiblockEnergyStorageScreen extends AbstractContaine
                 35, 67, 0xFF0000);
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".available"),
                 35, 15, 0xffffff);
-        drawCenteredString(pPoseStack, Minecraft.getInstance().font, (int) menu.getAvailableEnergy() + " kFE",
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, (int) (menu.getAvailableEnergy() / 1E3F) + " kFE",
                 35, 25, 0xffffff);
-        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".available" + "%"),
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".available%"),
                 35, 35, 0xffffff);
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, (int) menu.getAvailableEnergyPercent() + " %",
                 35, 45, 0xffffff);

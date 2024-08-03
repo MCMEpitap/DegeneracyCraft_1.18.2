@@ -28,19 +28,8 @@ import org.jetbrains.annotations.Nullable;
 
 public class BasicStrengthMultiblockEnergyStorageBlockEntity extends BlockEntity implements MenuProvider {
     public float BS_ME_STORAGE_CAPACITY = 40000F;
-    public float BS_ME_STORAGE_TRANSFER = 40000F;
+    public float BS_ME_STORAGE_TRANSFER = 32F;
     public final ContainerData data;
-//    public final ItemStackHandler itemHandler = new ItemStackHandler(1) {
-//        @Override
-//        protected void onContentsChanged(int slot) {
-//            setChanged();
-//        }
-//
-//        @Override
-//        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-//            return super.isItemValid(slot, stack);
-//        }
-//    };
 
     private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BS_ME_STORAGE_CAPACITY, BS_ME_STORAGE_TRANSFER) {
         @Override
@@ -102,16 +91,8 @@ public class BasicStrengthMultiblockEnergyStorageBlockEntity extends BlockEntity
 
         return super.getCapability(cap, side);
     }
-
-//    public void setHandler(ItemStackHandler itemStackHandler) {
-//        for (int i = 0; i < itemStackHandler.getSlots(); i++) {
-//            itemHandler.setStackInSlot(i, itemStackHandler.getStackInSlot(i));
-//        }
-//    }
-
     @Override
     public void onLoad() {
-//        lazyItemHandler = LazyOptional.of(() -> itemHandler);
         lazyEnergyHandler = LazyOptional.of(() -> ENERGY_STORAGE);
         super.onLoad();
     }
@@ -125,30 +106,24 @@ public class BasicStrengthMultiblockEnergyStorageBlockEntity extends BlockEntity
 
     @Override
     protected void saveAdditional(CompoundTag nbt) {
-//        nbt.put("inventory", itemHandler.serializeNBT());
         nbt.putFloat("bs_me_storage.energy", ENERGY_STORAGE.getEnergyStoredFloat());
         super.saveAdditional(nbt);
     }
 
     @Override
     public void load(CompoundTag nbt) {
-//        itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("bs_me_storage.energy"));
         super.load(nbt);
     }
 
     public void drops() {
-//        SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
-//        for (int i = 0; i < itemHandler.getSlots(); i++) {
-//            inventory.setItem(i, itemHandler.getStackInSlot(i));
-//        }
-
-//        Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
     public static void tick(Level level, BlockPos pPos, BlockState pState, BasicStrengthMultiblockEnergyStorageBlockEntity blockEntity) {
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
+
+
     }
 
 }

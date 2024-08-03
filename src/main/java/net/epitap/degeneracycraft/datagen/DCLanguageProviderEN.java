@@ -706,6 +706,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
 
         add("screen." + "degeneracycraft" + ".halt", "Halt");
+        add("screen." + "degeneracycraft" + ".available", "Available");
 
         add("screen." + "degeneracycraft_besic_power_composite_structure_type_thermal_generator" + ".burntime", "BurnTime");
 

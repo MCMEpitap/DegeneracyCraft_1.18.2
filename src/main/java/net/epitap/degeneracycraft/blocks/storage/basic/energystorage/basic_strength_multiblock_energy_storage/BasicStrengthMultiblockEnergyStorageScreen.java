@@ -56,6 +56,13 @@ public class BasicStrengthMultiblockEnergyStorageScreen extends AbstractContaine
         int y = (height - imageHeight) / 2;
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"),
                 35, 67, 0xFF0000);
+
+
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"),
+                35, 19, 0xffffff);
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, menu.getEnergy() + " FE",
+                35, 19, 0xffffff);
+
         renderEnergyAreaTooltips(pPoseStack, pMouseX, pMouseY, x, y);
     }
 

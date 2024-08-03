@@ -7,11 +7,9 @@ public interface DCIEnergyStorageFloat {
 
     float getEnergyStoredFloat();
 
-
     float getMaxEnergyStoredFloat();
 
     boolean canExtract();
-
 
     boolean canReceive();
 }

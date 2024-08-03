@@ -617,6 +617,8 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicInscribedCircuitItem(DCItems.BASIC_PRECISION_CHAIN_INSCRIBED_CIRCUIT.get());
 
         deviceItem(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+        deviceItem(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+
         deviceItem(DCItems.MACHINE_HALT_DEVICE.get());
 
         basicMaterialCommonItem(DCItems.COMPRESSED_PLANKS.get());

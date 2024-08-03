@@ -45,14 +45,17 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
     public float BP_CS_T_THERMAL_GENERATOR_CAPACITY = 40000F;
     public float BP_CS_T_THERMAL_GENERATOR_TRANSFER = 16F;
     public float BP_CS_T_THERMAL_GENERATOR_OUTPUT = 16F;
-    public float BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED = 32F;
+    public float BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED = BP_CS_T_THERMAL_GENERATOR_OUTPUT * 2F;
+
+    public float BP_CS_T_THERMAL_GENERATOR_OUTPUT_POWERED0 = BP_CS_T_THERMAL_GENERATOR_OUTPUT * 3F;
     protected final ContainerData data;
     public int counter;
     public boolean formed0;
     public boolean formed1;
     public boolean formed2;
+    public boolean powered0_0;
     public boolean isFormed;
-
+    public boolean isPowered0;
     private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -207,7 +210,10 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         blockEntity.formed0 = blockEntity.isFormed0(level, pos, state);
         blockEntity.formed1 = blockEntity.isFormed1(level, pos, state);
         blockEntity.formed2 = blockEntity.isFormed2(level, pos, state);
+        blockEntity.powered0_0 = blockEntity.powered0_0(level, pos, state);
         blockEntity.isFormed = blockEntity.isFormed();
+        blockEntity.isPowered0 = blockEntity.isPowered0();
+
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
         blockEntity.hologram(level, pos, state, blockEntity);
@@ -216,6 +222,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         }
         if (!isHaltDevice(blockEntity)) {
             if (blockEntity.counter > 0) {
+
                 if (blockEntity.isFormed) {
                     blockEntity.counter--;
                     blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED, false);
@@ -246,6 +253,11 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
     public boolean isFormed() {
         return isFormed = formed0 && formed1 && formed2;
     }
+
+    public boolean isPowered0() {
+        return isPowered0 = powered0_0 && isFormed;
+    }
+
 
     public boolean isFormed0(Level level, BlockPos pos, BlockState state) {
         Direction dir = state.getValue(BasicPowerCompositeStructureTypeThermalGeneratorBlock.FACING);
@@ -293,17 +305,15 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
                 .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
         boolean pos3 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_1.xPos).above(MBPPos.x_1y0z_1.yPos).relative(reZ, MBPPos.x_1y0z_1.zPos))
                 .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get());
-        boolean pos4 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y0z_1.xPos).above(MBPPos.x0y0z_1.yPos).relative(reZ, MBPPos.x0y0z_1.zPos))
-                .isAir();
-        boolean pos5 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z_1.xPos).above(MBPPos.x1y0z_1.yPos).relative(reZ, MBPPos.x1y0z_1.zPos))
+        boolean pos4 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z_1.xPos).above(MBPPos.x1y0z_1.yPos).relative(reZ, MBPPos.x1y0z_1.zPos))
                 .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get());
-        boolean pos6 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z0.xPos).above(MBPPos.x_1y0z0.yPos).relative(reZ, MBPPos.x_1y0z0.zPos))
+        boolean pos5 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z0.xPos).above(MBPPos.x_1y0z0.yPos).relative(reZ, MBPPos.x_1y0z0.zPos))
                 .is(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_PORT_BLOCK.get());
-        boolean pos7 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z0.xPos).above(MBPPos.x1y0z0.yPos).relative(reZ, MBPPos.x1y0z0.zPos))
+        boolean pos6 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z0.xPos).above(MBPPos.x1y0z0.yPos).relative(reZ, MBPPos.x1y0z0.zPos))
                 .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
 
         setChanged(level, pos, state);
-        return formed1 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6 && pos7;
+        return formed1 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6;
     }
 
     public boolean isFormed2(Level level, BlockPos pos, BlockState state) {
@@ -335,6 +345,21 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         setChanged(level, pos, state);
         return formed2 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6 && pos7 && pos8;
     }
+
+    public boolean powered0_0(Level level, BlockPos pos, BlockState state) {
+        Direction dir = state.getValue(BasicPowerCompositeStructureTypeThermalGeneratorBlock.FACING);
+        /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
+        BlockPos blockpos = new BlockPos(this.getBlockPos());
+        Direction reX = dir.getCounterClockWise();
+        Direction reZ = dir;
+        boolean pos0 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y0z_1.xPos).above(MBPPos.x0y0z_1.yPos).relative(reZ, MBPPos.x0y0z_1.zPos))
+                .isAir();
+
+        setChanged(level, pos, state);
+        return powered0_0 = pos0;
+    }
+
+
     public void hologram(Level level, BlockPos pos, BlockState state, BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity blockEntity) {
         Direction dir = state.getValue(BasicPowerCompositeStructureTypeThermalGeneratorBlock.FACING);
         BlockPos blockpos = new BlockPos(this.getBlockPos());

@@ -625,6 +625,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.COMPRESSED_REDSTONE.get(), "圧縮レッドストーン");
 
         add(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "マルチブロック設備ホログラム投影機");
+        add(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "基本技術マルチブロック設備ホログラム投影機");
         add(DCItems.MACHINE_HALT_DEVICE.get(), "機械停止デバイス");
 
         add(DCItems.BASIC_CIRCUIT.get(), "基本回路");

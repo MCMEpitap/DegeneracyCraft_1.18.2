@@ -630,6 +630,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.SIMPLE_CONCAVE_LENS.get(), "Simple Concave Lens");
 
         add(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "Multiblock Structure Hologram Visualizer");
+        add(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "Basic Technology Multiblock Structure Hologram Visualizer");
         add(DCItems.MACHINE_HALT_DEVICE.get(), "Machine Halt Device");
 
         add(DCItems.BASIC_CIRCUIT.get(), "Basic Circuit");

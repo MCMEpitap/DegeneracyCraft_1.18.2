@@ -53,7 +53,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
     public boolean formed0;
     public boolean formed1;
     public boolean formed2;
-    public boolean powered0_0;
+    public boolean powered0_1;
     public boolean isFormed;
     public boolean isPowered0;
     private final ItemStackHandler itemHandler = new ItemStackHandler(3) {
@@ -210,7 +210,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         blockEntity.formed0 = blockEntity.isFormed0(level, pos, state);
         blockEntity.formed1 = blockEntity.isFormed1(level, pos, state);
         blockEntity.formed2 = blockEntity.isFormed2(level, pos, state);
-        blockEntity.powered0_0 = blockEntity.powered0_0(level, pos, state);
+        blockEntity.powered0_1 = blockEntity.powered0_1(level, pos, state);
         blockEntity.isFormed = blockEntity.isFormed();
         blockEntity.isPowered0 = blockEntity.isPowered0();
 
@@ -255,7 +255,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
     }
 
     public boolean isPowered0() {
-        return isPowered0 = powered0_0 && isFormed;
+        return isPowered0 = powered0_1 && isFormed;
     }
 
 
@@ -346,17 +346,17 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         return formed2 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6 && pos7 && pos8;
     }
 
-    public boolean powered0_0(Level level, BlockPos pos, BlockState state) {
+    public boolean powered0_1(Level level, BlockPos pos, BlockState state) {
         Direction dir = state.getValue(BasicPowerCompositeStructureTypeThermalGeneratorBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(this.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
         boolean pos0 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y0z_1.xPos).above(MBPPos.x0y0z_1.yPos).relative(reZ, MBPPos.x0y0z_1.zPos))
-                .isAir();
+                .is(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get());
 
         setChanged(level, pos, state);
-        return powered0_0 = pos0;
+        return powered0_1 = pos0;
     }
 
 
@@ -421,6 +421,12 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
                 if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_1.xPos).above(MBPPos.x_1y0z_1.yPos).relative(reZ, MBPPos.x_1y0z_1.zPos)).isAir()) {
                     level.setBlock(blockpos.relative(reX, MBPPos.x_1y0z_1.xPos).above(MBPPos.x_1y0z_1.yPos).relative(reZ, MBPPos.x_1y0z_1.zPos),
                             DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get().defaultBlockState(), 1);
+                }
+                if (blockEntity.powered0_1) {
+                    if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y0z_1.xPos).above(MBPPos.x0y0z_1.yPos).relative(reZ, MBPPos.x0y0z_1.zPos)).isAir()) {
+                        level.setBlock(blockpos.relative(reX, MBPPos.x0y0z_1.xPos).above(MBPPos.x0y0z_1.yPos).relative(reZ, MBPPos.x0y0z_1.zPos),
+                                DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get().defaultBlockState(), 1);
+                    }
                 }
                 if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z_1.xPos).above(MBPPos.x1y0z_1.yPos).relative(reZ, MBPPos.x1y0z_1.zPos)).isAir()) {
                     level.setBlock(blockpos.relative(reX, MBPPos.x1y0z_1.xPos).above(MBPPos.x1y0z_1.yPos).relative(reZ, MBPPos.x1y0z_1.zPos),
@@ -593,6 +599,10 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
             if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_1.xPos).above(MBPPos.x_1y0z_1.yPos).relative(reZ, MBPPos.x_1y0z_1.zPos))
                     .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get())) {
                 level.setBlock(blockpos.relative(reX, MBPPos.x_1y0z_1.xPos).above(MBPPos.x_1y0z_1.yPos).relative(reZ, MBPPos.x_1y0z_1.zPos), Blocks.AIR.defaultBlockState(), 1);
+            }
+            if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y0z_1.xPos).above(MBPPos.x0y0z_1.yPos).relative(reZ, MBPPos.x0y0z_1.zPos))
+                    .is(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get())) {
+                level.setBlock(blockpos.relative(reX, MBPPos.x0y0z_1.xPos).above(MBPPos.x0y0z_1.yPos).relative(reZ, MBPPos.x0y0z_1.zPos), Blocks.AIR.defaultBlockState(), 1);
             }
             if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z_1.xPos).above(MBPPos.x1y0z_1.yPos).relative(reZ, MBPPos.x1y0z_1.zPos))
                     .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get())) {

@@ -456,6 +456,7 @@
   "jei.degeneracycraft_redstone_powered_machine_element_manufacture_machine": "Redstone Powered Machine Element Manufacture Machine Recipe",
   "jei.degeneracycraft_redstone_powered_machine_part_manufacture_machine": "Redstone Powered Machine Part Manufacture Machine Recipe",
   "message.degeneracycraft_redstone_powered_machine_element_manufacture_machine": "Phase 0 Initial",
+  "screen.degeneracycraft.available": "Available",
   "screen.degeneracycraft.halt": "Halt",
   "screen.degeneracycraft.phase0": "Phase 0",
   "screen.degeneracycraft.phase1": "Phase 1",

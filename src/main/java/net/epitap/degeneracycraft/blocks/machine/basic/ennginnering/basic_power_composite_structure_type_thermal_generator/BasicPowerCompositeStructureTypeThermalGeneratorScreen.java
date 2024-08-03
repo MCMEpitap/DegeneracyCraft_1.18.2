@@ -60,10 +60,10 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorScreen extends Abst
                 35, 66, 0xff0000);
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_besic_power_composite_structure_type_thermal_generator" + ".burntime"),
                 125, 15, 0xffffff);
-        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".output"),
-                125, 35, 0xffffff);
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, (int) menu.getBurnTime() + " Sec",
                 125, 25, 0xffffff);
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".output"),
+                125, 35, 0xffffff);
         if (menu.getBurnTime() > 0) {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, "Work!",
                     80, 30, 0x00FF00);

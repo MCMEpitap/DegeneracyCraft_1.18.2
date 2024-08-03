@@ -705,6 +705,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
         add("screen." + "degeneracycraft" + ".halt", "停止中");
         add("screen." + "degeneracycraft" + ".available", "残存容量");
+        add("screen." + "degeneracycraft" + ".available" + "%", "残存容量 %");
 
 
         add("screen." + "degeneracycraft_besic_power_composite_structure_type_thermal_generator" + ".burntime", "燃焼時間");

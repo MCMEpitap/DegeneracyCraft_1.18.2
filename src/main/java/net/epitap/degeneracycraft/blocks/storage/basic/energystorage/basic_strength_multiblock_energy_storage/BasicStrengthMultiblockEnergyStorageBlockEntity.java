@@ -47,7 +47,6 @@ public class BasicStrengthMultiblockEnergyStorageBlockEntity extends BlockEntity
     public void setEnergyLevel(float energy) {
         this.ENERGY_STORAGE.setEnergyFloat(energy);
     }
-
     private final LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     private LazyOptional<DCIEnergyStorageFloat> lazyEnergyHandler = LazyOptional.empty();
 

@@ -54,14 +54,17 @@ public class BasicStrengthMultiblockEnergyStorageScreen extends AbstractContaine
     public void renderLabels(PoseStack pPoseStack, int pMouseX, int pMouseY) {
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
+
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"),
                 35, 67, 0xFF0000);
-
-
-        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"),
-                35, 19, 0xffffff);
-        drawCenteredString(pPoseStack, Minecraft.getInstance().font, menu.getEnergy() + " FE",
-                35, 19, 0xffffff);
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".available"),
+                35, 15, 0xffffff);
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, (int) menu.getAvailableEnergy() + " kFE",
+                35, 25, 0xffffff);
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".available" + "%"),
+                35, 35, 0xffffff);
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, (int) menu.getAvailableEnergyPercent() + " %",
+                35, 45, 0xffffff);
 
         renderEnergyAreaTooltips(pPoseStack, pMouseX, pMouseY, x, y);
     }

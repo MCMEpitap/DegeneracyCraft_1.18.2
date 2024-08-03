@@ -43,6 +43,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
 
         registerRedstonePoweredMachineElementManufactureMachine();
         registerRedstonePoweredMachinePartManufactureMachine();
+
+
         registerBasicPowerCompositeStructureTypeThermalGenerator();
         registerBasicEnduranceHighTemperatureCombustionChamber();
         registerBasicEnduranceHighTemperatureCombustionChamberHolo();

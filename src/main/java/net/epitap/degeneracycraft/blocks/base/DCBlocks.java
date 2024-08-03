@@ -120,7 +120,7 @@ public class DCBlocks {
     public static final RegistryObject<Block> BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK = registerBlock("basic_power_composite_structure_type_thermal_generator_block", () ->
             new BasicPowerCompositeStructureTypeThermalGeneratorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK = registerBlock("basic_endurance_high_temperature_combustion_chamber_block", () ->
-            new GlassBlock(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+            new GlassBlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK = registerHoloBlock("basic_endurance_high_temperature_combustion_chamber_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
     public static final RegistryObject<Block> BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_PORT_BLOCK = registerBlock("basic_power_composite_structure_type_thermal_generator_port_block", () ->

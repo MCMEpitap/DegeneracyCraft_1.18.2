@@ -47,6 +47,16 @@ public class BasicStrengthMultiblockEnergyStorageMenu extends AbstractContainerM
         return blockEntity.getEnergyStorage();
     }
 
+    public float getAvailableEnergy() {
+        return blockEntity.BS_ME_STORAGE_CAPACITY - blockEntity.getEnergyStorage().getEnergyStoredFloat();
+    }
+
+    public float getAvailableEnergyPercent() {
+        return ((blockEntity.BS_ME_STORAGE_CAPACITY - blockEntity.getEnergyStorage().getEnergyStoredFloat())
+                / blockEntity.BS_ME_STORAGE_CAPACITY) * 100;
+    }
+
+
     public BasicStrengthMultiblockEnergyStorageBlockEntity getBlockEntity() {
         return this.blockEntity;
     }

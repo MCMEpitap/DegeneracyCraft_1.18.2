@@ -47,7 +47,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
     public float BP_CS_T_THERMAL_GENERATOR_OUTPUT = 16F;
     public float BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED = BP_CS_T_THERMAL_GENERATOR_OUTPUT * 2F;
 
-    public float BP_CS_T_THERMAL_GENERATOR_OUTPUT_POWERED0 = BP_CS_T_THERMAL_GENERATOR_OUTPUT * 3F;
+    public float BP_CS_T_THERMAL_GENERATOR_OUTPUT_POWERED_0 = BP_CS_T_THERMAL_GENERATOR_OUTPUT * 3F;
     protected final ContainerData data;
     public int counter;
     public boolean formed0;
@@ -64,11 +64,14 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
 
         @Override
         public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
-            if (slot == 0 && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()) && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
+            if (slot == 0 && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
+                    && !stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
+                    && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
                 return ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
             }
             if (slot == 1) {
-                return stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+                return stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
+                        || stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
             }
             if (slot == 2) {
                 return stack.is(DCItems.MACHINE_HALT_DEVICE.get());
@@ -222,8 +225,11 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         }
         if (!isHaltDevice(blockEntity)) {
             if (blockEntity.counter > 0) {
-
-                if (blockEntity.isFormed) {
+                if (blockEntity.isPowered0) {
+                    blockEntity.counter--;
+                    blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_POWERED_0, false);
+                    setChanged(level, pos, state);
+                } else if (blockEntity.isFormed) {
                     blockEntity.counter--;
                     blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED, false);
                     setChanged(level, pos, state);
@@ -366,7 +372,8 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
 
-        if (blockEntity.itemHandler.getStackInSlot(1).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())) {
+        if (blockEntity.itemHandler.getStackInSlot(1).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
+                || blockEntity.itemHandler.getStackInSlot(1).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())) {
             if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_2.xPos).above(MBPPos.x_1y_1z_2.yPos).relative(reZ, MBPPos.x_1y_1z_2.zPos)).isAir()) {
                 level.setBlock(blockpos.relative(reX, MBPPos.x_1y_1z_2.xPos).above(MBPPos.x_1y_1z_2.yPos).relative(reZ, MBPPos.x_1y_1z_2.zPos),
                         DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
@@ -422,7 +429,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
                     level.setBlock(blockpos.relative(reX, MBPPos.x_1y0z_1.xPos).above(MBPPos.x_1y0z_1.yPos).relative(reZ, MBPPos.x_1y0z_1.zPos),
                             DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get().defaultBlockState(), 1);
                 }
-                if (blockEntity.powered0_1) {
+                if (blockEntity.itemHandler.getStackInSlot(1).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())) {
                     if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y0z_1.xPos).above(MBPPos.x0y0z_1.yPos).relative(reZ, MBPPos.x0y0z_1.zPos)).isAir()) {
                         level.setBlock(blockpos.relative(reX, MBPPos.x0y0z_1.xPos).above(MBPPos.x0y0z_1.yPos).relative(reZ, MBPPos.x0y0z_1.zPos),
                                 DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get().defaultBlockState(), 1);

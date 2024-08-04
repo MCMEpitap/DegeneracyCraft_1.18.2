@@ -720,7 +720,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add("screen." + "degeneracycraft_generator" + ".power_modifier_1", "×1");
         add("screen." + "degeneracycraft_generator" + ".power_modifier_2", "×2");
-
+        add("screen." + "degeneracycraft_generator" + ".power_modifier_3", "×3");
 
         add("tooltip." + "degeneracycraft" + ".wrench", "Export → Import → DisConnection → Export... Pipe Mode change by shift light click");
         add("tooltip." + "degeneracycraft" + ".wrenchitem", "Show Wrench Detail by shift key");

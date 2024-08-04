@@ -17,7 +17,7 @@ import net.minecraftforge.event.RegistryEvent;
 
 public class PipeBlockEntities {
     public static BlockEntityType<BasicItemPipeEntity> BASIC_ITEM_PIPE_BLOCK_ENTITY;
-    public static BlockEntityType<BasicEnergyPipeBlockEntity> ENERGY_PIPE;
+    public static BlockEntityType<BasicEnergyPipeBlockEntity> BASIC_ENERGY_PIPE_BLOCK_ENTITY;
     public static BlockEntityType<FloatEnergyPipeBlockEntity> FLOAT_ENERGY_PIPE_BLOCK_ENTITY;
 
     public static void registerBlockEntities(RegistryEvent.Register<BlockEntityType<?>> register) {
@@ -26,9 +26,9 @@ public class PipeBlockEntities {
         BASIC_ITEM_PIPE_BLOCK_ENTITY.setRegistryName(new ResourceLocation(Degeneracycraft.MOD_ID, "basic_item_pipe"));
         register.getRegistry().register(BASIC_ITEM_PIPE_BLOCK_ENTITY);
 
-        ENERGY_PIPE = BlockEntityType.Builder.of(BasicEnergyPipeBlockEntity::new, PipeBlocks.BASIC_ENERGY_PIPE_BLOCK).build(null);
-        ENERGY_PIPE.setRegistryName(new ResourceLocation(Degeneracycraft.MOD_ID, "energy_pipe"));
-        register.getRegistry().register(ENERGY_PIPE);
+        BASIC_ENERGY_PIPE_BLOCK_ENTITY = BlockEntityType.Builder.of(BasicEnergyPipeBlockEntity::new, PipeBlocks.BASIC_ENERGY_PIPE_BLOCK).build(null);
+        BASIC_ENERGY_PIPE_BLOCK_ENTITY.setRegistryName(new ResourceLocation(Degeneracycraft.MOD_ID, "basic_energy_pipe"));
+        register.getRegistry().register(BASIC_ENERGY_PIPE_BLOCK_ENTITY);
 
         FLOAT_ENERGY_PIPE_BLOCK_ENTITY = BlockEntityType.Builder.of(FloatEnergyPipeBlockEntity::new, PipeBlocks.FLOAT_ENERGY_PIPE_BLOCK).build(null);
         FLOAT_ENERGY_PIPE_BLOCK_ENTITY.setRegistryName(new ResourceLocation(Degeneracycraft.MOD_ID, "float_energy_pipe"));
@@ -38,7 +38,7 @@ public class PipeBlockEntities {
     @OnlyIn(Dist.CLIENT)
     public static void clientSetup() {
         BlockEntityRenderers.register(BASIC_ITEM_PIPE_BLOCK_ENTITY, BasicItemPipeRenderer::new);
-        BlockEntityRenderers.register(ENERGY_PIPE, BasicEnergyPipeRenderer::new);
+        BlockEntityRenderers.register(BASIC_ENERGY_PIPE_BLOCK_ENTITY, BasicEnergyPipeRenderer::new);
         BlockEntityRenderers.register(FLOAT_ENERGY_PIPE_BLOCK_ENTITY, FloatEnergyPipeRenderer::new);
     }
 }

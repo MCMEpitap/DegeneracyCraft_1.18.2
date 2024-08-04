@@ -135,8 +135,9 @@ public class PipeWorkBlockEntity extends PipeBlockEntityBase {
         if (hasType(BasicEnergyPipeType.INSTANCE)) {
             intEnergyStored.revalidate(side, storage -> extracting, (storage) -> new PipeIEnergyStorage(this, storage));
         }
-        if (hasType(FloatEnergyPipeType.INSTANCE))
+        if (hasType(FloatEnergyPipeType.INSTANCE)) {
             floatEnergyStored.revalidate(side, storage -> extracting, (storage) -> new PipeDCIEnergyStorageFloat(this, storage));
+        }
         if (hasType(BasicItemPipeType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PipeItemHandler.INSTANCE);
         }

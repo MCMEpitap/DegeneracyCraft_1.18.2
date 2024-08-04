@@ -718,8 +718,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("screen." + "degeneracycraft_generator" + ".power_output_16", "16 FE/t");
         add("screen." + "degeneracycraft_generator" + ".power_output_32", "32 FE/t");
 
-        add("screen." + "degeneracycraft" + ".power_modifier_1", "×1.00");
-        add("screen." + "degeneracycraft" + ".power_modifier_2", "×2.00");
+        add("screen." + "degeneracycraft_generator" + ".power_modifier_1", "×1");
+        add("screen." + "degeneracycraft_generator" + ".power_modifier_2", "×2");
 
 
         add("tooltip." + "degeneracycraft" + ".wrench", "Export → Import → DisConnection → Export... Pipe Mode change by shift light click");

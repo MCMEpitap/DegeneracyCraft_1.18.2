@@ -717,8 +717,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("screen." + "degeneracycraft_generator" + ".power_output_16", "16 FE/t");
         add("screen." + "degeneracycraft_generator" + ".power_output_32", "32 FE/t");
 
-        add("screen." + "degeneracycraft_generator" + ".power_modifier_1", "×1.00");
-        add("screen." + "degeneracycraft_generator" + ".power_modifier_2", "×2.00");
+        add("screen." + "degeneracycraft_generator" + ".power_modifier_1", "×1");
+        add("screen." + "degeneracycraft_generator" + ".power_modifier_2", "×2");
 
         add("tooltip." + "degeneracycraft" + ".wrench", "搬出 → 搬入 → 切断 → 搬出... シフト右クリックでパイプ状態切替");
         add("tooltip." + "degeneracycraft" + ".wrenchitem", "Shiftキーでレンチ詳細展開");

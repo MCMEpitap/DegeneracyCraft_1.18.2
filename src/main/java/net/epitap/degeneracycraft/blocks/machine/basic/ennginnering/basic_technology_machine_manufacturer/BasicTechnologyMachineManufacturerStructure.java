@@ -107,7 +107,7 @@ public class BasicTechnologyMachineManufacturerStructure {
         return blockEntity.formed2 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6 && pos7 && pos8;
     }
 
-    public static boolean isPowered0_1(Level level, BlockPos pos, BlockState state, BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
+    public static boolean powered0_1(Level level, BlockPos pos, BlockState state, BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
         Direction dir = state.getValue(BasicTechnologyMachineManufacturerBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());

@@ -717,6 +717,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add("screen." + "degeneracycraft_generator" + ".power_output_16", "16 FE/t");
         add("screen." + "degeneracycraft_generator" + ".power_output_32", "32 FE/t");
+        add("screen." + "degeneracycraft_generator" + ".power_output_48", "48 FE/t");
 
         add("screen." + "degeneracycraft_generator" + ".power_modifier_1", "×1");
         add("screen." + "degeneracycraft_generator" + ".power_modifier_2", "×2");
@@ -756,7 +757,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft" + ".stop", "Machine Stopping!");
         add("tooltip." + "degeneracycraft" + ".power_modifier_1", "Power Modifier ×1.00");
         add("tooltip." + "degeneracycraft" + ".power_modifier_2", "Power Modifier ×2.00");
-
+        add("tooltip." + "degeneracycraft" + ".power_modifier_3", "Power Modifier ×3.00");
         add("tooltip." + "degeneracycraft" + ".halt", "Machine Forced Stop");
 
 

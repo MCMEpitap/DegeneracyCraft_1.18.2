@@ -1,8 +1,6 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_manufacturer;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.base.DCBlocks;
-import net.epitap.degeneracycraft.dcenum.MBPPos;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipe;
@@ -24,7 +22,6 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
@@ -39,18 +36,19 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Map;
 import java.util.Optional;
 
-
 public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity implements MenuProvider {
+    static BasicTechnologyMachineManufacturerStructure structure;
     public float BT_U_ASSEMBLER_CAPACITY = 20000F;
     public float BT_U_ASSEMBLER_TRANSFER = 16F;
 
     protected final ContainerData data;
-
     public int counter;
     public boolean formed0;
     public boolean formed1;
     public boolean formed2;
+    public boolean powered0_1;
     public boolean isFormed;
+    public boolean isPowered0;
     public final ItemStackHandler itemHandler = new ItemStackHandler(12) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -60,12 +58,15 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             for (int i = 0; i < 10; i++) {
-                if (slot == i && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()) && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
+                if (slot == i && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
+                        && !stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
+                        && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
                     return true;
                 }
             }
             if (slot == 10) {
-                return stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+                return stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
+                        || stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
             }
             if (slot == 11) {
                 return stack.is(DCItems.MACHINE_HALT_DEVICE.get());
@@ -82,6 +83,7 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
             DCMessages.sendToClients(new DCEnergySyncS2CPacket(this.energy, getBlockPos()));
         }
     };
+
 
     public DCIEnergyStorageFloat getEnergyStorage() {
         return ENERGY_STORAGE;
@@ -101,7 +103,7 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (out, stack) -> false)));
 
     public BasicTechnologyMachineManufacturerBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+        super(DCBlockEntities.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {
@@ -208,15 +210,22 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
-        blockEntity.formed0 = blockEntity.isFormed0(level, pos, state);
-        blockEntity.formed1 = blockEntity.isFormed1(level, pos, state);
-        blockEntity.formed2 = blockEntity.isFormed2(level, pos, state);
-        blockEntity.isFormed = blockEntity.isFormed();
-        blockEntity.hologram(level, pos, state, blockEntity);
+        blockEntity.formed0 = BasicTechnologyMachineManufacturerStructure.isFormed0(level, pos, state, blockEntity);
+        blockEntity.formed1 = BasicTechnologyMachineManufacturerStructure.isFormed1(level, pos, state, blockEntity);
+        blockEntity.formed2 = BasicTechnologyMachineManufacturerStructure.isFormed2(level, pos, state, blockEntity);
+        blockEntity.powered0_1 = BasicTechnologyMachineManufacturerStructure.isPowered0_1(level, pos, state, blockEntity);
+        blockEntity.isFormed = BasicTechnologyMachineManufacturerStructure.isFormed(blockEntity);
+        blockEntity.isPowered0 = BasicTechnologyMachineManufacturerStructure.isPowered0(blockEntity);
+
+        BasicTechnologyMachineManufacturerStructure.hologram(level, pos, state, blockEntity);
 
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+
+        if (level.isClientSide()) {
+            return;
+        }
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
@@ -239,6 +248,7 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
             blockEntity.resetProgress();
             setChanged(level, pos, state);
         }
+        setChanged(level, pos, state);
     }
 
     private static boolean hasAmountEnergyRecipe(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
@@ -363,337 +373,5 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
     private static boolean hasNotReachedStackLimit(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(9).getCount() < blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
     }
-
-    public boolean isFormed() {
-        return isFormed = formed0 && formed1 && formed2;
-    }
-
-    public boolean isFormed0(Level level, BlockPos pos, BlockState state) {
-        Direction dir = state.getValue(BasicTechnologyMachineManufacturerBlock.FACING);
-        BlockPos blockpos = new BlockPos(this.getBlockPos());
-        Direction reX = dir.getCounterClockWise();
-        Direction reZ = dir;
-
-        boolean pos0 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_3.xPos).above(MBPPos.x_1y_1z_3.yPos).relative(reZ, MBPPos.x_1y_1z_3.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
-        boolean pos1 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z_3.xPos).above(MBPPos.x0y_1z_3.yPos).relative(reZ, MBPPos.x0y_1z_3.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-        boolean pos2 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y_1z_3.xPos).above(MBPPos.x1y_1z_3.yPos).relative(reZ, MBPPos.x1y_1z_3.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
-        boolean pos3 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_2.xPos).above(MBPPos.x_1y_1z_2.yPos).relative(reZ, MBPPos.x_1y_1z_2.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-        boolean pos4 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z_2.xPos).above(MBPPos.x0y_1z_2.yPos).relative(reZ, MBPPos.x0y_1z_2.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-        boolean pos5 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y_1z_2.xPos).above(MBPPos.x1y_1z_2.yPos).relative(reZ, MBPPos.x1y_1z_2.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-        boolean pos6 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_1.xPos).above(MBPPos.x_1y_1z_1.yPos).relative(reZ, MBPPos.x_1y_1z_1.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
-        boolean pos7 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z_1.xPos).above(MBPPos.x0y_1z_1.yPos).relative(reZ, MBPPos.x0y_1z_1.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-        boolean pos8 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y_1z_1.xPos).above(MBPPos.x1y_1z_1.yPos).relative(reZ, MBPPos.x1y_1z_1.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
-        boolean pos9 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z0.xPos).above(MBPPos.x0y_1z0.yPos).relative(reZ, MBPPos.x0y_1z0.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
-
-        setChanged(level, pos, state);
-        return formed0 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6 && pos7 && pos8 && pos9;
-    }
-
-    public boolean isFormed1(Level level, BlockPos pos, BlockState state) {
-        Direction dir = state.getValue(BasicTechnologyMachineManufacturerBlock.FACING);
-        /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
-        BlockPos blockpos = new BlockPos(this.getBlockPos());
-        Direction reX = dir.getCounterClockWise();
-        Direction reZ = dir;
-
-        boolean pos0 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_3.xPos).above(MBPPos.x_1y0z_3.yPos).relative(reZ, MBPPos.x_1y0z_3.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-        boolean pos1 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y0z_3.xPos).above(MBPPos.x0y0z_3.yPos).relative(reZ, MBPPos.x0y0z_3.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get());
-        boolean pos2 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z_3.xPos).above(MBPPos.x1y0z_3.yPos).relative(reZ, MBPPos.x1y0z_3.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-        boolean pos3 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_2.xPos).above(MBPPos.x_1y0z_2.yPos).relative(reZ, MBPPos.x_1y0z_2.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get());
-        boolean pos4 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y0z_2.xPos).above(MBPPos.x0y0z_2.yPos).relative(reZ, MBPPos.x0y0z_2.zPos))
-                .isAir();
-        boolean pos5 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z_2.xPos).above(MBPPos.x1y0z_2.yPos).relative(reZ, MBPPos.x1y0z_2.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get());
-        boolean pos6 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_1.xPos).above(MBPPos.x_1y0z_1.yPos).relative(reZ, MBPPos.x_1y0z_1.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-        boolean pos7 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y0z_1.xPos).above(MBPPos.x0y0z_1.yPos).relative(reZ, MBPPos.x0y0z_1.zPos))
-                .isAir();
-        boolean pos8 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z_1.xPos).above(MBPPos.x1y0z_1.yPos).relative(reZ, MBPPos.x1y0z_1.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-
-        setChanged(level, pos, state);
-        return formed1 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6 && pos7 && pos8;
-    }
-
-    public boolean isFormed2(Level level, BlockPos pos, BlockState state) {
-        Direction dir = state.getValue(BasicTechnologyMachineManufacturerBlock.FACING);
-        /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
-        BlockPos blockpos = new BlockPos(this.getBlockPos());
-        Direction reX = dir.getCounterClockWise();
-        Direction reZ = dir;
-
-        boolean pos0 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z_3.xPos).above(MBPPos.x0y1z_3.yPos).relative(reZ, MBPPos.x0y1z_3.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-        boolean pos1 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y1z_2.xPos).above(MBPPos.x_1y1z_2.yPos).relative(reZ, MBPPos.x_1y1z_2.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-        boolean pos2 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z_2.xPos).above(MBPPos.x0y1z_2.yPos).relative(reZ, MBPPos.x0y1z_2.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-        boolean pos3 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y1z_2.xPos).above(MBPPos.x1y1z_2.yPos).relative(reZ, MBPPos.x1y1z_2.zPos))
-                .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-        boolean pos4 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z_1.xPos).above(MBPPos.x0y1z_1.yPos).relative(reZ, MBPPos.x0y1z_1.zPos))
-                .is(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get());
-
-        setChanged(level, pos, state);
-        return formed2 = pos0 && pos1 && pos2 && pos3 && pos4;
-    }
-
-    public void hologram(Level level, BlockPos pos, BlockState state, BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicTechnologyMachineManufacturerBlock.FACING);
-        BlockPos blockpos = new BlockPos(this.getBlockPos());
-        Direction reX = dir.getCounterClockWise();
-        Direction reZ = dir;
-
-        if (blockEntity.itemHandler.getStackInSlot(1).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())) {
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_3.xPos).above(MBPPos.x_1y_1z_3.yPos).relative(reZ, MBPPos.x_1y_1z_3.zPos)).isAir()) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x_1y_1z_3.xPos).above(MBPPos.x_1y_1z_3.yPos).relative(reZ, MBPPos.x_1y_1z_3.zPos),
-                        DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z_3.xPos).above(MBPPos.x0y_1z_3.yPos).relative(reZ, MBPPos.x0y_1z_3.zPos)).isAir()) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x0y_1z_3.xPos).above(MBPPos.x0y_1z_3.yPos).relative(reZ, MBPPos.x0y_1z_3.zPos),
-                        DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y_1z_3.xPos).above(MBPPos.x1y_1z_3.yPos).relative(reZ, MBPPos.x1y_1z_3.zPos)).isAir()) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x1y_1z_3.xPos).above(MBPPos.x1y_1z_3.yPos).relative(reZ, MBPPos.x1y_1z_3.zPos),
-                        DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_2.xPos).above(MBPPos.x_1y_1z_2.yPos).relative(reZ, MBPPos.x_1y_1z_2.zPos)).isAir()) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x_1y_1z_2.xPos).above(MBPPos.x_1y_1z_2.yPos).relative(reZ, MBPPos.x_1y_1z_2.zPos),
-                        DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z_2.xPos).above(MBPPos.x0y_1z_2.yPos).relative(reZ, MBPPos.x0y_1z_2.zPos)).isAir()) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x0y_1z_2.xPos).above(MBPPos.x0y_1z_2.yPos).relative(reZ, MBPPos.x0y_1z_2.zPos),
-                        DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y_1z_2.xPos).above(MBPPos.x1y_1z_2.yPos).relative(reZ, MBPPos.x1y_1z_2.zPos)).isAir()) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x1y_1z_2.xPos).above(MBPPos.x1y_1z_2.yPos).relative(reZ, MBPPos.x1y_1z_2.zPos),
-                        DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_1.xPos).above(MBPPos.x_1y_1z_1.yPos).relative(reZ, MBPPos.x_1y_1z_1.zPos)).isAir()) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x_1y_1z_1.xPos).above(MBPPos.x_1y_1z_1.yPos).relative(reZ, MBPPos.x_1y_1z_1.zPos),
-                        DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z_1.xPos).above(MBPPos.x0y_1z_1.yPos).relative(reZ, MBPPos.x0y_1z_1.zPos)).isAir()) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x0y_1z_1.xPos).above(MBPPos.x0y_1z_1.yPos).relative(reZ, MBPPos.x0y_1z_1.zPos),
-                        DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y_1z_1.xPos).above(MBPPos.x1y_1z_1.yPos).relative(reZ, MBPPos.x1y_1z_1.zPos)).isAir()) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x1y_1z_1.xPos).above(MBPPos.x1y_1z_1.yPos).relative(reZ, MBPPos.x1y_1z_1.zPos),
-                        DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z0.xPos).above(MBPPos.x0y_1z0.yPos).relative(reZ, MBPPos.x0y_1z0.zPos)).isAir()) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x0y_1z0.xPos).above(MBPPos.x0y_1z0.yPos).relative(reZ, MBPPos.x0y_1z0.zPos),
-                        DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-            }
-            setChanged(level, pos, state);
-            if (blockEntity.formed0) {
-                if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_3.xPos).above(MBPPos.x_1y0z_3.yPos).relative(reZ, MBPPos.x_1y0z_3.zPos)).isAir()) {
-                    level.setBlock(blockpos.relative(reX, MBPPos.x_1y0z_3.xPos).above(MBPPos.x_1y0z_3.yPos).relative(reZ, MBPPos.x_1y0z_3.zPos),
-                            DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-                }
-                if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y0z_3.xPos).above(MBPPos.x0y0z_3.yPos).relative(reZ, MBPPos.x0y0z_3.zPos)).isAir()) {
-                    level.setBlock(blockpos.relative(reX, MBPPos.x0y0z_3.xPos).above(MBPPos.x0y0z_3.yPos).relative(reZ, MBPPos.x0y0z_3.zPos),
-                            DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get().defaultBlockState(), 1);
-                }
-                if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z_3.xPos).above(MBPPos.x1y0z_3.yPos).relative(reZ, MBPPos.x1y0z_3.zPos)).isAir()) {
-                    level.setBlock(blockpos.relative(reX, MBPPos.x1y0z_3.xPos).above(MBPPos.x1y0z_3.yPos).relative(reZ, MBPPos.x1y0z_3.zPos),
-                            DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-                }
-                if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_2.xPos).above(MBPPos.x_1y0z_2.yPos).relative(reZ, MBPPos.x_1y0z_2.zPos)).isAir()) {
-                    level.setBlock(blockpos.relative(reX, MBPPos.x_1y0z_2.xPos).above(MBPPos.x_1y0z_2.yPos).relative(reZ, MBPPos.x_1y0z_2.zPos),
-                            DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get().defaultBlockState(), 1);
-                }
-                if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z_2.xPos).above(MBPPos.x1y0z_2.yPos).relative(reZ, MBPPos.x1y0z_2.zPos)).isAir()) {
-                    level.setBlock(blockpos.relative(reX, MBPPos.x1y0z_2.xPos).above(MBPPos.x1y0z_2.yPos).relative(reZ, MBPPos.x1y0z_2.zPos),
-                            DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get().defaultBlockState(), 1);
-                }
-                if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_1.xPos).above(MBPPos.x_1y0z_1.yPos).relative(reZ, MBPPos.x_1y0z_1.zPos)).isAir()) {
-                    level.setBlock(blockpos.relative(reX, MBPPos.x_1y0z_1.xPos).above(MBPPos.x_1y0z_1.yPos).relative(reZ, MBPPos.x_1y0z_1.zPos),
-                            DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-                }
-                if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z_1.xPos).above(MBPPos.x1y0z_1.yPos).relative(reZ, MBPPos.x1y0z_1.zPos)).isAir()) {
-                    level.setBlock(blockpos.relative(reX, MBPPos.x1y0z_1.xPos).above(MBPPos.x1y0z_1.yPos).relative(reZ, MBPPos.x1y0z_1.zPos),
-                            DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-                }
-                setChanged(level, pos, state);
-                if (formed1) {
-                    if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z_3.xPos).above(MBPPos.x0y1z_3.yPos).relative(reZ, MBPPos.x0y1z_3.zPos)).isAir()) {
-                        level.setBlock(blockpos.relative(reX, MBPPos.x0y1z_3.xPos).above(MBPPos.x0y1z_3.yPos).relative(reZ, MBPPos.x0y1z_3.zPos),
-                                DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-                    }
-                    if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y1z_2.xPos).above(MBPPos.x_1y1z_2.yPos).relative(reZ, MBPPos.x_1y1z_2.zPos)).isAir()) {
-                        level.setBlock(blockpos.relative(reX, MBPPos.x_1y1z_2.xPos).above(MBPPos.x_1y1z_2.yPos).relative(reZ, MBPPos.x_1y1z_2.zPos),
-                                DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-                    }
-                    if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z_2.xPos).above(MBPPos.x0y1z_2.yPos).relative(reZ, MBPPos.x0y1z_2.zPos)).isAir()) {
-                        level.setBlock(blockpos.relative(reX, MBPPos.x0y1z_2.xPos).above(MBPPos.x0y1z_2.yPos).relative(reZ, MBPPos.x0y1z_2.zPos),
-                                DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-                    }
-                    if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y1z_2.xPos).above(MBPPos.x1y1z_2.yPos).relative(reZ, MBPPos.x1y1z_2.zPos)).isAir()) {
-                        level.setBlock(blockpos.relative(reX, MBPPos.x1y1z_2.xPos).above(MBPPos.x1y1z_2.yPos).relative(reZ, MBPPos.x1y1z_2.zPos),
-                                DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-                    }
-                    if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z_1.xPos).above(MBPPos.x0y1z_1.yPos).relative(reZ, MBPPos.x0y1z_1.zPos)).isAir()) {
-                        level.setBlock(blockpos.relative(reX, MBPPos.x0y1z_1.xPos).above(MBPPos.x0y1z_1.yPos).relative(reZ, MBPPos.x0y1z_1.zPos),
-                                DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
-                    }
-                } else {
-                    if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z_3.xPos).above(MBPPos.x0y1z_3.yPos).relative(reZ, MBPPos.x0y1z_3.zPos))
-                            .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                        level.setBlock(blockpos.relative(reX, MBPPos.x0y1z_3.xPos).above(MBPPos.x0y1z_3.yPos).relative(reZ, MBPPos.x0y1z_3.zPos), Blocks.AIR.defaultBlockState(), 1);
-                    }
-                    if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y1z_2.xPos).above(MBPPos.x_1y1z_2.yPos).relative(reZ, MBPPos.x_1y1z_2.zPos))
-                            .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                        level.setBlock(blockpos.relative(reX, MBPPos.x_1y1z_2.xPos).above(MBPPos.x_1y1z_2.yPos).relative(reZ, MBPPos.x_1y1z_2.zPos), Blocks.AIR.defaultBlockState(), 1);
-                    }
-                    if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z_2.xPos).above(MBPPos.x0y1z_2.yPos).relative(reZ, MBPPos.x0y1z_2.zPos))
-                            .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                        level.setBlock(blockpos.relative(reX, MBPPos.x0y1z_2.xPos).above(MBPPos.x0y1z_2.yPos).relative(reZ, MBPPos.x0y1z_2.zPos), Blocks.AIR.defaultBlockState(), 1);
-                    }
-                    if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y1z_2.xPos).above(MBPPos.x1y1z_2.yPos).relative(reZ, MBPPos.x1y1z_2.zPos))
-                            .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                        level.setBlock(blockpos.relative(reX, MBPPos.x1y1z_2.xPos).above(MBPPos.x1y1z_2.yPos).relative(reZ, MBPPos.x1y1z_2.zPos), Blocks.AIR.defaultBlockState(), 1);
-                    }
-                    if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z_1.xPos).above(MBPPos.x0y1z_1.yPos).relative(reZ, MBPPos.x0y1z_1.zPos))
-                            .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                        level.setBlock(blockpos.relative(reX, MBPPos.x0y1z_1.xPos).above(MBPPos.x0y1z_1.yPos).relative(reZ, MBPPos.x0y1z_1.zPos), Blocks.AIR.defaultBlockState(), 1);
-                    }
-                }
-            } else {
-                if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_3.xPos).above(MBPPos.x_1y0z_3.yPos).relative(reZ, MBPPos.x_1y0z_3.zPos))
-                        .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                    level.setBlock(blockpos.relative(reX, MBPPos.x_1y0z_3.xPos).above(MBPPos.x_1y0z_3.yPos).relative(reZ, MBPPos.x_1y0z_3.zPos), Blocks.AIR.defaultBlockState(), 1);
-                }
-                if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y0z_3.xPos).above(MBPPos.x0y0z_3.yPos).relative(reZ, MBPPos.x0y0z_3.zPos))
-                        .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get())) {
-                    level.setBlock(blockpos.relative(reX, MBPPos.x0y0z_3.xPos).above(MBPPos.x0y0z_3.yPos).relative(reZ, MBPPos.x0y0z_3.zPos), Blocks.AIR.defaultBlockState(), 1);
-                }
-                if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z_3.xPos).above(MBPPos.x1y0z_3.yPos).relative(reZ, MBPPos.x1y0z_3.zPos))
-                        .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                    level.setBlock(blockpos.relative(reX, MBPPos.x1y0z_3.xPos).above(MBPPos.x1y0z_3.yPos).relative(reZ, MBPPos.x1y0z_3.zPos), Blocks.AIR.defaultBlockState(), 1);
-                }
-                if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_2.xPos).above(MBPPos.x_1y0z_2.yPos).relative(reZ, MBPPos.x_1y0z_2.zPos))
-                        .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get())) {
-                    level.setBlock(blockpos.relative(reX, MBPPos.x_1y0z_2.xPos).above(MBPPos.x_1y0z_2.yPos).relative(reZ, MBPPos.x_1y0z_2.zPos), Blocks.AIR.defaultBlockState(), 1);
-                }
-                if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z_2.xPos).above(MBPPos.x1y0z_2.yPos).relative(reZ, MBPPos.x1y0z_2.zPos))
-                        .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get())) {
-                    level.setBlock(blockpos.relative(reX, MBPPos.x1y0z_2.xPos).above(MBPPos.x1y0z_2.yPos).relative(reZ, MBPPos.x1y0z_2.zPos), Blocks.AIR.defaultBlockState(), 1);
-                }
-                if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_1.xPos).above(MBPPos.x_1y0z_1.yPos).relative(reZ, MBPPos.x_1y0z_1.zPos))
-                        .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                    level.setBlock(blockpos.relative(reX, MBPPos.x_1y0z_1.xPos).above(MBPPos.x_1y0z_1.yPos).relative(reZ, MBPPos.x_1y0z_1.zPos), Blocks.AIR.defaultBlockState(), 1);
-                }
-                if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z_1.xPos).above(MBPPos.x1y0z_1.yPos).relative(reZ, MBPPos.x1y0z_1.zPos))
-                        .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                    level.setBlock(blockpos.relative(reX, MBPPos.x1y0z_1.xPos).above(MBPPos.x1y0z_1.yPos).relative(reZ, MBPPos.x1y0z_1.zPos), Blocks.AIR.defaultBlockState(), 1);
-                }
-            }
-        } else {
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_3.xPos).above(MBPPos.x_1y_1z_3.yPos).relative(reZ, MBPPos.x_1y_1z_3.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x_1y_1z_3.xPos).above(MBPPos.x_1y_1z_3.yPos).relative(reZ, MBPPos.x_1y_1z_3.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z_3.xPos).above(MBPPos.x0y_1z_3.yPos).relative(reZ, MBPPos.x0y_1z_3.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x0y_1z_3.xPos).above(MBPPos.x0y_1z_3.yPos).relative(reZ, MBPPos.x0y_1z_3.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y_1z_3.xPos).above(MBPPos.x1y_1z_3.yPos).relative(reZ, MBPPos.x1y_1z_3.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x1y_1z_3.xPos).above(MBPPos.x1y_1z_3.yPos).relative(reZ, MBPPos.x1y_1z_3.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_2.xPos).above(MBPPos.x_1y_1z_2.yPos).relative(reZ, MBPPos.x_1y_1z_2.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x_1y_1z_2.xPos).above(MBPPos.x_1y_1z_2.yPos).relative(reZ, MBPPos.x_1y_1z_2.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z_2.xPos).above(MBPPos.x0y_1z_2.yPos).relative(reZ, MBPPos.x0y_1z_2.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x0y_1z_2.xPos).above(MBPPos.x0y_1z_2.yPos).relative(reZ, MBPPos.x0y_1z_2.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y_1z_2.xPos).above(MBPPos.x1y_1z_2.yPos).relative(reZ, MBPPos.x1y_1z_2.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x1y_1z_2.xPos).above(MBPPos.x1y_1z_2.yPos).relative(reZ, MBPPos.x1y_1z_2.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_1.xPos).above(MBPPos.x_1y_1z_1.yPos).relative(reZ, MBPPos.x_1y_1z_1.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x_1y_1z_1.xPos).above(MBPPos.x_1y_1z_1.yPos).relative(reZ, MBPPos.x_1y_1z_1.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z_1.xPos).above(MBPPos.x0y_1z_1.yPos).relative(reZ, MBPPos.x0y_1z_1.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x0y_1z_1.xPos).above(MBPPos.x0y_1z_1.yPos).relative(reZ, MBPPos.x0y_1z_1.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y_1z_1.xPos).above(MBPPos.x1y_1z_1.yPos).relative(reZ, MBPPos.x1y_1z_1.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x1y_1z_1.xPos).above(MBPPos.x1y_1z_1.yPos).relative(reZ, MBPPos.x1y_1z_1.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y_1z0.xPos).above(MBPPos.x0y_1z0.yPos).relative(reZ, MBPPos.x0y_1z0.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x0y_1z0.xPos).above(MBPPos.x0y_1z0.yPos).relative(reZ, MBPPos.x0y_1z0.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_3.xPos).above(MBPPos.x_1y0z_3.yPos).relative(reZ, MBPPos.x_1y0z_3.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x_1y0z_3.xPos).above(MBPPos.x_1y0z_3.yPos).relative(reZ, MBPPos.x_1y0z_3.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y0z_3.xPos).above(MBPPos.x0y0z_3.yPos).relative(reZ, MBPPos.x0y0z_3.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x0y0z_3.xPos).above(MBPPos.x0y0z_3.yPos).relative(reZ, MBPPos.x0y0z_3.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z_3.xPos).above(MBPPos.x1y0z_3.yPos).relative(reZ, MBPPos.x1y0z_3.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x1y0z_3.xPos).above(MBPPos.x1y0z_3.yPos).relative(reZ, MBPPos.x1y0z_3.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_2.xPos).above(MBPPos.x_1y0z_2.yPos).relative(reZ, MBPPos.x_1y0z_2.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x_1y0z_2.xPos).above(MBPPos.x_1y0z_2.yPos).relative(reZ, MBPPos.x_1y0z_2.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z_2.xPos).above(MBPPos.x1y0z_2.yPos).relative(reZ, MBPPos.x1y0z_2.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x1y0z_2.xPos).above(MBPPos.x1y0z_2.yPos).relative(reZ, MBPPos.x1y0z_2.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_1.xPos).above(MBPPos.x_1y0z_1.yPos).relative(reZ, MBPPos.x_1y0z_1.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x_1y0z_1.xPos).above(MBPPos.x_1y0z_1.yPos).relative(reZ, MBPPos.x_1y0z_1.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z_1.xPos).above(MBPPos.x1y0z_1.yPos).relative(reZ, MBPPos.x1y0z_1.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x1y0z_1.xPos).above(MBPPos.x1y0z_1.yPos).relative(reZ, MBPPos.x1y0z_1.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z_3.xPos).above(MBPPos.x0y1z_3.yPos).relative(reZ, MBPPos.x0y1z_3.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x0y1z_3.xPos).above(MBPPos.x0y1z_3.yPos).relative(reZ, MBPPos.x0y1z_3.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y1z_2.xPos).above(MBPPos.x_1y1z_2.yPos).relative(reZ, MBPPos.x_1y1z_2.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x_1y1z_2.xPos).above(MBPPos.x_1y1z_2.yPos).relative(reZ, MBPPos.x_1y1z_2.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z_2.xPos).above(MBPPos.x0y1z_2.yPos).relative(reZ, MBPPos.x0y1z_2.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x0y1z_2.xPos).above(MBPPos.x0y1z_2.yPos).relative(reZ, MBPPos.x0y1z_2.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y1z_2.xPos).above(MBPPos.x1y1z_2.yPos).relative(reZ, MBPPos.x1y1z_2.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x1y1z_2.xPos).above(MBPPos.x1y1z_2.yPos).relative(reZ, MBPPos.x1y1z_2.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-            if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z_1.xPos).above(MBPPos.x0y1z_1.yPos).relative(reZ, MBPPos.x0y1z_1.zPos))
-                    .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get())) {
-                level.setBlock(blockpos.relative(reX, MBPPos.x0y1z_1.xPos).above(MBPPos.x0y1z_1.yPos).relative(reZ, MBPPos.x0y1z_1.zPos), Blocks.AIR.defaultBlockState(), 1);
-            }
-        }
-        setChanged(level, pos, state);
-    }
-
 }
 

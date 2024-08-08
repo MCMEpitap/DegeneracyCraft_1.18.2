@@ -62,6 +62,20 @@ public class BasicTechnologyMachineManufacturerScreen extends AbstractContainerS
         if (BasicTechnologyMachineManufacturerBlockEntity.isHaltDevice(menu.blockEntity)) {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".halt"),
                     133, 66, 0xFFFFFF);
+        } else if (menu.blockEntity.isFormed) {
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(" FE/t"),
+                    125, 45, 0xffffff);
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".power_modifier_2"),
+                    80, 11, 0xffffff);
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, "ON",
+                    80, 47, 0x00FF00);
+        } else {
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(" FE/t"),
+                    125, 45, 0xffffff);
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".power_modifier_1"),
+                    80, 11, 0xffffff);
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, "OFF",
+                    80, 47, 0xFF0000);
         }
     }
 

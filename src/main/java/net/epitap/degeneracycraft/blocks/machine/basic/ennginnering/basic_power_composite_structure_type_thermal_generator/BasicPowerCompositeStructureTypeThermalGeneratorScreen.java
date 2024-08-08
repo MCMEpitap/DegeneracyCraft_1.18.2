@@ -114,7 +114,9 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorScreen extends Abst
     }
 
     public List<Component> PowerOutputTooltips() {
-        if (menu.blockEntity.isFormed) {
+        if (menu.blockEntity.isPowered0) {
+            return List.of(Component.nullToEmpty(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_POWERED_0 + " FE/t"));
+        } else if (menu.blockEntity.isFormed) {
             return List.of(Component.nullToEmpty(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED + " FE/t"));
         }
         return List.of(Component.nullToEmpty(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT + " FE/t"));
@@ -134,7 +136,9 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorScreen extends Abst
     }
 
     public List<Component> PowerModifierTooltips() {
-        if (menu.blockEntity.isFormed) {
+        if (menu.blockEntity.isPowered0) {
+            return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".power_modifier_3"));
+        } else if (menu.blockEntity.isFormed) {
             return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".power_modifier_2"));
         }
         return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".power_modifier_1"));

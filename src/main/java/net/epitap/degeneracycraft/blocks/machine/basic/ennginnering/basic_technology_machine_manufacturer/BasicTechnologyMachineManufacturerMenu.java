@@ -32,7 +32,7 @@ public class BasicTechnologyMachineManufacturerMenu extends AbstractContainerMen
     }
 
     public BasicTechnologyMachineManufacturerMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_MENU.get(), pContainerId);
+        super(DCMenuTypes.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_MENU.get(), pContainerId);
         blockEntity = ((BasicTechnologyMachineManufacturerBlockEntity) entity);
         this.level = inv.player.level;
         this.data = data;
@@ -65,6 +65,10 @@ public class BasicTechnologyMachineManufacturerMenu extends AbstractContainerMen
 
     public boolean isCrafting() {
         return data.get(0) > 0;
+    }
+
+    public BasicTechnologyMachineManufacturerBlockEntity getBlockEntity() {
+        return this.blockEntity;
     }
 
     @Override
@@ -103,7 +107,7 @@ public class BasicTechnologyMachineManufacturerMenu extends AbstractContainerMen
     @Override
     public boolean stillValid(Player pPlayer) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                pPlayer, DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get());
+                pPlayer, DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

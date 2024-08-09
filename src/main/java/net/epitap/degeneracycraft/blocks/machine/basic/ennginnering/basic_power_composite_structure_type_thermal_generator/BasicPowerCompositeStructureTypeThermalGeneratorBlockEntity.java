@@ -217,7 +217,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
         blockEntity.isFormed = BasicPowerCompositeStructureTypeThermalGeneratorStructure.isFormed(blockEntity);
         blockEntity.isPowered0 = BasicPowerCompositeStructureTypeThermalGeneratorStructure.isPowered0(blockEntity);
 
-        blockEntity.hologram(level, pos, state, blockEntity);
+        BasicPowerCompositeStructureTypeThermalGeneratorStructure.hologram(level, pos, state, blockEntity);
 
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);

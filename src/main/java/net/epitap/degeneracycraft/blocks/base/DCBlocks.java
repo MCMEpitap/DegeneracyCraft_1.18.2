@@ -18,6 +18,8 @@ import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_machine_element_processor.BasicMachineElementProcessorPortBlock;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.bus.BasicPowerCompositeStructureTypeThermalGeneratorBusBlock;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.port.BasicPowerCompositeStructureTypeThermalGeneratorPortBlock;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -117,8 +119,9 @@ public class DCBlocks {
     public static final RegistryObject<Block> REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK = registerBlock("redstone_powered_machine_part_manufacture_machine_block", () ->
             new RedstonePoweredMachinePartManufactureMachineBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
 
-    public static final RegistryObject<Block> BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK = registerBlock("basic_power_composite_structure_type_thermal_generator_block", () ->
-            new BasicPowerCompositeStructureTypeThermalGeneratorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK = registerTooltipBlock("basic_power_composite_structure_type_thermal_generator_block", () ->
+                    new BasicPowerCompositeStructureTypeThermalGeneratorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "3×3×3", "basic_power_composite_structure_type_thermal_generator_block", "engineering", "basic");
     public static final RegistryObject<Block> BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK = registerBlock("basic_endurance_high_temperature_combustion_chamber_block", () ->
             new GlassBlockBase(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(4.0f)), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK = registerHoloBlock("basic_endurance_high_temperature_combustion_chamber_holo_block", () ->
@@ -180,6 +183,71 @@ public class DCBlocks {
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab) {
         return DCItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
     }
+
+
+    private static <T extends Block> RegistryObject<T> registerTooltipBlock(String name, Supplier<T> block, CreativeModeTab tab, String machineSize,
+                                                                            String machineName, String scienceName, String phase) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        registerTooltipBlockItem(name, toReturn, tab, machineSize, machineName, scienceName, phase);
+        return toReturn;
+    }
+
+    private static <T extends Block> RegistryObject<Item> registerTooltipBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab, String machineSize,
+                                                                                   String machineName, String scienceName, String phase) {
+        return DCItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)) {
+            @Override
+            public void appendHoverText(ItemStack pStack, @Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {
+                if (Screen.hasShiftDown()) {
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.multiblock_size" + machineSize).withStyle(ChatFormatting.WHITE));
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + machineName).withStyle(ChatFormatting.WHITE));
+                    switch (scienceName) {
+                        case "astronomy" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.LIGHT_PURPLE));
+                        case "biology" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.GREEN));
+                        case "chemistry" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.BLUE));
+                        case "dynamic_physics" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.RED));
+                        case "engineering" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.WHITE));
+                        case "faux_magic_engineering" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.BLACK));
+                        case "geoscience" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.YELLOW));
+                    }
+                    switch (phase) {
+                        case "initial" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.WHITE));
+                        case "basic" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.RED));
+                        case "low" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.GOLD));
+                        case "medium" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.YELLOW));
+                        case "high" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.GREEN));
+                        case "super" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.DARK_GREEN));
+                        case "over" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.AQUA));
+                        case "ultra" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.BLUE));
+                        case "anti" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.DARK_BLUE));
+                        case "imaginary" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.LIGHT_PURPLE));
+                        case "infinity" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.DARK_GRAY));
+                        default -> throw new IllegalStateException("Unexpected value: " + phase);
+                    }
+                } else {
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.tooltipitem").withStyle(ChatFormatting.YELLOW));
+                }
+            }
+        });
+    }
+
 
     private static <T extends Block> RegistryObject<T> registerHoloBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

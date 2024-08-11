@@ -669,6 +669,9 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get(), "Low Strength Multiblock Structure Glass Block");
 
         add(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get(), "Basic Power Composite Structure Type Thermal Generator");
+        add("tooltip." + "degeneracycraft." + "basic_power_composite_structure_type_thermal_generator_block",
+                "Basic thermal generator. Generates electricity from the heat generated when materials are burned.");
+
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), "Basic Endurance High Temperature Combustion Chamber");
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), "Basic Endurance High Temperature Combustion Chamber (Hologram)");
         add(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BUS_BLOCK.get(), "Basic Power Composite Structure Type Thermal Generator Bus");
@@ -731,13 +734,15 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "ipp." + "basic", "Industrial Progress Phase:Phase1");
         add("tooltip." + "degeneracycraft." + "ipp." + "low", "Industrial Progress Phase:Phase2");
         add("tooltip." + "degeneracycraft." + "ipp." + "medium", "Industrial Progress Phase:Phase3");
-        add("tooltip." + "degeneracycraft." + "ipp." +"high", "Industrial Progress Phase:Phase4");
+        add("tooltip." + "degeneracycraft." + "ipp." + "high", "Industrial Progress Phase:Phase4");
         add("tooltip." + "degeneracycraft." + "ipp." + "super", "Industrial Progress Phase:Phase5");
         add("tooltip." + "degeneracycraft." + "ipp." + "Over", "Industrial Progress Phase:Phase6");
         add("tooltip." + "degeneracycraft." + "ipp." + "ultra", "Industrial Progress Phase:Phase7");
-        add("tooltip." + "degeneracycraft." + "ipp." +"anti", "Industrial Progress Phase:Phase8");
-        add("tooltip." + "degeneracycraft." + "ipp." +"imaginary", "Industrial Progress Phase:Phase9");
-        add("tooltip." + "degeneracycraft." + "ipp." +"infinity", "Industrial Progress Phase:PhaseInf");
+        add("tooltip." + "degeneracycraft." + "ipp." + "anti", "Industrial Progress Phase:Phase8");
+        add("tooltip." + "degeneracycraft." + "ipp." + "imaginary", "Industrial Progress Phase:Phase9");
+        add("tooltip." + "degeneracycraft." + "ipp." + "infinity", "Industrial Progress Phase:PhaseInf");
+
+        add("tooltip." + "degeneracycraft." + "multiblock_size", "Multiblock Size");
 
         add("tooltip." + "degeneracycraft." + "iron" + ".name", "Material Name:Iron");
         add("tooltip." + "degeneracycraft." + "iron" + ".number", "Atomic Number:26");

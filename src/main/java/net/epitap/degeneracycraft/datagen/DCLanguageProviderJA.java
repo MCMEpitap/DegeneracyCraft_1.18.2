@@ -664,7 +664,11 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(PipeBlocks.BASIC_ENERGY_PIPE_BLOCK, "基本エネルギーパイプ");
 
 
-        add(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get(), "基本出力複合構造型火力発電機");
+        add(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get(), "基本出力複合構造型熱発電機");
+        add("tooltip." + "degeneracycraft." + "basic_power_composite_structure_type_thermal_generator_block",
+                "基本的な熱発電機. 物質を燃やした時の熱で発電する.");
+
+
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), "基本耐久高温燃焼室");
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), "基本耐久高温燃焼室 (ホログラム)");
         add(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BUS_BLOCK.get(), "基本出力複合構造型火力発電機バス");
@@ -738,6 +742,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "ipp." + "imaginary", "工業進展段階:Phase9");
         add("tooltip." + "degeneracycraft." + "ipp." + "infinity", "工業進展段階:PhaseInf");
 
+        add("tooltip." + "degeneracycraft." + "multiblock_size", "マルチブロックサイズ");
+
 
         add("tooltip." + "degeneracycraft." + "iron" + ".name", "物質名:鉄");
         add("tooltip." + "degeneracycraft." + "iron" + ".number", "原子番号:26");
@@ -747,13 +753,10 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "iron" + ".formula", "化学式:Fe");
 
 
-
-
         add("tooltip." + "degeneracycraft." + "requiredenergy.", "要求電力総量:");
         add("tooltip." + "degeneracycraft." + "requiredenergyusage.", "要求電力使用量:");
         add("tooltip." + "degeneracycraft." + "requiredtime.", "要求時間:");
         add("tooltip." + "degeneracycraft." + "sec.", " 秒");
-
 
 
         add("tooltip." + "degeneracycraft." + "requiredenergy." + "iron_bearing" + ".phase0", "要求電力総量:0 FE");

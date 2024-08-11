@@ -755,8 +755,8 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
 //        });
 //    }
 
-    private static  <T extends Item> RegistryObject<Item> registerAtomicItem (String name, CreativeModeTab tab, String atomicname ,String phase){
-        return DCItems.ITEMS.register(name, ()-> new Item(new Item.Properties().tab(tab)) {
+    private static <T extends Item> RegistryObject<Item> registerAtomicItem(String name, CreativeModeTab tab, String atomicName, String phase) {
+        return DCItems.ITEMS.register(name, () -> new Item(new Item.Properties().tab(tab)) {
             @Override
             public void appendHoverText(ItemStack pStack, @Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {
                 if (Screen.hasShiftDown()) {
@@ -785,12 +785,12 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.DARK_GRAY));
                         default -> throw new IllegalStateException("Unexpected value: " + phase);
                     }
-                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicname + ".name").withStyle(ChatFormatting.WHITE));
-                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicname + ".number").withStyle(ChatFormatting.GOLD));
-                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicname + ".weight").withStyle(ChatFormatting.LIGHT_PURPLE));
-                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicname + ".melting").withStyle(ChatFormatting.BLUE));
-                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicname + ".boiling").withStyle(ChatFormatting.RED));
-                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicname + ".formula").withStyle(ChatFormatting.AQUA));
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicName + ".name").withStyle(ChatFormatting.WHITE));
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicName + ".number").withStyle(ChatFormatting.GOLD));
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicName + ".weight").withStyle(ChatFormatting.LIGHT_PURPLE));
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicName + ".melting").withStyle(ChatFormatting.BLUE));
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicName + ".boiling").withStyle(ChatFormatting.RED));
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicName + ".formula").withStyle(ChatFormatting.AQUA));
                 }else{
                     pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.tooltipitem").withStyle(ChatFormatting.YELLOW));
                 }

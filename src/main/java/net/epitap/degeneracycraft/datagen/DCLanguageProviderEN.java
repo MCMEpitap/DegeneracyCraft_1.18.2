@@ -743,6 +743,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "ipp." + "infinity", "Industrial Progress Phase:PhaseInf");
 
         add("tooltip." + "degeneracycraft." + "multiblock_size.", "Multiblock Size");
+        add("3×3×3", "3×3×3");
         add("tooltip." + "degeneracycraft." + "science." + "astronomy", "Science:Astronomy");
         add("tooltip." + "degeneracycraft." + "science." + "biology", "Science:Biology");
         add("tooltip." + "degeneracycraft." + "science." + "chemistry", "Science:Chemistry");

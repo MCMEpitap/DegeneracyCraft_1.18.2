@@ -744,7 +744,12 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
         add("tooltip." + "degeneracycraft." + "multiblock_size.", "マルチブロックサイズ");
         add("tooltip." + "degeneracycraft." + "science." + "astronomy", "科学分野:天文学");
-
+        add("tooltip." + "degeneracycraft." + "science." + "biology", "科学分野:生物");
+        add("tooltip." + "degeneracycraft." + "science." + "chemistry", "科学分野:化学");
+        add("tooltip." + "degeneracycraft." + "science." + "dynamic_physics", "科学分野:動的物理学");
+        add("tooltip." + "degeneracycraft." + "science." + "engineering", "科学分野:工学");
+        add("tooltip." + "degeneracycraft." + "science." + "faux_magic_engineering", "科学分野:模造魔導工学");
+        add("tooltip." + "degeneracycraft." + "science." + "geoscience", "科学分野:地学");
 
         add("tooltip." + "degeneracycraft." + "iron" + ".name", "物質名:鉄");
         add("tooltip." + "degeneracycraft." + "iron" + ".number", "原子番号:26");

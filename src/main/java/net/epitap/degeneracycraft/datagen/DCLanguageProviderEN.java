@@ -743,6 +743,13 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "ipp." + "infinity", "Industrial Progress Phase:PhaseInf");
 
         add("tooltip." + "degeneracycraft." + "multiblock_size.", "Multiblock Size");
+        add("tooltip." + "degeneracycraft." + "science." + "astronomy", "Science:Astronomy");
+        add("tooltip." + "degeneracycraft." + "science." + "biology", "Science:Biology");
+        add("tooltip." + "degeneracycraft." + "science." + "chemistry", "Science:Chemistry");
+        add("tooltip." + "degeneracycraft." + "science." + "dynamic_physics", "Science:Dynamic Physics");
+        add("tooltip." + "degeneracycraft." + "science." + "engineering", "Science:Engineering");
+        add("tooltip." + "degeneracycraft." + "science." + "faux_magic_engineering", "Science:Faux Magic Engineering");
+        add("tooltip." + "degeneracycraft." + "science." + "geoscience", "Science:Geoscience");
 
         add("tooltip." + "degeneracycraft." + "iron" + ".name", "Material Name:Iron");
         add("tooltip." + "degeneracycraft." + "iron" + ".number", "Atomic Number:26");

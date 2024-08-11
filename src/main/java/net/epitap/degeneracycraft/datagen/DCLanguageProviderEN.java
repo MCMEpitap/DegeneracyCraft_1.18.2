@@ -742,7 +742,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "ipp." + "imaginary", "Industrial Progress Phase:Phase9");
         add("tooltip." + "degeneracycraft." + "ipp." + "infinity", "Industrial Progress Phase:PhaseInf");
 
-        add("tooltip." + "degeneracycraft." + "multiblock_size", "Multiblock Size");
+        add("tooltip." + "degeneracycraft." + "multiblock_size.", "Multiblock Size");
 
         add("tooltip." + "degeneracycraft." + "iron" + ".name", "Material Name:Iron");
         add("tooltip." + "degeneracycraft." + "iron" + ".number", "Atomic Number:26");

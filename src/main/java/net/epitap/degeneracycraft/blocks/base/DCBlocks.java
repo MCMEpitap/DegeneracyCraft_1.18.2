@@ -198,8 +198,8 @@ public class DCBlocks {
             @Override
             public void appendHoverText(ItemStack pStack, @Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {
                 if (Screen.hasShiftDown()) {
-                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.multiblock_size" + machineSize).withStyle(ChatFormatting.WHITE));
-                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + machineName).withStyle(ChatFormatting.WHITE));
+                    pTooltip.add(1, new TranslatableComponent("tooltip.degeneracycraft.multiblock_size." + machineSize).withStyle(ChatFormatting.WHITE));
+                    pTooltip.add(1, new TranslatableComponent("tooltip.degeneracycraft." + machineName).withStyle(ChatFormatting.WHITE));
                     switch (scienceName) {
                         case "astronomy" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.LIGHT_PURPLE));

@@ -22,7 +22,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBusBlock extends Po
     public boolean enabledConnectTo(LevelAccessor world, BlockPos pos, Direction facing) {
         BlockEntity blockEntity = world.getBlockEntity(pos.relative(facing));
         return blockEntity != null && (blockEntity.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).isPresent()
-                || blockEntity.getBlockState().is(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get()));
+                || blockEntity.getBlockState().is(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get()));
     }
 
     public boolean judgePort(LevelAccessor world, BlockPos pos, Direction facing) {

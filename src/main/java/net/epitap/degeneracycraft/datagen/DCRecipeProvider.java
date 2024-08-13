@@ -94,7 +94,7 @@ public class DCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .unlockedBy("ingots/iron", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_INGOT))
                 .save(pFinishedRecipeConsumer);
 
-        ShapedRecipeBuilder.shaped(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get())
+        ShapedRecipeBuilder.shaped(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get())
                 .pattern("iSi")
                 .pattern("TMC")
                 .pattern("pBp")

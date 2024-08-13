@@ -92,7 +92,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorMenu extends Abstra
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get());
+                player, DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

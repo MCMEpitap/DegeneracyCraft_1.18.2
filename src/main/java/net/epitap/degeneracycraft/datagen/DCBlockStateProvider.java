@@ -423,6 +423,18 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> modelBasicTechnologyMachineManufacturer);
     }
 
+    private void registerBasicTechnologyMachineManufacturerPortHolo() {
+        BlockModelBuilder modelBasicTechnologyMachineManufacturer = models().getBuilder("block/basic_technology_machine_manufacturer_port_holo_block");
+        modelBasicTechnologyMachineManufacturer.parent(models().getExistingFile(mcLoc("cube")));
+        modelBasicTechnologyMachineManufacturer.texture("down", modLoc("block/machine/basic/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_holo_block"));
+        modelBasicTechnologyMachineManufacturer.texture("up", modLoc("block/machine/basic/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_holo_block"));
+        modelBasicTechnologyMachineManufacturer.texture("north", modLoc("block/machine/basic/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_holo_block"));
+        modelBasicTechnologyMachineManufacturer.texture("south", modLoc("block/machine/basic/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_holo_block"));
+        modelBasicTechnologyMachineManufacturer.texture("east", modLoc("block/machine/basic/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_holo_block"));
+        modelBasicTechnologyMachineManufacturer.texture("west", modLoc("block/machine/basic/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_HOLO_BLOCK.get(),
+                state -> modelBasicTechnologyMachineManufacturer);
+    }
     private void registerBasicTechnologyMachineManufacturerBus() {
         BlockModelBuilder modelBasicTechnologyMachineManufacturer = models().getBuilder("block/basic_technology_machine_manufacturer_bus_block");
         modelBasicTechnologyMachineManufacturer.parent(models().getExistingFile(mcLoc("cube")));
@@ -433,6 +445,19 @@ public class DCBlockStateProvider extends BlockStateProvider {
         modelBasicTechnologyMachineManufacturer.texture("east", modLoc("block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_block"));
         modelBasicTechnologyMachineManufacturer.texture("west", modLoc("block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK.get(),
+                state -> modelBasicTechnologyMachineManufacturer);
+    }
+
+    private void registerBasicTechnologyMachineManufacturerBusHolo() {
+        BlockModelBuilder modelBasicTechnologyMachineManufacturer = models().getBuilder("block/basic_technology_machine_manufacturer_bus_holo_block");
+        modelBasicTechnologyMachineManufacturer.parent(models().getExistingFile(mcLoc("cube")));
+        modelBasicTechnologyMachineManufacturer.texture("down", modLoc("block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block"));
+        modelBasicTechnologyMachineManufacturer.texture("up", modLoc("block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block"));
+        modelBasicTechnologyMachineManufacturer.texture("north", modLoc("block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block"));
+        modelBasicTechnologyMachineManufacturer.texture("south", modLoc("block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block"));
+        modelBasicTechnologyMachineManufacturer.texture("east", modLoc("block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block"));
+        modelBasicTechnologyMachineManufacturer.texture("west", modLoc("block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_HOLO_BLOCK.get(),
                 state -> modelBasicTechnologyMachineManufacturer);
     }
 

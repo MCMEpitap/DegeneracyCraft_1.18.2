@@ -159,6 +159,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicPowerCompositeStructureTypeThermalGeneratorBusType.INSTANCE)) {
             intEnergyStored.revalidate(this::portExtracting, (side) -> new PortIEnergyStorage(this, side));
         }
+        if (hasType(BasicTechnologyMachineManufacturerPortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PipeItemHandler.INSTANCE);
+        }
+        if (hasType(BasicTechnologyMachineManufacturerBusType.INSTANCE)) {
+            intEnergyStored.revalidate(this::portExtracting, (side) -> new PortIEnergyStorage(this, side));
+        }
 
         if (hasType(BasicMachineElementProcessorPortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PipeItemHandler.INSTANCE);

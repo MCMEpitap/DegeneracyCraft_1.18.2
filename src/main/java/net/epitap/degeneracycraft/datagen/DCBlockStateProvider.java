@@ -423,6 +423,19 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> modelBasicTechnologyMachineManufacturer);
     }
 
+    private void registerBasicTechnologyMachineManufacturerBus() {
+        BlockModelBuilder modelBasicTechnologyMachineManufacturer = models().getBuilder("block/basic_technology_machine_manufacturer_bus_block");
+        modelBasicTechnologyMachineManufacturer.parent(models().getExistingFile(mcLoc("cube")));
+        modelBasicTechnologyMachineManufacturer.texture("down", modLoc("block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_block"));
+        modelBasicTechnologyMachineManufacturer.texture("up", modLoc("block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_block"));
+        modelBasicTechnologyMachineManufacturer.texture("north", modLoc("block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_block"));
+        modelBasicTechnologyMachineManufacturer.texture("south", modLoc("block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_block"));
+        modelBasicTechnologyMachineManufacturer.texture("east", modLoc("block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_block"));
+        modelBasicTechnologyMachineManufacturer.texture("west", modLoc("block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK.get(),
+                state -> modelBasicTechnologyMachineManufacturer);
+    }
+
     private void registerBasicTechnologyUniversalAssembler() {
         BlockModelBuilder modelBasicMachineElementProcessor = models().getBuilder("block/basic_technology_universal_assembler_block");
         modelBasicMachineElementProcessor.parent(models().getExistingFile(mcLoc("cube")));

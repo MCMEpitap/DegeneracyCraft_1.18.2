@@ -17,14 +17,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class BasicPowerCompositeStructureTypeThermalGeneratorBusType extends PortTypeBase<Void> {
-    public static final BasicPowerCompositeStructureTypeThermalGeneratorBusType INSTANCE = new BasicPowerCompositeStructureTypeThermalGeneratorBusType();
+public class BasicTechnologyMachineManufacturerBusType extends PortTypeBase<Void> {
+    public static final BasicTechnologyMachineManufacturerBusType INSTANCE = new BasicTechnologyMachineManufacturerBusType();
 
-    public BasicPowerCompositeStructureTypeThermalGeneratorBusType() {
+    public BasicTechnologyMachineManufacturerBusType() {
     }
 
     public String getKey() {
-        return "basic_power_composite_structure_type_thermal_generator_bus";
+        return "basic_technology_machine_manufacturer_bus";
     }
 
     public boolean canImport(BlockEntity blockEntity, Direction direction) {
@@ -32,7 +32,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBusType extends Por
     }
 
     public String getTranslationKey() {
-        return "basic_power_composite_structure_type_thermal_generator_bus";
+        return "basic_technology_machine_manufacturer_bus";
     }
 
     public ItemStack getIcon() {

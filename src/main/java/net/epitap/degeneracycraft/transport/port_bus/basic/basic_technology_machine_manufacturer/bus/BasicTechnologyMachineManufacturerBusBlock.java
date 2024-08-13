@@ -14,15 +14,15 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.energy.CapabilityEnergy;
 
-public class BasicPowerCompositeStructureTypeThermalGeneratorBusBlock extends PortBlockBase {
-    public BasicPowerCompositeStructureTypeThermalGeneratorBusBlock(Properties properties) {
+public class BasicTechnologyMachineManufacturerBusBlock extends PortBlockBase {
+    public BasicTechnologyMachineManufacturerBusBlock(Properties properties) {
         super(properties);
     }
 
     public boolean enabledConnectTo(LevelAccessor world, BlockPos pos, Direction facing) {
         BlockEntity blockEntity = world.getBlockEntity(pos.relative(facing));
         return blockEntity != null && (blockEntity.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).isPresent()
-                || blockEntity.getBlockState().is(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get()));
+                || blockEntity.getBlockState().is(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get()));
     }
 
     public boolean judgePort(LevelAccessor world, BlockPos pos, Direction facing) {
@@ -31,12 +31,12 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBusBlock extends Po
     }
 
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new BasicPowerCompositeStructureTypeThermalGeneratorBusBlockEntity(pos, state);
+        return new BasicTechnologyMachineManufacturerBusBlockEntity(pos, state);
     }
 
     public InteractionResult portSideLaunch(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, Direction facing) {
         BlockEntity blockentity = world.getBlockEntity(pos);
-        if (blockentity instanceof BasicPowerCompositeStructureTypeThermalGeneratorBusBlockEntity && this.portExtracting(world, pos, facing)) {
+        if (blockentity instanceof BasicTechnologyMachineManufacturerBusBlockEntity && this.portExtracting(world, pos, facing)) {
             if (world.isClientSide) {
                 return InteractionResult.SUCCESS;
             }

@@ -44,7 +44,6 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerRedstonePoweredMachineElementManufactureMachine();
         registerRedstonePoweredMachinePartManufactureMachine();
 
-
         registerBasicPowerCompositeStructureTypeThermalGenerator();
         registerBasicEnduranceHighTemperatureCombustionChamber();
         registerBasicEnduranceHighTemperatureCombustionChamberHolo();
@@ -396,6 +395,19 @@ public class DCBlockStateProvider extends BlockStateProvider {
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/bus/basic_power_composite_structure_type_thermal_generator_bus_holo_block"));
         orientedBlock(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(),
                 state -> modelBasicPowerCompositeStructureTypeThermalGenerator);
+    }
+
+    private void registerBasicTechnologyMachineManufacturer() {
+        BlockModelBuilder modelBasicTechnologyMachineManufacturer = models().getBuilder("block/basic_technology_machine_manufacturer_block");
+        modelBasicTechnologyMachineManufacturer.parent(models().getExistingFile(mcLoc("cube")));
+        modelBasicTechnologyMachineManufacturer.texture("down", modLoc("block/machine/basic/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_down"));
+        modelBasicTechnologyMachineManufacturer.texture("up", modLoc("block/machine/basic/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_up"));
+        modelBasicTechnologyMachineManufacturer.texture("north", modLoc("block/machine/basic/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_front"));
+        modelBasicTechnologyMachineManufacturer.texture("south", modLoc("block/machine/basic/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_side"));
+        modelBasicTechnologyMachineManufacturer.texture("east", modLoc("block/machine/basic/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_side"));
+        modelBasicTechnologyMachineManufacturer.texture("west", modLoc("block/machine/basic/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_side"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get(),
+                state -> modelBasicTechnologyMachineManufacturer);
     }
 
     private void registerBasicTechnologyUniversalAssembler() {

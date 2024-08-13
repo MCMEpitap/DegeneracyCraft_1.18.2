@@ -121,7 +121,7 @@ public class DCBlocks {
 
     public static final RegistryObject<Block> BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK = registerTooltipBasicBlock("basic_power_composite_structure_type_thermal_generator_block", () ->
                     new BasicPowerCompositeStructureTypeThermalGeneratorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
-            "3×3×3", "basic_power_composite_structure_type_thermal_generator_block", "engineering", "basic");
+            "Lv1:3×3×3", "16 FE/t", "32 FE/t", "48 FE/t", "basic_power_composite_structure_type_thermal_generator_block", "engineering", "basic");
     public static final RegistryObject<Block> BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK = registerBlock("basic_endurance_high_temperature_combustion_chamber_block", () ->
             new GlassBlockBase(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(4.0f)), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK = registerHoloBlock("basic_endurance_high_temperature_combustion_chamber_holo_block", () ->
@@ -139,7 +139,7 @@ public class DCBlocks {
 
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK = registerTooltipBasicBlock("basic_technology_machine_manufacturer_block", () ->
                     new BasicTechnologyMachineManufacturerBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
-            "3×3×3", "basic_technology_machine_manufacturer_block", "engineering", "basic");
+            "Lv1:3×3×3", "×1 Speed", "×1.5 Speed", "×2 Speed", "basic_technology_machine_manufacturer_block", "engineering", "basic");
 
     public static final RegistryObject<Block> BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK = registerBlock("basic_machine_element_processor_block", () ->
             new BasicMachineElementProcessorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
@@ -186,21 +186,24 @@ public class DCBlocks {
     }
 
 
-    private static <T extends Block> RegistryObject<T> registerTooltipBasicBlock(String name, Supplier<T> block, CreativeModeTab tab, String machineSize,
-                                                                                 String machineName, String scienceName, String phase) {
+    private static <T extends Block> RegistryObject<T> registerTooltipBasicBlock(String name, Supplier<T> block, CreativeModeTab tab, String machineSize, String basePara,
+                                                                                 String lv0Para, String lv1Para, String machineName, String scienceName, String phase) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerTooltipBasicBlockItem(name, toReturn, tab, machineSize, machineName, scienceName, phase);
+        registerTooltipBasicBlockItem(name, toReturn, tab, machineSize, basePara, lv0Para, lv1Para, machineName, scienceName, phase);
         return toReturn;
     }
 
-    private static <T extends Block> RegistryObject<Item> registerTooltipBasicBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab, String machineSize,
-                                                                                        String machineName, String scienceName, String phase) {
+    private static <T extends Block> RegistryObject<Item> registerTooltipBasicBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab, String machineSize, String basePara,
+                                                                                        String lv0Para, String lv1Para, String machineName, String scienceName, String phase) {
         return DCItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)) {
             @Override
             public void appendHoverText(ItemStack pStack, @Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {
                 if (Screen.hasShiftDown()) {
                     pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.multiblock_size.").withStyle(ChatFormatting.WHITE));
-                    pTooltip.add(new TranslatableComponent(machineSize).withStyle(ChatFormatting.WHITE));
+                    pTooltip.add(new TranslatableComponent(machineSize).withStyle(ChatFormatting.RED));
+                    pTooltip.add(new TranslatableComponent(basePara).withStyle(ChatFormatting.WHITE));
+                    pTooltip.add(new TranslatableComponent(lv0Para).withStyle(ChatFormatting.WHITE));
+                    pTooltip.add(new TranslatableComponent(lv1Para).withStyle(ChatFormatting.RED));
                     pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + machineName).withStyle(ChatFormatting.WHITE));
                     switch (scienceName) {
                         case "astronomy" ->

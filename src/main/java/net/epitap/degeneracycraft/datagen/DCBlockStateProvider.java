@@ -410,6 +410,19 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> modelBasicTechnologyMachineManufacturer);
     }
 
+    private void registerBasicTechnologyMachineManufacturerPort() {
+        BlockModelBuilder modelBasicTechnologyMachineManufacturer = models().getBuilder("block/basic_technology_machine_manufacturer_port_block");
+        modelBasicTechnologyMachineManufacturer.parent(models().getExistingFile(mcLoc("cube")));
+        modelBasicTechnologyMachineManufacturer.texture("down", modLoc("block/machine/basic/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_block"));
+        modelBasicTechnologyMachineManufacturer.texture("up", modLoc("block/machine/basic/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_block"));
+        modelBasicTechnologyMachineManufacturer.texture("north", modLoc("block/machine/basic/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_block"));
+        modelBasicTechnologyMachineManufacturer.texture("south", modLoc("block/machine/basic/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_block"));
+        modelBasicTechnologyMachineManufacturer.texture("east", modLoc("block/machine/basic/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_block"));
+        modelBasicTechnologyMachineManufacturer.texture("west", modLoc("block/machine/basic/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_block"));
+        orientedBlock(DCBlocks.B_PORT_BLOCK.get(),
+                state -> modelBasicTechnologyMachineManufacturer);
+    }
+
     private void registerBasicTechnologyUniversalAssembler() {
         BlockModelBuilder modelBasicMachineElementProcessor = models().getBuilder("block/basic_technology_universal_assembler_block");
         modelBasicMachineElementProcessor.parent(models().getExistingFile(mcLoc("cube")));

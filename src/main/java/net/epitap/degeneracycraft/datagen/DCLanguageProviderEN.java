@@ -671,7 +671,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK.get(), "Basic Power Composite Structure Type Thermal Generator");
         add("tooltip." + "degeneracycraft." + "basic_power_composite_structure_type_thermal_generator_block",
                 "Basic thermal generator. Generates electricity from the heat generated when materials are burned.");
-
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), "Basic Endurance High Temperature Combustion Chamber");
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), "Basic Endurance High Temperature Combustion Chamber (Hologram)");
         add(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BUS_BLOCK.get(), "Basic Power Composite Structure Type Thermal Generator Bus");
@@ -743,7 +742,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "ipp." + "infinity", "Industrial Progress Phase:PhaseInf");
 
         add("tooltip." + "degeneracycraft." + "multiblock_size.", "Multiblock Size");
-        add("3×3×3", "3×3×3");
+//        add("3×3×3", "3×3×3");
         add("tooltip." + "degeneracycraft." + "science." + "astronomy", "Science:Astronomy");
         add("tooltip." + "degeneracycraft." + "science." + "biology", "Science:Biology");
         add("tooltip." + "degeneracycraft." + "science." + "chemistry", "Science:Chemistry");

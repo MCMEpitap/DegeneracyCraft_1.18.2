@@ -15,6 +15,7 @@ import net.epitap.degeneracycraft.blocks.storage.basic.materialstorage.basic_str
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_machine_element_processor.BasicMachineElementProcessorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.bus.BasicPowerCompositeStructureTypeThermalGeneratorBusBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.port.BasicPowerCompositeStructureTypeThermalGeneratorPortBlockEntity;
+import net.epitap.degeneracycraft.transport.port_bus.basic.basic_technology_machine_manufacturer.port.BasicTechnologyMachineManufacturerPortBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -70,6 +71,12 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicPowerCompositeStructureTypeThermalGeneratorBusBlockEntity>> BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BUS_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_power_composite_structure_type_thermal_generator_bus_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPowerCompositeStructureTypeThermalGeneratorBusBlockEntity::new, DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicTechnologyMachineManufacturerPortBlockEntity>> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_machine_manufacturer_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologyMachineManufacturerPortBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicTechnologyMachineManufacturerBusBlockEntity>> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_machine_manufacturer_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologyMachineManufacturerBusBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK.get()).build(null));
 
 
     public static final RegistryObject<BlockEntityType<BasicMachineElementProcessorPortBlockEntity>> BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK_ENTITY =

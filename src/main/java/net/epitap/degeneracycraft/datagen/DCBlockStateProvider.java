@@ -419,7 +419,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         modelBasicTechnologyMachineManufacturer.texture("south", modLoc("block/machine/basic/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_block"));
         modelBasicTechnologyMachineManufacturer.texture("east", modLoc("block/machine/basic/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_block"));
         modelBasicTechnologyMachineManufacturer.texture("west", modLoc("block/machine/basic/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_block"));
-        orientedBlock(DCBlocks.B_PORT_BLOCK.get(),
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK.get(),
                 state -> modelBasicTechnologyMachineManufacturer);
     }
 

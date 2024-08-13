@@ -16,12 +16,12 @@ import net.minecraftforge.items.ItemHandlerHelper;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class BasicPowerCompositeStructureTypeThermalGeneratorPortType extends PortTypeBase<Item> {
-    public static final BasicPowerCompositeStructureTypeThermalGeneratorPortType INSTANCE = new BasicPowerCompositeStructureTypeThermalGeneratorPortType();
+public class BasicTechnologyMachineManufacturerPortType extends PortTypeBase<Item> {
+    public static final BasicTechnologyMachineManufacturerPortType INSTANCE = new BasicTechnologyMachineManufacturerPortType();
 
     @Override
     public String getKey() {
-        return "basic_power_composite_structure_type_thermal_generator_port";
+        return "basic_technology_machine_manufacturer_port";
     }
 
     @Override
@@ -31,7 +31,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorPortType extends Po
 
     @Override
     public String getTranslationKey() {
-        return "basic_power_composite_structure_type_thermal_generator_port";
+        return "basic_technology_machine_manufacturer_port";
     }
 
     @Override

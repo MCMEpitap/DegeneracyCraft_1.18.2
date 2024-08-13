@@ -6,8 +6,8 @@ import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortWorkBlockE
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class BasicPowerCompositeStructureTypeThermalGeneratorPortBlockEntity extends PortWorkBlockEntity {
-    public BasicPowerCompositeStructureTypeThermalGeneratorPortBlockEntity(BlockPos pos, BlockState state) {
-        super(DCBlockEntities.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_PORT_BLOCK_ENTITY.get(), new PortTypeBase[]{BasicPowerCompositeStructureTypeThermalGeneratorPortType.INSTANCE}, pos, state);
+public class BasicTechnologyMachineManufacturerPortBlockEntity extends PortWorkBlockEntity {
+    public BasicTechnologyMachineManufacturerPortBlockEntity(BlockPos pos, BlockState state) {
+        super(DCBlockEntities.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK_ENTITY.get(), new PortTypeBase[]{BasicTechnologyMachineManufacturerPortType.INSTANCE}, pos, state);
     }
 }

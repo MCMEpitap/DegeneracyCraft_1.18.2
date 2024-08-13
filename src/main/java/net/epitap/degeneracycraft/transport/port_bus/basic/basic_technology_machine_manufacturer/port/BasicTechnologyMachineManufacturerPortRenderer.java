@@ -11,6 +11,6 @@ public class BasicTechnologyMachineManufacturerPortRenderer extends PortRenderer
 
     @Override
     public PortModelRegistry.DCPortModel getModel() {
-        return PortModelRegistry.DCPortModel.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_PORT_BLOCK_EXTRACT;
+        return PortModelRegistry.DCPortModel.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK_EXTRACT;
     }
 }

@@ -6,6 +6,8 @@ import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeDCIEnergyStorageFl
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_machine_element_processor.BasicMachineElementProcessorPortType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.bus.BasicPowerCompositeStructureTypeThermalGeneratorBusType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.port.BasicPowerCompositeStructureTypeThermalGeneratorPortType;
+import net.epitap.degeneracycraft.transport.port_bus.basic.basic_technology_machine_manufacturer.bus.BasicTechnologyMachineManufacturerBusType;
+import net.epitap.degeneracycraft.transport.port_bus.basic.basic_technology_machine_manufacturer.port.BasicTechnologyMachineManufacturerPortType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -52,6 +54,14 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 return itemStored.get(side).cast();
             }
         } else if (cap == CapabilityEnergy.ENERGY && hasType(BasicPowerCompositeStructureTypeThermalGeneratorBusType.INSTANCE)) {
+            if (side != null) {
+                return intEnergyStored.get(side).cast();
+            }
+        } else if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicTechnologyMachineManufacturerPortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        } else if (cap == CapabilityEnergy.ENERGY && hasType(BasicTechnologyMachineManufacturerBusType.INSTANCE)) {
             if (side != null) {
                 return intEnergyStored.get(side).cast();
             }
@@ -111,6 +121,13 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 }
             }
         }
+        if (hasType(BasicTechnologyMachineManufacturerBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    intEnergyStored.get(side).ifPresent(PortIEnergyStorage::tick);
+                }
+            }
+        }
     }
 
     @Override
@@ -122,7 +139,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicPowerCompositeStructureTypeThermalGeneratorBusType.INSTANCE)) {
             intEnergyStored.revalidate(side, storage -> extracting, (storage) -> new PortIEnergyStorage(this, storage));
         }
-
+        if (hasType(BasicTechnologyMachineManufacturerPortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PipeItemHandler.INSTANCE);
+        }
+        if (hasType(BasicTechnologyMachineManufacturerBusType.INSTANCE)) {
+            intEnergyStored.revalidate(side, storage -> extracting, (storage) -> new PortIEnergyStorage(this, storage));
+        }
         if (hasType(BasicMachineElementProcessorPortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PipeItemHandler.INSTANCE);
         }

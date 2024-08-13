@@ -664,25 +664,25 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(PipeBlocks.BASIC_ENERGY_PIPE_BLOCK, "基本エネルギーパイプ");
 
 
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get(), "基本出力複合構造型熱発電機");
+        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get(), "基本出力熱発電機");
         add("tooltip." + "degeneracycraft." + "basic_power_composite_structure_type_thermal_generator_block",
                 "基本的な熱発電機. 物質を燃やした時の熱で発電する.");
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), "基本耐久高温燃焼室");
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), "基本耐久高温燃焼室 (ホログラム)");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get(), "基本出力複合構造型火力発電機バス");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(), "基本出力複合構造型火力発電機バス (ホログラム)");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.get(), "基本出力複合構造型火力発電機ポート");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(), "基本出力複合構造型火力発電機バス (ホログラム)");
+        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get(), "基本出力火力発電機バス");
+        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(), "基本出力火力発電機バス (ホログラム)");
+        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.get(), "基本出力火力発電機ポート");
+        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(), "基本出力火力発電機バス (ホログラム)");
 
-        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get(), "基本技術機械製作機");
-        add("tooltip." + "degeneracycraft." + "basic_power_composite_structure_type_thermal_generator_block",
-                "基本的な熱発電機. 物質を燃やした時の熱で発電する.");
-        add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), "基本耐久高温燃焼室");
-        add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), "基本耐久高温燃焼室 (ホログラム)");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get(), "基本出力複合構造型火力発電機バス");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(), "基本出力複合構造型火力発電機バス (ホログラム)");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.get(), "基本出力複合構造型火力発電機ポート");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(), "基本出力複合構造型火力発電機バス (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get(), "基本技術機械製造機");
+        add("tooltip." + "degeneracycraft." + "basic_technology_machine_manufacturer_block",
+                "基本的な機械製造機. これがないとより複雑な機械を作れない.");
+//        add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), "基本耐久高温燃焼室");
+//        add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), "基本耐久高温燃焼室 (ホログラム)");
+        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get(), "基本技術機械製造機バス");
+        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(), "基本技術機械製造機バス (ホログラム)");
+        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.get(), "基本技術機械製造機ポート");
+        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(), "基本技術機械製造機バス (ホログラム)");
 
 
         add(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(), "基本機械要素加工機");

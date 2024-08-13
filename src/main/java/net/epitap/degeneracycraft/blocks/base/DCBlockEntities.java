@@ -71,7 +71,7 @@ public class DCBlockEntities {
                     BlockEntityType.Builder.of(BasicPowerCompositeStructureTypeThermalGeneratorPortBlockEntity::new, DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicPowerCompositeStructureTypeThermalGeneratorBusBlockEntity>> BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BUS_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_power_composite_structure_type_thermal_generator_bus_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicPowerCompositeStructureTypeThermalGeneratorBusBlockEntity::new, DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BUS_BLOCK.get()).build(null));
+                    BlockEntityType.Builder.of(BasicPowerCompositeStructureTypeThermalGeneratorBusBlockEntity::new, DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicTechnologyMachineManufacturerPortBlockEntity>> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_technology_machine_manufacturer_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicTechnologyMachineManufacturerPortBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK.get()).build(null));

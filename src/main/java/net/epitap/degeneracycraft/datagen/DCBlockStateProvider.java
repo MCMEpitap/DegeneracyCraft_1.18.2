@@ -367,7 +367,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/port/basic_power_composite_structure_type_thermal_generator_port_holo_block"));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/port/basic_power_composite_structure_type_thermal_generator_port_holo_block"));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/port/basic_power_composite_structure_type_thermal_generator_port_holo_block"));
-        orientedBlock(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(),
+        orientedBlock(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(),
                 state -> modelBasicPowerCompositeStructureTypeThermalGenerator);
     }
 
@@ -380,7 +380,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/bus/basic_power_composite_structure_type_thermal_generator_bus_block"));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/bus/basic_power_composite_structure_type_thermal_generator_bus_block"));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/bus/basic_power_composite_structure_type_thermal_generator_bus_block"));
-        orientedBlock(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BUS_BLOCK.get(),
+        orientedBlock(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get(),
                 state -> modelBasicPowerCompositeStructureTypeThermalGenerator);
     }
 
@@ -393,7 +393,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("south", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/bus/basic_power_composite_structure_type_thermal_generator_bus_holo_block"));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("east", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/bus/basic_power_composite_structure_type_thermal_generator_bus_holo_block"));
         modelBasicPowerCompositeStructureTypeThermalGenerator.texture("west", modLoc("block/machine/basic/basic_power_composite_structure_type_thermal_generator/bus/basic_power_composite_structure_type_thermal_generator_bus_holo_block"));
-        orientedBlock(DCBlocks.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(),
+        orientedBlock(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(),
                 state -> modelBasicPowerCompositeStructureTypeThermalGenerator);
     }
 

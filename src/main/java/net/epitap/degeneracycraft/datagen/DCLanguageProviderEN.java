@@ -683,10 +683,10 @@ public class DCLanguageProviderEN extends LanguageProvider {
                 "Basic machine manufacturer. Without it, more complex machines cannot be made.");
 //        add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), "基本耐久高温燃焼室");
 //        add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), "基本耐久高温燃焼室 (ホログラム)");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get(), "Basic Technology Machine Manufacturer Bus");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(), "Basic Technology Machine Manufacturer Bus (Hologram)");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.get(), "Basic Technology Machine Manufacturer Port");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(), "Basic Technology Machine Manufacturer Port (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK.get(), "Basic Technology Machine Manufacturer Bus");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_HOLO_BLOCK.get(), "Basic Technology Machine Manufacturer Bus (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK.get(), "Basic Technology Machine Manufacturer Port");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_HOLO_BLOCK.get(), "Basic Technology Machine Manufacturer Port (Hologram)");
 
         add(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(), "Basic Machine Element Processor");
         add(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(), "Basic Machine Element Processor Port");

@@ -679,10 +679,10 @@ public class DCLanguageProviderJA extends LanguageProvider {
                 "基本的な機械製造機. これがないとより複雑な機械を作れない.");
 //        add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), "基本耐久高温燃焼室");
 //        add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), "基本耐久高温燃焼室 (ホログラム)");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get(), "基本技術機械製造機バス");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(), "基本技術機械製造機バス (ホログラム)");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.get(), "基本技術機械製造機ポート");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(), "基本技術機械製造機バス (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK.get(), "基本技術機械製造機バス");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_HOLO_BLOCK.get(), "基本技術機械製造機バス (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK.get(), "基本技術機械製造機ポート");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_HOLO_BLOCK.get(), "基本技術機械製造機バス (ホログラム)");
 
 
         add(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(), "基本機械要素加工機");

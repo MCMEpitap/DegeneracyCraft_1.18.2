@@ -75,21 +75,21 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorScreen extends Abst
         if (menu.blockEntity.isPowered0) {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_POWERED_0 + " FE/t"),
                     125, 45, 0xffffff);
-            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".power_modifier_3"),
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_machine" + ".modifier_3"),
                     80, 11, 0xffffff);
-            drawCenteredString(pPoseStack, Minecraft.getInstance().font, "ON",
-                    80, 47, 0x00FF00);
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, "Lv.1",
+                    80, 47, 0xFF0000);
         } else if (menu.blockEntity.isFormed) {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED + " FE/t"),
                     125, 45, 0xffffff);
-            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".power_modifier_2"),
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_machine" + ".modifier_2"),
                     80, 11, 0xffffff);
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, "ON",
                     80, 47, 0x00FF00);
         } else {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT + " FE/t"),
                     125, 45, 0xffffff);
-            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".power_modifier_1"),
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_machine" + ".modifier_1"),
                     80, 11, 0xffffff);
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, "OFF",
                     80, 47, 0xFF0000);

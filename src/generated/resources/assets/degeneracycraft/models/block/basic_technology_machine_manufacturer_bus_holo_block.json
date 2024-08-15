@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block",
+    "up": "degeneracycraft:block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block",
+    "north": "degeneracycraft:block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block",
+    "south": "degeneracycraft:block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block",
+    "east": "degeneracycraft:block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block",
+    "west": "degeneracycraft:block/machine/basic/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block"
+  }
+}

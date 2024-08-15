@@ -692,7 +692,7 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_power_composite_structure_type_thermal_generator_bus_block"));
 
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.getId().getPath(),
-                modLoc("block/basic_power_composite_structure_type_thermal_generator_block"));
+                modLoc("block/basic_technology_machine_manufacturer_block"));
 //        withExistingParent(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.getId().getPath(),
 //                modLoc("block/basic_endurance_high_temperature_combustion_chamber_block"));
 

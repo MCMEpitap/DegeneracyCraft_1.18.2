@@ -47,10 +47,17 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicPowerCompositeStructureTypeThermalGenerator();
         registerBasicEnduranceHighTemperatureCombustionChamber();
         registerBasicEnduranceHighTemperatureCombustionChamberHolo();
-        registerBasicPowerCompositeStructureTypeThermalGeneratorPort();
-        registerBasicPowerCompositeStructureTypeThermalGeneratorPortHolo();
         registerBasicPowerCompositeStructureTypeThermalGeneratorBus();
         registerBasicPowerCompositeStructureTypeThermalGeneratorBusHolo();
+        registerBasicPowerCompositeStructureTypeThermalGeneratorPort();
+        registerBasicPowerCompositeStructureTypeThermalGeneratorPortHolo();
+
+
+        registerBasicTechnologyMachineManufacturer();
+        registerBasicTechnologyMachineManufacturerBus();
+        registerBasicTechnologyMachineManufacturerBusHolo();
+        registerBasicTechnologyMachineManufacturerPort();
+        registerBasicTechnologyMachineManufacturerPortHolo();
 
         registerBasicTechnologyUniversalAssembler();
         registerBasicMachineElementProcessor();

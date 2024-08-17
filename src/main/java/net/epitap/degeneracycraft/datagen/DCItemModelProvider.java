@@ -693,8 +693,8 @@ public class DCItemModelProvider extends ItemModelProvider {
 
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_machine_manufacturer_block"));
-//        withExistingParent(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.getId().getPath(),
-//                modLoc("block/basic_endurance_high_temperature_combustion_chamber_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_machine_processing_chamber_block"));
 
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_machine_manufacturer_bus_block"));

@@ -681,8 +681,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get(), "Basic Technology Machine Manufacturer");
         add("tooltip." + "degeneracycraft." + "basic_technology_machine_manufacturer_block",
                 "Basic machine manufacturer. Without it, more complex machines cannot be made.");
-//        add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), "基本耐久高温燃焼室");
-//        add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), "基本耐久高温燃焼室 (ホログラム)");
+        add(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_BLOCK.get(), "Basic Efficiency Machine Processing Chamber");
+        add(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_HOLO_BLOCK.get(), "Basic Efficiency Machine Processing Chamber (Hologram)");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK.get(), "Basic Technology Machine Manufacturer Bus");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_HOLO_BLOCK.get(), "Basic Technology Machine Manufacturer Bus (Hologram)");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK.get(), "Basic Technology Machine Manufacturer Port");

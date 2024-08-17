@@ -677,8 +677,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get(), "基本技術機械製造機");
         add("tooltip." + "degeneracycraft." + "basic_technology_machine_manufacturer_block",
                 "基本的な機械製造機. これがないとより複雑な機械を作れない.");
-//        add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), "基本耐久高温燃焼室");
-//        add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), "基本耐久高温燃焼室 (ホログラム)");
+        add(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_BLOCK.get(), "基本効率機械加工室");
+        add(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_HOLO_BLOCK.get(), "基本効率機械加工室 (ホログラム)");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK.get(), "基本技術機械製造機バス");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_HOLO_BLOCK.get(), "基本技術機械製造機バス (ホログラム)");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK.get(), "基本技術機械製造機ポート");

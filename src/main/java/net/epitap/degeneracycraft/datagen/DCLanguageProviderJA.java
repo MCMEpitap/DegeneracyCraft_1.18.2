@@ -737,6 +737,11 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("screen." + "degeneracycraft_machine" + ".modifier_2", "×2");
         add("screen." + "degeneracycraft_machine" + ".modifier_3", "×3");
 
+        add("screen." + "degeneracycraft_machine" + ".process_modifier_1", "加工速度 ×1.00");
+        add("screen." + "degeneracycraft_machine" + ".process_modifier_1.5", "加工速度 ×1.5");
+        add("screen." + "degeneracycraft_machine" + ".process_modifier_2", "加工速度 ×2");
+        add("screen." + "degeneracycraft_machine" + ".process_modifier_3", "加工速度 ×3");
+
         add("tooltip." + "degeneracycraft" + ".wrench", "搬出 → 搬入 → 切断 → 搬出... シフト右クリックでパイプ状態切替");
         add("tooltip." + "degeneracycraft" + ".wrenchitem", "Shiftキーでレンチ詳細展開");
         add("tooltip." + "degeneracycraft" + ".tooltipitem", "Shiftキーで物質詳細展開");

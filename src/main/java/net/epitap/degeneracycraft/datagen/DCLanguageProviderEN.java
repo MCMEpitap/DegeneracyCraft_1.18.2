@@ -736,6 +736,11 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("screen." + "degeneracycraft_machine" + ".modifier_2", "×2");
         add("screen." + "degeneracycraft_machine" + ".modifier_3", "×3");
 
+        add("screen." + "degeneracycraft_machine" + ".process_modifier_1", "Processing Speed ×1.00");
+        add("screen." + "degeneracycraft_machine" + ".process_modifier_1.5", "Processing Speed ×1.5");
+        add("screen." + "degeneracycraft_machine" + ".process_modifier_2", "Processing Speed ×2");
+        add("screen." + "degeneracycraft_machine" + ".process_modifier_3", "Processing Speed ×3");
+
         add("tooltip." + "degeneracycraft" + ".wrench", "Export → Import → DisConnection → Export... Pipe Mode change by shift light click");
         add("tooltip." + "degeneracycraft" + ".wrenchitem", "Show Wrench Detail by shift key");
         add("tooltip." + "degeneracycraft" + ".tooltipitem", "Show Material Detail by shift key");

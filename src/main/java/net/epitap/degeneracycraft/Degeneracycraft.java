@@ -73,13 +73,6 @@ public class Degeneracycraft {
         MinecraftForge.EVENT_BUS.register(this);
         eventBus.addListener(PipeModelRegistry::onModelRegister);
         eventBus.addListener(PipeModelRegistry::onModelBake);
-
-//        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Item.class, PortBlocks::registerItems);
-//        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(Block.class, PortBlocks::registerBlocks);
-//        FMLJavaModLoadingContext.get().getModEventBus().addGenericListener(BlockEntityType.class, PortBlockEntities::registerBlockEntities);
-
-//        PortBlocks.register(eventBus);
-//        PortBlockEntities.register(eventBus);
         eventBus.addListener(PortModelRegistry::onModelRegister);
         eventBus.addListener(PortModelRegistry::onModelBake);
     }
@@ -132,6 +125,7 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(), RenderType.translucent());
 
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_HOLO_BLOCK.get(), RenderType.translucent());
 

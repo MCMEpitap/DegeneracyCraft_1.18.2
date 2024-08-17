@@ -13,6 +13,7 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
+import java.util.List;
 import java.util.Optional;
 
 public class BasicTechnologyMachineManufacturerScreen extends AbstractContainerScreen<BasicTechnologyMachineManufacturerMenu> {
@@ -64,21 +65,32 @@ public class BasicTechnologyMachineManufacturerScreen extends AbstractContainerS
                     133, 66, 0xFFFFFF);
         }
         if (menu.blockEntity.isPowered0) {
-            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_machine" + ".modifier_2"),
-                    80, 11, 0xffffff);
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, "Lv.1",
                     80, 47, 0xFF0000);
         } else if (menu.blockEntity.isFormed) {
-            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_machine" + ".modifier_1.5"),
-                    80, 11, 0xffffff);
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, "ON",
                     80, 47, 0x00FF00);
         } else {
-            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_machine" + ".modifier_1"),
-                    80, 11, 0xffffff);
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, "OFF",
                     80, 47, 0xFF0000);
         }
+
+        renderPowerModifierTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+    }
+
+    private void renderPowerModifierTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
+        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 66, 9, 28, 10))
+            renderTooltip(pPoseStack, this.PowerModifierTooltips(),
+                    Optional.empty(), pMouseX - x, pMouseY - y);
+    }
+
+    public List<Component> PowerModifierTooltips() {
+        if (menu.blockEntity.isPowered0) {
+            return List.of(new TranslatableComponent("tooltip." + "degeneracycraft_machine" + ".process_modifier_2"));
+        } else if (menu.blockEntity.isFormed) {
+            return List.of(new TranslatableComponent("tooltip." + "degeneracycraft_machine" + ".process_modifier_1.5"));
+        }
+        return List.of(new TranslatableComponent("tooltip." + "degeneracycraft_machine" + ".process_modifier_1"));
     }
 
     @Override

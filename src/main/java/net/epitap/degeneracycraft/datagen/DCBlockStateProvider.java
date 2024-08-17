@@ -54,6 +54,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
 
 
         registerBasicTechnologyMachineManufacturer();
+        registerBasicEfficiencyMachineProcessingChamber();
+        registerBasicEfficiencyMachineProcessingChamberHolo();
         registerBasicTechnologyMachineManufacturerBus();
         registerBasicTechnologyMachineManufacturerBusHolo();
         registerBasicTechnologyMachineManufacturerPort();
@@ -416,6 +418,33 @@ public class DCBlockStateProvider extends BlockStateProvider {
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get(),
                 state -> modelBasicTechnologyMachineManufacturer);
     }
+
+    private void registerBasicEfficiencyMachineProcessingChamber() {
+        BlockModelBuilder modelBasicEfficiencyMachineProcessingChamber = models().getBuilder("block/basic_efficiency_machine_processing_chamber_block");
+        modelBasicEfficiencyMachineProcessingChamber.parent(models().getExistingFile(mcLoc("cube")));
+        modelBasicEfficiencyMachineProcessingChamber.texture("down", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_processing_chamber_block/basic_efficiency_machine_processing_chamber_block"));
+        modelBasicEfficiencyMachineProcessingChamber.texture("up", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_processing_chamber_block/basic_efficiency_machine_processing_chamber_block"));
+        modelBasicEfficiencyMachineProcessingChamber.texture("north", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_processing_chamber_block/basic_efficiency_machine_processing_chamber_block"));
+        modelBasicEfficiencyMachineProcessingChamber.texture("south", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_processing_chamber_block/basic_efficiency_machine_processing_chamber_block"));
+        modelBasicEfficiencyMachineProcessingChamber.texture("east", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_processing_chamber_block/basic_efficiency_machine_processing_chamber_block"));
+        modelBasicEfficiencyMachineProcessingChamber.texture("west", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_processing_chamber_block/basic_efficiency_machine_processing_chamber_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_BLOCK.get(),
+                state -> modelBasicEfficiencyMachineProcessingChamber);
+    }
+
+    private void registerBasicEfficiencyMachineProcessingChamberHolo() {
+        BlockModelBuilder modelBasicEfficiencyMachineProcessingChamber = models().getBuilder("block/basic_efficiency_machine_processing_chamber_holo_block");
+        modelBasicEfficiencyMachineProcessingChamber.parent(models().getExistingFile(mcLoc("cube")));
+        modelBasicEfficiencyMachineProcessingChamber.texture("down", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_processing_chamber_block/basic_efficiency_machine_processing_chamber_holo_block"));
+        modelBasicEfficiencyMachineProcessingChamber.texture("up", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_processing_chamber_block/basic_efficiency_machine_processing_chamber_holo_block"));
+        modelBasicEfficiencyMachineProcessingChamber.texture("north", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_processing_chamber_block/basic_efficiency_machine_processing_chamber_holo_block"));
+        modelBasicEfficiencyMachineProcessingChamber.texture("south", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_processing_chamber_block/basic_efficiency_machine_processing_chamber_holo_block"));
+        modelBasicEfficiencyMachineProcessingChamber.texture("east", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_processing_chamber_block/basic_efficiency_machine_processing_chamber_holo_block"));
+        modelBasicEfficiencyMachineProcessingChamber.texture("west", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_processing_chamber_block/basic_efficiency_machine_processing_chamber_holo_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_HOLO_BLOCK.get(),
+                state -> modelBasicEfficiencyMachineProcessingChamber);
+    }
+
 
     private void registerBasicTechnologyMachineManufacturerPort() {
         BlockModelBuilder modelBasicTechnologyMachineManufacturer = models().getBuilder("block/basic_technology_machine_manufacturer_port_block");

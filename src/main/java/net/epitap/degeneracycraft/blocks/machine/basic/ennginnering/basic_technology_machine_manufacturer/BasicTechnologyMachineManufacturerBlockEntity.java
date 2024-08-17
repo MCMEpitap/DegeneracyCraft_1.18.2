@@ -37,9 +37,10 @@ import java.util.Map;
 import java.util.Optional;
 
 public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity implements MenuProvider {
-    static BasicTechnologyMachineManufacturerStructure structure;
-    public float BT_U_ASSEMBLER_CAPACITY = 20000F;
-    public float BT_U_ASSEMBLER_TRANSFER = 16F;
+    public float BT_M_MANUFACTURER_CAPACITY = 20000F;
+    public float BT_M_MANUFACTURER_TRANSFER = 16F;
+
+    public float BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_FORMED = 1.5F;
 
     protected final ContainerData data;
     public int counter;
@@ -75,7 +76,7 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
         }
     };
 
-    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BT_U_ASSEMBLER_CAPACITY, BT_U_ASSEMBLER_TRANSFER) {
+    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BT_M_MANUFACTURER_CAPACITY, BT_M_MANUFACTURER_TRANSFER) {
         @Override
         public void onEnergyChanged() {
             setChanged();

@@ -46,7 +46,6 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity extends
     public float BP_CS_T_THERMAL_GENERATOR_TRANSFER = 16F;
     public float BP_CS_T_THERMAL_GENERATOR_OUTPUT = 16F;
     public float BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED = BP_CS_T_THERMAL_GENERATOR_OUTPUT * 2F;
-
     public float BP_CS_T_THERMAL_GENERATOR_OUTPUT_POWERED_0 = BP_CS_T_THERMAL_GENERATOR_OUTPUT * 3F;
     protected final ContainerData data;
     public int counter;

@@ -23,6 +23,8 @@
   "advancements.degeneracycraft.geo_science.description": "\u76EE\u6307\u305B\u3001\u9271\u77F3\u63A2\u7A76",
   "advancements.degeneracycraft.geo_science.title": "\u5730\u5B66(Geo Science)",
   "advancements.degeneracycraft.title": "DegeneracyCraft",
+  "block.degeneracycraft.basic_efficiency_machine_processing_chamber_block": "\u57FA\u672C\u52B9\u7387\u6A5F\u68B0\u52A0\u5DE5\u5BA4",
+  "block.degeneracycraft.basic_efficiency_machine_processing_chamber_holo_block": "\u57FA\u672C\u52B9\u7387\u6A5F\u68B0\u52A0\u5DE5\u5BA4 (\u30DB\u30ED\u30B0\u30E9\u30E0)",
   "block.degeneracycraft.basic_endurance_high_temperature_combustion_chamber_block": "\u57FA\u672C\u8010\u4E45\u9AD8\u6E29\u71C3\u713C\u5BA4",
   "block.degeneracycraft.basic_endurance_high_temperature_combustion_chamber_holo_block": "\u57FA\u672C\u8010\u4E45\u9AD8\u6E29\u71C3\u713C\u5BA4 (\u30DB\u30ED\u30B0\u30E9\u30E0)",
   "block.degeneracycraft.basic_energy_pipe": "\u57FA\u672C\u30A8\u30CD\u30EB\u30AE\u30FC\u30D1\u30A4\u30D7",

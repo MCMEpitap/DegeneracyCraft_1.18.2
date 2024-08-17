@@ -23,6 +23,8 @@
   "advancements.degeneracycraft.geoscience.description": "Aim at ores research",
   "advancements.degeneracycraft.geoscience.title": "Geo Science",
   "advancements.degeneracycraft.title": "DegeneracyCraft",
+  "block.degeneracycraft.basic_efficiency_machine_processing_chamber_block": "Basic Efficiency Machine Processing Chamber",
+  "block.degeneracycraft.basic_efficiency_machine_processing_chamber_holo_block": "Basic Efficiency Machine Processing Chamber (Hologram)",
   "block.degeneracycraft.basic_endurance_high_temperature_combustion_chamber_block": "Basic Endurance High Temperature Combustion Chamber",
   "block.degeneracycraft.basic_endurance_high_temperature_combustion_chamber_holo_block": "Basic Endurance High Temperature Combustion Chamber (Hologram)",
   "block.degeneracycraft.basic_energy_pipe": "Basic Energy Pipe",

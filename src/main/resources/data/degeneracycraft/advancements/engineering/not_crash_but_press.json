@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "degeneracycraft:iron_plate"
+    },
+    "title": {
+      "translate": "advancements.Not Crash, But Press.title"
+    },
+    "description": {
+      "translate": "advancements.Not Crash, But Press.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "degeneracycraft:engineering/engineering",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "degeneracycraft:iron_plate"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

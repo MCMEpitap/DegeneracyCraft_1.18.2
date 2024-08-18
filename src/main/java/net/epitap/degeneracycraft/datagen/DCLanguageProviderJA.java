@@ -896,8 +896,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("advancements." + "Rolling Gear" + ".title", "ローリンギァ－ル？");
         add("advancements." + "Rolling Gear" + ".description", "鉄の歯車を作成");
 
-        add("advancements." + "As a Substitute for Wire" + ".title", "ワイヤーの代わりとしても");
-        add("advancements." + "As a Substitute for Wire" + ".description", "鉄の棒を作成");
+        add("advancements." + "Not Crash, But Press" + ".title", "砕くな、圧せよ");
+        add("advancements." + "Not Crash, But Press" + ".description", "鉄の板を作成");
 
         add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".title", "模造魔道工学(Faux Magic Engineering)");
         add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".description", "目指せ、神秘解読");
@@ -910,8 +910,10 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("advancements." + "Awakening with \"The Fool\"" + ".description", "レッドストーン動力機械要素製作機を作成");
 
         add("advancements." + "Call of Industry" + ".title", "工業の呼び声");
-        add("advancements." + "Call of Industry" + ".description", "基本出力複合構造型火力発電機を作成");
+        add("advancements." + "Call of Industry" + ".description", "基本出力熱発電機を作成");
 
+        add("advancements." + "Machine like \"The Magician\"" + ".title", "機械は\"魔術師\"の目覚め");
+        add("advancements." + "Machine like \"The Magician\"" + ".description", "基本技術機械製造機を作成");
 
         add("degeneracycraft_introduction" + ".title", "DegeneracyCraftPedia");
         add("degeneracycraft_introduction" + ".landing",

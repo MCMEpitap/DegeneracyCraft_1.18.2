@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "degeneracycraft:basic_technology_machine_manufacturer_block"
+    ]
+  },
+  "criteria": {
+    "ingots/iron": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "degeneracycraft:basic_technology_machine_manufacturer_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "ingots/iron",
+      "has_the_recipe"
+    ]
+  ]
+}

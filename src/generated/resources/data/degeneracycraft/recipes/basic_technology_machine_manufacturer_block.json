@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "degeneracycraft",
+  "pattern": [
+    "RSR",
+    "MDM",
+    "LBL"
+  ],
+  "key": {
+    "R": {
+      "item": "degeneracycraft:basic_robot_arm"
+    },
+    "S": {
+      "item": "degeneracycraft:basic_machine_screen"
+    },
+    "M": {
+      "item": "degeneracycraft:basic_motor"
+    },
+    "D": {
+      "item": "degeneracycraft:basic_drivechain"
+    },
+    "L": {
+      "item": "degeneracycraft:basic_linkage"
+    },
+    "B": {
+      "item": "degeneracycraft:basic_redstone_battery"
+    }
+  },
+  "result": {
+    "item": "degeneracycraft:basic_technology_machine_manufacturer_block"
+  }
+}

@@ -894,8 +894,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("advancements." + "Rolling Gear" + ".title", "Rolling Gear(Girl)?");
         add("advancements." + "Rolling Gear" + ".description", "Make a Iron Gear");
 
-        add("advancements." + "As a Substitute for Wire" + ".title", "As a Substitute for Wire");
-        add("advancements." + "As a Substitute for Wire" + ".description", "Make a Iron Rod");
+        add("advancements." + "Not Crash, But Press" + ".title", "Not Crash, But Press");
+        add("advancements." + "Not Crash, But Press" + ".description", "Make a Iron Plate");
 
 
         add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".title", "Faux Magic Engineering");
@@ -909,7 +909,10 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("advancements." + "Awakening with \"The Fool\"" + ".description", "Make a Redstone Powered Machine Component Manufacture Machine");
 
         add("advancements." + "Call of Industry" + ".title", "Call of Industry");
-        add("advancements." + "Call of Industry" + ".description", "Make a Basic Power Composite Structure Type Thermal Generator");
+        add("advancements." + "Call of Industry" + ".description", "Make a Basic Power Thermal Generator");
+
+        add("advancements." + "Machine like \"The Magician\"" + ".title", "Machine like \"The Magician\"");
+        add("advancements." + "Machine like \"The Magician\"" + ".description", "Make a Basic Technology Machine Manufacturer");
 
 
         add("degeneracycraft_introduction" + ".title", "DegeneracyCraftPedia");

@@ -1,20 +1,20 @@
 {
   "display": {
     "icon": {
-      "item": "degeneracycraft:iron_rod"
+      "item": "degeneracycraft:basic_technology_machine_manufacturer_block"
     },
     "title": {
-      "translate": "advancements.As a Substitute for Wire.title"
+      "translate": "advancements.Machine like \"The Magician\".title"
     },
     "description": {
-      "translate": "advancements.As a Substitute for Wire.description"
+      "translate": "advancements.Machine like \"The Magician\".description"
     },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
   },
-  "parent": "degeneracycraft:engineering/engineering",
+  "parent": "degeneracycraft:degeneracycraft/the_fool",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:inventory_changed",
@@ -22,7 +22,7 @@
         "items": [
           {
             "items": [
-              "degeneracycraft:iron_rod"
+              "degeneracycraft:basic_technology_machine_manufacturer_block"
             ]
           }
         ]

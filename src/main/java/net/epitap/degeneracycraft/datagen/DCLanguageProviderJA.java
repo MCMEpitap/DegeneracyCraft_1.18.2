@@ -707,6 +707,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("jei." + "degeneracycraft_redstone_powered_machine_element_manufacture_machine", "レッドストーン動力機械要素製作機 レシピ");
         add("jei." + "degeneracycraft_redstone_powered_machine_part_manufacture_machine", "レッドストーン動力機械部品製作機 レシピ");
 
+        add("jei." + "degeneracycraft_basic_technology_machine_manufacturer", "基本技術機械製作機 レシピ");
         add("jei." + "degeneracycraft_basic_machine_element_processor", "基本精度機械要素加工機 レシピ");
         add("jei." + "degeneracycraft_basic_technology_universal_assembler", "基本技術万能加工機 レシピ");
 
@@ -912,7 +913,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("advancements." + "Call of Industry" + ".title", "工業の呼び声");
         add("advancements." + "Call of Industry" + ".description", "基本出力熱発電機を作成");
 
-        add("advancements." + "Machine like \"The Magician\"" + ".title", "機械は\"魔術師\"の目覚め");
+        add("advancements." + "Machine like \"The Magician\"" + ".title", "機械は\"魔術師\"のように");
         add("advancements." + "Machine like \"The Magician\"" + ".description", "基本技術機械製造機を作成");
 
         add("degeneracycraft_introduction" + ".title", "DegeneracyCraftPedia");

@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_composite_structure_type_thermal_generator;
+package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_thermal_generator;
 
 import net.epitap.degeneracycraft.blocks.base.BlockBase;
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
@@ -20,10 +20,10 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class BasicPowerCompositeStructureTypeThermalGeneratorBlock extends BlockBase {
+public class BasicPowerThermalGeneratorBlock extends BlockBase {
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
 
-    public BasicPowerCompositeStructureTypeThermalGeneratorBlock(Properties properties) {
+    public BasicPowerThermalGeneratorBlock(Properties properties) {
         super(properties);
     }
 
@@ -31,8 +31,8 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlock extends Block
     public void onRemove(BlockState pState, Level level, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = level.getBlockEntity(pPos);
-            if (blockEntity instanceof BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity) {
-                ((BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity) blockEntity).drops();
+            if (blockEntity instanceof BasicPowerThermalGeneratorBlockEntity) {
+                ((BasicPowerThermalGeneratorBlockEntity) blockEntity).drops();
             }
         }
         super.onRemove(pState, level, pPos, pNewState, pIsMoving);
@@ -44,8 +44,8 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlock extends Block
         if (!level.isClientSide()) {
             BlockEntity entity = level.getBlockEntity(pPos);
 
-            if(entity instanceof BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer)pPlayer), (BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity)entity, pPos);
+            if (entity instanceof BasicPowerThermalGeneratorBlockEntity) {
+                NetworkHooks.openGui(((ServerPlayer) pPlayer), (BasicPowerThermalGeneratorBlockEntity) entity, pPos);
 
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
@@ -58,7 +58,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlock extends Block
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity(pos, state);
+        return new BasicPowerThermalGeneratorBlockEntity(pos, state);
     }
 
 
@@ -67,7 +67,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBlock extends Block
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level level, @NotNull BlockState state,
                                                                   @NotNull BlockEntityType<T> type) {
         return createTickerHelper(type, DCBlockEntities.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK_ENTITY.get(),
-                BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity::tick);
+                BasicPowerThermalGeneratorBlockEntity::tick);
     }
 
     @Nullable

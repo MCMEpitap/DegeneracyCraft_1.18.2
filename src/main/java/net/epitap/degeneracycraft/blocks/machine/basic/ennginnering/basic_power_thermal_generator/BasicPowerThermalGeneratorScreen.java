@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_composite_structure_type_thermal_generator;
+package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_thermal_generator;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -16,13 +16,13 @@ import net.minecraft.world.entity.player.Inventory;
 import java.util.List;
 import java.util.Optional;
 
-public class BasicPowerCompositeStructureTypeThermalGeneratorScreen extends AbstractContainerScreen<BasicPowerCompositeStructureTypeThermalGeneratorMenu> {
+public class BasicPowerThermalGeneratorScreen extends AbstractContainerScreen<BasicPowerThermalGeneratorMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/basic_power_composite_structure_type_thermal_generator/basic_power_composite_structure_type_thermal_generator_gui.png");
 
     private EnergyInfoArea energyInfoArea;
 
-    public BasicPowerCompositeStructureTypeThermalGeneratorScreen(BasicPowerCompositeStructureTypeThermalGeneratorMenu menu, Inventory inventory, Component component) {
+    public BasicPowerThermalGeneratorScreen(BasicPowerThermalGeneratorMenu menu, Inventory inventory, Component component) {
         super(menu, inventory, component);
         this.imageWidth = 176;
         this.imageHeight = 166;
@@ -94,7 +94,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorScreen extends Abst
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, "OFF",
                     80, 47, 0xFF0000);
         }
-        if (BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity.isHaltDevice(menu.blockEntity)) {
+        if (BasicPowerThermalGeneratorBlockEntity.isHaltDevice(menu.blockEntity)) {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".halt"),
                     132, 66, 0xFFFFFF);
         }
@@ -181,7 +181,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorScreen extends Abst
     }
 
     private void renderHaltTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
-        if (BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity.isHaltDevice(menu.blockEntity)
+        if (BasicPowerThermalGeneratorBlockEntity.isHaltDevice(menu.blockEntity)
                 && isMouseAboveArea(pMouseX, pMouseY, x, y, 117, 64, 40, 10))
             renderTooltip(pPoseStack, this.HaltTooltips(),
                     Optional.empty(), pMouseX - x, pMouseY - y);

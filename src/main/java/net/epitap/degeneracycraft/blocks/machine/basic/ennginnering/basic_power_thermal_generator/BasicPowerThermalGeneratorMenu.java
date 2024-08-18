@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_composite_structure_type_thermal_generator;
+package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_thermal_generator;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class BasicPowerCompositeStructureTypeThermalGeneratorMenu extends AbstractContainerMenu {
+public class BasicPowerThermalGeneratorMenu extends AbstractContainerMenu {
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
@@ -22,17 +22,17 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorMenu extends Abstra
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
     private static final int TE_INVENTORY_SLOT_COUNT = 3;
-    public final BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity blockEntity;
+    public final BasicPowerThermalGeneratorBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
-    public BasicPowerCompositeStructureTypeThermalGeneratorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+    public BasicPowerThermalGeneratorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
         this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(1));
     }
 
-    public BasicPowerCompositeStructureTypeThermalGeneratorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
+    public BasicPowerThermalGeneratorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
         super(DCMenuTypes.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_MENU.get(), id);
-        blockEntity = (BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity) entity;
+        blockEntity = (BasicPowerThermalGeneratorBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
         addPlayerInventory(inv);
@@ -56,7 +56,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorMenu extends Abstra
         return blockEntity.getEnergyStorage();
     }
 
-    public BasicPowerCompositeStructureTypeThermalGeneratorBlockEntity getBlockEntity() {
+    public BasicPowerThermalGeneratorBlockEntity getBlockEntity() {
         return this.blockEntity;
     }
 

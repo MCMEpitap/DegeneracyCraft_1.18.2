@@ -108,5 +108,18 @@ public class DCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .group("degeneracycraft")
                 .unlockedBy("ingots/iron", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_INGOT))
                 .save(pFinishedRecipeConsumer);
+        ShapedRecipeBuilder.shaped(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get())
+                .pattern("RSR")
+                .pattern("MDM")
+                .pattern("LBL")
+                .define('R', DCItems.BASIC_ROBOT_ARM.get())
+                .define('S', DCItems.BASIC_MACHINE_SCREEN.get())
+                .define('M', DCItems.BASIC_MOTOR.get())
+                .define('D', DCItems.BASIC_DRIVECHAIN.get())
+                .define('L', DCItems.BASIC_LINKAGE.get())
+                .define('B', DCItems.BASIC_REDSTONE_BATTERY.get())
+                .group("degeneracycraft")
+                .unlockedBy("ingots/iron", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_INGOT))
+                .save(pFinishedRecipeConsumer);
     }
 }

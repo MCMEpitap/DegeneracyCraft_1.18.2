@@ -634,11 +634,14 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.MACHINE_HALT_DEVICE.get(), "Machine Halt Device");
 
         add(DCItems.BASIC_CIRCUIT.get(), "Basic Circuit");
+        add(DCItems.BASIC_DRIVECHAIN.get(), "Basic Drive Chain");
         add(DCItems.BASIC_INSCRIBED_CIRCUIT.get(), "Basic Inscribed Circuit");
+        add(DCItems.BASIC_LINKAGE.get(), "Basic Linkage");
         add(DCItems.BASIC_MACHINE_SCREEN.get(), "Basic Machine Screen");
         add(DCItems.BASIC_MOTOR.get(), "Basic Motor");
         add(DCItems.BASIC_REDSTONE_BATTERY.get(), "Basic Redstone Battery");
         add(DCItems.BASIC_REINFORCED_PLATE.get(), "Basic Reinforced Plate");
+        add(DCItems.BASIC_ROBOT_ARM.get(), "Basic Robot Arm");
         add(DCItems.BASIC_TURBINE.get(), "Basic Turbine");
 
 

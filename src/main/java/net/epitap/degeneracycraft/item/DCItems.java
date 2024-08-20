@@ -715,9 +715,9 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> MACHINE_HALT_DEVICE = ITEMS.register("machine_halt_device", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB)));
     public static final RegistryObject<Item> SIMPLE_CONCAVE_LENS = ITEMS.register("simple_concave_lens", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
     public static final RegistryObject<Item> SIMPLE_CONVEX_LENS = ITEMS.register("simple_convex_lens", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
+
     public static final RegistryObject<Item> BASIC_CIRCUIT = ITEMS.register("basic_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_DRIVECHAIN = ITEMS.register("basic_drivechain", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
-
     public static final RegistryObject<Item> BASIC_INSCRIBED_CIRCUIT = ITEMS.register("basic_inscribed_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_LINKAGE = ITEMS.register("basic_linkage", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 

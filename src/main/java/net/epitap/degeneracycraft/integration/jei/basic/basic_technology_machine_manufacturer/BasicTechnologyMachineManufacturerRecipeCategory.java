@@ -83,8 +83,15 @@ public class BasicTechnologyMachineManufacturerRecipeCategory implements IRecipe
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergyusage."), 17, 107, 0xFFFFFF);
-        fontRenderer.draw(poseStack, (recipe.getRequiredEnergy() / recipe.getRequiredTime() / 20 + " FE/t"), 17, 117, 0xFFFFFF);
 
+        float energyUsage = (recipe.getRequiredEnergy() / recipe.getRequiredTime() / 20F);
+        if (energyUsage >= 1E3F) {
+            fontRenderer.draw(poseStack, (energyUsage / 1E3F + " kFE/t"), 17, 117, 0xFFFFFF);
+        } else if (energyUsage >= 0F) {
+            fontRenderer.draw(poseStack, (energyUsage + " FE/t"), 17, 117, 0xFFFFFF);
+        }
+
+//        fontRenderer.draw(poseStack, (recipe.getRequiredEnergy() / recipe.getRequiredTime() / 20F + " FE/t"), 17, 117, 0xFFFFFF);
     }
 
     protected void drawRequiredTime(BasicTechnologyMachineManufacturerRecipe recipe, PoseStack poseStack) {

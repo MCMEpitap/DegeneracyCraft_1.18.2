@@ -742,9 +742,15 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("screen." + "degeneracycraft_machine" + ".modifier_3", "×3");
 
         add("screen." + "degeneracycraft_machine" + ".process_modifier_1", "加工速度 ×1.00");
-        add("screen." + "degeneracycraft_machine" + ".process_modifier_1.5", "加工速度 ×1.5");
-        add("screen." + "degeneracycraft_machine" + ".process_modifier_2", "加工速度 ×2");
-        add("screen." + "degeneracycraft_machine" + ".process_modifier_3", "加工速度 ×3");
+        add("screen." + "degeneracycraft_machine" + ".process_modifier_1.5", "加工速度 ×1.50");
+        add("screen." + "degeneracycraft_machine" + ".process_modifier_2", "加工速度 ×2.00");
+        add("screen." + "degeneracycraft_machine" + ".process_modifier_3", "加工速度 ×3.00");
+
+        add("screen." + "degeneracycraft_machine" + ".energy_usage_modifier_1", "要求電力量 ×1.00");
+        add("screen." + "degeneracycraft_machine" + ".energy_usage_modifier_1.5", "要求電力量 ×1.50");
+        add("screen." + "degeneracycraft_machine" + ".energy_usage_modifier_2", "要求電力量 ×2.00");
+        add("screen." + "degeneracycraft_machine" + ".energy_usage_modifier_3", "要求電力量 ×3.00");
+
 
         add("tooltip." + "degeneracycraft" + ".wrench", "搬出 → 搬入 → 切断 → 搬出... シフト右クリックでパイプ状態切替");
         add("tooltip." + "degeneracycraft" + ".wrenchitem", "Shiftキーでレンチ詳細展開");

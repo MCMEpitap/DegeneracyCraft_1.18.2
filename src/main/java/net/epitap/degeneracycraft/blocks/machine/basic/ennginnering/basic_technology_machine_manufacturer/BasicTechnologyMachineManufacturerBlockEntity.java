@@ -42,7 +42,8 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
 
     public float BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_FORMED = 1.5F;
     public float BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 2.0F;
-
+    public float BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
+    public float BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 1.5F;
     protected final ContainerData data;
     public int counter;
     public boolean formed0;
@@ -238,15 +239,20 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
             if (hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
                 if (blockEntity.isPowered0) {
                     blockEntity.counter += blockEntity.BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
+                    blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
+                            * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
+
                 } else if (blockEntity.isFormed) {
                     blockEntity.counter += blockEntity.BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_FORMED;
+                    blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
+                            * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
                 } else {
                     blockEntity.counter++;
+                    blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
                 }
                 if (craftCheck(blockEntity)) {
                     craftItem(blockEntity);
                 }
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
                 setChanged(level, pos, state);
             } else {
                 blockEntity.resetProgress();

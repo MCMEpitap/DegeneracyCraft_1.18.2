@@ -382,36 +382,38 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.SYLVITE_ULTRAHOTPLASMA.get(), "Sylvite Ultrahot Plasma");
         add(DCItems.SYLVITE_OVERFLUID.get(), "Sylvite Over Fluid");
         add(DCItems.SYLVITE_CRYSTAL.get(), "Sylvite Crystal");
-        add(DCItems.SYLVITE_PRECIPITATE.get(),"Sylvite Precipitate");
-        add(DCItems.SYLVITE_WASHEDDUST.get(),"Sylvite Washed Dust");
-        add(DCItems.SYLVITE_ORESINTER.get(),"Sylvite Oresinter");
+        add(DCItems.SYLVITE_PRECIPITATE.get(), "Sylvite Precipitate");
+        add(DCItems.SYLVITE_WASHEDDUST.get(), "Sylvite Washed Dust");
+        add(DCItems.SYLVITE_ORESINTER.get(), "Sylvite Oresinter");
         add(DCItems.SYLVITE_INGOT.get(), "Sylvite Ingot");
-        
-        //Copper Machine Component
-        add(DCItems.COPPER_BOLT.get(),"Copper Bolt");
-        add(DCItems.COPPER_KEY.get(),"Copper Key");
-        add(DCItems.COPPER_ROD.get(),"Copper Rod");
-        add(DCItems.COPPER_SPRING.get(),"Copper Spring");
-        add(DCItems.COPPER_BEARING.get(),"Copper Bearing");
-        add(DCItems.COPPER_PLATE.get(),"Copper Plate");
-        add(DCItems.COPPER_GEAR.get(),"Copper Gear");
-        add(DCItems.COPPER_JOINT.get(),"Copper Joint");
-        add(DCItems.COPPER_NUT.get(),"Copper Nut");
-        add(DCItems.COPPER_PIPE.get(),"Copper Pipe");
-        add(DCItems.COPPER_PIPEJOINT.get(),"Copper PipeJoint");
-        add(DCItems.COPPER_CAM.get(),"Copper Cam");
-        add(DCItems.COPPER_SHAFT.get(),"Copper Shaft");
-        add(DCItems.COPPER_SHAFTCOUPLING.get(),"Copper Shaftcoupling");
-        add(DCItems.COPPER_SHAPESTEEL.get(),"Copper Shapesteel");
-        add(DCItems.COPPER_CHAIN.get(),"Copper Chain");
 
-     //Basic Class Iron Machine Component
-        add(DCItems.IRON_BEARING.get(),"Iron Bearing");
-        add(DCItems.IRON_BOLT.get(),"Iron Bolt");
-        add(DCItems.IRON_CAM.get(),"Iron Cam");
-        add(DCItems.IRON_CHAIN.get(),"Iron Chain");
-        add(DCItems.IRON_GEAR.get(),"Iron Gear");
-        add(DCItems.IRON_JOINT.get(),"Iron Joint");
+        //Copper Machine Component
+        add(DCItems.COPPER_BEARING.get(), "Copper Bearing");
+        add(DCItems.COPPER_BOLT.get(), "Copper Bolt");
+        add(DCItems.COPPER_CAM.get(), "Copper Cam");
+        add(DCItems.COPPER_CHAIN.get(), "Copper Chain");
+        add(DCItems.COPPER_GEAR.get(), "Copper Gear");
+        add(DCItems.COPPER_JOINT.get(), "Copper Joint");
+        add(DCItems.COPPER_KEY.get(), "Copper Key");
+        add(DCItems.COPPER_NUT.get(), "Copper Nut");
+        add(DCItems.COPPER_PIPE.get(), "Copper Pipe");
+        add(DCItems.COPPER_PIPEJOINT.get(), "Copper PipeJoint");
+        add(DCItems.COPPER_PLATE.get(), "Copper Plate");
+        add(DCItems.COPPER_RIVET.get(), "Copper Rivet");
+        add(DCItems.COPPER_ROD.get(), "Copper Rod");
+        add(DCItems.COPPER_SHAFT.get(), "Copper Shaft");
+        add(DCItems.COPPER_SHAFTCOUPLING.get(), "Copper Shaftcoupling");
+        add(DCItems.COPPER_SHAPESTEEL.get(), "Copper Shapesteel");
+        add(DCItems.COPPER_SPRING.get(), "Copper Spring");
+        add(DCItems.COPPER_WIRE.get(), "Copper Wire");
+
+        //Iron Machine Component
+        add(DCItems.IRON_BEARING.get(), "Iron Bearing");
+        add(DCItems.IRON_BOLT.get(), "Iron Bolt");
+        add(DCItems.IRON_CAM.get(), "Iron Cam");
+        add(DCItems.IRON_CHAIN.get(), "Iron Chain");
+        add(DCItems.IRON_GEAR.get(), "Iron Gear");
+        add(DCItems.IRON_JOINT.get(), "Iron Joint");
         add(DCItems.IRON_KEY.get(),"Iron Key");
         add(DCItems.IRON_NUT.get(),"Iron Nut");
         add(DCItems.IRON_PIPE.get(),"Iron Pipe");

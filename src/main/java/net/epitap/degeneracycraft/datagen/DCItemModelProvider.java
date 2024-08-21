@@ -401,7 +401,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         elementCopperItem(DCItems.COPPER_JOINT.get());
         elementCopperItem(DCItems.COPPER_NUT.get());
         elementCopperItem(DCItems.COPPER_KEY.get());
-        ]elementCopperItem(DCItems.COPPER_PIPE.get());
+        elementCopperItem(DCItems.COPPER_PIPE.get());
         elementCopperItem(DCItems.COPPER_PIPEJOINT.get());
         elementCopperItem(DCItems.COPPER_PLATE.get());
         elementCopperItem(DCItems.COPPER_RIVET.get());

@@ -466,22 +466,24 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final TagKey<Item> MACHINE_COMPONENT_BASIC_PRECISION_CIRCUIT = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(Degeneracycraft.MOD_ID, "machine_component_circuit_phase1"));
 
     //Copper Machine Component
-    public static final RegistryObject<Item> COPPER_BOLT = registerAtomicItem("copper_bolt", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
-    public static final RegistryObject<Item> COPPER_KEY = registerAtomicItem("copper_key", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
-    public static final RegistryObject<Item> COPPER_ROD = registerAtomicItem("copper_rod", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
-    public static final RegistryObject<Item> COPPER_SPRING = registerAtomicItem("copper_spring", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
     public static final RegistryObject<Item> COPPER_BEARING = registerAtomicItem("copper_bearing", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
-    public static final RegistryObject<Item> COPPER_PLATE = registerAtomicItem("copper_plate", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
+    public static final RegistryObject<Item> COPPER_BOLT = registerAtomicItem("copper_bolt", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
+    public static final RegistryObject<Item> COPPER_CAM = registerAtomicItem("copper_cam", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
+    public static final RegistryObject<Item> COPPER_CHAIN = registerAtomicItem("copper_chain", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
     public static final RegistryObject<Item> COPPER_GEAR = registerAtomicItem("copper_gear", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
     public static final RegistryObject<Item> COPPER_JOINT = registerAtomicItem("copper_joint", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
+    public static final RegistryObject<Item> COPPER_KEY = registerAtomicItem("copper_key", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
     public static final RegistryObject<Item> COPPER_NUT = registerAtomicItem("copper_nut", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
     public static final RegistryObject<Item> COPPER_PIPE = registerAtomicItem("copper_pipe", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
     public static final RegistryObject<Item> COPPER_PIPEJOINT = registerAtomicItem("copper_pipejoint", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
-    public static final RegistryObject<Item> COPPER_CAM = registerAtomicItem("copper_cam", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
+    public static final RegistryObject<Item> COPPER_PLATE = registerAtomicItem("copper_plate", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
+    public static final RegistryObject<Item> COPPER_RIVET = registerAtomicItem("copper_rivet", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
+    public static final RegistryObject<Item> COPPER_ROD = registerAtomicItem("copper_rod", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
     public static final RegistryObject<Item> COPPER_SHAFT = registerAtomicItem("copper_shaft", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
     public static final RegistryObject<Item> COPPER_SHAFTCOUPLING = registerAtomicItem("copper_shaftcoupling", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
+    public static final RegistryObject<Item> COPPER_SPRING = registerAtomicItem("copper_spring", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
     public static final RegistryObject<Item> COPPER_SHAPESTEEL = registerAtomicItem("copper_shapesteel", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
-    public static final RegistryObject<Item> COPPER_CHAIN = registerAtomicItem("copper_chain", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
+    public static final RegistryObject<Item> COPPER_WIRE = registerAtomicItem("copper_wire", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
 
 
     //Basic Class Iron Machine Component

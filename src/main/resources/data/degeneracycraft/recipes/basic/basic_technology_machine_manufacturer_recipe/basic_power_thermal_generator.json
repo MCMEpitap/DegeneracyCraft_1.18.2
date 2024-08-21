@@ -3,33 +3,33 @@
   "energy": 5000.0,
   "time": 60.0,
   "input0": {
-    "item": "degeneracycraft:basic_robot_arm"
+    "item": "degeneracycraft:iron_pipe"
   },
   "input1": {
     "item": "degeneracycraft:basic_machine_screen"
   },
   "input2": {
-    "item": "degeneracycraft:basic_robot_arm"
+    "item": "degeneracycraft:iron_pipe"
   },
   "input3": {
-    "item": "degeneracycraft:basic_motor"
+    "item": "degeneracycraft:basic_turbine"
   },
   "input4": {
-    "item": "degeneracycraft:basic_drivechain"
-  },
-  "input5": {
     "item": "degeneracycraft:basic_motor"
   },
+  "input5": {
+    "item": "degeneracycraft:basic_circuit"
+  },
   "input6": {
-    "item": "degeneracycraft:basic_linkage"
+    "item": "degeneracycraft:iron_plate"
   },
   "input7": {
     "item": "degeneracycraft:basic_redstone_battery"
   },
   "input8": {
-    "item": "degeneracycraft:basic_linkage"
+    "item": "degeneracycraft:iron_plate"
   },
   "output0": {
-    "item": "degeneracycraft:basic_technology_machine_manufacturer_block"
+    "item": "degeneracycraft:basic_power_composite_structure_type_thermal_generator_block"
   }
 }

@@ -393,22 +393,25 @@ public class DCItemModelProvider extends ItemModelProvider {
         oreMaterialVanadiniteItem(DCItems.VANADINITE_WASHEDDUST.get());
         oreMaterialVanadiniteItem(DCItems.VANADINITE_ORESINTER.get());
         //
-        elementCopperItem(DCItems.COPPER_BOLT.get());
-        elementCopperItem(DCItems.COPPER_KEY.get());
-        elementCopperItem(DCItems.COPPER_ROD.get());
-        elementCopperItem(DCItems.COPPER_SPRING.get());
         elementCopperItem(DCItems.COPPER_BEARING.get());
-        elementCopperItem(DCItems.COPPER_PLATE.get());
+        elementCopperItem(DCItems.COPPER_BOLT.get());
+        elementCopperItem(DCItems.COPPER_CAM.get());
+        elementCopperItem(DCItems.COPPER_CHAIN.get());
         elementCopperItem(DCItems.COPPER_GEAR.get());
         elementCopperItem(DCItems.COPPER_JOINT.get());
         elementCopperItem(DCItems.COPPER_NUT.get());
-        elementCopperItem(DCItems.COPPER_PIPE.get());
+        elementCopperItem(DCItems.COPPER_KEY.get());
+        ]elementCopperItem(DCItems.COPPER_PIPE.get());
         elementCopperItem(DCItems.COPPER_PIPEJOINT.get());
-        elementCopperItem(DCItems.COPPER_CAM.get());
+        elementCopperItem(DCItems.COPPER_PLATE.get());
+        elementCopperItem(DCItems.COPPER_RIVET.get());
+        elementCopperItem(DCItems.COPPER_ROD.get());
         elementCopperItem(DCItems.COPPER_SHAFT.get());
         elementCopperItem(DCItems.COPPER_SHAFTCOUPLING.get());
         elementCopperItem(DCItems.COPPER_SHAPESTEEL.get());
-        elementCopperItem(DCItems.COPPER_CHAIN.get());
+        elementCopperItem(DCItems.COPPER_SPRING.get());
+        elementCopperItem(DCItems.COPPER_WIRE.get());
+
 
         elementIronItem(DCItems.IRON_BEARING.get());
         elementIronItem(DCItems.IRON_BOLT.get());

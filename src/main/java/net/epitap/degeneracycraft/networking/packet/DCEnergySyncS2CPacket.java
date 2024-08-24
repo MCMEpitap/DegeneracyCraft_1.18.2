@@ -6,6 +6,8 @@ import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_thermal_generator.BasicPowerThermalGeneratorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.energystorage.basic_strength_multiblock_energy_storage.BasicStrengthMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.energystorage.basic_strength_multiblock_energy_storage.BasicStrengthMultiblockEnergyStorageMenu;
 import net.minecraft.client.Minecraft;
@@ -60,10 +62,16 @@ public class DCEnergySyncS2CPacket {
                     blockEntity.setEnergyLevel(energy);
                 }
             }
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicTechnologyUniversalAssemblerBlockEntity blockEntity) {
+                blockEntity.setEnergyLevel(energy);
+                if (Minecraft.getInstance().player.containerMenu instanceof BasicTechnologyUniversalAssemblerMenu menu &&
+                        menu.getBlockEntity().getBlockPos().equals(pos)) {
+                    blockEntity.setEnergyLevel(energy);
+                }
+            }
 
             if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicMachineElementProcessorBlockEntity blockEntity) {
                 blockEntity.setEnergyLevel(energy);
-
                 if (Minecraft.getInstance().player.containerMenu instanceof BasicMachineElementProcessorMenu menu &&
                         menu.getBlockEntity().getBlockPos().equals(pos)) {
                     blockEntity.setEnergyLevel(energy);

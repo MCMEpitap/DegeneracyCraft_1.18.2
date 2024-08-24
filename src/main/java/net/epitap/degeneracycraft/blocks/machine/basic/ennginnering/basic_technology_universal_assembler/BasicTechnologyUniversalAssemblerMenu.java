@@ -83,6 +83,11 @@ public class BasicTechnologyUniversalAssemblerMenu extends AbstractContainerMenu
         return data.get(0) > 0;
     }
 
+    public BasicTechnologyUniversalAssemblerBlockEntity getBlockEntity() {
+        return this.blockEntity;
+    }
+
+
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {
         Slot sourceSlot = slots.get(index);

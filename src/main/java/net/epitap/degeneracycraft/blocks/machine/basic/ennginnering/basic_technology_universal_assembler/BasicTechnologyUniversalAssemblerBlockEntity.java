@@ -43,6 +43,10 @@ import java.util.Optional;
 public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity implements MenuProvider {
     public float BT_U_ASSEMBLER_CAPACITY = 20000F;
     public float BT_U_ASSEMBLER_TRANSFER = 16F;
+    public float BT_U_ASSEMBLER_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
+    public float BT_U_ASSEMBLER_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
+    public float BT_U_ASSEMBLER_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
+    public float BT_U_ASSEMBLER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
 
     protected final ContainerData data;
 
@@ -51,7 +55,9 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
     public boolean formed0;
     public boolean formed1;
     public boolean formed2;
+    public boolean powered0_1;
     public boolean isFormed;
+    public boolean isPowered0;
     public final ItemStackHandler itemHandler = new ItemStackHandler(12) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -214,15 +220,22 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicTechnologyUniversalAssemblerBlockEntity blockEntity) {
-        blockEntity.formed0 = blockEntity.isFormed0(level, pos, state);
-        blockEntity.formed1 = blockEntity.isFormed1(level, pos, state);
-        blockEntity.formed2 = blockEntity.isFormed2(level, pos, state);
-        blockEntity.isFormed = blockEntity.isFormed();
-        blockEntity.hologram(level, pos, state, blockEntity);
+        blockEntity.formed0 = BasicTechnologyUniversalAssemblerStructure.isFormed0(level, pos, state, blockEntity);
+        blockEntity.formed1 = BasicTechnologyUniversalAssemblerStructure.isFormed1(level, pos, state, blockEntity);
+        blockEntity.formed2 = BasicTechnologyUniversalAssemblerStructure.isFormed2(level, pos, state, blockEntity);
+        blockEntity.powered0_1 = BasicTechnologyUniversalAssemblerStructure.powered0_1(level, pos, state, blockEntity);
+        blockEntity.isFormed = BasicTechnologyUniversalAssemblerStructure.isFormed(blockEntity);
+        blockEntity.isPowered0 = BasicTechnologyUniversalAssemblerStructure.isPowered0(blockEntity);
+
+        BasicTechnologyUniversalAssemblerStructure.hologram(level, pos, state, blockEntity);
 
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        if (level.isClientSide()) {
+            return;
+        }
+
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
@@ -231,11 +244,22 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)) {
             if (hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
-                blockEntity.counter++;
+                if (blockEntity.isPowered0) {
+                    blockEntity.counter += blockEntity.BT_U_ASSEMBLER_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
+                    blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_U_ASSEMBLER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
+                            * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
+                } else if (blockEntity.isFormed) {
+                    blockEntity.counter += blockEntity.BT_U_ASSEMBLER_MANUFACTURING_SPEED_MODIFIER_FORMED;
+                    blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_U_ASSEMBLER_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
+                            * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
+                } else {
+                    blockEntity.counter++;
+                    blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
+                }
+                blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
                 if (craftCheck(blockEntity)) {
                     craftItem(blockEntity);
                 }
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
                 setChanged(level, pos, state);
             } else {
                 blockEntity.resetProgress();
@@ -245,6 +269,8 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
             blockEntity.resetProgress();
             setChanged(level, pos, state);
         }
+        setChanged(level, pos, state);
+
     }
 
     private static boolean hasAmountEnergyRecipe(BasicTechnologyUniversalAssemblerBlockEntity blockEntity) {

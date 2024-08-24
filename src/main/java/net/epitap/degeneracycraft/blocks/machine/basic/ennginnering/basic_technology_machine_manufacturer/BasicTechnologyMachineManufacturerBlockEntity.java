@@ -269,7 +269,6 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
             setChanged(level, pos, state);
         }
         setChanged(level, pos, state);
-
     }
 
     private static boolean hasAmountEnergyRecipe(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {

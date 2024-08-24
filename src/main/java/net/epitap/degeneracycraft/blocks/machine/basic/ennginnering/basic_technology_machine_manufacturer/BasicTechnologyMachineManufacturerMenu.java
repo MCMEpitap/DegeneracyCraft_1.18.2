@@ -28,7 +28,7 @@ public class BasicTechnologyMachineManufacturerMenu extends AbstractContainerMen
     private final ContainerData data;
 
     public BasicTechnologyMachineManufacturerMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+        this(pContainerId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
     }
 
     public BasicTechnologyMachineManufacturerMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -55,8 +55,17 @@ public class BasicTechnologyMachineManufacturerMenu extends AbstractContainerMen
         addDataSlots(data);
     }
 
-    public float getProgressPercent() {
-        return blockEntity.getProgressPercent();
+    public int getProgressPercent() {
+//        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+//        int getCounter = this.data.get(0);
+//        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
+//                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
+//        if (match.isPresent()) {
+//            return (int) (match.get().getRequiredTime() * 20);
+//        }
+//        return 10;
+
+        return data.get(1);
     }
 
     public DCIEnergyStorageFloat getEnergy() {

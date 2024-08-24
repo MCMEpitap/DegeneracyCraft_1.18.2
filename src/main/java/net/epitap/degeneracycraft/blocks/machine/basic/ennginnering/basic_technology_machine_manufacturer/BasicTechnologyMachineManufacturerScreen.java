@@ -56,7 +56,7 @@ public class BasicTechnologyMachineManufacturerScreen extends AbstractContainerS
             drawString(pPoseStack, Minecraft.getInstance().font, "Stop!",
                     67, 30, 0xFF0000);
         }
-        drawCenteredString(pPoseStack, Minecraft.getInstance().font, (int) menu.getProgressPercent() + " %",
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, menu.getProgressPercent() + " %",
                 80, 11, 0xFFFFFF);
 
 

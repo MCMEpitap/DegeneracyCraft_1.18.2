@@ -3,7 +3,9 @@ package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_techn
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
+import net.epitap.degeneracycraft.integration.jei.basic.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipe;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
@@ -12,6 +14,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
+
+import java.util.Optional;
 
 public class BasicTechnologyUniversalAssemblerMenu extends AbstractContainerMenu {
 
@@ -55,8 +59,20 @@ public class BasicTechnologyUniversalAssemblerMenu extends AbstractContainerMenu
         addDataSlots(data);
     }
 
+//    public float getProgressPercent() {
+//        return blockEntity.getProgressPercent();
+//    }
+
+
     public float getProgressPercent() {
-        return blockEntity.getProgressPercent();
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        Optional<BasicTechnologyUniversalAssemblerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE, inventory, level);
+        if (match.isPresent()) {
+            int getProgressPercent = (int) (this.data.get(0) / match.get().getRequiredTime() * 20F);
+            return getProgressPercent;
+        }
+        return 1F;
     }
 
     public DCIEnergyStorageFloat getEnergy() {

@@ -5,7 +5,6 @@ import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.dcenum.MBPPos;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.basic_machine_element_processor.BasicMachineElementProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipe;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
@@ -221,8 +220,8 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<BasicMachineElementProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyUniversalAssemblerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)) {
             if (hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
@@ -249,8 +248,8 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicMachineElementProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyUniversalAssemblerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime();
     }
@@ -337,21 +336,22 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
         }
     }
 
-    public float getProgressPercent() {
-        Level level = this.level;
-        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
-        for (int i = 0; i < this.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, this.itemHandler.getStackInSlot(i));
-        }
-
-        Optional<BasicTechnologyUniversalAssemblerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE, inventory, level);
-
-        if (match.isPresent()) {
-            return (this.data.get(0) / (match.get().getRequiredTime() * 20)) * 100;
-        }
-        return 0;
-    }
+//    public float getProgressPercent() {
+//        Level level = this.level;
+//        SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
+//        for (int i = 0; i < this.itemHandler.getSlots(); i++) {
+//            inventory.setItem(i, this.itemHandler.getStackInSlot(i));
+//        }
+//
+//        Optional<BasicTechnologyUniversalAssemblerRecipe> match = level.getRecipeManager()
+//                .getRecipeFor(BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE, inventory, level);
+//
+//        if (match.isPresent()) {
+//            return (this.counter);
+////                    / (match.get().getRequiredTime() * 20)) * 100;
+//        }
+//        return 0;
+//    }
 
     public void resetProgress() {
         this.counter = 0;

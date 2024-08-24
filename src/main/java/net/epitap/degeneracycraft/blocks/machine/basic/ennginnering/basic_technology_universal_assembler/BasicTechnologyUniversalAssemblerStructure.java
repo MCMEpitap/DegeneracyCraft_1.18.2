@@ -1,6 +1,8 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_manufacturer;
+package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_universal_assembler;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
+import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlock;
+import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlockEntity;
 import net.epitap.degeneracycraft.dcenum.MBPPos;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.minecraft.core.BlockPos;
@@ -9,7 +11,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class BasicTechnologyMachineManufacturerStructure {
+public class BasicTechnologyUniversalAssemblerStructure {
+
+
     public static boolean isFormed(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
         return blockEntity.isFormed = blockEntity.formed0 && blockEntity.formed1 && blockEntity.formed2;
     }

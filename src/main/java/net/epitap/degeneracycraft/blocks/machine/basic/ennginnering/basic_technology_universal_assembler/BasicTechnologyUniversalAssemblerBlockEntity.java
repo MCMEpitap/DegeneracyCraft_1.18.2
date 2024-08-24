@@ -47,6 +47,7 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
     protected final ContainerData data;
 
     public int counter;
+    public int getProgressPercent = 0;
     public boolean formed0;
     public boolean formed1;
     public boolean formed2;
@@ -107,6 +108,7 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
             public int get(int index) {
                 return switch (index) {
                     case 0 -> BasicTechnologyUniversalAssemblerBlockEntity.this.counter;
+                    case 1 -> BasicTechnologyUniversalAssemblerBlockEntity.this.getProgressPercent;
                     default -> 0;
                 };
             }
@@ -115,12 +117,14 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
             public void set(int index, int value) {
                 if (index == 0) {
                     BasicTechnologyUniversalAssemblerBlockEntity.this.counter = value;
+                } else if (index == 1) {
+                    BasicTechnologyUniversalAssemblerBlockEntity.this.getProgressPercent = value;
                 }
             }
 
             @Override
             public int getCount() {
-                return 1;
+                return 2;
             }
         };
     }
@@ -187,6 +191,7 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
         nbt.put("inventory", itemHandler.serializeNBT());
         nbt.putFloat("bt_u_assembler.energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
+        nbt.putInt("getProgressPercent", getProgressPercent);
         super.saveAdditional(nbt);
     }
 
@@ -196,6 +201,7 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("bt_u_assembler.energy"));
         counter = nbt.getInt("counter");
+        getProgressPercent = nbt.getInt("getProgressPercent");
     }
 
     public void drops() {

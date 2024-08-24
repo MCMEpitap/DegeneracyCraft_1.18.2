@@ -46,7 +46,7 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
     public float BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
     protected final ContainerData data;
     public int counter;
-    public int getProgressPercent;
+    public int getProgressPercent = 0;
     public boolean formed0;
     public boolean formed1;
     public boolean formed2;
@@ -194,7 +194,7 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
     @Override
     protected void saveAdditional(@NotNull CompoundTag nbt) {
         nbt.put("inventory", itemHandler.serializeNBT());
-        nbt.putFloat("bt_u_assembler.energy", ENERGY_STORAGE.getEnergyStoredFloat());
+        nbt.putFloat("bt_m_manufacturer.energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
         nbt.putInt("getProgressPercent", getProgressPercent);
         super.saveAdditional(nbt);
@@ -204,7 +204,7 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
     public void load(CompoundTag nbt) {
         super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("bt_u_assembler.energy"));
+        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("bt_m_manufacturer.energy"));
         counter = nbt.getInt("counter");
         getProgressPercent = nbt.getInt("getProgressPercent");
     }

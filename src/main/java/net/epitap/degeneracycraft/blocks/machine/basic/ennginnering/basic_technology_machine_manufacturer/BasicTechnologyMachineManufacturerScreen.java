@@ -86,10 +86,10 @@ public class BasicTechnologyMachineManufacturerScreen extends AbstractContainerS
 
     public List<Component> PowerModifierTooltips() {
         if (menu.blockEntity.isPowered0) {
-            return List.of(new TranslatableComponent("screen." + "degeneracycraft_machine" + ".process_modifier_2"),
-                    new TranslatableComponent("screen." + "degeneracycraft_machine" + ".energy_usage_modifier_1.5"));
+            return List.of(new TranslatableComponent("screen." + "degeneracycraft_machine" + ".process_modifier_3"),
+                    new TranslatableComponent("screen." + "degeneracycraft_machine" + ".energy_usage_modifier_2"));
         } else if (menu.blockEntity.isFormed) {
-            return List.of(new TranslatableComponent("screen." + "degeneracycraft_machine" + ".process_modifier_1.5"),
+            return List.of(new TranslatableComponent("screen." + "degeneracycraft_machine" + ".process_modifier_2"),
                     new TranslatableComponent("screen." + "degeneracycraft_machine" + ".energy_usage_modifier_1.5"));
         }
         return List.of(new TranslatableComponent("screen." + "degeneracycraft_machine" + ".process_modifier_1"),

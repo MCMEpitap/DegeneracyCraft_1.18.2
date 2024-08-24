@@ -40,10 +40,10 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
     public float BT_M_MANUFACTURER_CAPACITY = 20000F;
     public float BT_M_MANUFACTURER_TRANSFER = 16F;
 
-    public float BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_FORMED = 1.5F;
-    public float BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 2.0F;
+    public float BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
+    public float BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
     public float BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
-    public float BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 1.5F;
+    public float BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
     protected final ContainerData data;
     public int counter;
     public int getProgressPercent;
@@ -231,7 +231,6 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
-
         if (level.isClientSide()) {
             return;
         }

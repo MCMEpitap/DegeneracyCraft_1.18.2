@@ -58,10 +58,15 @@ public class DCBlockLootTableProvider extends BlockLoot {
         this.add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK.get()));
         this.add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_HOLO_BLOCK.get(), block -> noDrop());
 
+        this.add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get()));
+        this.add(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_BLOCK.get()));
+        this.add(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_BLOCK.get()));
+        this.add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_BLOCK.get()));
+        this.add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_HOLO_BLOCK.get(), block -> noDrop());
 
         this.add(DCBlocks.BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_BLOCK.get()));
-
-        this.add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get()));
         this.add(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get()));
         this.add(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get()));
 

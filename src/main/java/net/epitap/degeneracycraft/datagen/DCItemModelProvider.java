@@ -720,6 +720,20 @@ public class DCItemModelProvider extends ItemModelProvider {
 
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_universal_assembler_block"));
+        withExistingParent(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_BLOCK.getId().getPath(),
+                modLoc("block/basic_operation_assembling_chamber_block"));
+        withExistingParent(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_operation_assembling_chamber_holo_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_universal_assembler_bus_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_universal_assembler_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_universal_assembler_port_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_universal_assembler_port_holo_block"));
+
+
         withExistingParent(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.getId().getPath(),
                 modLoc("block/basic_machine_element_processor_block"));
 

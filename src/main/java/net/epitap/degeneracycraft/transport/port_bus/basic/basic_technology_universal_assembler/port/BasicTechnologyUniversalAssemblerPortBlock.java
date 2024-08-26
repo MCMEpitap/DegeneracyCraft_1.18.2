@@ -14,9 +14,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.items.CapabilityItemHandler;
 
-public class BasicTechnologyMachineManufacturerPortBlock extends PortBlockBase {
+public class BasicTechnologyUniversalAssemblerPortBlock extends PortBlockBase {
 
-    public BasicTechnologyMachineManufacturerPortBlock(Properties properties) {
+    public BasicTechnologyUniversalAssemblerPortBlock(Properties properties) {
         super(properties);
     }
 
@@ -24,7 +24,7 @@ public class BasicTechnologyMachineManufacturerPortBlock extends PortBlockBase {
     public boolean enabledConnectTo(LevelAccessor world, BlockPos pos, Direction facing) {
         BlockEntity blockEntity = world.getBlockEntity(pos.relative(facing));
         return (blockEntity != null && (blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, facing.getOpposite()).isPresent()
-                || blockEntity.getBlockState().is(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get())));
+                || blockEntity.getBlockState().is(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get())));
     }
 
     @Override
@@ -36,13 +36,13 @@ public class BasicTechnologyMachineManufacturerPortBlock extends PortBlockBase {
 
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new BasicTechnologyMachineManufacturerPortBlockEntity(pos, state);
+        return new BasicTechnologyUniversalAssemblerPortBlockEntity(pos, state);
     }
 
     @Override
     public InteractionResult portSideLaunch(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, Direction direction) {
         BlockEntity blockentity = level.getBlockEntity(pos);
-        if ((blockentity instanceof BasicTechnologyMachineManufacturerPortBlockEntity) && portExtracting(level, pos, direction)) {
+        if ((blockentity instanceof BasicTechnologyUniversalAssemblerPortBlockEntity) && portExtracting(level, pos, direction)) {
             if (level.isClientSide) {
                 return InteractionResult.SUCCESS;
             }

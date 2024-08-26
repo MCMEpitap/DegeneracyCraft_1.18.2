@@ -16,12 +16,12 @@ import net.minecraftforge.items.ItemHandlerHelper;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class BasicTechnologyMachineManufacturerPortType extends PortTypeBase<Item> {
-    public static final BasicTechnologyMachineManufacturerPortType INSTANCE = new BasicTechnologyMachineManufacturerPortType();
+public class BasicTechnologyUniversalAssemblerPortType extends PortTypeBase<Item> {
+    public static final BasicTechnologyUniversalAssemblerPortType INSTANCE = new BasicTechnologyUniversalAssemblerPortType();
 
     @Override
     public String getKey() {
-        return "basic_technology_machine_manufacturer_port";
+        return "basic_technology_universal_assembler_port";
     }
 
     @Override
@@ -31,7 +31,7 @@ public class BasicTechnologyMachineManufacturerPortType extends PortTypeBase<Ite
 
     @Override
     public String getTranslationKey() {
-        return "basic_technology_machine_manufacturer_port";
+        return "basic_technology_universal_assembler_port";
     }
 
     @Override

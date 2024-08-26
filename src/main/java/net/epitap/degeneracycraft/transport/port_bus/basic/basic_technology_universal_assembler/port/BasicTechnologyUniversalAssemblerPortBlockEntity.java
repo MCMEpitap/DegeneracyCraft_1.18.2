@@ -6,8 +6,8 @@ import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortWorkBlockE
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class BasicTechnologyMachineManufacturerPortBlockEntity extends PortWorkBlockEntity {
-    public BasicTechnologyMachineManufacturerPortBlockEntity(BlockPos pos, BlockState state) {
-        super(DCBlockEntities.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK_ENTITY.get(), new PortTypeBase[]{BasicTechnologyMachineManufacturerPortType.INSTANCE}, pos, state);
+public class BasicTechnologyUniversalAssemblerPortBlockEntity extends PortWorkBlockEntity {
+    public BasicTechnologyUniversalAssemblerPortBlockEntity(BlockPos pos, BlockState state) {
+        super(DCBlockEntities.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_BLOCK_ENTITY.get(), new PortTypeBase[]{BasicTechnologyUniversalAssemblerPortType.INSTANCE}, pos, state);
     }
 }

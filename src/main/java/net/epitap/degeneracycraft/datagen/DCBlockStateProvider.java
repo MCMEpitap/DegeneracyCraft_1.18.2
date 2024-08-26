@@ -531,7 +531,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
     }
 
     private void registerBasicOperationAssemblingChamberHolo() {
-        BlockModelBuilder modelBasicOperationAssemblingChamber = models().getBuilder("block/basic_technology_universal_assembler_block");
+        BlockModelBuilder modelBasicOperationAssemblingChamber = models().getBuilder("block/basic_operation_assembling_chamber_holo_block");
         modelBasicOperationAssemblingChamber.parent(models().getExistingFile(mcLoc("cube")));
         modelBasicOperationAssemblingChamber.texture("down", modLoc("block/multiblock/basic/abilityblock/basic_operation_assembling_chamber/basic_operation_assembling_chamber_holo_block"));
         modelBasicOperationAssemblingChamber.texture("up", modLoc("block/multiblock/basic/abilityblock/basic_operation_assembling_chamber/basic_operation_assembling_chamber_holo_block"));

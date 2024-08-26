@@ -677,7 +677,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get(), "基本出力火力発電機バス");
         add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(), "基本出力火力発電機バス (ホログラム)");
         add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.get(), "基本出力火力発電機ポート");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(), "基本出力火力発電機バス (ホログラム)");
+        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(), "基本出力火力発電機ポート (ホログラム)");
 
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get(), "基本技術機械製造機");
         add("tooltip." + "degeneracycraft." + "basic_technology_machine_manufacturer_block",
@@ -687,7 +687,17 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK.get(), "基本技術機械製造機バス");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_HOLO_BLOCK.get(), "基本技術機械製造機バス (ホログラム)");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK.get(), "基本技術機械製造機ポート");
-        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_HOLO_BLOCK.get(), "基本技術機械製造機バス (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_HOLO_BLOCK.get(), "基本技術機械製造機ポート (ホログラム)");
+
+        add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get(), "基本技術万能組立機");
+        add("tooltip." + "degeneracycraft." + "basic_technology_universal_assembler_block",
+                "基本的な万能組立機. 工業的なアイテムを作成するための機械.");
+        add(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_BLOCK.get(), "基本操作組立加工室");
+        add(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_HOLO_BLOCK.get(), "基本操作組立加工室 (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_BLOCK.get(), "基本技術万能組立機バス");
+        add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_HOLO_BLOCK.get(), "基本技術万能組立機バス (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_BLOCK.get(), "基本技術万能組立機ポート");
+        add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_HOLO_BLOCK.get(), "基本技術万能組立機ポート (ホログラム)");
 
 
         add(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(), "基本機械要素加工機");

@@ -693,9 +693,19 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK.get(), "Basic Technology Machine Manufacturer Port");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_HOLO_BLOCK.get(), "Basic Technology Machine Manufacturer Port (Hologram)");
 
+        add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get(), "Basic Technology Universal Assembler");
+        add("tooltip." + "degeneracycraft." + "basic_technology_universal_assembler_block",
+                "Basic Universal Assembler. Machines for creating industrial items.");
+        add(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_BLOCK.get(), "Basic Operation Assembling Chamber");
+        add(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_HOLO_BLOCK.get(), "Basic Operation Assembling Chamber (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_BLOCK.get(), "Basic Technology Universal Assembler Bus");
+        add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_HOLO_BLOCK.get(), "Basic Technology Universal Assembler Bus (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_BLOCK.get(), "Basic Technology Universal Assembler Port");
+        add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_HOLO_BLOCK.get(), "Basic Technology Universal Assembler Port (Hologram)");
+
+
         add(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(), "Basic Machine Element Processor");
         add(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(), "Basic Machine Element Processor Port");
-        add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get(), "Basic Technology Universal Assembler");
 
 
         add(DCBlocks.PULVERIZER_BLOCK.get(), "Pulverizer");

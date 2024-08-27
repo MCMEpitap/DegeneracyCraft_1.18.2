@@ -59,11 +59,6 @@ public class BasicTechnologyUniversalAssemblerMenu extends AbstractContainerMenu
         addDataSlots(data);
     }
 
-//    public float getProgressPercent() {
-//        return blockEntity.getProgressPercent();
-//    }
-
-
     public float getProgressPercent() {
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         Optional<BasicTechnologyUniversalAssemblerRecipe> match = level.getRecipeManager()
@@ -72,7 +67,7 @@ public class BasicTechnologyUniversalAssemblerMenu extends AbstractContainerMenu
             int getProgressPercent = (int) (this.data.get(0) / match.get().getRequiredTime() * 20F);
             return getProgressPercent;
         }
-        return 1F;
+        return 0F;
     }
 
     public DCIEnergyStorageFloat getEnergy() {

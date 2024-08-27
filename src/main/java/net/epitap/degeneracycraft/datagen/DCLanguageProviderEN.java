@@ -933,6 +933,9 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("advancements." + "Machine like \"The Magician\"" + ".title", "Machine like \"The Magician\"");
         add("advancements." + "Machine like \"The Magician\"" + ".description", "Make a Basic Technology Machine Manufacturer");
 
+        add("advancements." + "Assemble! Assemble!" + ".title", "Assemble! Assemble!");
+        add("advancements." + "Assemble! Assemble!" + ".description", "Make a Basic Technology Universal Assembler");
+
 
         add("degeneracycraft_introduction" + ".title", "DegeneracyCraftPedia");
         add("degeneracycraft_introduction" + ".landing",

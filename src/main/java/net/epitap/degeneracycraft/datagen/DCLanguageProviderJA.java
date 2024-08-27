@@ -933,6 +933,10 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("advancements." + "Machine like \"The Magician\"" + ".title", "機械は\"魔術師\"のように");
         add("advancements." + "Machine like \"The Magician\"" + ".description", "基本技術機械製造機を作成");
 
+        add("advancements." + "Assemble! Assemble!" + ".title", "アッセンブル！アッセンブル！");
+        add("advancements." + "Assemble! Assemble!" + ".description", "基本技術万能組立機を作成");
+
+
         add("degeneracycraft_introduction" + ".title", "DegeneracyCraftPedia");
         add("degeneracycraft_introduction" + ".landing",
                 "このDegeneracyCraftは工業のロマンを求めたMODです！<br>主に7つの分野と10段階のフェーズで構成されています!<br>このDegeneracyCraftPediaはDegeneracyCraftの説明書です!");

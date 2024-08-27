@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "degeneracycraft:basic_technology_universal_assembler_block"
+    },
+    "title": {
+      "translate": "advancements.Assemble! Assemble!.title"
+    },
+    "description": {
+      "translate": "advancements.Assemble! Assemble!.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "degeneracycraft:degeneracycraft/the_fool",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "degeneracycraft:basic_technology_universal_assembler_block"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

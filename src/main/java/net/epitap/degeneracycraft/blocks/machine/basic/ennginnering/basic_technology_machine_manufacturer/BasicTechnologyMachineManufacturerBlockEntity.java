@@ -46,7 +46,7 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
     public float BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
     protected final ContainerData data;
     public int counter;
-    public int getProgressPercent = 0;
+    public int getProgressPercent;
     public boolean formed0;
     public boolean formed1;
     public boolean formed2;
@@ -227,6 +227,7 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
         blockEntity.isPowered0 = BasicTechnologyMachineManufacturerStructure.isPowered0(blockEntity);
 
         BasicTechnologyMachineManufacturerStructure.hologram(level, pos, state, blockEntity);
+        blockEntity.getProgressPercent = 0;
 
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
@@ -241,18 +242,18 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
         Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)) {
-            if (hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
-                if (blockEntity.isPowered0) {
-                    blockEntity.counter += blockEntity.BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
-                    blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
-                            * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-                } else if (blockEntity.isFormed) {
-                    blockEntity.counter += blockEntity.BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_FORMED;
-                    blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
-                            * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-                } else {
-                    blockEntity.counter++;
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
+                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
+            if (blockEntity.isPowered0) {
+                blockEntity.counter += blockEntity.BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
+                        * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
+            } else if (blockEntity.isFormed) {
+                blockEntity.counter += blockEntity.BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_FORMED;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
+                        * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
+            } else {
+                blockEntity.counter++;
                     blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
                 }
                 blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
@@ -261,15 +262,12 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
                 }
                 setChanged(level, pos, state);
             } else {
-                blockEntity.resetProgress();
-                setChanged(level, pos, state);
-            }
-        } else {
             blockEntity.resetProgress();
             setChanged(level, pos, state);
         }
         setChanged(level, pos, state);
     }
+
 
     private static boolean hasAmountEnergyRecipe(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
         Level level = blockEntity.level;
@@ -365,10 +363,6 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
             blockEntity.resetProgress();
         }
     }
-
-//    public void getProgressPercent() {
-//        this.getProgressPercent = v;
-//    }
 
     public void resetProgress() {
         this.counter = 0;

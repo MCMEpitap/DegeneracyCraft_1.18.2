@@ -5,6 +5,7 @@ import net.epitap.degeneracycraft.dcenum.MBPPos;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -54,6 +55,11 @@ public class BasicTechnologyMachineManufacturerStructure {
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
+
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
 
 
         boolean pos0 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z_2.xPos).above(MBPPos.x_1y0z_2.yPos).relative(reZ, MBPPos.x_1y0z_2.zPos))

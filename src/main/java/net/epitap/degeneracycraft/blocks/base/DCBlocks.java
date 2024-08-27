@@ -85,12 +85,12 @@ public class DCBlocks {
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
     public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_BLOCK = registerBlock("basic_strength_multiblock_energy_storage_block", () ->
             new BasicStrengthMultiblockEnergyStorageBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK = registerBlock("basic_strength_multiblock_energy_storage_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK = registerHoloBlock("basic_strength_multiblock_energy_storage_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
     public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK = registerBlock("basic_strength_multiblock_material_storage_block", () ->
             new BasicStrengthMultiblockMaterialStorageBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK = registerBlock("basic_strength_multiblock_material_storage_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK = registerHoloBlock("basic_strength_multiblock_material_storage_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK = registerBlock("low_strength_multiblock_structure_frame_block",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);

@@ -780,7 +780,9 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "ipp." + "infinity", "工業進展段階:PhaseInf");
 
         add("tooltip." + "degeneracycraft." + "multiblock_size.", "マルチブロックサイズ");
-//        add("3×3×3", "3×3×3");
+        add("Lv1:3×3×3", "Lv1:3×3×3ブロック");
+
+
         add("tooltip." + "degeneracycraft." + "science." + "astronomy", "科学分野:天文学");
         add("tooltip." + "degeneracycraft." + "science." + "biology", "科学分野:生物");
         add("tooltip." + "degeneracycraft." + "science." + "chemistry", "科学分野:化学");

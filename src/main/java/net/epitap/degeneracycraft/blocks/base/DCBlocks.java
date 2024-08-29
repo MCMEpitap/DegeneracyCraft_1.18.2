@@ -124,6 +124,7 @@ public class DCBlocks {
 
     public static final RegistryObject<Block> BASIC_POWER_THERMAL_GENERATOR_BLOCK = registerTooltipBasicMachineBlock("basic_power_composite_structure_type_thermal_generator_block", () ->
                     new BasicPowerThermalGeneratorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "Lv0:3×3×3",
             "Lv1:3×3×3",
             "Base:Power 16 FE/t",
             "Lv0:Power 32 FE/t",
@@ -144,6 +145,7 @@ public class DCBlocks {
 
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK = registerTooltipBasicMachineBlock("basic_technology_machine_manufacturer_block", () ->
                     new BasicTechnologyMachineManufacturerBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "Lv0:3×3×3",
             "Lv1:3×3×3",
             "Base:Speed ×1.00,Energy Usage ×1.00",
             "Lv0:Speed ×2.00,Energy Usage ×1.50",
@@ -164,7 +166,12 @@ public class DCBlocks {
 
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK = registerTooltipBasicMachineBlock("basic_technology_universal_assembler_block", () ->
                     new BasicTechnologyUniversalAssemblerBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
-            "Lv1:3×3×3", "×1.00 Speed", "×1.50 Speed", "×2.00 Speed", "basic_technology_universal_assembler_block", "engineering", "basic");
+            "Lv0:3×3×3",
+            "Lv1:3×3×3",
+            "×1.00 Speed",
+            "×1.50 Speed",
+            "×2.00 Speed",
+            "basic_technology_universal_assembler_block", "engineering", "basic");
     public static final RegistryObject<Block> BASIC_OPERATION_ASSEMBLING_CHAMBER_BLOCK = registerBlock("basic_operation_assembling_chamber_block", () ->
             new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> BASIC_OPERATION_ASSEMBLING_CHAMBER_HOLO_BLOCK = registerHoloBlock("basic_operation_assembling_chamber_holo_block", () ->
@@ -224,21 +231,22 @@ public class DCBlocks {
     }
 
 
-    private static <T extends Block> RegistryObject<T> registerTooltipBasicMachineBlock(String name, Supplier<T> block, CreativeModeTab tab, String machineSize, String basePara,
-                                                                                        String lv0Para, String lv1Para, String machineName, String scienceName, String phase) {
+    private static <T extends Block> RegistryObject<T> registerTooltipBasicMachineBlock(String name, Supplier<T> block, CreativeModeTab tab, String lv0MachineSize, String lv1MachineSize,
+                                                                                        String basePara, String lv0Para, String lv1Para, String machineName, String scienceName, String phase) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerTooltipBasicMachineBlockItem(name, toReturn, tab, machineSize, basePara, lv0Para, lv1Para, machineName, scienceName, phase);
+        registerTooltipBasicMachineBlockItem(name, toReturn, tab, lv0MachineSize, lv1MachineSize, basePara, lv0Para, lv1Para, machineName, scienceName, phase);
         return toReturn;
     }
 
-    private static <T extends Block> RegistryObject<Item> registerTooltipBasicMachineBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab, String machineSize, String basePara,
-                                                                                               String lv0Para, String lv1Para, String machineName, String scienceName, String phase) {
+    private static <T extends Block> RegistryObject<Item> registerTooltipBasicMachineBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab, String lv0MachineSize, String lv1MachineSize,
+                                                                                               String basePara, String lv0Para, String lv1Para, String machineName, String scienceName, String phase) {
         return DCItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)) {
             @Override
             public void appendHoverText(ItemStack pStack, @Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {
                 if (Screen.hasShiftDown()) {
                     pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.multiblock_size.").withStyle(ChatFormatting.WHITE));
-                    pTooltip.add(new TranslatableComponent(machineSize).withStyle(ChatFormatting.RED));
+                    pTooltip.add(new TranslatableComponent(lv0MachineSize).withStyle(ChatFormatting.WHITE));
+                    pTooltip.add(new TranslatableComponent(lv1MachineSize).withStyle(ChatFormatting.RED));
                     pTooltip.add(new TranslatableComponent(basePara).withStyle(ChatFormatting.WHITE));
                     pTooltip.add(new TranslatableComponent(lv0Para).withStyle(ChatFormatting.WHITE));
                     pTooltip.add(new TranslatableComponent(lv1Para).withStyle(ChatFormatting.RED));

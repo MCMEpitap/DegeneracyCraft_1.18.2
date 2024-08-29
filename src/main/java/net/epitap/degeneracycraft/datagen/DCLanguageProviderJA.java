@@ -673,6 +673,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "basic_power_composite_structure_type_thermal_generator_block",
                 "基本的な熱発電機. 物質を燃やした時の熱で発電する.");
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), "基本耐久高温燃焼室");
+        add("tooltip." + "degeneracycraft.ability" + "basic_power_composite_structure_type_thermal_generator_block",
+                "基本出力熱発電機用");
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), "基本耐久高温燃焼室 (ホログラム)");
         add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get(), "基本出力火力発電機バス");
         add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(), "基本出力火力発電機バス (ホログラム)");
@@ -683,6 +685,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "basic_technology_machine_manufacturer_block",
                 "基本的な機械製造機. これがないとより複雑な機械を作れない.");
         add(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_BLOCK.get(), "基本効率機械加工室");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_machine_manufacturer_block",
+                "基本技術機械製造機用");
         add(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_HOLO_BLOCK.get(), "基本効率機械加工室 (ホログラム)");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK.get(), "基本技術機械製造機バス");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_HOLO_BLOCK.get(), "基本技術機械製造機バス (ホログラム)");
@@ -693,6 +697,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "basic_technology_universal_assembler_block",
                 "基本的な万能組立機. 工業的なアイテムを作成するための機械.");
         add(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_BLOCK.get(), "基本操作組立加工室");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_universal_assembler_block",
+                "基本技術万能組立機用");
         add(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_HOLO_BLOCK.get(), "基本操作組立加工室 (ホログラム)");
         add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_BLOCK.get(), "基本技術万能組立機バス");
         add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_HOLO_BLOCK.get(), "基本技術万能組立機バス (ホログラム)");

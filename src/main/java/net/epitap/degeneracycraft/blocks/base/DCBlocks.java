@@ -130,8 +130,12 @@ public class DCBlocks {
             "Lv0:Power 32 FE/t",
             "Lv1:Power 48 FE/t",
             "basic_power_composite_structure_type_thermal_generator_block", "engineering", "basic");
-    public static final RegistryObject<Block> BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK = registerBlock("basic_endurance_high_temperature_combustion_chamber_block", () ->
-            new GlassBlockBase(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(4.0f)), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK = registerTooltipBasicMultiblockAbilityBlock(
+            "basic_endurance_high_temperature_combustion_chamber_block", () ->
+                    new GlassBlockBase(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(4.0f)), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "basic_power_composite_structure_type_thermal_generator_block",
+            "engineering",
+            "basic");
     public static final RegistryObject<Block> BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK = registerHoloBlock("basic_endurance_high_temperature_combustion_chamber_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
     public static final RegistryObject<Block> BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK = registerBlock("basic_power_composite_structure_type_thermal_generator_bus_block", () ->
@@ -203,21 +207,25 @@ public class DCBlocks {
 //            new TestBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
 
 
-    private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab, String tooltip) {
-        RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerBlockItem(name, toReturn, tab);
-        return toReturn;
-
-    }
-
-    private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab, String tooltip) {
-        return DCItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)) {
-            @Override
-            public void appendHoverText(ItemStack pStack, @Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {
-                pTooltip.add(new TranslatableComponent(tooltip));
-            }
-        });
-    }
+//    private static <T extends Block> RegistryObject<T> registerTooltipBasicAbilityBlock(String name, Supplier<T> block, CreativeModeTab tab, String machineName) {
+//        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+//        registerTooltipBasicAbilityBlockItem(name, toReturn, tab, machineName);
+//        return toReturn;
+//
+//    }
+//
+//    private static <T extends Block> RegistryObject<Item> registerTooltipBasicAbilityBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab, String machineName) {
+//        return DCItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)) {
+//            @Override
+//            public void appendHoverText(ItemStack pStack, @Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {
+//                if(Screen.hasShiftDown()){
+//                    pTooltip.add(new TranslatableComponent(machineName));
+//                } else {
+//                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.tooltipitem").withStyle(ChatFormatting.YELLOW));
+//                }
+//            }
+//        });
+//    }
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
@@ -299,25 +307,19 @@ public class DCBlocks {
         });
     }
 
-    private static <T extends Block> RegistryObject<T> registerTooltipBasicMultiblockAbilityBlock(String name, Supplier<T> block, CreativeModeTab tab, String machineSize, String basePara,
-                                                                                                  String lv0Para, String lv1Para, String machineName, String scienceName, String phase) {
+    private static <T extends Block> RegistryObject<T> registerTooltipBasicMultiblockAbilityBlock(String name, Supplier<T> block, CreativeModeTab tab, String machineName, String scienceName, String phase) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerTooltipBasicMultiblockAbilityBlockItem(name, toReturn, tab, machineSize, basePara, lv0Para, lv1Para, machineName, scienceName, phase);
+        registerTooltipBasicMultiblockAbilityBlockItem(name, toReturn, tab, machineName, scienceName, phase);
         return toReturn;
     }
 
-    private static <T extends Block> RegistryObject<Item> registerTooltipBasicMultiblockAbilityBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab, String machineSize, String basePara,
-                                                                                                         String lv0Para, String lv1Para, String machineName, String scienceName, String phase) {
+    private static <T extends Block> RegistryObject<Item> registerTooltipBasicMultiblockAbilityBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab,
+                                                                                                         String machineName, String scienceName, String phase) {
         return DCItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)) {
             @Override
             public void appendHoverText(ItemStack pStack, @Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {
                 if (Screen.hasShiftDown()) {
-                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.multiblock_size.").withStyle(ChatFormatting.WHITE));
-                    pTooltip.add(new TranslatableComponent(machineSize).withStyle(ChatFormatting.RED));
-                    pTooltip.add(new TranslatableComponent(basePara).withStyle(ChatFormatting.WHITE));
-                    pTooltip.add(new TranslatableComponent(lv0Para).withStyle(ChatFormatting.WHITE));
-                    pTooltip.add(new TranslatableComponent(lv1Para).withStyle(ChatFormatting.RED));
-                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + machineName).withStyle(ChatFormatting.WHITE));
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ability" + machineName).withStyle(ChatFormatting.WHITE));
                     switch (scienceName) {
                         case "astronomy" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.LIGHT_PURPLE));

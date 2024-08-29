@@ -677,6 +677,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "basic_power_composite_structure_type_thermal_generator_block",
                 "Basic thermal generator. Generates electricity from the heat generated when materials are burned.");
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), "Basic Endurance High Temperature Combustion Chamber");
+        add("tooltip." + "degeneracycraft.ability" + "basic_power_composite_structure_type_thermal_generator_block",
+                "For Basic Power Composite Structure Type Thermal Generator");
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), "Basic Endurance High Temperature Combustion Chamber (Hologram)");
         add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get(), "Basic Power Composite Structure Type Thermal Generator Bus");
         add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(), "Basic Power Composite Structure Type Thermal Generator Bus (Hologram)");
@@ -687,6 +689,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "basic_technology_machine_manufacturer_block",
                 "Basic machine manufacturer. Without it, more complex machines cannot be made.");
         add(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_BLOCK.get(), "Basic Efficiency Machine Processing Chamber");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_machine_manufacturer_block",
+                "For Basic Technology Machine Manufacturer");
         add(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_HOLO_BLOCK.get(), "Basic Efficiency Machine Processing Chamber (Hologram)");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK.get(), "Basic Technology Machine Manufacturer Bus");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_HOLO_BLOCK.get(), "Basic Technology Machine Manufacturer Bus (Hologram)");
@@ -697,6 +701,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "basic_technology_universal_assembler_block",
                 "Basic Universal Assembler. Machines for creating industrial items.");
         add(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_BLOCK.get(), "Basic Operation Assembling Chamber");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_universal_assembler_block",
+                "For Basic Technology Universal Assembler");
         add(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_HOLO_BLOCK.get(), "Basic Operation Assembling Chamber (Hologram)");
         add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_BLOCK.get(), "Basic Technology Universal Assembler Bus");
         add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_HOLO_BLOCK.get(), "Basic Technology Universal Assembler Bus (Hologram)");

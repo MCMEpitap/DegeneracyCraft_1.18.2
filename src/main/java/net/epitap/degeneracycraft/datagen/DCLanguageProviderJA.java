@@ -780,6 +780,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "ipp." + "infinity", "工業進展段階:PhaseInf");
 
         add("tooltip." + "degeneracycraft." + "multiblock_size.", "マルチブロックサイズ");
+        add("Lv0:3×3×3", "Lv0:3×3×3ブロック");
         add("Lv1:3×3×3", "Lv1:3×3×3ブロック");
         add("Base:Power 16 FE/t", "単ブロック:発電量 16 FE/t");
         add("Lv0:Power 32 FE/t", "Lv0マルチブロック:発電量 32 FE/t");

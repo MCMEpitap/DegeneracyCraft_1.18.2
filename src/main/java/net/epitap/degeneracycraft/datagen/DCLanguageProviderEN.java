@@ -780,6 +780,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "ipp." + "infinity", "Industrial Progress Phase:PhaseInf");
 
         add("tooltip." + "degeneracycraft." + "multiblock_size.", "Multiblock Size");
+        add("Lv0:3×3×3", "Lv1:3×3×3 Blocks");
         add("Lv1:3×3×3", "Lv1:3×3×3 Blocks");
         add("Base:Power 16 FE/t", "Single Block:Power 16 FE/t");
         add("Lv0:Power 32 FE/t", "Lv0 MultiBlock:Power 32 FE/t");

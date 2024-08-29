@@ -781,6 +781,12 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add("tooltip." + "degeneracycraft." + "multiblock_size.", "Multiblock Size");
         add("Lv1:3×3×3", "Lv1:3×3×3 Blocks");
+        add("Base:Power 16 FE/t", "One Block:Power 16 FE/t");
+        add("Lv0:Power 32 FE/t", "Lv0 MultiBlock:Power 32 FE/t");
+        add("Lv1:Power 48 FE/t", "Lv1 MultiBlock:Power 48 FE/t");
+        add("Base:Speed ×1.00,Energy Usage ×1.00", "One Block:Processing Speed ×1.00 Energy Usage ×1.00");
+        add("Lv0:Speed ×2.00,Energy Usage ×1.50", "Lv0 MultiBlock:Processing Speed ×2.00 Energy Usage ×1.50");
+        add("Lv1:Speed ×3.00,Energy Usage ×2.00", "Lv1 MultiBlock:Processing Speed ×3.00 Energy Usage ×2.00");
 
 
         add("tooltip." + "degeneracycraft." + "science." + "astronomy", "Science:Astronomy");

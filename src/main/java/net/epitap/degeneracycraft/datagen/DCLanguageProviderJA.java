@@ -781,7 +781,12 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
         add("tooltip." + "degeneracycraft." + "multiblock_size.", "マルチブロックサイズ");
         add("Lv1:3×3×3", "Lv1:3×3×3ブロック");
-
+        add("Base:Power 16 FE/t", "単ブロック:発電量 16 FE/t");
+        add("Lv0:Power 32 FE/t", "Lv0マルチブロック:発電量 32 FE/t");
+        add("Lv1:Power 48 FE/t", "Lv1マルチブロック:発電量 48 FE/t");
+        add("Base:Speed ×1.00,Energy Usage ×1.00", "単ブロック:加工速度 ×1.00 要求電力量 ×1.00");
+        add("Lv0:Speed ×2.00,Energy Usage ×1.50", "Lv0マルチブロック:加工速度 ×2.00 要求電力量 ×1.50");
+        add("Lv1:Speed ×3.00,Energy Usage ×2.00", "Lv1マルチブロック:加工速度 ×3.00 要求電力量 ×2.00");
 
         add("tooltip." + "degeneracycraft." + "science." + "astronomy", "科学分野:天文学");
         add("tooltip." + "degeneracycraft." + "science." + "biology", "科学分野:生物");

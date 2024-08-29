@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei.basic.basic_technology_universal_assembler;
+package net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_machine_element_processor;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.constants.VanillaTypes;
@@ -18,19 +18,16 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
-import javax.annotation.Nonnull;
-
-
-public class BasicTechnologyUniversalAssemblerRecipeCategory implements IRecipeCategory<BasicTechnologyUniversalAssemblerRecipe> {
-    public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_technology_universal_assembler_recipe");
+public class BasicMachineElementProcessorRecipeCategory implements IRecipeCategory<BasicMachineElementProcessorRecipe> {
+    public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_machine_element_processor_recipe");
     public final static ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/basic_technology_universal_assembler/basic_technology_universal_assembler_uid.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_element_manufacture_machine_uid.png");
     private final IDrawable background;
     private final IDrawable icon;
 
-    public BasicTechnologyUniversalAssemblerRecipeCategory(IGuiHelper helper) {
-        this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 154);
-        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get()));
+    public BasicMachineElementProcessorRecipeCategory(IGuiHelper helper) {
+        this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 151);
+        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get()));
     }
 
     @Override
@@ -39,13 +36,13 @@ public class BasicTechnologyUniversalAssemblerRecipeCategory implements IRecipeC
     }
 
     @Override
-    public Class<? extends BasicTechnologyUniversalAssemblerRecipe> getRecipeClass() {
-        return BasicTechnologyUniversalAssemblerRecipe.class;
+    public Class<? extends BasicMachineElementProcessorRecipe> getRecipeClass() {
+        return BasicMachineElementProcessorRecipe.class;
     }
 
     @Override
     public Component getTitle() {
-        return new TranslatableComponent("jei.degeneracycraft_basic_technology_universal_assembler");
+        return new TranslatableComponent("jei.degeneracycraft_basic_machine_element_processor");
     }
 
     @Override
@@ -59,7 +56,7 @@ public class BasicTechnologyUniversalAssemblerRecipeCategory implements IRecipeC
     }
 
     @Override
-    public void draw(BasicTechnologyUniversalAssemblerRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
+    public void draw(BasicMachineElementProcessorRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
         drawPhase(stack);
         drawRequiredEnergy(recipe, stack);
         drawRequiredEnergyUsage(recipe, stack);
@@ -69,17 +66,17 @@ public class BasicTechnologyUniversalAssemblerRecipeCategory implements IRecipeC
     protected void drawPhase(PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
-        fontRenderer.draw(poseStack, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"), 15, 67, 0xFF0000);
+        fontRenderer.draw(poseStack, new TranslatableComponent("screen." + "degeneracycraft" + ".phase0"), 15, 67, 0xFFFFFF);
     }
 
-    protected void drawRequiredEnergy(BasicTechnologyUniversalAssemblerRecipe recipe, PoseStack poseStack) {
+    protected void drawRequiredEnergy(BasicMachineElementProcessorRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergy."), 17, 87, 0xFFFFFF);
         fontRenderer.draw(poseStack, (recipe.getRequiredEnergy() + " FE"), 17, 97, 0xFFFFFF);
     }
 
-    protected void drawRequiredEnergyUsage(BasicTechnologyUniversalAssemblerRecipe recipe, PoseStack poseStack) {
+    protected void drawRequiredEnergyUsage(BasicMachineElementProcessorRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergyusage."), 17, 107, 0xFFFFFF);
@@ -87,7 +84,7 @@ public class BasicTechnologyUniversalAssemblerRecipeCategory implements IRecipeC
 
     }
 
-    protected void drawRequiredTime(BasicTechnologyUniversalAssemblerRecipe recipe, PoseStack poseStack) {
+    protected void drawRequiredTime(BasicMachineElementProcessorRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredtime."), 17, 127, 0xFFFFFF);
@@ -96,7 +93,7 @@ public class BasicTechnologyUniversalAssemblerRecipeCategory implements IRecipeC
 
 
     @Override
-    public void setRecipe(@Nonnull IRecipeLayoutBuilder builder, @Nonnull BasicTechnologyUniversalAssemblerRecipe recipe, @Nonnull IFocusGroup focusGroup) {
+    public void setRecipe(IRecipeLayoutBuilder builder, BasicMachineElementProcessorRecipe recipe, IFocusGroup focusGroup) {
         builder.addSlot(RecipeIngredientRole.INPUT, 8, 7).addItemStack(recipe.getInput0Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 26, 7).addItemStack(recipe.getInput1Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 44, 7).addItemStack(recipe.getInput2Item());
@@ -109,4 +106,6 @@ public class BasicTechnologyUniversalAssemblerRecipeCategory implements IRecipeC
         builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 25).addItemStack(recipe.getOutput0Item());
     }
 }
+
+
 

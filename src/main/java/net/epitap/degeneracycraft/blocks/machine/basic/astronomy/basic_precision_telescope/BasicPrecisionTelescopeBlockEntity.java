@@ -1,9 +1,9 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_manufacturer;
+package net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_precision_telescope.BasicPrecisionTelescopeRecipe;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -36,7 +36,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Map;
 import java.util.Optional;
 
-public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity implements MenuProvider {
+public class BasicPrecisionTelescopeBlockEntity extends BlockEntity implements MenuProvider {
     public float BT_M_MANUFACTURER_CAPACITY = 20000F;
     public float BT_M_MANUFACTURER_TRANSFER = 16F;
 
@@ -53,7 +53,7 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
     public boolean powered0_1;
     public boolean isFormed;
     public boolean isPowered0;
-    public final ItemStackHandler itemHandler = new ItemStackHandler(12) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(7) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -61,18 +61,18 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 5; i++) {
                 if (slot == i && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                         && !stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                         && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
                     return true;
                 }
             }
-            if (slot == 10) {
+            if (slot == 5) {
                 return stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                         || stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
             }
-            if (slot == 11) {
+            if (slot == 6) {
                 return stack.is(DCItems.MACHINE_HALT_DEVICE.get());
             }
             return false;
@@ -106,14 +106,14 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
                     Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (out, stack) -> false)));
 
-    public BasicTechnologyMachineManufacturerBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+    public BasicPrecisionTelescopeBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
+        super(DCBlockEntities.BASIC_PRECISION_TELESCOPE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> BasicTechnologyMachineManufacturerBlockEntity.this.counter;
-                    case 1 -> BasicTechnologyMachineManufacturerBlockEntity.this.getProgressPercent;
+                    case 0 -> BasicPrecisionTelescopeBlockEntity.this.counter;
+                    case 1 -> BasicPrecisionTelescopeBlockEntity.this.getProgressPercent;
                     default -> 0;
                 };
             }
@@ -121,9 +121,9 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
             @Override
             public void set(int index, int value) {
                 if (index == 0) {
-                    BasicTechnologyMachineManufacturerBlockEntity.this.counter = value;
+                    BasicPrecisionTelescopeBlockEntity.this.counter = value;
                 } else if (index == 1) {
-                    BasicTechnologyMachineManufacturerBlockEntity.this.getProgressPercent = value;
+                    BasicPrecisionTelescopeBlockEntity.this.getProgressPercent = value;
                 }
             }
 
@@ -142,7 +142,7 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return new BasicTechnologyMachineManufacturerMenu(pContainerId, pInventory, this, this.data);
+        return new BasicPrecisionTelescopeMenu(pContainerId, pInventory, this, this.data);
     }
 
     @Override
@@ -154,7 +154,7 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
                 return lazyItemHandler.cast();
             }
             if (directionWrappedHandlerMap.containsKey(side)) {
-                Direction localDir = this.getBlockState().getValue(BasicTechnologyMachineManufacturerBlock.FACING);
+                Direction localDir = this.getBlockState().getValue(BasicPrecisionTelescopeBlock.FACING);
 
                 if (side == Direction.UP || side == Direction.DOWN) {
                     return directionWrappedHandlerMap.get(side).cast();
@@ -218,15 +218,15 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
-    public static void tick(Level level, BlockPos pos, BlockState state, BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
-        blockEntity.formed0 = BasicTechnologyMachineManufacturerStructure.isFormed0(level, pos, state, blockEntity);
-        blockEntity.formed1 = BasicTechnologyMachineManufacturerStructure.isFormed1(level, pos, state, blockEntity);
-        blockEntity.formed2 = BasicTechnologyMachineManufacturerStructure.isFormed2(level, pos, state, blockEntity);
-        blockEntity.powered0_1 = BasicTechnologyMachineManufacturerStructure.powered0_1(level, pos, state, blockEntity);
-        blockEntity.isFormed = BasicTechnologyMachineManufacturerStructure.isFormed(blockEntity);
-        blockEntity.isPowered0 = BasicTechnologyMachineManufacturerStructure.isPowered0(blockEntity);
+    public static void tick(Level level, BlockPos pos, BlockState state, BasicPrecisionTelescopeBlockEntity blockEntity) {
+        blockEntity.formed0 = BasicPrecisionTelescopeStructure.isFormed0(level, pos, state, blockEntity);
+        blockEntity.formed1 = BasicPrecisionTelescopeStructure.isFormed1(level, pos, state, blockEntity);
+        blockEntity.formed2 = BasicPrecisionTelescopeStructure.isFormed2(level, pos, state, blockEntity);
+        blockEntity.powered0_1 = BasicPrecisionTelescopeStructure.powered0_1(level, pos, state, blockEntity);
+        blockEntity.isFormed = BasicPrecisionTelescopeStructure.isFormed(blockEntity);
+        blockEntity.isPowered0 = BasicPrecisionTelescopeStructure.isPowered0(blockEntity);
 
-        BasicTechnologyMachineManufacturerStructure.hologram(level, pos, state, blockEntity);
+        BasicPrecisionTelescopeStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
 
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
@@ -239,8 +239,8 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPrecisionTelescopeRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPrecisionTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
@@ -254,14 +254,14 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else {
                 blockEntity.counter++;
-                    blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
-                }
-                blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
-                if (craftCheck(blockEntity)) {
-                    craftItem(blockEntity);
-                }
-                setChanged(level, pos, state);
-            } else {
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
+            }
+            blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
+            if (craftCheck(blockEntity)) {
+                craftItem(blockEntity);
+            }
+            setChanged(level, pos, state);
+        } else {
             blockEntity.resetProgress();
             setChanged(level, pos, state);
         }
@@ -269,32 +269,32 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
     }
 
 
-    private static boolean hasAmountEnergyRecipe(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
+    private static boolean hasAmountEnergyRecipe(BasicPrecisionTelescopeBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPrecisionTelescopeRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPrecisionTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / (match.get().getRequiredTime() * 20F);
     }
 
-    public static boolean isHaltDevice(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
+    public static boolean isHaltDevice(BasicPrecisionTelescopeBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(11).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
-    public static boolean craftCheck(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
+    public static boolean craftCheck(BasicPrecisionTelescopeBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPrecisionTelescopeRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPrecisionTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return blockEntity.data.get(0) > match.get().getRequiredTime() * 20;
@@ -302,28 +302,28 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
         return false;
     }
 
-    private static boolean hasRecipe(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
+    private static boolean hasRecipe(BasicPrecisionTelescopeBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPrecisionTelescopeRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPrecisionTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         return match.isPresent();
     }
 
-    public static boolean hasAmountRecipe(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
+    public static boolean hasAmountRecipe(BasicPrecisionTelescopeBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPrecisionTelescopeRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPrecisionTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
                 && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
@@ -336,15 +336,15 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
                 && blockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
     }
 
-    private static void craftItem(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
+    private static void craftItem(BasicPrecisionTelescopeBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPrecisionTelescopeRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPrecisionTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
@@ -372,7 +372,7 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
         return inventory.getItem(9).getItem() == output.getItem() || inventory.getItem(9).isEmpty();
     }
 
-    private static boolean hasNotReachedStackLimit(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
+    private static boolean hasNotReachedStackLimit(BasicPrecisionTelescopeBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(9).getCount() < blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
     }
 }

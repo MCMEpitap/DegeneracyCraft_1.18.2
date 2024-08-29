@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei.basic.basic_machine_element_processor;
+package net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_manufacturer;
 
 import com.google.gson.JsonObject;
 import net.epitap.degeneracycraft.Degeneracycraft;
@@ -15,7 +15,7 @@ import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 import org.jetbrains.annotations.Nullable;
 
-public class BasicMachineElementProcessorRecipe implements Recipe<SimpleContainer> {
+public class BasicTechnologyMachineManufacturerRecipe implements Recipe<SimpleContainer> {
     private final ResourceLocation id;
     final float energy;
     final float time;
@@ -30,7 +30,7 @@ public class BasicMachineElementProcessorRecipe implements Recipe<SimpleContaine
     final ItemStack input8;
     final ItemStack output0;
 
-    public BasicMachineElementProcessorRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack input1, ItemStack input2, ItemStack input3, ItemStack input4, ItemStack input5, ItemStack input6, ItemStack input7, ItemStack input8, ItemStack output0) {
+    public BasicTechnologyMachineManufacturerRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack input1, ItemStack input2, ItemStack input3, ItemStack input4, ItemStack input5, ItemStack input6, ItemStack input7, ItemStack input8, ItemStack output0) {
         this.id = id;
         this.energy = energy;
         this.time = time;
@@ -59,6 +59,7 @@ public class BasicMachineElementProcessorRecipe implements Recipe<SimpleContaine
                 && input7.is(pContainer.getItem(7).getItem())
                 && input8.is(pContainer.getItem(8).getItem());
     }
+
     @Override
     public ItemStack assemble(SimpleContainer pContainer) {
         return output0;
@@ -127,59 +128,56 @@ public class BasicMachineElementProcessorRecipe implements Recipe<SimpleContaine
         return id;
     }
 
+    @Override
+    public RecipeSerializer<?> getSerializer() {
+        return Serializer.INSTANCE;
+    }
+
+
     public static ItemStack itemStackFromJson(JsonObject pStackObject) {
         return CraftingHelper.getItemStack(pStackObject, true, false);
     }
 
     @Override
-    public RecipeSerializer<?> getSerializer() {
-        return BasicMachineElementProcessorRecipe.Serializer.INSTANCE;
-    }
-
-    @Override
     public RecipeType<?> getType() {
-        return BasicMachineElementProcessorRecipe.Type.INSTANCE;
+        return Type.INSTANCE;
     }
 
-    public static class Type implements RecipeType<BasicMachineElementProcessorRecipe> {
+    public static class Type implements RecipeType<BasicTechnologyMachineManufacturerRecipe> {
         private Type() {
         }
 
-        public static final BasicMachineElementProcessorRecipe.Type INSTANCE = new BasicMachineElementProcessorRecipe.Type();
-        public static final String ID = "basic_machine_element_processor_recipe";
+        public static final Type INSTANCE = new Type();
+        public static final String ID = "basic_technology_machine_manufacturer_recipe";
     }
 
 
-    public static class Serializer extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<BasicMachineElementProcessorRecipe> {
-        public Serializer() {
-        }
-
-        public static final BasicMachineElementProcessorRecipe.Serializer INSTANCE = new BasicMachineElementProcessorRecipe.Serializer();
+    public static class Serializer extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<BasicTechnologyMachineManufacturerRecipe> {
+        public static final Serializer INSTANCE = new Serializer();
 
         public static final ResourceLocation ID =
-                new ResourceLocation(Degeneracycraft.MOD_ID, "basic_machine_element_processor_recipe");
+                new ResourceLocation(Degeneracycraft.MOD_ID, "basic_technology_machine_manufacturer_recipe");
 
-        public BasicMachineElementProcessorRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
+        public BasicTechnologyMachineManufacturerRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
 
             float energy = GsonHelper.getAsFloat(pJson, "energy", 1);
             float time = GsonHelper.getAsFloat(pJson, "time", 1);
-            ItemStack input0 = BasicMachineElementProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input0"));
-            ItemStack input1 = BasicMachineElementProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input1"));
-            ItemStack input2 = BasicMachineElementProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input2"));
-            ItemStack input3 = BasicMachineElementProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input3"));
-            ItemStack input4 = BasicMachineElementProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input4"));
-            ItemStack input5 = BasicMachineElementProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input5"));
-            ItemStack input6 = BasicMachineElementProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input6"));
-            ItemStack input7 = BasicMachineElementProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input7"));
-            ItemStack input8 = BasicMachineElementProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input8"));
-            ItemStack output0 = BasicMachineElementProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output0"));
+            ItemStack input0 = BasicTechnologyMachineManufacturerRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input0"));
+            ItemStack input1 = BasicTechnologyMachineManufacturerRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input1"));
+            ItemStack input2 = BasicTechnologyMachineManufacturerRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input2"));
+            ItemStack input3 = BasicTechnologyMachineManufacturerRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input3"));
+            ItemStack input4 = BasicTechnologyMachineManufacturerRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input4"));
+            ItemStack input5 = BasicTechnologyMachineManufacturerRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input5"));
+            ItemStack input6 = BasicTechnologyMachineManufacturerRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input6"));
+            ItemStack input7 = BasicTechnologyMachineManufacturerRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input7"));
+            ItemStack input8 = BasicTechnologyMachineManufacturerRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input8"));
+            ItemStack output0 = BasicTechnologyMachineManufacturerRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output0"));
 
-            return new BasicMachineElementProcessorRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, input5, input6, input7, input8, output0);
-
+            return new BasicTechnologyMachineManufacturerRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, input5, input6, input7, input8, output0);
         }
 
         @Override
-        public @Nullable BasicMachineElementProcessorRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
+        public @Nullable BasicTechnologyMachineManufacturerRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
             float energy = pBuffer.readFloat();
             float time = pBuffer.readFloat();
             ItemStack input0 = pBuffer.readItem();
@@ -193,11 +191,12 @@ public class BasicMachineElementProcessorRecipe implements Recipe<SimpleContaine
             ItemStack input8 = pBuffer.readItem();
             ItemStack output0 = pBuffer.readItem();
 
-            return new BasicMachineElementProcessorRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, input5, input6, input7, input8, output0);
+            return new BasicTechnologyMachineManufacturerRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, input5, input6, input7, input8, output0);
         }
 
         @Override
-        public void toNetwork(FriendlyByteBuf pBuffer, BasicMachineElementProcessorRecipe pRecipe) {
+        public void toNetwork(FriendlyByteBuf pBuffer, BasicTechnologyMachineManufacturerRecipe pRecipe) {
+
             pBuffer.writeFloat(pRecipe.energy);
             pBuffer.writeFloat(pRecipe.time);
             pBuffer.writeItem(pRecipe.input0.getContainerItem());

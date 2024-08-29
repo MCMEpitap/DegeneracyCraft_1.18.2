@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei.basic.basic_technology_machine_manufacturer;
+package net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_manufacturer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.constants.VanillaTypes;

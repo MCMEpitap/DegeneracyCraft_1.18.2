@@ -1,11 +1,9 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_universal_assembler;
+package net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipe;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
@@ -15,9 +13,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-import java.util.Optional;
-
-public class BasicTechnologyUniversalAssemblerMenu extends AbstractContainerMenu {
+public class BasicPrecisionTelescopeMenu extends AbstractContainerMenu {
 
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
@@ -27,17 +23,17 @@ public class BasicTechnologyUniversalAssemblerMenu extends AbstractContainerMenu
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
     private static final int TE_INVENTORY_SLOT_COUNT = 12;
-    public final BasicTechnologyUniversalAssemblerBlockEntity blockEntity;
+    public final BasicPrecisionTelescopeBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
-    public BasicTechnologyUniversalAssemblerMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+    public BasicPrecisionTelescopeMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
+        this(pContainerId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
     }
 
-    public BasicTechnologyUniversalAssemblerMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_MENU.get(), pContainerId);
-        blockEntity = ((BasicTechnologyUniversalAssemblerBlockEntity) entity);
+    public BasicPrecisionTelescopeMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(DCMenuTypes.BASIC_BASIC_PRECISION_TELESCOPE_MENU.get(), pContainerId);
+        blockEntity = ((BasicPrecisionTelescopeBlockEntity) entity);
         this.level = inv.player.level;
         this.data = data;
 
@@ -46,28 +42,20 @@ public class BasicTechnologyUniversalAssemblerMenu extends AbstractContainerMenu
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
 
-            for (int i = 0; i < 3; ++i) {
-                for (int l = 0; l < 3; ++l) {
-                    this.addSlot(new SlotItemHandler(handler, (l + i * 3), 8 + l * 18, 7 + i * 18));
-                }
-            }
-            this.addSlot(new SlotItemHandler(handler, 9, 116, 25));
-            this.addSlot(new SlotItemHandler(handler, 10, 71, 59));
-            this.addSlot(new SlotItemHandler(handler, 11, 98, 62));
+            this.addSlot(new SlotItemHandler(handler, 0, 11, 8));
+            this.addSlot(new SlotItemHandler(handler, 1, 18, 39));
+            this.addSlot(new SlotItemHandler(handler, 2, 37, 19));
+            this.addSlot(new SlotItemHandler(handler, 3, 116, 43));
+            this.addSlot(new SlotItemHandler(handler, 4, 116, 7));
+            this.addSlot(new SlotItemHandler(handler, 5, 71, 59));
+            this.addSlot(new SlotItemHandler(handler, 6, 98, 62));
         });
 
         addDataSlots(data);
     }
 
-    public float getProgressPercent() {
-        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
-        Optional<BasicTechnologyUniversalAssemblerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE, inventory, level);
-        if (match.isPresent()) {
-            int getProgressPercent = (int) (this.data.get(0) / match.get().getRequiredTime() * 20F);
-            return getProgressPercent;
-        }
-        return 0F;
+    public int getProgressPercent() {
+        return data.get(1);
     }
 
     public DCIEnergyStorageFloat getEnergy() {
@@ -78,10 +66,9 @@ public class BasicTechnologyUniversalAssemblerMenu extends AbstractContainerMenu
         return data.get(0) > 0;
     }
 
-    public BasicTechnologyUniversalAssemblerBlockEntity getBlockEntity() {
+    public BasicPrecisionTelescopeBlockEntity getBlockEntity() {
         return this.blockEntity;
     }
-
 
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {
@@ -119,7 +106,7 @@ public class BasicTechnologyUniversalAssemblerMenu extends AbstractContainerMenu
     @Override
     public boolean stillValid(Player pPlayer) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                pPlayer, DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get());
+                pPlayer, DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {
@@ -129,6 +116,7 @@ public class BasicTechnologyUniversalAssemblerMenu extends AbstractContainerMenu
             }
         }
     }
+
     private void addPlayerHotbar(Inventory playerInventory) {
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));

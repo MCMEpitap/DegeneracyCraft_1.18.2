@@ -684,7 +684,6 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
 //    public static final RegistryObject<Item> INFINITY_CLASS_IRON_SHAFTCOUPLING = ITEMS.register("infinity_class_iron_shaftcoupling",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB)));
 //    public static final RegistryObject<Item> INFINITY_CLASS_IRON_SHAPESTEEL = ITEMS.register("infinity_class_iron_shapesteel",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB)));
 //    public static final RegistryObject<Item> INFINITY_CLASS_IRON_SPRING = ITEMS.register("infinity_class_iron_spring",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB)));
-
     public static final RegistryObject<Item> BASIC_PRECISION_BEARING_INSCRIBED_CIRCUIT = ITEMS.register("bearing_inscribed_basic_precision_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB)));
     public static final RegistryObject<Item> BASIC_PRECISION_BOLT_INSCRIBED_CIRCUIT = ITEMS.register("bolt_inscribed_basic_precision_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB)));
     public static final RegistryObject<Item> BASIC_PRECISION_CAM_INSCRIBED_CIRCUIT = ITEMS.register("cam_inscribed_basic_precision_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB)));
@@ -722,13 +721,11 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> BASIC_DRIVECHAIN = ITEMS.register("basic_drivechain", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_INSCRIBED_CIRCUIT = ITEMS.register("basic_inscribed_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_LINKAGE = ITEMS.register("basic_linkage", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
-
     public static final RegistryObject<Item> BASIC_MACHINE_SCREEN = ITEMS.register("basic_machine_screen", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_MOTOR = ITEMS.register("basic_motor", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_REDSTONE_BATTERY = ITEMS.register("basic_redstone_battery", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_REINFORCED_PLATE = ITEMS.register("basic_reinforced_plate", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_ROBOT_ARM = ITEMS.register("basic_robot_arm", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
-
     public static final RegistryObject<Item> BASIC_TURBINE = ITEMS.register("basic_turbine", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
     public static final RegistryObject<Item> CAMMDA_TIER1 = ITEMS.register("cammda_tier1", () -> new CAMMDA_Tier1(DCTier.CAMMDA_TIER1, 0, 0, new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB).stacksTo(1)));

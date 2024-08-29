@@ -122,6 +122,16 @@ public class DCBlocks {
     public static final RegistryObject<Block> REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK = registerBlock("redstone_powered_machine_part_manufacture_machine_block", () ->
             new RedstonePoweredMachinePartManufactureMachineBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
 
+    public static final RegistryObject<Block> BASIC_PRECISION_TELESCOPE_BLOCK = registerTooltipBasicMachineBlock("basic_precision_telescope_block", () ->
+                    new BasicPowerThermalGeneratorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "Lv0:3×3×3",
+            "Lv1:3×3×3",
+            "Base:Power 16 FE/t",
+            "Lv0:Power 32 FE/t",
+            "Lv1:Power 48 FE/t",
+            "basic_precision_telescope_block", "astronomy", "basic");
+
+
     public static final RegistryObject<Block> BASIC_POWER_THERMAL_GENERATOR_BLOCK = registerTooltipBasicMachineBlock("basic_power_composite_structure_type_thermal_generator_block", () ->
                     new BasicPowerThermalGeneratorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "Lv0:3×3×3",
@@ -182,7 +192,7 @@ public class DCBlocks {
     public static final RegistryObject<Block> BASIC_OPERATION_ASSEMBLING_CHAMBER_BLOCK = registerTooltipBasicMultiblockAbilityBlock("basic_operation_assembling_chamber_block", () ->
                     new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "basic_technology_universal_assembler_block",
-            "enginnering",
+            "engineering",
             "basic");
     public static final RegistryObject<Block> BASIC_OPERATION_ASSEMBLING_CHAMBER_HOLO_BLOCK = registerHoloBlock("basic_operation_assembling_chamber_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));

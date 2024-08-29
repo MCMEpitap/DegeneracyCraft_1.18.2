@@ -3,7 +3,7 @@ package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_techn
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipe;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;

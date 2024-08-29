@@ -3,31 +3,31 @@
   "energy": 0.0,
   "time": 20.0,
   "input0": {
-    "item": "degeneracycraft:iron_rod"
+    "item": "degeneracycraft:iron_joint"
   },
   "input1": {
-    "item": "degeneracycraft:iron_plate"
+    "item": "degeneracycraft:iron_rod"
   },
   "input2": {
-    "item": "degeneracycraft:iron_rod"
+    "item": "degeneracycraft:iron_joint"
   },
   "input3": {
     "item": "degeneracycraft:iron_rod"
   },
   "input4": {
-    "item": "degeneracycraft:basic_precision_circuit"
+    "item": "degeneracycraft:iron_chain"
   },
   "input5": {
     "item": "degeneracycraft:iron_rod"
   },
   "input6": {
-    "item": "degeneracycraft:iron_shaft"
+    "item": "degeneracycraft:iron_joint"
   },
   "input7": {
-    "item": "degeneracycraft:iron_shaftcoupling"
+    "item": "degeneracycraft:iron_rod"
   },
   "input8": {
-    "item": "degeneracycraft:iron_shaft"
+    "item": "degeneracycraft:iron_joint"
   },
   "output0": {
     "item": "degeneracycraft:basic_machine_screen"

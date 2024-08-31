@@ -37,16 +37,17 @@ import java.util.Map;
 import java.util.Optional;
 
 public class BasicPrecisionTelescopeBlockEntity extends BlockEntity implements MenuProvider {
-    public float BT_M_MANUFACTURER_CAPACITY = 20000F;
-    public float BT_M_MANUFACTURER_TRANSFER = 16F;
+    public float BP_TELESCOPE_CAPACITY = 20000F;
+    public float BP_TELESCOPE_TRANSFER = 16F;
 
-    public float BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
-    public float BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
-    public float BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
-    public float BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
+    public float BP_TELESCOPE_RESEARCH_SPEED_MODIFIER_FORMED = 2F;
+    public float BP_TELESCOPE_RESEARCH_SPEED_MODIFIER_POWERED_0 = 3F;
+    public float BP_TELESCOPE_RESEARCH_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
+    public float BP_TELESCOPE_RESEARCH_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
     protected final ContainerData data;
     public int counter;
     public int getProgressPercent;
+    public int getProgressRandom;
     public boolean formed0;
     public boolean formed1;
     public boolean formed2;
@@ -79,7 +80,7 @@ public class BasicPrecisionTelescopeBlockEntity extends BlockEntity implements M
         }
     };
 
-    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BT_M_MANUFACTURER_CAPACITY, BT_M_MANUFACTURER_TRANSFER) {
+    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BP_TELESCOPE_CAPACITY, BP_TELESCOPE_TRANSFER) {
         @Override
         public void onEnergyChanged() {
             setChanged();
@@ -194,7 +195,7 @@ public class BasicPrecisionTelescopeBlockEntity extends BlockEntity implements M
     @Override
     protected void saveAdditional(@NotNull CompoundTag nbt) {
         nbt.put("inventory", itemHandler.serializeNBT());
-        nbt.putFloat("bt_m_manufacturer.energy", ENERGY_STORAGE.getEnergyStoredFloat());
+        nbt.putFloat("bp_telescope.energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
         nbt.putInt("getProgressPercent", getProgressPercent);
         super.saveAdditional(nbt);
@@ -204,7 +205,7 @@ public class BasicPrecisionTelescopeBlockEntity extends BlockEntity implements M
     public void load(CompoundTag nbt) {
         super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("bt_m_manufacturer.energy"));
+        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("bp_telescope.energy"));
         counter = nbt.getInt("counter");
         getProgressPercent = nbt.getInt("getProgressPercent");
     }
@@ -244,23 +245,33 @@ public class BasicPrecisionTelescopeBlockEntity extends BlockEntity implements M
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
+            blockEntity.getProgressRandom = (int) (Math.random() * 100);
+
             if (blockEntity.isPowered0) {
-                blockEntity.counter += blockEntity.BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
+                if (blockEntity.getProgressRandom <= 1) {
+                    blockEntity.counter += blockEntity.BP_TELESCOPE_RESEARCH_SPEED_MODIFIER_POWERED_0;
+                }
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BP_TELESCOPE_RESEARCH_ENERGY_USAGE_MODIFIER_POWERED_0
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else if (blockEntity.isFormed) {
-                blockEntity.counter += blockEntity.BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_FORMED;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
+                if (blockEntity.getProgressRandom <= 0) {
+                    blockEntity.counter += blockEntity.BP_TELESCOPE_RESEARCH_SPEED_MODIFIER_FORMED;
+                }
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BP_TELESCOPE_RESEARCH_ENERGY_USAGE_MODIFIER_FORMED
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else {
-                blockEntity.counter++;
+                if (blockEntity.getProgressRandom <= 0) {
+                    blockEntity.counter++;
+                }
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
             }
-            blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
+//            blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
+            blockEntity.getProgressPercent = blockEntity.counter;
             if (craftCheck(blockEntity)) {
                 craftItem(blockEntity);
             }
             setChanged(level, pos, state);
+
         } else {
             blockEntity.resetProgress();
             setChanged(level, pos, state);

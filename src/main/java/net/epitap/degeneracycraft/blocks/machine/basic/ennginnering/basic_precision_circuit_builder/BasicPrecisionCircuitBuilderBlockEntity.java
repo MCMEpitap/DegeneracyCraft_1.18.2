@@ -3,7 +3,7 @@ package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_preci
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_precision_circuit_builder.BasicPrecisionCircuitBuilderRecipe;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -40,10 +40,10 @@ public class BasicPrecisionCircuitBuilderBlockEntity extends BlockEntity impleme
     public float BP_C_BUILDER_CAPACITY = 20000F;
     public float BP_C_BUILDER_TRANSFER = 16F;
 
-    public float BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
-    public float BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
-    public float BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
-    public float BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
+    public float BP_C_BUILDER_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
+    public float BP_C_BUILDER_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
+    public float BP_C_BUILDER_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
+    public float BP_C_BUILDER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
     protected final ContainerData data;
     public int counter;
     public int getProgressPercent;
@@ -239,18 +239,18 @@ public class BasicPrecisionCircuitBuilderBlockEntity extends BlockEntity impleme
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPrecisionCircuitBuilderRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPrecisionCircuitBuilderRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
             if (blockEntity.isPowered0) {
-                blockEntity.counter += blockEntity.BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
+                blockEntity.counter += blockEntity.BP_C_BUILDER_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BP_C_BUILDER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else if (blockEntity.isFormed) {
-                blockEntity.counter += blockEntity.BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_FORMED;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
+                blockEntity.counter += blockEntity.BP_C_BUILDER_MANUFACTURING_SPEED_MODIFIER_FORMED;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BP_C_BUILDER_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else {
                 blockEntity.counter++;
@@ -276,8 +276,8 @@ public class BasicPrecisionCircuitBuilderBlockEntity extends BlockEntity impleme
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPrecisionCircuitBuilderRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPrecisionCircuitBuilderRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / (match.get().getRequiredTime() * 20F);
     }
@@ -293,8 +293,8 @@ public class BasicPrecisionCircuitBuilderBlockEntity extends BlockEntity impleme
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPrecisionCircuitBuilderRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPrecisionCircuitBuilderRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return blockEntity.data.get(0) > match.get().getRequiredTime() * 20;
@@ -309,8 +309,8 @@ public class BasicPrecisionCircuitBuilderBlockEntity extends BlockEntity impleme
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPrecisionCircuitBuilderRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPrecisionCircuitBuilderRecipe.Type.INSTANCE, inventory, level);
 
         return match.isPresent();
     }
@@ -322,8 +322,8 @@ public class BasicPrecisionCircuitBuilderBlockEntity extends BlockEntity impleme
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPrecisionCircuitBuilderRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPrecisionCircuitBuilderRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
                 && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
@@ -343,8 +343,8 @@ public class BasicPrecisionCircuitBuilderBlockEntity extends BlockEntity impleme
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPrecisionCircuitBuilderRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPrecisionCircuitBuilderRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);

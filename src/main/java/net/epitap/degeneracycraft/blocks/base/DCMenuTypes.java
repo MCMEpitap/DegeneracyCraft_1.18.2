@@ -5,6 +5,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_machine_element_processor.BasicMachineElementProcessorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_thermal_generator.BasicPowerThermalGeneratorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_precision_circuit_builder.BasicPrecisionCircuitBuilderMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerMenu;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineMenu;
@@ -48,6 +49,8 @@ public class DCMenuTypes {
             registerMenuType(BasicTechnologyUniversalAssemblerMenu::new, "basic_technology_universal_assembler_menu");
     public static final RegistryObject<MenuType<BasicTechnologyMachineManufacturerMenu>> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_MENU =
             registerMenuType(BasicTechnologyMachineManufacturerMenu::new, "basic_technology_machine_manufacturer_menu");
+    public static final RegistryObject<MenuType<BasicPrecisionCircuitBuilderMenu>> BASIC_PRECISION_CIRCUIT_BUILDER_MENU =
+            registerMenuType(BasicPrecisionCircuitBuilderMenu::new, "basic_precision_circuit_builder_menu");
     public static final RegistryObject<MenuType<BasicMachineElementProcessorMenu>> BASIC_MACHINE_ELEMENT_PROCESSOR_MACHINE_MENU =
             registerMenuType(BasicMachineElementProcessorMenu::new, "basic_machine_element_processor_menu");
     public static final RegistryObject<MenuType<BasicPhaseBoltManufactureMachineMenu>> BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_MENU =

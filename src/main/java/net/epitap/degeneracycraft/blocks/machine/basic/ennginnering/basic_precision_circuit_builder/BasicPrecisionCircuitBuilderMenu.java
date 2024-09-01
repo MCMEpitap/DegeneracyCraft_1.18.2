@@ -32,7 +32,7 @@ public class BasicPrecisionCircuitBuilderMenu extends AbstractContainerMenu {
     }
 
     public BasicPrecisionCircuitBuilderMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_MENU.get(), pContainerId);
+        super(DCMenuTypes.BASIC_PRECISION_CIRCUIT_BUILDER_MENU.get(), pContainerId);
         blockEntity = ((BasicPrecisionCircuitBuilderBlockEntity) entity);
         this.level = inv.player.level;
         this.data = data;
@@ -56,15 +56,6 @@ public class BasicPrecisionCircuitBuilderMenu extends AbstractContainerMenu {
     }
 
     public int getProgressPercent() {
-//        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
-//        int getCounter = this.data.get(0);
-//        Optional<BasicPrecisionCircuitBuilderRecipe> match = level.getRecipeManager()
-//                .getRecipeFor(BasicPrecisionCircuitBuilderRecipe.Type.INSTANCE, inventory, level);
-//        if (match.isPresent()) {
-//            return (int) (match.get().getRequiredTime() * 20);
-//        }
-//        return 10;
-
         return data.get(1);
     }
 

@@ -6,6 +6,8 @@ import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeDCIEnergyStorageFl
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_machine_element_processor.BasicMachineElementProcessorPortType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.bus.BasicPowerCompositeStructureTypeThermalGeneratorBusType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.port.BasicPowerCompositeStructureTypeThermalGeneratorPortType;
+import net.epitap.degeneracycraft.transport.port_bus.basic.basic_precision_circuit_builder.bus.BasicPrecisionCircuitBuilderBusType;
+import net.epitap.degeneracycraft.transport.port_bus.basic.basic_precision_circuit_builder.port.BasicPrecisionCircuitBuilderPortType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_technology_machine_manufacturer.bus.BasicTechnologyMachineManufacturerBusType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_technology_machine_manufacturer.port.BasicTechnologyMachineManufacturerPortType;
 import net.minecraft.core.BlockPos;
@@ -64,6 +66,18 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         } else if (cap == CapabilityEnergy.ENERGY && hasType(BasicTechnologyMachineManufacturerBusType.INSTANCE)) {
             if (side != null) {
                 return intEnergyStored.get(side).cast();
+            }
+        } else if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicTechnologyMachineManufacturerPortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        } else if (cap == CapabilityEnergy.ENERGY && hasType(BasicPrecisionCircuitBuilderBusType.INSTANCE)) {
+            if (side != null) {
+                return intEnergyStored.get(side).cast();
+            }
+        } else if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPrecisionCircuitBuilderPortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
             }
         } else if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicMachineElementProcessorPortType.INSTANCE)) {
             if (side != null) {
@@ -145,6 +159,15 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicTechnologyMachineManufacturerBusType.INSTANCE)) {
             intEnergyStored.revalidate(side, storage -> extracting, (storage) -> new PortIEnergyStorage(this, storage));
         }
+        if (hasType(BasicTechnologyMachineManufacturerPortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PipeItemHandler.INSTANCE);
+        }
+        if (hasType(BasicPrecisionCircuitBuilderBusType.INSTANCE)) {
+            intEnergyStored.revalidate(side, storage -> extracting, (storage) -> new PortIEnergyStorage(this, storage));
+        }
+        if (hasType(BasicPrecisionCircuitBuilderPortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PipeItemHandler.INSTANCE);
+        }
         if (hasType(BasicMachineElementProcessorPortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PipeItemHandler.INSTANCE);
         }
@@ -165,7 +188,15 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicTechnologyMachineManufacturerBusType.INSTANCE)) {
             intEnergyStored.revalidate(this::portExtracting, (side) -> new PortIEnergyStorage(this, side));
         }
-
+        if (hasType(BasicTechnologyMachineManufacturerPortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PipeItemHandler.INSTANCE);
+        }
+        if (hasType(BasicPrecisionCircuitBuilderBusType.INSTANCE)) {
+            intEnergyStored.revalidate(this::portExtracting, (side) -> new PortIEnergyStorage(this, side));
+        }
+        if (hasType(BasicPrecisionCircuitBuilderPortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PipeItemHandler.INSTANCE);
+        }
         if (hasType(BasicMachineElementProcessorPortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PipeItemHandler.INSTANCE);
         }

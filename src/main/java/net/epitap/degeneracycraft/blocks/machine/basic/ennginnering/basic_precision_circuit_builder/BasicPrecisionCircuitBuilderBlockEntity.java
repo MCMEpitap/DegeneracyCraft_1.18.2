@@ -36,9 +36,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Map;
 import java.util.Optional;
 
-public class BasicPrecisionCircuitBuiiderBlockEntity extends BlockEntity implements MenuProvider {
-    public float BT_M_MANUFACTURER_CAPACITY = 20000F;
-    public float BT_M_MANUFACTURER_TRANSFER = 16F;
+public class BasicPrecisionCircuitBuilderBlockEntity extends BlockEntity implements MenuProvider {
+    public float BP_C_BUILDER_CAPACITY = 20000F;
+    public float BP_C_BUILDER_TRANSFER = 16F;
 
     public float BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
     public float BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
@@ -79,7 +79,7 @@ public class BasicPrecisionCircuitBuiiderBlockEntity extends BlockEntity impleme
         }
     };
 
-    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BT_M_MANUFACTURER_CAPACITY, BT_M_MANUFACTURER_TRANSFER) {
+    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BP_C_BUILDER_CAPACITY, BP_C_BUILDER_TRANSFER) {
         @Override
         public void onEnergyChanged() {
             setChanged();
@@ -106,14 +106,14 @@ public class BasicPrecisionCircuitBuiiderBlockEntity extends BlockEntity impleme
                     Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (out, stack) -> false)));
 
-    public BasicPrecisionCircuitBuiiderBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
+    public BasicPrecisionCircuitBuilderBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(DCBlockEntities.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> BasicPrecisionCircuitBuiiderBlockEntity.this.counter;
-                    case 1 -> BasicPrecisionCircuitBuiiderBlockEntity.this.getProgressPercent;
+                    case 0 -> BasicPrecisionCircuitBuilderBlockEntity.this.counter;
+                    case 1 -> BasicPrecisionCircuitBuilderBlockEntity.this.getProgressPercent;
                     default -> 0;
                 };
             }
@@ -121,9 +121,9 @@ public class BasicPrecisionCircuitBuiiderBlockEntity extends BlockEntity impleme
             @Override
             public void set(int index, int value) {
                 if (index == 0) {
-                    BasicPrecisionCircuitBuiiderBlockEntity.this.counter = value;
+                    BasicPrecisionCircuitBuilderBlockEntity.this.counter = value;
                 } else if (index == 1) {
-                    BasicPrecisionCircuitBuiiderBlockEntity.this.getProgressPercent = value;
+                    BasicPrecisionCircuitBuilderBlockEntity.this.getProgressPercent = value;
                 }
             }
 
@@ -142,7 +142,7 @@ public class BasicPrecisionCircuitBuiiderBlockEntity extends BlockEntity impleme
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return new BasicPrecisionCircuitBuiiderMenu(pContainerId, pInventory, this, this.data);
+        return new BasicPrecisionCircuitBuilderMenu(pContainerId, pInventory, this, this.data);
     }
 
     @Override
@@ -154,7 +154,7 @@ public class BasicPrecisionCircuitBuiiderBlockEntity extends BlockEntity impleme
                 return lazyItemHandler.cast();
             }
             if (directionWrappedHandlerMap.containsKey(side)) {
-                Direction localDir = this.getBlockState().getValue(BasicPrecisionCircuitBuiiderBlock.FACING);
+                Direction localDir = this.getBlockState().getValue(BasicPrecisionCircuitBuilderBlock.FACING);
 
                 if (side == Direction.UP || side == Direction.DOWN) {
                     return directionWrappedHandlerMap.get(side).cast();
@@ -218,15 +218,15 @@ public class BasicPrecisionCircuitBuiiderBlockEntity extends BlockEntity impleme
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
-    public static void tick(Level level, BlockPos pos, BlockState state, BasicPrecisionCircuitBuiiderBlockEntity blockEntity) {
-        blockEntity.formed0 = BasicPrecisionCircuitBuiiderStructure.isFormed0(level, pos, state, blockEntity);
-        blockEntity.formed1 = BasicPrecisionCircuitBuiiderStructure.isFormed1(level, pos, state, blockEntity);
-        blockEntity.formed2 = BasicPrecisionCircuitBuiiderStructure.isFormed2(level, pos, state, blockEntity);
-        blockEntity.powered0_1 = BasicPrecisionCircuitBuiiderStructure.powered0_1(level, pos, state, blockEntity);
-        blockEntity.isFormed = BasicPrecisionCircuitBuiiderStructure.isFormed(blockEntity);
-        blockEntity.isPowered0 = BasicPrecisionCircuitBuiiderStructure.isPowered0(blockEntity);
+    public static void tick(Level level, BlockPos pos, BlockState state, BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
+        blockEntity.formed0 = BasicPrecisionCircuitBuilderStructure.isFormed0(level, pos, state, blockEntity);
+        blockEntity.formed1 = BasicPrecisionCircuitBuilderStructure.isFormed1(level, pos, state, blockEntity);
+        blockEntity.formed2 = BasicPrecisionCircuitBuilderStructure.isFormed2(level, pos, state, blockEntity);
+        blockEntity.powered0_1 = BasicPrecisionCircuitBuilderStructure.powered0_1(level, pos, state, blockEntity);
+        blockEntity.isFormed = BasicPrecisionCircuitBuilderStructure.isFormed(blockEntity);
+        blockEntity.isPowered0 = BasicPrecisionCircuitBuilderStructure.isPowered0(blockEntity);
 
-        BasicPrecisionCircuitBuiiderStructure.hologram(level, pos, state, blockEntity);
+        BasicPrecisionCircuitBuilderStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
 
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
@@ -269,7 +269,7 @@ public class BasicPrecisionCircuitBuiiderBlockEntity extends BlockEntity impleme
     }
 
 
-    private static boolean hasAmountEnergyRecipe(BasicPrecisionCircuitBuiiderBlockEntity blockEntity) {
+    private static boolean hasAmountEnergyRecipe(BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -282,11 +282,11 @@ public class BasicPrecisionCircuitBuiiderBlockEntity extends BlockEntity impleme
         return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / (match.get().getRequiredTime() * 20F);
     }
 
-    public static boolean isHaltDevice(BasicPrecisionCircuitBuiiderBlockEntity blockEntity) {
+    public static boolean isHaltDevice(BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(11).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
-    public static boolean craftCheck(BasicPrecisionCircuitBuiiderBlockEntity blockEntity) {
+    public static boolean craftCheck(BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -302,7 +302,7 @@ public class BasicPrecisionCircuitBuiiderBlockEntity extends BlockEntity impleme
         return false;
     }
 
-    private static boolean hasRecipe(BasicPrecisionCircuitBuiiderBlockEntity blockEntity) {
+    private static boolean hasRecipe(BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -315,7 +315,7 @@ public class BasicPrecisionCircuitBuiiderBlockEntity extends BlockEntity impleme
         return match.isPresent();
     }
 
-    public static boolean hasAmountRecipe(BasicPrecisionCircuitBuiiderBlockEntity blockEntity) {
+    public static boolean hasAmountRecipe(BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -336,7 +336,7 @@ public class BasicPrecisionCircuitBuiiderBlockEntity extends BlockEntity impleme
                 && blockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
     }
 
-    private static void craftItem(BasicPrecisionCircuitBuiiderBlockEntity blockEntity) {
+    private static void craftItem(BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -372,7 +372,7 @@ public class BasicPrecisionCircuitBuiiderBlockEntity extends BlockEntity impleme
         return inventory.getItem(9).getItem() == output.getItem() || inventory.getItem(9).isEmpty();
     }
 
-    private static boolean hasNotReachedStackLimit(BasicPrecisionCircuitBuiiderBlockEntity blockEntity) {
+    private static boolean hasNotReachedStackLimit(BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(9).getCount() < blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
     }
 }

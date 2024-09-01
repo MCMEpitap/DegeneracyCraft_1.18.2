@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class BasicPrecisionCircuitBuiiderMenu extends AbstractContainerMenu {
+public class BasicPrecisionCircuitBuilderMenu extends AbstractContainerMenu {
 
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
@@ -23,17 +23,17 @@ public class BasicPrecisionCircuitBuiiderMenu extends AbstractContainerMenu {
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
     private static final int TE_INVENTORY_SLOT_COUNT = 12;
-    public final BasicPrecisionCircuitBuiiderBlockEntity blockEntity;
+    public final BasicPrecisionCircuitBuilderBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
-    public BasicPrecisionCircuitBuiiderMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
+    public BasicPrecisionCircuitBuilderMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
         this(pContainerId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
     }
 
-    public BasicPrecisionCircuitBuiiderMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
+    public BasicPrecisionCircuitBuilderMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
         super(DCMenuTypes.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_MENU.get(), pContainerId);
-        blockEntity = ((BasicPrecisionCircuitBuiiderBlockEntity) entity);
+        blockEntity = ((BasicPrecisionCircuitBuilderBlockEntity) entity);
         this.level = inv.player.level;
         this.data = data;
 
@@ -58,8 +58,8 @@ public class BasicPrecisionCircuitBuiiderMenu extends AbstractContainerMenu {
     public int getProgressPercent() {
 //        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
 //        int getCounter = this.data.get(0);
-//        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
-//                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
+//        Optional<BasicPrecisionCircuitBuilderRecipe> match = level.getRecipeManager()
+//                .getRecipeFor(BasicPrecisionCircuitBuilderRecipe.Type.INSTANCE, inventory, level);
 //        if (match.isPresent()) {
 //            return (int) (match.get().getRequiredTime() * 20);
 //        }
@@ -76,7 +76,7 @@ public class BasicPrecisionCircuitBuiiderMenu extends AbstractContainerMenu {
         return data.get(0) > 0;
     }
 
-    public BasicPrecisionCircuitBuiiderBlockEntity getBlockEntity() {
+    public BasicPrecisionCircuitBuilderBlockEntity getBlockEntity() {
         return this.blockEntity;
     }
 

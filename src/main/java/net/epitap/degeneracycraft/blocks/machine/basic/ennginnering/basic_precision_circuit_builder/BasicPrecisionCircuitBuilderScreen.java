@@ -16,14 +16,14 @@ import net.minecraft.world.entity.player.Inventory;
 import java.util.List;
 import java.util.Optional;
 
-public class BasicPrecisionCircuitBuiiderScreen extends AbstractContainerScreen<BasicPrecisionCircuitBuiiderMenu> {
+public class BasicPrecisionCircuitBuilderScreen extends AbstractContainerScreen<BasicPrecisionCircuitBuilderMenu> {
 
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_gui.png");
     private EnergyInfoArea energyInfoArea;
 
 
-    public BasicPrecisionCircuitBuiiderScreen(BasicPrecisionCircuitBuiiderMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public BasicPrecisionCircuitBuilderScreen(BasicPrecisionCircuitBuilderMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
         this.imageWidth = 176;
         this.imageHeight = 166;
@@ -60,7 +60,7 @@ public class BasicPrecisionCircuitBuiiderScreen extends AbstractContainerScreen<
                 80, 11, 0xFFFFFF);
 
 
-        if (BasicPrecisionCircuitBuiiderBlockEntity.isHaltDevice(menu.blockEntity)) {
+        if (BasicPrecisionCircuitBuilderBlockEntity.isHaltDevice(menu.blockEntity)) {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".halt"),
                     133, 66, 0xFFFFFF);
         }

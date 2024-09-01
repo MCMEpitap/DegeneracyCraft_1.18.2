@@ -10,18 +10,18 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class BasicPrecisionCircuitBuiiderStructure {
-    public static boolean isFormed(BasicPrecisionCircuitBuiiderBlockEntity blockEntity) {
+public class BasicPrecisionCircuitBuilderStructure {
+    public static boolean isFormed(BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
         return blockEntity.isFormed = blockEntity.formed0 && blockEntity.formed1 && blockEntity.formed2;
     }
 
-    public static boolean isPowered0(BasicPrecisionCircuitBuiiderBlockEntity blockEntity) {
+    public static boolean isPowered0(BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
         return blockEntity.isPowered0 = blockEntity.powered0_1 && blockEntity.isFormed;
     }
 
 
-    public static boolean isFormed0(Level level, BlockPos pos, BlockState state, BasicPrecisionCircuitBuiiderBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPrecisionCircuitBuiiderBlock.FACING);
+    public static boolean isFormed0(Level level, BlockPos pos, BlockState state, BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicPrecisionCircuitBuilderBlock.FACING);
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
@@ -49,8 +49,8 @@ public class BasicPrecisionCircuitBuiiderStructure {
         return blockEntity.formed0 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6 && pos7 && pos8;
     }
 
-    public static boolean isFormed1(Level level, BlockPos pos, BlockState state, BasicPrecisionCircuitBuiiderBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPrecisionCircuitBuiiderBlock.FACING);
+    public static boolean isFormed1(Level level, BlockPos pos, BlockState state, BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicPrecisionCircuitBuilderBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -80,8 +80,8 @@ public class BasicPrecisionCircuitBuiiderStructure {
         return blockEntity.formed1 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6;
     }
 
-    public static boolean isFormed2(Level level, BlockPos pos, BlockState state, BasicPrecisionCircuitBuiiderBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPrecisionCircuitBuiiderBlock.FACING);
+    public static boolean isFormed2(Level level, BlockPos pos, BlockState state, BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicPrecisionCircuitBuilderBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -109,8 +109,8 @@ public class BasicPrecisionCircuitBuiiderStructure {
         return blockEntity.formed2 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6 && pos7 && pos8;
     }
 
-    public static boolean powered0_1(Level level, BlockPos pos, BlockState state, BasicPrecisionCircuitBuiiderBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPrecisionCircuitBuiiderBlock.FACING);
+    public static boolean powered0_1(Level level, BlockPos pos, BlockState state, BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicPrecisionCircuitBuilderBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -122,8 +122,8 @@ public class BasicPrecisionCircuitBuiiderStructure {
     }
 
 
-    public static void hologram(Level level, BlockPos pos, BlockState state, BasicPrecisionCircuitBuiiderBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPrecisionCircuitBuiiderBlock.FACING);
+    public static void hologram(Level level, BlockPos pos, BlockState state, BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicPrecisionCircuitBuilderBlock.FACING);
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;

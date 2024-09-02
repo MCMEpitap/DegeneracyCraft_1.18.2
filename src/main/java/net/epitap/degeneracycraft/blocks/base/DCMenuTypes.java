@@ -41,8 +41,8 @@ public class DCMenuTypes {
             registerMenuType(BasicStrengthMultiblockEnergyStorageMenu::new, "basic_strength_multiblock_energy_storage_menu");
     public static final RegistryObject<MenuType<BasicStrengthMultiblockMaterialStorageMenu>> BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_MENU =
             registerMenuType(BasicStrengthMultiblockMaterialStorageMenu::new, "basic_strength_multiblock_material_storage_menu");
-    public static final RegistryObject<MenuType<BasicPrecisionTelescopeMenu>> BASIC_BASIC_PRECISION_TELESCOPE_MENU =
-            registerMenuType(BasicPrecisionTelescopeMenu::new, "basic_technology_machine_manufacturer_menu");
+    public static final RegistryObject<MenuType<BasicPrecisionTelescopeMenu>> BASIC_PRECISION_TELESCOPE_MENU =
+            registerMenuType(BasicPrecisionTelescopeMenu::new, "basic_precision_telescope_menu");
     public static final RegistryObject<MenuType<BasicPowerThermalGeneratorMenu>> BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_MENU =
             registerMenuType(BasicPowerThermalGeneratorMenu::new, "basic_power_composite_structure_type_thermal_generator_menu");
     public static final RegistryObject<MenuType<BasicTechnologyUniversalAssemblerMenu>> BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_MENU =

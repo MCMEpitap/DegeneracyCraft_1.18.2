@@ -13,7 +13,7 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class BasicStrengthMultiblockMaterialStorageScreen extends AbstractContainerScreen<BasicStrengthMultiblockMaterialStorageMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_gui.png");
 
 
     public BasicStrengthMultiblockMaterialStorageScreen(BasicStrengthMultiblockMaterialStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {

@@ -32,7 +32,7 @@ public class BasicPrecisionTelescopeMenu extends AbstractContainerMenu {
     }
 
     public BasicPrecisionTelescopeMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_BASIC_PRECISION_TELESCOPE_MENU.get(), pContainerId);
+        super(DCMenuTypes.BASIC_PRECISION_TELESCOPE_MENU.get(), pContainerId);
         blockEntity = ((BasicPrecisionTelescopeBlockEntity) entity);
         this.level = inv.player.level;
         this.data = data;

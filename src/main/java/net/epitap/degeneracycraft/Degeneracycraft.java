@@ -7,6 +7,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_machine_element_processor.BasicMachineElementProcessorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_thermal_generator.BasicPowerThermalGeneratorScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_precision_circuit_builder.BasicPrecisionCircuitBuilderScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerScreen;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineScreen;
@@ -102,11 +103,12 @@ public class Degeneracycraft {
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_BLOCK_MENU.get(), BasicStrengthMultiblockEnergyStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_MENU.get(), BasicStrengthMultiblockMaterialStorageScreen::new);
 
-        MenuScreens.register(DCMenuTypes.BASIC_BASIC_PRECISION_TELESCOPE_MENU.get(), BasicPrecisionTelescopeScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_PRECISION_TELESCOPE_MENU.get(), BasicPrecisionTelescopeScreen::new);
 
         MenuScreens.register(DCMenuTypes.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_MENU.get(), BasicPowerThermalGeneratorScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_MENU.get(), BasicTechnologyMachineManufacturerScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_MENU.get(), BasicTechnologyUniversalAssemblerScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_PRECISION_CIRCUIT_BUILDER_MENU.get(), BasicPrecisionCircuitBuilderScreen::new);
 
         MenuScreens.register(DCMenuTypes.BASIC_MACHINE_ELEMENT_PROCESSOR_MACHINE_MENU.get(), BasicMachineElementProcessorScreen::new);
 

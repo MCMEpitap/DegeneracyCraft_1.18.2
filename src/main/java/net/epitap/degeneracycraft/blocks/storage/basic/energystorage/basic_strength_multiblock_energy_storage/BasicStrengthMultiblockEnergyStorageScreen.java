@@ -17,7 +17,7 @@ import java.util.Optional;
 
 public class BasicStrengthMultiblockEnergyStorageScreen extends AbstractContainerScreen<BasicStrengthMultiblockEnergyStorageMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui//basic/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/basic_strength_multiblock_energy_storage/basic_strength_multiblock_energy_storage_gui.png");
     private MultiblockEnergyStorageInfoArea energyInfoArea;
 
     public BasicStrengthMultiblockEnergyStorageScreen(BasicStrengthMultiblockEnergyStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {

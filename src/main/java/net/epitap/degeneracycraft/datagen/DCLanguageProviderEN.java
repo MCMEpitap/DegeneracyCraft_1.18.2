@@ -709,6 +709,18 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_BLOCK.get(), "Basic Technology Universal Assembler Port");
         add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_HOLO_BLOCK.get(), "Basic Technology Universal Assembler Port (Hologram)");
 
+        add(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BLOCK.get(), "Basic Precision Circuit Builder");
+        add("tooltip." + "degeneracycraft." + "basic_precision_circuit_builder_block",
+                "Basic Circuit Builder. Machines to fabricate circuits and their components.");
+        add(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_BLOCK.get(), "Basic Purity Circuit Clean Room");
+        add("tooltip." + "degeneracycraft.ability" + "basic_precision_circuit_builder_block",
+                "For Basic Precision Circuit Builder");
+        add(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_HOLO_BLOCK.get(), "Basic Precision Circuit Builder (Hologram)");
+        add(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BUS_BLOCK.get(), "Basic Precision Circuit Builder Bus");
+        add(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.get(), "Basic Precision Circuit Builder Bus (Hologram)");
+        add(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_BLOCK.get(), "Basic Precision Circuit Builder Port");
+        add(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get(), "Basic Precision Circuit Builder Port (Hologram)");
+
 
         add(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(), "Basic Machine Element Processor");
         add(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(), "Basic Machine Element Processor Port");

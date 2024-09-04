@@ -63,6 +63,17 @@ public class BasicTechnologyUniversalAssemblerScreen extends AbstractContainerSc
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".halt"),
                     133, 66, 0xFFFFFF);
         }
+
+        if (menu.blockEntity.isPowered0) {
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, "Lv.1",
+                    80, 47, 0xFF0000);
+        } else if (menu.blockEntity.isFormed) {
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, "Lv.0",
+                    80, 47, 0xFFFFFF);
+        } else {
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, "OFF",
+                    80, 47, 0xFF0000);
+        }
     }
 
     @Override

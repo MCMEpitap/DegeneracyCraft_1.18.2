@@ -32,6 +32,8 @@ public class DCRecipeTypes {
 
     public static final RegistryObject<RecipeSerializer<BasicTechnologyUniversalAssemblerRecipe>> BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_SERIALIZER =
             SERIALIZERS.register("basic_technology_universal_assembler_recipe", () -> BasicTechnologyUniversalAssemblerRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<BasicTechnologyUniversalAssemblerRecipe>> BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_SERIALIZER =
+            SERIALIZERS.register("basic_technology_universal_assembler_recipe", () -> BasicTechnologyUniversalAssemblerRecipe.Serializer.INSTANCE);
 
     public static final RegistryObject<RecipeSerializer<BasicMachineElementProcessorRecipe>> BASIC_MACHINE_ELEMENT_PROCESSOR_SERIALIZER =
             SERIALIZERS.register("basic_machine_element_processor_recipe", () -> BasicMachineElementProcessorRecipe.Serializer.INSTANCE);

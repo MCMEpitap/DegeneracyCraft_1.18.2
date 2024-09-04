@@ -84,8 +84,8 @@ public class BasicPowerThermalGeneratorScreen extends AbstractContainerScreen<Ba
                     125, 45, 0xffffff);
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_machine" + ".modifier_2"),
                     80, 11, 0xffffff);
-            drawCenteredString(pPoseStack, Minecraft.getInstance().font, "ON",
-                    80, 47, 0x00FF00);
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, "Lv.0",
+                    80, 47, 0xFFFFFF);
         } else {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT + " FE/t"),
                     125, 45, 0xffffff);

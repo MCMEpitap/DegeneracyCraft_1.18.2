@@ -705,6 +705,18 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_BLOCK.get(), "基本技術万能組立機ポート");
         add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_HOLO_BLOCK.get(), "基本技術万能組立機ポート (ホログラム)");
 
+        add(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BLOCK.get(), "基本精度回路構築機");
+        add("tooltip." + "degeneracycraft." + "basic_precision_circuit_builder_block",
+                "基本的な回路構築機. 回路やその部品を製作する機械.");
+        add(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_BLOCK.get(), "基本清浄度回路防塵室");
+        add("tooltip." + "degeneracycraft.ability" + "basic_precision_circuit_builder_block",
+                "基本操作組立加工室用");
+        add(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_HOLO_BLOCK.get(), "基本清浄度回路防塵室 (ホログラム)");
+        add(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BUS_BLOCK.get(), "基本精度回路構築機バス");
+        add(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.get(), "基本精度回路構築機バス (ホログラム)");
+        add(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_BLOCK.get(), "基本精度回路構築機ポート");
+        add(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get(), "基本精度回路構築機ポート (ホログラム)");
+
 
         add(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(), "基本機械要素加工機");
         add(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(), "基本機械要素加工機ポート");

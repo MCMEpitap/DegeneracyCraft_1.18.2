@@ -148,7 +148,7 @@ public class BasicPrecisionCircuitBuilderRecipe implements Recipe<SimpleContaine
         }
 
         public static final Type INSTANCE = new Type();
-        public static final String ID = "basic_technology_machine_manufacturer_recipe";
+        public static final String ID = "basic_precision_circuit_builder_recipe";
     }
 
 
@@ -156,7 +156,7 @@ public class BasicPrecisionCircuitBuilderRecipe implements Recipe<SimpleContaine
         public static final Serializer INSTANCE = new Serializer();
 
         public static final ResourceLocation ID =
-                new ResourceLocation(Degeneracycraft.MOD_ID, "basic_technology_machine_manufacturer_recipe");
+                new ResourceLocation(Degeneracycraft.MOD_ID, "basic_precision_circuit_builder_recipe");
 
         public BasicPrecisionCircuitBuilderRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
 

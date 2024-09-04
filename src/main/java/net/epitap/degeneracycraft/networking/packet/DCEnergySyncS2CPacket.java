@@ -4,6 +4,8 @@ import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_machin
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_machine_element_processor.BasicMachineElementProcessorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_thermal_generator.BasicPowerThermalGeneratorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_thermal_generator.BasicPowerThermalGeneratorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_precision_circuit_builder.BasicPrecisionCircuitBuilderBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_precision_circuit_builder.BasicPrecisionCircuitBuilderMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerBlockEntity;
@@ -65,6 +67,13 @@ public class DCEnergySyncS2CPacket {
             if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicTechnologyUniversalAssemblerBlockEntity blockEntity) {
                 blockEntity.setEnergyLevel(energy);
                 if (Minecraft.getInstance().player.containerMenu instanceof BasicTechnologyUniversalAssemblerMenu menu &&
+                        menu.getBlockEntity().getBlockPos().equals(pos)) {
+                    blockEntity.setEnergyLevel(energy);
+                }
+            }
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
+                blockEntity.setEnergyLevel(energy);
+                if (Minecraft.getInstance().player.containerMenu instanceof BasicPrecisionCircuitBuilderMenu menu &&
                         menu.getBlockEntity().getBlockPos().equals(pos)) {
                     blockEntity.setEnergyLevel(energy);
                 }

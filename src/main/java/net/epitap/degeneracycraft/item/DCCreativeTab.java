@@ -9,7 +9,7 @@ public class DCCreativeTab {
     public static final CreativeModeTab DEGENERACYCRAFT_TAB = new CreativeModeTab("degeneracycraft") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(DCItems.GRAVITATION_INGOT.get());
+            return new ItemStack(DCAdvancementIcon.DEGENERACYCRAFT_ICON.get());
         }
     };
     public static final CreativeModeTab DEGENERACYCRAFT_MACHINE_ELEMENT_TAB = new CreativeModeTab("degeneracycraft_machine_elements") {
@@ -35,7 +35,7 @@ public class DCCreativeTab {
     public static final CreativeModeTab DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB = new CreativeModeTab("degeneracycraft_multiplied_ore_material") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(DCItems.BASIC_PRECISION_CAM_INSCRIBED_CIRCUIT.get());
+            return new ItemStack(DCItems.GRAPHITE_DUST.get());
         }
     };
     public static final CreativeModeTab DEGENERACYCRAFT_INGOT_TAB = new CreativeModeTab("degeneracycraft_ingot") {

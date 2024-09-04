@@ -107,7 +107,7 @@ public class BasicPrecisionCircuitBuilderBlockEntity extends BlockEntity impleme
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (out, stack) -> false)));
 
     public BasicPrecisionCircuitBuilderBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+        super(DCBlockEntities.BASIC_PRECISION_CIRCUIT_BUILDER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {

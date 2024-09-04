@@ -741,12 +741,13 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("jei." + "degeneracycraft_basic_technology_universal_assembler", "基本技術万能加工機 レシピ");
         add("jei." + "degeneracycraft_basic_precision_circuit_builder", "基本精度回路構築機 レシピ");
 
-
-        add("itemGroup." + "degeneracycraft_machine_components", "Degeneracy Craft 機械要素");
+        add("itemGroup." + "degeneracycraft_material", "Degeneracy Craft 材料");
+        add("itemGroup." + "degeneracycraft_machine_elements", "Degeneracy Craft 機械要素");
         add("itemGroup." + "degeneracycraft_machine_parts", "Degeneracy Craft 機械部品");
 
         add("itemGroup." + "degeneracycraft_machine", "Degeneracy Craft 機械");
         add("itemGroup." + "degeneracycraft_multiplied_ore_material", "Degeneracy Craft 鉱石倍化素材");
+        add("itemGroup." + "degeneracycraft_ingot", "Degeneracy Craft インゴット");
         add("itemGroup." + "degeneracycraft_ore", "Degeneracy Craft 鉱石");
 
         add("screen." + "degeneracycraft" + ".phase0", "Phase 0");

@@ -2,6 +2,7 @@ package net.epitap.degeneracycraft.integration.jei;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_machine_element_processor.BasicMachineElementProcessorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_precision_circuit_builder.BasicPrecisionCircuitBuilderRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipe;
@@ -32,8 +33,8 @@ public class DCRecipeTypes {
 
     public static final RegistryObject<RecipeSerializer<BasicTechnologyUniversalAssemblerRecipe>> BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_SERIALIZER =
             SERIALIZERS.register("basic_technology_universal_assembler_recipe", () -> BasicTechnologyUniversalAssemblerRecipe.Serializer.INSTANCE);
-    public static final RegistryObject<RecipeSerializer<BasicTechnologyUniversalAssemblerRecipe>> BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_SERIALIZER =
-            SERIALIZERS.register("basic_technology_universal_assembler_recipe", () -> BasicTechnologyUniversalAssemblerRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<BasicPrecisionCircuitBuilderRecipe>> BASIC_PRECISION_CIRCUIT_BUILDER_SERIALIZER =
+            SERIALIZERS.register("basic_precision_circuit_builder_recipe", () -> BasicPrecisionCircuitBuilderRecipe.Serializer.INSTANCE);
 
     public static final RegistryObject<RecipeSerializer<BasicMachineElementProcessorRecipe>> BASIC_MACHINE_ELEMENT_PROCESSOR_SERIALIZER =
             SERIALIZERS.register("basic_machine_element_processor_recipe", () -> BasicMachineElementProcessorRecipe.Serializer.INSTANCE);

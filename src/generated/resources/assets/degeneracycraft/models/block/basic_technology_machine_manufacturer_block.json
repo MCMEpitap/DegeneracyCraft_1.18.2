@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down": "degeneracycraft:block/machine/basic/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_down",
-    "up": "degeneracycraft:block/machine/basic/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_up",
-    "north": "degeneracycraft:block/machine/basic/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_front",
-    "south": "degeneracycraft:block/machine/basic/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_side",
-    "east": "degeneracycraft:block/machine/basic/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_side",
-    "west": "degeneracycraft:block/machine/basic/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_side"
+    "down": "degeneracycraft:block/machine/basic/engineering/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_down",
+    "up": "degeneracycraft:block/machine/basic/engineering/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_up",
+    "north": "degeneracycraft:block/machine/basic/engineering/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_front",
+    "south": "degeneracycraft:block/machine/basic/engineering/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_side",
+    "east": "degeneracycraft:block/machine/basic/engineering/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_side",
+    "west": "degeneracycraft:block/machine/basic/engineering/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_side"
   }
 }

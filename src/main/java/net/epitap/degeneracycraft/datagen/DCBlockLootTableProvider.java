@@ -42,6 +42,16 @@ public class DCBlockLootTableProvider extends BlockLoot {
         this.add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get(), block -> createSingleItemTable(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get()));
         this.add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get()));
 
+
+        this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PRECISION_TELESCOPE_BLOCK.get()));
+
+
+        this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_BUS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PRECISION_TELESCOPE_BUS_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_BUS_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PRECISION_TELESCOPE_PORT_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_PORT_HOLO_BLOCK.get(), block -> noDrop());
+
+
         this.add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get()));
         this.add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get()));
         this.add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), block -> noDrop());

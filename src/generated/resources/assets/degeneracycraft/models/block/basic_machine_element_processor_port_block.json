@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down": "degeneracycraft:block/machine/basic/basic_machine_element_processor_port/basic_machine_element_processor_port",
-    "up": "degeneracycraft:block/machine/basic/basic_machine_element_processor_port/basic_machine_element_processor_port",
-    "north": "degeneracycraft:block/machine/basic/basic_machine_element_processor_port/basic_machine_element_processor_port",
-    "south": "degeneracycraft:block/machine/basic/basic_machine_element_processor_port/basic_machine_element_processor_port",
-    "east": "degeneracycraft:block/machine/basic/basic_machine_element_processor_port/basic_machine_element_processor_port",
-    "west": "degeneracycraft:block/machine/basic/basic_machine_element_processor_port/basic_machine_element_processor_port"
+    "down": "degeneracycraft:block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port",
+    "up": "degeneracycraft:block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port",
+    "north": "degeneracycraft:block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port",
+    "south": "degeneracycraft:block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port",
+    "east": "degeneracycraft:block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port",
+    "west": "degeneracycraft:block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"
   }
 }

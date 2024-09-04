@@ -514,8 +514,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
     private void registerBasicTechnologyUniversalAssembler() {
         BlockModelBuilder model = models().getBuilder("block/basic_technology_universal_assembler_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/basic_technology_universal_assembler_up"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/basic_technology_universal_assembler_down"));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/basic_technology_universal_assembler_down"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/basic_technology_universal_assembler_up"));
         model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/basic_technology_universal_assembler_front"));
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/basic_technology_universal_assembler_side"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/basic_technology_universal_assembler_side"));
@@ -605,8 +605,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
     private void registerBasicPrecisionCircuitBuilder() {
         BlockModelBuilder model = models().getBuilder("block/basic_precision_circuit_builder_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_up"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_down"));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_down"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_up"));
         model.texture("north", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_front"));
         model.texture("south", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_side"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_side"));

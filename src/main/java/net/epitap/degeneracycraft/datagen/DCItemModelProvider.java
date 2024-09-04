@@ -733,6 +733,20 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_universal_assembler_port_holo_block"));
 
+        withExistingParent(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BLOCK.getId().getPath(),
+                modLoc("block/basic_precision_circuit_builder_block"));
+        withExistingParent(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_BLOCK.getId().getPath(),
+                modLoc("block/basic_purity_circuit_clean_room_block"));
+        withExistingParent(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_purity_circuit_clean_room_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_precision_circuit_builder_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_precision_circuit_builder_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_precision_circuit_builder_port_block"));
+        withExistingParent(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_precision_circuit_builder_port_holo_block"));
 
         withExistingParent(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.getId().getPath(),
                 modLoc("block/basic_machine_element_processor_block"));

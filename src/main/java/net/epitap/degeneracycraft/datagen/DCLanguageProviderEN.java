@@ -741,6 +741,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("jei." + "degeneracycraft_basic_technology_machine_manufacturer", "Basic Technology Machine Manufacturer Recipe");
         add("jei." + "degeneracycraft_basic_machine_element_processor", "Basic Machine Part Processor Recipe");
         add("jei." + "degeneracycraft_basic_technology_universal_assembler", "Basic Technology Universal Assembler Recipe");
+        add("jei." + "degeneracycraft_basic_precision_circuit_builder", "Basic Precision Circuit Builder Recipe");
 
         add("itemGroup." + "degeneracycraft_machine_components", "DegeneracyCraft Components");
         add("itemGroup." + "degeneracycraft_machine_parts", "DegeneracyCraft Parts");

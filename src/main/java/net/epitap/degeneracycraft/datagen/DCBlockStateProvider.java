@@ -69,6 +69,13 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicTechnologyUniversalAssemblerPort();
         registerBasicTechnologyUniversalAssemblerPortHolo();
 
+        registerBasicPrecisionCircuitBuilder();
+        registerBasicPurityCircuitCleanRoom();
+        registerBasicPurityCircuitCleanRoomHolo();
+        registerBasicPrecisionCircuitBuilderBus();
+        registerBasicPrecisionCircuitBuilderBusHolo();
+        registerBasicPrecisionCircuitBuilderPort();
+        registerBasicPrecisionCircuitBuilderPortHolo();
 
         registerBasicMachineElementProcessor();
         registerBasicMachineElementProcessorPort();

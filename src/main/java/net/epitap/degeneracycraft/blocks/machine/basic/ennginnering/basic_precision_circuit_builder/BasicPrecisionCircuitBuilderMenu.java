@@ -107,7 +107,7 @@ public class BasicPrecisionCircuitBuilderMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player pPlayer) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                pPlayer, DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get());
+                pPlayer, DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

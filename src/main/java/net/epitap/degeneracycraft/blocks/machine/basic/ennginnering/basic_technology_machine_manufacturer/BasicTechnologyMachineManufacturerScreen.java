@@ -19,7 +19,7 @@ import java.util.Optional;
 public class BasicTechnologyMachineManufacturerScreen extends AbstractContainerScreen<BasicTechnologyMachineManufacturerMenu> {
 
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_gui.png");
     private EnergyInfoArea energyInfoArea;
 
 

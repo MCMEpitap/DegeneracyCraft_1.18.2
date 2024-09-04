@@ -21,14 +21,14 @@ import net.minecraft.world.item.ItemStack;
 import javax.annotation.Nonnull;
 
 
-public class BasicPrecisionCircuitBuilderCategory implements IRecipeCategory<BasicPrecisionCircuitBuilderRecipe> {
+public class BasicPrecisionCircuitBuilderRecipeCategory implements IRecipeCategory<BasicPrecisionCircuitBuilderRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_precision_circuit_builder_recipe");
     public final static ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/basic_precision_circuit_builder/basic_precision_circuit_builder_uid.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_uid.png");
     private final IDrawable background;
     private final IDrawable icon;
 
-    public BasicPrecisionCircuitBuilderCategory(IGuiHelper helper) {
+    public BasicPrecisionCircuitBuilderRecipeCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 154);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BLOCK.get()));
     }

@@ -89,7 +89,7 @@ public class DCBlockEntities {
                     BlockEntityType.Builder.of(BasicTechnologyUniversalAssemblerPortBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicPrecisionCircuitBuilderBlockEntity>> BASIC_PRECISION_CIRCUIT_BUILDER_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_precision_circuit_builder_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicPrecisionCircuitBuilderBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get()).build(null));
+                    BlockEntityType.Builder.of(BasicPrecisionCircuitBuilderBlockEntity::new, DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicTechnologyUniversalAssemblerBusBlockEntity>> BASIC_PRECISION_CIRCUIT_BUILDER_BUS_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_precision_circuit_builder_bus_block_entity", () ->
                     BlockEntityType.Builder.of(BasicTechnologyUniversalAssemblerBusBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_BLOCK.get()).build(null));

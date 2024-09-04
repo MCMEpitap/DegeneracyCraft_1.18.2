@@ -24,7 +24,7 @@ import javax.annotation.Nonnull;
 public class BasicTechnologyUniversalAssemblerRecipeCategory implements IRecipeCategory<BasicTechnologyUniversalAssemblerRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_technology_universal_assembler_recipe");
     public final static ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/basic_technology_universal_assembler/basic_technology_universal_assembler_uid.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_technology_universal_assembler/basic_technology_universal_assembler_uid.png");
     private final IDrawable background;
     private final IDrawable icon;
 

@@ -47,8 +47,10 @@ public class BasicPrecisionCircuitBuilderBlock extends BlockBase {
                                  Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!level.isClientSide()) {
             BlockEntity entity = level.getBlockEntity(pPos);
+
             if (entity instanceof BasicPrecisionCircuitBuilderBlockEntity) {
                 NetworkHooks.openGui(((ServerPlayer) pPlayer), (BasicPrecisionCircuitBuilderBlockEntity) entity, pPos);
+
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
@@ -56,6 +58,7 @@ public class BasicPrecisionCircuitBuilderBlock extends BlockBase {
 
         return InteractionResult.sidedSuccess(level.isClientSide());
     }
+
 
     @Nullable
     @Override

@@ -24,7 +24,7 @@ import javax.annotation.Nonnull;
 public class BasicTechnologyMachineManufacturerRecipeCategory implements IRecipeCategory<BasicTechnologyMachineManufacturerRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_technology_machine_manufacturer_recipe");
     public final static ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_uid.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_uid.png");
     private final IDrawable background;
     private final IDrawable icon;
 

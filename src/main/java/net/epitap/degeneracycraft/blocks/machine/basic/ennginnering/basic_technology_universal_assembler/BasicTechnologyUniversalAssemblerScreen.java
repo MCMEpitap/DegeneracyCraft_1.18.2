@@ -13,6 +13,7 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
+import java.util.List;
 import java.util.Optional;
 
 public class BasicTechnologyUniversalAssemblerScreen extends AbstractContainerScreen<BasicTechnologyUniversalAssemblerMenu> {
@@ -74,6 +75,31 @@ public class BasicTechnologyUniversalAssemblerScreen extends AbstractContainerSc
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, "OFF",
                     80, 47, 0xFF0000);
         }
+
+        renderProcessModifierTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+        renderEnergyAreaTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+        renderProcessModifierTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+        renderWorkTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+        renderFormedTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+        renderHaltTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+    }
+
+    private void renderProcessModifierTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
+        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 66, 9, 28, 10))
+            renderTooltip(pPoseStack, this.ProcessModifierTooltips(),
+                    Optional.empty(), pMouseX - x, pMouseY - y);
+    }
+
+    public List<Component> ProcessModifierTooltips() {
+        if (menu.blockEntity.isPowered0) {
+            return List.of(new TranslatableComponent("screen." + "degeneracycraft_machine" + ".process_modifier_3"),
+                    new TranslatableComponent("screen." + "degeneracycraft_machine" + ".energy_usage_modifier_2"));
+        } else if (menu.blockEntity.isFormed) {
+            return List.of(new TranslatableComponent("screen." + "degeneracycraft_machine" + ".process_modifier_2"),
+                    new TranslatableComponent("screen." + "degeneracycraft_machine" + ".energy_usage_modifier_1.5"));
+        }
+        return List.of(new TranslatableComponent("screen." + "degeneracycraft_machine" + ".process_modifier_1"),
+                new TranslatableComponent("screen." + "degeneracycraft_machine" + ".energy_usage_modifier_1"));
     }
 
     @Override
@@ -92,6 +118,46 @@ public class BasicTechnologyUniversalAssemblerScreen extends AbstractContainerSc
             renderTooltip(pPoseStack, energyInfoArea.getTooltips(),
                     Optional.empty(), pMouseX - x, pMouseY - y);
         }
+    }
+
+    private void renderWorkTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
+        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 66, 28, 28, 10))
+            renderTooltip(pPoseStack, this.WorkTooltips(),
+                    Optional.empty(), pMouseX - x, pMouseY - y);
+    }
+
+    public List<Component> WorkTooltips() {
+        if (menu.isCrafting()) {
+            return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".work"));
+        }
+        return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".stop"));
+    }
+
+    private void renderFormedTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
+        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 66, 45, 28, 10))
+            renderTooltip(pPoseStack, this.FormedTooltips(),
+                    Optional.empty(), pMouseX - x, pMouseY - y);
+    }
+
+    public List<Component> FormedTooltips() {
+        if (menu.blockEntity.isPowered0) {
+            return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".structure" + ".lv1"));
+        }
+        if (menu.blockEntity.isFormed) {
+            return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".structure" + ".lv0"));
+        }
+        return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".structure" + ".off"));
+    }
+
+    private void renderHaltTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
+        if (BasicTechnologyUniversalAssemblerBlockEntity.isHaltDevice(menu.blockEntity)
+                && isMouseAboveArea(pMouseX, pMouseY, x, y, 117, 64, 40, 10))
+            renderTooltip(pPoseStack, this.HaltTooltips(),
+                    Optional.empty(), pMouseX - x, pMouseY - y);
+    }
+
+    public List<Component> HaltTooltips() {
+        return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".halt"));
     }
 
     private boolean isMouseAboveArea(int pMouseX, int pMouseY, int x, int y, int offsetX, int offsetY, int width, int height) {

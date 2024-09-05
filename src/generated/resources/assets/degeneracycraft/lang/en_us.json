@@ -627,11 +627,12 @@
   "tooltip.degeneracycraft.science.faux_magic_engineering": "Science:Faux Magic Engineering",
   "tooltip.degeneracycraft.science.geoscience": "Science:Geoscience",
   "tooltip.degeneracycraft.sec.": " Sec",
-  "tooltip.degeneracycraft.stop": "Machine Stopping!",
+  "tooltip.degeneracycraft.stop": "Machine Stopping",
+  "tooltip.degeneracycraft.structure.lv0": "Correct Multiblock Structure:Lv0 Detected",
+  "tooltip.degeneracycraft.structure.lv1": "Correct Multiblock Structure:Lv1 Detected",
   "tooltip.degeneracycraft.structure.off": "No Multiblock Structure",
-  "tooltip.degeneracycraft.structure.on": "Correct Multiblock Structure Detected!",
   "tooltip.degeneracycraft.tooltipitem": "Show Material Detail by shift key",
-  "tooltip.degeneracycraft.work": "Machine Working!",
+  "tooltip.degeneracycraft.work": "Machine Working",
   "tooltip.degeneracycraft.wrench": "Export \u2192 Import \u2192 DisConnection \u2192 Export... Pipe Mode change by shift light click",
   "tooltip.degeneracycraft.wrenchitem": "Show Wrench Detail by shift key"
 }

@@ -831,10 +831,12 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "requiredtime.", "Required time:");
         add("tooltip." + "degeneracycraft." + "sec.", " Sec");
 
-        add("tooltip." + "degeneracycraft" + ".structure" + ".on", "Correct Multiblock Structure Detected!");
+
         add("tooltip." + "degeneracycraft" + ".structure" + ".off", "No Multiblock Structure");
-        add("tooltip." + "degeneracycraft" + ".work", "Machine Working!");
-        add("tooltip." + "degeneracycraft" + ".stop", "Machine Stopping!");
+        add("tooltip." + "degeneracycraft" + ".structure" + ".lv0", "Correct Multiblock Structure:Lv0 Detected");
+        add("tooltip." + "degeneracycraft" + ".structure" + ".lv1", "Correct Multiblock Structure:Lv1 Detected");
+        add("tooltip." + "degeneracycraft" + ".work", "Machine Working");
+        add("tooltip." + "degeneracycraft" + ".stop", "Machine Stopping");
         add("tooltip." + "degeneracycraft" + ".power_modifier_1", "Power Modifier ×1.00");
         add("tooltip." + "degeneracycraft" + ".power_modifier_2", "Power Modifier ×2.00");
         add("tooltip." + "degeneracycraft" + ".power_modifier_3", "Power Modifier ×3.00");

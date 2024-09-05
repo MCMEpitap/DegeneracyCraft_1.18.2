@@ -123,7 +123,7 @@ public class BasicPowerThermalGeneratorScreen extends AbstractContainerScreen<Ba
     }
 
     private void renderEnergyAreaTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
-        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 155, 10, 9, 64)) {
+        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 155, 10, 9, 65)) {
             renderTooltip(pPoseStack, energyInfoArea.getTooltips(),
                     Optional.empty(), pMouseX - x, pMouseY - y);
         }
@@ -174,8 +174,11 @@ public class BasicPowerThermalGeneratorScreen extends AbstractContainerScreen<Ba
     }
 
     public List<Component> FormedTooltips() {
+        if (menu.blockEntity.isPowered0) {
+            return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".structure" + ".lv1"));
+        }
         if (menu.blockEntity.isFormed) {
-            return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".structure" + ".on"));
+            return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".structure" + ".lv0"));
         }
         return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".structure" + ".off"));
     }

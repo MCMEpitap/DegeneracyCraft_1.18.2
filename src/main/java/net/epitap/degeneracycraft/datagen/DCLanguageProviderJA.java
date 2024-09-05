@@ -912,10 +912,12 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "msmultiplication." + "iron_spring" + ".phase0", "設備生産倍率:×1 ~ ×1");
 
 
-        add("tooltip." + "degeneracycraft" + ".structure" + ".on", "正確なマルチブロック構造を検知!");
         add("tooltip." + "degeneracycraft" + ".structure" + ".off", "マルチブロック構造非検知");
-        add("tooltip." + "degeneracycraft" + ".work", "機械稼働中!");
-        add("tooltip." + "degeneracycraft" + ".stop", "機械停止中!");
+        add("tooltip." + "degeneracycraft" + ".structure" + ".lv0", "正確なマルチブロック構造:Lv0 を検知");
+        add("tooltip." + "degeneracycraft" + ".structure" + ".lv1", "正確なマルチブロック構造:Lv1 を検知");
+
+        add("tooltip." + "degeneracycraft" + ".work", "機械稼働中");
+        add("tooltip." + "degeneracycraft" + ".stop", "機械停止中");
         add("tooltip." + "degeneracycraft" + ".power_modifier_1", "出力倍率 ×1.00");
         add("tooltip." + "degeneracycraft" + ".power_modifier_2", "出力倍率 ×2.00");
         add("tooltip." + "degeneracycraft" + ".power_modifier_3", "出力倍率 ×3.00");

@@ -4,7 +4,6 @@ import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_machine_element_processor.BasicMachineElementProcessorRecipe;
-import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipe;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -41,10 +40,10 @@ import java.util.Optional;
 public class BasicMachineElementProcessorBlockEntity extends BlockEntity implements MenuProvider {
     public float BM_PART_PROCESSOR_CAPACITY = 20000F;
     public float BM_PART_PROCESSOR_TRANSFER = 16F;
-    public float BT_U_ASSEMBLER_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
-    public float BT_U_ASSEMBLER_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
-    public float BT_U_ASSEMBLER_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
-    public float BT_U_ASSEMBLER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
+    public float BM_E_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
+    public float BM_E_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
+    public float BM_E_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
+    public float BM_E_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
     public final ContainerData data;
     public int counter;
     public int getProgressPercent = 0;
@@ -131,10 +130,9 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
             public int getCount() {
                 return 2;
             }
-        }
+        };
     }
 
-}
 
     @Nullable
     @Override
@@ -143,7 +141,7 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
     }
 
     public Component getDisplayName() {
-        return new TranslatableComponent("B-ME-Processor");
+        return new TranslatableComponent("");
     }
 
     @Override
@@ -237,18 +235,18 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<BasicTechnologyUniversalAssemblerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicMachineElementProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
             if (blockEntity.isPowered0) {
-                blockEntity.counter += blockEntity.BT_U_ASSEMBLER_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_U_ASSEMBLER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
+                blockEntity.counter += blockEntity.BM_E_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BM_E_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else if (blockEntity.isFormed) {
-                blockEntity.counter += blockEntity.BT_U_ASSEMBLER_MANUFACTURING_SPEED_MODIFIER_FORMED;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_U_ASSEMBLER_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
+                blockEntity.counter += blockEntity.BM_E_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_FORMED;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BM_E_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else {
                 blockEntity.counter++;

@@ -246,8 +246,14 @@ public class DCBlocks {
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
 
-    public static final RegistryObject<Block> BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK = registerBlock("basic_machine_element_processor_block", () ->
-            new BasicMachineElementProcessorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK = registerTooltipBasicMachineBlock("basic_machine_element_processor_block", () ->
+                    new BasicMachineElementProcessorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "Lv0:3×3×3",
+            "Lv1:3×3×3",
+            "Base:Speed ×1.00,Energy Usage ×1.00",
+            "Lv0:Speed ×2.00,Energy Usage ×1.50",
+            "Lv1:Speed ×3.00,Energy Usage ×2.00",
+            "basic_machine_element_processor_block", "engineering", "basic");
 
     public static final RegistryObject<Block> BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK = registerBlock("basic_machine_element_processor_port_block", () ->
             new BasicMachineElementProcessorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);

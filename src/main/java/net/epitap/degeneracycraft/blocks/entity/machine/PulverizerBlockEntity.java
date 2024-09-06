@@ -105,7 +105,7 @@ public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
     @Override
     protected void saveAdditional(@NotNull CompoundTag tag) {
         tag.put("inventory", itemHandler.serializeNBT());
-        tag.putInt("pulverization.progress", progress);
+        tag.putInt("pulverization.getProgressPercent", progress);
         super.saveAdditional(tag);
     }
 
@@ -113,7 +113,7 @@ public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
     public void load(CompoundTag nbt) {
         super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        progress = nbt.getInt("pulverization.progress");
+        progress = nbt.getInt("pulverization.getProgressPercent");
     }
 
     public void drops() {
@@ -196,7 +196,7 @@ public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
 //    private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 //
 //    protected final ContainerData data;
-//    private int progress = 0;
+//    private int getProgressPercent = 0;
 //    private int maxProgress = 72;
 //    int levels;
 //
@@ -206,7 +206,7 @@ public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
 //            public int get(int index) {
 //                switch (index) {
 //                    case 0:
-//                        return PulverizerBlockEntity.this.progress;
+//                        return PulverizerBlockEntity.this.getProgressPercent;
 //                    case 1:
 //                        return PulverizerBlockEntity.this.maxProgress;
 //                    default:
@@ -217,7 +217,7 @@ public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
 //            public void set(int index, int value) {
 //                switch (index) {
 //                    case 0:
-//                        PulverizerBlockEntity.this.progress = value;
+//                        PulverizerBlockEntity.this.getProgressPercent = value;
 //                        break;
 //                    case 1:
 //                        PulverizerBlockEntity.this.maxProgress = value;
@@ -267,7 +267,7 @@ public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
 //    @Override
 //    protected void saveAdditional(@NotNull CompoundTag tag) {
 //        tag.put("inventory", itemHandler.serializeNBT());
-//        tag.putInt("pulverization.progress", progress);
+//        tag.putInt("pulverization.getProgressPercent", getProgressPercent);
 //        super.saveAdditional(tag);
 //    }
 //
@@ -275,7 +275,7 @@ public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
 //    public void load(CompoundTag nbt) {
 //        super.load(nbt);
 //        itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-//        progress = nbt.getInt("pulverization.progress");
+//        getProgressPercent = nbt.getInt("pulverization.getProgressPercent");
 //    }
 //
 //    public void drops() {
@@ -288,7 +288,7 @@ public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
 //    }
 //
 //    private void resetProgress() {
-//        this.progress = 0;
+//        this.getProgressPercent = 0;
 //    }
 
 //    boolean formed0;
@@ -307,9 +307,9 @@ public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
 ////                || iron_bearingRecipe(blockEntity)
 //            )) {
 //                setChanged(level, pPos, pState);
-//                blockEntity.progress++;
+//                blockEntity.getProgressPercent++;
 //
-//                if (Iron_dustRecipe(blockEntity) && blockEntity.progress > pBlockEntity.maxProgress
+//                if (Iron_dustRecipe(blockEntity) && blockEntity.getProgressPercent > pBlockEntity.maxProgress
 //                        && ((pBlockEntity.itemHandler.getStackInSlot(2).getItem() == DCItems.IRON_DUST.get())
 //                        || (pBlockEntity.itemHandler.getStackInSlot(2).isEmpty()))) {
 //                    Iron_dustCraft(pBlockEntity);
@@ -352,9 +352,9 @@ public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
 
 //    public static void tick(Level level, BlockPos pPos, BlockState pState, PulverizerBlockEntity pBlockEntity) {
 //        if (hasRecipe(pBlockEntity)) {
-//            pBlockEntity.progress++;
+//            pBlockEntity.getProgressPercent++;
 //            setChanged(level, pPos, pState);
-//            if (pBlockEntity.progress > pBlockEntity.maxProgress) {
+//            if (pBlockEntity.getProgressPercent > pBlockEntity.maxProgress) {
 //                craftItem(pBlockEntity);
 //            }
 //        } else {

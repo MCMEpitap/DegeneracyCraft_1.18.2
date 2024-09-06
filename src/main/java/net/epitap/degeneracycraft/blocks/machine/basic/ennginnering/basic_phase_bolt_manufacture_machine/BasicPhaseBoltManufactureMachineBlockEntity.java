@@ -104,7 +104,7 @@ public class BasicPhaseBoltManufactureMachineBlockEntity extends BlockEntity imp
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         nbt.put("inventory", itemHandler.serializeNBT());
-        nbt.putInt("gem_infusing_station.progress", this.progress);
+        nbt.putInt("gem_infusing_station.getProgressPercent", this.progress);
 
         super.saveAdditional(nbt);
     }
@@ -113,7 +113,7 @@ public class BasicPhaseBoltManufactureMachineBlockEntity extends BlockEntity imp
     public void load(CompoundTag nbt) {
         super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        progress = nbt.getInt("gem_infusing_station.progress");
+        progress = nbt.getInt("gem_infusing_station.getProgressPercent");
     }
 
     public void drops() {
@@ -194,10 +194,10 @@ public class BasicPhaseBoltManufactureMachineBlockEntity extends BlockEntity imp
 //        }
 //
 //        if(hasRecipe(pEntity)) {
-//            pEntity.progress++;
+//            pEntity.getProgressPercent++;
 //            setChanged(level, pos, state);
 //
-//            if(pEntity.progress >= pEntity.maxProgress) {
+//            if(pEntity.getProgressPercent >= pEntity.maxProgress) {
 //                craftItem(pEntity);
 //            }
 //        } else {
@@ -209,7 +209,7 @@ public class BasicPhaseBoltManufactureMachineBlockEntity extends BlockEntity imp
 //
 //
 //    private void resetProgress() {
-//        this.progress = 0;
+//        this.getProgressPercent = 0;
 //    }
 //
 //    private static void craftItem(BasicPhaseBoltManufactureMachineBlockEntity pEntity) {

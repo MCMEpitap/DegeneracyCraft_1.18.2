@@ -102,7 +102,7 @@ public class InfinityPoweredAllInOneCompressorMachineBlockEntity extends BlockEn
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         nbt.put("inventory", itemHandler.serializeNBT());
-        nbt.putInt("infinity_powered_all_in_one_compressor_machine.progress", this.progress);
+        nbt.putInt("infinity_powered_all_in_one_compressor_machine.getProgressPercent", this.progress);
 
         super.saveAdditional(nbt);
     }
@@ -111,7 +111,7 @@ public class InfinityPoweredAllInOneCompressorMachineBlockEntity extends BlockEn
     public void load(CompoundTag nbt) {
         super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        progress = nbt.getInt("infinity_powered_all_in_one_compressor_machine.progress");
+        progress = nbt.getInt("infinity_powered_all_in_one_compressor_machine.getProgressPercent");
     }
 
     public void drops() {
@@ -132,7 +132,7 @@ public class InfinityPoweredAllInOneCompressorMachineBlockEntity extends BlockEn
             setChanged(level, pPos, pState);
             blockEntity.progress++;
 
-//            if (copper_boltRecipe(pBlockEntity) && pBlockEntity.progress > pBlockEntity.maxProgress
+//            if (copper_boltRecipe(pBlockEntity) && pBlockEntity.getProgressPercent > pBlockEntity.maxProgress
 //                    && ((pBlockEntity.itemHandler.getStackInSlot(2).getItem() == DCItems.COPPER_BOLT.get())
 //                    || (pBlockEntity.itemHandler.getStackInSlot(2).isEmpty()))) {
 //                boltCraft(pBlockEntity);
@@ -140,7 +140,7 @@ public class InfinityPoweredAllInOneCompressorMachineBlockEntity extends BlockEn
 //                        pBlockEntity.itemHandler.getStackInSlot(2).getCount() + 1));
 //            }
 //
-//            if (iron_boltRecipe(pBlockEntity) && pBlockEntity.progress > pBlockEntity.maxProgress
+//            if (iron_boltRecipe(pBlockEntity) && pBlockEntity.getProgressPercent > pBlockEntity.maxProgress
 //                    && ((pBlockEntity.itemHandler.getStackInSlot(2).getItem() == DCItems.IRON_BOLT.get())
 //                    || (pBlockEntity.itemHandler.getStackInSlot(2).isEmpty()))) {
 //                boltCraft(pBlockEntity);

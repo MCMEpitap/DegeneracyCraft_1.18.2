@@ -41,7 +41,7 @@
 //    private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 //
 //    protected final ContainerData data;
-//    private int progress = 0;
+//    private int getProgressPercent = 0;
 //    private int maxProgress = 72;
 //
 //    public UniversalAssemblerPhase2BlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
@@ -50,7 +50,7 @@
 //            public int get(int index) {
 //                switch (index) {
 //                    case 0:
-//                        return UniversalAssemblerPhase2BlockEntity.this.progress;
+//                        return UniversalAssemblerPhase2BlockEntity.this.getProgressPercent;
 //                    case 1:
 //                        return UniversalAssemblerPhase2BlockEntity.this.maxProgress;
 //                    default:
@@ -61,7 +61,7 @@
 //            public void set(int index, int value) {
 //                switch (index) {
 //                    case 0:
-//                        UniversalAssemblerPhase2BlockEntity.this.progress = value;
+//                        UniversalAssemblerPhase2BlockEntity.this.getProgressPercent = value;
 //                        break;
 //                    case 1:
 //                        UniversalAssemblerPhase2BlockEntity.this.maxProgress = value;
@@ -111,7 +111,7 @@
 //    @Override
 //    protected void saveAdditional(@NotNull CompoundTag tag) {
 //        tag.put("inventory", itemHandler.serializeNBT());
-//        tag.putInt("pulverization.progress", progress);
+//        tag.putInt("pulverization.getProgressPercent", getProgressPercent);
 //        super.saveAdditional(tag);
 //    }
 //
@@ -119,7 +119,7 @@
 //    public void load(CompoundTag nbt) {
 //        super.load(nbt);
 //        itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-//        progress = nbt.getInt("pulverization.progress");
+//        getProgressPercent = nbt.getInt("pulverization.getProgressPercent");
 //    }
 //
 //    public void drops() {
@@ -145,9 +145,9 @@
 //            if (hasNotReachedStackLimit(blockEntity) &&
 //                    (blockEntity.itemHandler.getStackInSlot(21).is(match.get().getResultItem().getItem())
 //                            || blockEntity.itemHandler.getStackInSlot(21).isEmpty())) {
-//                blockEntity.progress++;
+//                blockEntity.getProgressPercent++;
 //                setChanged(level, pPos, pState);
-//                    if (blockEntity.progress > blockEntity.maxProgress) {
+//                    if (blockEntity.getProgressPercent > blockEntity.maxProgress) {
 //                        craftItem(blockEntity);
 //                    }
 //                } else {
@@ -237,7 +237,7 @@
 //
 //
 //    private void resetProgress() {
-//        this.progress = 0;
+//        this.getProgressPercent = 0;
 //    }
 //
 //
@@ -260,9 +260,9 @@
 ////                iron_springRecipe(pBlockEntity) ||
 ////                iron_rodRecipe(pBlockEntity) ||
 ////                iron_bearingRecipe(pBlockEntity)) && hasNotReachedStackLimit(pBlockEntity)) {
-////            pBlockEntity.progress++;
+////            pBlockEntity.getProgressPercent++;
 ////            setChanged(level, pPos, pState);
-////            if(pBlockEntity.progress > pBlockEntity.maxProgress) {
+////            if(pBlockEntity.getProgressPercent > pBlockEntity.maxProgress) {
 ////                if (iron_boltRecipe(pBlockEntity)){
 ////                    iron_boltCraft(pBlockEntity);
 ////                }

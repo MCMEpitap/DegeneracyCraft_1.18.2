@@ -16,13 +16,14 @@ public class PortIEnergyStorage implements IEnergyStorage {
 
     public void tick() {
         if (this.pipe.getLevel().getGameTime() - this.lastReceived > 1F) {
-            BasicPowerCompositeStructureTypeThermalGeneratorBusType.INSTANCE.extractEnergy(this.pipe, this.side);
+//            BasicPowerCompositeStructureTypeThermalGeneratorBusType.INSTANCE.extractEnergy(this.pipe, this.side);
         }
     }
 
     public float receiveEnergyFloat(float maxReceive, boolean simulate) {
         this.lastReceived = this.pipe.getLevel().getGameTime();
-        return BasicPowerCompositeStructureTypeThermalGeneratorBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
+//        return BasicPowerCompositeStructureTypeThermalGeneratorBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
+        return 0F;
     }
 
 

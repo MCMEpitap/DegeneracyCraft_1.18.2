@@ -695,29 +695,29 @@ public class DCBlockStateProvider extends BlockStateProvider {
 
 
     private void registerBasicMachineElementProcessor() {
-        BlockModelBuilder modelBasicMachineElementProcessor = models().getBuilder("block/basic_machine_element_processor_block");
-        modelBasicMachineElementProcessor.parent(models().getExistingFile(mcLoc("cube")));
-        modelBasicMachineElementProcessor.texture("down", modLoc("block/machine/basic/engineering/basic_machine_element_processor/basic_machine_block_side_down"));
-        modelBasicMachineElementProcessor.texture("up", modLoc("block/machine/basic/engineering/basic_machine_element_processor/basic_machine_element_processor_side_energy"));
-        modelBasicMachineElementProcessor.texture("north", modLoc("block/machine/basic/engineering/basic_machine_element_processor/basic_machine_element_processor_front"));
-        modelBasicMachineElementProcessor.texture("south", modLoc("block/machine/basic/engineering/basic_machine_element_processor/basic_machine_element_processor_side_energy"));
-        modelBasicMachineElementProcessor.texture("east", modLoc("block/machine/basic/engineering/basic_machine_element_processor/basic_machine_element_processor_side_import"));
-        modelBasicMachineElementProcessor.texture("west", modLoc("block/machine/basic/engineering/basic_machine_element_processor/basic_machine_element_processor_side_export"));
+        BlockModelBuilder model = models().getBuilder("block/basic_machine_element_processor_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_machine_element_processor/basic_machine_element_processor_down"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_machine_element_processor/basic_machine_element_processor_up"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_machine_element_processor/basic_machine_element_processor_front"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_machine_element_processor/basic_machine_element_processor_side"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_machine_element_processor/basic_machine_element_processor_side"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_machine_element_processor/basic_machine_element_processor_side"));
         orientedBlock(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(),
-                state -> modelBasicMachineElementProcessor);
+                state -> model);
     }
 
     private void registerBasicMachineElementProcessorPort() {
-        BlockModelBuilder modelBasicMachineElementProcessorPort = models().getBuilder("block/basic_machine_element_processor_port_block");
-        modelBasicMachineElementProcessorPort.parent(models().getExistingFile(mcLoc("cube")));
-        modelBasicMachineElementProcessorPort.texture("down", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
-        modelBasicMachineElementProcessorPort.texture("up", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
-        modelBasicMachineElementProcessorPort.texture("north", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
-        modelBasicMachineElementProcessorPort.texture("south", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
-        modelBasicMachineElementProcessorPort.texture("east", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
-        modelBasicMachineElementProcessorPort.texture("west", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
+        BlockModelBuilder model = models().getBuilder("block/basic_machine_element_processor_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
         orientedBlock(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(),
-                state -> modelBasicMachineElementProcessorPort);
+                state -> model);
     }
 
 

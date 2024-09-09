@@ -12,6 +12,6 @@ public class BasicMachineElementProcessorBusRenderer extends PortRendererBase {
 
     @Override
     public PortModelRegistry.DCPortModel getModel() {
-        return PortModelRegistry.DCPortModel.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BUS_BLOCK_EXTRACT;
+        return PortModelRegistry.DCPortModel.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK_EXTRACT;
     }
 }

@@ -16,8 +16,8 @@ import net.minecraftforge.items.ItemHandlerHelper;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class BasicPowerCompositeStructureTypeThermalGeneratorPortType extends PortTypeBase<Item> {
-    public static final BasicPowerCompositeStructureTypeThermalGeneratorPortType INSTANCE = new BasicPowerCompositeStructureTypeThermalGeneratorPortType();
+public class BasicPowerThermalGeneratorPortType extends PortTypeBase<Item> {
+    public static final BasicPowerThermalGeneratorPortType INSTANCE = new BasicPowerThermalGeneratorPortType();
 
     @Override
     public String getKey() {

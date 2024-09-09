@@ -66,7 +66,7 @@ public class BasicPowerThermalGeneratorBlock extends BlockBase {
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level level, @NotNull BlockState state,
                                                                   @NotNull BlockEntityType<T> type) {
-        return createTickerHelper(type, DCBlockEntities.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_BLOCK_ENTITY.get(),
+        return createTickerHelper(type, DCBlockEntities.BASIC_POWER_THERMAL_GENERATOR_BLOCK_ENTITY.get(),
                 BasicPowerThermalGeneratorBlockEntity::tick);
     }
 

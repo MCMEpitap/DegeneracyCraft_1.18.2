@@ -14,8 +14,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.energy.CapabilityEnergy;
 
-public class BasicPowerCompositeStructureTypeThermalGeneratorBusBlock extends PortBlockBase {
-    public BasicPowerCompositeStructureTypeThermalGeneratorBusBlock(Properties properties) {
+public class BasicPowerThermalGeneratorBusBlock extends PortBlockBase {
+    public BasicPowerThermalGeneratorBusBlock(Properties properties) {
         super(properties);
     }
 
@@ -31,12 +31,12 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBusBlock extends Po
     }
 
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new BasicPowerCompositeStructureTypeThermalGeneratorBusBlockEntity(pos, state);
+        return new BasicPowerThermalGeneratorBusBlockEntity(pos, state);
     }
 
     public InteractionResult portSideLaunch(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, Direction facing) {
         BlockEntity blockentity = world.getBlockEntity(pos);
-        if (blockentity instanceof BasicPowerCompositeStructureTypeThermalGeneratorBusBlockEntity && this.portExtracting(world, pos, facing)) {
+        if (blockentity instanceof BasicPowerThermalGeneratorBusBlockEntity && this.portExtracting(world, pos, facing)) {
             if (world.isClientSide) {
                 return InteractionResult.SUCCESS;
             }

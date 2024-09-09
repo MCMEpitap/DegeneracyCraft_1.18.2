@@ -17,10 +17,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class BasicPowerCompositeStructureTypeThermalGeneratorBusType extends PortTypeBase<Void> {
-    public static final BasicPowerCompositeStructureTypeThermalGeneratorBusType INSTANCE = new BasicPowerCompositeStructureTypeThermalGeneratorBusType();
+public class BasicPowerThermalGeneratorBusType extends PortTypeBase<Void> {
+    public static final BasicPowerThermalGeneratorBusType INSTANCE = new BasicPowerThermalGeneratorBusType();
 
-    public BasicPowerCompositeStructureTypeThermalGeneratorBusType() {
+    public BasicPowerThermalGeneratorBusType() {
     }
 
     public String getKey() {

@@ -1,6 +1,6 @@
 package net.epitap.degeneracycraft.transport.port_bus.port_busbase;
 
-import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_thermal_generator.bus.BasicPowerCompositeStructureTypeThermalGeneratorBusType;
+import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_thermal_generator.bus.BasicPowerThermalGeneratorBusType;
 import net.minecraft.core.Direction;
 import net.minecraftforge.energy.IEnergyStorage;
 
@@ -16,13 +16,13 @@ public class PortIEnergyStorage implements IEnergyStorage {
 
     public void tick() {
         if (this.pipe.getLevel().getGameTime() - this.lastReceived > 1F) {
-//            BasicPowerCompositeStructureTypeThermalGeneratorBusType.INSTANCE.extractEnergy(this.pipe, this.side);
+//            BasicPowerThermalGeneratorBusType.INSTANCE.extractEnergy(this.pipe, this.side);
         }
     }
 
     public float receiveEnergyFloat(float maxReceive, boolean simulate) {
         this.lastReceived = this.pipe.getLevel().getGameTime();
-//        return BasicPowerCompositeStructureTypeThermalGeneratorBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
+//        return BasicPowerThermalGeneratorBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
         return 0F;
     }
 
@@ -43,7 +43,7 @@ public class PortIEnergyStorage implements IEnergyStorage {
     @Override
     public int receiveEnergy(int maxReceive, boolean simulate) {
         this.lastReceived = this.pipe.getLevel().getGameTime();
-        return (int) BasicPowerCompositeStructureTypeThermalGeneratorBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
+        return (int) BasicPowerThermalGeneratorBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
     }
 
     @Override

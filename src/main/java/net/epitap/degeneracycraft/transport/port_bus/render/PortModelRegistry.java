@@ -12,8 +12,8 @@ import net.minecraftforge.client.model.ForgeModelBakery;
 
 public class PortModelRegistry {
     public enum DCPortModel {
-        BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK_EXTRACT("block/basic_power_thermal_generator_port_block_extract"),
         BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK_EXTRACT("block/basic_power_thermal_generator_bus_block_extract"),
+        BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK_EXTRACT("block/basic_power_thermal_generator_port_block_extract"),
         BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK_EXTRACT("block/basic_technology_machine_manufacturer_bus_block_extract"),
         BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK_EXTRACT("block/basic_technology_machine_manufacturer_port_block_extract"),
         BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_BLOCK_EXTRACT("block/basic_technology_universal_assembler_bus_block_extract"),

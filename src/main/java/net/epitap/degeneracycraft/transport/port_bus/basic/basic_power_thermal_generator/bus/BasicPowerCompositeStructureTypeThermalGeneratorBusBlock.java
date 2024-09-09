@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.bus;
+package net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_thermal_generator.bus;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortBlockBase;

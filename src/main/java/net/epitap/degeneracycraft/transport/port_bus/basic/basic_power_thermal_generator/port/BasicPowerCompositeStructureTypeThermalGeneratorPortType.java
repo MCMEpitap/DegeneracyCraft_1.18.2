@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.port;
+package net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_thermal_generator.port;
 
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortBlockEntityBase;
@@ -21,7 +21,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorPortType extends Po
 
     @Override
     public String getKey() {
-        return "basic_power_composite_structure_type_thermal_generator_port";
+        return "basic_power_thermal_generator_port";
     }
 
     @Override
@@ -31,7 +31,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorPortType extends Po
 
     @Override
     public String getTranslationKey() {
-        return "basic_power_composite_structure_type_thermal_generator_port";
+        return "basic_power_thermal_generator_port";
     }
 
     @Override

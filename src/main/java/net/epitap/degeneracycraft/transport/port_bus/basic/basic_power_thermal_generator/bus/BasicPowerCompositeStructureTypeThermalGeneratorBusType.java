@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.bus;
+package net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_thermal_generator.bus;
 
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeIEnergyUtils;
@@ -24,7 +24,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBusType extends Por
     }
 
     public String getKey() {
-        return "basic_power_composite_structure_type_thermal_generator_bus";
+        return "basic_power_thermal_generator_bus";
     }
 
     public boolean canImport(BlockEntity blockEntity, Direction direction) {
@@ -32,7 +32,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorBusType extends Por
     }
 
     public String getTranslationKey() {
-        return "basic_power_composite_structure_type_thermal_generator_bus";
+        return "basic_power_thermal_generator_bus";
     }
 
     public ItemStack getIcon() {

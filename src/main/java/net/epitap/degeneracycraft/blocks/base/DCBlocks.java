@@ -16,8 +16,8 @@ import net.epitap.degeneracycraft.blocks.storage.basic.energystorage.basic_stren
 import net.epitap.degeneracycraft.blocks.storage.basic.materialstorage.basic_strength_multiblock_material_storage.BasicStrengthMultiblockMaterialStorageBlock;
 import net.epitap.degeneracycraft.item.DCCreativeTab;
 import net.epitap.degeneracycraft.item.DCItems;
-import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.bus.BasicPowerCompositeStructureTypeThermalGeneratorBusBlock;
-import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_composite_structure_type_thermal_generator.port.BasicPowerCompositeStructureTypeThermalGeneratorPortBlock;
+import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_thermal_generator.bus.BasicPowerCompositeStructureTypeThermalGeneratorBusBlock;
+import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_thermal_generator.port.BasicPowerCompositeStructureTypeThermalGeneratorPortBlock;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_technology_machine_element_processor.bus.BasicMachineElementProcessorBusBlock;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_technology_machine_element_processor.port.BasicMachineElementProcessorPortBlock;
 import net.epitap.degeneracycraft.transport.port_bus.basic.basic_technology_machine_manufacturer.bus.BasicTechnologyMachineManufacturerBusBlock;
@@ -149,18 +149,18 @@ public class DCBlocks {
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
 
-    public static final RegistryObject<Block> BASIC_POWER_THERMAL_GENERATOR_BLOCK = registerTooltipBasicMachineBlock("basic_power_composite_structure_type_thermal_generator_block", () ->
+    public static final RegistryObject<Block> BASIC_POWER_THERMAL_GENERATOR_BLOCK = registerTooltipBasicMachineBlock("basic_power_thermal_generator_block", () ->
                     new BasicPowerThermalGeneratorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "Lv0:3×3×3",
             "Lv1:3×3×3",
             "Base:Power 16 FE/t",
             "Lv0:Power 32 FE/t",
             "Lv1:Power 48 FE/t",
-            "basic_power_composite_structure_type_thermal_generator_block", "engineering", "basic");
+            "basic_power_thermal_generator_block", "engineering", "basic");
     public static final RegistryObject<Block> BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK = registerTooltipBasicMultiblockAbilityBlock(
             "basic_endurance_high_temperature_combustion_chamber_block", () ->
                     new GlassBlockBase(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(4.0f)), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
-            "basic_power_composite_structure_type_thermal_generator_block",
+            "basic_power_thermal_generator_block",
             "engineering",
             "basic");
     public static final RegistryObject<Block> BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK = registerHoloBlock("basic_endurance_high_temperature_combustion_chamber_holo_block", () ->

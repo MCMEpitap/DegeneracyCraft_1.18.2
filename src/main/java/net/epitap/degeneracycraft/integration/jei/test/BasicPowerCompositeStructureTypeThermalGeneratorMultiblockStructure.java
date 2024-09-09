@@ -148,7 +148,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure
         }
 
         public static final BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.Type INSTANCE = new BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.Type();
-        public static final String ID = "basic_power_composite_structure_type_thermal_generator_multiblock_structure";
+        public static final String ID = "basic_power_thermal_generator_multiblock_structure";
     }
 
 
@@ -159,7 +159,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure
         public static final BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.Serializer INSTANCE = new BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.Serializer();
 
         public static final ResourceLocation ID =
-                new ResourceLocation(Degeneracycraft.MOD_ID, "basic_power_composite_structure_type_thermal_generator_multiblock_structure");
+                new ResourceLocation(Degeneracycraft.MOD_ID, "basic_power_thermal_generator_multiblock_structure");
 
         public BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
 

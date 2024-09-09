@@ -1,7 +1,7 @@
 {
   "variants": {
     "down=false,east=false,facing=down,has_data=false,north=false,south=false,up=false,waterlogged=false,west=false": {
-      "model": "degeneracycraft:block/basic_power_composite_structure_type_thermal_generator_bus_block",
+      "model": "degeneracycraft:block/basic_power_thermal_generator_bus_block",
       "x": 90
     },
     "down=true,east=false,facing=down,has_data=false,north=false,south=false,up=false,waterlogged=false,west=false": {

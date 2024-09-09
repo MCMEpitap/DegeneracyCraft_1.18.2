@@ -165,13 +165,13 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK = registerHoloBlock("basic_endurance_high_temperature_combustion_chamber_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK = registerBlock("basic_power_composite_structure_type_thermal_generator_bus_block", () ->
+    public static final RegistryObject<Block> BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK = registerBlock("basic_power_thermal_generator_bus_block", () ->
             new BasicPowerThermalGeneratorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_power_composite_structure_type_thermal_generator_bus_holo_block", () ->
+    public static final RegistryObject<Block> BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_power_thermal_generator_bus_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK = registerBlock("basic_power_composite_structure_type_thermal_generator_port_block", () ->
+    public static final RegistryObject<Block> BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK = registerBlock("basic_power_thermal_generator_port_block", () ->
             new BasicPowerThermalGeneratorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_power_composite_structure_type_thermal_generator_port_holo_block", () ->
+    public static final RegistryObject<Block> BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_power_thermal_generator_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK = registerTooltipBasicMachineBlock("basic_technology_machine_manufacturer_block", () ->

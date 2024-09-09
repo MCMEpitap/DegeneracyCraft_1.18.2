@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "degeneracycraft:basic_power_composite_structure_type_thermal_generator_port_block"
+          "name": "degeneracycraft:basic_power_thermal_generator_port_block"
         }
       ],
       "conditions": [

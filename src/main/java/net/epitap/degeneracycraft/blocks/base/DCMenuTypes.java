@@ -44,7 +44,7 @@ public class DCMenuTypes {
     public static final RegistryObject<MenuType<BasicPrecisionTelescopeMenu>> BASIC_PRECISION_TELESCOPE_MENU =
             registerMenuType(BasicPrecisionTelescopeMenu::new, "basic_precision_telescope_menu");
     public static final RegistryObject<MenuType<BasicPowerThermalGeneratorMenu>> BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_MENU =
-            registerMenuType(BasicPowerThermalGeneratorMenu::new, "basic_power_composite_structure_type_thermal_generator_menu");
+            registerMenuType(BasicPowerThermalGeneratorMenu::new, "basic_power_thermal_generator_menu");
     public static final RegistryObject<MenuType<BasicTechnologyUniversalAssemblerMenu>> BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_MENU =
             registerMenuType(BasicTechnologyUniversalAssemblerMenu::new, "basic_technology_universal_assembler_menu");
     public static final RegistryObject<MenuType<BasicTechnologyMachineManufacturerMenu>> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_MENU =

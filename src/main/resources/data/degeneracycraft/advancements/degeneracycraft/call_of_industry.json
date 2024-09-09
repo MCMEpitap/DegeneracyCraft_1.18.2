@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "degeneracycraft:basic_power_composite_structure_type_thermal_generator_block"
+      "item": "degeneracycraft:basic_power_thermal_generator_block"
     },
     "title": {
       "translate": "advancements.Call of Industry.title"
@@ -22,7 +22,7 @@
         "items": [
           {
             "items": [
-              "degeneracycraft:basic_power_composite_structure_type_thermal_generator_block"
+              "degeneracycraft:basic_power_thermal_generator_block"
             ]
           }
         ]

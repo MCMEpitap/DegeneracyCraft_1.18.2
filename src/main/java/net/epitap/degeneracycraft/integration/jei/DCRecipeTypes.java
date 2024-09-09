@@ -41,7 +41,7 @@ public class DCRecipeTypes {
 
 
     public static final RegistryObject<RecipeSerializer<BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure>> BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_MULTIBLOCK_STRUCTURE_SERIALIZER =
-            SERIALIZERS.register("basic_power_composite_structure_type_thermal_generator_multiblock_structure", () -> BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.Serializer.INSTANCE);
+            SERIALIZERS.register("basic_power_thermal_generator_multiblock_structure", () -> BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.Serializer.INSTANCE);
 
 
 //    public static final RegistryObject<RecipeSerializer<testRecipe>> test_recipeSERIALIZER =

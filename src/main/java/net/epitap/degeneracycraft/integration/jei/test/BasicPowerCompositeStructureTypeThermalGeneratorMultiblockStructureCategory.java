@@ -19,7 +19,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
 public class BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructureCategory implements IRecipeCategory<BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure> {
-    public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_power_composite_structure_type_thermal_generator_multiblock_structure");
+    public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_power_thermal_generator_multiblock_structure");
     public final static ResourceLocation TEXTURE =
             new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_component_manufacture_machine_uid.png");
     private final IDrawable background;

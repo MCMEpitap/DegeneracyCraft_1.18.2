@@ -718,8 +718,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get(), "基本精度回路構築機ポート (ホログラム)");
 
 
-        add(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(), "基本機械要素加工機");
-        add(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(), "基本機械要素加工機ポート");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(), "基本機械要素加工機");
+        add(DCBlocks.BASIC_TECHNOLOGY_ELEMENT_PROCESSOR_PORT_BLOCK.get(), "基本機械要素加工機ポート");
 
 
 //        add(DCBlocks.LOW_STERNGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),"低強度機械用フレーム");

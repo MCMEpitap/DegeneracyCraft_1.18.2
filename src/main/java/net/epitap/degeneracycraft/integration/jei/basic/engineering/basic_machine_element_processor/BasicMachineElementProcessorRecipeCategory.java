@@ -27,7 +27,7 @@ public class BasicMachineElementProcessorRecipeCategory implements IRecipeCatego
 
     public BasicMachineElementProcessorRecipeCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 151);
-        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get()));
+        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get()));
     }
 
     @Override

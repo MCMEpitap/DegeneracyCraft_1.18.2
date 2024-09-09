@@ -97,16 +97,15 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicTechnologyUniversalAssemblerPortBlockEntity>> BASIC_PRECISION_CIRCUIT_BUILDER_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_precision_circuit_builder_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicTechnologyUniversalAssemblerPortBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_BLOCK.get()).build(null));
-    public static final RegistryObject<BlockEntityType<BasicMachineElementProcessorBlockEntity>> BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_machine_element_processor_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicMachineElementProcessorBlockEntity::new, DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get()).build(null));
-    public static final RegistryObject<BlockEntityType<BasicMachineElementProcessorBusBlockEntity>> BASIC_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_machine_element_processor_bus_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicMachineElementProcessorBusBlockEntity::new, DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK.get()).build(null));
-
-    public static final RegistryObject<BlockEntityType<BasicMachineElementProcessorPortBlockEntity>> BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_machine_element_processor_port_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicMachineElementProcessorPortBlockEntity::new, DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicMachineElementProcessorBlockEntity>> basic_technology_machine_element_processor_block_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_machine_element_processor_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicMachineElementProcessorBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicMachineElementProcessorBusBlockEntity>> BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_machine_element_processor_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicMachineElementProcessorBusBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_ELEMENT_PROCESSOR_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicMachineElementProcessorPortBlockEntity>> BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_machine_element_processor_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicMachineElementProcessorPortBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_ELEMENT_PROCESSOR_PORT_BLOCK.get()).build(null));
 
 
     public static final RegistryObject<BlockEntityType<BasicPhaseBoltManufactureMachineBlockEntity>> BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_BLOCK_ENTITY =

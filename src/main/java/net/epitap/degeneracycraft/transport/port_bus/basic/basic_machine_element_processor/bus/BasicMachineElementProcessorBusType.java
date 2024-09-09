@@ -24,7 +24,7 @@ public class BasicMachineElementProcessorBusType extends PortTypeBase<Void> {
     }
 
     public String getKey() {
-        return "basic_machine_element_processor_bus";
+        return "basic_technology_machine_element_processor_bus";
     }
 
     public boolean canImport(BlockEntity blockEntity, Direction direction) {
@@ -32,7 +32,7 @@ public class BasicMachineElementProcessorBusType extends PortTypeBase<Void> {
     }
 
     public String getTranslationKey() {
-        return "basic_machine_element_processor_bus";
+        return "basic_technology_machine_element_processor_bus";
     }
 
     public ItemStack getIcon() {

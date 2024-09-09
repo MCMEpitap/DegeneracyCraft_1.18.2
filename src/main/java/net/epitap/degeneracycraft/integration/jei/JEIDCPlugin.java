@@ -126,7 +126,7 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get()), BasicTechnologyUniversalAssemblerRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BLOCK.get()), BasicPrecisionCircuitBuilderRecipeCategory.UID);
 
-        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get()), BasicMachineElementProcessorRecipeCategory.UID);
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get()), BasicMachineElementProcessorRecipeCategory.UID);
     }
 
 }

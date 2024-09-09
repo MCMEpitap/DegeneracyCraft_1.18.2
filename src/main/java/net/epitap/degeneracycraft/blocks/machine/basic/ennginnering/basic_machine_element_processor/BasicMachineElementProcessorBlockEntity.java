@@ -106,7 +106,7 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (inputSlot, stack) ->
                             itemHandler.isItemValid(0, stack))));
     public BasicMachineElementProcessorBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+        super(DCBlockEntities.basic_technology_machine_element_processor_block_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {

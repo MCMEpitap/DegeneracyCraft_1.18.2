@@ -695,7 +695,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
 
 
     private void registerBasicMachineElementProcessor() {
-        BlockModelBuilder model = models().getBuilder("block/basic_machine_element_processor_block");
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_machine_element_processor_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
         model.texture("down", modLoc("block/machine/basic/engineering/basic_machine_element_processor/basic_machine_element_processor_down"));
         model.texture("up", modLoc("block/machine/basic/engineering/basic_machine_element_processor/basic_machine_element_processor_up"));
@@ -703,12 +703,12 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_machine_element_processor/basic_machine_element_processor_side"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_machine_element_processor/basic_machine_element_processor_side"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_machine_element_processor/basic_machine_element_processor_side"));
-        orientedBlock(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(),
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(),
                 state -> model);
     }
 
     private void registerBasicMachineElementProcessorPort() {
-        BlockModelBuilder model = models().getBuilder("block/basic_machine_element_processor_port_block");
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_machine_element_processor_port_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
         model.texture("down", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
         model.texture("up", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
@@ -716,7 +716,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
-        orientedBlock(DCBlocks.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(),
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_ELEMENT_PROCESSOR_PORT_BLOCK.get(),
                 state -> model);
     }
 

@@ -21,7 +21,7 @@ public class BasicMachineElementProcessorPortType extends PortTypeBase<Item> {
 
     @Override
     public String getKey() {
-        return "basic_machine_element_processor_port_block";
+        return "basic_technology_machine_element_processor_port_block";
     }
 
     @Override
@@ -31,7 +31,7 @@ public class BasicMachineElementProcessorPortType extends PortTypeBase<Item> {
 
     @Override
     public String getTranslationKey() {
-        return "basic_machine_element_processor_port_block";
+        return "basic_technology_machine_element_processor_port_block";
     }
 
     @Override

@@ -11,6 +11,6 @@ public class BasicMachineElementProcessorPortRenderer extends PortRendererBase {
 
     @Override
     public PortModelRegistry.DCPortModel getModel() {
-        return PortModelRegistry.DCPortModel.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK_EXTRACT;
+        return PortModelRegistry.DCPortModel.basic_technology_machine_element_processor_port_block_EXTRACT;
     }
 }

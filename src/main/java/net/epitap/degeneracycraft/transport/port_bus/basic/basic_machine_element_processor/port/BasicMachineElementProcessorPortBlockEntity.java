@@ -8,6 +8,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class BasicMachineElementProcessorPortBlockEntity extends PortWorkBlockEntity {
     public BasicMachineElementProcessorPortBlockEntity(BlockPos pos, BlockState state) {
-        super(DCBlockEntities.BASIC_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK_ENTITY.get(), new PortTypeBase[]{BasicMachineElementProcessorPortType.INSTANCE}, pos, state);
+        super(DCBlockEntities.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK_ENTITY.get(), new PortTypeBase[]{BasicMachineElementProcessorPortType.INSTANCE}, pos, state);
     }
 }

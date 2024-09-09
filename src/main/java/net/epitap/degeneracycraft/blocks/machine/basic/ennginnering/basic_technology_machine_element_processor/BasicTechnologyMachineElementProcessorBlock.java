@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_machine_element_processor;
+package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_element_processor;
 
 import net.epitap.degeneracycraft.blocks.base.BlockBase;
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
@@ -20,10 +20,10 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class BasicMachineElementProcessorBlock extends BlockBase {
+public class BasicTechnologyMachineElementProcessorBlock extends BlockBase {
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
 
-    public BasicMachineElementProcessorBlock(Properties properties) {
+    public BasicTechnologyMachineElementProcessorBlock(Properties properties) {
         super(properties);
     }
 
@@ -31,8 +31,8 @@ public class BasicMachineElementProcessorBlock extends BlockBase {
     public void onRemove(BlockState pState, Level level, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = level.getBlockEntity(pPos);
-            if (blockEntity instanceof BasicMachineElementProcessorBlockEntity) {
-                ((BasicMachineElementProcessorBlockEntity) blockEntity).drops();
+            if (blockEntity instanceof BasicTechnologyMachineElementProcessorBlockEntity) {
+                ((BasicTechnologyMachineElementProcessorBlockEntity) blockEntity).drops();
             }
         }
         super.onRemove(pState, level, pPos, pNewState, pIsMoving);
@@ -44,8 +44,8 @@ public class BasicMachineElementProcessorBlock extends BlockBase {
         if (!level.isClientSide()) {
             BlockEntity entity = level.getBlockEntity(pPos);
 
-            if (entity instanceof BasicMachineElementProcessorBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer) pPlayer), (BasicMachineElementProcessorBlockEntity) entity, pPos);
+            if (entity instanceof BasicTechnologyMachineElementProcessorBlockEntity) {
+                NetworkHooks.openGui(((ServerPlayer) pPlayer), (BasicTechnologyMachineElementProcessorBlockEntity) entity, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
@@ -57,7 +57,7 @@ public class BasicMachineElementProcessorBlock extends BlockBase {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new BasicMachineElementProcessorBlockEntity(pos, state);
+        return new BasicTechnologyMachineElementProcessorBlockEntity(pos, state);
     }
 
     @Nullable
@@ -65,7 +65,7 @@ public class BasicMachineElementProcessorBlock extends BlockBase {
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level level, @NotNull BlockState state,
                                                                   @NotNull BlockEntityType<T> type) {
         return createTickerHelper(type, DCBlockEntities.basic_technology_machine_element_processor_block_ENTITY.get(),
-                BasicMachineElementProcessorBlockEntity::tick);
+                BasicTechnologyMachineElementProcessorBlockEntity::tick);
     }
 
     @Nullable

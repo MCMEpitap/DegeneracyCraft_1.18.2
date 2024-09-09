@@ -3,10 +3,10 @@ package net.epitap.degeneracycraft.blocks.base;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.entity.machine.PulverizerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPrecisionTelescopeBlockEntity;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_machine_element_processor.BasicMachineElementProcessorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_thermal_generator.BasicPowerThermalGeneratorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_precision_circuit_builder.BasicPrecisionCircuitBuilderBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlockEntity;
@@ -97,9 +97,9 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicTechnologyUniversalAssemblerPortBlockEntity>> BASIC_PRECISION_CIRCUIT_BUILDER_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_precision_circuit_builder_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicTechnologyUniversalAssemblerPortBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_BLOCK.get()).build(null));
-    public static final RegistryObject<BlockEntityType<BasicMachineElementProcessorBlockEntity>> basic_technology_machine_element_processor_block_ENTITY =
+    public static final RegistryObject<BlockEntityType<BasicTechnologyMachineElementProcessorBlockEntity>> basic_technology_machine_element_processor_block_ENTITY =
             BLOCK_ENTITIES.register("basic_technology_machine_element_processor_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicMachineElementProcessorBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get()).build(null));
+                    BlockEntityType.Builder.of(BasicTechnologyMachineElementProcessorBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicMachineElementProcessorBusBlockEntity>> BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_technology_machine_element_processor_bus_block_entity", () ->
                     BlockEntityType.Builder.of(BasicMachineElementProcessorBusBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_ELEMENT_PROCESSOR_BUS_BLOCK.get()).build(null));

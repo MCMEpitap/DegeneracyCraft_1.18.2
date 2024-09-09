@@ -9,8 +9,8 @@ import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_machine_element_processor.BasicMachineElementProcessorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_precision_circuit_builder.BasicPrecisionCircuitBuilderScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerScreen;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineScreen;
@@ -114,7 +114,7 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeClickArea(BasicTechnologyMachineManufacturerScreen.class, 64, 20, 29, 8, BasicTechnologyMachineManufacturerRecipeCategory.UID);
         registration.addRecipeClickArea(BasicTechnologyUniversalAssemblerScreen.class, 64, 20, 29, 8, BasicTechnologyUniversalAssemblerRecipeCategory.UID);
         registration.addRecipeClickArea(BasicPrecisionCircuitBuilderScreen.class, 64, 20, 29, 8, BasicPrecisionCircuitBuilderRecipeCategory.UID);
-        registration.addRecipeClickArea(BasicMachineElementProcessorScreen.class, 64, 20, 29, 8, BasicMachineElementProcessorRecipeCategory.UID);
+        registration.addRecipeClickArea(BasicTechnologyMachineElementProcessorScreen.class, 64, 20, 29, 8, BasicMachineElementProcessorRecipeCategory.UID);
     }
 
     @Override

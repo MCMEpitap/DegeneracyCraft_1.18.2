@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_machine_element_processor;
+package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_element_processor;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
@@ -37,13 +37,13 @@ import javax.annotation.Nonnull;
 import java.util.Map;
 import java.util.Optional;
 
-public class BasicMachineElementProcessorBlockEntity extends BlockEntity implements MenuProvider {
-    public float BM_PART_PROCESSOR_CAPACITY = 20000F;
-    public float BM_PART_PROCESSOR_TRANSFER = 16F;
-    public float BM_E_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
-    public float BM_E_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
-    public float BM_E_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
-    public float BM_E_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
+public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEntity implements MenuProvider {
+    public float BT_M_PART_PROCESSOR_CAPACITY = 20000F;
+    public float BT_M_PART_PROCESSOR_TRANSFER = 16F;
+    public float BTM_E_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
+    public float BTM_E_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
+    public float BTM_E_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
+    public float BTM_E_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
     public final ContainerData data;
     public int counter;
     public int getProgressPercent = 0;
@@ -79,7 +79,7 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
         }
     };
 
-    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BM_PART_PROCESSOR_CAPACITY, BM_PART_PROCESSOR_TRANSFER) {
+    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BT_M_PART_PROCESSOR_CAPACITY, BT_M_PART_PROCESSOR_TRANSFER) {
         @Override
         public void onEnergyChanged() {
             setChanged();
@@ -105,14 +105,15 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
                     Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 9, (outputSlot, stack) -> false)),
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (inputSlot, stack) ->
                             itemHandler.isItemValid(0, stack))));
-    public BasicMachineElementProcessorBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
+
+    public BasicTechnologyMachineElementProcessorBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(DCBlockEntities.basic_technology_machine_element_processor_block_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> BasicMachineElementProcessorBlockEntity.this.counter;
-                    case 1 -> BasicMachineElementProcessorBlockEntity.this.getProgressPercent;
+                    case 0 -> BasicTechnologyMachineElementProcessorBlockEntity.this.counter;
+                    case 1 -> BasicTechnologyMachineElementProcessorBlockEntity.this.getProgressPercent;
                     default -> 0;
                 };
             }
@@ -120,9 +121,9 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
             @Override
             public void set(int index, int value) {
                 if (index == 0) {
-                    BasicMachineElementProcessorBlockEntity.this.counter = value;
+                    BasicTechnologyMachineElementProcessorBlockEntity.this.counter = value;
                 } else if (index == 1) {
-                    BasicMachineElementProcessorBlockEntity.this.getProgressPercent = value;
+                    BasicTechnologyMachineElementProcessorBlockEntity.this.getProgressPercent = value;
                 }
             }
 
@@ -137,7 +138,7 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return new BasicMachineElementProcessorMenu(pContainerId, pInventory, this, this.data);
+        return new BasicTechnologyMachineElementProcessorMenu(pContainerId, pInventory, this, this.data);
     }
 
     public Component getDisplayName() {
@@ -153,7 +154,7 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
                 return lazyItemHandler.cast();
             }
             if (directionWrappedHandlerMap.containsKey(side)) {
-                Direction localDir = this.getBlockState().getValue(BasicMachineElementProcessorBlock.FACING);
+                Direction localDir = this.getBlockState().getValue(BasicTechnologyMachineElementProcessorBlock.FACING);
 
                 if (side == Direction.UP || side == Direction.DOWN) {
                     return directionWrappedHandlerMap.get(side).cast();
@@ -214,15 +215,15 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
-    public static void tick(Level level, BlockPos pos, BlockState state, BasicMachineElementProcessorBlockEntity blockEntity) {
-        blockEntity.formed0 = BasicMachineElementProcessorStructure.isFormed0(level, pos, state, blockEntity);
-        blockEntity.formed1 = BasicMachineElementProcessorStructure.isFormed1(level, pos, state, blockEntity);
-        blockEntity.formed2 = BasicMachineElementProcessorStructure.isFormed2(level, pos, state, blockEntity);
-        blockEntity.powered0_1 = BasicMachineElementProcessorStructure.powered0_1(level, pos, state, blockEntity);
-        blockEntity.isFormed = BasicMachineElementProcessorStructure.isFormed(blockEntity);
-        blockEntity.isPowered0 = BasicMachineElementProcessorStructure.isPowered0(blockEntity);
+    public static void tick(Level level, BlockPos pos, BlockState state, BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
+        blockEntity.formed0 = BasicTechnologyMachineElementProcessorStructure.isFormed0(level, pos, state, blockEntity);
+        blockEntity.formed1 = BasicTechnologyMachineElementProcessorStructure.isFormed1(level, pos, state, blockEntity);
+        blockEntity.formed2 = BasicTechnologyMachineElementProcessorStructure.isFormed2(level, pos, state, blockEntity);
+        blockEntity.powered0_1 = BasicTechnologyMachineElementProcessorStructure.powered0_1(level, pos, state, blockEntity);
+        blockEntity.isFormed = BasicTechnologyMachineElementProcessorStructure.isFormed(blockEntity);
+        blockEntity.isPowered0 = BasicTechnologyMachineElementProcessorStructure.isPowered0(blockEntity);
 
-        BasicMachineElementProcessorStructure.hologram(level, pos, state, blockEntity);
+        BasicTechnologyMachineElementProcessorStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
 
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
@@ -241,12 +242,12 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
             if (blockEntity.isPowered0) {
-                blockEntity.counter += blockEntity.BM_E_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BM_E_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
+                blockEntity.counter += blockEntity.BTM_E_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BTM_E_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else if (blockEntity.isFormed) {
-                blockEntity.counter += blockEntity.BM_E_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_FORMED;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BM_E_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
+                blockEntity.counter += blockEntity.BTM_E_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_FORMED;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BTM_E_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else {
                 blockEntity.counter++;
@@ -265,7 +266,7 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
         setChanged(level, pos, state);
     }
 
-    public static boolean craftCheck(BasicMachineElementProcessorBlockEntity blockEntity) {
+    public static boolean craftCheck(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -281,7 +282,7 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
         return false;
     }
 
-    private static boolean hasRecipe(BasicMachineElementProcessorBlockEntity blockEntity) {
+    private static boolean hasRecipe(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -294,7 +295,7 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
         return match.isPresent();
     }
 
-    private static boolean hasAmountRecipe(BasicMachineElementProcessorBlockEntity blockEntity) {
+    private static boolean hasAmountRecipe(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -315,7 +316,7 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
                 && blockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
     }
 
-    private static boolean hasAmountEnergyRecipe(BasicMachineElementProcessorBlockEntity blockEntity) {
+    private static boolean hasAmountEnergyRecipe(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -328,11 +329,11 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
         return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime();
     }
 
-    public static boolean isHaltDevice(BasicMachineElementProcessorBlockEntity blockEntity) {
+    public static boolean isHaltDevice(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(11).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
-    private static void craftItem(BasicMachineElementProcessorBlockEntity blockEntity) {
+    private static void craftItem(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -383,7 +384,7 @@ public class BasicMachineElementProcessorBlockEntity extends BlockEntity impleme
         return inventory.getItem(9).getItem() == output.getItem() || inventory.getItem(9).isEmpty();
     }
 
-    private static boolean hasNotReachedStackLimit(BasicMachineElementProcessorBlockEntity blockEntity) {
+    private static boolean hasNotReachedStackLimit(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(9).getCount() < blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
     }
 }

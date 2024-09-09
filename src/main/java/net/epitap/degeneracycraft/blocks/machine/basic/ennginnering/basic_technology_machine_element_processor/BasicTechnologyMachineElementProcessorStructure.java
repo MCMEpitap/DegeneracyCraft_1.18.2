@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_machine_element_processor;
+package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_element_processor;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.dcenum.MBPPos;
@@ -9,20 +9,20 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class BasicMachineElementProcessorStructure {
+public class BasicTechnologyMachineElementProcessorStructure {
 
 
-    public static boolean isFormed(BasicMachineElementProcessorBlockEntity blockEntity) {
+    public static boolean isFormed(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
         return blockEntity.isFormed = blockEntity.formed0 && blockEntity.formed1 && blockEntity.formed2;
     }
 
-    public static boolean isPowered0(BasicMachineElementProcessorBlockEntity blockEntity) {
+    public static boolean isPowered0(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
         return blockEntity.isPowered0 = blockEntity.powered0_1 && blockEntity.isFormed;
     }
 
 
-    public static boolean isFormed0(Level level, BlockPos pos, BlockState state, BasicMachineElementProcessorBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicMachineElementProcessorBlock.FACING);
+    public static boolean isFormed0(Level level, BlockPos pos, BlockState state, BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicTechnologyMachineElementProcessorBlock.FACING);
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
@@ -50,8 +50,8 @@ public class BasicMachineElementProcessorStructure {
         return blockEntity.formed0 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6 && pos7 && pos8;
     }
 
-    public static boolean isFormed1(Level level, BlockPos pos, BlockState state, BasicMachineElementProcessorBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicMachineElementProcessorBlock.FACING);
+    public static boolean isFormed1(Level level, BlockPos pos, BlockState state, BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicTechnologyMachineElementProcessorBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -76,8 +76,8 @@ public class BasicMachineElementProcessorStructure {
         return blockEntity.formed1 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6;
     }
 
-    public static boolean isFormed2(Level level, BlockPos pos, BlockState state, BasicMachineElementProcessorBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicMachineElementProcessorBlock.FACING);
+    public static boolean isFormed2(Level level, BlockPos pos, BlockState state, BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicTechnologyMachineElementProcessorBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -105,8 +105,8 @@ public class BasicMachineElementProcessorStructure {
         return blockEntity.formed2 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6 && pos7 && pos8;
     }
 
-    public static boolean powered0_1(Level level, BlockPos pos, BlockState state, BasicMachineElementProcessorBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicMachineElementProcessorBlock.FACING);
+    public static boolean powered0_1(Level level, BlockPos pos, BlockState state, BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicTechnologyMachineElementProcessorBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -118,8 +118,8 @@ public class BasicMachineElementProcessorStructure {
     }
 
 
-    public static void hologram(Level level, BlockPos pos, BlockState state, BasicMachineElementProcessorBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicMachineElementProcessorBlock.FACING);
+    public static void hologram(Level level, BlockPos pos, BlockState state, BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicTechnologyMachineElementProcessorBlock.FACING);
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;

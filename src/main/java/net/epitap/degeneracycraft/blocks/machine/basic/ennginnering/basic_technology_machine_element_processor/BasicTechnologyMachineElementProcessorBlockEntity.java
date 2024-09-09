@@ -38,12 +38,12 @@ import java.util.Map;
 import java.util.Optional;
 
 public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEntity implements MenuProvider {
-    public float BT_M_PART_PROCESSOR_CAPACITY = 20000F;
-    public float BT_M_PART_PROCESSOR_TRANSFER = 16F;
-    public float BTM_E_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
-    public float BTM_E_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
-    public float BTM_E_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
-    public float BTM_E_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
+    public float BT_ME_PROCESSOR_CAPACITY = 20000F;
+    public float BT_ME_PROCESSOR_TRANSFER = 16F;
+    public float BT_ME_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
+    public float BT_ME_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
+    public float BT_ME_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
+    public float BT_ME_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
     public final ContainerData data;
     public int counter;
     public int getProgressPercent = 0;
@@ -79,7 +79,7 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
         }
     };
 
-    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BT_M_PART_PROCESSOR_CAPACITY, BT_M_PART_PROCESSOR_TRANSFER) {
+    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BT_ME_PROCESSOR_CAPACITY, BT_ME_PROCESSOR_TRANSFER) {
         @Override
         public void onEnergyChanged() {
             setChanged();
@@ -242,12 +242,12 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
             if (blockEntity.isPowered0) {
-                blockEntity.counter += blockEntity.BTM_E_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BTM_E_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
+                blockEntity.counter += blockEntity.BT_ME_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_ME_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else if (blockEntity.isFormed) {
-                blockEntity.counter += blockEntity.BTM_E_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_FORMED;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BTM_E_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
+                blockEntity.counter += blockEntity.BT_ME_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_FORMED;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_ME_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else {
                 blockEntity.counter++;

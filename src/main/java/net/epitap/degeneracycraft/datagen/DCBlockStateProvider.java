@@ -716,7 +716,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_machine_element_processor_port/basic_machine_element_processor_port"));
-        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_ELEMENT_PROCESSOR_PORT_BLOCK.get(),
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(),
                 state -> model);
     }
 

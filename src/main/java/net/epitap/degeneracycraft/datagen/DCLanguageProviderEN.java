@@ -722,8 +722,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get(), "Basic Precision Circuit Builder Port (Hologram)");
 
 
-        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(), "Basic Machine Element Processor");
-        add(DCBlocks.BASIC_TECHNOLOGY_ELEMENT_PROCESSOR_PORT_BLOCK.get(), "Basic Machine Element Processor Port");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(), "Basic Technology Machine Element Processor");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(), "Basic Technology Machine Element Processor Port");
 
 
         add(DCBlocks.PULVERIZER_BLOCK.get(), "Pulverizer");

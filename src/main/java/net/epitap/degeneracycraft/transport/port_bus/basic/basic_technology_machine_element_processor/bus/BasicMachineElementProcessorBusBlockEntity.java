@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.port_bus.basic.basic_machine_element_processor.bus;
+package net.epitap.degeneracycraft.transport.port_bus.basic.basic_technology_machine_element_processor.bus;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortTypeBase;

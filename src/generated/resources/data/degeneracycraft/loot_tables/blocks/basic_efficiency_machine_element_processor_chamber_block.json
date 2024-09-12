@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "degeneracycraft:basic_efficiency_machine_element_processor_chamber_block"
+          "name": "degeneracycraft:basic_efficiency_machine_element_processing_chamber_block"
         }
       ],
       "conditions": [

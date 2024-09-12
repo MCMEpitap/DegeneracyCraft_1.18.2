@@ -255,12 +255,12 @@ public class DCBlocks {
             "Lv0:Speed ×2.00,Energy Usage ×1.50",
             "Lv1:Speed ×3.00,Energy Usage ×2.00",
             "basic_technology_machine_element_processor_block", "engineering", "basic");
-    public static final RegistryObject<Block> BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSOR_CHAMBER_BLOCK = registerTooltipBasicMultiblockAbilityBlock("basic_efficiency_machine_element_processor_chamber_block", () ->
+    public static final RegistryObject<Block> BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSING_CHAMBER_BLOCK = registerTooltipBasicMultiblockAbilityBlock("basic_efficiency_machine_element_processing_chamber_block", () ->
                     new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "basic_technology_machine_element_processor_block",
             "engineering",
             "basic");
-    public static final RegistryObject<Block> BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSOR_CHAMBER_HOLO_BLOCK = registerHoloBlock("basic_efficiency_machine_element_processor_chamber_holo_block", () ->
+    public static final RegistryObject<Block> BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSING_CHAMBER_HOLO_BLOCK = registerHoloBlock("basic_efficiency_machine_element_processing_chamber_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK = registerBlock("basic_technology_machine_element_processor_bus_block", () ->

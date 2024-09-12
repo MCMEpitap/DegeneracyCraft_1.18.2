@@ -78,8 +78,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicTechnologyCircuitBuilderPortHolo();
 
         registerBasicTechnologyMachineElementProcessor();
-        registerBasicEfficiencyMachineProcessingChamber();
-        registerBasicEfficiencyMachineProcessingChamberHolo();
+        registerBasicEfficiencyMachineElementProcessor();
+        registerBasicEfficiencyMachineElementProcessorHolo();
         registerBasicTechnologyMachineElementProcessorBus();
         registerBasicTechnologyMachineElementProcessorBusHolo();
         registerBasicTechnologyMachineElementProcessorPort();
@@ -713,28 +713,28 @@ public class DCBlockStateProvider extends BlockStateProvider {
     }
 
     private void registerBasicEfficiencyMachineElementProcessor() {
-        BlockModelBuilder model = models().getBuilder("block/basic_efficiency_machine_element_processor_chamber_block");
+        BlockModelBuilder model = models().getBuilder("block/basic_efficiency_machine_element_processing_chamber_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_block"));
-        model.texture("up", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_block"));
-        model.texture("north", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_block"));
-        model.texture("south", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_block"));
-        model.texture("east", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_block"));
-        model.texture("west", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_block"));
-        orientedBlock(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSOR_CHAMBER_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_block"));
+        model.texture("up", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_block"));
+        model.texture("north", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_block"));
+        model.texture("south", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_block"));
+        model.texture("east", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_block"));
+        model.texture("west", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSING_CHAMBER_BLOCK.get(),
                 state -> model);
     }
 
     private void registerBasicEfficiencyMachineElementProcessorHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_efficiency_machine_element_processor_chamber_chamber_holo_block");
+        BlockModelBuilder model = models().getBuilder("block/basic_efficiency_machine_element_processing_chamber_chamber_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_holo_block"));
-        model.texture("up", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_holo_block"));
-        model.texture("north", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_holo_block"));
-        model.texture("south", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_holo_block"));
-        model.texture("east", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_holo_block"));
-        model.texture("west", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_holo_block"));
-        orientedBlock(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSOR_CHAMBER_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_holo_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSING_CHAMBER_HOLO_BLOCK.get(),
                 state -> model);
     }
 

@@ -16,12 +16,12 @@ import net.minecraftforge.items.ItemHandlerHelper;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class BasicPrecisionCircuitBuilderPortType extends PortTypeBase<Item> {
-    public static final BasicPrecisionCircuitBuilderPortType INSTANCE = new BasicPrecisionCircuitBuilderPortType();
+public class BasicTechnologyCircuitBuilderPortType extends PortTypeBase<Item> {
+    public static final BasicTechnologyCircuitBuilderPortType INSTANCE = new BasicTechnologyCircuitBuilderPortType();
 
     @Override
     public String getKey() {
-        return "basic_precision_circuit_builder_port";
+        return "basic_technology_circuit_builder_port";
     }
 
     @Override
@@ -31,7 +31,7 @@ public class BasicPrecisionCircuitBuilderPortType extends PortTypeBase<Item> {
 
     @Override
     public String getTranslationKey() {
-        return "basic_precision_circuit_builder_port";
+        return "basic_technology_circuit_builder_port";
     }
 
     @Override

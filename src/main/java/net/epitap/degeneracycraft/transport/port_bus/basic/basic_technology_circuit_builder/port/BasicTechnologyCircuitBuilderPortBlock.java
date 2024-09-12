@@ -14,9 +14,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.items.CapabilityItemHandler;
 
-public class BasicPrecisionCircuitBuilderPortBlock extends PortBlockBase {
+public class BasicTechnologyCircuitBuilderPortBlock extends PortBlockBase {
 
-    public BasicPrecisionCircuitBuilderPortBlock(Properties properties) {
+    public BasicTechnologyCircuitBuilderPortBlock(Properties properties) {
         super(properties);
     }
 
@@ -36,13 +36,13 @@ public class BasicPrecisionCircuitBuilderPortBlock extends PortBlockBase {
 
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new BasicPrecisionCircuitBuilderPortBlockEntity(pos, state);
+        return new BasicTechnologyCircuitBuilderPortBlockEntity(pos, state);
     }
 
     @Override
     public InteractionResult portSideLaunch(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, Direction direction) {
         BlockEntity blockentity = level.getBlockEntity(pos);
-        if ((blockentity instanceof BasicPrecisionCircuitBuilderPortBlockEntity) && portExtracting(level, pos, direction)) {
+        if ((blockentity instanceof BasicTechnologyCircuitBuilderPortBlockEntity) && portExtracting(level, pos, direction)) {
             if (level.isClientSide) {
                 return InteractionResult.SUCCESS;
             }

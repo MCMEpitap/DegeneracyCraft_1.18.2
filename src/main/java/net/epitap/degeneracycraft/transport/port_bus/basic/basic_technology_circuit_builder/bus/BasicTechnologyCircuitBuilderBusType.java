@@ -17,14 +17,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class BasicPrecisionCircuitBuilderBusType extends PortTypeBase<Void> {
-    public static final BasicPrecisionCircuitBuilderBusType INSTANCE = new BasicPrecisionCircuitBuilderBusType();
+public class BasicTechnologyCircuitBuilderBusType extends PortTypeBase<Void> {
+    public static final BasicTechnologyCircuitBuilderBusType INSTANCE = new BasicTechnologyCircuitBuilderBusType();
 
-    public BasicPrecisionCircuitBuilderBusType() {
+    public BasicTechnologyCircuitBuilderBusType() {
     }
 
     public String getKey() {
-        return "basic_precision_circuit_builder_bus";
+        return "basic_technology_circuit_builder_bus";
     }
 
     public boolean canImport(BlockEntity blockEntity, Direction direction) {
@@ -32,7 +32,7 @@ public class BasicPrecisionCircuitBuilderBusType extends PortTypeBase<Void> {
     }
 
     public String getTranslationKey() {
-        return "basic_precision_circuit_builder_bus";
+        return "basic_technology_circuit_builder_bus";
     }
 
     public ItemStack getIcon() {

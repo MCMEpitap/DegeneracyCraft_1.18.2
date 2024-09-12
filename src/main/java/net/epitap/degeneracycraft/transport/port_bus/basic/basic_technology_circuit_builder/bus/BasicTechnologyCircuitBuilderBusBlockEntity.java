@@ -6,8 +6,8 @@ import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortWorkBlockE
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class BasicPrecisionCircuitBuilderBusBlockEntity extends PortWorkBlockEntity {
-    public BasicPrecisionCircuitBuilderBusBlockEntity(BlockPos pos, BlockState state) {
-        super(DCBlockEntities.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_BLOCK_ENTITY.get(), new PortTypeBase[]{BasicPrecisionCircuitBuilderBusType.INSTANCE}, pos, state);
+public class BasicTechnologyCircuitBuilderBusBlockEntity extends PortWorkBlockEntity {
+    public BasicTechnologyCircuitBuilderBusBlockEntity(BlockPos pos, BlockState state) {
+        super(DCBlockEntities.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_BLOCK_ENTITY.get(), new PortTypeBase[]{BasicTechnologyCircuitBuilderBusType.INSTANCE}, pos, state);
     }
 }

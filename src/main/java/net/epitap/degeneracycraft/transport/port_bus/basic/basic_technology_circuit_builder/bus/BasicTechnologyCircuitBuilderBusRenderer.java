@@ -5,8 +5,8 @@ import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortRendererBa
 import net.epitap.degeneracycraft.transport.port_bus.render.PortModelRegistry;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 
-public class BasicPrecisionCircuitBuilderBusRenderer extends PortRendererBase {
-    public BasicPrecisionCircuitBuilderBusRenderer(BlockEntityRendererProvider.Context renderer) {
+public class BasicTechnologyCircuitBuilderBusRenderer extends PortRendererBase {
+    public BasicTechnologyCircuitBuilderBusRenderer(BlockEntityRendererProvider.Context renderer) {
         super(renderer);
     }
 

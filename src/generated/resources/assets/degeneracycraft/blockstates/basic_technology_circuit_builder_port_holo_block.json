@@ -9,18 +9,18 @@
       "x": -90
     },
     "facing=north": {
-      "model": "degeneracycraft:block/basic_precision_circuit_builder_port_holo_block"
+      "model": "degeneracycraft:block/basic_technology_circuit_builder_port_holo_block"
     },
     "facing=south": {
-      "model": "degeneracycraft:block/basic_precision_circuit_builder_port_holo_block",
+      "model": "degeneracycraft:block/basic_technology_circuit_builder_port_holo_block",
       "y": 180
     },
     "facing=west": {
-      "model": "degeneracycraft:block/basic_precision_circuit_builder_port_holo_block",
+      "model": "degeneracycraft:block/basic_technology_circuit_builder_port_holo_block",
       "y": 270
     },
     "facing=east": {
-      "model": "degeneracycraft:block/basic_precision_circuit_builder_port_holo_block",
+      "model": "degeneracycraft:block/basic_technology_circuit_builder_port_holo_block",
       "y": 90
     }
   }

@@ -88,7 +88,7 @@ public class DCBlockLootTableProvider extends BlockLoot {
         this.add(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSOR_CHAMBER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSOR_CHAMBER_BLOCK.get()));
         this.add(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSOR_CHAMBER_HOLO_BLOCK.get(), block -> noDrop());
         this.add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK.get()));
-        this.add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENTT_PROCESSOR_BUS_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_HOLO_BLOCK.get(), block -> noDrop());
         this.add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get()));
         this.add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_HOLO_BLOCK.get(), block -> noDrop());
 

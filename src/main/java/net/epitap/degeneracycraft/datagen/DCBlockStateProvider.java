@@ -69,16 +69,21 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicTechnologyUniversalAssemblerPort();
         registerBasicTechnologyUniversalAssemblerPortHolo();
 
-        registerBasicPrecisionCircuitBuilder();
+        registerBasicTechnologyCircuitBuilder();
         registerBasicPurityCircuitCleanRoom();
         registerBasicPurityCircuitCleanRoomHolo();
-        registerBasicPrecisionCircuitBuilderBus();
-        registerBasicPrecisionCircuitBuilderBusHolo();
-        registerBasicPrecisionCircuitBuilderPort();
-        registerBasicPrecisionCircuitBuilderPortHolo();
+        registerBasicTechnologyCircuitBuilderBus();
+        registerBasicTechnologyCircuitBuilderBusHolo();
+        registerBasicTechnologyCircuitBuilderPort();
+        registerBasicTechnologyCircuitBuilderPortHolo();
 
-//        registerBasicTechnologyMachineElementProcessor();
-//        registerBasicTechnologyMachineElementProcessorPort();
+        registerBasicTechnologyMachineElementProcessor();
+        registerBasicEfficiencyMachineProcessingChamber();
+        registerBasicEfficiencyMachineProcessingChamberHolo();
+        registerBasicTechnologyMachineElementProcessorBus();
+        registerBasicTechnologyMachineElementProcessorBusHolo();
+        registerBasicTechnologyMachineElementProcessorPort();
+        registerBasicTechnologyMachineElementProcessorPortHolo();
 
 
     }
@@ -602,15 +607,15 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicPrecisionCircuitBuilder() {
+    private void registerBasicTechnologyCircuitBuilder() {
         BlockModelBuilder model = models().getBuilder("block/basic_technology_circuit_builder_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
         model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_down"));
         model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_up"));
         model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_front"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/basic_precision_circuit_builder_side"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_side"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_side"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_side"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_side"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_side"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BLOCK.get(),
                 state -> model);
     }
@@ -641,84 +646,150 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicPrecisionCircuitBuilderBus() {
-        BlockModelBuilder model = models().getBuilder("block/basic_precision_circuit_builder_bus_block");
+    private void registerBasicTechnologyCircuitBuilderBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_circuit_builder_bus_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_block"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_block"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_block"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_block"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_block"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_block"));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicPrecisionCircuitBuilderBusHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_precision_circuit_builder_bus_holo_block");
+    private void registerBasicTechnologyCircuitBuilderBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_circuit_builder_bus_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_holo_block"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_holo_block"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_holo_block"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_holo_block"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_holo_block"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_holo_block"));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicPrecisionCircuitBuilderPort() {
-        BlockModelBuilder model = models().getBuilder("block/basic_precision_circuit_builder_port_block");
+    private void registerBasicTechnologyCircuitBuilderPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_circuit_builder_port_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/port/basic_precision_circuit_builder_port_block"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/port/basic_precision_circuit_builder_port_block"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/port/basic_precision_circuit_builder_port_block"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/port/basic_precision_circuit_builder_port_block"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/port/basic_precision_circuit_builder_port_block"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/port/basic_precision_circuit_builder_port_block"));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicPrecisionCircuitBuilderPortHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_precision_circuit_builder_port_holo_block");
+    private void registerBasicTechnologyCircuitBuilderPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_circuit_builder_port_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/port/basic_precision_circuit_builder_port_holo_block"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/port/basic_precision_circuit_builder_port_holo_block"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/port/basic_precision_circuit_builder_port_holo_block"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/port/basic_precision_circuit_builder_port_holo_block"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/port/basic_precision_circuit_builder_port_holo_block"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/port/basic_precision_circuit_builder_port_holo_block"));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
 
 
-//    private void registerBasicTechnologyMachineElementProcessor() {
-//        BlockModelBuilder model = models().getBuilder("block/basic_technology_machine_element_processor_block");
-//        model.parent(models().getExistingFile(mcLoc("cube")));
-//        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_down"));
-//        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_up"));
-//        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_front"));
-//        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_side"));
-//        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_side"));
-//        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_side"));
-//        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(),
-//                state -> model);
-//    }
-//
-//    private void registerBasicTechnologyMachineElementProcessorPort() {
-//        BlockModelBuilder model = models().getBuilder("block/basic_technology_machine_element_processor_port_block");
-//        model.parent(models().getExistingFile(mcLoc("cube")));
-//        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_port/basic_technology_machine_element_processor_port"));
-//        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_port/basic_technology_machine_element_processor_port"));
-//        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_port/basic_technology_machine_element_processor_port"));
-//        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_port/basic_technology_machine_element_processor_port"));
-//        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_port/basic_technology_machine_element_processor_port"));
-//        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_port/basic_technology_machine_element_processor_port"));
-//        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(),
-//                state -> model);
-//    }
+    private void registerBasicTechnologyMachineElementProcessor() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_machine_element_processor_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_down"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_up"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_front"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_side"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_side"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_side"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicEfficiencyMachineElementProcessor() {
+        BlockModelBuilder model = models().getBuilder("block/basic_efficiency_machine_element_processor_chamber_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_block"));
+        model.texture("up", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_block"));
+        model.texture("north", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_block"));
+        model.texture("south", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_block"));
+        model.texture("east", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_block"));
+        model.texture("west", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSOR_CHAMBER_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicEfficiencyMachineElementProcessorHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_efficiency_machine_element_processor_chamber_chamber_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processor_chamber/basic_efficiency_machine_element_processor_chamber_holo_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSOR_CHAMBER_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyMachineElementProcessorBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_machine_element_processor_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_bus/basic_technology_machine_element_processor_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_bus/basic_technology_machine_element_processor_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_bus/basic_technology_machine_element_processor_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_bus/basic_technology_machine_element_processor_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_bus/basic_technology_machine_element_processor_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_bus/basic_technology_machine_element_processor_bus_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyMachineElementProcessorBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_machine_element_processor_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_bus/basic_technology_machine_element_processor_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_bus/basic_technology_machine_element_processor_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_bus/basic_technology_machine_element_processor_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_bus/basic_technology_machine_element_processor_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_bus/basic_technology_machine_element_processor_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_bus/basic_technology_machine_element_processor_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+
+    private void registerBasicTechnologyMachineElementProcessorPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_machine_element_processor_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_port/basic_technology_machine_element_processor_port"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_port/basic_technology_machine_element_processor_port"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_port/basic_technology_machine_element_processor_port"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_port/basic_technology_machine_element_processor_port"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_port/basic_technology_machine_element_processor_port"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_port/basic_technology_machine_element_processor_port"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyMachineElementProcessorPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_machine_element_processor_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_port/basic_technology_machine_element_processor_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_port/basic_technology_machine_element_processor_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_port/basic_technology_machine_element_processor_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_port/basic_technology_machine_element_processor_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_port/basic_technology_machine_element_processor_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor_port/basic_technology_machine_element_processor_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
 
 
     private void orientedBlock(Block block, Function<BlockState, ModelFile> modelFunc) {

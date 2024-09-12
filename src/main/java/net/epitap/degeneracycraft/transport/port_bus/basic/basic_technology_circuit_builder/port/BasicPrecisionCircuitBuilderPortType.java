@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.port_bus.basic.basic_precision_circuit_builder.port;
+package net.epitap.degeneracycraft.transport.port_bus.basic.basic_technology_circuit_builder.port;
 
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortBlockEntityBase;

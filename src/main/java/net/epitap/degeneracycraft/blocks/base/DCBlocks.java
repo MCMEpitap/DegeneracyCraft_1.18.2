@@ -265,7 +265,7 @@ public class DCBlocks {
 
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK = registerBlock("basic_technology_machine_element_processor_bus_block", () ->
             new BasicMachineElementProcessorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_ELEMENTT_PROCESSOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_technology_machine_element_processor_bus_holo_block", () ->
+    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_technology_machine_element_processor_bus_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK = registerBlock("basic_technology_machine_element_processor_port_block", () ->
             new BasicMachineElementProcessorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);

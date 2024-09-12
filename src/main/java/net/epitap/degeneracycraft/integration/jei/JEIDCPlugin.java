@@ -9,7 +9,7 @@ import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_precision_circuit_builder.BasicPrecisionCircuitBuilderScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerScreen;
@@ -17,8 +17,8 @@ import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machin
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineScreen;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_machine_element_processor.BasicMachineElementProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_machine_element_processor.BasicMachineElementProcessorRecipeCategory;
-import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_precision_circuit_builder.BasicPrecisionCircuitBuilderRecipe;
-import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_precision_circuit_builder.BasicPrecisionCircuitBuilderRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipe;
@@ -60,7 +60,7 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeCategories(new
                 BasicTechnologyUniversalAssemblerRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
-                BasicPrecisionCircuitBuilderRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+                BasicTechnologyCircuitBuilderRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
         registration.addRecipeCategories(new
                 BasicMachineElementProcessorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
@@ -91,9 +91,9 @@ public class JEIDCPlugin implements IModPlugin {
         List<BasicTechnologyUniversalAssemblerRecipe> basicTechnologyUniversalAssemblerRecipes =
                 rm.getAllRecipesFor(BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicTechnologyUniversalAssemblerRecipeCategory.UID, BasicTechnologyUniversalAssemblerRecipe.class), basicTechnologyUniversalAssemblerRecipes);
-        List<BasicPrecisionCircuitBuilderRecipe> basicPrecisionCircuitBuilderRecipes =
-                rm.getAllRecipesFor(BasicPrecisionCircuitBuilderRecipe.Type.INSTANCE);
-        registration.addRecipes(new RecipeType<>(BasicPrecisionCircuitBuilderRecipeCategory.UID, BasicPrecisionCircuitBuilderRecipe.class), basicPrecisionCircuitBuilderRecipes);
+        List<BasicTechnologyCircuitBuilderRecipe> basicPrecisionCircuitBuilderRecipes =
+                rm.getAllRecipesFor(BasicTechnologyCircuitBuilderRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicTechnologyCircuitBuilderRecipeCategory.UID, BasicTechnologyCircuitBuilderRecipe.class), basicPrecisionCircuitBuilderRecipes);
 
 
         List<BasicMachineElementProcessorRecipe> basicMachineElementProcessorRecipes =
@@ -113,7 +113,7 @@ public class JEIDCPlugin implements IModPlugin {
 
         registration.addRecipeClickArea(BasicTechnologyMachineManufacturerScreen.class, 64, 20, 29, 8, BasicTechnologyMachineManufacturerRecipeCategory.UID);
         registration.addRecipeClickArea(BasicTechnologyUniversalAssemblerScreen.class, 64, 20, 29, 8, BasicTechnologyUniversalAssemblerRecipeCategory.UID);
-        registration.addRecipeClickArea(BasicPrecisionCircuitBuilderScreen.class, 64, 20, 29, 8, BasicPrecisionCircuitBuilderRecipeCategory.UID);
+        registration.addRecipeClickArea(BasicTechnologyCircuitBuilderScreen.class, 64, 20, 29, 8, BasicTechnologyCircuitBuilderRecipeCategory.UID);
         registration.addRecipeClickArea(BasicTechnologyMachineElementProcessorScreen.class, 64, 20, 29, 8, BasicMachineElementProcessorRecipeCategory.UID);
     }
 
@@ -124,7 +124,7 @@ public class JEIDCPlugin implements IModPlugin {
 
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get()), BasicTechnologyMachineManufacturerRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get()), BasicTechnologyUniversalAssemblerRecipeCategory.UID);
-        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BLOCK.get()), BasicPrecisionCircuitBuilderRecipeCategory.UID);
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BLOCK.get()), BasicTechnologyCircuitBuilderRecipeCategory.UID);
 
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get()), BasicMachineElementProcessorRecipeCategory.UID);
     }

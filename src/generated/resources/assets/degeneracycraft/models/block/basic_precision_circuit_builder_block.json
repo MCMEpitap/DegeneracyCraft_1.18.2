@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down": "degeneracycraft:block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_down",
-    "up": "degeneracycraft:block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_up",
-    "north": "degeneracycraft:block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_front",
-    "south": "degeneracycraft:block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_side",
-    "east": "degeneracycraft:block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_side",
-    "west": "degeneracycraft:block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_side"
+    "down": "degeneracycraft:block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_down",
+    "up": "degeneracycraft:block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_up",
+    "north": "degeneracycraft:block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_front",
+    "south": "degeneracycraft:block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_side",
+    "east": "degeneracycraft:block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_side",
+    "west": "degeneracycraft:block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_side"
   }
 }

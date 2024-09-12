@@ -8,6 +8,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class BasicPrecisionCircuitBuilderPortBlockEntity extends PortWorkBlockEntity {
     public BasicPrecisionCircuitBuilderPortBlockEntity(BlockPos pos, BlockState state) {
-        super(DCBlockEntities.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_BLOCK_ENTITY.get(), new PortTypeBase[]{BasicPrecisionCircuitBuilderPortType.INSTANCE}, pos, state);
+        super(DCBlockEntities.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_BLOCK_ENTITY.get(), new PortTypeBase[]{BasicPrecisionCircuitBuilderPortType.INSTANCE}, pos, state);
     }
 }

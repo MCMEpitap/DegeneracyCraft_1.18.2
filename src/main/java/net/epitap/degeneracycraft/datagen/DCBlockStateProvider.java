@@ -603,15 +603,15 @@ public class DCBlockStateProvider extends BlockStateProvider {
     }
 
     private void registerBasicPrecisionCircuitBuilder() {
-        BlockModelBuilder model = models().getBuilder("block/basic_precision_circuit_builder_block");
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_circuit_builder_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_down"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_up"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_front"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_side"));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_down"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_up"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_front"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/basic_precision_circuit_builder_side"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_side"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_side"));
-        orientedBlock(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BLOCK.get(),
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BLOCK.get(),
                 state -> model);
     }
 
@@ -650,7 +650,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_block"));
-        orientedBlock(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BUS_BLOCK.get(),
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_BLOCK.get(),
                 state -> model);
     }
 
@@ -663,7 +663,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_holo_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_holo_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_holo_block"));
-        orientedBlock(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.get(),
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.get(),
                 state -> model);
     }
 
@@ -676,7 +676,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/port/basic_precision_circuit_builder_port_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/port/basic_precision_circuit_builder_port_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/port/basic_precision_circuit_builder_port_block"));
-        orientedBlock(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_BLOCK.get(),
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_BLOCK.get(),
                 state -> model);
     }
 
@@ -689,7 +689,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/port/basic_precision_circuit_builder_port_holo_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/port/basic_precision_circuit_builder_port_holo_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_precision_circuit_builder/port/basic_precision_circuit_builder_port_holo_block"));
-        orientedBlock(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get(),
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
 

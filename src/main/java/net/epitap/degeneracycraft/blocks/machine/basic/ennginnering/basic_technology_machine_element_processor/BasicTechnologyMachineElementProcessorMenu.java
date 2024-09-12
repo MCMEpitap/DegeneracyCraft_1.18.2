@@ -31,7 +31,7 @@ public class BasicTechnologyMachineElementProcessorMenu extends AbstractContaine
     }
 
     public BasicTechnologyMachineElementProcessorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_MACHINE_ELEMENT_PROCESSOR_MACHINE_MENU.get(), id);
+        super(DCMenuTypes.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_MACHINE_MENU.get(), id);
         blockEntity = (BasicTechnologyMachineElementProcessorBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;

@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "degeneracycraft:basic_precision_circuit_builder_bus_block"
+          "name": "degeneracycraft:basic_technology_circuit_builder_bus_block"
         }
       ],
       "conditions": [

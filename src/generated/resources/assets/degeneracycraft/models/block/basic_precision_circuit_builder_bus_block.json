@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down": "degeneracycraft:block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_block",
-    "up": "degeneracycraft:block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_block",
-    "north": "degeneracycraft:block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_block",
-    "south": "degeneracycraft:block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_block",
-    "east": "degeneracycraft:block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_block",
-    "west": "degeneracycraft:block/machine/basic/engineering/basic_precision_circuit_builder/bus/basic_precision_circuit_builder_bus_block"
+    "down": "degeneracycraft:block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_block",
+    "up": "degeneracycraft:block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_block",
+    "north": "degeneracycraft:block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_block",
+    "south": "degeneracycraft:block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_block",
+    "east": "degeneracycraft:block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_block",
+    "west": "degeneracycraft:block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_block"
   }
 }

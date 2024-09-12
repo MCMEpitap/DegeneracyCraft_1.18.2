@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_precision_circuit_builder;
+package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_circuit_builder;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -16,14 +16,14 @@ import net.minecraft.world.entity.player.Inventory;
 import java.util.List;
 import java.util.Optional;
 
-public class BasicPrecisionCircuitBuilderScreen extends AbstractContainerScreen<BasicPrecisionCircuitBuilderMenu> {
+public class BasicTechnologyCircuitBuilderScreen extends AbstractContainerScreen<BasicTechnologyCircuitBuilderMenu> {
 
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_gui.png");
     private EnergyInfoArea energyInfoArea;
 
 
-    public BasicPrecisionCircuitBuilderScreen(BasicPrecisionCircuitBuilderMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public BasicTechnologyCircuitBuilderScreen(BasicTechnologyCircuitBuilderMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
         this.imageWidth = 176;
         this.imageHeight = 166;
@@ -60,7 +60,7 @@ public class BasicPrecisionCircuitBuilderScreen extends AbstractContainerScreen<
                 80, 11, 0xFFFFFF);
 
 
-        if (BasicPrecisionCircuitBuilderBlockEntity.isHaltDevice(menu.blockEntity)) {
+        if (BasicTechnologyCircuitBuilderBlockEntity.isHaltDevice(menu.blockEntity)) {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".halt"),
                     133, 66, 0xFFFFFF);
         }
@@ -149,7 +149,7 @@ public class BasicPrecisionCircuitBuilderScreen extends AbstractContainerScreen<
     }
 
     private void renderHaltTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
-        if (BasicPrecisionCircuitBuilderBlockEntity.isHaltDevice(menu.blockEntity)
+        if (BasicTechnologyCircuitBuilderBlockEntity.isHaltDevice(menu.blockEntity)
                 && isMouseAboveArea(pMouseX, pMouseY, x, y, 117, 64, 40, 10))
             renderTooltip(pPoseStack, this.HaltTooltips(),
                     Optional.empty(), pMouseX - x, pMouseY - y);

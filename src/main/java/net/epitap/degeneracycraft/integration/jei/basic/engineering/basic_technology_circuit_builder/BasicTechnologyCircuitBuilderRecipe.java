@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_precision_circuit_builder;
+package net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_circuit_builder;
 
 import com.google.gson.JsonObject;
 import net.epitap.degeneracycraft.Degeneracycraft;
@@ -15,7 +15,7 @@ import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 import org.jetbrains.annotations.Nullable;
 
-public class BasicPrecisionCircuitBuilderRecipe implements Recipe<SimpleContainer> {
+public class BasicTechnologyCircuitBuilderRecipe implements Recipe<SimpleContainer> {
     private final ResourceLocation id;
     final float energy;
     final float time;
@@ -30,7 +30,7 @@ public class BasicPrecisionCircuitBuilderRecipe implements Recipe<SimpleContaine
     final ItemStack input8;
     final ItemStack output0;
 
-    public BasicPrecisionCircuitBuilderRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack input1, ItemStack input2, ItemStack input3, ItemStack input4, ItemStack input5, ItemStack input6, ItemStack input7, ItemStack input8, ItemStack output0) {
+    public BasicTechnologyCircuitBuilderRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack input1, ItemStack input2, ItemStack input3, ItemStack input4, ItemStack input5, ItemStack input6, ItemStack input7, ItemStack input8, ItemStack output0) {
         this.id = id;
         this.energy = energy;
         this.time = time;
@@ -143,7 +143,7 @@ public class BasicPrecisionCircuitBuilderRecipe implements Recipe<SimpleContaine
         return Type.INSTANCE;
     }
 
-    public static class Type implements RecipeType<BasicPrecisionCircuitBuilderRecipe> {
+    public static class Type implements RecipeType<BasicTechnologyCircuitBuilderRecipe> {
         private Type() {
         }
 
@@ -152,32 +152,32 @@ public class BasicPrecisionCircuitBuilderRecipe implements Recipe<SimpleContaine
     }
 
 
-    public static class Serializer extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<BasicPrecisionCircuitBuilderRecipe> {
+    public static class Serializer extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<BasicTechnologyCircuitBuilderRecipe> {
         public static final Serializer INSTANCE = new Serializer();
 
         public static final ResourceLocation ID =
                 new ResourceLocation(Degeneracycraft.MOD_ID, "basic_precision_circuit_builder_recipe");
 
-        public BasicPrecisionCircuitBuilderRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
+        public BasicTechnologyCircuitBuilderRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
 
             float energy = GsonHelper.getAsFloat(pJson, "energy", 1);
             float time = GsonHelper.getAsFloat(pJson, "time", 1);
-            ItemStack input0 = BasicPrecisionCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input0"));
-            ItemStack input1 = BasicPrecisionCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input1"));
-            ItemStack input2 = BasicPrecisionCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input2"));
-            ItemStack input3 = BasicPrecisionCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input3"));
-            ItemStack input4 = BasicPrecisionCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input4"));
-            ItemStack input5 = BasicPrecisionCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input5"));
-            ItemStack input6 = BasicPrecisionCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input6"));
-            ItemStack input7 = BasicPrecisionCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input7"));
-            ItemStack input8 = BasicPrecisionCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input8"));
-            ItemStack output0 = BasicPrecisionCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output0"));
+            ItemStack input0 = BasicTechnologyCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input0"));
+            ItemStack input1 = BasicTechnologyCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input1"));
+            ItemStack input2 = BasicTechnologyCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input2"));
+            ItemStack input3 = BasicTechnologyCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input3"));
+            ItemStack input4 = BasicTechnologyCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input4"));
+            ItemStack input5 = BasicTechnologyCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input5"));
+            ItemStack input6 = BasicTechnologyCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input6"));
+            ItemStack input7 = BasicTechnologyCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input7"));
+            ItemStack input8 = BasicTechnologyCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input8"));
+            ItemStack output0 = BasicTechnologyCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output0"));
 
-            return new BasicPrecisionCircuitBuilderRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, input5, input6, input7, input8, output0);
+            return new BasicTechnologyCircuitBuilderRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, input5, input6, input7, input8, output0);
         }
 
         @Override
-        public @Nullable BasicPrecisionCircuitBuilderRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
+        public @Nullable BasicTechnologyCircuitBuilderRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
             float energy = pBuffer.readFloat();
             float time = pBuffer.readFloat();
             ItemStack input0 = pBuffer.readItem();
@@ -191,11 +191,11 @@ public class BasicPrecisionCircuitBuilderRecipe implements Recipe<SimpleContaine
             ItemStack input8 = pBuffer.readItem();
             ItemStack output0 = pBuffer.readItem();
 
-            return new BasicPrecisionCircuitBuilderRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, input5, input6, input7, input8, output0);
+            return new BasicTechnologyCircuitBuilderRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, input5, input6, input7, input8, output0);
         }
 
         @Override
-        public void toNetwork(FriendlyByteBuf pBuffer, BasicPrecisionCircuitBuilderRecipe pRecipe) {
+        public void toNetwork(FriendlyByteBuf pBuffer, BasicTechnologyCircuitBuilderRecipe pRecipe) {
 
             pBuffer.writeFloat(pRecipe.energy);
             pBuffer.writeFloat(pRecipe.time);

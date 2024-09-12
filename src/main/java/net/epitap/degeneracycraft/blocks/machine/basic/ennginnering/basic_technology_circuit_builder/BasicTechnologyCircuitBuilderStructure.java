@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_precision_circuit_builder;
+package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_circuit_builder;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.dcenum.MBPPos;
@@ -10,18 +10,18 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class BasicPrecisionCircuitBuilderStructure {
-    public static boolean isFormed(BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
+public class BasicTechnologyCircuitBuilderStructure {
+    public static boolean isFormed(BasicTechnologyCircuitBuilderBlockEntity blockEntity) {
         return blockEntity.isFormed = blockEntity.formed0 && blockEntity.formed1 && blockEntity.formed2;
     }
 
-    public static boolean isPowered0(BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
+    public static boolean isPowered0(BasicTechnologyCircuitBuilderBlockEntity blockEntity) {
         return blockEntity.isPowered0 = blockEntity.powered0_1 && blockEntity.isFormed;
     }
 
 
-    public static boolean isFormed0(Level level, BlockPos pos, BlockState state, BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPrecisionCircuitBuilderBlock.FACING);
+    public static boolean isFormed0(Level level, BlockPos pos, BlockState state, BasicTechnologyCircuitBuilderBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicTechnologyCircuitBuilderBlock.FACING);
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
@@ -49,8 +49,8 @@ public class BasicPrecisionCircuitBuilderStructure {
         return blockEntity.formed0 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6 && pos7 && pos8;
     }
 
-    public static boolean isFormed1(Level level, BlockPos pos, BlockState state, BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPrecisionCircuitBuilderBlock.FACING);
+    public static boolean isFormed1(Level level, BlockPos pos, BlockState state, BasicTechnologyCircuitBuilderBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicTechnologyCircuitBuilderBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -73,15 +73,15 @@ public class BasicPrecisionCircuitBuilderStructure {
         boolean pos4 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z_1.xPos).above(MBPPos.x1y0z_1.yPos).relative(reZ, MBPPos.x1y0z_1.zPos))
                 .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get());
         boolean pos5 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z0.xPos).above(MBPPos.x_1y0z0.yPos).relative(reZ, MBPPos.x_1y0z0.zPos))
-                .is(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_BLOCK.get());
+                .is(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_BLOCK.get());
         boolean pos6 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z0.xPos).above(MBPPos.x1y0z0.yPos).relative(reZ, MBPPos.x1y0z0.zPos))
-                .is(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_BLOCK.get());
+                .is(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_BLOCK.get());
 
         return blockEntity.formed1 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6;
     }
 
-    public static boolean isFormed2(Level level, BlockPos pos, BlockState state, BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPrecisionCircuitBuilderBlock.FACING);
+    public static boolean isFormed2(Level level, BlockPos pos, BlockState state, BasicTechnologyCircuitBuilderBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicTechnologyCircuitBuilderBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -102,15 +102,15 @@ public class BasicPrecisionCircuitBuilderStructure {
         boolean pos6 = level.getBlockState(blockpos.relative(reX, MBPPos.x_1y1z0.xPos).above(MBPPos.x_1y1z0.yPos).relative(reZ, MBPPos.x_1y1z0.zPos))
                 .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get());
         boolean pos7 = level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z0.xPos).above(MBPPos.x0y1z0.yPos).relative(reZ, MBPPos.x0y1z0.zPos))
-                .is(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BUS_BLOCK.get());
+                .is(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_BLOCK.get());
         boolean pos8 = level.getBlockState(blockpos.relative(reX, MBPPos.x1y1z0.xPos).above(MBPPos.x1y1z0.yPos).relative(reZ, MBPPos.x1y1z0.zPos))
                 .is(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get());
 
         return blockEntity.formed2 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6 && pos7 && pos8;
     }
 
-    public static boolean powered0_1(Level level, BlockPos pos, BlockState state, BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPrecisionCircuitBuilderBlock.FACING);
+    public static boolean powered0_1(Level level, BlockPos pos, BlockState state, BasicTechnologyCircuitBuilderBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicTechnologyCircuitBuilderBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -122,8 +122,8 @@ public class BasicPrecisionCircuitBuilderStructure {
     }
 
 
-    public static void hologram(Level level, BlockPos pos, BlockState state, BasicPrecisionCircuitBuilderBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPrecisionCircuitBuilderBlock.FACING);
+    public static void hologram(Level level, BlockPos pos, BlockState state, BasicTechnologyCircuitBuilderBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicTechnologyCircuitBuilderBlock.FACING);
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
@@ -190,11 +190,11 @@ public class BasicPrecisionCircuitBuilderStructure {
                 }
                 if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z0.xPos).above(MBPPos.x_1y0z0.yPos).relative(reZ, MBPPos.x_1y0z0.zPos)).isAir()) {
                     level.setBlock(blockpos.relative(reX, MBPPos.x_1y0z0.xPos).above(MBPPos.x_1y0z0.yPos).relative(reZ, MBPPos.x_1y0z0.zPos),
-                            DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get().defaultBlockState(), 1);
+                            DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get().defaultBlockState(), 1);
                 }
                 if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z0.xPos).above(MBPPos.x1y0z0.yPos).relative(reZ, MBPPos.x1y0z0.zPos)).isAir()) {
                     level.setBlock(blockpos.relative(reX, MBPPos.x1y0z0.xPos).above(MBPPos.x1y0z0.yPos).relative(reZ, MBPPos.x1y0z0.zPos),
-                            DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get().defaultBlockState(), 1);
+                            DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get().defaultBlockState(), 1);
                 }
 
                 if (blockEntity.formed1) {
@@ -228,7 +228,7 @@ public class BasicPrecisionCircuitBuilderStructure {
                     }
                     if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z0.xPos).above(MBPPos.x0y1z0.yPos).relative(reZ, MBPPos.x0y1z0.zPos)).isAir()) {
                         level.setBlock(blockpos.relative(reX, MBPPos.x0y1z0.xPos).above(MBPPos.x0y1z0.yPos).relative(reZ, MBPPos.x0y1z0.zPos),
-                                DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.get().defaultBlockState(), 1);
+                                DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.get().defaultBlockState(), 1);
                     }
                     if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y1z0.xPos).above(MBPPos.x1y1z0.yPos).relative(reZ, MBPPos.x1y1z0.zPos)).isAir()) {
                         level.setBlock(blockpos.relative(reX, MBPPos.x1y1z0.xPos).above(MBPPos.x1y1z0.yPos).relative(reZ, MBPPos.x1y1z0.zPos),
@@ -264,7 +264,7 @@ public class BasicPrecisionCircuitBuilderStructure {
                         level.setBlock(blockpos.relative(reX, MBPPos.x_1y1z0.xPos).above(MBPPos.x_1y1z0.yPos).relative(reZ, MBPPos.x_1y1z0.zPos), Blocks.AIR.defaultBlockState(), 1);
                     }
                     if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z0.xPos).above(MBPPos.x0y1z0.yPos).relative(reZ, MBPPos.x0y1z0.zPos))
-                            .is(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.get())) {
+                            .is(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.get())) {
                         level.setBlock(blockpos.relative(reX, MBPPos.x0y1z0.xPos).above(MBPPos.x0y1z0.yPos).relative(reZ, MBPPos.x0y1z0.zPos), Blocks.AIR.defaultBlockState(), 1);
                     }
                     if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y1z0.xPos).above(MBPPos.x1y1z0.yPos).relative(reZ, MBPPos.x1y1z0.zPos))
@@ -294,11 +294,11 @@ public class BasicPrecisionCircuitBuilderStructure {
                     level.setBlock(blockpos.relative(reX, MBPPos.x1y0z_1.xPos).above(MBPPos.x1y0z_1.yPos).relative(reZ, MBPPos.x1y0z_1.zPos), Blocks.AIR.defaultBlockState(), 1);
                 }
                 if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z0.xPos).above(MBPPos.x_1y0z0.yPos).relative(reZ, MBPPos.x_1y0z0.zPos))
-                        .is(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get())) {
+                        .is(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get())) {
                     level.setBlock(blockpos.relative(reX, MBPPos.x_1y0z0.xPos).above(MBPPos.x_1y0z0.yPos).relative(reZ, MBPPos.x_1y0z0.zPos), Blocks.AIR.defaultBlockState(), 1);
                 }
                 if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z0.xPos).above(MBPPos.x1y0z0.yPos).relative(reZ, MBPPos.x1y0z0.zPos))
-                        .is(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get())) {
+                        .is(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get())) {
                     level.setBlock(blockpos.relative(reX, MBPPos.x1y0z0.xPos).above(MBPPos.x1y0z0.yPos).relative(reZ, MBPPos.x1y0z0.zPos), Blocks.AIR.defaultBlockState(), 1);
                 }
             }
@@ -361,11 +361,11 @@ public class BasicPrecisionCircuitBuilderStructure {
                 level.setBlock(blockpos.relative(reX, MBPPos.x1y0z_1.xPos).above(MBPPos.x1y0z_1.yPos).relative(reZ, MBPPos.x1y0z_1.zPos), Blocks.AIR.defaultBlockState(), 1);
             }
             if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y0z0.xPos).above(MBPPos.x_1y0z0.yPos).relative(reZ, MBPPos.x_1y0z0.zPos))
-                    .is(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get())) {
+                    .is(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get())) {
                 level.setBlock(blockpos.relative(reX, MBPPos.x_1y0z0.xPos).above(MBPPos.x_1y0z0.yPos).relative(reZ, MBPPos.x_1y0z0.zPos), Blocks.AIR.defaultBlockState(), 1);
             }
             if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y0z0.xPos).above(MBPPos.x1y0z0.yPos).relative(reZ, MBPPos.x1y0z0.zPos))
-                    .is(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get())) {
+                    .is(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get())) {
                 level.setBlock(blockpos.relative(reX, MBPPos.x1y0z0.xPos).above(MBPPos.x1y0z0.yPos).relative(reZ, MBPPos.x1y0z0.zPos), Blocks.AIR.defaultBlockState(), 1);
             }
 
@@ -398,7 +398,7 @@ public class BasicPrecisionCircuitBuilderStructure {
                 level.setBlock(blockpos.relative(reX, MBPPos.x_1y1z0.xPos).above(MBPPos.x_1y1z0.yPos).relative(reZ, MBPPos.x_1y1z0.zPos), Blocks.AIR.defaultBlockState(), 1);
             }
             if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y1z0.xPos).above(MBPPos.x0y1z0.yPos).relative(reZ, MBPPos.x0y1z0.zPos))
-                    .is(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.get())) {
+                    .is(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.get())) {
                 level.setBlock(blockpos.relative(reX, MBPPos.x0y1z0.xPos).above(MBPPos.x0y1z0.yPos).relative(reZ, MBPPos.x0y1z0.zPos), Blocks.AIR.defaultBlockState(), 1);
             }
             if (level.getBlockState(blockpos.relative(reX, MBPPos.x1y1z0.xPos).above(MBPPos.x1y1z0.yPos).relative(reZ, MBPPos.x1y1z0.zPos))

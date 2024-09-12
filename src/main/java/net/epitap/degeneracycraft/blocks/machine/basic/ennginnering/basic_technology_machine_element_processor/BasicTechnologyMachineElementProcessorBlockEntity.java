@@ -107,7 +107,7 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
                             itemHandler.isItemValid(0, stack))));
 
     public BasicTechnologyMachineElementProcessorBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.basic_technology_machine_element_processor_block_ENTITY.get(), pWorldPosition, pBlockState);
+        super(DCBlockEntities.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {

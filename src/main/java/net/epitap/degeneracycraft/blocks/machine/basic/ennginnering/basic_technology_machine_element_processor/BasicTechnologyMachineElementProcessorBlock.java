@@ -64,7 +64,7 @@ public class BasicTechnologyMachineElementProcessorBlock extends BlockBase {
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level level, @NotNull BlockState state,
                                                                   @NotNull BlockEntityType<T> type) {
-        return createTickerHelper(type, DCBlockEntities.basic_technology_machine_element_processor_block_ENTITY.get(),
+        return createTickerHelper(type, DCBlockEntities.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_ENTITY.get(),
                 BasicTechnologyMachineElementProcessorBlockEntity::tick);
     }
 

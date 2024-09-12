@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_precision_circuit_builder;
+package net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_circuit_builder;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.constants.VanillaTypes;
@@ -21,16 +21,16 @@ import net.minecraft.world.item.ItemStack;
 import javax.annotation.Nonnull;
 
 
-public class BasicPrecisionCircuitBuilderRecipeCategory implements IRecipeCategory<BasicPrecisionCircuitBuilderRecipe> {
+public class BasicTechnologyCircuitBuilderRecipeCategory implements IRecipeCategory<BasicTechnologyCircuitBuilderRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_precision_circuit_builder_recipe");
     public final static ResourceLocation TEXTURE =
             new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_uid.png");
     private final IDrawable background;
     private final IDrawable icon;
 
-    public BasicPrecisionCircuitBuilderRecipeCategory(IGuiHelper helper) {
+    public BasicTechnologyCircuitBuilderRecipeCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 154);
-        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BLOCK.get()));
+        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BLOCK.get()));
     }
 
     @Override
@@ -39,8 +39,8 @@ public class BasicPrecisionCircuitBuilderRecipeCategory implements IRecipeCatego
     }
 
     @Override
-    public Class<? extends BasicPrecisionCircuitBuilderRecipe> getRecipeClass() {
-        return BasicPrecisionCircuitBuilderRecipe.class;
+    public Class<? extends BasicTechnologyCircuitBuilderRecipe> getRecipeClass() {
+        return BasicTechnologyCircuitBuilderRecipe.class;
     }
 
     @Override
@@ -59,7 +59,7 @@ public class BasicPrecisionCircuitBuilderRecipeCategory implements IRecipeCatego
     }
 
     @Override
-    public void draw(BasicPrecisionCircuitBuilderRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
+    public void draw(BasicTechnologyCircuitBuilderRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
         drawPhase(stack);
         drawRequiredEnergy(recipe, stack);
         drawRequiredEnergyUsage(recipe, stack);
@@ -72,7 +72,7 @@ public class BasicPrecisionCircuitBuilderRecipeCategory implements IRecipeCatego
         fontRenderer.draw(poseStack, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"), 15, 67, 0xFF0000);
     }
 
-    protected void drawRequiredEnergy(BasicPrecisionCircuitBuilderRecipe recipe, PoseStack poseStack) {
+    protected void drawRequiredEnergy(BasicTechnologyCircuitBuilderRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergy."), 17, 87, 0xFFFFFF);
@@ -84,7 +84,7 @@ public class BasicPrecisionCircuitBuilderRecipeCategory implements IRecipeCatego
         }
     }
 
-    protected void drawRequiredEnergyUsage(BasicPrecisionCircuitBuilderRecipe recipe, PoseStack poseStack) {
+    protected void drawRequiredEnergyUsage(BasicTechnologyCircuitBuilderRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergyusage."), 17, 107, 0xFFFFFF);
@@ -99,7 +99,7 @@ public class BasicPrecisionCircuitBuilderRecipeCategory implements IRecipeCatego
 //        fontRenderer.draw(poseStack, (recipe.getRequiredEnergy() / recipe.getRequiredTime() / 20F + " FE/t"), 17, 117, 0xFFFFFF);
     }
 
-    protected void drawRequiredTime(BasicPrecisionCircuitBuilderRecipe recipe, PoseStack poseStack) {
+    protected void drawRequiredTime(BasicTechnologyCircuitBuilderRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredtime."), 17, 127, 0xFFFFFF);
@@ -108,7 +108,7 @@ public class BasicPrecisionCircuitBuilderRecipeCategory implements IRecipeCatego
 
 
     @Override
-    public void setRecipe(@Nonnull IRecipeLayoutBuilder builder, @Nonnull BasicPrecisionCircuitBuilderRecipe recipe, @Nonnull IFocusGroup focusGroup) {
+    public void setRecipe(@Nonnull IRecipeLayoutBuilder builder, @Nonnull BasicTechnologyCircuitBuilderRecipe recipe, @Nonnull IFocusGroup focusGroup) {
         builder.addSlot(RecipeIngredientRole.INPUT, 8, 7).addItemStack(recipe.getInput0Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 26, 7).addItemStack(recipe.getInput1Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 44, 7).addItemStack(recipe.getInput2Item());

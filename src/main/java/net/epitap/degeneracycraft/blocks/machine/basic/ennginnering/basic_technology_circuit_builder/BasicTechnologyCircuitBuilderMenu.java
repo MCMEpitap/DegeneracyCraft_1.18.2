@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_precision_circuit_builder;
+package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_circuit_builder;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class BasicPrecisionCircuitBuilderMenu extends AbstractContainerMenu {
+public class BasicTechnologyCircuitBuilderMenu extends AbstractContainerMenu {
 
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
@@ -23,17 +23,17 @@ public class BasicPrecisionCircuitBuilderMenu extends AbstractContainerMenu {
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
     private static final int TE_INVENTORY_SLOT_COUNT = 12;
-    public final BasicPrecisionCircuitBuilderBlockEntity blockEntity;
+    public final BasicTechnologyCircuitBuilderBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
-    public BasicPrecisionCircuitBuilderMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
+    public BasicTechnologyCircuitBuilderMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
         this(pContainerId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
     }
 
-    public BasicPrecisionCircuitBuilderMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_PRECISION_CIRCUIT_BUILDER_MENU.get(), pContainerId);
-        blockEntity = ((BasicPrecisionCircuitBuilderBlockEntity) entity);
+    public BasicTechnologyCircuitBuilderMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(DCMenuTypes.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_MENU.get(), pContainerId);
+        blockEntity = ((BasicTechnologyCircuitBuilderBlockEntity) entity);
         this.level = inv.player.level;
         this.data = data;
 
@@ -67,7 +67,7 @@ public class BasicPrecisionCircuitBuilderMenu extends AbstractContainerMenu {
         return data.get(0) > 0;
     }
 
-    public BasicPrecisionCircuitBuilderBlockEntity getBlockEntity() {
+    public BasicTechnologyCircuitBuilderBlockEntity getBlockEntity() {
         return this.blockEntity;
     }
 
@@ -107,7 +107,7 @@ public class BasicPrecisionCircuitBuilderMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player pPlayer) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                pPlayer, DCBlocks.BASIC_PRECISION_CIRCUIT_BUILDER_BLOCK.get());
+                pPlayer, DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

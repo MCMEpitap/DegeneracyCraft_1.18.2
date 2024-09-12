@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_precision_circuit_builder;
+package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_circuit_builder;
 
 import net.epitap.degeneracycraft.blocks.base.BlockBase;
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
@@ -19,10 +19,10 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 
-public class BasicPrecisionCircuitBuilderBlock extends BlockBase {
+public class BasicTechnologyCircuitBuilderBlock extends BlockBase {
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
 
-    public BasicPrecisionCircuitBuilderBlock(Properties properties) {
+    public BasicTechnologyCircuitBuilderBlock(Properties properties) {
         super(properties);
     }
 
@@ -35,8 +35,8 @@ public class BasicPrecisionCircuitBuilderBlock extends BlockBase {
     public void onRemove(BlockState pState, Level level, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = level.getBlockEntity(pPos);
-            if (blockEntity instanceof BasicPrecisionCircuitBuilderBlockEntity) {
-                ((BasicPrecisionCircuitBuilderBlockEntity) blockEntity).drops();
+            if (blockEntity instanceof BasicTechnologyCircuitBuilderBlockEntity) {
+                ((BasicTechnologyCircuitBuilderBlockEntity) blockEntity).drops();
             }
         }
         super.onRemove(pState, level, pPos, pNewState, pIsMoving);
@@ -48,8 +48,8 @@ public class BasicPrecisionCircuitBuilderBlock extends BlockBase {
         if (!level.isClientSide()) {
             BlockEntity entity = level.getBlockEntity(pPos);
 
-            if (entity instanceof BasicPrecisionCircuitBuilderBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer) pPlayer), (BasicPrecisionCircuitBuilderBlockEntity) entity, pPos);
+            if (entity instanceof BasicTechnologyCircuitBuilderBlockEntity) {
+                NetworkHooks.openGui(((ServerPlayer) pPlayer), (BasicTechnologyCircuitBuilderBlockEntity) entity, pPos);
 
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
@@ -63,14 +63,14 @@ public class BasicPrecisionCircuitBuilderBlock extends BlockBase {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return new BasicPrecisionCircuitBuilderBlockEntity(pPos, pState);
+        return new BasicTechnologyCircuitBuilderBlockEntity(pPos, pState);
     }
 
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState pState, BlockEntityType<T> blockEntityType) {
-        return createTickerHelper(blockEntityType, DCBlockEntities.BASIC_PRECISION_CIRCUIT_BUILDER_BLOCK_ENTITY.get(),
-                BasicPrecisionCircuitBuilderBlockEntity::tick);
+        return createTickerHelper(blockEntityType, DCBlockEntities.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BLOCK_ENTITY.get(),
+                BasicTechnologyCircuitBuilderBlockEntity::tick);
     }
 
     @javax.annotation.Nullable

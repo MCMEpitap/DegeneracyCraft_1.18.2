@@ -741,12 +741,12 @@ public class DCBlockStateProvider extends BlockStateProvider {
     private void registerBasicTechnologyMachineElementProcessorBus() {
         BlockModelBuilder model = models().getBuilder("block/basic_technology_machine_element_processor_bus_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_bus_block"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_bus_block"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_bus_block"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_bus_block"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_bus_block"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_bus_block"));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK.get(),
                 state -> model);
     }
@@ -754,12 +754,12 @@ public class DCBlockStateProvider extends BlockStateProvider {
     private void registerBasicTechnologyMachineElementProcessorBusHolo() {
         BlockModelBuilder model = models().getBuilder("block/basic_technology_machine_element_processor_bus_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_bus_holo_block"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_bus_holo_block"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_bus_holo_block"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_bus_holo_block"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_bus_holo_block"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_bus_holo_block"));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -768,12 +768,12 @@ public class DCBlockStateProvider extends BlockStateProvider {
     private void registerBasicTechnologyMachineElementProcessorPort() {
         BlockModelBuilder model = models().getBuilder("block/basic_technology_machine_element_processor_port_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_port"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_port"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_port"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_port"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_port"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_port"));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(),
                 state -> model);
     }
@@ -781,12 +781,12 @@ public class DCBlockStateProvider extends BlockStateProvider {
     private void registerBasicTechnologyMachineElementProcessorPortHolo() {
         BlockModelBuilder model = models().getBuilder("block/basic_technology_machine_element_processor_port_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_port_holo_block"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_port_holo_block"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_port_holo_block"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_port_holo_block"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_port_holo_block"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_port_holo_block"));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }

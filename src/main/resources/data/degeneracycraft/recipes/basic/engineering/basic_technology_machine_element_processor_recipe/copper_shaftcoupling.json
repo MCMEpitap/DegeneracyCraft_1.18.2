@@ -1,0 +1,35 @@
+{
+  "type": "degeneracycraft:basic_technology_machine_manufacturer_recipe",
+  "energy": 200.0,
+  "time": 5.0,
+  "input0": {
+    "item": "minecraft:copper_ingot"
+  },
+  "input1": {
+    "item": "minecraft:air"
+  },
+  "input2": {
+    "item": "minecraft:copper_ingot"
+  },
+  "input3": {
+    "item": "minecraft:copper_ingot"
+  },
+  "input4": {
+    "item": "minecraft:copper_ingot"
+  },
+  "input5": {
+    "item": "minecraft:copper_ingot"
+  },
+  "input6": {
+    "item": "minecraft:copper_ingot"
+  },
+  "input7": {
+    "item": "minecraft:air"
+  },
+  "input8": {
+    "item": "minecraft:copper_ingot"
+  },
+  "output0": {
+    "item": "degeneracycraft:copper_shaftcoupling"
+  }
+}

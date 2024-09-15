@@ -31,5 +31,8 @@
   },
   "output0": {
     "item": "degeneracycraft:copper_chain"
+  },
+  "output1": {
+    "item": "degeneracycraft:copper_chain"
   }
 }

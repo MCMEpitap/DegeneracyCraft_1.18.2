@@ -29,8 +29,9 @@ public class BasicTechnologyMachineElementProcessorRecipe implements Recipe<Simp
     final ItemStack input7;
     final ItemStack input8;
     final ItemStack output0;
+    final ItemStack output1;
 
-    public BasicTechnologyMachineElementProcessorRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack input1, ItemStack input2, ItemStack input3, ItemStack input4, ItemStack input5, ItemStack input6, ItemStack input7, ItemStack input8, ItemStack output0) {
+    public BasicTechnologyMachineElementProcessorRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack input1, ItemStack input2, ItemStack input3, ItemStack input4, ItemStack input5, ItemStack input6, ItemStack input7, ItemStack input8, ItemStack output0, ItemStack output1) {
         this.id = id;
         this.energy = energy;
         this.time = time;
@@ -44,6 +45,7 @@ public class BasicTechnologyMachineElementProcessorRecipe implements Recipe<Simp
         this.input7 = input7;
         this.input8 = input8;
         this.output0 = output0;
+        this.output1 = output1;
     }
 
     @Override
@@ -117,6 +119,10 @@ public class BasicTechnologyMachineElementProcessorRecipe implements Recipe<Simp
         return output0;
     }
 
+    public ItemStack getOutput1Item() {
+        return output1;
+    }
+
     @Override
     public ItemStack getResultItem() {
         return output0;
@@ -173,8 +179,9 @@ public class BasicTechnologyMachineElementProcessorRecipe implements Recipe<Simp
             ItemStack input7 = BasicTechnologyMachineElementProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input7"));
             ItemStack input8 = BasicTechnologyMachineElementProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input8"));
             ItemStack output0 = BasicTechnologyMachineElementProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output0"));
+            ItemStack output1 = BasicTechnologyMachineElementProcessorRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output1"));
 
-            return new BasicTechnologyMachineElementProcessorRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, input5, input6, input7, input8, output0);
+            return new BasicTechnologyMachineElementProcessorRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, input5, input6, input7, input8, output0, output1);
 
         }
 
@@ -192,8 +199,9 @@ public class BasicTechnologyMachineElementProcessorRecipe implements Recipe<Simp
             ItemStack input7 = pBuffer.readItem();
             ItemStack input8 = pBuffer.readItem();
             ItemStack output0 = pBuffer.readItem();
+            ItemStack output1 = pBuffer.readItem();
 
-            return new BasicTechnologyMachineElementProcessorRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, input5, input6, input7, input8, output0);
+            return new BasicTechnologyMachineElementProcessorRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, input5, input6, input7, input8, output0, output1);
         }
 
         @Override
@@ -210,6 +218,7 @@ public class BasicTechnologyMachineElementProcessorRecipe implements Recipe<Simp
             pBuffer.writeItem(pRecipe.input7.getContainerItem());
             pBuffer.writeItem(pRecipe.input8.getContainerItem());
             pBuffer.writeItem(pRecipe.output0.getContainerItem());
+            pBuffer.writeItem(pRecipe.output1.getContainerItem());
         }
     }
 }

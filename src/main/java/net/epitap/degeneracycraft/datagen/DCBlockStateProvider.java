@@ -78,8 +78,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicTechnologyCircuitBuilderPortHolo();
 
         registerBasicTechnologyMachineElementProcessor();
-        registerBasicEfficiencyMachineElementProcessor();
-        registerBasicEfficiencyMachineElementProcessorHolo();
+        registerBasicEfficiencyMachineElementProcessorChamber();
+        registerBasicEfficiencyMachineElementProcessorChamberHolo();
         registerBasicTechnologyMachineElementProcessorBus();
         registerBasicTechnologyMachineElementProcessorBusHolo();
         registerBasicTechnologyMachineElementProcessorPort();
@@ -480,6 +480,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
     private void registerBasicTechnologyMachineManufacturerBusHolo() {
         BlockModelBuilder model = models().getBuilder("block/basic_technology_machine_manufacturer_bus_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
+
         model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block"));
         model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block"));
         model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block"));
@@ -712,7 +713,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicEfficiencyMachineElementProcessor() {
+    private void registerBasicEfficiencyMachineElementProcessorChamber() {
         BlockModelBuilder model = models().getBuilder("block/basic_efficiency_machine_element_processing_chamber_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
         model.texture("down", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_block"));
@@ -725,7 +726,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicEfficiencyMachineElementProcessorHolo() {
+    private void registerBasicEfficiencyMachineElementProcessorChamberHolo() {
         BlockModelBuilder model = models().getBuilder("block/basic_efficiency_machine_element_processing_chamber_chamber_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
         model.texture("down", modLoc("block/multiblock/basic/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_holo_block"));

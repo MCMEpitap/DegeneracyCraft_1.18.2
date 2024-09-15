@@ -3,7 +3,7 @@ package net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_techn
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_machine_element_processor.BasicMachineElementProcessorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorRecipe;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -236,8 +236,8 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<BasicMachineElementProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
@@ -273,8 +273,8 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicMachineElementProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return blockEntity.data.get(0) >= match.get().getRequiredTime() * 20;
@@ -289,8 +289,8 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicMachineElementProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
 
         return match.isPresent();
     }
@@ -302,8 +302,8 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicMachineElementProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
                 && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
@@ -323,8 +323,8 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicMachineElementProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime();
     }
@@ -340,8 +340,8 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicMachineElementProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
@@ -367,8 +367,8 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
             inventory.setItem(i, this.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicMachineElementProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return (this.data.get(0) / (match.get().getRequiredTime() * 20)) * 100;

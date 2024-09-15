@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_machine_element_processor;
+package net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_element_processor;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.constants.VanillaTypes;
@@ -18,14 +18,14 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
-public class BasicMachineElementProcessorRecipeCategory implements IRecipeCategory<BasicMachineElementProcessorRecipe> {
-    public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_machine_element_processor_recipe");
+public class BasicTechnologyMachineElementProcessorRecipeCategory implements IRecipeCategory<BasicTechnologyMachineElementProcessorRecipe> {
+    public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_technology_machine_element_processor_recipe");
     public final static ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_element_manufacture_machine_uid.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_uid.png");
     private final IDrawable background;
     private final IDrawable icon;
 
-    public BasicMachineElementProcessorRecipeCategory(IGuiHelper helper) {
+    public BasicTechnologyMachineElementProcessorRecipeCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 151);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get()));
     }
@@ -36,13 +36,13 @@ public class BasicMachineElementProcessorRecipeCategory implements IRecipeCatego
     }
 
     @Override
-    public Class<? extends BasicMachineElementProcessorRecipe> getRecipeClass() {
-        return BasicMachineElementProcessorRecipe.class;
+    public Class<? extends BasicTechnologyMachineElementProcessorRecipe> getRecipeClass() {
+        return BasicTechnologyMachineElementProcessorRecipe.class;
     }
 
     @Override
     public Component getTitle() {
-        return new TranslatableComponent("jei.degeneracycraft_basic_machine_element_processor");
+        return new TranslatableComponent("jei.degeneracycraft_basic_technology_machine_element_processor");
     }
 
     @Override
@@ -56,7 +56,7 @@ public class BasicMachineElementProcessorRecipeCategory implements IRecipeCatego
     }
 
     @Override
-    public void draw(BasicMachineElementProcessorRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
+    public void draw(BasicTechnologyMachineElementProcessorRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
         drawPhase(stack);
         drawRequiredEnergy(recipe, stack);
         drawRequiredEnergyUsage(recipe, stack);
@@ -69,14 +69,14 @@ public class BasicMachineElementProcessorRecipeCategory implements IRecipeCatego
         fontRenderer.draw(poseStack, new TranslatableComponent("screen." + "degeneracycraft" + ".phase0"), 15, 67, 0xFFFFFF);
     }
 
-    protected void drawRequiredEnergy(BasicMachineElementProcessorRecipe recipe, PoseStack poseStack) {
+    protected void drawRequiredEnergy(BasicTechnologyMachineElementProcessorRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergy."), 17, 87, 0xFFFFFF);
         fontRenderer.draw(poseStack, (recipe.getRequiredEnergy() + " FE"), 17, 97, 0xFFFFFF);
     }
 
-    protected void drawRequiredEnergyUsage(BasicMachineElementProcessorRecipe recipe, PoseStack poseStack) {
+    protected void drawRequiredEnergyUsage(BasicTechnologyMachineElementProcessorRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergyusage."), 17, 107, 0xFFFFFF);
@@ -84,7 +84,7 @@ public class BasicMachineElementProcessorRecipeCategory implements IRecipeCatego
 
     }
 
-    protected void drawRequiredTime(BasicMachineElementProcessorRecipe recipe, PoseStack poseStack) {
+    protected void drawRequiredTime(BasicTechnologyMachineElementProcessorRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredtime."), 17, 127, 0xFFFFFF);
@@ -93,7 +93,7 @@ public class BasicMachineElementProcessorRecipeCategory implements IRecipeCatego
 
 
     @Override
-    public void setRecipe(IRecipeLayoutBuilder builder, BasicMachineElementProcessorRecipe recipe, IFocusGroup focusGroup) {
+    public void setRecipe(IRecipeLayoutBuilder builder, BasicTechnologyMachineElementProcessorRecipe recipe, IFocusGroup focusGroup) {
         builder.addSlot(RecipeIngredientRole.INPUT, 8, 7).addItemStack(recipe.getInput0Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 26, 7).addItemStack(recipe.getInput1Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 44, 7).addItemStack(recipe.getInput2Item());

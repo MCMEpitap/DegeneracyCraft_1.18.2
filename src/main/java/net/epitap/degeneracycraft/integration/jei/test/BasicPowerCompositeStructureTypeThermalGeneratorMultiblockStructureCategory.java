@@ -42,7 +42,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure
 
     @Override
     public Component getTitle() {
-        return new TranslatableComponent("jei.degeneracycraft_basic_machine_element_processor");
+        return new TranslatableComponent("jei.degeneracycraft_basic_technology_machine_element_processor");
     }
 
     @Override

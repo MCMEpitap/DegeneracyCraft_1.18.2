@@ -31,5 +31,8 @@
   },
   "output0": {
     "item": "degeneracycraft:iron_pipe"
+  },
+  "output1": {
+    "item": "degeneracycraft:iron_pipe"
   }
 }

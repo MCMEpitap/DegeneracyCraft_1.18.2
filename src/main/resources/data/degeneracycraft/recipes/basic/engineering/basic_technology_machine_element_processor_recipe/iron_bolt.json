@@ -31,5 +31,8 @@
   },
   "output0": {
     "item": "degeneracycraft:iron_bolt"
+  },
+  "output1": {
+    "item": "degeneracycraft:iron_bolt"
   }
 }

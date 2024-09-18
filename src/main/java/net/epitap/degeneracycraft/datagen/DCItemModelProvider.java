@@ -630,11 +630,14 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicMaterialCommonItem(DCItems.SIMPLE_CONCAVE_LENS.get());
 
         basicPartItem(DCItems.BASIC_CIRCUIT.get());
+        basicPartItem(DCItems.BASIC_DIODE.get());
         basicPartItem(DCItems.BASIC_DRIVECHAIN.get());
+        basicPartItem(DCItems.BASIC_INSCRIBE_NEEDLE.get());
         basicPartItem(DCItems.BASIC_INSCRIBED_CIRCUIT.get());
         basicPartItem(DCItems.BASIC_LINKAGE.get());
         basicPartItem(DCItems.BASIC_MACHINE_SCREEN.get());
         basicPartItem(DCItems.BASIC_MOTOR.get());
+        basicPartItem(DCItems.BASIC_PROCESSING_BASE.get());
         basicPartItem(DCItems.BASIC_REDSTONE_BATTERY.get());
         basicPartItem(DCItems.BASIC_REINFORCED_PLATE.get());
         basicPartItem(DCItems.BASIC_ROBOT_ARM.get());

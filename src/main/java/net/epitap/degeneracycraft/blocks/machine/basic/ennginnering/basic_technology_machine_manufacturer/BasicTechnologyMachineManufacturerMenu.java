@@ -56,15 +56,6 @@ public class BasicTechnologyMachineManufacturerMenu extends AbstractContainerMen
     }
 
     public int getProgressPercent() {
-//        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
-//        int getCounter = this.data.get(0);
-//        Optional<BasicPrecisionCircuitBuilderRecipe> match = level.getRecipeManager()
-//                .getRecipeFor(BasicPrecisionCircuitBuilderRecipe.Type.INSTANCE, inventory, level);
-//        if (match.isPresent()) {
-//            return (int) (match.get().getRequiredTime() * 20);
-//        }
-//        return 10;
-
         return data.get(1);
     }
 

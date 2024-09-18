@@ -21,7 +21,7 @@ public class BasicTechnologyMachineElementProcessorMenu extends AbstractContaine
     private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 13;
+    private static final int TE_INVENTORY_SLOT_COUNT = 12;
     public final BasicTechnologyMachineElementProcessorBlockEntity blockEntity;
     public final Level level;
     public final ContainerData data;
@@ -47,7 +47,6 @@ public class BasicTechnologyMachineElementProcessorMenu extends AbstractContaine
             this.addSlot(new SlotItemHandler(handler, 9, 116, 25));
             this.addSlot(new SlotItemHandler(handler, 10, 134, 25));
             this.addSlot(new SlotItemHandler(handler, 11, 71, 59));
-            this.addSlot(new SlotItemHandler(handler, 12, 98, 62));
         });
         addDataSlots(data);
     }
@@ -56,8 +55,8 @@ public class BasicTechnologyMachineElementProcessorMenu extends AbstractContaine
         return data.get(0) > 0;
     }
 
-    public float getProgressPercent() {
-        return blockEntity.getProgressPercent();
+    public int getProgressPercent() {
+        return data.get(1);
     }
 
     public DCIEnergyStorageFloat getEnergy() {

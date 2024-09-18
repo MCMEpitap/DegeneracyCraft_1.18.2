@@ -46,7 +46,7 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
     public float BT_ME_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
     public final ContainerData data;
     public int counter;
-    public int getProgressPercent = 0;
+    public int getProgressPercent;
     public int getProgressRandom;
     public boolean formed0;
     public boolean formed1;
@@ -54,7 +54,7 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
     public boolean powered0_1;
     public boolean isFormed;
     public boolean isPowered0;
-    public final ItemStackHandler itemHandler = new ItemStackHandler(13) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(12) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -84,6 +84,7 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
         @Override
         public void onEnergyChanged() {
             setChanged();
+            getLevel().sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
             DCMessages.sendToClients(new DCEnergySyncS2CPacket(this.energy, getBlockPos()));
         }
     };
@@ -103,7 +104,7 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
             Map.of(
                     Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 9, (outputSlot, stack) -> false)),
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 9 || outputSlot == 10, (outputSlot, stack) -> false)),
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (inputSlot, stack) ->
                             itemHandler.isItemValid(0, stack))));
 
@@ -196,6 +197,7 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
         nbt.put("inventory", itemHandler.serializeNBT());
         nbt.putFloat("b_me_processor.energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
+        nbt.putInt("getProgressPercent", getProgressPercent);
         super.saveAdditional(nbt);
     }
 
@@ -205,6 +207,7 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("b_me_processor.energy"));
         counter = nbt.getInt("counter");
+        getProgressPercent = nbt.getInt("getProgressPercent");
     }
 
     public void drops() {
@@ -226,7 +229,7 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
 
         BasicTechnologyMachineElementProcessorStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
-        blockEntity.getProgressRandom = (int) (Math.random() * 100);
+//        blockEntity.getProgressRandom = (int) (Math.random() * 100);
 
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
@@ -259,12 +262,10 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
             if (craftCheck(blockEntity)) {
                 craftItem(blockEntity);
                 blockEntity.resetProgress();
-                blockEntity.resetRandom();
             }
             setChanged(level, pos, state);
         } else {
             blockEntity.resetProgress();
-            blockEntity.resetRandom();
             setChanged(level, pos, state);
         }
         setChanged(level, pos, state);
@@ -364,34 +365,34 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
         }
     }
 
-    private static void AdditionalCraftItem(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
-        Level level = blockEntity.level;
-        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
-        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
-        }
-
-        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
-
-        if (match.isPresent()) {
-            blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(2, match.get().getInput2Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(3, match.get().getInput3Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(4, match.get().getInput4Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(5, match.get().getInput5Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(6, match.get().getInput6Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(7, match.get().getInput7Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(8, match.get().getInput8Item().getCount(), false);
-            blockEntity.itemHandler.setStackInSlot(9, new ItemStack(match.get().getOutput0Item().getItem(),
-                    blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
-            blockEntity.itemHandler.setStackInSlot(10, new ItemStack(match.get().getOutput0Item().getItem(),
-                    blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
-
-            blockEntity.resetProgress();
-        }
-    }
+//    private static void additionalCraftItem(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
+//        Level level = blockEntity.level;
+//        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+//        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+//            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+//        }
+//
+//        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
+//                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+//
+//        if (match.isPresent()) {
+//            blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
+//            blockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
+//            blockEntity.itemHandler.extractItem(2, match.get().getInput2Item().getCount(), false);
+//            blockEntity.itemHandler.extractItem(3, match.get().getInput3Item().getCount(), false);
+//            blockEntity.itemHandler.extractItem(4, match.get().getInput4Item().getCount(), false);
+//            blockEntity.itemHandler.extractItem(5, match.get().getInput5Item().getCount(), false);
+//            blockEntity.itemHandler.extractItem(6, match.get().getInput6Item().getCount(), false);
+//            blockEntity.itemHandler.extractItem(7, match.get().getInput7Item().getCount(), false);
+//            blockEntity.itemHandler.extractItem(8, match.get().getInput8Item().getCount(), false);
+//            blockEntity.itemHandler.setStackInSlot(9, new ItemStack(match.get().getOutput0Item().getItem(),
+//                    blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
+//            blockEntity.itemHandler.setStackInSlot(10, new ItemStack(match.get().getOutput1Item().getItem(),
+//                    blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput1Item().getCount()));
+//
+//            blockEntity.resetProgress();
+//        }
+//    }
 
     public float getProgressPercent() {
         Level level = this.level;
@@ -410,7 +411,7 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
     }
 
     public void resetProgress() {
-        this.getProgressPercent = 0;
+        this.counter = 0;
     }
 
     public void resetRandom() {

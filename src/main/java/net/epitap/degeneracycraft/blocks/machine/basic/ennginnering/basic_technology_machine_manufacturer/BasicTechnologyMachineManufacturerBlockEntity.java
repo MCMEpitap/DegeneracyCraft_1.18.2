@@ -256,7 +256,7 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
                 blockEntity.counter++;
                     blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
                 }
-                blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
+            blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
                 if (craftCheck(blockEntity)) {
                     craftItem(blockEntity);
                 }

@@ -14,8 +14,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.energy.CapabilityEnergy;
 
-public class BasicMachineElementProcessorBusBlock extends PortBlockBase {
-    public BasicMachineElementProcessorBusBlock(Properties properties) {
+public class BasicTechnologyMachineElementProcessorBusBlock extends PortBlockBase {
+    public BasicTechnologyMachineElementProcessorBusBlock(Properties properties) {
         super(properties);
     }
 
@@ -31,12 +31,12 @@ public class BasicMachineElementProcessorBusBlock extends PortBlockBase {
     }
 
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new BasicMachineElementProcessorBusBlockEntity(pos, state);
+        return new BasicTechnologyMachineElementProcessorBusBlockEntity(pos, state);
     }
 
     public InteractionResult portSideLaunch(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, Direction facing) {
         BlockEntity blockentity = world.getBlockEntity(pos);
-        if (blockentity instanceof BasicMachineElementProcessorBusBlockEntity && this.portExtracting(world, pos, facing)) {
+        if (blockentity instanceof BasicTechnologyMachineElementProcessorBusBlockEntity && this.portExtracting(world, pos, facing)) {
             if (world.isClientSide) {
                 return InteractionResult.SUCCESS;
             }

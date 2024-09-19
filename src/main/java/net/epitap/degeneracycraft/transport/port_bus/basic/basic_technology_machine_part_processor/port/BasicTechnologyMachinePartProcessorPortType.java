@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.port_bus.basic.basic_technology_machine_element_processor.port;
+package net.epitap.degeneracycraft.transport.port_bus.basic.basic_technology_machine_part_processor.port;
 
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortBlockEntityBase;
@@ -16,12 +16,12 @@ import net.minecraftforge.items.ItemHandlerHelper;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class BasicMachineElementProcessorPortType extends PortTypeBase<Item> {
-    public static final BasicMachineElementProcessorPortType INSTANCE = new BasicMachineElementProcessorPortType();
+public class BasicTechnologyMachinePartProcessorPortType extends PortTypeBase<Item> {
+    public static final BasicTechnologyMachinePartProcessorPortType INSTANCE = new BasicTechnologyMachinePartProcessorPortType();
 
     @Override
     public String getKey() {
-        return "basic_technology_machine_element_processor_port_block";
+        return "basic_technology_machine_part_processor_port_block";
     }
 
     @Override
@@ -31,7 +31,7 @@ public class BasicMachineElementProcessorPortType extends PortTypeBase<Item> {
 
     @Override
     public String getTranslationKey() {
-        return "basic_technology_machine_element_processor_port_block";
+        return "basic_technology_machine_part_processor_port_block";
     }
 
     @Override

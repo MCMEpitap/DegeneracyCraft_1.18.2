@@ -15,19 +15,19 @@
     "item": "degeneracycraft:basic_motor"
   },
   "input4": {
-    "item": "degeneracycraft:basic_drivechain"
+    "item": "degeneracycraft:basic_processing_base"
   },
   "input5": {
     "item": "degeneracycraft:basic_motor"
   },
   "input6": {
-    "item": "degeneracycraft:basic_linkage"
+    "item": "degeneracycraft:basic_reinforced_plate"
   },
   "input7": {
     "item": "degeneracycraft:basic_redstone_battery"
   },
   "input8": {
-    "item": "degeneracycraft:basic_linkage"
+    "item": "degeneracycraft:basic_reinforced_plate"
   },
   "output0": {
     "item": "degeneracycraft:basic_technology_machine_element_processor_block"

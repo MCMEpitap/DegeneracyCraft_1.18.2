@@ -4,8 +4,8 @@ import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortRendererBa
 import net.epitap.degeneracycraft.transport.port_bus.render.PortModelRegistry;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 
-public class BasicMachineElementProcessorPortRenderer extends PortRendererBase {
-    public BasicMachineElementProcessorPortRenderer(BlockEntityRendererProvider.Context renderer) {
+public class BasicTechnologyMachineElementProcessorPortRenderer extends PortRendererBase {
+    public BasicTechnologyMachineElementProcessorPortRenderer(BlockEntityRendererProvider.Context renderer) {
         super(renderer);
     }
 

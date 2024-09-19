@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.port_bus.basic.basic_technology_machine_element_processor.bus;
+package net.epitap.degeneracycraft.transport.port_bus.basic.basic_technology_machine_part_processor.bus;
 
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeIEnergyUtils;
@@ -17,14 +17,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class BasicMachineElementProcessorBusType extends PortTypeBase<Void> {
-    public static final BasicMachineElementProcessorBusType INSTANCE = new BasicMachineElementProcessorBusType();
+public class BasicTechnologyMachinePartProcessorBusType extends PortTypeBase<Void> {
+    public static final BasicTechnologyMachinePartProcessorBusType INSTANCE = new BasicTechnologyMachinePartProcessorBusType();
 
-    public BasicMachineElementProcessorBusType() {
+    public BasicTechnologyMachinePartProcessorBusType() {
     }
 
     public String getKey() {
-        return "basic_technology_machine_element_processor_bus";
+        return "basic_technology_machine_part_processor_bus";
     }
 
     public boolean canImport(BlockEntity blockEntity, Direction direction) {
@@ -32,7 +32,7 @@ public class BasicMachineElementProcessorBusType extends PortTypeBase<Void> {
     }
 
     public String getTranslationKey() {
-        return "basic_technology_machine_element_processor_bus";
+        return "basic_technology_machine_part_processor_bus";
     }
 
     public ItemStack getIcon() {

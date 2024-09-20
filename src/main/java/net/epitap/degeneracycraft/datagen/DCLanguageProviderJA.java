@@ -726,11 +726,24 @@ public class DCLanguageProviderJA extends LanguageProvider {
                 "基本的な機械要素加工機. より加工難度の高い金属を加工する.");
         add(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSING_CHAMBER_BLOCK.get(), "基本効率機械要素加工室");
         add("tooltip." + "degeneracycraft.ability" + "basic_technology_machine_element_processor_block",
-                "基本操作組立加工室用");
+                "基本技術機械要素加工機用");
+        add(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSING_CHAMBER_HOLO_BLOCK.get(), "基本効率機械要素加工室 (ホログラム)");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK.get(), "基本技術機械要素加工機バス");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_HOLO_BLOCK.get(), "基本技術機械要素加工機バス (ホログラム)");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(), "基本機械要素加工機ポート");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_HOLO_BLOCK.get(), "基本機械要素加工機ポート (ホログラム)");
+
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BLOCK.get(), "基本技術機械部品加工機");
+        add("tooltip." + "degeneracycraft." + "basic_technology_machine_part_processor_block",
+                "基本的な機械要素加工機. より加工難度の高い部品を加工する.");
+        add(DCBlocks.BASIC_EFFICIENCY_MACHINE_PART_PROCESSING_CHAMBER_BLOCK.get(), "基本効率機械部品加工室");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_machine_part_processor_block",
+                "基本技術機械部品加工機用");
+        add(DCBlocks.BASIC_EFFICIENCY_MACHINE_PART_PROCESSING_CHAMBER_HOLO_BLOCK.get(), "基本効率機械部品加工室 (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BUS_BLOCK.get(), "基本技術機械部品加工機バス");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BUS_HOLO_BLOCK.get(), "基本技術機械部品加工機バス (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_BLOCK.get(), "基本技術機械部品加工機ポート");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_HOLO_BLOCK.get(), "基本技術機械部品加工機ポート (ホログラム)");
 
 //        add(DCBlocks.LOW_STERNGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),"低強度機械用フレーム");
         add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get(), "低強度多構造機械用フレーム");

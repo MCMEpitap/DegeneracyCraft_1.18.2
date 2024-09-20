@@ -766,6 +766,21 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_technology_machine_element_processor_port_block"));
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_machine_element_processor_port_holo_block"));
+
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_machine_part_processor_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_MACHINE_PART_PROCESSING_CHAMBER_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_machine_part_processing_chamber_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_MACHINE_PART_PROCESSING_CHAMBER_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_machine_part_processing_chamber_holo_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_machine_part_processor_bus_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_machine_part_processor_bus_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_machine_part_processor_port_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_machine_part_processor_port_holo_block"));
 //        withExistingParent(DCBlocks.OVERWORLD_CASSITERITE_ORE.getId().getPath(),
 //                modLoc("block/overworld_cassiterite_ore"));
 //        withExistingParent(DCBlocks.DEEPSLATE_CASSITERITE_ORE.getId().getPath(),

@@ -727,14 +727,27 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(), "Basic Technology Machine Element Processor");
         add("tooltip." + "degeneracycraft." + "basic_technology_machine_element_processor_block",
-                "Basic Machine Element Processor. Processing more difficult metals.");
-        add(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSING_CHAMBER_BLOCK.get(), "基本効率機械要素加工室");
+                "Basic Machine Element Processor. Processing more difficult parts.");
+        add(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSING_CHAMBER_BLOCK.get(), "Basic Efficiency Machine Element Processing Chamber");
         add("tooltip." + "degeneracycraft.ability" + "basic_technology_machine_element_processor_block",
                 "For Basic Technology Machine Element Processor");
+        add(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSING_CHAMBER_HOLO_BLOCK.get(), "Basic Efficiency Machine Element Processing Chamber (Hologram)");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK.get(), "Basic Technology Machine Element Processor Bus");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_HOLO_BLOCK.get(), "Basic Technology Machine Element Processor Bus (Hologram)");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(), "Basic Technology Machine Element Processor Port");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_HOLO_BLOCK.get(), "Basic Technology Machine Element Processor Port (Hologram)");
+
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BLOCK.get(), "Basic Technology Machine Part Processor");
+        add("tooltip." + "degeneracycraft." + "basic_technology_machine_part_processor_block",
+                "Basic Machine Part Processor. Processing more difficult metals.");
+        add(DCBlocks.BASIC_EFFICIENCY_MACHINE_PART_PROCESSING_CHAMBER_BLOCK.get(), "Basic Efficiency Machine Part Processing Chamber");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_machine_part_processor_block",
+                "For Basic Technology Machine Part Processor");
+        add(DCBlocks.BASIC_EFFICIENCY_MACHINE_PART_PROCESSING_CHAMBER_HOLO_BLOCK.get(), "Basic Efficiency Machine Part Processing Chamber (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BUS_BLOCK.get(), "Basic Technology Machine Part Processor Bus");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BUS_HOLO_BLOCK.get(), "Basic Technology Machine Part Processor Bus (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_BLOCK.get(), "Basic Technology Machine Part Processor Port");
+        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_HOLO_BLOCK.get(), "Basic Technology Machine Part Processor Port (Hologram)");
 
 
         add(DCBlocks.PULVERIZER_BLOCK.get(), "Pulverizer");

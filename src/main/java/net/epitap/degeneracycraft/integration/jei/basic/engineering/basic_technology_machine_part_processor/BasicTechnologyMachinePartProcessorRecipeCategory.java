@@ -42,7 +42,7 @@ public class BasicTechnologyMachinePartProcessorRecipeCategory implements IRecip
 
     @Override
     public Component getTitle() {
-        return new TranslatableComponent("jei.degeneracycraft_basic_technology_machine_element_processor");
+        return new TranslatableComponent("jei.degeneracycraft_basic_technology_machine_part_processor");
     }
 
     @Override

@@ -62,18 +62,18 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            for (int i = 0; i < 11; i++) {
+            for (int i = 0; i < 10; i++) {
                 if (slot == i && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                         && !stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                         && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
                     return true;
                 }
             }
-            if (slot == 11) {
+            if (slot == 10) {
                 return stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                         || stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
             }
-            if (slot == 12) {
+            if (slot == 11) {
                 return stack.is(DCItems.MACHINE_HALT_DEVICE.get());
             }
             return false;
@@ -104,7 +104,7 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
             Map.of(
                     Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 9 || outputSlot == 10, (outputSlot, stack) -> false)),
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 9, (outputSlot, stack) -> false)),
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (inputSlot, stack) ->
                             itemHandler.isItemValid(0, stack))));
 
@@ -335,7 +335,7 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
     }
 
     public static boolean isHaltDevice(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(12).is(DCItems.MACHINE_HALT_DEVICE.get());
+        return blockEntity.itemHandler.getStackInSlot(11).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
     private static void craftItem(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {

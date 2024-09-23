@@ -1,0 +1,35 @@
+{
+  "type": "degeneracycraft:basic_technology_machine_part_processor_recipe",
+  "energy": 1000.0,
+  "time": 10.0,
+  "input0": {
+    "item": "degeneracycraft:iron_gear"
+  },
+  "input1": {
+    "item": "degeneracycraft:iron_plate"
+  },
+  "input2": {
+    "item": "degeneracycraft:copper_shaft"
+  },
+  "input3": {
+    "item": "degeneracycraft:iron_plate"
+  },
+  "input4": {
+    "item": "degeneracycraft:copper_gear"
+  },
+  "input5": {
+    "item": "degeneracycraft:iron_wire"
+  },
+  "input6": {
+    "item": "degeneracycraft:iron_shapesteel"
+  },
+  "input7": {
+    "item": "degeneracycraft:iron_shaftcoupling"
+  },
+  "input8": {
+    "item": "degeneracycraft:iron_shaft"
+  },
+  "output0": {
+    "item": "degeneracycraft:basic_robot_arm"
+  }
+}

@@ -286,6 +286,27 @@ public class DCItemtagProvider extends ItemTagsProvider {
                     .add(DCItems.PYROLUSITE_ORESINTER.get())
                     .add(DCItems.PYROLUSITE_INGOT.get());
             //
+            tag(DCItems.QUARTZ_MULTIPLIED_ORE_MATERIAL)
+                    .add(DCItems.RAW_QUARTZ_ORE.get())
+                    .add(DCItems.QUARTZ_DUST.get())
+                    .add(DCItems.QUARTZ_PUREDUST.get())
+                    .add(DCItems.QUARTZ_LEACHATE.get())
+                    .add(DCItems.QUARTZ_CONCENTRATE.get())
+                    .add(DCItems.QUARTZ_PLASMA.get())
+                    .add(DCItems.QUARTZ_DEGENERATEMATTER.get())
+                    .add(DCItems.QUARTZ_SOUP.get())
+                    .add(DCItems.QUARTZ_IMAGINARYMATTER.get())
+                    .add(DCItems.STABLE_QUARTZ_IMAGINARYMATTER.get())
+                    .add(DCItems.QUARTZ_TACHYON.get())
+                    .add(DCItems.QUARTZ_ANTIMATTER.get())
+                    .add(DCItems.QUARTZ_ULTRAHOTPLASMA.get())
+                    .add(DCItems.QUARTZ_OVERFLUID.get())
+                    .add(DCItems.QUARTZ_CRYSTAL.get())
+                    .add(DCItems.QUARTZ_PRECIPITATE.get())
+                    .add(DCItems.QUARTZ_WASHEDDUST.get())
+                    .add(DCItems.QUARTZ_ORESINTER.get())
+                    .add(DCItems.QUARTZ_INGOT.get());
+            //
             tag(DCItems.RUTILE_MULTIPLIED_ORE_MATERIAL)
                     .add(DCItems.RAW_RUTILE_ORE.get())
                     .add(DCItems.RUTILE_DUST.get())

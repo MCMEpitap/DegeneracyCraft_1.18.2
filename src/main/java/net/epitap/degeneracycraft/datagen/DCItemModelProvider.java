@@ -42,6 +42,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         ingotMaterialItem(DCItems.PENTLANDITE_INGOT.get());
         ingotMaterialItem(DCItems.PHOSPHORITE_INGOT.get());
         ingotMaterialItem(DCItems.PYROLUSITE_INGOT.get());
+        ingotMaterialItem(DCItems.QUARTZ_INGOT.get());
         ingotMaterialItem(DCItems.RUTILE_INGOT.get());
         ingotMaterialItem(DCItems.SPODUMENE_INGOT.get());
         ingotMaterialItem(DCItems.SYLVITE_INGOT.get());
@@ -297,6 +298,25 @@ public class DCItemModelProvider extends ItemModelProvider {
         oreMaterialPyrolusiteItem(DCItems.PYROLUSITE_PRECIPITATE.get());
         oreMaterialPyrolusiteItem(DCItems.PYROLUSITE_WASHEDDUST.get());
         oreMaterialPyrolusiteItem(DCItems.PYROLUSITE_ORESINTER.get());
+        //
+        oreMaterialQuartzItem(DCItems.RAW_QUARTZ_ORE.get());
+        oreMaterialQuartzItem(DCItems.QUARTZ_DUST.get());
+        oreMaterialQuartzItem(DCItems.QUARTZ_PUREDUST.get());
+        oreMaterialQuartzItem(DCItems.QUARTZ_LEACHATE.get());
+        oreMaterialQuartzItem(DCItems.QUARTZ_CONCENTRATE.get());
+        oreMaterialQuartzItem(DCItems.QUARTZ_PLASMA.get());
+        oreMaterialQuartzItem(DCItems.QUARTZ_DEGENERATEMATTER.get());
+        oreMaterialQuartzItem(DCItems.QUARTZ_SOUP.get());
+        oreMaterialQuartzItem(DCItems.QUARTZ_IMAGINARYMATTER.get());
+        oreMaterialQuartzItem(DCItems.STABLE_QUARTZ_IMAGINARYMATTER.get());
+        oreMaterialQuartzItem(DCItems.QUARTZ_TACHYON.get());
+        oreMaterialQuartzItem(DCItems.QUARTZ_ANTIMATTER.get());
+        oreMaterialQuartzItem(DCItems.QUARTZ_ULTRAHOTPLASMA.get());
+        oreMaterialQuartzItem(DCItems.QUARTZ_OVERFLUID.get());
+        oreMaterialQuartzItem(DCItems.QUARTZ_CRYSTAL.get());
+        oreMaterialQuartzItem(DCItems.QUARTZ_PRECIPITATE.get());
+        oreMaterialQuartzItem(DCItems.QUARTZ_WASHEDDUST.get());
+        oreMaterialQuartzItem(DCItems.QUARTZ_ORESINTER.get());
         //
         oreMaterialRutileItem(DCItems.RAW_RUTILE_ORE.get());
         oreMaterialRutileItem(DCItems.RUTILE_DUST.get());
@@ -905,6 +925,12 @@ public class DCItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/pyrolusite/" + item.getRegistryName().getPath()));
+    }
+
+    private ItemModelBuilder oreMaterialQuartzItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/quartz/" + item.getRegistryName().getPath()));
     }
 
     private ItemModelBuilder oreMaterialRutileItem(Item item) {

@@ -339,25 +339,25 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> PYROLUSITE_INGOT = ITEMS.register("pyrolusite_ingot", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_INGOT_TAB)));
 
     //Quartz item group
-    public static final RegistryObject<Item> RAW_QUARTZ_ORE = ITEMS.register("raw_Quartz_ore", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> QUARTZ_DUST = ITEMS.register("Quartz_dust", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> QUARTZ_PUREDUST = ITEMS.register("Quartz_puredust", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> QUARTZ_LEACHATE = ITEMS.register("Quartz_leachate", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> QUARTZ_CONCENTRATE = ITEMS.register("Quartz_concentrate", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> QUARTZ_PLASMA = ITEMS.register("Quartz_plasma", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> QUARTZ_DEGENERATEMATTER = ITEMS.register("Quartz_degeneratematter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> QUARTZ_SOUP = ITEMS.register("Quartz_soup", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> QUARTZ_IMAGINARYMATTER = ITEMS.register("Quartz_imaginarymatter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> STABLE_QUARTZ_IMAGINARYMATTER = ITEMS.register("stable_Quartz_imaginarymatter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> QUARTZ_TACHYON = ITEMS.register("Quartz_tachyon", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> QUARTZ_ANTIMATTER = ITEMS.register("Quartz_antimatter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> QUARTZ_ULTRAHOTPLASMA = ITEMS.register("Quartz_ultrahotplasma", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> QUARTZ_OVERFLUID = ITEMS.register("Quartz_overfluid", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> QUARTZ_CRYSTAL = ITEMS.register("Quartz_crystal", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> QUARTZ_PRECIPITATE = ITEMS.register("Quartz_precipitate", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> QUARTZ_WASHEDDUST = ITEMS.register("Quartz_washeddust", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> QUARTZ_ORESINTER = ITEMS.register("Quartz_oresinter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> QUARTZ_INGOT = ITEMS.register("Quartz_ingot", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_INGOT_TAB)));
+    public static final RegistryObject<Item> RAW_QUARTZ_ORE = ITEMS.register("raw_quartz_ore", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> QUARTZ_DUST = ITEMS.register("quartz_dust", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> QUARTZ_PUREDUST = ITEMS.register("quartz_puredust", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> QUARTZ_LEACHATE = ITEMS.register("quartz_leachate", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> QUARTZ_CONCENTRATE = ITEMS.register("quartz_concentrate", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> QUARTZ_PLASMA = ITEMS.register("quartz_plasma", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> QUARTZ_DEGENERATEMATTER = ITEMS.register("quartz_degeneratematter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> QUARTZ_SOUP = ITEMS.register("quartz_soup", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> QUARTZ_IMAGINARYMATTER = ITEMS.register("quartz_imaginarymatter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> STABLE_QUARTZ_IMAGINARYMATTER = ITEMS.register("stable_quartz_imaginarymatter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> QUARTZ_TACHYON = ITEMS.register("quartz_tachyon", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> QUARTZ_ANTIMATTER = ITEMS.register("quartz_antimatter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> QUARTZ_ULTRAHOTPLASMA = ITEMS.register("quartz_ultrahotplasma", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> QUARTZ_OVERFLUID = ITEMS.register("quartz_overfluid", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> QUARTZ_CRYSTAL = ITEMS.register("quartz_crystal", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> QUARTZ_PRECIPITATE = ITEMS.register("quartz_precipitate", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> QUARTZ_WASHEDDUST = ITEMS.register("quartz_washeddust", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> QUARTZ_ORESINTER = ITEMS.register("quartz_oresinter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> QUARTZ_INGOT = ITEMS.register("quartz_ingot", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_INGOT_TAB)));
 
     // Rutile item group
     public static final RegistryObject<Item> RAW_RUTILE_ORE = ITEMS.register("raw_rutile_ore", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));

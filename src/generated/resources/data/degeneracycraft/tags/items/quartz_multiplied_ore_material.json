@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:raw_quartz_ore",
+    "degeneracycraft:quartz_dust",
+    "degeneracycraft:quartz_puredust",
+    "degeneracycraft:quartz_leachate",
+    "degeneracycraft:quartz_concentrate",
+    "degeneracycraft:quartz_plasma",
+    "degeneracycraft:quartz_degeneratematter",
+    "degeneracycraft:quartz_soup",
+    "degeneracycraft:quartz_imaginarymatter",
+    "degeneracycraft:stable_quartz_imaginarymatter",
+    "degeneracycraft:quartz_tachyon",
+    "degeneracycraft:quartz_antimatter",
+    "degeneracycraft:quartz_ultrahotplasma",
+    "degeneracycraft:quartz_overfluid",
+    "degeneracycraft:quartz_crystal",
+    "degeneracycraft:quartz_precipitate",
+    "degeneracycraft:quartz_washeddust",
+    "degeneracycraft:quartz_oresinter",
+    "degeneracycraft:quartz_ingot"
+  ]
+}

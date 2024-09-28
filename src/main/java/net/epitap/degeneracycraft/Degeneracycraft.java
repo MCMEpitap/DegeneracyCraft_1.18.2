@@ -106,7 +106,7 @@ public class Degeneracycraft {
 
         MenuScreens.register(DCMenuTypes.BASIC_PRECISION_TELESCOPE_MENU.get(), BasicPrecisionTelescopeScreen::new);
 
-        MenuScreens.register(DCMenuTypes.BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_MENU.get(), BasicPowerThermalGeneratorScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_POWER_THERMAL_GENERATOR_MENU.get(), BasicPowerThermalGeneratorScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_MENU.get(), BasicTechnologyMachineManufacturerScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_MENU.get(), BasicTechnologyUniversalAssemblerScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_MENU.get(), BasicTechnologyCircuitBuilderScreen::new);

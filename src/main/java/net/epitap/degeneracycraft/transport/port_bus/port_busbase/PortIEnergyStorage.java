@@ -1,6 +1,6 @@
 package net.epitap.degeneracycraft.transport.port_bus.port_busbase;
 
-import net.epitap.degeneracycraft.transport.port_bus.basic.basic_power_thermal_generator.bus.BasicPowerThermalGeneratorBusType;
+import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_thermal_generator.bus.BasicPowerThermalGeneratorBusType;
 import net.minecraft.core.Direction;
 import net.minecraftforge.energy.IEnergyStorage;
 

@@ -167,7 +167,7 @@ public class DCBlocks {
             "basic_performance_electric_arc_furnace_block",
             "dynamic_physics",
             "basic");
-    public static final RegistryObject<Block> BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK = registerHoloBlock("basic_flow_cooling_system_block", () ->
+    public static final RegistryObject<Block> BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK = registerHoloBlock("basic_flow_cooling_system_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK = registerBlock("basic_performance_electric_arc_furnace_bus_block", () ->

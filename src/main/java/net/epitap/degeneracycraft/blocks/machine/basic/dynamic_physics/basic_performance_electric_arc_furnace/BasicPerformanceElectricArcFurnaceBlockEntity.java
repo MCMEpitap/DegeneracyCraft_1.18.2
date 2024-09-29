@@ -1,9 +1,8 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.dynamic_physics.basic_performance_electric_furnace;
+package net.epitap.degeneracycraft.blocks.machine.basic.dynamic_physics.basic_performance_electric_arc_furnace;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorRecipe;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -37,24 +36,23 @@ import javax.annotation.Nonnull;
 import java.util.Map;
 import java.util.Optional;
 
-public class BasicPerformanceElectricFurnaceBlockEntity extends BlockEntity implements MenuProvider {
-    public float BT_ME_PROCESSOR_CAPACITY = 20000F;
-    public float BT_ME_PROCESSOR_TRANSFER = 16F;
-    public float BT_ME_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
-    public float BT_ME_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
-    public float BT_ME_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
-    public float BT_ME_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
+public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity implements MenuProvider {
+    public float BP_EA_FURNACE_CAPACITY = 50000F;
+    public float BP_EA_FURNACE_TRANSFER = 32F;
+    public float BP_EA_FURNACE_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
+    public float BP_EA_FURNACE_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
+    public float BP_EA_FURNACE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
+    public float BP_EA_FURNACE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
     public final ContainerData data;
     public int counter;
     public int getProgressPercent;
-    public int getProgressRandom;
     public boolean formed0;
     public boolean formed1;
     public boolean formed2;
     public boolean powered0_1;
     public boolean isFormed;
     public boolean isPowered0;
-    public final ItemStackHandler itemHandler = new ItemStackHandler(12) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(5) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -62,25 +60,25 @@ public class BasicPerformanceElectricFurnaceBlockEntity extends BlockEntity impl
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 3; i++) {
                 if (slot == i && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                         && !stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                         && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
                     return true;
                 }
             }
-            if (slot == 10) {
+            if (slot == 3) {
                 return stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                         || stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
             }
-            if (slot == 11) {
+            if (slot == 4) {
                 return stack.is(DCItems.MACHINE_HALT_DEVICE.get());
             }
             return false;
         }
     };
 
-    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BT_ME_PROCESSOR_CAPACITY, BT_ME_PROCESSOR_TRANSFER) {
+    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BP_EA_FURNACE_CAPACITY, BP_EA_FURNACE_TRANSFER) {
         @Override
         public void onEnergyChanged() {
             setChanged();
@@ -104,18 +102,18 @@ public class BasicPerformanceElectricFurnaceBlockEntity extends BlockEntity impl
             Map.of(
                     Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 9, (outputSlot, stack) -> false)),
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 2, (outputSlot, stack) -> false)),
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (inputSlot, stack) ->
                             itemHandler.isItemValid(0, stack))));
 
-    public BasicPerformanceElectricFurnaceBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_ENTITY.get(), pWorldPosition, pBlockState);
+    public BasicPerformanceElectricArcFurnaceBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
+        super(DCBlockEntities.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> BasicPerformanceElectricFurnaceBlockEntity.this.counter;
-                    case 1 -> BasicPerformanceElectricFurnaceBlockEntity.this.getProgressPercent;
+                    case 0 -> BasicPerformanceElectricArcFurnaceBlockEntity.this.counter;
+                    case 1 -> BasicPerformanceElectricArcFurnaceBlockEntity.this.getProgressPercent;
                     default -> 0;
                 };
             }
@@ -123,9 +121,9 @@ public class BasicPerformanceElectricFurnaceBlockEntity extends BlockEntity impl
             @Override
             public void set(int index, int value) {
                 if (index == 0) {
-                    BasicPerformanceElectricFurnaceBlockEntity.this.counter = value;
+                    BasicPerformanceElectricArcFurnaceBlockEntity.this.counter = value;
                 } else if (index == 1) {
-                    BasicPerformanceElectricFurnaceBlockEntity.this.getProgressPercent = value;
+                    BasicPerformanceElectricArcFurnaceBlockEntity.this.getProgressPercent = value;
                 }
             }
 
@@ -140,7 +138,7 @@ public class BasicPerformanceElectricFurnaceBlockEntity extends BlockEntity impl
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return new BasicPerformanceElectricFurnaceMenu(pContainerId, pInventory, this, this.data);
+        return new BasicPerformanceElectricArcFurnaceMenu(pContainerId, pInventory, this, this.data);
     }
 
     public Component getDisplayName() {
@@ -156,7 +154,7 @@ public class BasicPerformanceElectricFurnaceBlockEntity extends BlockEntity impl
                 return lazyItemHandler.cast();
             }
             if (directionWrappedHandlerMap.containsKey(side)) {
-                Direction localDir = this.getBlockState().getValue(BasicPerformanceElectricFurnaceBlock.FACING);
+                Direction localDir = this.getBlockState().getValue(BasicPerformanceElectricArcFurnaceBlock.FACING);
 
                 if (side == Direction.UP || side == Direction.DOWN) {
                     return directionWrappedHandlerMap.get(side).cast();
@@ -195,7 +193,7 @@ public class BasicPerformanceElectricFurnaceBlockEntity extends BlockEntity impl
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         nbt.put("inventory", itemHandler.serializeNBT());
-        nbt.putFloat("bt_me_processor.energy", ENERGY_STORAGE.getEnergyStoredFloat());
+        nbt.putFloat("bt_e_furnace.energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
         nbt.putInt("getProgressPercent", getProgressPercent);
         super.saveAdditional(nbt);
@@ -205,7 +203,7 @@ public class BasicPerformanceElectricFurnaceBlockEntity extends BlockEntity impl
     public void load(CompoundTag nbt) {
         super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("bt_me_processor.energy"));
+        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("bt_e_furnace.energy"));
         counter = nbt.getInt("counter");
         getProgressPercent = nbt.getInt("getProgressPercent");
     }
@@ -219,17 +217,16 @@ public class BasicPerformanceElectricFurnaceBlockEntity extends BlockEntity impl
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
-    public static void tick(Level level, BlockPos pos, BlockState state, BasicPerformanceElectricFurnaceBlockEntity blockEntity) {
-        blockEntity.formed0 = BasicPerformanceElectricFurnaceStructure.isFormed0(level, pos, state, blockEntity);
-        blockEntity.formed1 = BasicPerformanceElectricFurnaceStructure.isFormed1(level, pos, state, blockEntity);
-        blockEntity.formed2 = BasicPerformanceElectricFurnaceStructure.isFormed2(level, pos, state, blockEntity);
-        blockEntity.powered0_1 = BasicPerformanceElectricFurnaceStructure.powered0_1(level, pos, state, blockEntity);
-        blockEntity.isFormed = BasicPerformanceElectricFurnaceStructure.isFormed(blockEntity);
-        blockEntity.isPowered0 = BasicPerformanceElectricFurnaceStructure.isPowered0(blockEntity);
+    public static void tick(Level level, BlockPos pos, BlockState state, BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+        blockEntity.formed0 = BasicPerformanceElectricArcFurnaceStructure.isFormed0(level, pos, state, blockEntity);
+        blockEntity.formed1 = BasicPerformanceElectricArcFurnaceStructure.isFormed1(level, pos, state, blockEntity);
+        blockEntity.formed2 = BasicPerformanceElectricArcFurnaceStructure.isFormed2(level, pos, state, blockEntity);
+        blockEntity.powered0_1 = BasicPerformanceElectricArcFurnaceStructure.powered0_1(level, pos, state, blockEntity);
+        blockEntity.isFormed = BasicPerformanceElectricArcFurnaceStructure.isFormed(blockEntity);
+        blockEntity.isPowered0 = BasicPerformanceElectricArcFurnaceStructure.isPowered0(blockEntity);
 
-        BasicPerformanceElectricFurnaceStructure.hologram(level, pos, state, blockEntity);
+        BasicPerformanceElectricArcFurnaceStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
-//        blockEntity.getProgressRandom = (int) (Math.random() * 100);
 
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
@@ -241,18 +238,18 @@ public class BasicPerformanceElectricFurnaceBlockEntity extends BlockEntity impl
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+        Optional<net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
             if (blockEntity.isPowered0) {
-                blockEntity.counter += blockEntity.BT_ME_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_ME_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
+                blockEntity.counter += blockEntity.BP_EA_FURNACE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BP_EA_FURNACE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else if (blockEntity.isFormed) {
-                blockEntity.counter += blockEntity.BT_ME_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_FORMED;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_ME_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
+                blockEntity.counter += blockEntity.BP_EA_FURNACE_MANUFACTURING_SPEED_MODIFIER_FORMED;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BP_EA_FURNACE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else {
                 blockEntity.counter++;
@@ -271,15 +268,15 @@ public class BasicPerformanceElectricFurnaceBlockEntity extends BlockEntity impl
         setChanged(level, pos, state);
     }
 
-    public static boolean craftCheck(BasicPerformanceElectricFurnaceBlockEntity blockEntity) {
+    public static boolean craftCheck(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+        Optional<net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return blockEntity.data.get(0) >= match.get().getRequiredTime() * 20;
@@ -287,113 +284,69 @@ public class BasicPerformanceElectricFurnaceBlockEntity extends BlockEntity impl
         return false;
     }
 
-    private static boolean hasRecipe(BasicPerformanceElectricFurnaceBlockEntity blockEntity) {
+    private static boolean hasRecipe(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+        Optional<net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         return match.isPresent();
     }
 
-    private static boolean hasAmountRecipe(BasicPerformanceElectricFurnaceBlockEntity blockEntity) {
+    private static boolean hasAmountRecipe(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+        Optional<net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(2).getCount() >= match.get().getInput2Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(3).getCount() >= match.get().getInput3Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(4).getCount() >= match.get().getInput4Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(5).getCount() >= match.get().getInput5Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(6).getCount() >= match.get().getInput6Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(7).getCount() >= match.get().getInput7Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
+                && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount();
     }
 
-    private static boolean hasAmountEnergyRecipe(BasicPerformanceElectricFurnaceBlockEntity blockEntity) {
+    private static boolean hasAmountEnergyRecipe(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+        Optional<net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime();
     }
 
-    public static boolean isHaltDevice(BasicPerformanceElectricFurnaceBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(11).is(DCItems.MACHINE_HALT_DEVICE.get());
+    public static boolean isHaltDevice(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+        return blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
-    private static void craftItem(BasicPerformanceElectricFurnaceBlockEntity blockEntity) {
+    private static void craftItem(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+        Optional<net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
             blockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(2, match.get().getInput2Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(3, match.get().getInput3Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(4, match.get().getInput4Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(5, match.get().getInput5Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(6, match.get().getInput6Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(7, match.get().getInput7Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(8, match.get().getInput8Item().getCount(), false);
-            blockEntity.itemHandler.setStackInSlot(9, new ItemStack(match.get().getOutput0Item().getItem(),
-                    blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
+            blockEntity.itemHandler.setStackInSlot(2, new ItemStack(match.get().getOutput0Item().getItem(),
+                    blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount()));
 
             blockEntity.resetProgress();
         }
     }
-
-//    private static void additionalCraftItem(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
-//        Level level = blockEntity.level;
-//        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
-//        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
-//            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
-//        }
-//
-//        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
-//                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
-//
-//        if (match.isPresent()) {
-//            blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
-//            blockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
-//            blockEntity.itemHandler.extractItem(2, match.get().getInput2Item().getCount(), false);
-//            blockEntity.itemHandler.extractItem(3, match.get().getInput3Item().getCount(), false);
-//            blockEntity.itemHandler.extractItem(4, match.get().getInput4Item().getCount(), false);
-//            blockEntity.itemHandler.extractItem(5, match.get().getInput5Item().getCount(), false);
-//            blockEntity.itemHandler.extractItem(6, match.get().getInput6Item().getCount(), false);
-//            blockEntity.itemHandler.extractItem(7, match.get().getInput7Item().getCount(), false);
-//            blockEntity.itemHandler.extractItem(8, match.get().getInput8Item().getCount(), false);
-//            blockEntity.itemHandler.setStackInSlot(9, new ItemStack(match.get().getOutput0Item().getItem(),
-//                    blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
-//            blockEntity.itemHandler.setStackInSlot(10, new ItemStack(match.get().getOutput1Item().getItem(),
-//                    blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput1Item().getCount()));
-//
-//            blockEntity.resetProgress();
-//        }
-//    }
-
     public float getProgressPercent() {
         Level level = this.level;
         SimpleContainer inventory = new SimpleContainer(this.itemHandler.getSlots());
@@ -401,8 +354,8 @@ public class BasicPerformanceElectricFurnaceBlockEntity extends BlockEntity impl
             inventory.setItem(i, this.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+        Optional<net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return (this.data.get(0) / (match.get().getRequiredTime() * 20)) * 100;
@@ -414,20 +367,11 @@ public class BasicPerformanceElectricFurnaceBlockEntity extends BlockEntity impl
         this.counter = 0;
     }
 
-//    public void resetRandom() {
-//        this.getProgressRandom = 0;
-//    }
-
     private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
-        return inventory.getItem(9).getItem() == output.getItem() || inventory.getItem(9).isEmpty();
+        return inventory.getItem(2).getItem() == output.getItem() || inventory.getItem(2).isEmpty();
     }
 
-    private static boolean hasNotReachedStackLimit(BasicPerformanceElectricFurnaceBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(9).getCount() < blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
+    private static boolean hasNotReachedStackLimit(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+        return blockEntity.itemHandler.getStackInSlot(2).getCount() < blockEntity.itemHandler.getStackInSlot(2).getMaxStackSize();
     }
-
-//    private static boolean hasNotReachedStackLimit(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
-//        return blockEntity.itemHandler.getStackInSlot(9).getCount() < blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize()
-//                && blockEntity.itemHandler.getStackInSlot(10).getCount() < blockEntity.itemHandler.getStackInSlot(10).getMaxStackSize();
-//    }
 }

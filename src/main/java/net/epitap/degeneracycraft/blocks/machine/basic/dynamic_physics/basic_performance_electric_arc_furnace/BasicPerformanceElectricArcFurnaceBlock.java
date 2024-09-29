@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.dynamic_physics.basic_performance_electric_furnace;
+package net.epitap.degeneracycraft.blocks.machine.basic.dynamic_physics.basic_performance_electric_arc_furnace;
 
 import net.epitap.degeneracycraft.blocks.base.BlockBase;
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
@@ -20,10 +20,10 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class BasicPerformanceElectricFurnaceBlock extends BlockBase {
+public class BasicPerformanceElectricArcFurnaceBlock extends BlockBase {
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
 
-    public BasicPerformanceElectricFurnaceBlock(Properties properties) {
+    public BasicPerformanceElectricArcFurnaceBlock(Properties properties) {
         super(properties);
     }
 
@@ -31,8 +31,8 @@ public class BasicPerformanceElectricFurnaceBlock extends BlockBase {
     public void onRemove(BlockState pState, Level level, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = level.getBlockEntity(pPos);
-            if (blockEntity instanceof BasicPerformanceElectricFurnaceBlockEntity) {
-                ((BasicPerformanceElectricFurnaceBlockEntity) blockEntity).drops();
+            if (blockEntity instanceof BasicPerformanceElectricArcFurnaceBlockEntity) {
+                ((BasicPerformanceElectricArcFurnaceBlockEntity) blockEntity).drops();
             }
         }
         super.onRemove(pState, level, pPos, pNewState, pIsMoving);
@@ -44,8 +44,8 @@ public class BasicPerformanceElectricFurnaceBlock extends BlockBase {
         if (!level.isClientSide()) {
             BlockEntity entity = level.getBlockEntity(pPos);
 
-            if (entity instanceof BasicPerformanceElectricFurnaceBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer) pPlayer), (BasicPerformanceElectricFurnaceBlockEntity) entity, pPos);
+            if (entity instanceof BasicPerformanceElectricArcFurnaceBlockEntity) {
+                NetworkHooks.openGui(((ServerPlayer) pPlayer), (BasicPerformanceElectricArcFurnaceBlockEntity) entity, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
@@ -57,15 +57,15 @@ public class BasicPerformanceElectricFurnaceBlock extends BlockBase {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new BasicPerformanceElectricFurnaceBlockEntity(pos, state);
+        return new BasicPerformanceElectricArcFurnaceBlockEntity(pos, state);
     }
 
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level level, @NotNull BlockState state,
                                                                   @NotNull BlockEntityType<T> type) {
-        return createTickerHelper(type, DCBlockEntities.BASIC_PERFORMANCE_ELECTRIC_FURNACE_BLOCK_ENTITY.get(),
-                BasicPerformanceElectricFurnaceBlockEntity::tick);
+        return createTickerHelper(type, DCBlockEntities.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK_ENTITY.get(),
+                BasicPerformanceElectricArcFurnaceBlockEntity::tick);
     }
 
     @Nullable

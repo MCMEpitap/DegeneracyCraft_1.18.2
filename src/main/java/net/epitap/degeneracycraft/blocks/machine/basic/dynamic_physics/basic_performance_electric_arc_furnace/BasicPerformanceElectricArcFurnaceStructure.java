@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.dynamic_physics.basic_performance_electric_furnace;
+package net.epitap.degeneracycraft.blocks.machine.basic.dynamic_physics.basic_performance_electric_arc_furnace;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.dcenum.MBPPos;
@@ -9,20 +9,20 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class BasicPerformanceElectricFurnaceStructure {
+public class BasicPerformanceElectricArcFurnaceStructure {
 
 
-    public static boolean isFormed(BasicPerformanceElectricFurnaceBlockEntity blockEntity) {
+    public static boolean isFormed(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
         return blockEntity.isFormed = blockEntity.formed0 && blockEntity.formed1 && blockEntity.formed2;
     }
 
-    public static boolean isPowered0(BasicPerformanceElectricFurnaceBlockEntity blockEntity) {
+    public static boolean isPowered0(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
         return blockEntity.isPowered0 = blockEntity.powered0_1 && blockEntity.isFormed;
     }
 
 
-    public static boolean isFormed0(Level level, BlockPos pos, BlockState state, BasicPerformanceElectricFurnaceBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPerformanceElectricFurnaceBlock.FACING);
+    public static boolean isFormed0(Level level, BlockPos pos, BlockState state, BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicPerformanceElectricArcFurnaceBlock.FACING);
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
@@ -50,8 +50,8 @@ public class BasicPerformanceElectricFurnaceStructure {
         return blockEntity.formed0 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6 && pos7 && pos8;
     }
 
-    public static boolean isFormed1(Level level, BlockPos pos, BlockState state, BasicPerformanceElectricFurnaceBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPerformanceElectricFurnaceBlock.FACING);
+    public static boolean isFormed1(Level level, BlockPos pos, BlockState state, BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicPerformanceElectricArcFurnaceBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -76,8 +76,8 @@ public class BasicPerformanceElectricFurnaceStructure {
         return blockEntity.formed1 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6;
     }
 
-    public static boolean isFormed2(Level level, BlockPos pos, BlockState state, BasicPerformanceElectricFurnaceBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPerformanceElectricFurnaceBlock.FACING);
+    public static boolean isFormed2(Level level, BlockPos pos, BlockState state, BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicPerformanceElectricArcFurnaceBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -105,8 +105,8 @@ public class BasicPerformanceElectricFurnaceStructure {
         return blockEntity.formed2 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6 && pos7 && pos8;
     }
 
-    public static boolean powered0_1(Level level, BlockPos pos, BlockState state, BasicPerformanceElectricFurnaceBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPerformanceElectricFurnaceBlock.FACING);
+    public static boolean powered0_1(Level level, BlockPos pos, BlockState state, BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicPerformanceElectricArcFurnaceBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -118,14 +118,14 @@ public class BasicPerformanceElectricFurnaceStructure {
     }
 
 
-    public static void hologram(Level level, BlockPos pos, BlockState state, BasicPerformanceElectricFurnaceBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPerformanceElectricFurnaceBlock.FACING);
+    public static void hologram(Level level, BlockPos pos, BlockState state, BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicPerformanceElectricArcFurnaceBlock.FACING);
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
 
-        if (blockEntity.itemHandler.getStackInSlot(10).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
-                || blockEntity.itemHandler.getStackInSlot(10).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())) {
+        if (blockEntity.itemHandler.getStackInSlot(3).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
+                || blockEntity.itemHandler.getStackInSlot(3).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())) {
             if (level.getBlockState(blockpos.relative(reX, MBPPos.x_1y_1z_2.xPos).above(MBPPos.x_1y_1z_2.yPos).relative(reZ, MBPPos.x_1y_1z_2.zPos)).isAir()) {
                 level.setBlock(blockpos.relative(reX, MBPPos.x_1y_1z_2.xPos).above(MBPPos.x_1y_1z_2.yPos).relative(reZ, MBPPos.x_1y_1z_2.zPos),
                         DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState(), 1);
@@ -403,7 +403,7 @@ public class BasicPerformanceElectricFurnaceStructure {
             }
         }
 
-        if (blockEntity.itemHandler.getStackInSlot(10).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
+        if (blockEntity.itemHandler.getStackInSlot(3).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                 && blockEntity.formed0) {
             if (level.getBlockState(blockpos.relative(reX, MBPPos.x0y0z_1.xPos).above(MBPPos.x0y0z_1.yPos).relative(reZ, MBPPos.x0y0z_1.zPos)).isAir()) {
                 level.setBlock(blockpos.relative(reX, MBPPos.x0y0z_1.xPos).above(MBPPos.x0y0z_1.yPos).relative(reZ, MBPPos.x0y0z_1.zPos),

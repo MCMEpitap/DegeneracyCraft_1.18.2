@@ -3,6 +3,8 @@ package net.epitap.degeneracycraft.transport.port_bus.port_busbase;
 import net.epitap.degeneracycraft.transport.parametor.PipeItemHandler;
 import net.epitap.degeneracycraft.transport.parametor.PipeSetLazyOptional;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeDCIEnergyStorageFloat;
+import net.epitap.degeneracycraft.transport.port_bus.basic.dynamic_physics.basic_performance_electric_arc_furnace.bus.BasicPerformanceElectricArcFurnaceBusType;
+import net.epitap.degeneracycraft.transport.port_bus.basic.dynamic_physics.basic_performance_electric_arc_furnace.port.BasicPerformanceElectricArcFurnacePortType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_thermal_generator.bus.BasicPowerThermalGeneratorBusType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_thermal_generator.port.BasicPowerThermalGeneratorPortType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_circuit_builder.bus.BasicTechnologyCircuitBuilderBusType;
@@ -87,7 +89,13 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 //                return itemStored.get(side).cast();
 //            }
 //        }
-        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPowerThermalGeneratorPortType.INSTANCE)) {
+
+        if (cap == CapabilityEnergy.ENERGY && hasType(BasicPerformanceElectricArcFurnaceBusType.INSTANCE)) {
+            if (side != null) {
+                return intEnergyStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPerformanceElectricArcFurnacePortType.INSTANCE)) {
             if (side != null) {
                 return itemStored.get(side).cast();
             }
@@ -97,7 +105,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 return intEnergyStored.get(side).cast();
             }
         }
-        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicTechnologyMachineManufacturerPortType.INSTANCE)) {
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPowerThermalGeneratorPortType.INSTANCE)) {
             if (side != null) {
                 return itemStored.get(side).cast();
             }
@@ -186,6 +194,13 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         for (PortTypeBase<?> type : getPortTypes()) {
             type.tick(this);
         }
+        if (hasType(BasicPerformanceElectricArcFurnaceBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    intEnergyStored.get(side).ifPresent(PortIEnergyStorage::tick);
+                }
+            }
+        }
         if (hasType(BasicPowerThermalGeneratorBusType.INSTANCE)) {
             for (Direction side : Direction.values()) {
                 if (portExtracting(side)) {
@@ -219,13 +234,16 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
     @Override
     public void setPortExtracting(Direction side, boolean extracting) {
         super.setPortExtracting(side, extracting);
-        if (hasType(BasicPowerThermalGeneratorPortType.INSTANCE)) {
+        if (hasType(BasicPerformanceElectricArcFurnaceBusType.INSTANCE)) {
+            intEnergyStored.revalidate(side, storage -> extracting, (storage) -> new PortIEnergyStorage(this, storage));
+        }
+        if (hasType(BasicPerformanceElectricArcFurnacePortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PipeItemHandler.INSTANCE);
         }
         if (hasType(BasicPowerThermalGeneratorBusType.INSTANCE)) {
             intEnergyStored.revalidate(side, storage -> extracting, (storage) -> new PortIEnergyStorage(this, storage));
         }
-        if (hasType(BasicTechnologyMachineManufacturerPortType.INSTANCE)) {
+        if (hasType(BasicPowerThermalGeneratorPortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PipeItemHandler.INSTANCE);
         }
         if (hasType(BasicTechnologyMachineManufacturerBusType.INSTANCE)) {
@@ -257,13 +275,16 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
     @Override
     public void load(CompoundTag tag) {
         super.load(tag);
-        if (hasType(BasicPowerThermalGeneratorPortType.INSTANCE)) {
+        if (hasType(BasicPerformanceElectricArcFurnaceBusType.INSTANCE)) {
+            intEnergyStored.revalidate(this::portExtracting, (side) -> new PortIEnergyStorage(this, side));
+        }
+        if (hasType(BasicPerformanceElectricArcFurnacePortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PipeItemHandler.INSTANCE);
         }
         if (hasType(BasicPowerThermalGeneratorBusType.INSTANCE)) {
             intEnergyStored.revalidate(this::portExtracting, (side) -> new PortIEnergyStorage(this, side));
         }
-        if (hasType(BasicTechnologyMachineManufacturerPortType.INSTANCE)) {
+        if (hasType(BasicPowerThermalGeneratorPortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PipeItemHandler.INSTANCE);
         }
         if (hasType(BasicTechnologyMachineManufacturerBusType.INSTANCE)) {

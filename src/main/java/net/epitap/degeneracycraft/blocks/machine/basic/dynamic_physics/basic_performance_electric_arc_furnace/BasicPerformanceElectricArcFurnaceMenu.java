@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.dynamic_physics.basic_performance_electric_furnace;
+package net.epitap.degeneracycraft.blocks.machine.basic.dynamic_physics.basic_performance_electric_arc_furnace;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class BasicPerformanceElectricFurnaceMenu extends AbstractContainerMenu {
+public class BasicPerformanceElectricArcFurnaceMenu extends AbstractContainerMenu {
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
@@ -22,31 +22,28 @@ public class BasicPerformanceElectricFurnaceMenu extends AbstractContainerMenu {
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
     private static final int TE_INVENTORY_SLOT_COUNT = 12;
-    public final BasicPerformanceElectricFurnaceBlockEntity blockEntity;
+    public final BasicPerformanceElectricArcFurnaceBlockEntity blockEntity;
     public final Level level;
     public final ContainerData data;
 
-    public BasicPerformanceElectricFurnaceMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+    public BasicPerformanceElectricArcFurnaceMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
         this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
 
-    public BasicPerformanceElectricFurnaceMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_MACHINE_MENU.get(), id);
-        blockEntity = (BasicPerformanceElectricFurnaceBlockEntity) entity;
+    public BasicPerformanceElectricArcFurnaceMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(DCMenuTypes.BASIC_PERFORMANCE_ARC_ELECTRIC_FURNACE_MENU.get(), id);
+        blockEntity = (BasicPerformanceElectricArcFurnaceBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            for (int i = 0; i < 3; ++i) {
-                for (int l = 0; l < 3; ++l) {
-                    this.addSlot(new SlotItemHandler(handler, (l + i * 3), 8 + l * 18, 7 + i * 18));
-                }
-            }
-            this.addSlot(new SlotItemHandler(handler, 9, 116, 25));
-            this.addSlot(new SlotItemHandler(handler, 10, 134, 25));
-            this.addSlot(new SlotItemHandler(handler, 11, 71, 59));
+            this.addSlot(new SlotItemHandler(handler, 0, 8, 7));
+            this.addSlot(new SlotItemHandler(handler, 1, 26, 25));
+            this.addSlot(new SlotItemHandler(handler, 2, 116, 25));
+            this.addSlot(new SlotItemHandler(handler, 3, 134, 25));
+            this.addSlot(new SlotItemHandler(handler, 4, 71, 59));
         });
         addDataSlots(data);
     }
@@ -63,7 +60,7 @@ public class BasicPerformanceElectricFurnaceMenu extends AbstractContainerMenu {
         return blockEntity.getEnergyStorage();
     }
 
-    public BasicPerformanceElectricFurnaceBlockEntity getBlockEntity() {
+    public BasicPerformanceElectricArcFurnaceBlockEntity getBlockEntity() {
         return this.blockEntity;
     }
 
@@ -103,7 +100,7 @@ public class BasicPerformanceElectricFurnaceMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get());
+                player, DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

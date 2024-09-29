@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.dynamic_physics.basic_performance_electric_furnace;
+package net.epitap.degeneracycraft.blocks.machine.basic.dynamic_physics.basic_performance_electric_arc_furnace;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -16,13 +16,13 @@ import net.minecraft.world.entity.player.Inventory;
 import java.util.List;
 import java.util.Optional;
 
-public class BasicPerformanceElectricFurnaceScreen extends AbstractContainerScreen<BasicPerformanceElectricFurnaceMenu> {
+public class BasicPerformanceElectricArcFurnaceScreen extends AbstractContainerScreen<BasicPerformanceElectricArcFurnaceMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_performance_electric_arc_furnace_processor/basic_performance_electric_arc_furnace_processor_gui.png");
     private EnergyInfoArea energyInfoArea;
 
 
-    public BasicPerformanceElectricFurnaceScreen(BasicPerformanceElectricFurnaceMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public BasicPerformanceElectricArcFurnaceScreen(BasicPerformanceElectricArcFurnaceMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
         this.imageWidth = 176;
         this.imageHeight = 166;
@@ -59,7 +59,7 @@ public class BasicPerformanceElectricFurnaceScreen extends AbstractContainerScre
                 80, 11, 0xFFFFFF);
 
 
-        if (BasicPerformanceElectricFurnaceBlockEntity.isHaltDevice(menu.blockEntity)) {
+        if (BasicPerformanceElectricArcFurnaceBlockEntity.isHaltDevice(menu.blockEntity)) {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".halt"),
                     133, 66, 0xFFFFFF);
         }
@@ -149,7 +149,7 @@ public class BasicPerformanceElectricFurnaceScreen extends AbstractContainerScre
     }
 
     private void renderHaltTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
-        if (BasicPerformanceElectricFurnaceBlockEntity.isHaltDevice(menu.blockEntity)
+        if (BasicPerformanceElectricArcFurnaceBlockEntity.isHaltDevice(menu.blockEntity)
                 && isMouseAboveArea(pMouseX, pMouseY, x, y, 117, 64, 40, 10))
             renderTooltip(pPoseStack, this.HaltTooltips(),
                     Optional.empty(), pMouseX - x, pMouseY - y);

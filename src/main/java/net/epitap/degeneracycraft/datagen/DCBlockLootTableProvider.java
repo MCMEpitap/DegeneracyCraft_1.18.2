@@ -45,13 +45,6 @@ public class DCBlockLootTableProvider extends BlockLoot {
 
         this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PRECISION_TELESCOPE_BLOCK.get()));
 
-
-        this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_BUS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PRECISION_TELESCOPE_BUS_BLOCK.get()));
-        this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_BUS_HOLO_BLOCK.get(), block -> noDrop());
-        this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PRECISION_TELESCOPE_PORT_BLOCK.get()));
-        this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_PORT_HOLO_BLOCK.get(), block -> noDrop());
-
-
         this.add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get()));
         this.add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get()));
         this.add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), block -> noDrop());
@@ -59,6 +52,20 @@ public class DCBlockLootTableProvider extends BlockLoot {
         this.add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(), block -> noDrop());
         this.add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.get()));
         this.add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(), block -> noDrop());
+
+        this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_BUS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PRECISION_TELESCOPE_BUS_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_BUS_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PRECISION_TELESCOPE_PORT_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_PORT_HOLO_BLOCK.get(), block -> noDrop());
+
+        this.add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get()));
+        this.add(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_BLOCK.get()));
+        this.add(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK.get(), block -> noDrop());
+
 
         this.add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get()));
         this.add(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_BLOCK.get()));

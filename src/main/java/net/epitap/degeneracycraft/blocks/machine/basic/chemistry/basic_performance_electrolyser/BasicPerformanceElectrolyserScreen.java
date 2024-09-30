@@ -18,7 +18,7 @@ import java.util.Optional;
 
 public class BasicPerformanceElectrolyserScreen extends AbstractContainerScreen<BasicPerformanceElectrolyserMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_performance_electrolyser/basic_performance_electrolyser_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_gui.png");
     private EnergyInfoArea energyInfoArea;
 
 

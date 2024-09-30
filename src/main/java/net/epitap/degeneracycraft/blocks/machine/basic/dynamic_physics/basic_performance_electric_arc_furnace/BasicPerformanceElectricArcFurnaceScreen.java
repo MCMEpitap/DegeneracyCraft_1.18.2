@@ -18,7 +18,7 @@ import java.util.Optional;
 
 public class BasicPerformanceElectricArcFurnaceScreen extends AbstractContainerScreen<BasicPerformanceElectricArcFurnaceMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_performance_electric_arc_furnace_processor/basic_performance_electric_arc_furnace_processor_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_performance_electric_arc_furnace/basic_performance_electric_arc_furnace_gui.png");
     private EnergyInfoArea energyInfoArea;
 
 

@@ -31,7 +31,7 @@ public class BasicPerformanceElectrolyserMenu extends AbstractContainerMenu {
     }
 
     public BasicPerformanceElectrolyserMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_PERFORMANCE__MENU.get(), id);
+        super(DCMenuTypes.BASIC_PERFORMANCE_ELECTROLYSER_MENU.get(), id);
         blockEntity = (BasicPerformanceElectrolyserBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
@@ -100,7 +100,7 @@ public class BasicPerformanceElectrolyserMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, DCBlocks.BASIC_PERFORMANCE__BLOCK.get());
+                player, DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

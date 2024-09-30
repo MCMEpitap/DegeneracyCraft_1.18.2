@@ -8,6 +8,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class BasicPerformanceElectrolyserBusBlockEntity extends PortWorkBlockEntity {
     public BasicPerformanceElectrolyserBusBlockEntity(BlockPos pos, BlockState state) {
-        super(DCBlockEntities.BASIC_PERFORMANCE_BUS_BLOCK_ENTITY.get(), new PortTypeBase[]{BasicPerformanceElectrolyserBusType.INSTANCE}, pos, state);
+        super(DCBlockEntities.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK_ENTITY.get(), new PortTypeBase[]{BasicPerformanceElectrolyserBusType.INSTANCE}, pos, state);
     }
 }

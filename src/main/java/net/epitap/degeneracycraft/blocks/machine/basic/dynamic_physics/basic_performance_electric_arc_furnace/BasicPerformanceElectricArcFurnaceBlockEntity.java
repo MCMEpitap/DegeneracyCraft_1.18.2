@@ -3,6 +3,7 @@ package net.epitap.degeneracycraft.blocks.machine.basic.dynamic_physics.basic_pe
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
+import net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -238,26 +239,29 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
             if (blockEntity.isPowered0) {
+                extractItem(blockEntity);
                 blockEntity.counter += blockEntity.BP_EA_FURNACE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BP_EA_FURNACE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else if (blockEntity.isFormed) {
+                extractItem(blockEntity);
                 blockEntity.counter += blockEntity.BP_EA_FURNACE_MANUFACTURING_SPEED_MODIFIER_FORMED;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BP_EA_FURNACE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else {
+                extractItem(blockEntity);
                 blockEntity.counter++;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
             }
             blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
             if (craftCheck(blockEntity)) {
-                craftItem(blockEntity);
+                outputItem(blockEntity);
                 blockEntity.resetProgress();
             }
             setChanged(level, pos, state);
@@ -275,8 +279,8 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return blockEntity.data.get(0) >= match.get().getRequiredTime() * 20;
@@ -291,8 +295,8 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         return match.isPresent();
     }
@@ -304,8 +308,8 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
                 && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount();
@@ -318,8 +322,8 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime();
     }
@@ -328,22 +332,35 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         return blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
-    private static void craftItem(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+    private static void extractItem(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
             blockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
+        }
+    }
+
+    private static void outputItem(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+
+        if (match.isPresent()) {
             blockEntity.itemHandler.setStackInSlot(2, new ItemStack(match.get().getOutput0Item().getItem(),
                     blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount()));
-
             blockEntity.resetProgress();
         }
     }
@@ -354,8 +371,8 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
             inventory.setItem(i, this.itemHandler.getStackInSlot(i));
         }
 
-        Optional<net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(net.epitap.degeneracycraft.integration.jei.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return (this.data.get(0) / (match.get().getRequiredTime() * 20)) * 100;

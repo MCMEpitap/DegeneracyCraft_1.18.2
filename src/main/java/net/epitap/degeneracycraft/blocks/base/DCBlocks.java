@@ -18,6 +18,7 @@ import net.epitap.degeneracycraft.blocks.storage.basic.energystorage.basic_stren
 import net.epitap.degeneracycraft.blocks.storage.basic.materialstorage.basic_strength_multiblock_material_storage.BasicStrengthMultiblockMaterialStorageBlock;
 import net.epitap.degeneracycraft.item.DCCreativeTab;
 import net.epitap.degeneracycraft.item.DCItems;
+import net.epitap.degeneracycraft.transport.port_bus.basic.dynamic_physics.basic_performance_electric_arc_furnace.bus.BasicPerformanceElectricArcFurnaceBusBlock;
 import net.epitap.degeneracycraft.transport.port_bus.basic.dynamic_physics.basic_performance_electric_arc_furnace.port.BasicPerformanceElectricArcFurnacePortBlock;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_thermal_generator.bus.BasicPowerThermalGeneratorBusBlock;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_thermal_generator.port.BasicPowerThermalGeneratorPortBlock;
@@ -154,6 +155,32 @@ public class DCBlocks {
     public static final RegistryObject<Block> BASIC_PRECISION_TELESCOPE_PORT_HOLO_BLOCK = registerHoloBlock("basic_precision_telescope_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTROLYSER_BLOCK = registerTooltipBasicMachineBlock("basic_performance_electrolyser_block", () ->
+                    new BasicPerformanceElectricArcFurnaceBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "Lv0:3×3×3",
+            "Lv1:3×3×3",
+            "Base:Speed ×1.00,Energy Usage ×1.00",
+            "Lv0:Speed ×2.00,Energy Usage ×1.50",
+            "Lv1:Speed ×3.00,Energy Usage ×2.00",
+            "basic_performance_electrolyser_block", "chemistry", "basic");
+
+    public static final RegistryObject<Block> BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_BLOCK = registerTooltipBasicMultiblockAbilityBlock("basic_durable_expanded_electrolytic_cell_block", () ->
+                    new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "basic_performance_electrolyser_block",
+            "chemistry",
+            "basic");
+    public static final RegistryObject<Block> BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_HOLO_BLOCK = registerHoloBlock("basic_durable_expanded_electrolytic_cell_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK = registerBlock("basic_performance_electrolyser_bus_block", () ->
+            new BasicPerformanceElectricArcFurnaceBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_electrolyser_bus_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK = registerBlock("basic_performance_electrolyser_port_block", () ->
+            new BasicPerformanceElectricArcFurnacePortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_electrolyser_port_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK = registerTooltipBasicMachineBlock("basic_performance_electric_arc_furnace_block", () ->
                     new BasicPerformanceElectricArcFurnaceBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
@@ -172,7 +199,7 @@ public class DCBlocks {
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK = registerBlock("basic_performance_electric_arc_furnace_bus_block", () ->
-            new net.epitap.degeneracycraft.transport.port_bus.basic.dynamic_physics.basic_performance_electric_arc_furnace.bus.BasicPerformanceElectricArcFurnaceBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+            new BasicPerformanceElectricArcFurnaceBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_electric_arc_furnace_bus_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK = registerBlock("basic_performance_electric_arc_furnace_port_block", () ->

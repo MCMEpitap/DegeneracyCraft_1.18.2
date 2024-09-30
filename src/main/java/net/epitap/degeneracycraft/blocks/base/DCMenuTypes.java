@@ -2,6 +2,7 @@ package net.epitap.degeneracycraft.blocks.base;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPrecisionTelescopeMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_thermal_generator.BasicPowerThermalGeneratorMenu;
@@ -45,6 +46,8 @@ public class DCMenuTypes {
             registerMenuType(BasicStrengthMultiblockMaterialStorageMenu::new, "basic_strength_multiblock_material_storage_menu");
     public static final RegistryObject<MenuType<BasicPrecisionTelescopeMenu>> BASIC_PRECISION_TELESCOPE_MENU =
             registerMenuType(BasicPrecisionTelescopeMenu::new, "basic_precision_telescope_menu");
+    public static final RegistryObject<MenuType<BasicPerformanceElectrolyserMenu>> BASIC_PERFORMANCE_ELECTROLYSER_MENU =
+            registerMenuType(BasicPerformanceElectrolyserMenu::new, "basic_performance_electrolyser_menu");
     public static final RegistryObject<MenuType<BasicPerformanceElectricArcFurnaceMenu>> BASIC_PERFORMANCE_ARC_ELECTRIC_FURNACE_MENU =
             registerMenuType(BasicPerformanceElectricArcFurnaceMenu::new, "basic_performance_electric_arc_furnace_menu");
     public static final RegistryObject<MenuType<BasicPowerThermalGeneratorMenu>> BASIC_POWER_THERMAL_GENERATOR_MENU =

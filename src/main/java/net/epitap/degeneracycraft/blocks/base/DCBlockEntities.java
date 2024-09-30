@@ -3,6 +3,7 @@ package net.epitap.degeneracycraft.blocks.base;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.entity.machine.PulverizerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPrecisionTelescopeBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_thermal_generator.BasicPowerThermalGeneratorBlockEntity;
@@ -16,6 +17,8 @@ import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machin
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.energystorage.basic_strength_multiblock_energy_storage.BasicStrengthMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.materialstorage.basic_strength_multiblock_material_storage.BasicStrengthMultiblockMaterialStorageBlockEntity;
+import net.epitap.degeneracycraft.transport.port_bus.basic.chemistry.basic_performance_electrolyser.bus.BasicPerformanceElectrolyserBusBlockEntity;
+import net.epitap.degeneracycraft.transport.port_bus.basic.chemistry.basic_performance_electrolyser.port.BasicPerformanceElectrolyserPortBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.dynamic_physics.basic_performance_electric_arc_furnace.bus.BasicPerformanceElectricArcFurnaceBusBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.dynamic_physics.basic_performance_electric_arc_furnace.port.BasicPerformanceElectricArcFurnacePortBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_thermal_generator.bus.BasicPowerThermalGeneratorBusBlockEntity;
@@ -66,7 +69,15 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicPrecisionTelescopeBlockEntity>> BASIC_PRECISION_TELESCOPE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_precision_telescope_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPrecisionTelescopeBlockEntity::new, DCBlocks.BASIC_PRECISION_TELESCOPE_BLOCK.get()).build(null));
-
+    public static final RegistryObject<BlockEntityType<BasicPerformanceElectrolyserBlockEntity>> BASIC_PERFORMANCE_ELECTROLYSER_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_electrolyser_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceElectrolyserBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceElectrolyserBusBlockEntity>> BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_electrolyser_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceElectrolyserBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceElectrolyserPortBlockEntity>> BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_electrolyser_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceElectrolyserPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicPerformanceElectricArcFurnaceBlockEntity>> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_electric_arc_furnace_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceElectricArcFurnaceBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get()).build(null));

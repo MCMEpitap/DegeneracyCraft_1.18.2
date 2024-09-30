@@ -696,17 +696,29 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get(), "Low Strength Multiblock Structure Frame Block");
         add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get(), "Low Strength Multiblock Structure Glass Block");
 
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get(), "Basic Power Composite Structure Type Thermal Generator");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get(), "Basic Performance Electric Arc Furnace");
+        add("tooltip." + "degeneracycraft." + "basic_performance_electric_arc_furnace_block",
+                "Basic Electric Arc Furnace. Machines that use electrical discharges to react at high temperatures.");
+        add(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_BLOCK.get(), "Basic Flow Cooling System");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_electric_arc_furnace_block",
+                "For Basic Performance Electric Arc Furnace");
+        add(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK.get(), "Basic Flow Cooling System (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK.get(), "Basic Performance Electric Arc Furnace Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_HOLO_BLOCK.get(), "Basic Performance Electric Arc Furnace Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK.get(), "Basic Performance Electric Arc Furnace Port");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK.get(), "Basic Performance Electric Arc Furnace Port (Hologram)");
+
+        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get(), "Basic Power Thermal Generator");
         add("tooltip." + "degeneracycraft." + "basic_power_thermal_generator_block",
                 "Basic thermal generator. Generates electricity from the heat generated when materials are burned.");
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), "Basic Endurance High Temperature Combustion Chamber");
         add("tooltip." + "degeneracycraft.ability" + "basic_power_thermal_generator_block",
-                "For Basic Power Composite Structure Type Thermal Generator");
+                "For Basic Power Thermal Generator");
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), "Basic Endurance High Temperature Combustion Chamber (Hologram)");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get(), "Basic Power Composite Structure Type Thermal Generator Bus");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(), "Basic Power Composite Structure Type Thermal Generator Bus (Hologram)");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.get(), "Basic Power Composite Structure Type Thermal Generator Port");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(), "Basic Power Composite Structure Type Thermal Generator Port (Hologram)");
+        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get(), "Basic Power Thermal Generator Bus");
+        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(), "Basic Power Thermal Generator Bus (Hologram)");
+        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.get(), "Basic Power Thermal Generator Port");
+        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(), "Basic Power Thermal Generator Port (Hologram)");
 
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get(), "Basic Technology Machine Manufacturer");
         add("tooltip." + "degeneracycraft." + "basic_technology_machine_manufacturer_block",

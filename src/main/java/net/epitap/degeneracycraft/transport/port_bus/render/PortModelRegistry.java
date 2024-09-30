@@ -12,6 +12,8 @@ import net.minecraftforge.client.model.ForgeModelBakery;
 
 public class PortModelRegistry {
     public enum DCPortModel {
+        BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK_EXTRACT("block/basic_performance_electrolyser_bus_block_extract"),
+        BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK_EXTRACT("block/basic_performance_electrolyser_port_block_extract"),
         BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK_EXTRACT("block/basic_performance_electric_arc_furnace_bus_block_extract"),
         BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK_EXTRACT("block/basic_performance_electric_arc_furnace_port_block_extract"),
         BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK_EXTRACT("block/basic_power_thermal_generator_bus_block_extract"),

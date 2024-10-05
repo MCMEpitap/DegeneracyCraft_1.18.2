@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/dynamic_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block",
+    "up": "degeneracycraft:block/multiblock/basic/dynamic_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block",
+    "north": "degeneracycraft:block/multiblock/basic/dynamic_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block",
+    "south": "degeneracycraft:block/multiblock/basic/dynamic_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block",
+    "east": "degeneracycraft:block/multiblock/basic/dynamic_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block",
+    "west": "degeneracycraft:block/multiblock/basic/dynamic_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block"
+  }
+}

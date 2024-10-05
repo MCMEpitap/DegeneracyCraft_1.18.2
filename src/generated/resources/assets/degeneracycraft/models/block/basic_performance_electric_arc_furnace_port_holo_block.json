@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/dynamic_physics/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_holo_block",
+    "up": "degeneracycraft:block/machine/basic/dynamic_physics/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_holo_block",
+    "north": "degeneracycraft:block/machine/basic/dynamic_physics/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_holo_block",
+    "south": "degeneracycraft:block/machine/basic/dynamic_physics/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_holo_block",
+    "east": "degeneracycraft:block/machine/basic/dynamic_physics/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_holo_block",
+    "west": "degeneracycraft:block/machine/basic/dynamic_physics/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_holo_block"
+  }
+}

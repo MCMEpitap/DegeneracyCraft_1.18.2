@@ -691,7 +691,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(PipeBlocks.BASIC_ITEM_PIPE_BLOCK, "基本アイテムパイプ");
         add(PipeBlocks.BASIC_ENERGY_PIPE_BLOCK, "基本エネルギーパイプ");
 
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get(), "基本性能アーク炉");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get(), "基本性能電解槽");
         add("tooltip." + "degeneracycraft." + "basic_performance_electric_arc_furnace_block",
                 "基本的なアーク炉. 高温で反応させるため、放電を用いる機械.");
         add(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_BLOCK.get(), "基本流量冷却機構");

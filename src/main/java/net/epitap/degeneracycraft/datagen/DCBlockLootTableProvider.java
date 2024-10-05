@@ -58,6 +58,15 @@ public class DCBlockLootTableProvider extends BlockLoot {
         this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PRECISION_TELESCOPE_PORT_BLOCK.get()));
         this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_PORT_HOLO_BLOCK.get(), block -> noDrop());
 
+
+        this.add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get()));
+        this.add(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_BLOCK.get()));
+        this.add(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(), block -> noDrop());
+
         this.add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get()));
         this.add(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_BLOCK.get()));
         this.add(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK.get(), block -> noDrop());

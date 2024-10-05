@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down": "degeneracycraft:block/multiblock/basic/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_block",
-    "up": "degeneracycraft:block/multiblock/basic/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_block",
-    "north": "degeneracycraft:block/multiblock/basic/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_block",
-    "south": "degeneracycraft:block/multiblock/basic/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_block",
-    "east": "degeneracycraft:block/multiblock/basic/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_block",
-    "west": "degeneracycraft:block/multiblock/basic/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_block"
+    "down": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_block",
+    "up": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_block",
+    "north": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_block",
+    "south": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_block",
+    "east": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_block",
+    "west": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_block"
   }
 }

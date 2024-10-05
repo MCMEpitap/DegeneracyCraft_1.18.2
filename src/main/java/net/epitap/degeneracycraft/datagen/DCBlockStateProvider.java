@@ -29,6 +29,14 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerNetherCassiteriteOre();
         registerEndCassiteriteOre();
 
+        registerBasicPerformanceElectricArcFurnace();
+        registerBasicFlowCoolingSystem();
+        registerBasicFlowCoolingSystemHolo();
+        registerBasicPerformanceElectricArcFurnaceBus();
+        registerBasicPerformanceElectricArcFurnaceBusHolo();
+        registerBasicPerformanceElectricArcFurnacePort();
+        registerBasicPerformanceElectricArcFurnacePortHolo();
+
         registerBasicStrengthMultiblockBaseFrame();
         registerBasicStrengthMultiblockMachineFrame();
         registerBasicStrengthMultiblockMachineFrameHolo();
@@ -172,6 +180,99 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("east", modLoc("block/ore/cassiterite/end_cassiterite_ore"));
         model.texture("west", modLoc("block/ore/cassiterite/end_cassiterite_ore"));
         orientedBlock(DCBlocks.END_CASSITERITE_ORE.get(),
+                state -> model);
+    }
+
+
+    private void registerBasicPerformanceElectricArcFurnace() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_electric_arc_furnace_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/basic_performance_electric_arc_furnace_down"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/basic_performance_electric_arc_furnace_up"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/basic_performance_electric_arc_furnace_front"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/basic_performance_electric_arc_furnace_side"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/basic_performance_electric_arc_furnace_side"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/basic_performance_electric_arc_furnace_side"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicFlowCoolingSystem() {
+        BlockModelBuilder model = models().getBuilder("block/basic_flow_cooling_system_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/engineering/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block"));
+        model.texture("up", modLoc("block/multiblock/basic/engineering/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block"));
+        model.texture("north", modLoc("block/multiblock/basic/engineering/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block"));
+        model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block"));
+        model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block"));
+        model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_MACHINE_PART_PROCESSING_CHAMBER_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicFlowCoolingSystemHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_flow_cooling_system_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/engineering/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/engineering/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/engineering/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_MACHINE_PART_PROCESSING_CHAMBER_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceElectricArcFurnaceBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_electric_arc_furnace_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceElectricArcFurnaceBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_electric_arc_furnace_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+
+    private void registerBasicPerformanceElectricArcFurnacePort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_electric_arc_furnace_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceElectricArcFurnacePortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_electric_arc_furnace_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
 

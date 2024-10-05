@@ -692,16 +692,16 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(PipeBlocks.BASIC_ENERGY_PIPE_BLOCK, "基本エネルギーパイプ");
 
         add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get(), "基本性能電解槽");
-        add("tooltip." + "degeneracycraft." + "basic_performance_electric_arc_furnace_block",
-                "基本的なアーク炉. 高温で反応させるため、放電を用いる機械.");
+        add("tooltip." + "degeneracycraft." + "basic_performance_electrolyser_block",
+                "基本的な電解槽. 電気分解によって物質を反応させる.");
         add(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_BLOCK.get(), "基本流量冷却機構");
-        add("tooltip." + "degeneracycraft.ability" + "basic_performance_electric_arc_furnace_block",
-                "基本性能アーク炉用");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_electrolyser_block",
+                "基本性能電解槽用");
         add(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_HOLO_BLOCK.get(), "基本流量冷却機構 (ホログラム)");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.get(), "基本性能アーク炉バス");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK.get(), "基本性能アーク炉バス (ホログラム)");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get(), "基本性能アーク炉ポート");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(), "基本性能アーク炉ポート (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.get(), "基本性能電解槽バス");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK.get(), "基本性能電解槽バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get(), "基本性能電解槽ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(), "基本性能電解槽ポート (ホログラム)");
 
         add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get(), "基本性能アーク炉");
         add("tooltip." + "degeneracycraft." + "basic_performance_electric_arc_furnace_block",

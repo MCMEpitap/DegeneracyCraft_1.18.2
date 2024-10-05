@@ -206,7 +206,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/dynamic_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block"));
         model.texture("east", modLoc("block/multiblock/basic/dynamic_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block"));
         model.texture("west", modLoc("block/multiblock/basic/dynamic_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block"));
-        orientedBlock(DCBlocks.BASIC_EFFICIENCY_MACHINE_PART_PROCESSING_CHAMBER_BLOCK.get(),
+        orientedBlock(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_BLOCK.get(),
                 state -> model);
     }
 
@@ -219,7 +219,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/dynamic_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/dynamic_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/dynamic_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block"));
-        orientedBlock(DCBlocks.BASIC_EFFICIENCY_MACHINE_PART_PROCESSING_CHAMBER_HOLO_BLOCK.get(),
+        orientedBlock(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK.get(),
                 state -> model);
     }
 

@@ -692,6 +692,19 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(PipeBlocks.BASIC_ITEM_PIPE_BLOCK, "Basic Item Pipe");
         add(PipeBlocks.BASIC_ENERGY_PIPE_BLOCK, "Basic Energy Pipe");
 
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get(), "基本性能電解槽");
+        add("tooltip." + "degeneracycraft." + "basic_performance_electrolyser_block",
+                "基本的な電解槽. 電気分解によって物質を反応させる.");
+        add(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_BLOCK.get(), "基本流量冷却機構");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_electrolyser_block",
+                "基本性能電解槽用");
+        add(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_HOLO_BLOCK.get(), "基本流量冷却機構 (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.get(), "基本性能電解槽バス");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK.get(), "基本性能電解槽バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get(), "基本性能電解槽ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(), "基本性能電解槽ポート (ホログラム)");
+
+
 //        add(DCBlocks.LOW_STERNGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),"Low Strength Multiblock Machine Frame Block");
         add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get(), "Low Strength Multiblock Structure Frame Block");
         add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get(), "Low Strength Multiblock Structure Glass Block");

@@ -690,11 +690,11 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_engineering_multiblock_structure_glass_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_strength_multiblock_structure_glass_holo_block"));
+                modLoc("block/basic_strength_engineering_multiblock_structure_glass_holo_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK.getId().getPath(),
-                modLoc("block/basic_strength_multiblock_energy_storage_block"));
+                modLoc("block/basic_strength_engineering_multiblock_energy_storage_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.getId().getPath(),
-                modLoc("block/basic_strength_multiblock_material_storage_block"));
+                modLoc("block/basic_strength_engineering_multiblock_material_storage_block"));
 
 
 

@@ -31,7 +31,7 @@ public class BasicStrengthEngineeringMultiblockMaterialStorageMenu extends Abstr
     }
 
     public BasicStrengthEngineeringMultiblockMaterialStorageMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_MENU.get(), id);
+        super(DCMenuTypes.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_MENU.get(), id);
         blockEntity = (BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;

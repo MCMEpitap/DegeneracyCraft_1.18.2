@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "degeneracycraft:basic_strength_multiblock_material_storage_block"
+          "name": "degeneracycraft:basic_strength_engineering_multiblock_material_storage_block"
         }
       ],
       "conditions": [

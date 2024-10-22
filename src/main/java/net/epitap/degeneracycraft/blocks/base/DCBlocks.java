@@ -4,18 +4,18 @@ package net.epitap.degeneracycraft.blocks.base;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.block.machine.PulverizerBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlock;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineBlock;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_thermal_generator.BasicPowerThermalGeneratorBlock;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderBlock;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorBlock;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlock;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorBlock;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerBlock;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineBlock;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_thermal_generator.BasicPowerThermalGeneratorBlock;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderBlock;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorBlock;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlock;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorBlock;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerBlock;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlock;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineBlock;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineBlock;
-import net.epitap.degeneracycraft.blocks.storage.basic.energystorage.basic_strength_multiblock_energy_storage.BasicStrengthMultiblockEnergyStorageBlock;
-import net.epitap.degeneracycraft.blocks.storage.basic.materialstorage.basic_strength_multiblock_material_storage.BasicStrengthMultiblockMaterialStorageBlock;
+import net.epitap.degeneracycraft.blocks.storage.basic.engineering.energystorage.basic_strength_engineering_multiblock_energy_storage.BasicStrengthEngineeringMultiblockEnergyStorageBlock;
+import net.epitap.degeneracycraft.blocks.storage.basic.engineering.materialstorage.basic_strength_engineering_multiblock_material_storage.BasicStrengthEngineeringMultiblockMaterialStorageBlock;
 import net.epitap.degeneracycraft.item.DCCreativeTab;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.transport.port_bus.basic.dynamic_physics.basic_performance_electric_arc_furnace.bus.BasicPerformanceElectricArcFurnaceBusBlock;
@@ -184,29 +184,29 @@ public class DCBlocks {
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_electric_arc_furnace_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
-    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK = registerBlock("basic_strength_multiblock_base_frame_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_BLOCK = registerBlock("basic_strength_engineering_multiblock_base_frame_block", () ->
             new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK = registerHoloBlock("basic_strength_multiblock_base_frame_holo_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK = registerHoloBlock("basic_strength_engineering_multiblock_base_frame_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK = registerBlock("basic_strength_multiblock_machine_frame_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_BLOCK = registerBlock("basic_strength_engineering_multiblock_machine_frame_block", () ->
             new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK = registerHoloBlock("basic_strength_multiblock_machine_frame_holo_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK = registerHoloBlock("basic_strength_engineering_multiblock_machine_frame_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK = registerBlock("basic_strength_multiblock_structure_frame_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_FRAME_BLOCK = registerBlock("basic_strength_engineering_multiblock_structure_frame_block", () ->
             new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK = registerHoloBlock("basic_strength_multiblock_structure_frame_holo_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK = registerHoloBlock("basic_strength_engineering_multiblock_structure_frame_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK = registerBlock("basic_strength_multiblock_structure_glass_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_BLOCK = registerBlock("basic_strength_engineering_multiblock_structure_glass_block", () ->
             new GlassBlockBase(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(4.0f)), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK = registerHoloBlock("basic_strength_multiblock_structure_glass_holo_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK = registerHoloBlock("basic_strength_engineering_multiblock_structure_glass_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_BLOCK = registerBlock("basic_strength_multiblock_energy_storage_block", () ->
-            new BasicStrengthMultiblockEnergyStorageBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK = registerHoloBlock("basic_strength_multiblock_energy_storage_holo_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK = registerBlock("basic_strength_engineering_multiblock_energy_storage_block", () ->
+            new BasicStrengthEngineeringMultiblockEnergyStorageBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK = registerHoloBlock("basic_strength_engineering_multiblock_energy_storage_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK = registerBlock("basic_strength_multiblock_material_storage_block", () ->
-            new BasicStrengthMultiblockMaterialStorageBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK = registerHoloBlock("basic_strength_multiblock_material_storage_holo_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK = registerBlock("basic_strength_engineering_multiblock_material_storage_block", () ->
+            new BasicStrengthEngineeringMultiblockMaterialStorageBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK = registerHoloBlock("basic_strength_engineering_multiblock_material_storage_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_POWER_THERMAL_GENERATOR_BLOCK = registerTooltipBasicMachineBlock("basic_power_thermal_generator_block", () ->

@@ -5,18 +5,18 @@ import net.epitap.degeneracycraft.blocks.entity.machine.PulverizerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPrecisionTelescopeBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlockEntity;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineBlockEntity;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_thermal_generator.BasicPowerThermalGeneratorBlockEntity;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderBlockEntity;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorBlockEntity;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlockEntity;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorBlockEntity;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_thermal_generator.BasicPowerThermalGeneratorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineBlockEntity;
-import net.epitap.degeneracycraft.blocks.storage.basic.energystorage.basic_strength_multiblock_energy_storage.BasicStrengthMultiblockEnergyStorageBlockEntity;
-import net.epitap.degeneracycraft.blocks.storage.basic.materialstorage.basic_strength_multiblock_material_storage.BasicStrengthMultiblockMaterialStorageBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.engineering.energystorage.basic_strength_engineering_multiblock_energy_storage.BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.engineering.materialstorage.basic_strength_engineering_multiblock_material_storage.BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.chemistry.basic_performance_electrolyser.bus.BasicPerformanceElectrolyserBusBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.chemistry.basic_performance_electrolyser.port.BasicPerformanceElectrolyserPortBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.dynamic_physics.basic_performance_electric_arc_furnace.bus.BasicPerformanceElectricArcFurnaceBusBlockEntity;
@@ -59,13 +59,13 @@ public class DCBlockEntities {
             BLOCK_ENTITIES.register("redstone_powered_machine_part_manufacture_machine_block_entity", () ->
                     BlockEntityType.Builder.of(RedstonePoweredMachinePartManufactureMachineBlockEntity::new, DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get()).build(null));
 
-    public static final RegistryObject<BlockEntityType<BasicStrengthMultiblockMaterialStorageBlockEntity>> BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_strength_multiblock_material_storage_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicStrengthMultiblockMaterialStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity>> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_engineering_multiblock_material_storage_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()).build(null));
 
-    public static final RegistryObject<BlockEntityType<BasicStrengthMultiblockEnergyStorageBlockEntity>> BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_strength_multiblock_energy_storage_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicStrengthMultiblockEnergyStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity>> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_engineering_multiblock_energy_storage_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicPrecisionTelescopeBlockEntity>> BASIC_PRECISION_TELESCOPE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_precision_telescope_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPrecisionTelescopeBlockEntity::new, DCBlocks.BASIC_PRECISION_TELESCOPE_BLOCK.get()).build(null));

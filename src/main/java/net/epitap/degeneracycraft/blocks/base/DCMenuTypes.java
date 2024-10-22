@@ -4,19 +4,19 @@ import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPrecisionTelescopeMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceMenu;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineMenu;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_power_thermal_generator.BasicPowerThermalGeneratorMenu;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderMenu;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorMenu;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerMenu;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorMenu;
-import net.epitap.degeneracycraft.blocks.machine.basic.ennginnering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_thermal_generator.BasicPowerThermalGeneratorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerMenu;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.menu.machine.PulverizerMenu;
-import net.epitap.degeneracycraft.blocks.storage.basic.energystorage.basic_strength_multiblock_energy_storage.BasicStrengthMultiblockEnergyStorageMenu;
-import net.epitap.degeneracycraft.blocks.storage.basic.materialstorage.basic_strength_multiblock_material_storage.BasicStrengthMultiblockMaterialStorageMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.engineering.energystorage.basic_strength_engineering_multiblock_energy_storage.BasicStrengthEngineeringMultiblockEnergyStorageMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.engineering.materialstorage.basic_strength_engineering_multiblock_material_storage.BasicStrengthEngineeringMultiblockMaterialStorageMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
@@ -40,10 +40,10 @@ public class DCMenuTypes {
 
     public static final RegistryObject<MenuType<RedstonePoweredMachinePartManufactureMachineMenu>> REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_MENU =
             registerMenuType(RedstonePoweredMachinePartManufactureMachineMenu::new, "redstone_powered_machine_part_manufacture_machine_menu");
-    public static final RegistryObject<MenuType<BasicStrengthMultiblockEnergyStorageMenu>> BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_BLOCK_MENU =
-            registerMenuType(BasicStrengthMultiblockEnergyStorageMenu::new, "basic_strength_multiblock_energy_storage_menu");
-    public static final RegistryObject<MenuType<BasicStrengthMultiblockMaterialStorageMenu>> BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_MENU =
-            registerMenuType(BasicStrengthMultiblockMaterialStorageMenu::new, "basic_strength_multiblock_material_storage_menu");
+    public static final RegistryObject<MenuType<BasicStrengthEngineeringMultiblockEnergyStorageMenu>> BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_BLOCK_MENU =
+            registerMenuType(BasicStrengthEngineeringMultiblockEnergyStorageMenu::new, "basic_strength_multiblock_energy_storage_menu");
+    public static final RegistryObject<MenuType<BasicStrengthEngineeringMultiblockMaterialStorageMenu>> BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_MENU =
+            registerMenuType(BasicStrengthEngineeringMultiblockMaterialStorageMenu::new, "basic_strength_multiblock_material_storage_menu");
     public static final RegistryObject<MenuType<BasicPrecisionTelescopeMenu>> BASIC_PRECISION_TELESCOPE_MENU =
             registerMenuType(BasicPrecisionTelescopeMenu::new, "basic_precision_telescope_menu");
     public static final RegistryObject<MenuType<BasicPerformanceElectrolyserMenu>> BASIC_PERFORMANCE_ELECTROLYSER_MENU =

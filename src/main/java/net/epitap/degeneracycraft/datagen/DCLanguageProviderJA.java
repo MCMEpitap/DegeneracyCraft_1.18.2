@@ -676,18 +676,18 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.REINFORCED_PLANKS.get(), "強化木材");
 
 
-        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "基本強度多重構造機械用基礎フレーム");
-        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "基本強度多重構造機械用基礎フレーム (ホログラム)");
-        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "基本強度多重構造用機械フレーム");
-        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), "基本強度多重構造用機械フレーム (ホログラム)");
-        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "基本強度多重構造機械用構造フレーム");
-        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "基本強度多重構造機械用構造フレーム (ホログラム)");
-        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), "基本強度多重構造機械用ガラス");
-        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "基本強度多重構造機械用ガラス (ホログラム)");
-        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(), "基本強度多重構造機械用エネルギーストレージ");
-        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "基本強度多重構造機械用エネルギーストレージ (ホログラム)");
-        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "基本強度多重構造機械用材料ストレージ");
-        add(DCBlocks.BASIC_STRENGTH_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "基本強度多重構造機械用材料ストレージ (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "基本強度多重構造機械用基礎フレーム");
+        add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "基本強度多重構造機械用基礎フレーム (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "基本強度多重構造用機械フレーム");
+        add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), "基本強度多重構造用機械フレーム (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "基本強度多重構造機械用構造フレーム");
+        add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "基本強度多重構造機械用構造フレーム (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), "基本強度多重構造機械用ガラス");
+        add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "基本強度多重構造機械用ガラス (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(), "基本強度多重構造機械用エネルギーストレージ");
+        add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "基本強度多重構造機械用エネルギーストレージ (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "基本強度多重構造機械用材料ストレージ");
+        add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "基本強度多重構造機械用材料ストレージ (ホログラム)");
         add(PipeBlocks.BASIC_ITEM_PIPE_BLOCK, "基本アイテムパイプ");
         add(PipeBlocks.BASIC_ENERGY_PIPE_BLOCK, "基本エネルギーパイプ");
 

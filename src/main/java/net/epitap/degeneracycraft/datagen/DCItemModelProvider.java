@@ -672,6 +672,31 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.OVERWORLD_GRAVITATION_ORE.getId().getPath(),
                 modLoc("block/overworld_gravitation_ore_block"));
 
+        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_dynamic_physics_multiblock_base_frame_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_dynamic_physics_multiblock_base_frame_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_dynamic_physics_multiblock_machine_frame_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_dynamic_physics_multiblock_machine_frame_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_dynamic_physics_multiblock_structure_frame_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_dynamic_physics_multiblock_structure_frame_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_dynamic_physics_multiblock_structure_glass_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_dynamic_physics_multiblock_structure_glass_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_dynamic_physics_multiblock_energy_storage_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_dynamic_physics_multiblock_energy_storage_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_dynamic_physics_multiblock_material_storage_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_dynamic_physics_multiblock_material_storage_holo_block"));
+
         withExistingParent(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.getId().getPath(),
                 modLoc("block/redstone_powered_machine_element_manufacture_machine_block"));
         withExistingParent(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.getId().getPath(),
@@ -679,6 +704,8 @@ public class DCItemModelProvider extends ItemModelProvider {
 
         withExistingParent(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_engineering_multiblock_base_frame_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_engineering_multiblock_base_frame_holo_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_engineering_multiblock_machine_frame_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.getId().getPath(),
@@ -693,13 +720,12 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_strength_engineering_multiblock_structure_glass_holo_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_engineering_multiblock_energy_storage_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_engineering_multiblock_energy_storage_holo_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_engineering_multiblock_material_storage_block"));
-
-
-
-
-
+        withExistingParent(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_engineering_multiblock_material_storage_holo_block"));
 
 //        withExistingParent(DCBlocks.LOW_STERNGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.getId().getPath(),
 //                modLoc("block/low_strength_multiblock_machine_frame_block"));

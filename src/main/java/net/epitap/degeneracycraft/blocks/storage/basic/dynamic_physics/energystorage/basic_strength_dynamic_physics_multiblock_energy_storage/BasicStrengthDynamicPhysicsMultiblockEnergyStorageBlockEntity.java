@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.storage.basic.engineering.energystorage.basic_strength_engineering_multiblock_energy_storage;
+package net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.energystorage.basic_strength_dynamic_physics_multiblock_energy_storage;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
@@ -26,7 +26,7 @@ import net.minecraftforge.items.IItemHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity extends BlockEntity implements MenuProvider {
+public class BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity extends BlockEntity implements MenuProvider {
     public float BS_ME_STORAGE_CAPACITY = 40000F;
     public float BS_ME_STORAGE_TRANSFER = 32F;
     public final ContainerData data;
@@ -51,7 +51,7 @@ public class BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity extends 
     private final LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     private LazyOptional<DCIEnergyStorageFloat> lazyEnergyHandler = LazyOptional.empty();
 
-    public BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
+    public BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(DCBlockEntities.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
@@ -78,7 +78,7 @@ public class BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity extends 
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return new BasicStrengthEngineeringMultiblockEnergyStorageMenu(pContainerId, pInventory, this, this.data);
+        return new BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu(pContainerId, pInventory, this, this.data);
     }
 
     @Override
@@ -91,6 +91,7 @@ public class BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity extends 
 
         return super.getCapability(cap, side);
     }
+
     @Override
     public void onLoad() {
         lazyEnergyHandler = LazyOptional.of(() -> ENERGY_STORAGE);
@@ -119,11 +120,9 @@ public class BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity extends 
     public void drops() {
     }
 
-    public static void tick(Level level, BlockPos pPos, BlockState pState, BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity blockEntity) {
+    public static void tick(Level level, BlockPos pPos, BlockState pState, BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity blockEntity) {
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
-
-
     }
 
 }

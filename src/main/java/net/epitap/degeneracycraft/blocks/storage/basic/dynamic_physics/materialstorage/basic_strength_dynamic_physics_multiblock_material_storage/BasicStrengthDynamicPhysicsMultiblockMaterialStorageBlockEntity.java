@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.materialstorage.basic_strength_engineering_multiblock_material_storage;
+package net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.materialstorage.basic_strength_dynamic_physics_multiblock_material_storage;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.minecraft.core.BlockPos;
@@ -25,7 +25,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity extends BlockEntity implements MenuProvider {
+public class BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity extends BlockEntity implements MenuProvider {
 
     public final ContainerData data;
     public final ItemStackHandler itemHandler = new ItemStackHandler(18) {
@@ -42,8 +42,8 @@ public class BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity extend
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
-    public BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+    public BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
+        super(DCBlockEntities.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int pIndex) {
@@ -70,7 +70,7 @@ public class BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity extend
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return new BasicStrengthEngineeringMultiblockMaterialStorageMenu(pContainerId, pInventory, this, this.data);
+        return new BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu(pContainerId, pInventory, this, this.data);
     }
 
     @Override
@@ -121,7 +121,7 @@ public class BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity extend
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
-    public static void tick(Level level, BlockPos pPos, BlockState pState, BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity blockEntity) {
+    public static void tick(Level level, BlockPos pPos, BlockState pState, BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity blockEntity) {
     }
 }
 

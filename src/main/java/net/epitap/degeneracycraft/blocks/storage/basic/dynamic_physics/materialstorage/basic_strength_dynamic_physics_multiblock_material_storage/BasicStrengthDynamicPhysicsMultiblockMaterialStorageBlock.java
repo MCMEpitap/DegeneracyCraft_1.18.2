@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.materialstorage.basic_strength_engineering_multiblock_material_storage;
+package net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.materialstorage.basic_strength_dynamic_physics_multiblock_material_storage;
 
 import net.epitap.degeneracycraft.blocks.base.BlockBase;
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
@@ -20,10 +20,10 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class BasicStrengthEngineeringMultiblockMaterialStorageBlock extends BlockBase {
+public class BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlock extends BlockBase {
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
 
-    public BasicStrengthEngineeringMultiblockMaterialStorageBlock(Properties properties) {
+    public BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlock(Properties properties) {
         super(properties);
     }
 
@@ -31,8 +31,8 @@ public class BasicStrengthEngineeringMultiblockMaterialStorageBlock extends Bloc
     public void onRemove(BlockState pState, Level level, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = level.getBlockEntity(pPos);
-            if (blockEntity instanceof BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity) {
-                ((BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity) blockEntity).drops();
+            if (blockEntity instanceof BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity) {
+                ((BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity) blockEntity).drops();
             }
         }
         super.onRemove(pState, level, pPos, pNewState, pIsMoving);
@@ -44,8 +44,8 @@ public class BasicStrengthEngineeringMultiblockMaterialStorageBlock extends Bloc
         if (!level.isClientSide()) {
             BlockEntity entity = level.getBlockEntity(pPos);
 
-            if (entity instanceof BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer) pPlayer), (BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity) entity, pPos);
+            if (entity instanceof BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity) {
+                NetworkHooks.openGui(((ServerPlayer) pPlayer), (BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity) entity, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
@@ -57,7 +57,7 @@ public class BasicStrengthEngineeringMultiblockMaterialStorageBlock extends Bloc
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity(pos, state);
+        return new BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity(pos, state);
     }
 
     @Nullable
@@ -65,7 +65,7 @@ public class BasicStrengthEngineeringMultiblockMaterialStorageBlock extends Bloc
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level level, @NotNull BlockState state,
                                                                   @NotNull BlockEntityType<T> type) {
         return createTickerHelper(type, DCBlockEntities.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY.get(),
-                BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity::tick);
+                BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity::tick);
     }
 
     @Nullable

@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.materialstorage.basic_strength_engineering_multiblock_material_storage;
+package net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.materialstorage.basic_strength_dynamic_physics_multiblock_material_storage;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -11,12 +11,12 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class BasicStrengthEngineeringMultiblockMaterialStorageScreen extends AbstractContainerScreen<BasicStrengthEngineeringMultiblockMaterialStorageMenu> {
+public class BasicStrengthDynamicPhysicsMultiblockMaterialStorageScreen extends AbstractContainerScreen<BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/basic_strength_multiblock_material_storage/basic_strength_multiblock_material_storage_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/dynamic_physics/basic_strength_dynamic_physics_multiblock_material_storage/basic_strength_dynamic_physics_multiblock_material_storage_gui.png");
 
 
-    public BasicStrengthEngineeringMultiblockMaterialStorageScreen(BasicStrengthEngineeringMultiblockMaterialStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public BasicStrengthDynamicPhysicsMultiblockMaterialStorageScreen(BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
         this.imageWidth = 176;
         this.imageHeight = 166;

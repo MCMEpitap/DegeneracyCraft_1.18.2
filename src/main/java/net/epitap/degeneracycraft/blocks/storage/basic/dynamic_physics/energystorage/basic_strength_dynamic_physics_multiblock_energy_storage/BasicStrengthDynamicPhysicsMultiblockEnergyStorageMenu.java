@@ -31,7 +31,7 @@ public class BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu extends Abst
     }
 
     public BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK_MENU.get(), id);
+        super(DCMenuTypes.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK_MENU.get(), id);
         blockEntity = (BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
@@ -97,7 +97,7 @@ public class BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu extends Abst
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get());
+                player, DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

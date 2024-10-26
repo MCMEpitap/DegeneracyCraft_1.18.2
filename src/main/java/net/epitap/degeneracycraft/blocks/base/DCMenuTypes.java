@@ -15,6 +15,8 @@ import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOn
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.menu.machine.PulverizerMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.energystorage.basic_strength_dynamic_physics_multiblock_energy_storage.BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.materialstorage.basic_strength_dynamic_physics_multiblock_material_storage.BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.energystorage.basic_strength_engineering_multiblock_energy_storage.BasicStrengthEngineeringMultiblockEnergyStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.materialstorage.basic_strength_engineering_multiblock_material_storage.BasicStrengthEngineeringMultiblockMaterialStorageMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -33,6 +35,11 @@ public class DCMenuTypes {
 
     public static final RegistryObject<MenuType<PulverizerMenu>> PULVERIZER_MENU =
             registerMenuType(PulverizerMenu::new, "pulverizer_menu");
+
+    public static final RegistryObject<MenuType<BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu>> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK_MENU =
+            registerMenuType(BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu::new, "basic_strength_dynamic_physics_multiblock_energy_storage_menu");
+    public static final RegistryObject<MenuType<BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu>> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_MENU =
+            registerMenuType(BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu::new, "basic_strength_dynamic_physics_multiblock_material_storage_menu");
 
 
     public static final RegistryObject<MenuType<RedstonePoweredMachineElementManufactureMachineMenu>> REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_MENU =

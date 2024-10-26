@@ -64,7 +64,7 @@ public class BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlock extends Blo
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level level, @NotNull BlockState state,
                                                                   @NotNull BlockEntityType<T> type) {
-        return createTickerHelper(type, DCBlockEntities.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY.get(),
+        return createTickerHelper(type, DCBlockEntities.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY.get(),
                 BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity::tick);
     }
 

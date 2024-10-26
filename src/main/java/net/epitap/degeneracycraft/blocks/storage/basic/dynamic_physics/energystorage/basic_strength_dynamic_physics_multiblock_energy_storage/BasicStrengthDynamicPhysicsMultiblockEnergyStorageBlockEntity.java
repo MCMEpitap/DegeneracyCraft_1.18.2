@@ -52,7 +52,7 @@ public class BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity exten
     private LazyOptional<DCIEnergyStorageFloat> lazyEnergyHandler = LazyOptional.empty();
 
     public BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+        super(DCBlockEntities.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int pIndex) {

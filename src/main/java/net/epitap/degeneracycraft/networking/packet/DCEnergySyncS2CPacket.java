@@ -14,8 +14,8 @@ import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technol
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerMenu;
-import net.epitap.degeneracycraft.blocks.storage.basic.engineering.energystorage.basic_strength_engineering_multiblock_energy_storage.BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity;
-import net.epitap.degeneracycraft.blocks.storage.basic.engineering.energystorage.basic_strength_engineering_multiblock_energy_storage.BasicStrengthEngineeringMultiblockEnergyStorageMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.energystorage.basic_strength_dynamic_physics_multiblock_energy_storage.BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.energystorage.basic_strength_dynamic_physics_multiblock_energy_storage.BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
@@ -46,13 +46,6 @@ public class DCEnergySyncS2CPacket {
         NetworkEvent.Context context = supplier.get();
         context.enqueueWork(() -> {
 
-            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity blockEntity) {
-                blockEntity.setEnergyLevel(energy);
-                if (Minecraft.getInstance().player.containerMenu instanceof BasicStrengthEngineeringMultiblockEnergyStorageMenu menu &&
-                        menu.getBlockEntity().getBlockPos().equals(pos)) {
-                    blockEntity.setEnergyLevel(energy);
-                }
-            }
             if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicPerformanceElectrolyserBlockEntity blockEntity) {
                 blockEntity.setEnergyLevel(energy);
                 if (Minecraft.getInstance().player.containerMenu instanceof BasicPerformanceElectrolyserMenu menu &&
@@ -60,9 +53,17 @@ public class DCEnergySyncS2CPacket {
                     blockEntity.setEnergyLevel(energy);
                 }
             }
+
             if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
                 blockEntity.setEnergyLevel(energy);
                 if (Minecraft.getInstance().player.containerMenu instanceof BasicPerformanceElectricArcFurnaceMenu menu &&
+                        menu.getBlockEntity().getBlockPos().equals(pos)) {
+                    blockEntity.setEnergyLevel(energy);
+                }
+            }
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity blockEntity) {
+                blockEntity.setEnergyLevel(energy);
+                if (Minecraft.getInstance().player.containerMenu instanceof BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu menu &&
                         menu.getBlockEntity().getBlockPos().equals(pos)) {
                     blockEntity.setEnergyLevel(energy);
                 }

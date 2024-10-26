@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/dynamic_physics/storage/basic_strength_dynamic_physics_multiblock_material_storage/basic_strength_dynamic_physics_multiblock_material_storage_block",
+    "up": "degeneracycraft:block/multiblock/basic/dynamic_physics/storage/basic_strength_dynamic_physics_multiblock_material_storage/basic_strength_dynamic_physics_multiblock_material_storage_block",
+    "north": "degeneracycraft:block/multiblock/basic/dynamic_physics/storage/basic_strength_dynamic_physics_multiblock_material_storage/basic_strength_dynamic_physics_multiblock_material_storage_block",
+    "south": "degeneracycraft:block/multiblock/basic/dynamic_physics/storage/basic_strength_dynamic_physics_multiblock_material_storage/basic_strength_dynamic_physics_multiblock_material_storage_block",
+    "east": "degeneracycraft:block/multiblock/basic/dynamic_physics/storage/basic_strength_dynamic_physics_multiblock_material_storage/basic_strength_dynamic_physics_multiblock_material_storage_block",
+    "west": "degeneracycraft:block/multiblock/basic/dynamic_physics/storage/basic_strength_dynamic_physics_multiblock_material_storage/basic_strength_dynamic_physics_multiblock_material_storage_block"
+  }
+}

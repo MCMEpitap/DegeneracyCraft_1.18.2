@@ -61,7 +61,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 5; i++) {
                 if (slot == i && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                         && !stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                         && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
@@ -226,7 +226,6 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         blockEntity.isFormed = BasicPerformanceElectricArcFurnaceStructure.isFormed(blockEntity);
         blockEntity.isPowered0 = BasicPerformanceElectricArcFurnaceStructure.isPowered0(blockEntity);
 
-        BasicPerformanceElectricArcFurnaceStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
 
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);

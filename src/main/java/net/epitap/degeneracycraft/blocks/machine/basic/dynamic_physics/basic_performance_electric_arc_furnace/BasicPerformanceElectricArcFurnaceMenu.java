@@ -42,8 +42,8 @@ public class BasicPerformanceElectricArcFurnaceMenu extends AbstractContainerMen
             this.addSlot(new SlotItemHandler(handler, 0, 8, 7));
             this.addSlot(new SlotItemHandler(handler, 1, 26, 25));
             this.addSlot(new SlotItemHandler(handler, 2, 116, 25));
-            this.addSlot(new SlotItemHandler(handler, 3, 134, 25));
-            this.addSlot(new SlotItemHandler(handler, 4, 71, 59));
+            this.addSlot(new SlotItemHandler(handler, 3, 71, 59));
+            this.addSlot(new SlotItemHandler(handler, 4, 98, 62));
         });
         addDataSlots(data);
     }

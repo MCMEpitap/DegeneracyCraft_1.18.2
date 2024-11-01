@@ -639,10 +639,14 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicInscribedCircuitItem(DCItems.BASIC_PRECISION_SHAPESTEEL_INSCRIBED_CIRCUIT.get());
         basicInscribedCircuitItem(DCItems.BASIC_PRECISION_CHAIN_INSCRIBED_CIRCUIT.get());
 
+
+        basicMaterialDynamicPhysicsItem(DCItems.PURIFIED_GRAPHITE_ELECTRODE.get());
+
+
         deviceItem(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
         deviceItem(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
-
         deviceItem(DCItems.MACHINE_HALT_DEVICE.get());
+
 
         basicMaterialCommonItem(DCItems.COMPRESSED_PLANKS.get());
         basicMaterialCommonItem(DCItems.COMPRESSED_REDSTONE.get());
@@ -1018,6 +1022,13 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/material/basic/common/" + item.getRegistryName().getPath()));
     }
+
+    private ItemModelBuilder basicMaterialDynamicPhysicsItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/material/basic/dynamic_physics/" + item.getRegistryName().getPath()));
+    }
+
 
     private ItemModelBuilder recipe_tooltip_item(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),

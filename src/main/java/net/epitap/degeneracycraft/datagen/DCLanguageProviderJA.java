@@ -643,6 +643,10 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_PRECISION_SHAPESTEEL_INSCRIBED_CIRCUIT.get(), "基本精度 型鋼刻印回路");
         add(DCItems.BASIC_PRECISION_SPRING_INSCRIBED_CIRCUIT.get(), "基本精度 バネ刻印回路");
 
+
+        add(DCItems.PURIFIED_GRAPHITE_ELECTRODE.get(), "純化済黒鉛電極");
+
+
         add(DCItems.COMPRESSED_PLANKS.get(), "圧縮木材");
         add(DCItems.COMPRESSED_REDSTONE.get(), "圧縮レッドストーン");
 

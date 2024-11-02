@@ -67,6 +67,9 @@ public class DCBlocks {
             DCCreativeTab.DEGENERACYCRAFT_ORE_TAB);
     public static final TagKey<Block> CASSITERITE_ORE = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(Degeneracycraft.MOD_ID, "cassiterite_ore"));
 
+    public static final RegistryObject<Block> SILICON_BLOCK = registerTooltipMeterialElementBlock("silicon_block", () -> new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f, 10.0f)),
+            DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "silicon", "initial");
+
     public static final RegistryObject<Block> OVERWORLD_GRAVITATION_ORE = registerBlock("overworld_gravitation_ore", () -> new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()),
             DCCreativeTab.DEGENERACYCRAFT_ORE_TAB);
 
@@ -118,7 +121,7 @@ public class DCBlocks {
             "Lv0:Speed ×2.00,Energy Usage ×1.50",
             "Lv1:Speed ×3.00,Energy Usage ×2.00",
             "basic_precision_telescope_block", "astronomy", "basic");
-    //        public static final RegistryObject<Block> BASIC_OPERATION_ASSEMBLING_CHAMBER_BLOCK = registerTooltipBasicMultiblockAbilityBlock("basic_operation_assembling_chamber_block", () ->
+    //        public static final RegistryObject<Block> BASIC_OPERATION_ASSEMBLING_CHAMBER_BLOCK = registerTooltipMultiblockAbilityBlock("basic_operation_assembling_chamber_block", () ->
 //                    new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
 //            "basic_technology_universal_assembler_block",
 //            "engineering",
@@ -143,7 +146,7 @@ public class DCBlocks {
             "Lv1:Speed ×3.00,Energy Usage ×2.00",
             "basic_performance_electrolyser_block", "chemistry", "basic");
 
-    public static final RegistryObject<Block> BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_BLOCK = registerTooltipBasicMultiblockAbilityBlock("basic_durable_expanded_electrolytic_cell_block", () ->
+    public static final RegistryObject<Block> BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_BLOCK = registerTooltipMultiblockAbilityBlock("basic_durable_expanded_electrolytic_cell_block", () ->
                     new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "basic_performance_electrolyser_block",
             "chemistry",
@@ -195,7 +198,7 @@ public class DCBlocks {
             "Lv0:Speed ×2.00,Energy Usage ×1.50",
             "Lv1:Speed ×3.00,Energy Usage ×2.00",
             "basic_performance_electric_arc_furnace_block", "dynamic_physics", "basic");
-    public static final RegistryObject<Block> BASIC_FLOW_COOLING_SYSTEM_BLOCK = registerTooltipBasicMultiblockAbilityBlock("basic_flow_cooling_system_block", () ->
+    public static final RegistryObject<Block> BASIC_FLOW_COOLING_SYSTEM_BLOCK = registerTooltipMultiblockAbilityBlock("basic_flow_cooling_system_block", () ->
                     new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "basic_performance_electric_arc_furnace_block",
             "dynamic_physics",
@@ -245,7 +248,7 @@ public class DCBlocks {
             "Lv0:Power 32 FE/t",
             "Lv1:Power 48 FE/t",
             "basic_power_thermal_generator_block", "engineering", "basic");
-    public static final RegistryObject<Block> BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK = registerTooltipBasicMultiblockAbilityBlock(
+    public static final RegistryObject<Block> BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK = registerTooltipMultiblockAbilityBlock(
             "basic_endurance_high_temperature_combustion_chamber_block", () ->
                     new GlassBlockBase(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(4.0f)), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "basic_power_thermal_generator_block",
@@ -270,7 +273,7 @@ public class DCBlocks {
             "Lv0:Speed ×2.00,Energy Usage ×1.50",
             "Lv1:Speed ×3.00,Energy Usage ×2.00",
             "basic_technology_machine_manufacturer_block", "engineering", "basic");
-    public static final RegistryObject<Block> BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_BLOCK = registerTooltipBasicMultiblockAbilityBlock("basic_efficiency_machine_processing_chamber_block", () ->
+    public static final RegistryObject<Block> BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_BLOCK = registerTooltipMultiblockAbilityBlock("basic_efficiency_machine_processing_chamber_block", () ->
                     new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "basic_technology_machine_manufacturer_block",
             "engineering",
@@ -294,7 +297,7 @@ public class DCBlocks {
             "Lv0:Speed ×2.00,Energy Usage ×1.50",
             "Lv1:Speed ×3.00,Energy Usage ×2.00",
             "basic_technology_universal_assembler_block", "engineering", "basic");
-    public static final RegistryObject<Block> BASIC_OPERATION_ASSEMBLING_CHAMBER_BLOCK = registerTooltipBasicMultiblockAbilityBlock("basic_operation_assembling_chamber_block", () ->
+    public static final RegistryObject<Block> BASIC_OPERATION_ASSEMBLING_CHAMBER_BLOCK = registerTooltipMultiblockAbilityBlock("basic_operation_assembling_chamber_block", () ->
                     new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "basic_technology_universal_assembler_block",
             "engineering",
@@ -318,7 +321,7 @@ public class DCBlocks {
             "Lv0:Speed ×2.00,Energy Usage ×1.50",
             "Lv1:Speed ×3.00,Energy Usage ×2.00",
             "basic_technology_circuit_builder_block", "engineering", "basic");
-    public static final RegistryObject<Block> BASIC_PURITY_CIRCUIT_CLEAN_ROOM_BLOCK = registerTooltipBasicMultiblockAbilityBlock("basic_purity_circuit_clean_room_block", () ->
+    public static final RegistryObject<Block> BASIC_PURITY_CIRCUIT_CLEAN_ROOM_BLOCK = registerTooltipMultiblockAbilityBlock("basic_purity_circuit_clean_room_block", () ->
                     new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "basic_technology_circuit_builder_block",
             "engineering",
@@ -343,7 +346,7 @@ public class DCBlocks {
             "Lv0:Speed ×2.00,Energy Usage ×1.50",
             "Lv1:Speed ×3.00,Energy Usage ×2.00",
             "basic_technology_machine_element_processor_block", "engineering", "basic");
-    public static final RegistryObject<Block> BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSING_CHAMBER_BLOCK = registerTooltipBasicMultiblockAbilityBlock("basic_efficiency_machine_element_processing_chamber_block", () ->
+    public static final RegistryObject<Block> BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSING_CHAMBER_BLOCK = registerTooltipMultiblockAbilityBlock("basic_efficiency_machine_element_processing_chamber_block", () ->
                     new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "basic_technology_machine_element_processor_block",
             "engineering",
@@ -368,7 +371,7 @@ public class DCBlocks {
             "Lv0:Speed ×2.00,Energy Usage ×1.50",
             "Lv1:Speed ×3.00,Energy Usage ×2.00",
             "basic_technology_machine_part_processor_block", "engineering", "basic");
-    public static final RegistryObject<Block> BASIC_EFFICIENCY_MACHINE_PART_PROCESSING_CHAMBER_BLOCK = registerTooltipBasicMultiblockAbilityBlock("basic_efficiency_machine_part_processing_chamber_block", () ->
+    public static final RegistryObject<Block> BASIC_EFFICIENCY_MACHINE_PART_PROCESSING_CHAMBER_BLOCK = registerTooltipMultiblockAbilityBlock("basic_efficiency_machine_part_processing_chamber_block", () ->
                     new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "basic_technology_machine_part_processor_block",
             "engineering",
@@ -442,12 +445,6 @@ public class DCBlocks {
             @Override
             public void appendHoverText(ItemStack pStack, @Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {
                 if (Screen.hasShiftDown()) {
-                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.multiblock_size.").withStyle(ChatFormatting.WHITE));
-                    pTooltip.add(new TranslatableComponent(lv0MachineSize).withStyle(ChatFormatting.WHITE));
-                    pTooltip.add(new TranslatableComponent(lv1MachineSize).withStyle(ChatFormatting.RED));
-                    pTooltip.add(new TranslatableComponent(basePara).withStyle(ChatFormatting.WHITE));
-                    pTooltip.add(new TranslatableComponent(lv0Para).withStyle(ChatFormatting.WHITE));
-                    pTooltip.add(new TranslatableComponent(lv1Para).withStyle(ChatFormatting.RED));
                     pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + machineName).withStyle(ChatFormatting.WHITE));
                     switch (scienceName) {
                         case "astronomy" ->
@@ -497,14 +494,14 @@ public class DCBlocks {
         });
     }
 
-    private static <T extends Block> RegistryObject<T> registerTooltipBasicMultiblockAbilityBlock(String name, Supplier<T> block, CreativeModeTab tab, String machineName, String scienceName, String phase) {
+    private static <T extends Block> RegistryObject<T> registerTooltipMultiblockAbilityBlock(String name, Supplier<T> block, CreativeModeTab tab, String machineName, String scienceName, String phase) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        registerTooltipBasicMultiblockAbilityBlockItem(name, toReturn, tab, machineName, scienceName, phase);
+        registerTooltipMultiblockAbilityBlockItem(name, toReturn, tab, machineName, scienceName, phase);
         return toReturn;
     }
 
-    private static <T extends Block> RegistryObject<Item> registerTooltipBasicMultiblockAbilityBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab,
-                                                                                                         String machineName, String scienceName, String phase) {
+    private static <T extends Block> RegistryObject<Item> registerTooltipMultiblockAbilityBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab,
+                                                                                                    String machineName, String scienceName, String phase) {
         return DCItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)) {
             @Override
             public void appendHoverText(ItemStack pStack, @Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {
@@ -551,6 +548,55 @@ public class DCBlocks {
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.DARK_GRAY));
                         default -> throw new IllegalStateException("Unexpected value: " + phase);
                     }
+                } else {
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.tooltipitem").withStyle(ChatFormatting.YELLOW));
+                }
+            }
+        });
+    }
+
+    private static <T extends Block> RegistryObject<T> registerTooltipMeterialElementBlock(String name, Supplier<T> block, CreativeModeTab tab, String atomicName, String phase) {
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
+        registerTooltipMeterialElementBlockItem(name, toReturn, tab, atomicName, phase);
+        return toReturn;
+    }
+
+    private static <T extends Block> RegistryObject<Item> registerTooltipMeterialElementBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab, String atomicName, String phase) {
+        return DCItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)) {
+            @Override
+            public void appendHoverText(ItemStack pStack, @Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {
+                if (Screen.hasShiftDown()) {
+                    switch (phase) {
+                        case "initial" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.WHITE));
+                        case "basic" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.RED));
+                        case "low" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.GOLD));
+                        case "medium" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.YELLOW));
+                        case "high" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.GREEN));
+                        case "super" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.DARK_GREEN));
+                        case "over" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.AQUA));
+                        case "ultra" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.BLUE));
+                        case "anti" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.DARK_BLUE));
+                        case "imaginary" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.LIGHT_PURPLE));
+                        case "infinity" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.DARK_GRAY));
+                        default -> throw new IllegalStateException("Unexpected value: " + phase);
+                    }
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicName + ".name").withStyle(ChatFormatting.WHITE));
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicName + ".number").withStyle(ChatFormatting.GOLD));
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicName + ".weight").withStyle(ChatFormatting.LIGHT_PURPLE));
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicName + ".melting").withStyle(ChatFormatting.BLUE));
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicName + ".boiling").withStyle(ChatFormatting.RED));
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicName + ".formula").withStyle(ChatFormatting.AQUA));
                 } else {
                     pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.tooltipitem").withStyle(ChatFormatting.YELLOW));
                 }

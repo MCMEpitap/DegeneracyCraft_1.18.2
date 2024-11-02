@@ -467,6 +467,7 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
 
 
     public static final RegistryObject<Item> SILICON_INGOT = registerAtomicItem("silicon_ingot", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "silicon", "initial");
+    public static final RegistryObject<Item> SILICON_NUGGET = registerAtomicItem("silicon_nugget", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "silicon", "initial");
 
 
     //Machine Component Group

@@ -197,6 +197,19 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
+    private void registerSiliconBlock() {
+        BlockModelBuilder model = models().getBuilder("block/silicon_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/element/silicon/silicon_block"));
+        model.texture("up", modLoc("block/element/silicon/silicon_block"));
+        model.texture("north", modLoc("block/element/silicon/silicon_block"));
+        model.texture("south", modLoc("block/element/silicon/silicon_block"));
+        model.texture("east", modLoc("block/element/silicon/silicon_block"));
+        model.texture("west", modLoc("block/element/silicon/silicon_block"));
+        orientedBlock(DCBlocks.SILICON_BLOCK.get(),
+                state -> model);
+    }
+
     private void registerBasicStrengthDynamicPhysicsMultiblockBaseFrame() {
         BlockModelBuilder model = models().getBuilder("block/basic_strength_dynamic_physics_multiblock_base_frame_block");
         model.parent(models().getExistingFile(mcLoc("cube")));

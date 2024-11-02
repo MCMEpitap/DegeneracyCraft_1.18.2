@@ -6,9 +6,9 @@
     "item": "degeneracycraft:purified_graphite_arc_electrode"
   },
   "input1": {
-    "item": "degeneracycraft:copper_ingot"
+    "item": "degeneracycraft:quartz_ingot"
   },
   "output0": {
-    "item": "degeneracycraft:copper_bearing"
+    "item": "degeneracycraft:silicon_ingot"
   }
 }

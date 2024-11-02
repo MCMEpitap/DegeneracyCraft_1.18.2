@@ -455,23 +455,23 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> VANADINITE_SOUP = ITEMS.register("vanadinite_soup",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> VANADINITE_IMAGINARYMATTER = ITEMS.register("vanadinite_imaginarymatter",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> STABLE_VANADINITE_IMAGINARYMATTER = ITEMS.register("stable_vanadinite_imaginarymatter",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> VANADINITE_TACHYON = ITEMS.register("vanadinite_tachyon",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> VANADINITE_ANTIMATTER = ITEMS.register("vanadinite_antimatter",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> VANADINITE_TACHYON = ITEMS.register("vanadinite_tachyon", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> VANADINITE_ANTIMATTER = ITEMS.register("vanadinite_antimatter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> VANADINITE_ULTRAHOTPLASMA = ITEMS.register("vanadinite_ultrahotplasma", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> VANADINITE_OVERFLUID = ITEMS.register("vanadinite_overfluid", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> VANADINITE_CRYSTAL = ITEMS.register("vanadinite_crystal", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> VANADINITE_PRECIPITATE = ITEMS.register("vanadinite_precipitate",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
-    public static final RegistryObject<Item> VANADINITE_WASHEDDUST = ITEMS.register("vanadinite_washeddust",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> VANADINITE_PRECIPITATE = ITEMS.register("vanadinite_precipitate", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> VANADINITE_WASHEDDUST = ITEMS.register("vanadinite_washeddust", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> VANADINITE_ORESINTER = ITEMS.register("vanadinite_oresinter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> VANADINITE_INGOT = ITEMS.register("vanadinite_ingot", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_INGOT_TAB)));
 
 
-
+    public static final RegistryObject<Item> SILICON_INGOT = registerAtomicItem("silicon_ingot", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
 
 
     //Machine Component Group
 
-    public static final TagKey<Item> COPPER_MACHINE_COMPONENT =TagKey.create(Registry.ITEM_REGISTRY,new ResourceLocation(Degeneracycraft.MOD_ID,"copper_machine_component"));
+    public static final TagKey<Item> COPPER_MACHINE_COMPONENT = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(Degeneracycraft.MOD_ID, "copper_machine_component"));
 
 //    public static final TagKey<Item> BASIC_CLASS_IRON_MACHINE_COMPONENT =TagKey.create(Registry.ITEM_REGISTRY,new ResourceLocation(Degeneracycraft.MOD_ID,"basic_class_iron_machine_component"));
 //    public static final TagKey<Item> LOW_CLASS_IRON_MACHINE_COMPONENT =TagKey.create(Registry.ITEM_REGISTRY,new ResourceLocation(Degeneracycraft.MOD_ID,"low_class_iron_machine_component"));

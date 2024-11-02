@@ -18,6 +18,13 @@ public class DCCreativeTab {
             return new ItemStack(DCItems.IRON_GEAR.get());
         }
     };
+
+    public static final CreativeModeTab DEGENERACYCRAFT_ELEMENT_ITEM_TAB = new CreativeModeTab("degeneracycraft_element_items") {
+        @Override
+        public ItemStack makeIcon() {
+            return new ItemStack(DCItems.IRON_GEAR.get());
+        }
+    };
     public static final CreativeModeTab DEGENERACYCRAFT_MACHINE_PART_TAB = new CreativeModeTab("degeneracycraft_machine_parts") {
         @Override
         public ItemStack makeIcon() {

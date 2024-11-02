@@ -29,6 +29,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerNetherCassiteriteOre();
         registerEndCassiteriteOre();
 
+        registerSiliconBlock();
+
         registerBasicStrengthDynamicPhysicsMultiblockBaseFrame();
         registerBasicStrengthDynamicPhysicsMultiblockBaseFrameHolo();
         registerBasicStrengthDynamicPhysicsMultiblockMachineFrame();
@@ -200,12 +202,12 @@ public class DCBlockStateProvider extends BlockStateProvider {
     private void registerSiliconBlock() {
         BlockModelBuilder model = models().getBuilder("block/silicon_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/element/silicon/silicon_block"));
-        model.texture("up", modLoc("block/element/silicon/silicon_block"));
-        model.texture("north", modLoc("block/element/silicon/silicon_block"));
-        model.texture("south", modLoc("block/element/silicon/silicon_block"));
-        model.texture("east", modLoc("block/element/silicon/silicon_block"));
-        model.texture("west", modLoc("block/element/silicon/silicon_block"));
+        model.texture("down", modLoc("block/material/element/silicon/silicon_block"));
+        model.texture("up", modLoc("block/material/element/silicon/silicon_block"));
+        model.texture("north", modLoc("block/material/element/silicon/silicon_block"));
+        model.texture("south", modLoc("block/material/element/silicon/silicon_block"));
+        model.texture("east", modLoc("block/material/element/silicon/silicon_block"));
+        model.texture("west", modLoc("block/material/element/silicon/silicon_block"));
         orientedBlock(DCBlocks.SILICON_BLOCK.get(),
                 state -> model);
     }

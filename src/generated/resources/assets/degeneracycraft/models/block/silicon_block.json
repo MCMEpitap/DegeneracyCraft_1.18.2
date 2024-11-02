@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/material/element/silicon/silicon_block",
+    "up": "degeneracycraft:block/material/element/silicon/silicon_block",
+    "north": "degeneracycraft:block/material/element/silicon/silicon_block",
+    "south": "degeneracycraft:block/material/element/silicon/silicon_block",
+    "east": "degeneracycraft:block/material/element/silicon/silicon_block",
+    "west": "degeneracycraft:block/material/element/silicon/silicon_block"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "degeneracycraft:item/material/basic/dynamic_physics/purified_graphite_electrode"
+  }
+}

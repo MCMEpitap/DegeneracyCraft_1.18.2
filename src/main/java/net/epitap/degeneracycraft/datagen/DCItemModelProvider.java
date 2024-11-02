@@ -1016,7 +1016,7 @@ public class DCItemModelProvider extends ItemModelProvider {
     private ItemModelBuilder elementSiliconMaterialItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Degeneracycraft.MOD_ID, "item/material/silicon/" + item.getRegistryName().getPath()));
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/material/element/silicon/" + item.getRegistryName().getPath()));
     }
 
     private ItemModelBuilder elementCopperItem(Item item) {

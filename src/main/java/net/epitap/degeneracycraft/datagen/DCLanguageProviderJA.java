@@ -902,6 +902,14 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "science." + "faux_magic_engineering", "科学分野:模造魔導工学");
         add("tooltip." + "degeneracycraft." + "science." + "geoscience", "科学分野:地学");
 
+
+        add("tooltip." + "degeneracycraft." + "silicon" + ".name", "元素名:ケイ素");
+        add("tooltip." + "degeneracycraft." + "silicon" + ".number", "原子番号:14");
+        add("tooltip." + "degeneracycraft." + "silicon" + ".weight", "原子量:28.04 g/mol");
+        add("tooltip." + "degeneracycraft." + "silicon" + ".melting", "融点:1414 K");
+        add("tooltip." + "degeneracycraft." + "silicon" + ".boiling", "沸点:3265 K");
+        add("tooltip." + "degeneracycraft." + "silicon" + ".formula", "化学式:Si");
+
         add("tooltip." + "degeneracycraft." + "iron" + ".name", "物質名:鉄");
         add("tooltip." + "degeneracycraft." + "iron" + ".number", "原子番号:26");
         add("tooltip." + "degeneracycraft." + "iron" + ".weight", "原子量:55.85 g/mol");

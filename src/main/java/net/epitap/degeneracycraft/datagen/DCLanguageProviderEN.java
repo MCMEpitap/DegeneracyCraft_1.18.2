@@ -903,7 +903,14 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "science." + "faux_magic_engineering", "Science:Faux Magic Engineering");
         add("tooltip." + "degeneracycraft." + "science." + "geoscience", "Science:Geoscience");
 
-        add("tooltip." + "degeneracycraft." + "iron" + ".name", "Material Name:Iron");
+        add("tooltip." + "degeneracycraft." + "silicon" + ".name", "Element Name:Silicon");
+        add("tooltip." + "degeneracycraft." + "silicon" + ".number", "Atomic Number:14");
+        add("tooltip." + "degeneracycraft." + "silicon" + ".weight", "Atomic Weight:28.04 g/mol");
+        add("tooltip." + "degeneracycraft." + "silicon" + ".melting", "Melting Point:1414 K");
+        add("tooltip." + "degeneracycraft." + "silicon" + ".boiling", "Boiling Point:3265 K");
+        add("tooltip." + "degeneracycraft." + "silicon" + ".formula", "Chemical Formula:Si");
+
+        add("tooltip." + "degeneracycraft." + "iron" + ".name", "Element Name:Iron");
         add("tooltip." + "degeneracycraft." + "iron" + ".number", "Atomic Number:26");
         add("tooltip." + "degeneracycraft." + "iron" + ".weight", "Atomic Weight:55.85 g/mol");
         add("tooltip." + "degeneracycraft." + "iron" + ".melting", "Melting Point:1811 K");

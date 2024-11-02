@@ -3,7 +3,7 @@
   "energy": 5000.0,
   "time": 30.0,
   "input0": {
-    "item": "degeneracycraft:arc_discharge_electrode"
+    "item": "degeneracycraft:purified_graphite_arc_electrode"
   },
   "input1": {
     "item": "degeneracycraft:copper_ingot"

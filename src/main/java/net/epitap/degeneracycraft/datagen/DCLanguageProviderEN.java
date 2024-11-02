@@ -646,7 +646,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_PRECISION_SPRING_INSCRIBED_CIRCUIT.get(), "Basic Precision Spring Inscribed Circuit");
 
 
-        add(DCItems.PURIFIED_GRAPHITE_ELECTRODE.get(), "Purified Graphite Electrode");
+        add(DCItems.PURIFIED_GRAPHITE_ARC_ELECTRODE.get(), "Purified Graphite Arc Electrode");
 
 
         add(DCItems.COMPRESSED_PLANKS.get(), "Compressed Planks");

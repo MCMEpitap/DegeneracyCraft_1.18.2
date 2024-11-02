@@ -640,7 +640,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicInscribedCircuitItem(DCItems.BASIC_PRECISION_CHAIN_INSCRIBED_CIRCUIT.get());
 
 
-        basicMaterialDynamicPhysicsItem(DCItems.PURIFIED_GRAPHITE_ELECTRODE.get());
+        basicMaterialDynamicPhysicsItem(DCItems.PURIFIED_GRAPHITE_ARC_ELECTRODE.get());
 
 
         deviceItem(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());

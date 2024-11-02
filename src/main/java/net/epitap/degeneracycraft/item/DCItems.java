@@ -725,7 +725,7 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> RAW_GRAVITATION_ORE = ITEMS.register("raw_gravitation_ore", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB)));
 
 
-    public static final RegistryObject<Item> PURIFIED_GRAPHITE_ELECTRODE = ITEMS.register("purified_graphite_electrode", () -> new WrenchItem(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
+    public static final RegistryObject<Item> PURIFIED_GRAPHITE_ARC_ELECTRODE = ITEMS.register("purified_graphite_arc_electrode", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
 
 
     public static final RegistryObject<Item> WRENCH = ITEMS.register("wrench", () -> new WrenchItem(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB).stacksTo(1)));

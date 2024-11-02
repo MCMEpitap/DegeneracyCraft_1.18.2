@@ -24,7 +24,7 @@ import javax.annotation.Nonnull;
 public class BasicPerformanceElectricArcFurnaceRecipeCategory implements IRecipeCategory<BasicPerformanceElectricArcFurnaceRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_performance_electric_arc_furnace_recipe");
     public final static ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_performance_electric_arc_furnace/basic_performance_electric_arc_furnace_uid.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/dynamic_physics/basic_performance_electric_arc_furnace/basic_performance_electric_arc_furnace_uid.png");
     private final IDrawable background;
     private final IDrawable icon;
 

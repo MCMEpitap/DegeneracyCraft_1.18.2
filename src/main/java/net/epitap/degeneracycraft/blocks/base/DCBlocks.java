@@ -240,18 +240,18 @@ public class DCBlocks {
     public static final RegistryObject<Block> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK = registerHoloBlock("basic_strength_engineering_multiblock_material_storage_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
-    public static final RegistryObject<Block> BASIC_POWER_STEAM_GENERATOR_BLOCK = registerTooltipBasicMachineBlock("basic_power_thermal_generator_block", () ->
+    public static final RegistryObject<Block> BASIC_POWER_STEAM_GENERATOR_BLOCK = registerTooltipBasicMachineBlock("basic_power_steam_generator_block", () ->
                     new BasicPowerSteamGeneratorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "Lv0:3×3×3",
             "Lv1:3×3×3",
             "Base:Power 16 FE/t",
             "Lv0:Power 32 FE/t",
             "Lv1:Power 48 FE/t",
-            "basic_power_thermal_generator_block", "engineering", "basic");
+            "basic_power_steam_generator_block", "engineering", "basic");
     public static final RegistryObject<Block> BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK = registerTooltipMultiblockAbilityBlock(
             "basic_endurance_high_temperature_combustion_chamber_block", () ->
                     new GlassBlockBase(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(4.0f)), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
-            "basic_power_thermal_generator_block",
+            "basic_power_steam_generator_block",
             "engineering",
             "basic");
     public static final RegistryObject<Block> BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK = registerHoloBlock("basic_endurance_high_temperature_combustion_chamber_holo_block", () ->

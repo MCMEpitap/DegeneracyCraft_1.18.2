@@ -6,7 +6,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineBlockEntity;
-import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_thermal_generator.BasicPowerThermalGeneratorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlockEntity;
@@ -23,8 +23,8 @@ import net.epitap.degeneracycraft.transport.port_bus.basic.chemistry.basic_perfo
 import net.epitap.degeneracycraft.transport.port_bus.basic.chemistry.basic_performance_electrolyser.port.BasicPerformanceElectrolyserPortBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.dynamic_physics.basic_performance_electric_arc_furnace.bus.BasicPerformanceElectricArcFurnaceBusBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.dynamic_physics.basic_performance_electric_arc_furnace.port.BasicPerformanceElectricArcFurnacePortBlockEntity;
-import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_thermal_generator.bus.BasicPowerThermalGeneratorBusBlockEntity;
-import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_thermal_generator.port.BasicPowerThermalGeneratorPortBlockEntity;
+import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusBlockEntity;
+import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_steam_generator.port.BasicPowerSteamGeneratorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_machine_element_processor.bus.BasicTechnologyMachineElementProcessorBusBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_machine_element_processor.port.BasicTechnologyMachineElementProcessorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_machine_manufacturer.bus.BasicTechnologyMachineManufacturerBusBlockEntity;
@@ -103,15 +103,15 @@ public class DCBlockEntities {
             BLOCK_ENTITIES.register("basic_strength_engineering_multiblock_energy_storage_block_entity", () ->
                     BlockEntityType.Builder.of(BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()).build(null));
 
-    public static final RegistryObject<BlockEntityType<BasicPowerThermalGeneratorBlockEntity>> BASIC_POWER_THERMAL_GENERATOR_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_power_thermal_generator_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicPowerThermalGeneratorBlockEntity::new, DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get()).build(null));
-    public static final RegistryObject<BlockEntityType<BasicPowerThermalGeneratorBusBlockEntity>> BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_power_thermal_generator_bus_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicPowerThermalGeneratorBusBlockEntity::new, DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get()).build(null));
-    public static final RegistryObject<BlockEntityType<BasicPowerThermalGeneratorPortBlockEntity>> BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_power_thermal_generator_port_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicPowerThermalGeneratorPortBlockEntity::new, DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPowerSteamGeneratorBlockEntity>> BASIC_POWER_STEAM_GENERATOR_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_power_steam_generator_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPowerSteamGeneratorBlockEntity::new, DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPowerSteamGeneratorBusBlockEntity>> BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_power_steam_generator_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPowerSteamGeneratorBusBlockEntity::new, DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPowerSteamGeneratorPortBlockEntity>> BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_power_steam_generator_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPowerSteamGeneratorPortBlockEntity::new, DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicTechnologyMachineManufacturerBlockEntity>> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_technology_machine_manufacturer_block_entity", () ->
                     BlockEntityType.Builder.of(BasicTechnologyMachineManufacturerBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get()).build(null));

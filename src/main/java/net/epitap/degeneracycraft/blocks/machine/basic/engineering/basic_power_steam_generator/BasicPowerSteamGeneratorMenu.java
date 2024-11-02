@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_thermal_generator;
+package net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_steam_generator;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class BasicPowerThermalGeneratorMenu extends AbstractContainerMenu {
+public class BasicPowerSteamGeneratorMenu extends AbstractContainerMenu {
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
@@ -22,17 +22,17 @@ public class BasicPowerThermalGeneratorMenu extends AbstractContainerMenu {
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
     private static final int TE_INVENTORY_SLOT_COUNT = 3;
-    public final BasicPowerThermalGeneratorBlockEntity blockEntity;
+    public final BasicPowerSteamGeneratorBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
-    public BasicPowerThermalGeneratorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+    public BasicPowerSteamGeneratorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
         this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(1));
     }
 
-    public BasicPowerThermalGeneratorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_POWER_THERMAL_GENERATOR_MENU.get(), id);
-        blockEntity = (BasicPowerThermalGeneratorBlockEntity) entity;
+    public BasicPowerSteamGeneratorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(DCMenuTypes.BASIC_POWER_STEAM_GENERATOR_MENU.get(), id);
+        blockEntity = (BasicPowerSteamGeneratorBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
         addPlayerInventory(inv);
@@ -56,7 +56,7 @@ public class BasicPowerThermalGeneratorMenu extends AbstractContainerMenu {
         return blockEntity.getEnergyStorage();
     }
 
-    public BasicPowerThermalGeneratorBlockEntity getBlockEntity() {
+    public BasicPowerSteamGeneratorBlockEntity getBlockEntity() {
         return this.blockEntity;
     }
 
@@ -92,7 +92,7 @@ public class BasicPowerThermalGeneratorMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get());
+                player, DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

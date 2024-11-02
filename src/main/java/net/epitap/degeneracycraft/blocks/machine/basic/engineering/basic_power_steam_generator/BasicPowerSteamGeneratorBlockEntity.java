@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_thermal_generator;
+package net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_steam_generator;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlock;
@@ -38,12 +38,12 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Map;
 
-public class BasicPowerThermalGeneratorBlockEntity extends BlockEntity implements MenuProvider {
-    public float BP_CS_T_THERMAL_GENERATOR_CAPACITY = 40000F;
-    public float BP_CS_T_THERMAL_GENERATOR_TRANSFER = 16F;
-    public float BP_CS_T_THERMAL_GENERATOR_OUTPUT = 16F;
-    public float BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED = BP_CS_T_THERMAL_GENERATOR_OUTPUT * 2F;
-    public float BP_CS_T_THERMAL_GENERATOR_OUTPUT_POWERED_0 = BP_CS_T_THERMAL_GENERATOR_OUTPUT * 3F;
+public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements MenuProvider {
+    public float BP_CS_T_STEAM_GENERATOR_CAPACITY = 40000F;
+    public float BP_CS_T_STEAM_GENERATOR_TRANSFER = 16F;
+    public float BP_CS_T_STEAM_GENERATOR_OUTPUT = 16F;
+    public float BP_CS_T_STEAM_GENERATOR_OUTPUT_FORMED = BP_CS_T_STEAM_GENERATOR_OUTPUT * 2F;
+    public float BP_CS_T_STEAM_GENERATOR_OUTPUT_POWERED_0 = BP_CS_T_STEAM_GENERATOR_OUTPUT * 3F;
     protected final ContainerData data;
     public int counter;
     public boolean formed0;
@@ -75,7 +75,7 @@ public class BasicPowerThermalGeneratorBlockEntity extends BlockEntity implement
             return false;
         }
     };
-    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BP_CS_T_THERMAL_GENERATOR_CAPACITY, BP_CS_T_THERMAL_GENERATOR_TRANSFER) {
+    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BP_CS_T_STEAM_GENERATOR_CAPACITY, BP_CS_T_STEAM_GENERATOR_TRANSFER) {
         @Override
         public void onEnergyChanged() {
             setChanged();
@@ -101,13 +101,13 @@ public class BasicPowerThermalGeneratorBlockEntity extends BlockEntity implement
                     Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))));
 
-    public BasicPowerThermalGeneratorBlockEntity(BlockPos pos, BlockState state) {
-        super(DCBlockEntities.BASIC_POWER_THERMAL_GENERATOR_BLOCK_ENTITY.get(), pos, state);
+    public BasicPowerSteamGeneratorBlockEntity(BlockPos pos, BlockState state) {
+        super(DCBlockEntities.BASIC_POWER_STEAM_GENERATOR_BLOCK_ENTITY.get(), pos, state);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> BasicPowerThermalGeneratorBlockEntity.this.counter;
+                    case 0 -> BasicPowerSteamGeneratorBlockEntity.this.counter;
                     default -> 0;
                 };
             }
@@ -115,7 +115,7 @@ public class BasicPowerThermalGeneratorBlockEntity extends BlockEntity implement
             @Override
             public void set(int index, int value) {
                 if (index == 0) {
-                    BasicPowerThermalGeneratorBlockEntity.this.counter = value;
+                    BasicPowerSteamGeneratorBlockEntity.this.counter = value;
                 }
             }
 
@@ -128,13 +128,13 @@ public class BasicPowerThermalGeneratorBlockEntity extends BlockEntity implement
 
     @Override
     public Component getDisplayName() {
-        return new TextComponent("BP-CS-T Thermal Generator");
+        return new TextComponent("BP-CS-T Steam Generator");
     }
 
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-        return new BasicPowerThermalGeneratorMenu(id, inventory, this, this.data);
+        return new BasicPowerSteamGeneratorMenu(id, inventory, this, this.data);
     }
 
     @Override
@@ -185,7 +185,7 @@ public class BasicPowerThermalGeneratorBlockEntity extends BlockEntity implement
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         nbt.put("inventory", itemHandler.serializeNBT());
-        nbt.putFloat("bp_cs_t_thermal_generator.energy", ENERGY_STORAGE.getEnergyStoredFloat());
+        nbt.putFloat("energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
         super.saveAdditional(nbt);
     }
@@ -193,7 +193,7 @@ public class BasicPowerThermalGeneratorBlockEntity extends BlockEntity implement
     @Override
     public void load(CompoundTag nbt) {
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("bp_cs_t_thermal_generator.energy"));
+        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("energy"));
         counter = nbt.getInt("counter");
         super.load(nbt);
     }
@@ -206,15 +206,15 @@ public class BasicPowerThermalGeneratorBlockEntity extends BlockEntity implement
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
-    public static void tick(Level level, BlockPos pos, BlockState state, BasicPowerThermalGeneratorBlockEntity blockEntity) {
-        blockEntity.formed0 = BasicPowerThermalGeneratorStructure.isFormed0(level, pos, state, blockEntity);
-        blockEntity.formed1 = BasicPowerThermalGeneratorStructure.isFormed1(level, pos, state, blockEntity);
-        blockEntity.formed2 = BasicPowerThermalGeneratorStructure.isFormed2(level, pos, state, blockEntity);
-        blockEntity.powered0_1 = BasicPowerThermalGeneratorStructure.powered0_1(level, pos, state, blockEntity);
-        blockEntity.isFormed = BasicPowerThermalGeneratorStructure.isFormed(blockEntity);
-        blockEntity.isPowered0 = BasicPowerThermalGeneratorStructure.isPowered0(blockEntity);
+    public static void tick(Level level, BlockPos pos, BlockState state, BasicPowerSteamGeneratorBlockEntity blockEntity) {
+        blockEntity.formed0 = BasicPowerSteamGeneratorStructure.isFormed0(level, pos, state, blockEntity);
+        blockEntity.formed1 = BasicPowerSteamGeneratorStructure.isFormed1(level, pos, state, blockEntity);
+        blockEntity.formed2 = BasicPowerSteamGeneratorStructure.isFormed2(level, pos, state, blockEntity);
+        blockEntity.powered0_1 = BasicPowerSteamGeneratorStructure.powered0_1(level, pos, state, blockEntity);
+        blockEntity.isFormed = BasicPowerSteamGeneratorStructure.isFormed(blockEntity);
+        blockEntity.isPowered0 = BasicPowerSteamGeneratorStructure.isPowered0(blockEntity);
 
-        BasicPowerThermalGeneratorStructure.hologram(level, pos, state, blockEntity);
+        BasicPowerSteamGeneratorStructure.hologram(level, pos, state, blockEntity);
 
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
@@ -225,15 +225,15 @@ public class BasicPowerThermalGeneratorBlockEntity extends BlockEntity implement
             if (blockEntity.counter > 0) {
                 if (blockEntity.isPowered0) {
                     blockEntity.counter--;
-                    blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_POWERED_0, false);
+                    blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT_POWERED_0, false);
                     setChanged(level, pos, state);
                 } else if (blockEntity.isFormed) {
                     blockEntity.counter--;
-                    blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED, false);
+                    blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT_FORMED, false);
                     setChanged(level, pos, state);
                 } else {
                     blockEntity.counter--;
-                    blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT, false);
+                    blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT, false);
                     setChanged(level, pos, state);
                 }
             } else {
@@ -250,7 +250,7 @@ public class BasicPowerThermalGeneratorBlockEntity extends BlockEntity implement
         setChanged(level, pos, state);
     }
 
-    public static boolean isHaltDevice(BasicPowerThermalGeneratorBlockEntity blockEntity) {
+    public static boolean isHaltDevice(BasicPowerSteamGeneratorBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(2).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 }

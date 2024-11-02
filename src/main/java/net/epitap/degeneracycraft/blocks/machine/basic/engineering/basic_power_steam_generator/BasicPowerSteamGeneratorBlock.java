@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_thermal_generator;
+package net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_steam_generator;
 
 import net.epitap.degeneracycraft.blocks.base.BlockBase;
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
@@ -20,10 +20,10 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class BasicPowerThermalGeneratorBlock extends BlockBase {
+public class BasicPowerSteamGeneratorBlock extends BlockBase {
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
 
-    public BasicPowerThermalGeneratorBlock(Properties properties) {
+    public BasicPowerSteamGeneratorBlock(Properties properties) {
         super(properties);
     }
 
@@ -31,8 +31,8 @@ public class BasicPowerThermalGeneratorBlock extends BlockBase {
     public void onRemove(BlockState pState, Level level, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = level.getBlockEntity(pPos);
-            if (blockEntity instanceof BasicPowerThermalGeneratorBlockEntity) {
-                ((BasicPowerThermalGeneratorBlockEntity) blockEntity).drops();
+            if (blockEntity instanceof BasicPowerSteamGeneratorBlockEntity) {
+                ((BasicPowerSteamGeneratorBlockEntity) blockEntity).drops();
             }
         }
         super.onRemove(pState, level, pPos, pNewState, pIsMoving);
@@ -44,8 +44,8 @@ public class BasicPowerThermalGeneratorBlock extends BlockBase {
         if (!level.isClientSide()) {
             BlockEntity entity = level.getBlockEntity(pPos);
 
-            if (entity instanceof BasicPowerThermalGeneratorBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer) pPlayer), (BasicPowerThermalGeneratorBlockEntity) entity, pPos);
+            if (entity instanceof BasicPowerSteamGeneratorBlockEntity) {
+                NetworkHooks.openGui(((ServerPlayer) pPlayer), (BasicPowerSteamGeneratorBlockEntity) entity, pPos);
 
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
@@ -58,7 +58,7 @@ public class BasicPowerThermalGeneratorBlock extends BlockBase {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new BasicPowerThermalGeneratorBlockEntity(pos, state);
+        return new BasicPowerSteamGeneratorBlockEntity(pos, state);
     }
 
 
@@ -66,8 +66,8 @@ public class BasicPowerThermalGeneratorBlock extends BlockBase {
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level level, @NotNull BlockState state,
                                                                   @NotNull BlockEntityType<T> type) {
-        return createTickerHelper(type, DCBlockEntities.BASIC_POWER_THERMAL_GENERATOR_BLOCK_ENTITY.get(),
-                BasicPowerThermalGeneratorBlockEntity::tick);
+        return createTickerHelper(type, DCBlockEntities.BASIC_POWER_STEAM_GENERATOR_BLOCK_ENTITY.get(),
+                BasicPowerSteamGeneratorBlockEntity::tick);
     }
 
     @Nullable

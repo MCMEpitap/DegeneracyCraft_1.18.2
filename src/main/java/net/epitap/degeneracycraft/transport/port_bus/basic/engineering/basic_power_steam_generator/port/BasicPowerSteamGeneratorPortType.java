@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_thermal_generator.port;
+package net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_steam_generator.port;
 
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortBlockEntityBase;
@@ -16,12 +16,12 @@ import net.minecraftforge.items.ItemHandlerHelper;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class BasicPowerThermalGeneratorPortType extends PortTypeBase<Item> {
-    public static final BasicPowerThermalGeneratorPortType INSTANCE = new BasicPowerThermalGeneratorPortType();
+public class BasicPowerSteamGeneratorPortType extends PortTypeBase<Item> {
+    public static final BasicPowerSteamGeneratorPortType INSTANCE = new BasicPowerSteamGeneratorPortType();
 
     @Override
     public String getKey() {
-        return "basic_power_thermal_generator_port";
+        return "basic_power_steam_generator_port";
     }
 
     @Override
@@ -31,7 +31,7 @@ public class BasicPowerThermalGeneratorPortType extends PortTypeBase<Item> {
 
     @Override
     public String getTranslationKey() {
-        return "basic_power_thermal_generator_port";
+        return "basic_power_steam_generator_port";
     }
 
     @Override

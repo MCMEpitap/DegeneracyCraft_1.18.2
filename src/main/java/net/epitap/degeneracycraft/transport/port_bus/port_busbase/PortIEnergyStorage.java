@@ -1,6 +1,6 @@
 package net.epitap.degeneracycraft.transport.port_bus.port_busbase;
 
-import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_thermal_generator.bus.BasicPowerThermalGeneratorBusType;
+import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusType;
 import net.minecraft.core.Direction;
 import net.minecraftforge.energy.IEnergyStorage;
 
@@ -43,7 +43,7 @@ public class PortIEnergyStorage implements IEnergyStorage {
     @Override
     public int receiveEnergy(int maxReceive, boolean simulate) {
         this.lastReceived = this.pipe.getLevel().getGameTime();
-        return (int) BasicPowerThermalGeneratorBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
+        return (int) BasicPowerSteamGeneratorBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
     }
 
     @Override

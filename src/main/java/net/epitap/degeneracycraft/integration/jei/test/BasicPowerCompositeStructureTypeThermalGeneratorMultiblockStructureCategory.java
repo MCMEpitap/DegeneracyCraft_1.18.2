@@ -27,7 +27,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure
 
     public BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructureCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 151);
-        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get()));
+        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get()));
     }
 
     @Override

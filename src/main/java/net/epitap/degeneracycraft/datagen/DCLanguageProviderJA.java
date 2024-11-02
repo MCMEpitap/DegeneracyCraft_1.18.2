@@ -16,9 +16,6 @@ public class DCLanguageProviderJA extends LanguageProvider {
     @Override
     protected void addTranslations() {
         add("itemGroup." + "degeneracycraft", "Degeneracy Craft");
-//        add(MESSAGE_THERMAL_POWER_GENERATOR,"Thermal Power Generator generating %s RF per tick");
-//        add(SCREEN_DEGENERACYCRAFT_THERMAL_POWER_GENERATOR,"Thermal Power Generator Screen");
-//        add(DCBlocks.THERMAL_POWER_GENERATOR_BLOCK.get(), "Thermal Power Generator");
         add(DCBlocks.OVERWORLD_GRAVITATION_ORE.get(),"重力波鉱石");
 //        add(DCBlocks.OVERWORLD_CASSITERITE_ORE.get(), "錫石");
 //        add(DCBlocks.DEEPSLATE_CASSITERITE_ORE.get(), "深層錫石");
@@ -733,17 +730,17 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK.get(), "基本性能アーク炉ポート (ホログラム)");
 
 
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get(), "基本出力熱発電機");
-        add("tooltip." + "degeneracycraft." + "basic_power_thermal_generator_block",
-                "基本的な熱発電機. 物質を燃やした時の熱で発電する.");
+        add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get(), "基本出力蒸気発電機");
+        add("tooltip." + "degeneracycraft." + "basic_power_steam_generator_block",
+                "基本的な蒸気発電機. 物質を燃やした時の蒸気で発電する.");
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), "基本耐久高温燃焼室");
-        add("tooltip." + "degeneracycraft.ability" + "basic_power_thermal_generator_block",
-                "基本出力熱発電機用");
+        add("tooltip." + "degeneracycraft.ability" + "basic_power_steam_generator_block",
+                "基本出力蒸気発電機用");
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), "基本耐久高温燃焼室 (ホログラム)");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get(), "基本出力熱発電機バス");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(), "基本出力熱発電機バス (ホログラム)");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.get(), "基本出力熱発電機ポート");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(), "基本出力熱発電機ポート (ホログラム)");
+        add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.get(), "基本出力蒸気発電機バス");
+        add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_HOLO_BLOCK.get(), "基本出力蒸気発電機バス (ホログラム)");
+        add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.get(), "基本出力蒸気発電機ポート");
+        add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.get(), "基本出力蒸気発電機ポート (ホログラム)");
 
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get(), "基本技術機械製造機");
         add("tooltip." + "degeneracycraft." + "basic_technology_machine_manufacturer_block",
@@ -843,7 +840,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("screen." + "degeneracycraft" + ".available" + "%", "パーセント");
 
 
-        add("screen." + "degeneracycraft_besic_power_composite_structure_type_thermal_generator" + ".burntime", "燃焼時間");
+        add("screen." + "degeneracycraft_besic_power_steam_generator" + ".burntime", "燃焼時間");
 
         add("screen." + "degeneracycraft_generator" + ".output", "出力電力");
         add("screen." + "degeneracycraft_generator" + ".modifier", "出力倍率");
@@ -1051,7 +1048,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("advancements." + "Awakening with \"The Fool\"" + ".description", "レッドストーン動力機械要素製作機を作成");
 
         add("advancements." + "Call of Industry" + ".title", "工業の呼び声");
-        add("advancements." + "Call of Industry" + ".description", "基本出力熱発電機を作成");
+        add("advancements." + "Call of Industry" + ".description", "基本出力蒸気発電機を作成");
 
         add("advancements." + "Machine like \"The Magician\"" + ".title", "機械は\"魔術師\"のように");
         add("advancements." + "Machine like \"The Magician\"" + ".description", "基本技術機械製造機を作成");

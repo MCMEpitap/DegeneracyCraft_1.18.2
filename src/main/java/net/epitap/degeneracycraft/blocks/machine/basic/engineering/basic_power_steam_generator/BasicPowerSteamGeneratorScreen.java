@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_thermal_generator;
+package net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_steam_generator;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -16,13 +16,13 @@ import net.minecraft.world.entity.player.Inventory;
 import java.util.List;
 import java.util.Optional;
 
-public class BasicPowerThermalGeneratorScreen extends AbstractContainerScreen<BasicPowerThermalGeneratorMenu> {
+public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<BasicPowerSteamGeneratorMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_power_thermal_generator/basic_power_thermal_generator_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_gui.png");
 
     private EnergyInfoArea energyInfoArea;
 
-    public BasicPowerThermalGeneratorScreen(BasicPowerThermalGeneratorMenu menu, Inventory inventory, Component component) {
+    public BasicPowerSteamGeneratorScreen(BasicPowerSteamGeneratorMenu menu, Inventory inventory, Component component) {
         super(menu, inventory, component);
         this.imageWidth = 176;
         this.imageHeight = 166;
@@ -58,7 +58,7 @@ public class BasicPowerThermalGeneratorScreen extends AbstractContainerScreen<Ba
         int y = (height - imageHeight) / 2;
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"),
                 35, 66, 0xff0000);
-        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_besic_power_composite_structure_type_thermal_generator" + ".burntime"),
+        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_besic_power_steam_generator" + ".burntime"),
                 125, 15, 0xffffff);
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, (int) menu.getBurnTime() + " Sec",
                 125, 25, 0xffffff);
@@ -73,28 +73,28 @@ public class BasicPowerThermalGeneratorScreen extends AbstractContainerScreen<Ba
         }
 
         if (menu.blockEntity.isPowered0) {
-            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_POWERED_0 + " FE/t"),
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT_POWERED_0 + " FE/t"),
                     125, 45, 0xffffff);
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_machine" + ".modifier_3"),
                     80, 11, 0xffffff);
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, "Lv.1",
                     80, 47, 0xFF0000);
         } else if (menu.blockEntity.isFormed) {
-            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED + " FE/t"),
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT_FORMED + " FE/t"),
                     125, 45, 0xffffff);
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_machine" + ".modifier_2"),
                     80, 11, 0xffffff);
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, "Lv.0",
                     80, 47, 0xFFFFFF);
         } else {
-            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT + " FE/t"),
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT + " FE/t"),
                     125, 45, 0xffffff);
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_machine" + ".modifier_1"),
                     80, 11, 0xffffff);
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, "OFF",
                     80, 47, 0xFF0000);
         }
-        if (BasicPowerThermalGeneratorBlockEntity.isHaltDevice(menu.blockEntity)) {
+        if (BasicPowerSteamGeneratorBlockEntity.isHaltDevice(menu.blockEntity)) {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".halt"),
                     132, 66, 0xFFFFFF);
         }
@@ -115,11 +115,11 @@ public class BasicPowerThermalGeneratorScreen extends AbstractContainerScreen<Ba
 
     public List<Component> PowerOutputTooltips() {
         if (menu.blockEntity.isPowered0) {
-            return List.of(Component.nullToEmpty(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_POWERED_0 + " FE/t"));
+            return List.of(Component.nullToEmpty(menu.blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT_POWERED_0 + " FE/t"));
         } else if (menu.blockEntity.isFormed) {
-            return List.of(Component.nullToEmpty(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT_FORMED + " FE/t"));
+            return List.of(Component.nullToEmpty(menu.blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT_FORMED + " FE/t"));
         }
-        return List.of(Component.nullToEmpty(menu.blockEntity.BP_CS_T_THERMAL_GENERATOR_OUTPUT + " FE/t"));
+        return List.of(Component.nullToEmpty(menu.blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT + " FE/t"));
     }
 
     private void renderEnergyAreaTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
@@ -184,7 +184,7 @@ public class BasicPowerThermalGeneratorScreen extends AbstractContainerScreen<Ba
     }
 
     private void renderHaltTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
-        if (BasicPowerThermalGeneratorBlockEntity.isHaltDevice(menu.blockEntity)
+        if (BasicPowerSteamGeneratorBlockEntity.isHaltDevice(menu.blockEntity)
                 && isMouseAboveArea(pMouseX, pMouseY, x, y, 117, 64, 40, 10))
             renderTooltip(pPoseStack, this.HaltTooltips(),
                     Optional.empty(), pMouseX - x, pMouseY - y);

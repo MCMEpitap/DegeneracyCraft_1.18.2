@@ -5,7 +5,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineMenu;
-import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_thermal_generator.BasicPowerThermalGeneratorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerMenu;
@@ -35,7 +35,12 @@ public class DCMenuTypes {
 
     public static final RegistryObject<MenuType<PulverizerMenu>> PULVERIZER_MENU =
             registerMenuType(PulverizerMenu::new, "pulverizer_menu");
-
+    public static final RegistryObject<MenuType<BasicPrecisionTelescopeMenu>> BASIC_PRECISION_TELESCOPE_MENU =
+            registerMenuType(BasicPrecisionTelescopeMenu::new, "basic_precision_telescope_menu");
+    public static final RegistryObject<MenuType<BasicPerformanceElectrolyserMenu>> BASIC_PERFORMANCE_ELECTROLYSER_MENU =
+            registerMenuType(BasicPerformanceElectrolyserMenu::new, "basic_performance_electrolyser_menu");
+    public static final RegistryObject<MenuType<BasicPerformanceElectricArcFurnaceMenu>> BASIC_PERFORMANCE_ARC_ELECTRIC_FURNACE_MENU =
+            registerMenuType(BasicPerformanceElectricArcFurnaceMenu::new, "basic_performance_electric_arc_furnace_menu");
     public static final RegistryObject<MenuType<BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu>> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_MENU =
             registerMenuType(BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu::new, "basic_strength_dynamic_physics_multiblock_energy_storage_menu");
     public static final RegistryObject<MenuType<BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu>> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_MENU =
@@ -51,14 +56,9 @@ public class DCMenuTypes {
             registerMenuType(BasicStrengthEngineeringMultiblockEnergyStorageMenu::new, "basic_strength_multiblock_energy_storage_menu");
     public static final RegistryObject<MenuType<BasicStrengthEngineeringMultiblockMaterialStorageMenu>> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_MENU =
             registerMenuType(BasicStrengthEngineeringMultiblockMaterialStorageMenu::new, "basic_strength_multiblock_material_storage_menu");
-    public static final RegistryObject<MenuType<BasicPrecisionTelescopeMenu>> BASIC_PRECISION_TELESCOPE_MENU =
-            registerMenuType(BasicPrecisionTelescopeMenu::new, "basic_precision_telescope_menu");
-    public static final RegistryObject<MenuType<BasicPerformanceElectrolyserMenu>> BASIC_PERFORMANCE_ELECTROLYSER_MENU =
-            registerMenuType(BasicPerformanceElectrolyserMenu::new, "basic_performance_electrolyser_menu");
-    public static final RegistryObject<MenuType<BasicPerformanceElectricArcFurnaceMenu>> BASIC_PERFORMANCE_ARC_ELECTRIC_FURNACE_MENU =
-            registerMenuType(BasicPerformanceElectricArcFurnaceMenu::new, "basic_performance_electric_arc_furnace_menu");
-    public static final RegistryObject<MenuType<BasicPowerThermalGeneratorMenu>> BASIC_POWER_THERMAL_GENERATOR_MENU =
-            registerMenuType(BasicPowerThermalGeneratorMenu::new, "basic_power_thermal_generator_menu");
+
+    public static final RegistryObject<MenuType<BasicPowerSteamGeneratorMenu>> BASIC_POWER_STEAM_GENERATOR_MENU =
+            registerMenuType(BasicPowerSteamGeneratorMenu::new, "basic_power_steam_generator_menu");
     public static final RegistryObject<MenuType<BasicTechnologyUniversalAssemblerMenu>> BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_MENU =
             registerMenuType(BasicTechnologyUniversalAssemblerMenu::new, "basic_technology_universal_assembler_menu");
     public static final RegistryObject<MenuType<BasicTechnologyMachineManufacturerMenu>> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_MENU =

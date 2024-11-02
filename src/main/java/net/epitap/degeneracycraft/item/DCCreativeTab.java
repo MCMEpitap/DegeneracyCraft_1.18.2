@@ -55,7 +55,7 @@ public class DCCreativeTab {
     public static final CreativeModeTab DEGENERACYCRAFT_MACHINE_TAB = new CreativeModeTab("degeneracycraft_machine") {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get());
+            return new ItemStack(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get());
         }
     };
 

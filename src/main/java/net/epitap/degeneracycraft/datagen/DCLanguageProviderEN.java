@@ -16,15 +16,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
     @Override
     protected void addTranslations() {
         add("itemGroup." + "degeneracycraft", "DegeneracyCraft");
-//        add(MESSAGE_THERMAL_POWER_GENERATOR,"Thermal Power Generator generating %s RF per tick");
-//        add(SCREEN_DEGENERACYCRAFT_THERMAL_POWER_GENERATOR,"Thermal Power Generator Screen");
-//        add(DCBlocks.THERMAL_POWER_GENERATOR_BLOCK.get(), "Thermal Power Generator");
-//        add(DCBlocks.OVERWORLD_CASSITERITE_ORE.get(), "Cassiterite Ore");
-//        add(DCBlocks.DEEPSLATE_CASSITERITE_ORE.get(), "Deepslate Cassiterite Ore");
-//        add(DCBlocks.NETHER_CASSITERITE_ORE.get(), "Nether Cassiterite Ore");
-//        add(DCBlocks.END_CASSITERITE_ORE.get(), "End Cassiterite Ore");
-        //
-
 
         add(DCItems.RAW_BAUXITE_ORE.get(), "Bauxite Raw Chunk");
         add(DCItems.BAUXITE_DUST.get(),"Bauxite Dust");
@@ -735,17 +726,17 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK.get(), "Basic Performance Electric Arc Furnace Port");
         add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK.get(), "Basic Performance Electric Arc Furnace Port (Hologram)");
 
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get(), "Basic Power Thermal Generator");
-        add("tooltip." + "degeneracycraft." + "basic_power_thermal_generator_block",
-                "Basic thermal generator. Generates electricity from the heat generated when materials are burned.");
+        add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get(), "Basic Power Steam Generator");
+        add("tooltip." + "degeneracycraft." + "basic_power_steam_generator_block",
+                "Basic steam generator. Generates electricity from the heat generated when materials are burned.");
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), "Basic Endurance High Temperature Combustion Chamber");
-        add("tooltip." + "degeneracycraft.ability" + "basic_power_thermal_generator_block",
-                "For Basic Power Thermal Generator");
+        add("tooltip." + "degeneracycraft.ability" + "basic_power_steam_generator_block",
+                "For Basic Power Steam Generator");
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), "Basic Endurance High Temperature Combustion Chamber (Hologram)");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get(), "Basic Power Thermal Generator Bus");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(), "Basic Power Thermal Generator Bus (Hologram)");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.get(), "Basic Power Thermal Generator Port");
-        add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(), "Basic Power Thermal Generator Port (Hologram)");
+        add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.get(), "Basic Power Steam Generator Bus");
+        add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_HOLO_BLOCK.get(), "Basic Power Steam Generator Bus (Hologram)");
+        add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.get(), "Basic Power Steam Generator Port");
+        add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.get(), "Basic Power Steam Generator Port (Hologram)");
 
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get(), "Basic Technology Machine Manufacturer");
         add("tooltip." + "degeneracycraft." + "basic_technology_machine_manufacturer_block",
@@ -844,7 +835,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("screen." + "degeneracycraft" + ".available", "Available");
         add("screen." + "degeneracycraft" + ".available" + "%", "Percent");
 
-        add("screen." + "degeneracycraft_besic_power_composite_structure_type_thermal_generator" + ".burntime", "BurnTime");
+        add("screen." + "degeneracycraft_besic_power_steam_generator" + ".burntime", "BurnTime");
 
         add("screen." + "degeneracycraft_generator" + ".output", "Output");
         add("screen." + "degeneracycraft_generator" + ".modifier", "Modifier");
@@ -1051,7 +1042,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("advancements." + "Awakening with \"The Fool\"" + ".description", "Make a Redstone Powered Machine Component Manufacture Machine");
 
         add("advancements." + "Call of Industry" + ".title", "Call of Industry");
-        add("advancements." + "Call of Industry" + ".description", "Make a Basic Power Thermal Generator");
+        add("advancements." + "Call of Industry" + ".description", "Make a Basic Power Steam Generator");
 
         add("advancements." + "Machine like \"The Magician\"" + ".title", "Machine like \"The Magician\"");
         add("advancements." + "Machine like \"The Magician\"" + ".description", "Make a Basic Technology Machine Manufacturer");

@@ -761,20 +761,20 @@ public class DCItemModelProvider extends ItemModelProvider {
 //        withExistingParent(DCBlocks.TEST.getId().getPath(),
 //                modLoc("block/test"));
 //
-        withExistingParent(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.getId().getPath(),
-                modLoc("block/basic_power_thermal_generator_block"));
+        withExistingParent(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.getId().getPath(),
+                modLoc("block/basic_power_steam_generator_block"));
         withExistingParent(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.getId().getPath(),
                 modLoc("block/basic_endurance_high_temperature_combustion_chamber_block"));
         withExistingParent(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_endurance_high_temperature_combustion_chamber_holo_block"));
-        withExistingParent(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_power_thermal_generator_bus_block"));
-        withExistingParent(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_power_thermal_generator_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_power_thermal_generator_port_block"));
-        withExistingParent(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_power_thermal_generator_port_holo_block"));
+        withExistingParent(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_power_steam_generator_bus_block"));
+        withExistingParent(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_power_steam_generator_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_power_steam_generator_port_block"));
+        withExistingParent(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_power_steam_generator_port_holo_block"));
 
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_machine_manufacturer_block"));

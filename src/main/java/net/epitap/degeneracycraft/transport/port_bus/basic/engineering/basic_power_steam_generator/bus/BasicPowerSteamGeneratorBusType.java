@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_thermal_generator.bus;
+package net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_steam_generator.bus;
 
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeIEnergyUtils;
@@ -17,14 +17,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class BasicPowerThermalGeneratorBusType extends PortTypeBase<Void> {
-    public static final BasicPowerThermalGeneratorBusType INSTANCE = new BasicPowerThermalGeneratorBusType();
+public class BasicPowerSteamGeneratorBusType extends PortTypeBase<Void> {
+    public static final BasicPowerSteamGeneratorBusType INSTANCE = new BasicPowerSteamGeneratorBusType();
 
-    public BasicPowerThermalGeneratorBusType() {
+    public BasicPowerSteamGeneratorBusType() {
     }
 
     public String getKey() {
-        return "basic_power_thermal_generator_bus";
+        return "basic_power_steam_generator_bus";
     }
 
     public boolean canImport(BlockEntity blockEntity, Direction direction) {
@@ -32,7 +32,7 @@ public class BasicPowerThermalGeneratorBusType extends PortTypeBase<Void> {
     }
 
     public String getTranslationKey() {
-        return "basic_power_thermal_generator_bus";
+        return "basic_power_steam_generator_bus";
     }
 
     public ItemStack getIcon() {

@@ -58,13 +58,13 @@ public class DCBlockLootTableProvider extends BlockLoot {
 
         this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PRECISION_TELESCOPE_BLOCK.get()));
 
-        this.add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get()));
+        this.add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get()));
         this.add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get()));
         this.add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), block -> noDrop());
-        this.add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get()));
-        this.add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(), block -> noDrop());
-        this.add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.get()));
-        this.add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.get()));
+        this.add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.get()));
+        this.add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.get(), block -> noDrop());
 
         this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_BUS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PRECISION_TELESCOPE_BUS_BLOCK.get()));
         this.add(DCBlocks.BASIC_PRECISION_TELESCOPE_BUS_HOLO_BLOCK.get(), block -> noDrop());

@@ -68,13 +68,13 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerRedstonePoweredMachineElementManufactureMachine();
         registerRedstonePoweredMachinePartManufactureMachine();
 
-        registerBasicPowerCompositeStructureTypeThermalGenerator();
+        registerBasicPowerSteamGenerator();
         registerBasicEnduranceHighTemperatureCombustionChamber();
         registerBasicEnduranceHighTemperatureCombustionChamberHolo();
-        registerBasicPowerCompositeStructureTypeThermalGeneratorBus();
-        registerBasicPowerCompositeStructureTypeThermalGeneratorBusHolo();
-        registerBasicPowerCompositeStructureTypeThermalGeneratorPort();
-        registerBasicPowerCompositeStructureTypeThermalGeneratorPortHolo();
+        registerBasicPowerSteamGeneratorBus();
+        registerBasicPowerSteamGeneratorBusHolo();
+        registerBasicPowerSteamGeneratorPort();
+        registerBasicPowerSteamGeneratorPortHolo();
 
 
         registerBasicTechnologyMachineManufacturer();
@@ -640,16 +640,17 @@ public class DCBlockStateProvider extends BlockStateProvider {
         orientedBlock(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(),
                 state -> model);
     }
-    private void registerBasicPowerCompositeStructureTypeThermalGenerator() {
-        BlockModelBuilder model = models().getBuilder("block/basic_power_thermal_generator_block");
+
+    private void registerBasicPowerSteamGenerator() {
+        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/basic_power_thermal_generator_down"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/basic_power_thermal_generator_up"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/basic_power_thermal_generator_front"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/basic_power_thermal_generator_side"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/basic_power_thermal_generator_side"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/basic_power_thermal_generator_side"));
-        orientedBlock(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get(),
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_down"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_up"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_front"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_side"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_side"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_side"));
+        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get(),
                 state -> model);
     }
 
@@ -679,55 +680,55 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicPowerCompositeStructureTypeThermalGeneratorPort() {
-        BlockModelBuilder model = models().getBuilder("block/basic_power_thermal_generator_port_block");
+    private void registerBasicPowerSteamGeneratorPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_port_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/port/basic_power_thermal_generator_port_block"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/port/basic_power_thermal_generator_port_block"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/port/basic_power_thermal_generator_port_block"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/port/basic_power_thermal_generator_port_block"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/port/basic_power_thermal_generator_port_block"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/port/basic_power_thermal_generator_port_block"));
-        orientedBlock(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_BLOCK.get(),
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicPowerCompositeStructureTypeThermalGeneratorPortHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_power_thermal_generator_port_holo_block");
+    private void registerBasicPowerSteamGeneratorPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_port_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/port/basic_power_thermal_generator_port_holo_block"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/port/basic_power_thermal_generator_port_holo_block"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/port/basic_power_thermal_generator_port_holo_block"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/port/basic_power_thermal_generator_port_holo_block"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/port/basic_power_thermal_generator_port_holo_block"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/port/basic_power_thermal_generator_port_holo_block"));
-        orientedBlock(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_PORT_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicPowerCompositeStructureTypeThermalGeneratorBus() {
-        BlockModelBuilder model = models().getBuilder("block/basic_power_thermal_generator_bus_block");
+    private void registerBasicPowerSteamGeneratorBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_bus_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/bus/basic_power_thermal_generator_bus_block"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/bus/basic_power_thermal_generator_bus_block"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/bus/basic_power_thermal_generator_bus_block"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/bus/basic_power_thermal_generator_bus_block"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/bus/basic_power_thermal_generator_bus_block"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/bus/basic_power_thermal_generator_bus_block"));
-        orientedBlock(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_BLOCK.get(),
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicPowerCompositeStructureTypeThermalGeneratorBusHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_power_thermal_generator_bus_holo_block");
+    private void registerBasicPowerSteamGeneratorBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_bus_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/bus/basic_power_thermal_generator_bus_holo_block"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/bus/basic_power_thermal_generator_bus_holo_block"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/bus/basic_power_thermal_generator_bus_holo_block"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/bus/basic_power_thermal_generator_bus_holo_block"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/bus/basic_power_thermal_generator_bus_holo_block"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_thermal_generator/bus/basic_power_thermal_generator_bus_holo_block"));
-        orientedBlock(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BUS_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_HOLO_BLOCK.get(),
                 state -> model);
     }
 

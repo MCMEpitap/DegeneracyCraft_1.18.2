@@ -7,8 +7,8 @@ import net.epitap.degeneracycraft.transport.port_bus.basic.chemistry.basic_perfo
 import net.epitap.degeneracycraft.transport.port_bus.basic.chemistry.basic_performance_electrolyser.port.BasicPerformanceElectrolyserPortType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.dynamic_physics.basic_performance_electric_arc_furnace.bus.BasicPerformanceElectricArcFurnaceBusType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.dynamic_physics.basic_performance_electric_arc_furnace.port.BasicPerformanceElectricArcFurnacePortType;
-import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_thermal_generator.bus.BasicPowerThermalGeneratorBusType;
-import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_thermal_generator.port.BasicPowerThermalGeneratorPortType;
+import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusType;
+import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_steam_generator.port.BasicPowerSteamGeneratorPortType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_circuit_builder.bus.BasicTechnologyCircuitBuilderBusType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_circuit_builder.port.BasicTechnologyCircuitBuilderPortType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_machine_element_processor.bus.BasicTechnologyMachineElementProcessorBusType;
@@ -78,12 +78,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 return itemStored.get(side).cast();
             }
         }
-        if (cap == CapabilityEnergy.ENERGY && hasType(BasicPowerThermalGeneratorBusType.INSTANCE)) {
+        if (cap == CapabilityEnergy.ENERGY && hasType(BasicPowerSteamGeneratorBusType.INSTANCE)) {
             if (side != null) {
                 return intEnergyStored.get(side).cast();
             }
         }
-        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPowerThermalGeneratorPortType.INSTANCE)) {
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPowerSteamGeneratorPortType.INSTANCE)) {
             if (side != null) {
                 return itemStored.get(side).cast();
             }
@@ -186,7 +186,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 }
             }
         }
-        if (hasType(BasicPowerThermalGeneratorBusType.INSTANCE)) {
+        if (hasType(BasicPowerSteamGeneratorBusType.INSTANCE)) {
             for (Direction side : Direction.values()) {
                 if (portExtracting(side)) {
                     intEnergyStored.get(side).ifPresent(PortIEnergyStorage::tick);
@@ -231,10 +231,10 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicPerformanceElectricArcFurnacePortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PipeItemHandler.INSTANCE);
         }
-        if (hasType(BasicPowerThermalGeneratorBusType.INSTANCE)) {
+        if (hasType(BasicPowerSteamGeneratorBusType.INSTANCE)) {
             intEnergyStored.revalidate(side, storage -> extracting, (storage) -> new PortIEnergyStorage(this, storage));
         }
-        if (hasType(BasicPowerThermalGeneratorPortType.INSTANCE)) {
+        if (hasType(BasicPowerSteamGeneratorPortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PipeItemHandler.INSTANCE);
         }
         if (hasType(BasicTechnologyMachineManufacturerBusType.INSTANCE)) {
@@ -278,10 +278,10 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicPerformanceElectricArcFurnacePortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PipeItemHandler.INSTANCE);
         }
-        if (hasType(BasicPowerThermalGeneratorBusType.INSTANCE)) {
+        if (hasType(BasicPowerSteamGeneratorBusType.INSTANCE)) {
             intEnergyStored.revalidate(this::portExtracting, (side) -> new PortIEnergyStorage(this, side));
         }
-        if (hasType(BasicPowerThermalGeneratorPortType.INSTANCE)) {
+        if (hasType(BasicPowerSteamGeneratorPortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PipeItemHandler.INSTANCE);
         }
         if (hasType(BasicTechnologyMachineManufacturerBusType.INSTANCE)) {

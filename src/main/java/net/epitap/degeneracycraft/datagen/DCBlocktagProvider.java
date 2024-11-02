@@ -48,7 +48,7 @@ public class DCBlocktagProvider extends BlockTagsProvider {
 
         tag(DCTags.Blocks.DEGENERACYCRAFT_MACHINES)
                 .add(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get())
-                .add(DCBlocks.BASIC_POWER_THERMAL_GENERATOR_BLOCK.get())
+                .add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get())
                 .add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get());
 
     }

@@ -701,6 +701,21 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_dynamic_physics_multiblock_material_storage_holo_block"));
 
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_electric_arc_furnace_block"));
+        withExistingParent(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_BLOCK.getId().getPath(),
+                modLoc("block/basic_flow_cooling_system_block"));
+        withExistingParent(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_flow_cooling_system_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_electric_arc_furnace_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_electric_arc_furnace_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_electric_arc_furnace_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_electric_arc_furnace_port_holo_block"));
+
         withExistingParent(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.getId().getPath(),
                 modLoc("block/redstone_powered_machine_element_manufacture_machine_block"));
         withExistingParent(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.getId().getPath(),

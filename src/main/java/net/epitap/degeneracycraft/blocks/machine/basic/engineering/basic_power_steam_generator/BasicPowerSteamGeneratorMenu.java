@@ -39,9 +39,10 @@ public class BasicPowerSteamGeneratorMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler, 0, 26, 25));
-            this.addSlot(new SlotItemHandler(handler, 1, 71, 59));
-            this.addSlot(new SlotItemHandler(handler, 2, 98, 62));
+            this.addSlot(new SlotItemHandler(handler, 0, 26, 7));
+            this.addSlot(new SlotItemHandler(handler, 1, 26, 25));
+            this.addSlot(new SlotItemHandler(handler, 2, 71, 59));
+            this.addSlot(new SlotItemHandler(handler, 3, 98, 62));
 
         });
         addDataSlots(data);

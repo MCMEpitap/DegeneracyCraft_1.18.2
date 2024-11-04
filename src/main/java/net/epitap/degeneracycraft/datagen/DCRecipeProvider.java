@@ -80,9 +80,9 @@ public class DCRecipeProvider extends RecipeProvider implements IConditionBuilde
 
         ShapedRecipeBuilder.shaped(DCItems.WATER_CONTAINER.get())
                 .pattern("we")
-                .pattern(" ")
+                .pattern("  ")
                 .define('w', Items.WATER_BUCKET)
-                .define('g', DCItems.EMPTY_CONTAINER.get())
+                .define('e', DCItems.EMPTY_CONTAINER.get())
                 .group("degeneracycraft")
                 .unlockedBy("ingots/iron", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_INGOT))
                 .save(pFinishedRecipeConsumer);

@@ -249,8 +249,10 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
                     setChanged(level, pos, state);
                 }
             } else {
-                blockEntity.itemHandler.extractItem(0, 1, false);
-                blockEntity.waterCounter = 1000;
+                if (blockEntity.waterCounter <= 0) {
+                    blockEntity.itemHandler.extractItem(0, 1, false);
+                    blockEntity.waterCounter = 1000;
+                }
                 ItemStack stack = blockEntity.itemHandler.getStackInSlot(1);
                 int burnTime = ForgeHooks.getBurnTime(stack, RecipeType.SMELTING);
                 if (burnTime > 0) {

@@ -27,7 +27,7 @@ public class BasicPowerSteamGeneratorMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     public BasicPowerSteamGeneratorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(1));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
     }
 
     public BasicPowerSteamGeneratorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -51,6 +51,11 @@ public class BasicPowerSteamGeneratorMenu extends AbstractContainerMenu {
     public float getBurnTime() {
         int getBurnTime = this.data.get(0);
         return getBurnTime / 20F;
+    }
+
+    public int getWaterTime() {
+        int getWaterTime = this.data.get(1);
+        return getWaterTime;
     }
 
     public DCIEnergyStorageFloat getEnergy() {

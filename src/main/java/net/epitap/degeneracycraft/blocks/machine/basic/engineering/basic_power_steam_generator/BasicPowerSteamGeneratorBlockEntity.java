@@ -46,6 +46,7 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
     public float BP_CS_T_STEAM_GENERATOR_OUTPUT_POWERED_0 = BP_CS_T_STEAM_GENERATOR_OUTPUT * 3F;
     protected final ContainerData data;
     public int counter;
+    public int waterCounter;
     public boolean formed0;
     public boolean formed1;
     public boolean formed2;
@@ -60,7 +61,7 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
 
         @Override
         public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
-            if (slot == 0 && ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0
+            if (slot == 0 && ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) < 0
                     && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                     && !stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                     && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
@@ -112,6 +113,7 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
             public int get(int index) {
                 return switch (index) {
                     case 0 -> BasicPowerSteamGeneratorBlockEntity.this.counter;
+                    case 1 -> BasicPowerSteamGeneratorBlockEntity.this.waterCounter;
                     default -> 0;
                 };
             }
@@ -121,11 +123,14 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
                 if (index == 0) {
                     BasicPowerSteamGeneratorBlockEntity.this.counter = value;
                 }
+                if (index == 1) {
+                    BasicPowerSteamGeneratorBlockEntity.this.waterCounter = value;
+                }
             }
 
             @Override
             public int getCount() {
-                return 1;
+                return 2;
             }
         };
     }
@@ -191,6 +196,7 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
         nbt.put("inventory", itemHandler.serializeNBT());
         nbt.putFloat("energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
+        nbt.putInt("water_counter", waterCounter);
         super.saveAdditional(nbt);
     }
 
@@ -199,6 +205,7 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("energy"));
         counter = nbt.getInt("counter");
+        waterCounter = nbt.getInt("water_counter");
         super.load(nbt);
     }
 
@@ -219,33 +226,41 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
         blockEntity.isPowered0 = BasicPowerSteamGeneratorStructure.isPowered0(blockEntity);
 
         BasicPowerSteamGeneratorStructure.hologram(level, pos, state, blockEntity);
-
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
+        blockEntity.waterCounter = 0;
         if (level.isClientSide()) {
             return;
         }
         if (!isHaltDevice(blockEntity)) {
-            if (blockEntity.counter > 0) {
+            if (blockEntity.counter > 0 && blockEntity.waterCounter > 0) {
                 if (blockEntity.isPowered0) {
                     blockEntity.counter--;
+                    blockEntity.waterCounter--;
                     blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT_POWERED_0, false);
                     setChanged(level, pos, state);
                 } else if (blockEntity.isFormed) {
                     blockEntity.counter--;
+                    blockEntity.waterCounter--;
                     blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT_FORMED, false);
                     setChanged(level, pos, state);
                 } else {
                     blockEntity.counter--;
+                    blockEntity.waterCounter--;
                     blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT, false);
                     setChanged(level, pos, state);
                 }
             } else {
                 ItemStack stack = blockEntity.itemHandler.getStackInSlot(0);
                 int burnTime = ForgeHooks.getBurnTime(stack, RecipeType.SMELTING);
+                int waterTime = blockEntity.waterCounter;
                 if (burnTime > 0) {
-                    blockEntity.itemHandler.extractItem(0, 1, false);
+                    blockEntity.itemHandler.extractItem(1, 1, false);
                     blockEntity.counter = burnTime;
+                }
+                if (waterTime <= 0) {
+                    blockEntity.itemHandler.extractItem(0, 1, false);
+                    blockEntity.waterCounter = 1000;
                 }
                 setChanged(level, pos, state);
             }

@@ -102,6 +102,7 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
         renderEnergyAreaTooltips(pPoseStack, pMouseX, pMouseY, x, y);
         renderPowerModifierTooltips(pPoseStack, pMouseX, pMouseY, x, y);
         renderBurnTimeTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+        renderWaterTimeTooltips(pPoseStack, pMouseX, pMouseY, x, y);
         renderWorkTooltips(pPoseStack, pMouseX, pMouseY, x, y);
         renderFormedTooltips(pPoseStack, pMouseX, pMouseY, x, y);
         renderHaltTooltips(pPoseStack, pMouseX, pMouseY, x, y);
@@ -165,6 +166,17 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
 
     public List<Component> BurnTimeTooltips() {
         return List.of(Component.nullToEmpty((int) menu.getBurnTime() + " Sec"));
+
+    }
+
+    private void renderWaterTimeTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
+        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 26, 7, 18, 18))
+            renderTooltip(pPoseStack, this.WaterTimeTooltips(),
+                    Optional.empty(), pMouseX - x, pMouseY - y);
+    }
+
+    public List<Component> WaterTimeTooltips() {
+        return List.of(Component.nullToEmpty("Water " + menu.getWaterTime() + " Unit"));
     }
 
     private void renderFormedTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {

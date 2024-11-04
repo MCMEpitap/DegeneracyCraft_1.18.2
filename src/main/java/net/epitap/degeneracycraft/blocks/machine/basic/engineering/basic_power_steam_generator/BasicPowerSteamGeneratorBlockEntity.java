@@ -61,8 +61,7 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
 
         @Override
         public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
-            if (slot == 0 && ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) < 0
-                    && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
+            if (slot == 0 && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                     && !stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                     && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
                 return stack.is(DCItems.WATER_CONTAINER.get());
@@ -228,7 +227,6 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
         BasicPowerSteamGeneratorStructure.hologram(level, pos, state, blockEntity);
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
-        blockEntity.waterCounter = 0;
         if (level.isClientSide()) {
             return;
         }
@@ -251,17 +249,15 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
                     setChanged(level, pos, state);
                 }
             } else {
-                ItemStack stack = blockEntity.itemHandler.getStackInSlot(0);
+                blockEntity.itemHandler.extractItem(0, 1, false);
+                blockEntity.waterCounter = 1000;
+                ItemStack stack = blockEntity.itemHandler.getStackInSlot(1);
                 int burnTime = ForgeHooks.getBurnTime(stack, RecipeType.SMELTING);
-                int waterTime = blockEntity.waterCounter;
                 if (burnTime > 0) {
                     blockEntity.itemHandler.extractItem(1, 1, false);
                     blockEntity.counter = burnTime;
                 }
-                if (waterTime <= 0) {
-                    blockEntity.itemHandler.extractItem(0, 1, false);
-                    blockEntity.waterCounter = 1000;
-                }
+
                 setChanged(level, pos, state);
             }
             setChanged(level, pos, state);

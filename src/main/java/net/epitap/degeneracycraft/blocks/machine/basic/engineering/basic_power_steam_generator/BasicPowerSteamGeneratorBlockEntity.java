@@ -249,7 +249,7 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
                     setChanged(level, pos, state);
                 }
             } else {
-                if (blockEntity.waterCounter <= 0) {
+                if (blockEntity.waterCounter <= 0 && blockEntity.itemHandler.getStackInSlot(0).is(DCItems.WATER_CONTAINER.get())) {
                     blockEntity.itemHandler.extractItem(0, 1, false);
                     blockEntity.waterCounter = 1000;
                 }
@@ -268,6 +268,6 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
     }
 
     public static boolean isHaltDevice(BasicPowerSteamGeneratorBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(2).is(DCItems.MACHINE_HALT_DEVICE.get());
+        return blockEntity.itemHandler.getStackInSlot(3).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 }

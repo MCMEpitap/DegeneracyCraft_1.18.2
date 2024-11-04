@@ -50,6 +50,7 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
 
         this.blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight);
         energyInfoArea.draw(pPoseStack);
+
     }
 
     @Override
@@ -73,21 +74,21 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
         }
 
         if (menu.blockEntity.isPowered0) {
-            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT_POWERED_0 + " FE/t"),
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_STEAM_GENERATOR_OUTPUT_POWERED_0 + " FE/t"),
                     125, 45, 0xffffff);
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_machine" + ".modifier_3"),
                     80, 11, 0xffffff);
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, "Lv.1",
                     80, 47, 0xFF0000);
         } else if (menu.blockEntity.isFormed) {
-            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT_FORMED + " FE/t"),
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_STEAM_GENERATOR_OUTPUT_FORMED + " FE/t"),
                     125, 45, 0xffffff);
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_machine" + ".modifier_2"),
                     80, 11, 0xffffff);
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, "Lv.0",
                     80, 47, 0xFFFFFF);
         } else {
-            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT + " FE/t"),
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent(menu.blockEntity.BP_STEAM_GENERATOR_OUTPUT + " FE/t"),
                     125, 45, 0xffffff);
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_machine" + ".modifier_1"),
                     80, 11, 0xffffff);
@@ -116,11 +117,11 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
 
     public List<Component> PowerOutputTooltips() {
         if (menu.blockEntity.isPowered0) {
-            return List.of(Component.nullToEmpty(menu.blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT_POWERED_0 + " FE/t"));
+            return List.of(Component.nullToEmpty(menu.blockEntity.BP_STEAM_GENERATOR_OUTPUT_POWERED_0 + " FE/t"));
         } else if (menu.blockEntity.isFormed) {
-            return List.of(Component.nullToEmpty(menu.blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT_FORMED + " FE/t"));
+            return List.of(Component.nullToEmpty(menu.blockEntity.BP_STEAM_GENERATOR_OUTPUT_FORMED + " FE/t"));
         }
-        return List.of(Component.nullToEmpty(menu.blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT + " FE/t"));
+        return List.of(Component.nullToEmpty(menu.blockEntity.BP_STEAM_GENERATOR_OUTPUT + " FE/t"));
     }
 
     private void renderEnergyAreaTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
@@ -176,7 +177,7 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
     }
 
     public List<Component> WaterTimeTooltips() {
-        return List.of(Component.nullToEmpty("Water " + menu.getWaterTime() + " Unit"));
+        return List.of(Component.nullToEmpty("Water " + menu.getWaterTime() + "/" + menu.getMaxWaterTime() + " Unit"));
     }
 
     private void renderFormedTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {

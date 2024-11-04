@@ -58,6 +58,10 @@ public class BasicPowerSteamGeneratorMenu extends AbstractContainerMenu {
         return getWaterTime;
     }
 
+    public int getMaxWaterTime() {
+        return blockEntity.BP_STEAM_GENERATOR_WATER_CAPACITY;
+    }
+
     public DCIEnergyStorageFloat getEnergy() {
         return blockEntity.getEnergyStorage();
     }

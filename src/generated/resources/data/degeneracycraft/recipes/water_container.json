@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "degeneracycraft",
+  "pattern": [
+    "we",
+    "  "
+  ],
+  "key": {
+    "w": {
+      "item": "minecraft:water_bucket"
+    },
+    "e": {
+      "item": "degeneracycraft:empty_container"
+    }
+  },
+  "result": {
+    "item": "degeneracycraft:water_container"
+  }
+}

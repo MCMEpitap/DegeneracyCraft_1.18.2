@@ -39,11 +39,13 @@ import javax.annotation.Nullable;
 import java.util.Map;
 
 public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements MenuProvider {
-    public float BP_CS_T_STEAM_GENERATOR_CAPACITY = 40000F;
-    public float BP_CS_T_STEAM_GENERATOR_TRANSFER = 16F;
-    public float BP_CS_T_STEAM_GENERATOR_OUTPUT = 16F;
-    public float BP_CS_T_STEAM_GENERATOR_OUTPUT_FORMED = BP_CS_T_STEAM_GENERATOR_OUTPUT * 2F;
-    public float BP_CS_T_STEAM_GENERATOR_OUTPUT_POWERED_0 = BP_CS_T_STEAM_GENERATOR_OUTPUT * 3F;
+    public float BP_STEAM_GENERATOR_CAPACITY = 40000F;
+    public float BP_STEAM_GENERATOR_TRANSFER = 16F;
+    public float BP_STEAM_GENERATOR_OUTPUT = 16F;
+    public float BP_STEAM_GENERATOR_OUTPUT_FORMED = BP_STEAM_GENERATOR_OUTPUT * 2F;
+    public float BP_STEAM_GENERATOR_OUTPUT_POWERED_0 = BP_STEAM_GENERATOR_OUTPUT * 3F;
+
+    public int BP_STEAM_GENERATOR_WATER_CAPACITY = 10000;
     protected final ContainerData data;
     public int counter;
     public int waterCounter;
@@ -79,7 +81,7 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
             return false;
         }
     };
-    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BP_CS_T_STEAM_GENERATOR_CAPACITY, BP_CS_T_STEAM_GENERATOR_TRANSFER) {
+    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BP_STEAM_GENERATOR_CAPACITY, BP_STEAM_GENERATOR_TRANSFER) {
         @Override
         public void onEnergyChanged() {
             setChanged();
@@ -233,25 +235,23 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
         if (!isHaltDevice(blockEntity)) {
             if (blockEntity.counter > 0 && blockEntity.waterCounter > 0) {
                 if (blockEntity.isPowered0) {
-                    blockEntity.counter--;
                     blockEntity.waterCounter--;
-                    blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT_POWERED_0, false);
+                    blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_STEAM_GENERATOR_OUTPUT_POWERED_0, false);
                     setChanged(level, pos, state);
                 } else if (blockEntity.isFormed) {
-                    blockEntity.counter--;
                     blockEntity.waterCounter--;
-                    blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT_FORMED, false);
+                    blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_STEAM_GENERATOR_OUTPUT_FORMED, false);
                     setChanged(level, pos, state);
                 } else {
-                    blockEntity.counter--;
                     blockEntity.waterCounter--;
-                    blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_CS_T_STEAM_GENERATOR_OUTPUT, false);
+                    blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_STEAM_GENERATOR_OUTPUT, false);
                     setChanged(level, pos, state);
                 }
             } else {
-                if (blockEntity.waterCounter <= 0 && blockEntity.itemHandler.getStackInSlot(0).is(DCItems.WATER_CONTAINER.get())) {
+                if (blockEntity.itemHandler.getStackInSlot(0).is(DCItems.WATER_CONTAINER.get())
+                        && blockEntity.waterCounter < blockEntity.BP_STEAM_GENERATOR_WATER_CAPACITY) {
                     blockEntity.itemHandler.extractItem(0, 1, false);
-                    blockEntity.waterCounter = 1000;
+                    blockEntity.waterCounter += 1000;
                 }
                 ItemStack stack = blockEntity.itemHandler.getStackInSlot(1);
                 int burnTime = ForgeHooks.getBurnTime(stack, RecipeType.SMELTING);
@@ -259,10 +259,14 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
                     blockEntity.itemHandler.extractItem(1, 1, false);
                     blockEntity.counter = burnTime;
                 }
-
                 setChanged(level, pos, state);
+//                if(blockEntity.counter > 0){
+//                    blockEntity.counter--;
+//                    setChanged(level, pos, state);
+//                }
             }
-            setChanged(level, pos, state);
+
+
         }
         setChanged(level, pos, state);
     }

@@ -668,6 +668,9 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.SIMPLE_CONVEX_LENS.get(), "簡易凸レンズ");
         add(DCItems.SIMPLE_CONCAVE_LENS.get(), "簡易凹レンズ");
 
+        add(DCItems.EMPTY_CONTAINER.get(), "空の容器");
+        add(DCItems.WATER_CONTAINER.get(), "水容器");
+
         add(DCBlocks.PULVERIZER_BLOCK.get(), "粉砕機");
 
         add(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "基本強度動的物理学多重構造機械用基礎フレーム");

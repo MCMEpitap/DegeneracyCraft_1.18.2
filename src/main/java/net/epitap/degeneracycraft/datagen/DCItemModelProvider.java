@@ -655,8 +655,13 @@ public class DCItemModelProvider extends ItemModelProvider {
 
         basicMaterialCommonItem(DCItems.COMPRESSED_PLANKS.get());
         basicMaterialCommonItem(DCItems.COMPRESSED_REDSTONE.get());
+
+
         basicMaterialCommonItem(DCItems.SIMPLE_CONVEX_LENS.get());
         basicMaterialCommonItem(DCItems.SIMPLE_CONCAVE_LENS.get());
+
+        basicMaterialCommonItem(DCItems.EMPTY_CONTAINER.get());
+        basicMaterialCommonItem(DCItems.WATER_CONTAINER.get());
 
         basicPartItem(DCItems.BASIC_CIRCUIT.get());
         basicPartItem(DCItems.BASIC_DIODE.get());

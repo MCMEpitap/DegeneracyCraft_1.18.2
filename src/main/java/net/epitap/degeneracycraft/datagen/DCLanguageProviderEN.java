@@ -645,6 +645,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add(DCItems.SIMPLE_CONVEX_LENS.get(), "Simple Convex Lens");
         add(DCItems.SIMPLE_CONCAVE_LENS.get(), "Simple Concave Lens");
+        add(DCItems.EMPTY_CONTAINER.get(), "Empty Container");
+        add(DCItems.WATER_CONTAINER.get(), "Water Container");
 
         add(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "Multiblock Structure Hologram Visualizer");
         add(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "Basic Technology Multiblock Structure Hologram Visualizer");

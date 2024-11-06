@@ -55,7 +55,7 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
     public boolean powered0_1;
     public boolean isFormed;
     public boolean isPowered0;
-    public final ItemStackHandler itemHandler = new ItemStackHandler(4) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(5) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -64,18 +64,22 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
         @Override
         public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
             if (slot == 0 && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
+                    && !stack.is(DCItems.EMPTY_CONTAINER.get())
                     && !stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                     && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
-                return stack.is(DCItems.WATER_CONTAINER.get());
-            }
-            if (slot == 1) {
                 return ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
             }
+            if (slot == 1) {
+                return stack.is(DCItems.EMPTY_CONTAINER.get());
+            }
             if (slot == 2) {
+                return stack.is(DCItems.WATER_CONTAINER.get());
+            }
+            if (slot == 3) {
                 return stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                         || stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
             }
-            if (slot == 3) {
+            if (slot == 4) {
                 return stack.is(DCItems.MACHINE_HALT_DEVICE.get());
             }
             return false;
@@ -248,15 +252,19 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
                     setChanged(level, pos, state);
                 }
             } else {
-                if (blockEntity.itemHandler.getStackInSlot(0).is(DCItems.WATER_CONTAINER.get())
-                        && blockEntity.waterCounter < blockEntity.BP_STEAM_GENERATOR_WATER_CAPACITY) {
-                    blockEntity.itemHandler.extractItem(0, 1, false);
+                if (blockEntity.itemHandler.getStackInSlot(2).is(DCItems.WATER_CONTAINER.get())
+                        && blockEntity.waterCounter < blockEntity.BP_STEAM_GENERATOR_WATER_CAPACITY
+                        && hasNotReachedStackLimit(blockEntity)) {
+                    blockEntity.itemHandler.extractItem(2, 1, false);
                     blockEntity.waterCounter += 1000;
+                    blockEntity.itemHandler.setStackInSlot(1, new ItemStack(DCItems.EMPTY_CONTAINER.get(),
+                            blockEntity.itemHandler.getStackInSlot(1).getCount() + 1));
+
                 }
-                ItemStack stack = blockEntity.itemHandler.getStackInSlot(1);
+                ItemStack stack = blockEntity.itemHandler.getStackInSlot(0);
                 int burnTime = ForgeHooks.getBurnTime(stack, RecipeType.SMELTING);
                 if (burnTime > 0) {
-                    blockEntity.itemHandler.extractItem(1, 1, false);
+                    blockEntity.itemHandler.extractItem(0, 1, false);
                     blockEntity.counter = burnTime;
                 }
                 setChanged(level, pos, state);
@@ -272,6 +280,10 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
     }
 
     public static boolean isHaltDevice(BasicPowerSteamGeneratorBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(3).is(DCItems.MACHINE_HALT_DEVICE.get());
+        return blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MACHINE_HALT_DEVICE.get());
+    }
+
+    private static boolean hasNotReachedStackLimit(BasicPowerSteamGeneratorBlockEntity blockEntity) {
+        return blockEntity.itemHandler.getStackInSlot(1).getCount() < blockEntity.itemHandler.getStackInSlot(1).getMaxStackSize();
     }
 }

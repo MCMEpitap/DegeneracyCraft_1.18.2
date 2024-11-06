@@ -21,7 +21,7 @@ public class BasicPowerSteamGeneratorMenu extends AbstractContainerMenu {
     private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 3;
+    private static final int TE_INVENTORY_SLOT_COUNT = 5;
     public final BasicPowerSteamGeneratorBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
@@ -39,10 +39,11 @@ public class BasicPowerSteamGeneratorMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler, 0, 26, 7));
-            this.addSlot(new SlotItemHandler(handler, 1, 26, 25));
-            this.addSlot(new SlotItemHandler(handler, 2, 71, 59));
-            this.addSlot(new SlotItemHandler(handler, 3, 98, 62));
+            this.addSlot(new SlotItemHandler(handler, 0, 8, 43));
+            this.addSlot(new SlotItemHandler(handler, 1, 26, 43));
+            this.addSlot(new SlotItemHandler(handler, 2, 44, 43));
+            this.addSlot(new SlotItemHandler(handler, 3, 71, 59));
+            this.addSlot(new SlotItemHandler(handler, 4, 98, 62));
 
         });
         addDataSlots(data);

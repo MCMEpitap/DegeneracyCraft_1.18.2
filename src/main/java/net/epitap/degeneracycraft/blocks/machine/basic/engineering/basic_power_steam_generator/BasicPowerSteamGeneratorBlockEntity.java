@@ -1,7 +1,6 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_steam_generator;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlock;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.item.DCItems;
@@ -160,7 +159,7 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
                 return lazyItemHandler.cast();
             }
             if (directionWrappedHandlerMap.containsKey(side)) {
-                Direction localDir = this.getBlockState().getValue(BasicTechnologyMachineManufacturerBlock.FACING);
+                Direction localDir = this.getBlockState().getValue(BasicPowerSteamGeneratorBlock.FACING);
 
                 if (side == Direction.UP || side == Direction.DOWN) {
                     return directionWrappedHandlerMap.get(side).cast();
@@ -268,12 +267,11 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
                     blockEntity.counter = burnTime;
                 }
                 setChanged(level, pos, state);
-//                if(blockEntity.counter > 0){
-//                    blockEntity.counter--;
-//                    setChanged(level, pos, state);
-//                }
             }
-
+            if (blockEntity.counter > 0) {
+                blockEntity.counter--;
+                setChanged(level, pos, state);
+            }
 
         }
         setChanged(level, pos, state);

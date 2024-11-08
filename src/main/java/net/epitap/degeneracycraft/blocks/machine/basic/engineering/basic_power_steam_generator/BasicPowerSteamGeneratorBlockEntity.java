@@ -105,10 +105,10 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
 
     private LazyOptional<DCIEnergyStorageFloat> lazyEnergyHandler = LazyOptional.empty();
     private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
-            Map.of(Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))));
+            Map.of(Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
+                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 2, (outputSlot, stack) -> false)),
+                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0 || inputSlot == 1, (in, stack) -> itemHandler.isItemValid(0, stack))));
 
     public BasicPowerSteamGeneratorBlockEntity(BlockPos pos, BlockState state) {
         super(DCBlockEntities.BASIC_POWER_STEAM_GENERATOR_BLOCK_ENTITY.get(), pos, state);
@@ -238,14 +238,17 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
         if (!isHaltDevice(blockEntity)) {
             if (blockEntity.counter > 0 && blockEntity.waterCounter > 0) {
                 if (blockEntity.isPowered0) {
+                    blockEntity.counter--;
                     blockEntity.waterCounter--;
                     blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_STEAM_GENERATOR_OUTPUT_POWERED_0, false);
                     setChanged(level, pos, state);
                 } else if (blockEntity.isFormed) {
+                    blockEntity.counter--;
                     blockEntity.waterCounter--;
                     blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_STEAM_GENERATOR_OUTPUT_FORMED, false);
                     setChanged(level, pos, state);
                 } else {
+                    blockEntity.counter--;
                     blockEntity.waterCounter--;
                     blockEntity.ENERGY_STORAGE.receiveEnergyFloat(blockEntity.BP_STEAM_GENERATOR_OUTPUT, false);
                     setChanged(level, pos, state);
@@ -266,12 +269,13 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
                     blockEntity.itemHandler.extractItem(0, 1, false);
                     blockEntity.counter = burnTime;
                 }
+                if (blockEntity.counter > 0) {
+                    blockEntity.counter--;
+                    setChanged(level, pos, state);
+                }
                 setChanged(level, pos, state);
             }
-            if (blockEntity.counter > 0) {
-                blockEntity.counter--;
-                setChanged(level, pos, state);
-            }
+
 
         }
         setChanged(level, pos, state);

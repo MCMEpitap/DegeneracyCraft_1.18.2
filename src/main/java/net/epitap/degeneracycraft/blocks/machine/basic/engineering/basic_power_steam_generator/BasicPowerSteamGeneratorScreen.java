@@ -171,7 +171,7 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
     }
 
     private void renderWaterTimeTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
-        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 26, 7, 18, 18))
+        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 42, 26, 18, 18))
             renderTooltip(pPoseStack, this.WaterTimeTooltips(),
                     Optional.empty(), pMouseX - x, pMouseY - y);
     }

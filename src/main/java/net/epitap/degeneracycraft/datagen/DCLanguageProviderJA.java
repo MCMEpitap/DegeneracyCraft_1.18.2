@@ -640,6 +640,12 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_PRECISION_SHAPESTEEL_INSCRIBED_CIRCUIT.get(), "基本精度 型鋼刻印回路");
         add(DCItems.BASIC_PRECISION_SPRING_INSCRIBED_CIRCUIT.get(), "基本精度 バネ刻印回路");
 
+        add(DCItems.CHLORINE_GAS.get(), "塩素ガス");
+        add(DCItems.HYDROGEN_GAS.get(), "水素ガス");
+        add(DCItems.SILICON_INGOT.get(), "ケイ素インゴット");
+        add(DCItems.SILICON_NUGGET.get(), "ケイ素塊");
+        add(DCBlocks.SILICON_BLOCK.get(), "ケイ素ブロック");
+
 
         add(DCItems.PURIFIED_GRAPHITE_ARC_ELECTRODE.get(), "純化済黒鉛アーク電極");
 
@@ -667,6 +673,12 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
         add(DCItems.SIMPLE_CONVEX_LENS.get(), "簡易凸レンズ");
         add(DCItems.SIMPLE_CONCAVE_LENS.get(), "簡易凹レンズ");
+
+        add(DCItems.CHLORINE_GAS.get(), "塩素ガス");
+        add(DCItems.HYDROGEN_GAS.get(), "水素ガス");
+        add(DCItems.SILICON_INGOT.get(), "ケイ素インゴット");
+        add(DCItems.SILICON_NUGGET.get(), "ケイ素塊");
+        add(DCBlocks.SILICON_BLOCK.get(), "ケイ素ブロック");
 
         add(DCItems.EMPTY_CONTAINER.get(), "空の容器");
         add(DCItems.WATER_CONTAINER.get(), "水容器");
@@ -901,6 +913,21 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "science." + "engineering", "科学分野:工学");
         add("tooltip." + "degeneracycraft." + "science." + "faux_magic_engineering", "科学分野:模造魔導工学");
         add("tooltip." + "degeneracycraft." + "science." + "geoscience", "科学分野:地学");
+
+
+        add("tooltip." + "degeneracycraft." + "chlorine" + ".name", "元素名:塩素");
+        add("tooltip." + "degeneracycraft." + "chlorine" + ".number", "原子番号:17");
+        add("tooltip." + "degeneracycraft." + "chlorine" + ".weight", "原子量:35.45 g/mol");
+        add("tooltip." + "degeneracycraft." + "chlorine" + ".melting", "融点:171.6 K");
+        add("tooltip." + "degeneracycraft." + "chlorine" + ".boiling", "沸点:239.1 K");
+        add("tooltip." + "degeneracycraft." + "chlorine" + ".formula", "化学式:Cl");
+
+        add("tooltip." + "degeneracycraft." + "hydrogen" + ".name", "元素名:水素");
+        add("tooltip." + "degeneracycraft." + "hydrogen" + ".number", "原子番号:1");
+        add("tooltip." + "degeneracycraft." + "hydrogen" + ".weight", "原子量:1.008 g/mol");
+        add("tooltip." + "degeneracycraft." + "hydrogen" + ".melting", "融点:14.01 K");
+        add("tooltip." + "degeneracycraft." + "hydrogen" + ".boiling", "沸点:20.28 K");
+        add("tooltip." + "degeneracycraft." + "hydrogen" + ".formula", "化学式:H");
 
 
         add("tooltip." + "degeneracycraft." + "silicon" + ".name", "元素名:ケイ素");

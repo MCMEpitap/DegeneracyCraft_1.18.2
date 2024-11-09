@@ -68,8 +68,8 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
                     && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                     && !stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                     && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
-//                return ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
-                return true;
+                return ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
+//                return true;
             }
             if (slot == 1) {
 //                return stack.is(DCItems.EMPTY_CONTAINER.get());
@@ -119,8 +119,8 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
 
                     Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 2, (outputSlot, stack) -> false)),
-                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (inputSlot, stack) ->
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 1, (outputSlot, stack) -> false)),
+                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0 || inputSlot == 2, (inputSlot, stack) ->
                             itemHandler.isItemValid(0, stack)
                     )));
 

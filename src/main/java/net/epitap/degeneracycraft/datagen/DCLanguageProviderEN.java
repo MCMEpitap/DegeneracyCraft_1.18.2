@@ -636,6 +636,11 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_PRECISION_SHAPESTEEL_INSCRIBED_CIRCUIT.get(), "Basic Precision Shapesteel Inscribed Circuit");
         add(DCItems.BASIC_PRECISION_SPRING_INSCRIBED_CIRCUIT.get(), "Basic Precision Spring Inscribed Circuit");
 
+        add(DCItems.CHLORINE_GAS.get(), "Chlorine Gas");
+        add(DCItems.HYDROGEN_GAS.get(), "Hydrogen Gas");
+        add(DCItems.SILICON_INGOT.get(), "Silicon Ingot");
+        add(DCItems.SILICON_NUGGET.get(), "Silicon Nugget");
+        add(DCBlocks.SILICON_BLOCK.get(), "Silicon Block");
 
         add(DCItems.PURIFIED_GRAPHITE_ARC_ELECTRODE.get(), "Purified Graphite Arc Electrode");
 
@@ -895,6 +900,20 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "science." + "engineering", "Science:Engineering");
         add("tooltip." + "degeneracycraft." + "science." + "faux_magic_engineering", "Science:Faux Magic Engineering");
         add("tooltip." + "degeneracycraft." + "science." + "geoscience", "Science:Geoscience");
+
+        add("tooltip." + "degeneracycraft." + "chlorine" + ".name", "Element Name:Chlorine");
+        add("tooltip." + "degeneracycraft." + "chlorine" + ".number", "Atomic Number:17");
+        add("tooltip." + "degeneracycraft." + "chlorine" + ".weight", "Atomic Weight:35.45 g/mol");
+        add("tooltip." + "degeneracycraft." + "chlorine" + ".melting", "Melting Point:171.6 K");
+        add("tooltip." + "degeneracycraft." + "chlorine" + ".boiling", "Boiling Point:239.1 K");
+        add("tooltip." + "degeneracycraft." + "chlorine" + ".formula", "Chemical Formula:Cl");
+
+        add("tooltip." + "degeneracycraft." + "hydrogen" + ".name", "Element Name:Hydrogen");
+        add("tooltip." + "degeneracycraft." + "hydrogen" + ".number", "Atomic Number:1");
+        add("tooltip." + "degeneracycraft." + "hydrogen" + ".weight", "Atomic Weight:1.008 g/mol");
+        add("tooltip." + "degeneracycraft." + "hydrogen" + ".melting", "Melting Point:14.01 K");
+        add("tooltip." + "degeneracycraft." + "hydrogen" + ".boiling", "Boiling Point:20.28 K");
+        add("tooltip." + "degeneracycraft." + "hydrogen" + ".formula", "Chemical Formula:H");
 
         add("tooltip." + "degeneracycraft." + "silicon" + ".name", "Element Name:Silicon");
         add("tooltip." + "degeneracycraft." + "silicon" + ".number", "Atomic Number:14");

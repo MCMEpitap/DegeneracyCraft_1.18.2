@@ -466,6 +466,13 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> VANADINITE_INGOT = ITEMS.register("vanadinite_ingot", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_INGOT_TAB)));
 
 
+    //Element Item
+
+    public static final RegistryObject<Item> HYDROGEN_GAS = registerAtomicItem("hydrogen_gas", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "hydrogen", "initial");
+
+    public static final RegistryObject<Item> CHLORINE_GAS = registerAtomicItem("chlorine_gas", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "chlorine", "initial");
+
+
     public static final RegistryObject<Item> SILICON_INGOT = registerAtomicItem("silicon_ingot", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "silicon", "initial");
     public static final RegistryObject<Item> SILICON_NUGGET = registerAtomicItem("silicon_nugget", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "silicon", "initial");
 

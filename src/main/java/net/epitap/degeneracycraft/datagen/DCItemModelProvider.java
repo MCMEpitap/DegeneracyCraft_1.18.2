@@ -622,6 +622,8 @@ public class DCItemModelProvider extends ItemModelProvider {
 //        simpleItem(DCItems.INFINITY_CLASS_IRON_SPRING.get());
 
 
+        elementChlorineMaterialItem(DCItems.CHLORINE_GAS.get());
+        elementHydrogenMaterialItem(DCItems.HYDROGEN_GAS.get());
         elementSiliconMaterialItem(DCItems.SILICON_INGOT.get());
         elementSiliconMaterialItem(DCItems.SILICON_NUGGET.get());
         withExistingParent(DCBlocks.SILICON_BLOCK.getId().getPath(),
@@ -1017,6 +1019,19 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/vanadinite/" + item.getRegistryName().getPath()));
     }
+
+    private ItemModelBuilder elementChlorineMaterialItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/material/element/chlorine/" + item.getRegistryName().getPath()));
+    }
+
+    private ItemModelBuilder elementHydrogenMaterialItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/material/element/hydrogen/" + item.getRegistryName().getPath()));
+    }
+
 
     private ItemModelBuilder elementSiliconMaterialItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),

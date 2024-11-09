@@ -62,17 +62,22 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
 
         @Override
         public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
-            if (slot == 0 && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
-                    && !stack.is(DCItems.EMPTY_CONTAINER.get())
+            if (slot == 0
+//                    && !stack.is(DCItems.EMPTY_CONTAINER.get())
+//                    && !stack.is(DCItems.WATER_CONTAINER.get())
+                    && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                     && !stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                     && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
-                return ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
+//                return ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
+                return true;
             }
             if (slot == 1) {
-                return stack.is(DCItems.EMPTY_CONTAINER.get());
+//                return stack.is(DCItems.EMPTY_CONTAINER.get());
+                return true;
             }
             if (slot == 2) {
-                return stack.is(DCItems.WATER_CONTAINER.get());
+//                return stack.is(DCItems.WATER_CONTAINER.get());
+                return true;
             }
             if (slot == 3) {
                 return stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
@@ -105,10 +110,19 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
 
     private LazyOptional<DCIEnergyStorageFloat> lazyEnergyHandler = LazyOptional.empty();
     private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
-            Map.of(Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
+            Map.of(
+//                    Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
+//                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
+//                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 2, (outputSlot, stack) -> false)),
+//                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0 || inputSlot == 1, (in, stack) -> itemHandler.isItemValid(0, stack)
+
+
+                    Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
+                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 2, (outputSlot, stack) -> false)),
-                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0 || inputSlot == 1, (in, stack) -> itemHandler.isItemValid(0, stack))));
+                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (inputSlot, stack) ->
+                            itemHandler.isItemValid(0, stack)
+                    )));
 
     public BasicPowerSteamGeneratorBlockEntity(BlockPos pos, BlockState state) {
         super(DCBlockEntities.BASIC_POWER_STEAM_GENERATOR_BLOCK_ENTITY.get(), pos, state);

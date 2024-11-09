@@ -372,8 +372,8 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
 //            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
 //        }
 //
-//        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
-//                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+//        Optional<BasicPowerSteamGeneratorRecipe> match = level.getRecipeManager()
+//                .getRecipeFor(BasicPowerSteamGeneratorRecipe.Type.INSTANCE, inventory, level);
 //
 //        if (match.isPresent()) {
 //            blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);

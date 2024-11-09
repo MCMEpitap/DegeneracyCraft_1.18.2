@@ -50,6 +50,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
     public boolean formed0;
     public boolean formed1;
     public boolean formed2;
+    public boolean formed3;
     public boolean powered0_1;
     public boolean isFormed;
     public boolean isPowered0;

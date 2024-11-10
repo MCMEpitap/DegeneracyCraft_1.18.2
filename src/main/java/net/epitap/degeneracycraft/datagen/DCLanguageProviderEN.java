@@ -819,6 +819,10 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("jei." + "degeneracycraft_redstone_powered_machine_element_manufacture_machine", "Redstone Powered Machine Element Manufacture Machine Recipe");
         add("jei." + "degeneracycraft_redstone_powered_machine_part_manufacture_machine", "Redstone Powered Machine Part Manufacture Machine Recipe");
 
+        add("jei." + "degeneracycraft_basic_performance_electrolyser", "Basic Performance Electrolyser Recipe");
+
+        add("jei." + "degeneracycraft_basic_performance_electric_arc_furnace", "Basic Performance Electric Arc Furnace Recipe");
+
         add("jei." + "degeneracycraft_basic_technology_machine_manufacturer", "Basic Technology Machine Manufacturer Recipe");
         add("jei." + "degeneracycraft_basic_technology_machine_element_processor", "Basic Technology Machine Element Processor Recipe");
         add("jei." + "degeneracycraft_basic_technology_universal_assembler", "Basic Technology Universal Assembler Recipe");

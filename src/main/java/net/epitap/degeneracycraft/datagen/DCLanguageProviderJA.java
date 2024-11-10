@@ -732,17 +732,17 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get(), "基本性能電解槽ポート");
         add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(), "基本性能電解槽ポート (ホログラム)");
 
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get(), "基本性能アーク炉");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get(), "基本性能電気アーク炉");
         add("tooltip." + "degeneracycraft." + "basic_performance_electric_arc_furnace_block",
                 "基本的なアーク炉. 高温で反応させるため、放電を用いる機械.");
         add(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_BLOCK.get(), "基本流量冷却機構");
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_electric_arc_furnace_block",
-                "基本性能アーク炉用");
+                "基本性能電気アーク炉用");
         add(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK.get(), "基本流量冷却機構 (ホログラム)");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK.get(), "基本性能アーク炉バス");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_HOLO_BLOCK.get(), "基本性能アーク炉バス (ホログラム)");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK.get(), "基本性能アーク炉ポート");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK.get(), "基本性能アーク炉ポート (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK.get(), "基本性能電気アーク炉バス");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_HOLO_BLOCK.get(), "基本性能電気アーク炉バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK.get(), "基本性能電気アーク炉ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK.get(), "基本性能電気アーク炉ポート (ホログラム)");
 
 
         add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get(), "基本出力蒸気発電機");
@@ -831,6 +831,12 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("screen." + "degeneracycraft_pulverizer", "粉砕機 画面");
         add("jei." + "degeneracycraft_redstone_powered_machine_element_manufacture_machine", "レッドストーン動力機械要素製作機 レシピ");
         add("jei." + "degeneracycraft_redstone_powered_machine_part_manufacture_machine", "レッドストーン動力機械部品製作機 レシピ");
+
+
+        add("jei." + "degeneracycraft_basic_performance_electrolyser", "基本性能電解槽 レシピ");
+
+        add("jei." + "degeneracycraft_basic_performance_electric_arc_furnace", "基本性能電気アーク炉 レシピ");
+
 
         add("jei." + "degeneracycraft_basic_technology_machine_manufacturer", "基本技術機械製作機 レシピ");
         add("jei." + "degeneracycraft_basic_technology_machine_element_processor", "基本技術機械要素加工機 レシピ");

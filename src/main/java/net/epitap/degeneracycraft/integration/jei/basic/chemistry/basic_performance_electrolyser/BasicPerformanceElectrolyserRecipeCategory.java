@@ -21,14 +21,14 @@ import net.minecraft.world.item.ItemStack;
 import javax.annotation.Nonnull;
 
 
-public class BasicPerformanceElectricArcFurnaceRecipeCategory implements IRecipeCategory<BasicPerformanceElectrolyserRecipe> {
+public class BasicPerformanceElectrolyserRecipeCategory implements IRecipeCategory<BasicPerformanceElectrolyserRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_performance_electrolyser_recipe");
     public final static ResourceLocation TEXTURE =
             new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_performance_electrolyser/basic_performance_electrolyser_uid.png");
     private final IDrawable background;
     private final IDrawable icon;
 
-    public BasicPerformanceElectricArcFurnaceRecipeCategory(IGuiHelper helper) {
+    public BasicPerformanceElectrolyserRecipeCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 154);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get()));
     }

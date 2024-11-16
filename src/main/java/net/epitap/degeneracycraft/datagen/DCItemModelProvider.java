@@ -623,7 +623,9 @@ public class DCItemModelProvider extends ItemModelProvider {
 
 
         elementChlorineMaterialItem(DCItems.CHLORINE_GAS.get());
+
         elementHydrogenMaterialItem(DCItems.HYDROGEN_GAS.get());
+
         elementSiliconMaterialItem(DCItems.SILICON_INGOT.get());
         elementSiliconMaterialItem(DCItems.SILICON_NUGGET.get());
         withExistingParent(DCBlocks.SILICON_BLOCK.getId().getPath(),

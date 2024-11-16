@@ -65,7 +65,7 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
                 125, 25, 0xffffff);
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".output"),
                 125, 35, 0xffffff);
-        if (menu.getBurnTime() > 0) {
+        if (menu.blockEntity.isWorking) {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, "Work!",
                     80, 30, 0x00FF00);
         } else {
@@ -153,7 +153,7 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
     }
 
     public List<Component> WorkTooltips() {
-        if (menu.getBurnTime() > 0) {
+        if (BasicPowerSteamGeneratorBlockEntity.isWorking(menu.blockEntity)) {
             return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".work"));
         }
         return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".stop"));

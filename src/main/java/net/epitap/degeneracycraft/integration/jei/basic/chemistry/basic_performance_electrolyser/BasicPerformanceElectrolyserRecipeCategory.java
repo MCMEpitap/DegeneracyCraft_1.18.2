@@ -24,7 +24,7 @@ import javax.annotation.Nonnull;
 public class BasicPerformanceElectrolyserRecipeCategory implements IRecipeCategory<BasicPerformanceElectrolyserRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_performance_electrolyser_recipe");
     public final static ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_performance_electrolyser/basic_performance_electrolyser_uid.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_uid.png");
     private final IDrawable background;
     private final IDrawable icon;
 
@@ -108,9 +108,9 @@ public class BasicPerformanceElectrolyserRecipeCategory implements IRecipeCatego
 
     @Override
     public void setRecipe(@Nonnull IRecipeLayoutBuilder builder, @Nonnull BasicPerformanceElectrolyserRecipe recipe, @Nonnull IFocusGroup focusGroup) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 8, 7).addItemStack(recipe.getInput0Item());
-        builder.addSlot(RecipeIngredientRole.INPUT, 26, 25).addItemStack(recipe.getInput1Item());
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 25).addItemStack(recipe.getOutput0Item());
+        builder.addSlot(RecipeIngredientRole.INPUT, 26, 25).addItemStack(recipe.getInput0Item());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 7).addItemStack(recipe.getOutput0Item());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 43).addItemStack(recipe.getOutput0Item());
     }
 }
 

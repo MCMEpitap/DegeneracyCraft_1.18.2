@@ -314,10 +314,6 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
         setChanged(level, pos, state);
     }
 
-    public static boolean isWorking(BasicPowerSteamGeneratorBlockEntity blockEntity) {
-        return blockEntity.counter > 0 && blockEntity.waterCounter > 0;
-    }
-
     public static boolean isHaltDevice(BasicPowerSteamGeneratorBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MACHINE_HALT_DEVICE.get());
     }

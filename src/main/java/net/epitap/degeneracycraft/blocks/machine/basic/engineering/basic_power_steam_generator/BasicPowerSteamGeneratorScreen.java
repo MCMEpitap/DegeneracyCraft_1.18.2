@@ -153,7 +153,7 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
     }
 
     public List<Component> WorkTooltips() {
-        if (BasicPowerSteamGeneratorBlockEntity.isWorking(menu.blockEntity)) {
+        if (menu.getWorking()) {
             return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".work"));
         }
         return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".stop"));

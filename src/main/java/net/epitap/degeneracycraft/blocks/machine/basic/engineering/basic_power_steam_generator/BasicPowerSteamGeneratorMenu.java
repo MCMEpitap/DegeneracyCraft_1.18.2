@@ -60,7 +60,7 @@ public class BasicPowerSteamGeneratorMenu extends AbstractContainerMenu {
     }
 
     public boolean getWorking() {
-        return blockEntity.counter > 0 && blockEntity.waterCounter > 0;
+        return this.data.get(0) > 0 && this.data.get(1) > 0;
     }
 
     public int getMaxWaterTime() {

@@ -65,7 +65,7 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
                 125, 25, 0xffffff);
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft_generator" + ".output"),
                 125, 35, 0xffffff);
-        if (menu.blockEntity.isWorking) {
+        if (menu.getWorking()) {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, "Work!",
                     80, 30, 0x00FF00);
         } else {

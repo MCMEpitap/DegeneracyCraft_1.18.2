@@ -54,7 +54,6 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
     public boolean powered0_1;
     public boolean isFormed;
     public boolean isPowered0;
-    public boolean isWorking;
 
     public final ItemStackHandler itemHandler = new ItemStackHandler(5) {
         @Override

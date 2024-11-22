@@ -62,6 +62,7 @@ public class BasicTechnologyCircuitBuilderBlockEntity extends BlockEntity implem
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
+                case 9 -> false;
                 case 10 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
                         || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
                 case 11 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
@@ -94,8 +95,9 @@ public class BasicTechnologyCircuitBuilderBlockEntity extends BlockEntity implem
     private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
             Map.of(Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (out, stack) -> false)));
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 9, (outputSlot, stack) -> false)),
+                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (inputSlot, stack) ->
+                            itemHandler.isItemValid(0, stack))));
 
     public BasicTechnologyCircuitBuilderBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(DCBlockEntities.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);

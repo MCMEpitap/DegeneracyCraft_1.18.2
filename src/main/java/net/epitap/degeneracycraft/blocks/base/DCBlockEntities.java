@@ -69,7 +69,7 @@ public class DCBlockEntities {
                     BlockEntityType.Builder.of(BasicPrecisionTelescopeBlockEntity::new, DCBlocks.BASIC_PRECISION_TELESCOPE_BLOCK.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<BasicStrengthChemistryMultiblockEnergyStorageBlockEntity>> BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_strength_chemistry_multiblock_material_storage_block_entity", () ->
+            BLOCK_ENTITIES.register("basic_strength_chemistry_multiblock_energy_storage_block_entity", () ->
                     BlockEntityType.Builder.of(BasicStrengthChemistryMultiblockEnergyStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<BasicStrengthChemistryMultiblockMaterialStorageBlockEntity>> BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY =

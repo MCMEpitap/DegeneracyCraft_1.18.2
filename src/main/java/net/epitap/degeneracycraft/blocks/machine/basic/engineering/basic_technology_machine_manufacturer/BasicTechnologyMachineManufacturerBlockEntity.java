@@ -62,6 +62,7 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
+                case 9 -> false;
                 case 10 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
                         || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
                 case 11 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
@@ -236,6 +237,9 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
+
+            consumeItem(blockEntity);
+
             if (blockEntity.isPowered0) {
                 blockEntity.counter += blockEntity.BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_M_MANUFACTURER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
@@ -328,7 +332,7 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
                 && blockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
     }
 
-    private static void craftItem(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
+    private static void consumeItem(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -348,7 +352,20 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
             blockEntity.itemHandler.extractItem(6, match.get().getInput6Item().getCount(), false);
             blockEntity.itemHandler.extractItem(7, match.get().getInput7Item().getCount(), false);
             blockEntity.itemHandler.extractItem(8, match.get().getInput8Item().getCount(), false);
+        }
+    }
 
+    private static void craftItem(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
+
+        if (match.isPresent()) {
             blockEntity.itemHandler.setStackInSlot(9, new ItemStack(match.get().getOutput0Item().getItem(),
                     blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
 

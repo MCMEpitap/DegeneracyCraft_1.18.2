@@ -832,7 +832,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("jei." + "degeneracycraft_basic_performance_electric_arc_furnace", "基本性能電気アーク炉 レシピ");
 
 
-        add("jei." + "degeneracycraft_basic_technology_machine_manufacturer", "基本技術機械製作機 レシピ");
+        add("jei." + "degeneracycraft_basic_technology_machine_manufacturer", "基本技術機械製造機 レシピ");
         add("jei." + "degeneracycraft_basic_technology_machine_element_processor", "基本技術機械要素加工機 レシピ");
         add("jei." + "degeneracycraft_basic_technology_universal_assembler", "基本技術万能加工機 レシピ");
         add("jei." + "degeneracycraft_basic_technology_circuit_builder", "基本技術回路構築機 レシピ");

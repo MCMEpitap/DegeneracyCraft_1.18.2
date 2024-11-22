@@ -53,7 +53,7 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
     public boolean powered0_1;
     public boolean isFormed;
     public boolean isPowered0;
-    public final ItemStackHandler itemHandler = new ItemStackHandler(5) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(6) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -61,18 +61,18 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 6; i++) {
                 if (slot == i && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                         && !stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                         && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
                     return true;
                 }
             }
-            if (slot == 3) {
+            if (slot == 4) {
                 return stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
                         || stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
             }
-            if (slot == 4) {
+            if (slot == 5) {
                 return stack.is(DCItems.MACHINE_HALT_DEVICE.get());
             }
             return false;

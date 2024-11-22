@@ -91,11 +91,12 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
 ////            stack.getItem()
 //            return false;
 //        }
-
-            if (slot == 0) {
-                return ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
-            }
+//
+//            if (slot == 0) {
+//                return ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
+//            }
             return switch (slot) {
+                case 0 -> ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
                 case 1 -> false;
                 case 2 -> stack.getItem() == DCItems.WATER_CONTAINER.get();
                 case 3 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
@@ -126,21 +127,9 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
 
     private LazyOptional<DCIEnergyStorageFloat> lazyEnergyHandler = LazyOptional.empty();
     private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
-            Map.of(
-//                    Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-//                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-//                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 2, (outputSlot, stack) -> false)),
-//                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0 || inputSlot == 1, (in, stack) -> itemHandler.isItemValid(0, stack)
-
-
-                    Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
+            Map.of(Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-
                     Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 1, (outputSlot, stack) -> false)),
-//                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (inputSlot, stack) ->
-//                            itemHandler.isItemValid(0, stack))),
-//                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 2, (inputSlot, stack) ->
-//                            itemHandler.isItemValid(2, stack)))
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (index) -> index == 0 || index == 2,
                             (index, stack) -> itemHandler.isItemValid(0, stack) || itemHandler.isItemValid(2, stack)))
             );

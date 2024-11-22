@@ -44,7 +44,7 @@ public class BasicPowerSteamGeneratorRecipeCategory implements IRecipeCategory<B
 
     @Override
     public Component getTitle() {
-        return new TranslatableComponent("jei.degeneracycraft_basic_power_steam_generator");
+        return new TranslatableComponent("");
     }
 
     @Override

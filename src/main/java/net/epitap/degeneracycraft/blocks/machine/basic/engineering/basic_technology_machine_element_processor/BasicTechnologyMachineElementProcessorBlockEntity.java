@@ -62,21 +62,12 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            for (int i = 0; i < 10; i++) {
-                if (slot == i && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
-                        && !stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
-                        && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
-                    return true;
-                }
-            }
-            if (slot == 10) {
-                return stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
-                        || stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
-            }
-            if (slot == 11) {
-                return stack.is(DCItems.MACHINE_HALT_DEVICE.get());
-            }
-            return false;
+            return switch (slot) {
+                case 10 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
+                        || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
+                case 11 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
+                default -> super.isItemValid(slot, stack);
+            };
         }
     };
 

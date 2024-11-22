@@ -15,6 +15,8 @@ import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOn
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.menu.machine.PulverizerMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.energystorage.basic_strength_chemistry_multiblock_energy_storage.BasicStrengthChemistryMultiblockEnergyStorageMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.materialstorage.basic_strength_chemistry_multiblock_material_storage.BasicStrengthChemistryMultiblockMaterialStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.energystorage.basic_strength_dynamic_physics_multiblock_energy_storage.BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.materialstorage.basic_strength_dynamic_physics_multiblock_material_storage.BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.energystorage.basic_strength_engineering_multiblock_energy_storage.BasicStrengthEngineeringMultiblockEnergyStorageMenu;
@@ -37,6 +39,12 @@ public class DCMenuTypes {
             registerMenuType(PulverizerMenu::new, "pulverizer_menu");
     public static final RegistryObject<MenuType<BasicPrecisionTelescopeMenu>> BASIC_PRECISION_TELESCOPE_MENU =
             registerMenuType(BasicPrecisionTelescopeMenu::new, "basic_precision_telescope_menu");
+
+    public static final RegistryObject<MenuType<BasicStrengthChemistryMultiblockEnergyStorageMenu>> BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_MENU =
+            registerMenuType(BasicStrengthChemistryMultiblockEnergyStorageMenu::new, "basic_strength_chemistry_multiblock_energy_storage_menu");
+    public static final RegistryObject<MenuType<BasicStrengthChemistryMultiblockMaterialStorageMenu>> BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_MENU =
+            registerMenuType(BasicStrengthChemistryMultiblockMaterialStorageMenu::new, "basic_strength_chemistry_multiblock_material_storage_menu");
+
     public static final RegistryObject<MenuType<BasicPerformanceElectrolyserMenu>> BASIC_PERFORMANCE_ELECTROLYSER_MENU =
             registerMenuType(BasicPerformanceElectrolyserMenu::new, "basic_performance_electrolyser_menu");
     public static final RegistryObject<MenuType<BasicPerformanceElectricArcFurnaceMenu>> BASIC_PERFORMANCE_ARC_ELECTRIC_FURNACE_MENU =

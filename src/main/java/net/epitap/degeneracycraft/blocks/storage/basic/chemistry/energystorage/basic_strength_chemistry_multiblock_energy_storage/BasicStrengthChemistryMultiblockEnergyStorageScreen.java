@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.energystorage.basic_strength_dynamic_physics_multiblock_energy_storage;
+package net.epitap.degeneracycraft.blocks.storage.basic.chemistry.energystorage.basic_strength_chemistry_multiblock_energy_storage;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -15,12 +15,12 @@ import net.minecraft.world.entity.player.Inventory;
 
 import java.util.Optional;
 
-public class BasicStrengthDynamicPhysicsMultiblockEnergyStorageScreen extends AbstractContainerScreen<BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu> {
+public class BasicStrengthChemistryMultiblockEnergyStorageScreen extends AbstractContainerScreen<BasicStrengthChemistryMultiblockEnergyStorageMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/dynamic_physics/basic_strength_dynamic_physics_multiblock_energy_storage/basic_strength_dynamic_physics_multiblock_energy_storage_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_energy_storage/basic_strength_chemistry_multiblock_energy_storage_gui.png");
     private MultiblockEnergyStorageInfoArea energyInfoArea;
 
-    public BasicStrengthDynamicPhysicsMultiblockEnergyStorageScreen(BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public BasicStrengthChemistryMultiblockEnergyStorageScreen(BasicStrengthChemistryMultiblockEnergyStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
         this.imageWidth = 176;
         this.imageHeight = 166;

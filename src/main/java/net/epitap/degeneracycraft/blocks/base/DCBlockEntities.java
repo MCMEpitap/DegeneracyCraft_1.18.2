@@ -15,6 +15,8 @@ import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technol
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.energystorage.basic_strength_chemistry_multiblock_energy_storage.BasicStrengthChemistryMultiblockEnergyStorageBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.materialstorage.basic_strength_chemistry_multiblock_material_storage.BasicStrengthChemistryMultiblockMaterialStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.energystorage.basic_strength_dynamic_physics_multiblock_energy_storage.BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.materialstorage.basic_strength_dynamic_physics_multiblock_material_storage.BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.energystorage.basic_strength_engineering_multiblock_energy_storage.BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity;
@@ -65,6 +67,16 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicPrecisionTelescopeBlockEntity>> BASIC_PRECISION_TELESCOPE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_precision_telescope_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPrecisionTelescopeBlockEntity::new, DCBlocks.BASIC_PRECISION_TELESCOPE_BLOCK.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<BasicStrengthChemistryMultiblockEnergyStorageBlockEntity>> BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_chemistry_multiblock_material_storage_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthChemistryMultiblockEnergyStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<BasicStrengthChemistryMultiblockMaterialStorageBlockEntity>> BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_chemistry_multiblock_material_storage_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthChemistryMultiblockMaterialStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()).build(null));
+
+
     public static final RegistryObject<BlockEntityType<BasicPerformanceElectrolyserBlockEntity>> BASIC_PERFORMANCE_ELECTROLYSER_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_electrolyser_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceElectrolyserBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get()).build(null));
@@ -78,15 +90,13 @@ public class DCBlockEntities {
             BLOCK_ENTITIES.register("basic_performance_electric_arc_furnace_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceElectricArcFurnaceBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get()).build(null));
 
-    public static final RegistryObject<BlockEntityType<BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity>> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_strength_dynamic_physics_multiblock_material_storage_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity>> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_strength_dynamic_physics_multiblock_energy_storage_block_entity", () ->
                     BlockEntityType.Builder.of(BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()).build(null));
-
-
+    public static final RegistryObject<BlockEntityType<BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity>> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_dynamic_physics_multiblock_material_storage_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicPerformanceElectricArcFurnaceBusBlockEntity>> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_electric_arc_furnace_bus_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceElectricArcFurnaceBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK.get()).build(null));

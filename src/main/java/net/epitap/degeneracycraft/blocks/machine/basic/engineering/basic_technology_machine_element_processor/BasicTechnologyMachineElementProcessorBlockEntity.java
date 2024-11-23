@@ -48,6 +48,7 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
     public int counter;
     public int getProgressPercent;
     public int getProgressRandom;
+    private int consumeCounter;
     public boolean formed0;
     public boolean formed1;
     public boolean formed2;
@@ -79,6 +80,7 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
             DCMessages.sendToClients(new DCEnergySyncS2CPacket(this.energy, getBlockPos()));
         }
     };
+
 
 
     public DCIEnergyStorageFloat getEnergyStorage() {
@@ -235,8 +237,14 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
         Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
+
+            if (checkConsumeCount(blockEntity)) {
+                consumeItem(blockEntity);
+                blockEntity.consumeCount();
+            }
+
             if (blockEntity.isPowered0) {
                 blockEntity.counter += blockEntity.BT_ME_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_ME_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
@@ -252,11 +260,11 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
             blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
             if (craftCheck(blockEntity)) {
                 craftItem(blockEntity);
-                blockEntity.resetProgress();
             }
             setChanged(level, pos, state);
         } else {
             blockEntity.resetProgress();
+            blockEntity.resetConsumeCount();
             setChanged(level, pos, state);
         }
         setChanged(level, pos, state);
@@ -312,24 +320,11 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
                 && blockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
     }
 
-    private static boolean hasAmountEnergyRecipe(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
-        Level level = blockEntity.level;
-        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
-        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
-        }
-
-        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
-
-        return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime();
+    public static boolean checkConsumeCount(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
+        return blockEntity.consumeCounter == 0;
     }
 
-    public static boolean isHaltDevice(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(11).is(DCItems.MACHINE_HALT_DEVICE.get());
-    }
-
-    private static void craftItem(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
+    private static void consumeItem(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -349,10 +344,33 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
             blockEntity.itemHandler.extractItem(6, match.get().getInput6Item().getCount(), false);
             blockEntity.itemHandler.extractItem(7, match.get().getInput7Item().getCount(), false);
             blockEntity.itemHandler.extractItem(8, match.get().getInput8Item().getCount(), false);
+        }
+    }
+
+    public void consumeCount() {
+        this.consumeCounter = 1;
+    }
+
+    public static boolean isHaltDevice(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
+        return blockEntity.itemHandler.getStackInSlot(11).is(DCItems.MACHINE_HALT_DEVICE.get());
+    }
+
+    private static void craftItem(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+
+        if (match.isPresent()) {
             blockEntity.itemHandler.setStackInSlot(9, new ItemStack(match.get().getOutput0Item().getItem(),
                     blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
 
             blockEntity.resetProgress();
+            blockEntity.resetConsumeCount();
         }
     }
 
@@ -405,6 +423,9 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
         this.counter = 0;
     }
 
+    public void resetConsumeCount() {
+        this.consumeCounter = 0;
+    }
 //    public void resetRandom() {
 //        this.getProgressRandom = 0;
 //    }

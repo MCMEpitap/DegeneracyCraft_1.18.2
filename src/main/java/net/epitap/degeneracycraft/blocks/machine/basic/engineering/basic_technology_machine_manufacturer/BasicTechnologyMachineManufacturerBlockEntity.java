@@ -47,6 +47,7 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
     protected final ContainerData data;
     public int counter;
     public int getProgressPercent;
+    public int consumeCounter;
     public boolean formed0;
     public boolean formed1;
     public boolean formed2;
@@ -235,10 +236,13 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
         Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
 
-            consumeItem(blockEntity);
+            if (checkConsumeCount(blockEntity)) {
+                consumeItem(blockEntity);
+                blockEntity.consumeCount();
+            }
 
             if (blockEntity.isPowered0) {
                 blockEntity.counter += blockEntity.BT_M_MANUFACTURER_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
@@ -259,23 +263,11 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
                 setChanged(level, pos, state);
             } else {
             blockEntity.resetProgress();
+            blockEntity.resetConsumeCount();
+
             setChanged(level, pos, state);
         }
         setChanged(level, pos, state);
-    }
-
-
-    private static boolean hasAmountEnergyRecipe(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
-        Level level = blockEntity.level;
-        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
-        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
-        }
-
-        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
-
-        return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / (match.get().getRequiredTime() * 20F);
     }
 
     public static boolean isHaltDevice(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
@@ -332,6 +324,10 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
                 && blockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
     }
 
+    public static boolean checkConsumeCount(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
+        return blockEntity.consumeCounter == 0;
+    }
+
     private static void consumeItem(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
@@ -355,6 +351,10 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
         }
     }
 
+    public void consumeCount() {
+        this.consumeCounter = 1;
+    }
+
     private static void craftItem(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
@@ -370,11 +370,16 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
                     blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
 
             blockEntity.resetProgress();
+            blockEntity.resetConsumeCount();
         }
     }
 
     public void resetProgress() {
         this.counter = 0;
+    }
+
+    public void resetConsumeCount() {
+        this.consumeCounter = 0;
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {

@@ -49,6 +49,8 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
 
     public int counter;
     public int getProgressPercent = 0;
+    private int consumeCounter;
+
     public boolean formed0;
     public boolean formed1;
     public boolean formed2;
@@ -235,8 +237,14 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
         Optional<BasicTechnologyUniversalAssemblerRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
+
+            if (checkConsumeCount(blockEntity)) {
+                consumeItem(blockEntity);
+                blockEntity.consumeCount();
+            }
+
             if (blockEntity.isPowered0) {
                 blockEntity.counter += blockEntity.BT_U_ASSEMBLER_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_U_ASSEMBLER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
@@ -252,29 +260,15 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
             blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
             if (craftCheck(blockEntity)) {
                 craftItem(blockEntity);
-                blockEntity.resetProgress();
             }
             setChanged(level, pos, state);
         } else {
             blockEntity.resetProgress();
+            blockEntity.resetConsumeCount();
             setChanged(level, pos, state);
         }
         setChanged(level, pos, state);
     }
-
-    private static boolean hasAmountEnergyRecipe(BasicTechnologyUniversalAssemblerBlockEntity blockEntity) {
-        Level level = blockEntity.level;
-        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
-        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
-        }
-
-        Optional<BasicTechnologyUniversalAssemblerRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE, inventory, level);
-
-        return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime();
-    }
-
     public static boolean isHaltDevice(BasicTechnologyUniversalAssemblerBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(11).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
@@ -329,7 +323,11 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
                 && blockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
     }
 
-    private static void craftItem(BasicTechnologyUniversalAssemblerBlockEntity blockEntity) {
+    public static boolean checkConsumeCount(BasicTechnologyUniversalAssemblerBlockEntity blockEntity) {
+        return blockEntity.consumeCounter == 0;
+    }
+
+    private static void consumeItem(BasicTechnologyUniversalAssemblerBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -349,16 +347,38 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
             blockEntity.itemHandler.extractItem(6, match.get().getInput6Item().getCount(), false);
             blockEntity.itemHandler.extractItem(7, match.get().getInput7Item().getCount(), false);
             blockEntity.itemHandler.extractItem(8, match.get().getInput8Item().getCount(), false);
+        }
+    }
 
+    public void consumeCount() {
+        this.consumeCounter = 1;
+    }
+
+    private static void craftItem(BasicTechnologyUniversalAssemblerBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicTechnologyUniversalAssemblerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE, inventory, level);
+
+        if (match.isPresent()) {
             blockEntity.itemHandler.setStackInSlot(9, new ItemStack(match.get().getOutput0Item().getItem(),
                     blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
 
             blockEntity.resetProgress();
+            blockEntity.resetConsumeCount();
         }
     }
 
     public void resetProgress() {
         this.counter = 0;
+    }
+
+    public void resetConsumeCount() {
+        this.consumeCounter = 0;
     }
 
     private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {

@@ -86,12 +86,13 @@ public class Degeneracycraft {
         eventBus.addListener(PortModelRegistry::onModelBake);
     }
 
+
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(DCMessages::register);
         MinecraftForge.EVENT_BUS.register(new PipeBlockClickEvent());
         MinecraftForge.EVENT_BUS.register(new PortBlockClickEvent());
-    }
 
+    }
 
     private void setup(final FMLCommonSetupEvent event) {}
 

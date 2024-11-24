@@ -18,14 +18,14 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 
-public class BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructureCategory implements IRecipeCategory<BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure> {
+public class BasicPowerSteamGeneratorMultiblockStructureCategory implements IRecipeCategory<BasicPowerSteamGeneratorMultiblockStructure> {
     public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_power_thermal_generator_multiblock_structure");
     public final static ResourceLocation TEXTURE =
             new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/redstone_powered_machine_component_manufacture_machine_uid.png");
     private final IDrawable background;
     private final IDrawable icon;
 
-    public BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructureCategory(IGuiHelper helper) {
+    public BasicPowerSteamGeneratorMultiblockStructureCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 151);
         this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get()));
     }
@@ -36,8 +36,8 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure
     }
 
     @Override
-    public Class<? extends BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure> getRecipeClass() {
-        return BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.class;
+    public Class<? extends BasicPowerSteamGeneratorMultiblockStructure> getRecipeClass() {
+        return BasicPowerSteamGeneratorMultiblockStructure.class;
     }
 
     @Override
@@ -56,7 +56,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure
     }
 
     @Override
-    public void draw(BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
+    public void draw(BasicPowerSteamGeneratorMultiblockStructure recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
         drawPhase(stack);
         drawRequiredEnergy(recipe, stack);
         drawRequiredEnergyUsage(recipe, stack);
@@ -69,14 +69,14 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure
         fontRenderer.draw(poseStack, new TranslatableComponent("screen." + "degeneracycraft" + ".phase0"), 15, 67, 0xFFFFFF);
     }
 
-    protected void drawRequiredEnergy(BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure recipe, PoseStack poseStack) {
+    protected void drawRequiredEnergy(BasicPowerSteamGeneratorMultiblockStructure recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergy."), 17, 87, 0xFFFFFF);
         fontRenderer.draw(poseStack, (recipe.getRequiredEnergy() + " FE"), 17, 97, 0xFFFFFF);
     }
 
-    protected void drawRequiredEnergyUsage(BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure recipe, PoseStack poseStack) {
+    protected void drawRequiredEnergyUsage(BasicPowerSteamGeneratorMultiblockStructure recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergyusage."), 17, 107, 0xFFFFFF);
@@ -84,7 +84,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure
 
     }
 
-    protected void drawRequiredTime(BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure recipe, PoseStack poseStack) {
+    protected void drawRequiredTime(BasicPowerSteamGeneratorMultiblockStructure recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredtime."), 17, 127, 0xFFFFFF);
@@ -93,7 +93,7 @@ public class BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure
 
 
     @Override
-    public void setRecipe(IRecipeLayoutBuilder builder, BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure recipe, IFocusGroup focusGroup) {
+    public void setRecipe(IRecipeLayoutBuilder builder, BasicPowerSteamGeneratorMultiblockStructure recipe, IFocusGroup focusGroup) {
         builder.addSlot(RecipeIngredientRole.INPUT, 8, 7).addItemStack(recipe.getInput0Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 26, 7).addItemStack(recipe.getInput1Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 44, 7).addItemStack(recipe.getInput2Item());

@@ -37,8 +37,8 @@ import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machi
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineRecipeCategory;
-import net.epitap.degeneracycraft.integration.jei.test.BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure;
-import net.epitap.degeneracycraft.integration.jei.test.BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructureCategory;
+import net.epitap.degeneracycraft.integration.jei.test.BasicPowerSteamGeneratorMultiblockStructure;
+import net.epitap.degeneracycraft.integration.jei.test.BasicPowerSteamGeneratorMultiblockStructureCategory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -86,7 +86,7 @@ public class JEIDCPlugin implements IModPlugin {
                 BasicTechnologyMachinePartProcessorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
         registration.addRecipeCategories(new
-                BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructureCategory(registration.getJeiHelpers().getGuiHelper()));
+                BasicPowerSteamGeneratorMultiblockStructureCategory(registration.getJeiHelpers().getGuiHelper()));
 
     }
 
@@ -130,9 +130,9 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipes(new RecipeType<>(BasicTechnologyMachinePartProcessorRecipeCategory.UID, BasicTechnologyMachinePartProcessorRecipe.class), basicMachinePartProcessorRecipes);
 
 
-        List<BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure> basicPowerCompositeStructureTypeThermalGeneratorMultiblockStructures =
-                rm.getAllRecipesFor(BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.Type.INSTANCE);
-        registration.addRecipes(new RecipeType<>(BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructureCategory.UID, BasicPowerCompositeStructureTypeThermalGeneratorMultiblockStructure.class), basicPowerCompositeStructureTypeThermalGeneratorMultiblockStructures);
+        List<BasicPowerSteamGeneratorMultiblockStructure> basicPowerCompositeStructureTypeThermalGeneratorMultiblockStructures =
+                rm.getAllRecipesFor(BasicPowerSteamGeneratorMultiblockStructure.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicPowerSteamGeneratorMultiblockStructureCategory.UID, BasicPowerSteamGeneratorMultiblockStructure.class), basicPowerCompositeStructureTypeThermalGeneratorMultiblockStructures);
 
     }
 

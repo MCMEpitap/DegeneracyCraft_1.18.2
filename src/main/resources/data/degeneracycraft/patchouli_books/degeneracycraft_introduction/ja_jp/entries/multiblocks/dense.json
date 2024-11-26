@@ -1,0 +1,24 @@
+{
+  "name": "Dense Multiblocks",
+  "icon": "minecraft:oak_stairs",
+  "pattern": [
+    [
+      "   ",
+      " L ",
+      "   "
+    ],
+    [
+      " W ",
+      "N0S",
+      " E "
+    ]
+  ],
+  "mapping": {
+    "L": "minecraft:lectern",
+    "N": "minecraft:sandstone_stairs[facing=north]",
+    "S": "minecraft:red_sandstone_stairs[facing=south]",
+    "W": "minecraft:prismarine_stairs[facing=west]",
+    "E": "minecraft:purpur_stairs[facing=east]",
+    "0": "minecraft:sandstone"
+  }
+}

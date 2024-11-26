@@ -1,6 +1,8 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_phase_bolt_manufacture_machine;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
+import net.epitap.degeneracycraft.integration.jei.test.test.MultiBlockHologram;
+import net.epitap.degeneracycraft.integration.jei.test.test.MultiBlockStructure;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -149,6 +151,16 @@ public class BasicPhaseBoltManufactureMachineBlockEntity extends BlockEntity imp
                         blockEntity.itemHandler.getStackInSlot(2).getCount() + 1));
             }
 
+
+            // 特定のスロットにアイテムが入っているか確認
+            ItemStack stack = blockEntity.itemHandler.getStackInSlot(0);
+            if (stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()) {
+                // ホログラムを表示
+                MultiBlockStructure structure = MyMod.STRUCTURE_LOADER.getStructure("example_structure");
+                if (structure != null) {
+                    MultiBlockHologram.displayHologram(level, pPos, structure);
+                }
+            }
 
 
         } else {

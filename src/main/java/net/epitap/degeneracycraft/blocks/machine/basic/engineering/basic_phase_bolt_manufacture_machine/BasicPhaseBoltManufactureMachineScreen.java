@@ -12,7 +12,6 @@ import net.minecraft.world.entity.player.Inventory;
 public class BasicPhaseBoltManufactureMachineScreen extends AbstractContainerScreen<BasicPhaseBoltManufactureMachineMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(Degeneracycraft.MOD_ID,"textures/gui/gem_infusing_station_gui.png");
-
     public BasicPhaseBoltManufactureMachineScreen(BasicPhaseBoltManufactureMachineMenu menu, Inventory inventory, Component component) {
         super(menu, inventory, component);
         this.imageWidth = 176;
@@ -38,9 +37,16 @@ public class BasicPhaseBoltManufactureMachineScreen extends AbstractContainerScr
     }
 
     private void renderProgressArrow(PoseStack pPoseStack, int x, int y) {
-        if(menu.isCrafting()) {
+        if (menu.isCrafting()) {
             blit(pPoseStack, x + 105, y + 33, 176, 0, 8, menu.getScaledProgress());
         }
+    }
+
+    @Override
+    protected void renderLabels(PoseStack pPoseStack, int pMouseX, int pMouseY) {
+        int x = (width - imageWidth) / 2;
+        int y = (height - imageHeight) / 2;
+
     }
 
     @Override

@@ -25,7 +25,6 @@ import net.epitap.degeneracycraft.blocks.storage.basic.engineering.energy_storag
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.material_storage.basic_strength_engineering_multiblock_material_storage.BasicStrengthEngineeringMultiblockMaterialStorageScreen;
 import net.epitap.degeneracycraft.blocks.unique.basic.simple_telescope.simple_telescope_core.SimpleTelescopeCoreScreen;
 import net.epitap.degeneracycraft.integration.jei.DCRecipeTypes;
-import net.epitap.degeneracycraft.integration.jei.test.test.MultiBlockStructureLoader;
 import net.epitap.degeneracycraft.item.DCAdvancementIcon;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.item.DCTextItems;
@@ -43,7 +42,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -88,15 +86,16 @@ public class Degeneracycraft {
         eventBus.addListener(PortModelRegistry::onModelRegister);
         eventBus.addListener(PortModelRegistry::onModelBake);
 
-        eventBus.addListener(this::onAddReloadListeners);
+//        eventBus.addListener(this::onAddReloadListeners);
+
+//        MinecraftForge.EVENT_BUS.addListener(this::onServerStarting);
+
     }
-
-    public static final MultiBlockStructureLoader STRUCTURE_LOADER = new MultiBlockStructureLoader();
-
-    private void onAddReloadListeners(AddReloadListenerEvent event) {
-        event.addListener(STRUCTURE_LOADER);
-    }
-
+//    public static final MultiBlockStructureLoader STRUCTURE_LOADER = new MultiBlockStructureLoader("structures");
+//
+//    private void onServerStarting(ServerStartingEvent event) {
+//        STRUCTURE_LOADER.register();
+//    }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(DCMessages::register);
@@ -109,8 +108,6 @@ public class Degeneracycraft {
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
-
-
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get(), RenderType.translucent());
 
         MenuScreens.register(DCMenuTypes.PULVERIZER_MENU.get(), PulverizerScreen::new);

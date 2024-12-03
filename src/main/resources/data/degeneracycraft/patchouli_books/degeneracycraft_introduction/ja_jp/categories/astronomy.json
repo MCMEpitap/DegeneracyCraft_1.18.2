@@ -1,0 +1,6 @@
+{
+  "name": "天文学",
+  "description": "天文学は宇宙と天体に関する学問です！$(br)無数にある星(設定で見えないようにしているかもしれませんが…)には恒星からブラックホールまで存在します。$(br)空を超えて星を超えて…",
+  "icon": "degeneracycraft:astronomy_icon",
+  "sortnum": 1
+}

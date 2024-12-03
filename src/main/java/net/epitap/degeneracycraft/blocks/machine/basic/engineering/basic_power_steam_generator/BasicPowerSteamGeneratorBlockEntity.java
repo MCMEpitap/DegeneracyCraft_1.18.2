@@ -246,14 +246,14 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicPowerSteamGeneratorBlockEntity blockEntity) {
-        blockEntity.formed0 = BasicPowerSteamGeneratorStructure.isFormed0(level, pos, state, blockEntity);
-        blockEntity.formed1 = BasicPowerSteamGeneratorStructure.isFormed1(level, pos, state, blockEntity);
-        blockEntity.formed2 = BasicPowerSteamGeneratorStructure.isFormed2(level, pos, state, blockEntity);
-        blockEntity.powered0_1 = BasicPowerSteamGeneratorStructure.powered0_1(level, pos, state, blockEntity);
-        blockEntity.isFormed = BasicPowerSteamGeneratorStructure.isFormed(blockEntity);
-        blockEntity.isPowered0 = BasicPowerSteamGeneratorStructure.isPowered0(blockEntity);
+//        blockEntity.formed0 = BasicPowerSteamGeneratorStructure.isFormed0(level, pos, state, blockEntity);
+//        blockEntity.formed1 = BasicPowerSteamGeneratorStructure.isFormed1(level, pos, state, blockEntity);
+//        blockEntity.formed2 = BasicPowerSteamGeneratorStructure.isFormed2(level, pos, state, blockEntity);
+//        blockEntity.powered0_1 = BasicPowerSteamGeneratorStructure.powered0_1(level, pos, state, blockEntity);
+        blockEntity.isFormed = BasicPowerSteamGeneratorStructure.isFormed(level, pos, state, blockEntity);
+//        blockEntity.isPowered0 = BasicPowerSteamGeneratorStructure.isPowered0(blockEntity);
 
-        BasicPowerSteamGeneratorStructure.hologram(level, pos, state, blockEntity);
+//        BasicPowerSteamGeneratorStructure.hologram(level, pos, state, blockEntity);
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
         if (level.isClientSide()) {

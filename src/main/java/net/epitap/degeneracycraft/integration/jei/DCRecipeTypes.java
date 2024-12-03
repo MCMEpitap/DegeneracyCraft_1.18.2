@@ -58,9 +58,6 @@ public class DCRecipeTypes {
             SERIALIZERS.register("basic_power_thermal_generator_multiblock_structure", () -> BasicPowerSteamGeneratorMultiblockStructure.Serializer.INSTANCE);
 
 
-//    public static final RegistryObject<RecipeSerializer<testRecipe>> test_recipeSERIALIZER =
-//            SERIALIZERS.register("test_recipe",()-> testRecipe.Serializer.INSTANCE);
-
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
     }

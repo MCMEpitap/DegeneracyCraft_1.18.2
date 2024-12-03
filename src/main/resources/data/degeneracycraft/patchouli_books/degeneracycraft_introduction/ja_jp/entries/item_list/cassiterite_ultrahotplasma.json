@@ -1,0 +1,13 @@
+{
+  "name": "錫石の超高温プラズマ",
+  "icon": "degeneracycraft:cassiterite_ultrahotplasma",
+  "category": "degeneracycraft:item_list",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "degeneracycraft:cassiterite_ultrahotplasma",
+      "title": "錫石の超高温プラズマ",
+      "link_recipe": "true"
+    }
+  ]
+}

@@ -88,6 +88,7 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeCategories(new
                 BasicPowerSteamGeneratorMultiblockStructureCategory(registration.getJeiHelpers().getGuiHelper()));
 
+
     }
 
     @Override
@@ -133,6 +134,7 @@ public class JEIDCPlugin implements IModPlugin {
         List<BasicPowerSteamGeneratorMultiblockStructure> basicPowerCompositeStructureTypeThermalGeneratorMultiblockStructures =
                 rm.getAllRecipesFor(BasicPowerSteamGeneratorMultiblockStructure.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicPowerSteamGeneratorMultiblockStructureCategory.UID, BasicPowerSteamGeneratorMultiblockStructure.class), basicPowerCompositeStructureTypeThermalGeneratorMultiblockStructures);
+
 
     }
 

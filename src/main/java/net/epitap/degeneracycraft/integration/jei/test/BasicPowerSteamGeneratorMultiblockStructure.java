@@ -16,10 +16,10 @@
 //public class BasicPowerSteamGeneratorMultiblockStructure implements Recipe<SimpleContainer> {
 //        private final ResourceLocation id;
 //        private final ItemStack output;
-//        private final NonNullList<Ingredient> recipeItems;
+//        private final NonNullList<JsonReadingItem> recipeItems;
 //
 //        public BasicPowerSteamGeneratorMultiblockStructure(ResourceLocation id, ItemStack output,
-//                                       NonNullList<Ingredient> recipeItems) {
+//                                       NonNullList<JsonReadingItem> recipeItems) {
 //            this.id = id;
 //            this.output = output;
 //            this.recipeItems = recipeItems;
@@ -31,7 +31,7 @@
 //        }
 //
 //        @Override
-//        public NonNullList<Ingredient> getIngredients() {
+//        public NonNullList<JsonReadingItem> getIngredients() {
 //            return recipeItems;
 //        }
 //
@@ -78,13 +78,13 @@
 //
 //            @Override
 //            public BasicPowerSteamGeneratorMultiblockStructure fromJson(ResourceLocation id, JsonObject json) {
-//                ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
+//                ItemStack output = JsonReadingHelper.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
 //
 //                JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredients");
-//                NonNullList<Ingredient> inputs = NonNullList.withSize(1, Ingredient.EMPTY);
+//                NonNullList<JsonReadingItem> inputs = NonNullList.withSize(1, JsonReadingItem.EMPTY);
 //
 //                for (int i = 0; i < inputs.size(); i++) {
-//                    inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
+//                    inputs.set(i, JsonReadingItem.fromJson(ingredients.get(i)));
 //                }
 //
 //                return new BasicPowerSteamGeneratorMultiblockStructure(id, output, inputs);
@@ -92,10 +92,10 @@
 //
 //            @Override
 //            public BasicPowerSteamGeneratorMultiblockStructure fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
-//                NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
+//                NonNullList<JsonReadingItem> inputs = NonNullList.withSize(buf.readInt(), JsonReadingItem.EMPTY);
 //
 //                for (int i = 0; i < inputs.size(); i++) {
-//                    inputs.set(i, Ingredient.fromNetwork(buf));
+//                    inputs.set(i, JsonReadingItem.fromNetwork(buf));
 //                }
 //
 //                ItemStack output = buf.readItem();
@@ -105,7 +105,7 @@
 //            @Override
 //            public void toNetwork(FriendlyByteBuf buf, BasicPowerSteamGeneratorMultiblockStructure recipe) {
 //                buf.writeInt(recipe.getIngredients().size());
-//                for (Ingredient ing : recipe.getIngredients()) {
+//                for (JsonReadingItem ing : recipe.getIngredients()) {
 //                    ing.toNetwork(buf);
 //                }
 //                buf.writeItemStack(recipe.getResultItem(), false);
@@ -268,6 +268,19 @@ public class BasicPowerSteamGeneratorMultiblockStructure implements Recipe<Simpl
         return CraftingHelper.getItemStack(pStackObject, true, false);
     }
 
+//    public void main(String[] args) {
+//        // 石の ItemStack を作成
+//        ItemStack stoneStack = new ItemStack(this.itemStackFromJson);
+//
+//        // Block を取得
+//        Block block = ItemStackToBlockConverter.getBlockFromItemStack(stoneStack);
+//
+//        if (block != null) {
+//            System.out.println("Block: " + block);
+//        } else {
+//            System.out.println("この ItemStack に対応する Block はありません。");
+//        }
+//    }
 
     @Override
     public RecipeSerializer<?> getSerializer() {

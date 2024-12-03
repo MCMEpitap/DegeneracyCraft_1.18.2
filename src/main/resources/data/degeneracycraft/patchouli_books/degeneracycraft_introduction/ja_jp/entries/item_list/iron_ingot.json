@@ -1,0 +1,13 @@
+{
+  "name": "鉄のインゴット",
+  "icon": "minecraft:iron_ingot",
+  "category": "degeneracycraft:item_list",
+  "pages": [
+    {
+      "type": "spotlight",
+      "item": "minecraft:iron_ingot",
+      "title": "鉄のインゴット",
+      "link_recipe": "true"
+    }
+  ]
+}

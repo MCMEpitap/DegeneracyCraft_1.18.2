@@ -93,10 +93,10 @@ public class DCBlockEntities {
 
     public static final RegistryObject<BlockEntityType<BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity>> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_strength_dynamic_physics_multiblock_energy_storage_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()).build(null));
+                    BlockEntityType.Builder.of(BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity>> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_strength_dynamic_physics_multiblock_material_storage_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()).build(null));
+                    BlockEntityType.Builder.of(BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicPerformanceElectricArcFurnaceBusBlockEntity>> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_electric_arc_furnace_bus_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceElectricArcFurnaceBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK.get()).build(null));

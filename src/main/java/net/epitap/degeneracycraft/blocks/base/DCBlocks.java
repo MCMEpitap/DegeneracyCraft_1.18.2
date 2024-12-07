@@ -191,29 +191,29 @@ public class DCBlocks {
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
 
-    public static final RegistryObject<Block> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK = registerBlock("basic_strength_dynamic_physics_multiblock_base_frame_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK = registerBlock("basic_strength_hybrid_physics_multiblock_base_frame_block", () ->
             new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK = registerHoloBlock("basic_strength_dynamic_physics_multiblock_base_frame_holo_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK = registerHoloBlock("basic_strength_hybrid_physics_multiblock_base_frame_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MACHINE_FRAME_BLOCK = registerBlock("basic_strength_dynamic_physics_multiblock_machine_frame_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_BLOCK = registerBlock("basic_strength_hybrid_physics_multiblock_machine_frame_block", () ->
             new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK = registerHoloBlock("basic_strength_dynamic_physics_multiblock_machine_frame_holo_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK = registerHoloBlock("basic_strength_hybrid_physics_multiblock_machine_frame_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK = registerBlock("basic_strength_dynamic_physics_multiblock_structure_frame_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK = registerBlock("basic_strength_hybrid_physics_multiblock_structure_frame_block", () ->
             new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK = registerHoloBlock("basic_strength_dynamic_physics_multiblock_structure_frame_holo_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK = registerHoloBlock("basic_strength_hybrid_physics_multiblock_structure_frame_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK = registerBlock("basic_strength_dynamic_physics_multiblock_structure_glass_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK = registerBlock("basic_strength_hybrid_physics_multiblock_structure_glass_block", () ->
             new GlassBlockBase(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(4.0f)), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK = registerHoloBlock("basic_strength_dynamic_physics_multiblock_structure_glass_holo_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK = registerHoloBlock("basic_strength_hybrid_physics_multiblock_structure_glass_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK = registerBlock("basic_strength_dynamic_physics_multiblock_energy_storage_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK = registerBlock("basic_strength_hybrid_physics_multiblock_energy_storage_block", () ->
             new BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK = registerHoloBlock("basic_strength_dynamic_physics_multiblock_energy_storage_holo_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK = registerHoloBlock("basic_strength_hybrid_physics_multiblock_energy_storage_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK = registerBlock("basic_strength_dynamic_physics_multiblock_material_storage_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK = registerBlock("basic_strength_hybrid_physics_multiblock_material_storage_block", () ->
             new BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK = registerHoloBlock("basic_strength_dynamic_physics_multiblock_material_storage_holo_block", () ->
+    public static final RegistryObject<Block> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK = registerHoloBlock("basic_strength_hybrid_physics_multiblock_material_storage_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
 
@@ -224,11 +224,11 @@ public class DCBlocks {
             "Base:Speed ×1.00,Energy Usage ×1.00",
             "Lv0:Speed ×2.00,Energy Usage ×1.50",
             "Lv1:Speed ×3.00,Energy Usage ×2.00",
-            "basic_performance_electric_arc_furnace_block", "dynamic_physics", "basic");
+            "basic_performance_electric_arc_furnace_block", "hybrid_physics", "basic");
     public static final RegistryObject<Block> BASIC_FLOW_COOLING_SYSTEM_BLOCK = registerTooltipMultiblockAbilityBlock("basic_flow_cooling_system_block", () ->
                     new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "basic_performance_electric_arc_furnace_block",
-            "dynamic_physics",
+            "hybrid_physics",
             "basic");
     public static final RegistryObject<Block> BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK = registerHoloBlock("basic_flow_cooling_system_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
@@ -480,14 +480,14 @@ public class DCBlocks {
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.GREEN));
                         case "chemistry" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.BLUE));
-                        case "dynamic_physics" ->
-                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.RED));
                         case "engineering" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.WHITE));
                         case "faux_magic_engineering" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.BLACK));
                         case "geoscience" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.YELLOW));
+                        case "hybrid_physics" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.RED));
                     }
                     switch (phase) {
                         case "initial" ->
@@ -541,14 +541,14 @@ public class DCBlocks {
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.GREEN));
                         case "chemistry" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.BLUE));
-                        case "dynamic_physics" ->
-                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.RED));
                         case "engineering" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.WHITE));
                         case "faux_magic_engineering" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.BLACK));
                         case "geoscience" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.YELLOW));
+                        case "hybrid_physics" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.RED));
                     }
                     switch (phase) {
                         case "initial" ->

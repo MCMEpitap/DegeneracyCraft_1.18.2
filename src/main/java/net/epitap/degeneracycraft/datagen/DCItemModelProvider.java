@@ -716,29 +716,29 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_chemistry_multiblock_material_storage_holo_block"));
 
-        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.getId().getPath(),
+        withExistingParent(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_dynamic_physics_multiblock_base_frame_block"));
-        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.getId().getPath(),
+        withExistingParent(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_dynamic_physics_multiblock_base_frame_holo_block"));
-        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.getId().getPath(),
+        withExistingParent(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_dynamic_physics_multiblock_machine_frame_block"));
-        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.getId().getPath(),
+        withExistingParent(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_dynamic_physics_multiblock_machine_frame_holo_block"));
-        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.getId().getPath(),
+        withExistingParent(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_dynamic_physics_multiblock_structure_frame_block"));
-        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.getId().getPath(),
+        withExistingParent(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_dynamic_physics_multiblock_structure_frame_holo_block"));
-        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.getId().getPath(),
+        withExistingParent(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_dynamic_physics_multiblock_structure_glass_block"));
-        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.getId().getPath(),
+        withExistingParent(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_dynamic_physics_multiblock_structure_glass_holo_block"));
-        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.getId().getPath(),
+        withExistingParent(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_dynamic_physics_multiblock_energy_storage_block"));
-        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.getId().getPath(),
+        withExistingParent(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_dynamic_physics_multiblock_energy_storage_holo_block"));
-        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.getId().getPath(),
+        withExistingParent(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_dynamic_physics_multiblock_material_storage_block"));
-        withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.getId().getPath(),
+        withExistingParent(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_dynamic_physics_multiblock_material_storage_holo_block"));
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.getId().getPath(),

@@ -1,0 +1,64 @@
+{
+  "structure": [
+    [
+      [
+        "FRAME",
+        "FRAME",
+        "FRAME"
+      ],
+      [
+        "FRAME",
+        "FRAME",
+        "FRAME"
+      ],
+      [
+        "FRAME",
+        "FRAME",
+        "FRAME"
+      ]
+    ],
+    [
+      [
+        "FRAME",
+        "GLASS",
+        "FRAME"
+      ],
+      [
+        "GLASS",
+        "NONE",
+        "GLASS"
+      ],
+      [
+        "PORT",
+        "NONE",
+        "MACHINE_FRAME"
+      ]
+    ],
+    [
+      [
+        "FRAME",
+        "FRAME",
+        "FRAME"
+      ],
+      [
+        "FRAME",
+        "FRAME",
+        "FRAME"
+      ],
+      [
+        "STORAGE",
+        "BUS",
+        "ENERGY_STORAGE"
+      ]
+    ]
+  ],
+  "blockMapping": {
+    "FRAME": "DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_FRAME_BLOCK",
+    "GLASS": "DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_BLOCK",
+    "PORT": "DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK",
+    "MACHINE_FRAME": "DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_BLOCK",
+    "STORAGE": "DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK",
+    "BUS": "DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK",
+    "ENERGY_STORAGE": "DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK"
+  }
+}

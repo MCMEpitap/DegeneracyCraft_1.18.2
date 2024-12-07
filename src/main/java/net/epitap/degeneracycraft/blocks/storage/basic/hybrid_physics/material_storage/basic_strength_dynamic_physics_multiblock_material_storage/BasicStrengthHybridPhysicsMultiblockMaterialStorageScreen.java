@@ -11,12 +11,12 @@ import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class BasicStrengthDynamicPhysicsMultiblockMaterialStorageScreen extends AbstractContainerScreen<BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu> {
+public class BasicStrengthHybridPhysicsMultiblockMaterialStorageScreen extends AbstractContainerScreen<BasicStrengthHybridPhysicsMultiblockMaterialStorageMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/dynamic_physics/basic_strength_dynamic_physics_multiblock_material_storage/basic_strength_dynamic_physics_multiblock_material_storage_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_gui.png");
 
 
-    public BasicStrengthDynamicPhysicsMultiblockMaterialStorageScreen(BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public BasicStrengthHybridPhysicsMultiblockMaterialStorageScreen(BasicStrengthHybridPhysicsMultiblockMaterialStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
         this.imageWidth = 176;
         this.imageHeight = 166;

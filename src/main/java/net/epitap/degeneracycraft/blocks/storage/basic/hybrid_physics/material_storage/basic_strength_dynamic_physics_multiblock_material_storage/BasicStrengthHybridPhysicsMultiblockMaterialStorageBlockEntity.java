@@ -25,7 +25,7 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity extends BlockEntity implements MenuProvider {
+public class BasicStrengthHybridPhysicsMultiblockMaterialStorageBlockEntity extends BlockEntity implements MenuProvider {
 
     public final ContainerData data;
     public final ItemStackHandler itemHandler = new ItemStackHandler(18) {
@@ -42,7 +42,7 @@ public class BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity ext
 
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
-    public BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
+    public BasicStrengthHybridPhysicsMultiblockMaterialStorageBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(DCBlockEntities.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
@@ -70,7 +70,7 @@ public class BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity ext
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return new BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu(pContainerId, pInventory, this, this.data);
+        return new BasicStrengthHybridPhysicsMultiblockMaterialStorageMenu(pContainerId, pInventory, this, this.data);
     }
 
     @Override
@@ -121,7 +121,7 @@ public class BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity ext
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
-    public static void tick(Level level, BlockPos pPos, BlockState pState, BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity blockEntity) {
+    public static void tick(Level level, BlockPos pPos, BlockState pState, BasicStrengthHybridPhysicsMultiblockMaterialStorageBlockEntity blockEntity) {
     }
 }
 

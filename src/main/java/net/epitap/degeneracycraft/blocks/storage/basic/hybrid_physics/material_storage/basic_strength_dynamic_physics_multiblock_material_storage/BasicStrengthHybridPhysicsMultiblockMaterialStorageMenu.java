@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu extends AbstractContainerMenu {
+public class BasicStrengthHybridPhysicsMultiblockMaterialStorageMenu extends AbstractContainerMenu {
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
@@ -22,17 +22,17 @@ public class BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu extends Ab
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
     private static final int TE_INVENTORY_SLOT_COUNT = 18;
 
-    public final BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity blockEntity;
+    public final BasicStrengthHybridPhysicsMultiblockMaterialStorageBlockEntity blockEntity;
     public final Level level;
     public final ContainerData data;
 
-    public BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+    public BasicStrengthHybridPhysicsMultiblockMaterialStorageMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
         this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(0));
     }
 
-    public BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
+    public BasicStrengthHybridPhysicsMultiblockMaterialStorageMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
         super(DCMenuTypes.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_MENU.get(), id);
-        blockEntity = (BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity) entity;
+        blockEntity = (BasicStrengthHybridPhysicsMultiblockMaterialStorageBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
         addPlayerInventory(inv);
@@ -53,7 +53,7 @@ public class BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu extends Ab
         addDataSlots(data);
     }
 
-    public BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity getBlockEntity() {
+    public BasicStrengthHybridPhysicsMultiblockMaterialStorageBlockEntity getBlockEntity() {
         return this.blockEntity;
     }
 

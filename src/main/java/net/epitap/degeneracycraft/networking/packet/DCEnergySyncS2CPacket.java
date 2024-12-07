@@ -16,8 +16,8 @@ import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_perf
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.energy_storage.basic_strength_chemistry_multiblock_energy_storage.BasicStrengthChemistryMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.energy_storage.basic_strength_chemistry_multiblock_energy_storage.BasicStrengthChemistryMultiblockEnergyStorageMenu;
-import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.energy_storage.basic_strength_dynamic_physics_multiblock_energy_storage.BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity;
-import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.energy_storage.basic_strength_dynamic_physics_multiblock_energy_storage.BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_storage.basic_strength_hybrid_physics_multiblock_energy_storage.BasicStrengthHybridPhysicsMultiblockEnergyStorageBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_storage.basic_strength_hybrid_physics_multiblock_energy_storage.BasicStrengthHybridPhysicsMultiblockEnergyStorageMenu;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
@@ -71,9 +71,9 @@ public class DCEnergySyncS2CPacket {
                     blockEntity.setEnergyLevel(energy);
                 }
             }
-            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthDynamicPhysicsMultiblockEnergyStorageBlockEntity blockEntity) {
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthHybridPhysicsMultiblockEnergyStorageBlockEntity blockEntity) {
                 blockEntity.setEnergyLevel(energy);
-                if (Minecraft.getInstance().player.containerMenu instanceof BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu menu &&
+                if (Minecraft.getInstance().player.containerMenu instanceof BasicStrengthHybridPhysicsMultiblockEnergyStorageMenu menu &&
                         menu.getBlockEntity().getBlockPos().equals(pos)) {
                     blockEntity.setEnergyLevel(energy);
                 }

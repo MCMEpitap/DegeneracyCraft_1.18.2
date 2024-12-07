@@ -19,10 +19,10 @@ import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machin
 import net.epitap.degeneracycraft.blocks.screen.PulverizerScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.energy_storage.basic_strength_chemistry_multiblock_energy_storage.BasicStrengthChemistryMultiblockEnergyStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.material_storage.basic_strength_chemistry_multiblock_material_storage.BasicStrengthChemistryMultiblockMaterialStorageScreen;
-import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.energy_storage.basic_strength_dynamic_physics_multiblock_energy_storage.BasicStrengthDynamicPhysicsMultiblockEnergyStorageScreen;
-import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.material_storage.basic_strength_dynamic_physics_multiblock_material_storage.BasicStrengthDynamicPhysicsMultiblockMaterialStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.energy_storage.basic_strength_engineering_multiblock_energy_storage.BasicStrengthEngineeringMultiblockEnergyStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.material_storage.basic_strength_engineering_multiblock_material_storage.BasicStrengthEngineeringMultiblockMaterialStorageScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_storage.basic_strength_hybrid_physics_multiblock_energy_storage.BasicStrengthHybridPhysicsMultiblockEnergyStorageScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.material_storage.basic_strength_dynamic_physics_multiblock_material_storage.BasicStrengthDynamicPhysicsMultiblockMaterialStorageScreen;
 import net.epitap.degeneracycraft.blocks.unique.basic.simple_telescope.simple_telescope_core.SimpleTelescopeCoreScreen;
 import net.epitap.degeneracycraft.integration.jei.DCRecipeTypes;
 import net.epitap.degeneracycraft.item.DCAdvancementIcon;
@@ -123,8 +123,8 @@ public class Degeneracycraft {
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_MENU.get(), BasicStrengthChemistryMultiblockMaterialStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_ELECTROLYSER_MENU.get(), BasicPerformanceElectrolyserScreen::new);
 
-        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthDynamicPhysicsMultiblockEnergyStorageScreen::new);
-        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_MENU.get(), BasicStrengthDynamicPhysicsMultiblockMaterialStorageScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthHybridPhysicsMultiblockEnergyStorageScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_MENU.get(), BasicStrengthDynamicPhysicsMultiblockMaterialStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_ARC_ELECTRIC_FURNACE_MENU.get(), BasicPerformanceElectricArcFurnaceScreen::new);
 
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthEngineeringMultiblockEnergyStorageScreen::new);

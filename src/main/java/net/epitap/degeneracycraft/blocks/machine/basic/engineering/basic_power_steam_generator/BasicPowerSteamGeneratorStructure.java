@@ -520,7 +520,7 @@ public class BasicPowerSteamGeneratorStructure {
                 {
                         {"FRAME", "FRAME", "FRAME"},
                         {"FRAME", "FRAME", "FRAME"},
-                        {"FRAME", "FRAME", "FRAME"}
+                        {"ENERGY_STORAGE", "FRAME", "FRAME"}
                 }
         };
 

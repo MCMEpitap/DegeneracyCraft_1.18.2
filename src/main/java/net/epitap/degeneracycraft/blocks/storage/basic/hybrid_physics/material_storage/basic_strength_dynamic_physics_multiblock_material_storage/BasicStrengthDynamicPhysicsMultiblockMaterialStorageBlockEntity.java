@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.material_storage.basic_strength_dynamic_physics_multiblock_material_storage;
+package net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.material_storage.basic_strength_dynamic_physics_multiblock_material_storage;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.minecraft.core.BlockPos;
@@ -43,7 +43,7 @@ public class BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity ext
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
 
     public BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+        super(DCBlockEntities.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int pIndex) {

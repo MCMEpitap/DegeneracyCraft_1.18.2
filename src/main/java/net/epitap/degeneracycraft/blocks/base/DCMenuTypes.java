@@ -17,10 +17,10 @@ import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machin
 import net.epitap.degeneracycraft.blocks.menu.machine.PulverizerMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.energy_storage.basic_strength_chemistry_multiblock_energy_storage.BasicStrengthChemistryMultiblockEnergyStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.material_storage.basic_strength_chemistry_multiblock_material_storage.BasicStrengthChemistryMultiblockMaterialStorageMenu;
-import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.energy_storage.basic_strength_dynamic_physics_multiblock_energy_storage.BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu;
-import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.material_storage.basic_strength_dynamic_physics_multiblock_material_storage.BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.energy_storage.basic_strength_engineering_multiblock_energy_storage.BasicStrengthEngineeringMultiblockEnergyStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.material_storage.basic_strength_engineering_multiblock_material_storage.BasicStrengthEngineeringMultiblockMaterialStorageMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_storage.basic_strength_hybrid_physics_multiblock_energy_storage.BasicStrengthHybridPhysicsMultiblockEnergyStorageMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.material_storage.basic_strength_dynamic_physics_multiblock_material_storage.BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
@@ -47,14 +47,6 @@ public class DCMenuTypes {
 
     public static final RegistryObject<MenuType<BasicPerformanceElectrolyserMenu>> BASIC_PERFORMANCE_ELECTROLYSER_MENU =
             registerMenuType(BasicPerformanceElectrolyserMenu::new, "basic_performance_electrolyser_menu");
-    public static final RegistryObject<MenuType<BasicPerformanceElectricArcFurnaceMenu>> BASIC_PERFORMANCE_ARC_ELECTRIC_FURNACE_MENU =
-            registerMenuType(BasicPerformanceElectricArcFurnaceMenu::new, "basic_performance_electric_arc_furnace_menu");
-    public static final RegistryObject<MenuType<BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu>> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_MENU =
-            registerMenuType(BasicStrengthDynamicPhysicsMultiblockEnergyStorageMenu::new, "basic_strength_dynamic_physics_multiblock_energy_storage_menu");
-    public static final RegistryObject<MenuType<BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu>> BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_MENU =
-            registerMenuType(BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu::new, "basic_strength_dynamic_physics_multiblock_material_storage_menu");
-
-
     public static final RegistryObject<MenuType<RedstonePoweredMachineElementManufactureMachineMenu>> REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_MENU =
             registerMenuType(RedstonePoweredMachineElementManufactureMachineMenu::new, "redstone_powered_machine_element_manufacture_machine_menu");
 
@@ -79,6 +71,13 @@ public class DCMenuTypes {
             registerMenuType(BasicTechnologyMachinePartProcessorMenu::new, "basic_technology_machine_part_processor_menu");
     public static final RegistryObject<MenuType<BasicPhaseBoltManufactureMachineMenu>> BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_MENU =
             registerMenuType(BasicPhaseBoltManufactureMachineMenu::new, "basic_phase_bolt_manufacture_menu");
+
+    public static final RegistryObject<MenuType<BasicPerformanceElectricArcFurnaceMenu>> BASIC_PERFORMANCE_ARC_ELECTRIC_FURNACE_MENU =
+            registerMenuType(BasicPerformanceElectricArcFurnaceMenu::new, "basic_performance_electric_arc_furnace_menu");
+    public static final RegistryObject<MenuType<BasicStrengthHybridPhysicsMultiblockEnergyStorageMenu>> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_MENU =
+            registerMenuType(BasicStrengthHybridPhysicsMultiblockEnergyStorageMenu::new, "basic_strength_hybrid_physics_multiblock_energy_storage_menu");
+    public static final RegistryObject<MenuType<BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu>> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_MENU =
+            registerMenuType(BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu::new, "basic_strength_hybrid_physics_multiblock_material_storage_menu");
 
 
     public static final RegistryObject<MenuType<InfinityPoweredAllInOneCompressorMachineMenu>> INFINITY_POWERED_ALL_IN_ONE_COMPRESSOR_MACHINE_BLOCK_MENU =

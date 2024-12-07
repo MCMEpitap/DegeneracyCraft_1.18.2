@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.material_storage.basic_strength_dynamic_physics_multiblock_material_storage;
+package net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.material_storage.basic_strength_dynamic_physics_multiblock_material_storage;
 
 import net.epitap.degeneracycraft.blocks.base.BlockBase;
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
@@ -64,7 +64,7 @@ public class BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlock extends B
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level level, @NotNull BlockState state,
                                                                   @NotNull BlockEntityType<T> type) {
-        return createTickerHelper(type, DCBlockEntities.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY.get(),
+        return createTickerHelper(type, DCBlockEntities.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY.get(),
                 BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity::tick);
     }
 

@@ -1,7 +1,8 @@
-package net.epitap.degeneracycraft.blocks.storage.basic.dynamic_physics.material_storage.basic_strength_dynamic_physics_multiblock_material_storage;
+package net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_storage.basic_strength_hybrid_physics_multiblock_energy_storage;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
+import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -10,9 +11,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
-import net.minecraftforge.items.SlotItemHandler;
 
-public class BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu extends AbstractContainerMenu {
+public class BasicStrengthHybridPhysicsMultiblockEnergyStorageMenu extends AbstractContainerMenu {
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
@@ -20,40 +20,44 @@ public class BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu extends Ab
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 18;
+    private static final int TE_INVENTORY_SLOT_COUNT = 9;
 
-    public final BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity blockEntity;
+    public final BasicStrengthHybridPhysicsMultiblockEnergyStorageBlockEntity blockEntity;
     public final Level level;
     public final ContainerData data;
 
-    public BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+    public BasicStrengthHybridPhysicsMultiblockEnergyStorageMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
         this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(0));
     }
 
-    public BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_MENU.get(), id);
-        blockEntity = (BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity) entity;
+    public BasicStrengthHybridPhysicsMultiblockEnergyStorageMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(DCMenuTypes.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), id);
+        blockEntity = (BasicStrengthHybridPhysicsMultiblockEnergyStorageBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            for (int i = 0; i < 3; ++i) {
-                for (int l = 0; l < 3; ++l) {
-                    this.addSlot(new SlotItemHandler(handler, (l + i * 3), 8 + l * 18, 7 + i * 18));
-                }
-            }
-            for (int i = 0; i < 3; ++i) {
-                for (int l = 0; l < 3; ++l) {
-                    this.addSlot(new SlotItemHandler(handler, 9 + (l + i * 3), 98 + l * 18, 7 + i * 18));
-                }
-            }
         });
         addDataSlots(data);
     }
 
-    public BasicStrengthDynamicPhysicsMultiblockMaterialStorageBlockEntity getBlockEntity() {
+    public DCIEnergyStorageFloat getEnergy() {
+        return blockEntity.getEnergyStorage();
+    }
+
+    public float getAvailableEnergy() {
+        return blockEntity.BS_ME_STORAGE_CAPACITY - blockEntity.getEnergyStorage().getEnergyStoredFloat();
+    }
+
+    public float getAvailableEnergyPercent() {
+        return ((blockEntity.BS_ME_STORAGE_CAPACITY - blockEntity.getEnergyStorage().getEnergyStoredFloat())
+                / blockEntity.BS_ME_STORAGE_CAPACITY) * 100;
+    }
+
+
+    public BasicStrengthHybridPhysicsMultiblockEnergyStorageBlockEntity getBlockEntity() {
         return this.blockEntity;
     }
 
@@ -93,7 +97,7 @@ public class BasicStrengthDynamicPhysicsMultiblockMaterialStorageMenu extends Ab
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get());
+                player, DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

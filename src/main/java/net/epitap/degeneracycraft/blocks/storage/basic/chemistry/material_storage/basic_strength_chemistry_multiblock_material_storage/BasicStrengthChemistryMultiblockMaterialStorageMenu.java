@@ -31,7 +31,7 @@ public class BasicStrengthChemistryMultiblockMaterialStorageMenu extends Abstrac
     }
 
     public BasicStrengthChemistryMultiblockMaterialStorageMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_STRENGTH_DYNAMIC_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_MENU.get(), id);
+        super(DCMenuTypes.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_MENU.get(), id);
         blockEntity = (BasicStrengthChemistryMultiblockMaterialStorageBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;

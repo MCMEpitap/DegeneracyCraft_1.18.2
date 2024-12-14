@@ -1,6 +1,7 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_steam_generator;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
+import net.epitap.degeneracycraft.item.DCItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;
@@ -337,7 +338,7 @@ public class BasicPowerSteamGeneratorStructure {
         Direction facing = state.getValue(BasicPowerSteamGeneratorBlock.FACING);
         BlockPos basePos = blockEntity.getBlockPos();
 
-        // 構造定義
+        // ホログラム表示用の構造定義
         structureH0 = new String[][][]{
                 {
                         {"F", "F", "F"},
@@ -356,31 +357,34 @@ public class BasicPowerSteamGeneratorStructure {
                 }
         };
 
-        Map<String, Supplier<Block>> blockMapping = new HashMap<>();
-        blockMapping.put("F", DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_FRAME_BLOCK);
-        blockMapping.put("G", DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_BLOCK);
-        blockMapping.put("P", DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK);
-        blockMapping.put("H", DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_BLOCK);
-        blockMapping.put("S", DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK);
-        blockMapping.put("B", DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK);
-        blockMapping.put("E", DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK);
+        Map<String, Supplier<Block>> holoBlockMapping = new HashMap<>();
+        holoBlockMapping.put("F", DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK);
+        holoBlockMapping.put("G", DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK);
+        holoBlockMapping.put("P", DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK);
+        holoBlockMapping.put("H", DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK);
+        holoBlockMapping.put("S", DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK);
+        holoBlockMapping.put("B", DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_HOLO_BLOCK);
+        holoBlockMapping.put("E", DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK);
+
+        // 特定のアイテムがスロットにある場合のみホログラムを表示
+        boolean displayHologram = blockEntity.itemHandler.getStackInSlot(3).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+
+        if (!displayHologram) {
+            // スロットにアイテムがない場合はすべてのホログラムを削除
+            clearHolograms(level, basePos, structureH0.length, facing);
+            return;
+        }
 
         // 現在の段を取得
         int currentLayer = blockEntity.getCurrentLayer();
 
         // 現在の段が完成しているかをチェック
-        boolean layerComplete = isLayerComplete(level, basePos, currentLayer, facing, structureH0, blockMapping);
+        boolean layerComplete = isLayerComplete(level, basePos, currentLayer, facing, structureH0, holoBlockMapping);
 
         // 次の段を表示する処理
-        if (layerComplete) {
-            if (currentLayer < structureH0.length - 1) {
-                blockEntity.setCurrentLayer(currentLayer + 1);
-                System.out.println("Layer " + currentLayer + " complete. Advancing to layer " + (currentLayer + 1));
-            } else {
-                System.out.println("All layers complete.");
-            }
-        } else {
-            System.out.println("Layer " + currentLayer + " is incomplete.");
+        if (layerComplete && currentLayer < structureH0.length - 1) {
+            blockEntity.setCurrentLayer(currentLayer + 1); // 次の段を表示
+            currentLayer++; // 表示段数を更新
         }
 
         // 表示する段の高さ
@@ -395,7 +399,7 @@ public class BasicPowerSteamGeneratorStructure {
                 if (" ".equals(blockKey)) continue;
 
                 BlockPos relativePos = getRelativePos(basePos, x, yOffset, z, facing);
-                Block blockToPlace = blockMapping.get(blockKey).get();
+                Block blockToPlace = holoBlockMapping.get(blockKey).get();
                 BlockState blockStateToPlace = blockToPlace.defaultBlockState();
 
                 // 空気ブロックにのみホログラムを表示
@@ -430,6 +434,32 @@ public class BasicPowerSteamGeneratorStructure {
         return true; // すべて一致している場合
     }
 
+    /**
+     * ホログラムを削除する処理
+     */
+    private static void clearHolograms(Level level, BlockPos basePos, int layers, Direction facing) {
+        for (int y = 0; y < layers; y++) {
+            int yOffset = y - 1; // 基準ブロックからの高さ
+            for (int z = minZ; z <= maxZ; z++) {
+                int arrayZ = z - minZ;
+                for (int x = minX; x <= maxX; x++) {
+                    int arrayX = x - minX;
+                    BlockPos relativePos = getRelativePos(basePos, x, yOffset, z, facing);
+
+                    // ホログラムブロックのみ削除
+                    if (level.getBlockState(relativePos).is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get()) ||
+                            level.getBlockState(relativePos).is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get()) ||
+                            level.getBlockState(relativePos).is(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.get()) ||
+                            level.getBlockState(relativePos).is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get()) ||
+                            level.getBlockState(relativePos).is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get()) ||
+                            level.getBlockState(relativePos).is(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_HOLO_BLOCK.get()) ||
+                            level.getBlockState(relativePos).is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get())) {
+                        level.setBlock(relativePos, Blocks.AIR.defaultBlockState(), 3);
+                    }
+                }
+            }
+        }
+    }
 
 
     private static BlockPos getRelativePos(BlockPos basePos, int x, int y, int z, Direction facing) {

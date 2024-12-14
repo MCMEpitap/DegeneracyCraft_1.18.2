@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_holo_block",
+    "up": "degeneracycraft:block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_holo_block",
+    "north": "degeneracycraft:block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_holo_block",
+    "south": "degeneracycraft:block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_holo_block",
+    "east": "degeneracycraft:block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_holo_block",
+    "west": "degeneracycraft:block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_holo_block"
+  }
+}

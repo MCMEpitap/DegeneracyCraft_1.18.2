@@ -387,7 +387,7 @@ public class BasicPowerSteamGeneratorStructure {
             currentLayer++; // 表示段数を更新
         }
 
-        // 表示する段の高さ
+        // 表示する段のみ処理
         int yOffset = currentLayer - 1;
 
         for (int z = minZ; z <= maxZ; z++) {
@@ -461,7 +461,6 @@ public class BasicPowerSteamGeneratorStructure {
         }
     }
 
-
     private static BlockPos getRelativePos(BlockPos basePos, int x, int y, int z, Direction facing) {
         return switch (facing) {
             case NORTH -> basePos.relative(Direction.WEST, x).relative(Direction.DOWN, y).relative(Direction.NORTH, z);
@@ -471,5 +470,6 @@ public class BasicPowerSteamGeneratorStructure {
             default -> basePos; // 想定外の方向は基準座標をそのまま返す
         };
     }
+
 }
 

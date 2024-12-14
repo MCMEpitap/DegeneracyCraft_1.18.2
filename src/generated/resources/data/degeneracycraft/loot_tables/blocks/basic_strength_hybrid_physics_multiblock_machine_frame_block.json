@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "degeneracycraft:basic_strength_dynamic_physics_multiblock_energy_storage_block"
+          "name": "degeneracycraft:basic_strength_hybrid_physics_multiblock_machine_frame_block"
         }
       ],
       "conditions": [

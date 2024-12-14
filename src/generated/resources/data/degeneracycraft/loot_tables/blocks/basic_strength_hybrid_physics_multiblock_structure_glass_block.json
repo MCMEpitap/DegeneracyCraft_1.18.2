@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "degeneracycraft:basic_strength_dynamic_physics_multiblock_material_storage_block"
+          "name": "degeneracycraft:basic_strength_hybrid_physics_multiblock_structure_glass_block"
         }
       ],
       "conditions": [

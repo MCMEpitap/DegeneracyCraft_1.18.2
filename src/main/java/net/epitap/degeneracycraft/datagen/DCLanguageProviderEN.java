@@ -684,18 +684,18 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "Basic Strength Chemistry Multiblock Material Storage Block");
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "Basic Strength Chemistry Multiblock Material Storage Block (Hologram)");
 
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Dynamic Physics Multiblock Base Frame Block");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Dynamic Physics Multiblock Base Frame Block (Hologram)");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Dynamic Physics Multiblock Machine Frame Block");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), "Basic Strength Dynamic Physics Multiblock Machine Frame Block (Hologram)");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "Basic Strength Dynamic Physics Multiblock Structure Frame Block");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "Basic Strength Dynamic Physics Multiblock Structure Frame Block (Hologram)");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), "Basic Strength Dynamic Physics Multiblock Structure Glass Block");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "Basic Strength Dynamic Physics Multiblock Structure Glass Block (Hologram)");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(), "Basic Strength Dynamic Physics Multiblock Energy Storage Block");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "Basic Strength Dynamic Physics Multiblock Energy Storage Block (Hologram)");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "Basic Strength Dynamic Physics Multiblock Material Storage Block");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "Basic Strength Dynamic Physics Multiblock Material Storage Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Base Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Base Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Machine Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Machine Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Structure Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Structure Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Structure Glass Block");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Structure Glass Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Energy Storage Block");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Energy Storage Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Material Storage Block");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Material Storage Block (Hologram)");
 
         add(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Component Manufacture Machine");
         add(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Part Manufacture Machine");
@@ -912,10 +912,10 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "science." + "astronomy", "Science:Astronomy");
         add("tooltip." + "degeneracycraft." + "science." + "biology", "Science:Biology");
         add("tooltip." + "degeneracycraft." + "science." + "chemistry", "Science:Chemistry");
-        add("tooltip." + "degeneracycraft." + "science." + "dynamic_physics", "Science:Dynamic Physics");
         add("tooltip." + "degeneracycraft." + "science." + "engineering", "Science:Engineering");
         add("tooltip." + "degeneracycraft." + "science." + "faux_magic_engineering", "Science:Faux Magic Engineering");
         add("tooltip." + "degeneracycraft." + "science." + "geoscience", "Science:Geoscience");
+        add("tooltip." + "degeneracycraft." + "science." + "hybrid_physics", "Science:Hybrid Physics");
 
         add("tooltip." + "degeneracycraft." + "chlorine" + ".name", "Element Name:Chlorine");
         add("tooltip." + "degeneracycraft." + "chlorine" + ".number", "Atomic Number:17");
@@ -1055,9 +1055,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("advancements." + "degeneracycraft" + ".title", "DegeneracyCraft");
         add("advancements." + "degeneracycraft" + ".description", "Beginning DegeneracyCraft");
 
-        add("advancements." + "degeneracycraft" + ".dynamic_physics" + ".title", "Dynamic Physics");
-        add("advancements." + "degeneracycraft" + ".dynamic_physics" + ".description", "Aim at phenomenon aggregation");
-
         add("advancements." + "degeneracycraft" + ".engineering" + ".title", "Engineering");
         add("advancements." + "degeneracycraft" + ".engineering" + ".description", "Aim for engineering integration");
 
@@ -1067,13 +1064,14 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("advancements." + "Not Crash, But Press" + ".title", "Not Crash, But Press");
         add("advancements." + "Not Crash, But Press" + ".description", "Make a Iron Plate");
 
-
         add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".title", "Faux Magic Engineering");
         add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".description", "Aim at deciphering the mysteries");
 
         add("advancements." + "degeneracycraft" + ".geoscience" + ".title", "Geo Science");
         add("advancements." + "degeneracycraft" + ".geoscience" + ".description", "Aim at ores research");
 
+        add("advancements." + "degeneracycraft" + ".hybrid_physics" + ".title", "Hybrid Physics");
+        add("advancements." + "degeneracycraft" + ".hybrid_physics" + ".description", "Aim at phenomenon aggregation");
 
         add("advancements." + "Awakening with \"The Fool\"" + ".title", "Awakening with \"The Fool\"");
         add("advancements." + "Awakening with \"The Fool\"" + ".description", "Make a Redstone Powered Machine Component Manufacture Machine");

@@ -1,13 +1,13 @@
 {
   "display": {
     "icon": {
-      "item": "degeneracycraft:dynamic_physics_icon"
+      "item": "degeneracycraft:hybrid_physics_icon"
     },
     "title": {
-      "translate": "advancements.degeneracycraft.dynamic_physics.title"
+      "translate": "advancements.degeneracycraft.hybrid_physics.title"
     },
     "description": {
-      "translate": "advancements.degeneracycraft.dynamic_physics.description"
+      "translate": "advancements.degeneracycraft.hybrid_physics.description"
     },
     "background": "degeneracycraft:textures/advancements/red_screen.png",
     "frame": "task",

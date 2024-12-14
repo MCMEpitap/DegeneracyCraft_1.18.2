@@ -225,6 +225,9 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
         nbt.putFloat("energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
         nbt.putInt("water_counter", waterCounter);
+
+        nbt.putInt("CurrentLayer", currentLayer); // currentLayerを保存
+
         super.saveAdditional(nbt);
     }
 
@@ -234,7 +237,23 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
         ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("energy"));
         counter = nbt.getInt("counter");
         waterCounter = nbt.getInt("water_counter");
+
+        currentLayer = nbt.getInt("CurrentLayer"); // currentLayerをロード
+
         super.load(nbt);
+    }
+
+    @Override
+    public CompoundTag getUpdateTag() {
+        CompoundTag nbt = super.getUpdateTag();
+        nbt.putInt("CurrentLayer", currentLayer); // 同期用データにcurrentLayerを追加
+        return nbt;
+    }
+
+    @Override
+    public void handleUpdateTag(CompoundTag nbt) {
+        super.handleUpdateTag(nbt);
+        currentLayer = nbt.getInt("CurrentLayer"); // 同期データからcurrentLayerを更新
     }
 
     public void drops() {
@@ -250,11 +269,12 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
 //        blockEntity.formed1 = BasicPowerSteamGeneratorStructure.isFormed1(level, pos, state, blockEntity);
 //        blockEntity.formed2 = BasicPowerSteamGeneratorStructure.isFormed2(level, pos, state, blockEntity);
 //        blockEntity.powered0_1 = BasicPowerSteamGeneratorStructure.powered0_1(level, pos, state, blockEntity);
-        blockEntity.isFormed = BasicPowerSteamGeneratorStructure.isFormed(level, pos, state, blockEntity);
+        BasicPowerSteamGeneratorStructure.isFormed(level, pos, state, blockEntity);
 //        blockEntity.isPowered0 = BasicPowerSteamGeneratorStructure.isPowered0(blockEntity);
 
+        BasicPowerSteamGeneratorStructure.hologram(level, pos, state, blockEntity);
 
-//        BasicPowerSteamGeneratorStructure.hologram(level, pos, state, blockEntity);
+
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
         if (level.isClientSide()) {
@@ -310,4 +330,16 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
     private static boolean hasNotReachedStackLimit(BasicPowerSteamGeneratorBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(1).getCount() < blockEntity.itemHandler.getStackInSlot(1).getMaxStackSize();
     }
+
+    private int currentLayer = 0; // 初期値は最下段（0）
+
+    public int getCurrentLayer() {
+        return currentLayer;
+    }
+
+    // 現在の段を設定
+    public void setCurrentLayer(int layer) {
+        this.currentLayer = layer;
+    }
+
 }

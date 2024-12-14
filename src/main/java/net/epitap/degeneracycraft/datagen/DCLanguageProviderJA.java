@@ -692,18 +692,18 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "基本強度化学多重構造機械用材料ストレージ");
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "基本強度化学多重構造機械用材料ストレージ (ホログラム)");
 
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "基本強度動的物理学多重構造機械用基礎フレーム");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "基本強度動的物理学多重構造機械用基礎フレーム (ホログラム)");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "基本強度動的物理学多重構造用機械フレーム");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), "基本強度動的物理学多重構造用機械フレーム (ホログラム)");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "基本強度動的物理学多重構造機械用構造フレーム");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "基本強度動的物理学多重構造機械用構造フレーム (ホログラム)");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), "基本強度動的物理学多重構造機械用ガラス");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "基本強度動的物理学多重構造機械用ガラス (ホログラム)");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(), "基本強度動的物理学多重構造機械用エネルギーストレージ");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "基本強度動的物理学多重構造機械用エネルギーストレージ (ホログラム)");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "基本強度動的物理学多重構造機械用材料ストレージ");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "基本強度動的物理学多重構造機械用材料ストレージ (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "基本強度複合物理学多重構造機械用基礎フレーム");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "基本強度複合物理学多重構造機械用基礎フレーム (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "基本強度複合物理学多重構造用機械フレーム");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), "基本強度複合物理学多重構造用機械フレーム (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "基本強度複合物理学多重構造機械用構造フレーム");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "基本強度複合物理学多重構造機械用構造フレーム (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), "基本強度複合物理学多重構造機械用ガラス");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "基本強度複合物理学多重構造機械用ガラス (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(), "基本強度複合物理学多重構造機械用エネルギーストレージ");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "基本強度複合物理学多重構造機械用エネルギーストレージ (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "基本強度複合物理学多重構造機械用材料ストレージ");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "基本強度複合物理学多重構造機械用材料ストレージ (ホログラム)");
 
         add(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get(), "レッドストーン動力機械要素製作機");
         add(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(), "レッドストーン動力機械部品製作機");
@@ -922,10 +922,10 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "science." + "astronomy", "科学分野:天文学");
         add("tooltip." + "degeneracycraft." + "science." + "biology", "科学分野:生物");
         add("tooltip." + "degeneracycraft." + "science." + "chemistry", "科学分野:化学");
-        add("tooltip." + "degeneracycraft." + "science." + "dynamic_physics", "科学分野:動的物理学");
         add("tooltip." + "degeneracycraft." + "science." + "engineering", "科学分野:工学");
         add("tooltip." + "degeneracycraft." + "science." + "faux_magic_engineering", "科学分野:模造魔導工学");
         add("tooltip." + "degeneracycraft." + "science." + "geoscience", "科学分野:地学");
+        add("tooltip." + "degeneracycraft." + "science." + "hybrid_physics", "科学分野:複合物理学");
 
 
         add("tooltip." + "degeneracycraft." + "chlorine" + ".name", "元素名:塩素");
@@ -1068,9 +1068,6 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("advancements." + "degeneracycraft" + ".title", "DegeneracyCraft");
         add("advancements." + "degeneracycraft" + ".description", "DegeneracyCraft始動");
 
-        add("advancements." + "degeneracycraft" + ".dynamic_physics" + ".title", "動的物理学(Dynamics Physics)");
-        add("advancements." + "degeneracycraft" + ".dynamic_physics" + ".description", "目指せ、現象集約");
-
         add("advancements." + "degeneracycraft" + ".engineering" + ".title", "工学(Engineering)");
         add("advancements." + "degeneracycraft" + ".engineering" + ".description", "目指せ、工学集積");
 
@@ -1086,6 +1083,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("advancements." + "degeneracycraft" + ".geo_science" + ".title", "地学(Geo Science)");
         add("advancements." + "degeneracycraft" + ".geo_science" + ".description", "目指せ、鉱石探究");
 
+        add("advancements." + "degeneracycraft" + ".hybrid_physics" + ".title", "複合物理学(Hybrids Physics)");
+        add("advancements." + "degeneracycraft" + ".hybrid_physics" + ".description", "目指せ、現象集約");
 
         add("advancements." + "Awakening with \"The Fool\"" + ".title", "ある\"愚者\"の目覚め");
         add("advancements." + "Awakening with \"The Fool\"" + ".description", "レッドストーン動力機械要素製作機を作成");

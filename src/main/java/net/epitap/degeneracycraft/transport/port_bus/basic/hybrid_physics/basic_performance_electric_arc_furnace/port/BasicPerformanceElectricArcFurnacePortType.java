@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.port_bus.basic.dynamic_physics.basic_performance_electric_arc_furnace.port;
+package net.epitap.degeneracycraft.transport.port_bus.basic.hybrid_physics.basic_performance_electric_arc_furnace.port;
 
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortBlockEntityBase;

@@ -5,8 +5,6 @@ import net.epitap.degeneracycraft.transport.parametor.PipeSetLazyOptional;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeDCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.transport.port_bus.basic.chemistry.basic_performance_electrolyser.bus.BasicPerformanceElectrolyserBusType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.chemistry.basic_performance_electrolyser.port.BasicPerformanceElectrolyserPortType;
-import net.epitap.degeneracycraft.transport.port_bus.basic.dynamic_physics.basic_performance_electric_arc_furnace.bus.BasicPerformanceElectricArcFurnaceBusType;
-import net.epitap.degeneracycraft.transport.port_bus.basic.dynamic_physics.basic_performance_electric_arc_furnace.port.BasicPerformanceElectricArcFurnacePortType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_steam_generator.port.BasicPowerSteamGeneratorPortType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_circuit_builder.bus.BasicTechnologyCircuitBuilderBusType;
@@ -17,6 +15,8 @@ import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_tec
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_machine_manufacturer.port.BasicTechnologyMachineManufacturerPortType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_machine_part_processor.bus.BasicTechnologyMachinePartProcessorBusType;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_machine_part_processor.port.BasicTechnologyMachinePartProcessorPortType;
+import net.epitap.degeneracycraft.transport.port_bus.basic.hybrid_physics.basic_performance_electric_arc_furnace.bus.BasicPerformanceElectricArcFurnaceBusType;
+import net.epitap.degeneracycraft.transport.port_bus.basic.hybrid_physics.basic_performance_electric_arc_furnace.port.BasicPerformanceElectricArcFurnacePortType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;

@@ -923,9 +923,9 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "science." + "biology", "科学分野:生物");
         add("tooltip." + "degeneracycraft." + "science." + "chemistry", "科学分野:化学");
         add("tooltip." + "degeneracycraft." + "science." + "engineering", "科学分野:工学");
-        add("tooltip." + "degeneracycraft." + "science." + "faux_magic_engineering", "科学分野:模造魔導工学");
         add("tooltip." + "degeneracycraft." + "science." + "geoscience", "科学分野:地学");
         add("tooltip." + "degeneracycraft." + "science." + "hybrid_physics", "科学分野:複合物理学");
+        add("tooltip." + "degeneracycraft." + "science." + "imitation_magic_engineering", "科学分野:模造魔導工学");
 
 
         add("tooltip." + "degeneracycraft." + "chlorine" + ".name", "元素名:塩素");
@@ -1077,14 +1077,14 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("advancements." + "Not Crash, But Press" + ".title", "砕くな、圧せよ");
         add("advancements." + "Not Crash, But Press" + ".description", "鉄の板を作成");
 
-        add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".title", "模造魔道工学(Faux Magic Engineering)");
-        add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".description", "目指せ、神秘解読");
-
         add("advancements." + "degeneracycraft" + ".geo_science" + ".title", "地学(Geo Science)");
         add("advancements." + "degeneracycraft" + ".geo_science" + ".description", "目指せ、鉱石探究");
 
         add("advancements." + "degeneracycraft" + ".hybrid_physics" + ".title", "複合物理学(Hybrids Physics)");
         add("advancements." + "degeneracycraft" + ".hybrid_physics" + ".description", "目指せ、現象集約");
+
+        add("advancements." + "degeneracycraft" + ".imitation_magic_engineering" + ".title", "模造魔道工学(Imitation Magic Engineering)");
+        add("advancements." + "degeneracycraft" + ".imitation_magic_engineering" + ".description", "目指せ、神秘解読");
 
         add("advancements." + "Awakening with \"The Fool\"" + ".title", "ある\"愚者\"の目覚め");
         add("advancements." + "Awakening with \"The Fool\"" + ".description", "レッドストーン動力機械要素製作機を作成");

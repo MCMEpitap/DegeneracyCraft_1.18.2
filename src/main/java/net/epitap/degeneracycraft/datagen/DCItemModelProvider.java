@@ -23,7 +23,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         iconItem(DCAdvancementIcon.CHEMISTRY_ICON.get());
         iconItem(DCAdvancementIcon.DEGENERACYCRAFT_ICON.get());
         iconItem(DCAdvancementIcon.ENGINEERING_ICON.get());
-        iconItem(DCAdvancementIcon.FAUX_MAGIC_ENGINEERING_ICON.get());
+        iconItem(DCAdvancementIcon.IMITATION_MAGIC_ENGINEERING_ICON.get());
         iconItem(DCAdvancementIcon.GEO_SCIENCE_ICON.get());
         iconItem(DCAdvancementIcon.HYBRID_PHYSICS_ICON.get());
 

@@ -483,12 +483,12 @@ public class DCBlocks {
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.BLUE));
                         case "engineering" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.BLACK));
-                        case "faux_magic_engineering" ->
-                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.WHITE));
                         case "geoscience" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.YELLOW));
                         case "hybrid_physics" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.RED));
+                        case "imitation_magic_engineering" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.WHITE));
                     }
                     switch (phase) {
                         case "initial" ->
@@ -544,12 +544,12 @@ public class DCBlocks {
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.BLUE));
                         case "engineering" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.BLACK));
-                        case "faux_magic_engineering" ->
-                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.WHITE));
                         case "geoscience" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.YELLOW));
                         case "hybrid_physics" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.RED));
+                        case "imitation_magic_engineering" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.WHITE));
                     }
                     switch (phase) {
                         case "initial" ->

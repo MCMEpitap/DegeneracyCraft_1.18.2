@@ -913,9 +913,9 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "science." + "biology", "Science:Biology");
         add("tooltip." + "degeneracycraft." + "science." + "chemistry", "Science:Chemistry");
         add("tooltip." + "degeneracycraft." + "science." + "engineering", "Science:Engineering");
-        add("tooltip." + "degeneracycraft." + "science." + "faux_magic_engineering", "Science:Faux Magic Engineering");
         add("tooltip." + "degeneracycraft." + "science." + "geoscience", "Science:Geoscience");
         add("tooltip." + "degeneracycraft." + "science." + "hybrid_physics", "Science:Hybrid Physics");
+        add("tooltip." + "degeneracycraft." + "science." + "imitation_magic_engineering", "Science:Imitation Magic Engineering");
 
         add("tooltip." + "degeneracycraft." + "chlorine" + ".name", "Element Name:Chlorine");
         add("tooltip." + "degeneracycraft." + "chlorine" + ".number", "Atomic Number:17");
@@ -1064,8 +1064,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("advancements." + "Not Crash, But Press" + ".title", "Not Crash, But Press");
         add("advancements." + "Not Crash, But Press" + ".description", "Make a Iron Plate");
 
-        add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".title", "Faux Magic Engineering");
-        add("advancements." + "degeneracycraft" + ".faux_magic_engineering" + ".description", "Aim at deciphering the mysteries");
+        add("advancements." + "degeneracycraft" + ".imitation_magic_engineering" + ".title", "Imitation Magic Engineering");
+        add("advancements." + "degeneracycraft" + ".imitation_magic_engineering" + ".description", "Aim at deciphering the mysteries");
 
         add("advancements." + "degeneracycraft" + ".geoscience" + ".title", "Geo Science");
         add("advancements." + "degeneracycraft" + ".geoscience" + ".description", "Aim at ores research");

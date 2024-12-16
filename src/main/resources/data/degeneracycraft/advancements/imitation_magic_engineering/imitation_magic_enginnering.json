@@ -1,13 +1,13 @@
 {
   "display": {
     "icon": {
-      "item": "degeneracycraft:faux_magic_engineering_icon"
+      "item": "degeneracycraft:imitation_magic_engineering_icon"
     },
     "title": {
-      "translate": "advancements.degeneracycraft.faux_magic_engineering.title"
+      "translate": "advancements.degeneracycraft.imitation_magic_engineering.title"
     },
     "description": {
-      "translate": "advancements.degeneracycraft.faux_magic_engineering.description"
+      "translate": "advancements.degeneracycraft.imitation_magic_engineering.description"
     },
     "background": "degeneracycraft:textures/advancements/white_screen.png",
     "frame": "task",

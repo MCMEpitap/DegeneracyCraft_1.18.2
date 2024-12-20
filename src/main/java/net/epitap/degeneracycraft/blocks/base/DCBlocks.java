@@ -485,7 +485,7 @@ public class DCBlocks {
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.BLACK));
                         case "formal_science" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.AQUA));
-                        case "geoscience" ->
+                        case "geo_science" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.YELLOW));
                         case "hybrid_physics" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.RED));
@@ -548,7 +548,7 @@ public class DCBlocks {
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.BLACK));
                         case "formal_science" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.AQUA));
-                        case "geoscience" ->
+                        case "geo_science" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.YELLOW));
                         case "hybrid_physics" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.RED));

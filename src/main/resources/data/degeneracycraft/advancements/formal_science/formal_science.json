@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "degeneracycraft:formal_science_icon"
+    },
+    "title": {
+      "translate": "advancements.degeneracycraft.formal_science.title"
+    },
+    "description": {
+      "translate": "advancements.degeneracycraft.formal_science.description"
+    },
+    "background": "degeneracycraft:textures/advancements/lightblue_screen.png",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "trigger": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

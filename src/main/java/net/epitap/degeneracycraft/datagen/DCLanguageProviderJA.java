@@ -923,7 +923,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "science." + "biology", "科学分野:生物");
         add("tooltip." + "degeneracycraft." + "science." + "chemistry", "科学分野:化学");
         add("tooltip." + "degeneracycraft." + "science." + "engineering", "科学分野:工学");
-        add("tooltip." + "degeneracycraft." + "science." + "geoscience", "科学分野:地学");
+        add("tooltip." + "degeneracycraft." + "science." + "geo_science", "科学分野:地学");
         add("tooltip." + "degeneracycraft." + "science." + "hybrid_physics", "科学分野:複合物理学");
         add("tooltip." + "degeneracycraft." + "science." + "imitation_magic_engineering", "科学分野:模造魔導工学");
 

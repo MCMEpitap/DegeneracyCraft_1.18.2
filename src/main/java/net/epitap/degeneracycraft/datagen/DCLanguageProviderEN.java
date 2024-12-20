@@ -913,7 +913,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "science." + "biology", "Science:Biology");
         add("tooltip." + "degeneracycraft." + "science." + "chemistry", "Science:Chemistry");
         add("tooltip." + "degeneracycraft." + "science." + "engineering", "Science:Engineering");
-        add("tooltip." + "degeneracycraft." + "science." + "geoscience", "Science:Geoscience");
+        add("tooltip." + "degeneracycraft." + "science." + "geo_science", "Science:Geo Science");
         add("tooltip." + "degeneracycraft." + "science." + "hybrid_physics", "Science:Hybrid Physics");
         add("tooltip." + "degeneracycraft." + "science." + "imitation_magic_engineering", "Science:Imitation Magic Engineering");
 
@@ -1067,8 +1067,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("advancements." + "degeneracycraft" + ".imitation_magic_engineering" + ".title", "Imitation Magic Engineering");
         add("advancements." + "degeneracycraft" + ".imitation_magic_engineering" + ".description", "Aim at deciphering the mysteries");
 
-        add("advancements." + "degeneracycraft" + ".geoscience" + ".title", "Geo Science");
-        add("advancements." + "degeneracycraft" + ".geoscience" + ".description", "Aim at ores research");
+        add("advancements." + "degeneracycraft" + ".geo_science" + ".title", "Geo Science");
+        add("advancements." + "degeneracycraft" + ".geo_science" + ".description", "Aim at ores research");
 
         add("advancements." + "degeneracycraft" + ".hybrid_physics" + ".title", "Hybrid Physics");
         add("advancements." + "degeneracycraft" + ".hybrid_physics" + ".description", "Aim at phenomenon aggregation");

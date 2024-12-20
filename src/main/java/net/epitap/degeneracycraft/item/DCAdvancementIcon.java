@@ -16,7 +16,8 @@ public class DCAdvancementIcon extends CreativeModeTab {
     public static final RegistryObject<Item> BIOLOGY_ICON = ITEMS.register("biology_icon",()-> new Item(new Item.Properties().stacksTo(0)));
     public static final RegistryObject<Item> CHEMISTRY_ICON = ITEMS.register("chemistry_icon",()-> new Item(new Item.Properties().stacksTo(0)));
     public static final RegistryObject<Item> DEGENERACYCRAFT_ICON = ITEMS.register("degeneracycraft_icon",()-> new Item(new Item.Properties().stacksTo(0)));
-    public static final RegistryObject<Item> ENGINEERING_ICON = ITEMS.register("engineering_icon",()-> new Item(new Item.Properties().stacksTo(0)));
+    public static final RegistryObject<Item> ENGINEERING_ICON = ITEMS.register("engineering_icon", () -> new Item(new Item.Properties().stacksTo(0)));
+    public static final RegistryObject<Item> FORMAL_SCIENCE_ICON = ITEMS.register("formal_science_icon", () -> new Item(new Item.Properties().stacksTo(0)));
     public static final RegistryObject<Item> GEO_SCIENCE_ICON = ITEMS.register("geo_science_icon", () -> new Item(new Item.Properties().stacksTo(0)));
     public static final RegistryObject<Item> HYBRID_PHYSICS_ICON = ITEMS.register("hybrid_physics_icon", () -> new Item(new Item.Properties().stacksTo(0)));
     public static final RegistryObject<Item> IMITATION_MAGIC_ENGINEERING_ICON = ITEMS.register("imitation_magic_engineering_icon", () -> new Item(new Item.Properties().stacksTo(0)));

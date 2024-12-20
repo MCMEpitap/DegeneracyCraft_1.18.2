@@ -923,6 +923,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "science." + "biology", "科学分野:生物");
         add("tooltip." + "degeneracycraft." + "science." + "chemistry", "科学分野:化学");
         add("tooltip." + "degeneracycraft." + "science." + "engineering", "科学分野:工学");
+        add("tooltip." + "degeneracycraft." + "science." + "formal_science", "科学分野:形式科学");
         add("tooltip." + "degeneracycraft." + "science." + "geo_science", "科学分野:地学");
         add("tooltip." + "degeneracycraft." + "science." + "hybrid_physics", "科学分野:複合物理学");
         add("tooltip." + "degeneracycraft." + "science." + "imitation_magic_engineering", "科学分野:模造魔導工学");
@@ -1076,6 +1077,9 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
         add("advancements." + "Not Crash, But Press" + ".title", "砕くな、圧せよ");
         add("advancements." + "Not Crash, But Press" + ".description", "鉄の板を作成");
+
+        add("advancements." + "degeneracycraft" + ".formal_science" + ".title", "形式科学(Formal Science)");
+        add("advancements." + "degeneracycraft" + ".formal_science" + ".description", "目指せ、論理構築");
 
         add("advancements." + "degeneracycraft" + ".geo_science" + ".title", "地学(Geo Science)");
         add("advancements." + "degeneracycraft" + ".geo_science" + ".description", "目指せ、鉱石探究");

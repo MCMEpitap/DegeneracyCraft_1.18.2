@@ -214,12 +214,8 @@ public class BasicTechnologyCircuitBuilderBlockEntity extends BlockEntity implem
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicTechnologyCircuitBuilderBlockEntity blockEntity) {
-        blockEntity.formed0 = BasicTechnologyCircuitBuilderStructure.isFormed0(level, pos, state, blockEntity);
-        blockEntity.formed1 = BasicTechnologyCircuitBuilderStructure.isFormed1(level, pos, state, blockEntity);
-        blockEntity.formed2 = BasicTechnologyCircuitBuilderStructure.isFormed2(level, pos, state, blockEntity);
-        blockEntity.powered0_1 = BasicTechnologyCircuitBuilderStructure.powered0_1(level, pos, state, blockEntity);
-        blockEntity.isFormed = BasicTechnologyCircuitBuilderStructure.isFormed(blockEntity);
-        blockEntity.isPowered0 = BasicTechnologyCircuitBuilderStructure.isPowered0(blockEntity);
+        blockEntity.isFormed = BasicTechnologyCircuitBuilderStructure.isFormed(level, pos, state, blockEntity);
+        blockEntity.isPowered0 = BasicTechnologyCircuitBuilderStructure.isPowered0(level, pos, state, blockEntity);
 
         BasicTechnologyCircuitBuilderStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;

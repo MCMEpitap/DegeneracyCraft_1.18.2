@@ -2,7 +2,6 @@ package net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_techno
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorBlock;
-import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorBlockEntity;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -30,7 +29,7 @@ public class BasicTechnologyCircuitBuilderStructure {
     }
 
 
-    public static boolean isFormed(Level level, BlockPos pos, BlockState state, BasicPowerSteamGeneratorBlockEntity blockEntity) {
+    public static boolean isFormed(Level level, BlockPos pos, BlockState state, BasicTechnologyCircuitBuilderBlockEntity blockEntity) {
         Direction facing = state.getValue(BasicPowerSteamGeneratorBlock.FACING);
         BlockPos basePos = blockEntity.getBlockPos();
 
@@ -91,7 +90,7 @@ public class BasicTechnologyCircuitBuilderStructure {
         return true;
     }
 
-    public static boolean isPowered0(Level level, BlockPos pos, BlockState state, BasicPowerSteamGeneratorBlockEntity blockEntity) {
+    public static boolean isPowered0(Level level, BlockPos pos, BlockState state, BasicTechnologyCircuitBuilderBlockEntity blockEntity) {
         Direction facing = state.getValue(BasicPowerSteamGeneratorBlock.FACING);
         BlockPos basePos = blockEntity.getBlockPos();
 
@@ -153,7 +152,7 @@ public class BasicTechnologyCircuitBuilderStructure {
     }
 
 
-    public static void hologram(Level level, BlockPos pos, BlockState state, BasicPowerSteamGeneratorBlockEntity blockEntity) {
+    public static void hologram(Level level, BlockPos pos, BlockState state, BasicTechnologyCircuitBuilderBlockEntity blockEntity) {
         Direction facing = state.getValue(BasicPowerSteamGeneratorBlock.FACING);
         BlockPos basePos = blockEntity.getBlockPos();
 

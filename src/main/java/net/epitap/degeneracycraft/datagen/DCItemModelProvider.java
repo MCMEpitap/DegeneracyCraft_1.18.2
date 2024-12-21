@@ -716,6 +716,21 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_chemistry_multiblock_material_storage_holo_block"));
 
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_electrolyser_block"));
+        withExistingParent(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_BLOCK.getId().getPath(),
+                modLoc("block/basic_durable_expanded_electrolytic_cell_block"));
+        withExistingParent(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_durable_expanded_electrolytic_cell_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_electrolyser_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_electrolyser_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_electrolyser_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_electrolyser_port_holo_block"));
+
 
         withExistingParent(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.getId().getPath(),
                 modLoc("block/redstone_powered_machine_element_manufacture_machine_block"));

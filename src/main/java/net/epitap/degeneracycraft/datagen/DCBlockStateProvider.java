@@ -419,7 +419,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
     }
 
     private void registerBasicDurableExpandedElectrolyticCellHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_durable_expanded_electrolytic_cell_block");
+        BlockModelBuilder model = models().getBuilder("block/basic_durable_expanded_electrolytic_cell_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
         model.texture("down", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
         model.texture("up", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));

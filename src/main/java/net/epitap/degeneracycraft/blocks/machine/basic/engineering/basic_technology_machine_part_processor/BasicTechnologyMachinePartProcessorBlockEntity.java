@@ -50,10 +50,7 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
     public int getProgressPercent;
     public int getProgressRandom;
     private int consumeCounter;
-    public boolean formed0;
-    public boolean formed1;
-    public boolean formed2;
-    public boolean powered0_1;
+
     public boolean isFormed;
     public boolean isPowered0;
     public final ItemStackHandler itemHandler = new ItemStackHandler(12) {

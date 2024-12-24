@@ -63,38 +63,6 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
 
         @Override
         public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
-//            if (slot == 0
-////                    && !stack.is(DCItems.EMPTY_CONTAINER.get())
-////                    && !stack.is(DCItems.WATER_CONTAINER.get())
-//                    && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
-//                    && !stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
-//                    && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
-//                return ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
-////                return true;
-//            }
-//            if (slot == 1) {
-//                return stack.is(DCItems.EMPTY_CONTAINER.get());
-////                return true;
-//            }
-//            if (slot == 2) {
-//                return stack.is(DCItems.WATER_CONTAINER.get());
-////                return true;
-//            }
-//            if (slot == 3) {
-//                return stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
-//                        || stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
-//            }
-//            if (slot == 4) {
-//                return stack.is(DCItems.MACHINE_HALT_DEVICE.get());
-//            }
-//
-////            stack.getItem()
-//            return false;
-//        }
-//
-//            if (slot == 0) {
-//                return ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
-//            }
             return switch (slot) {
                 case 0 -> ForgeHooks.getBurnTime(stack, RecipeType.SMELTING) > 0;
                 case 1 -> false;
@@ -247,10 +215,6 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicPowerSteamGeneratorBlockEntity blockEntity) {
-//        blockEntity.formed0 = BasicPowerSteamGeneratorStructure.isFormed0(level, pos, state, blockEntity);
-//        blockEntity.formed1 = BasicPowerSteamGeneratorStructure.isFormed1(level, pos, state, blockEntity);
-//        blockEntity.formed2 = BasicPowerSteamGeneratorStructure.isFormed2(level, pos, state, blockEntity);
-//        blockEntity.powered0_1 = BasicPowerSteamGeneratorStructure.powered0_1(level, pos, state, blockEntity);
         blockEntity.isFormed = BasicPowerSteamGeneratorStructure.isFormed(level, pos, state, blockEntity);
         blockEntity.isPowered0 = BasicPowerSteamGeneratorStructure.isPowered0(level, pos, state, blockEntity);
 

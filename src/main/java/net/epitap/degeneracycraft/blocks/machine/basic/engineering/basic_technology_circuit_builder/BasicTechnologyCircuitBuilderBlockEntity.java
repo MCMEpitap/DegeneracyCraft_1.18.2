@@ -214,10 +214,10 @@ public class BasicTechnologyCircuitBuilderBlockEntity extends BlockEntity implem
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicTechnologyCircuitBuilderBlockEntity blockEntity) {
-        blockEntity.isFormed = BasicTechnologyCircuitBuilderStructure.isFormed(level, pos, state, blockEntity);
-        blockEntity.isPowered0 = BasicTechnologyCircuitBuilderStructure.isPowered0(level, pos, state, blockEntity);
+        blockEntity.isFormed = BasicTechnologyMachineElementProcessorStructure.isFormed(level, pos, state, blockEntity);
+        blockEntity.isPowered0 = BasicTechnologyMachineElementProcessorStructure.isPowered0(level, pos, state, blockEntity);
 
-        BasicTechnologyCircuitBuilderStructure.hologram(level, pos, state, blockEntity);
+        BasicTechnologyMachineElementProcessorStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
 
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);

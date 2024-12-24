@@ -18,7 +18,6 @@ public class BasicPowerSteamGeneratorStructure {
     static int minX = -1, maxX = 1;
     static int minY = -1, maxY = 1;
     static int minZ = -2, maxZ = 0;
-    public static String[][][] structureReset;
     public static String[][][] structure0;
     public static String[][][] structure1;
     public static String[][][] structureH0;

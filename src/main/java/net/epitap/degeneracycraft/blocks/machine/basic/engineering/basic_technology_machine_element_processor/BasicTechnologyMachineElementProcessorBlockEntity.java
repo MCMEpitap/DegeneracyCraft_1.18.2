@@ -213,12 +213,8 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
-        blockEntity.formed0 = BasicTechnologyMachineElementProcessorStructure.isFormed0(level, pos, state, blockEntity);
-        blockEntity.formed1 = BasicTechnologyMachineElementProcessorStructure.isFormed1(level, pos, state, blockEntity);
-        blockEntity.formed2 = BasicTechnologyMachineElementProcessorStructure.isFormed2(level, pos, state, blockEntity);
-        blockEntity.powered0_1 = BasicTechnologyMachineElementProcessorStructure.powered0_1(level, pos, state, blockEntity);
-        blockEntity.isFormed = BasicTechnologyMachineElementProcessorStructure.isFormed(blockEntity);
-        blockEntity.isPowered0 = BasicTechnologyMachineElementProcessorStructure.isPowered0(blockEntity);
+        blockEntity.isFormed = BasicTechnologyMachineElementProcessorStructure.isFormed(level, pos, state, blockEntity);
+        blockEntity.isPowered0 = BasicTechnologyMachineElementProcessorStructure.isPowered0(level, pos, state, blockEntity);
 
         BasicTechnologyMachineElementProcessorStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;

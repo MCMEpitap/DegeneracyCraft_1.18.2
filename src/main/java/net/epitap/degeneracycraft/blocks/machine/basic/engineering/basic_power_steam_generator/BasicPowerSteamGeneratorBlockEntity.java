@@ -48,10 +48,7 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
     protected final ContainerData data;
     public int counter;
     public int waterCounter;
-    public boolean formed0;
-    public boolean formed1;
-    public boolean formed2;
-    public boolean powered0_1;
+
     public boolean isFormed;
     public boolean isPowered0;
 

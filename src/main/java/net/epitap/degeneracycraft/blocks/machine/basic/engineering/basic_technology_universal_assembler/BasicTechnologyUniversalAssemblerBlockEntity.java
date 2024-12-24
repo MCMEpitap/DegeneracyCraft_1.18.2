@@ -51,10 +51,6 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
     public int getProgressPercent = 0;
     private int consumeCounter;
 
-    public boolean formed0;
-    public boolean formed1;
-    public boolean formed2;
-    public boolean powered0_1;
     public boolean isFormed;
     public boolean isPowered0;
     public final ItemStackHandler itemHandler = new ItemStackHandler(12) {
@@ -214,12 +210,8 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicTechnologyUniversalAssemblerBlockEntity blockEntity) {
-        blockEntity.formed0 = BasicTechnologyUniversalAssemblerStructure.isFormed0(level, pos, state, blockEntity);
-        blockEntity.formed1 = BasicTechnologyUniversalAssemblerStructure.isFormed1(level, pos, state, blockEntity);
-        blockEntity.formed2 = BasicTechnologyUniversalAssemblerStructure.isFormed2(level, pos, state, blockEntity);
-        blockEntity.powered0_1 = BasicTechnologyUniversalAssemblerStructure.powered0_1(level, pos, state, blockEntity);
-        blockEntity.isFormed = BasicTechnologyUniversalAssemblerStructure.isFormed(blockEntity);
-        blockEntity.isPowered0 = BasicTechnologyUniversalAssemblerStructure.isPowered0(blockEntity);
+        blockEntity.isFormed = BasicTechnologyUniversalAssemblerStructure.isFormed(level, pos, state, blockEntity);
+        blockEntity.isPowered0 = BasicTechnologyUniversalAssemblerStructure.isPowered0(level, pos, state, blockEntity);
 
         BasicTechnologyUniversalAssemblerStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;

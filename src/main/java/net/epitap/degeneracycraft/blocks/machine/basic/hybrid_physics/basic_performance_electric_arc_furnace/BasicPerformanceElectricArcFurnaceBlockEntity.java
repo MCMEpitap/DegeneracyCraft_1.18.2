@@ -212,13 +212,8 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
-        blockEntity.formed0 = BasicPerformanceElectricArcFurnaceStructure.isFormed0(level, pos, state, blockEntity);
-        blockEntity.formed1 = BasicPerformanceElectricArcFurnaceStructure.isFormed1(level, pos, state, blockEntity);
-        blockEntity.formed2 = BasicPerformanceElectricArcFurnaceStructure.isFormed2(level, pos, state, blockEntity);
-        blockEntity.formed3 = BasicPerformanceElectricArcFurnaceStructure.isFormed3(level, pos, state, blockEntity);
-        blockEntity.powered0_1 = BasicPerformanceElectricArcFurnaceStructure.powered0_1(level, pos, state, blockEntity);
-        blockEntity.isFormed = BasicPerformanceElectricArcFurnaceStructure.isFormed(blockEntity);
-        blockEntity.isPowered0 = BasicPerformanceElectricArcFurnaceStructure.isPowered0(blockEntity);
+        blockEntity.isFormed = BasicPerformanceElectricArcFurnaceStructure.isFormed(level, pos, state, blockEntity);
+        blockEntity.isPowered0 = BasicPerformanceElectricArcFurnaceStructure.isPowered0(level, pos, state, blockEntity);
 
         BasicPerformanceElectricArcFurnaceStructure.hologram(level, pos, state, blockEntity);
 

@@ -259,7 +259,7 @@ public class BasicTechnologyMachinePartProcessorStructure {
                 String expectedBlock = structureLayer[z][x];
                 if (" ".equals(expectedBlock)) continue;
 
-                BlockPos relativePos = getRelativePos(basePos, x + minX, yOffset, z - 2, facing);
+                BlockPos relativePos = getRelativePos(basePos, x + minX, yOffset, z + minZ, facing);
                 BlockState targetState = level.getBlockState(relativePos);
 
                 if (!isExpectedBlock(targetState, expectedBlock)) {

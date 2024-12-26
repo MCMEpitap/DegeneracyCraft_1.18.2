@@ -57,7 +57,6 @@ public class BasicPerformanceElectricArcFurnaceStructure {
         Map<String, Predicate<BlockState>> blockConditions = new HashMap<>();
         blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
         blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK.get()));
-        blockConditions.put("H", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get()));
         blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
         blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK.get()));
         blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
@@ -116,7 +115,6 @@ public class BasicPerformanceElectricArcFurnaceStructure {
         Map<String, Predicate<BlockState>> blockConditions = new HashMap<>();
         blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
         blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK.get()));
-        blockConditions.put("H", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get()));
         blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
         blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK.get()));
         blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
@@ -203,7 +201,6 @@ public class BasicPerformanceElectricArcFurnaceStructure {
         Map<String, Supplier<Block>> blockMapping = new HashMap<>();
         blockMapping.put("F", DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK);
         blockMapping.put("P", DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK);
-        blockMapping.put("H", DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK);
         blockMapping.put("S", DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK);
         blockMapping.put("B", DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_HOLO_BLOCK);
         blockMapping.put("E", DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK);
@@ -291,7 +288,6 @@ public class BasicPerformanceElectricArcFurnaceStructure {
         return switch (blockKey) {
             case "F" -> blockState.is(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
             case "P" -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK.get());
-            case "H" -> blockState.is(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
             case "S" -> blockState.is(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get());
             case "B" -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK.get());
             case "E" -> blockState.is(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get());

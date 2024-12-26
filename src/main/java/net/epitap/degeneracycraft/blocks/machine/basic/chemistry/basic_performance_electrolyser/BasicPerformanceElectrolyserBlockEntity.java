@@ -48,10 +48,7 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
     public int counter;
     public int getProgressPercent;
     private int consumeCounter;
-    public boolean formed0;
-    public boolean formed1;
-    public boolean formed2;
-    public boolean powered0_1;
+
     public boolean isFormed;
     public boolean isPowered0;
     public final ItemStackHandler itemHandler = new ItemStackHandler(6) {
@@ -210,12 +207,8 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicPerformanceElectrolyserBlockEntity blockEntity) {
-        blockEntity.formed0 = BasicPerformanceElectrolyserStructure.isFormed0(level, pos, state, blockEntity);
-        blockEntity.formed1 = BasicPerformanceElectrolyserStructure.isFormed1(level, pos, state, blockEntity);
-        blockEntity.formed2 = BasicPerformanceElectrolyserStructure.isFormed2(level, pos, state, blockEntity);
-        blockEntity.powered0_1 = BasicPerformanceElectrolyserStructure.powered0_1(level, pos, state, blockEntity);
-        blockEntity.isFormed = BasicPerformanceElectrolyserStructure.isFormed(blockEntity);
-        blockEntity.isPowered0 = BasicPerformanceElectrolyserStructure.isPowered0(blockEntity);
+        blockEntity.isFormed = BasicPerformanceElectrolyserStructure.isFormed(level, pos, state, blockEntity);
+        blockEntity.isPowered0 = BasicPerformanceElectrolyserStructure.isPowered0(level, pos, state, blockEntity);
 
         BasicPerformanceElectrolyserStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;

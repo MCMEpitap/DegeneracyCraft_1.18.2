@@ -3,6 +3,7 @@ package net.epitap.degeneracycraft.blocks.base;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.block.machine.PulverizerBlock;
+import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderBlock;
@@ -165,7 +166,7 @@ public class DCBlocks {
 
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTROLYSER_BLOCK = registerTooltipBasicMachineBlock("basic_performance_electrolyser_block", () ->
-                    new BasicPerformanceElectricArcFurnaceBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+                    new BasicPerformanceElectrolyserBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "Lv0:3×3×3",
             "Lv1:3×3×3",
             "Base:Speed ×1.00,Energy Usage ×1.00",

@@ -147,18 +147,10 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
 
-        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(), RenderType.translucent());
 
-
-        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_HOLO_BLOCK.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK.get(), RenderType.translucent());
 
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
@@ -193,6 +185,18 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_EFFICIENCY_MACHINE_PART_PROCESSING_CHAMBER_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BUS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
+
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK.get(), RenderType.translucent());
 
         MenuScreens.register(DCMenuTypes.INFINITY_POWERED_ALL_IN_ONE_COMPRESSOR_MACHINE_BLOCK_MENU.get(), InfinityPoweredAllInOneCompressorMachineScreen::new);
 

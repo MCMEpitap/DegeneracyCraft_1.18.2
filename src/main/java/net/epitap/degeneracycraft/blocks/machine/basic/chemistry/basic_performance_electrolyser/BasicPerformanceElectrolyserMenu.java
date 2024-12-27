@@ -39,10 +39,10 @@ public class BasicPerformanceElectrolyserMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler, 0, 8, 7));
-            this.addSlot(new SlotItemHandler(handler, 1, 26, 25));
-            this.addSlot(new SlotItemHandler(handler, 2, 116, 25));
-            this.addSlot(new SlotItemHandler(handler, 3, 134, 25));
+            this.addSlot(new SlotItemHandler(handler, 0, 26, 25));
+            this.addSlot(new SlotItemHandler(handler, 1, 26, 43));
+            this.addSlot(new SlotItemHandler(handler, 2, 116, 7));
+            this.addSlot(new SlotItemHandler(handler, 3, 134, 43));
             this.addSlot(new SlotItemHandler(handler, 4, 71, 59));
             this.addSlot(new SlotItemHandler(handler, 5, 98, 62));
         });

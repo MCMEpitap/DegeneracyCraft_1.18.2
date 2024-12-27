@@ -153,7 +153,7 @@ public class BasicPerformanceElectrolyserStructure {
                 },
                 {
                         {"F", "F", "F", "F", "F"},
-                        {"F", " ", "M", " ", "F"},
+                        {"F", " ", "H", " ", "F"},
                         {"F", "P", " ", "P", "F",}
                 },
                 {

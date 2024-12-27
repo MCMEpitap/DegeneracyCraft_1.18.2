@@ -1047,8 +1047,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
         add("tooltip." + "degeneracycraft" + ".structure" + ".off", "マルチブロック構造非検知");
-        add("tooltip." + "degeneracycraft" + ".structure" + ".lv0", "正確なマルチブロック構造:Lv0 を検知");
-        add("tooltip." + "degeneracycraft" + ".structure" + ".lv1", "正確なマルチブロック構造:Lv1 を検知");
+        add("tooltip." + "degeneracycraft" + ".structure" + ".lv0", "正確なマルチブロック構造:Lv0を検知");
+        add("tooltip." + "degeneracycraft" + ".structure" + ".lv1", "正確なマルチブロック構造:Lv1を検知");
 
         add("tooltip." + "degeneracycraft" + ".work", "機械稼働中");
         add("tooltip." + "degeneracycraft" + ".stop", "機械停止中");

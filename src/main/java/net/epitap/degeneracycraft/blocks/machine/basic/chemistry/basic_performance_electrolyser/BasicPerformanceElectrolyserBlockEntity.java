@@ -51,7 +51,7 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
 
     public boolean isFormed;
     public boolean isPowered0;
-    public final ItemStackHandler itemHandler = new ItemStackHandler(6) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(8) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -60,9 +60,11 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 4 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
+                case 1 -> false;
+                case 2, 3 -> stack.getItem() == DCItems.EMPTY_CONTAINER.get();
+                case 6 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
                         || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
-                case 5 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
+                case 7 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -91,7 +93,7 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
             Map.of(
                     Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 2, (outputSlot, stack) -> false)),
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 4, (outputSlot, stack) -> false)),
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (inputSlot, stack) ->
                             itemHandler.isItemValid(0, stack))));
 
@@ -227,7 +229,7 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
                 .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && !isHaltDevice(blockEntity)
-                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
+                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item(), match.get().getOutput1Item())) {
 
             if (checkConsumeCount(blockEntity)) {
                 consumeItem(blockEntity);
@@ -298,7 +300,9 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
         Optional<BasicPerformanceElectrolyserRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount();
+        return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(2).getCount() >= match.get().getInput1Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(3).getCount() >= match.get().getInput2Item().getCount();
     }
 
     public static boolean checkConsumeCount(BasicPerformanceElectrolyserBlockEntity blockEntity) {
@@ -317,6 +321,9 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
 
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(2, match.get().getInput1Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(3, match.get().getInput2Item().getCount(), false);
+
         }
     }
 
@@ -335,10 +342,10 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
                 .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
-            blockEntity.itemHandler.setStackInSlot(2, new ItemStack(match.get().getOutput0Item().getItem(),
-                    blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount()));
-            blockEntity.itemHandler.setStackInSlot(3, new ItemStack(match.get().getOutput1Item().getItem(),
-                    blockEntity.itemHandler.getStackInSlot(3).getCount() + match.get().getOutput1Item().getCount()));
+            blockEntity.itemHandler.setStackInSlot(4, new ItemStack(match.get().getOutput0Item().getItem(),
+                    blockEntity.itemHandler.getStackInSlot(4).getCount() + match.get().getOutput0Item().getCount()));
+            blockEntity.itemHandler.setStackInSlot(5, new ItemStack(match.get().getOutput1Item().getItem(),
+                    blockEntity.itemHandler.getStackInSlot(5).getCount() + match.get().getOutput1Item().getCount()));
             blockEntity.resetProgress();
             blockEntity.resetConsumeCount();
         }
@@ -356,13 +363,13 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
         this.consumeCounter = 0;
     }
 
-    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
-        return (inventory.getItem(2).getItem() == output.getItem() || inventory.getItem(2).isEmpty())
-                && (inventory.getItem(3).getItem() == output.getItem() || inventory.getItem(3).isEmpty());
+    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output0, ItemStack output1) {
+        return (inventory.getItem(4).getItem() == output0.getItem() || inventory.getItem(4).isEmpty())
+                || (inventory.getItem(5).getItem() == output1.getItem() || inventory.getItem(5).isEmpty());
     }
 
     private static boolean hasNotReachedStackLimit(BasicPerformanceElectrolyserBlockEntity blockEntity) {
-        return (blockEntity.itemHandler.getStackInSlot(2).getCount() < blockEntity.itemHandler.getStackInSlot(2).getMaxStackSize())
-                && (blockEntity.itemHandler.getStackInSlot(3).getCount() < blockEntity.itemHandler.getStackInSlot(3).getMaxStackSize());
+        return (blockEntity.itemHandler.getStackInSlot(4).getCount() < blockEntity.itemHandler.getStackInSlot(4).getMaxStackSize())
+                || (blockEntity.itemHandler.getStackInSlot(5).getCount() < blockEntity.itemHandler.getStackInSlot(5).getMaxStackSize());
     }
 }

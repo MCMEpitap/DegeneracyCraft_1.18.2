@@ -20,14 +20,18 @@ public class BasicPerformanceElectrolyserRecipe implements Recipe<SimpleContaine
     final float energy;
     final float time;
     final ItemStack input0;
+    final ItemStack input1;
+    final ItemStack input2;
     final ItemStack output0;
     final ItemStack output1;
 
-    public BasicPerformanceElectrolyserRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack output0, ItemStack output1) {
+    public BasicPerformanceElectrolyserRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack input1, ItemStack input2, ItemStack output0, ItemStack output1) {
         this.id = id;
         this.energy = energy;
         this.time = time;
         this.input0 = input0;
+        this.input1 = input1;
+        this.input2 = input2;
         this.output0 = output0;
         this.output1 = output1;
     }
@@ -35,7 +39,9 @@ public class BasicPerformanceElectrolyserRecipe implements Recipe<SimpleContaine
     @Override
     public boolean matches(SimpleContainer pContainer, Level level) {
         return energy == getRequiredEnergy() && time == getRequiredTime()
-                && input0.is(pContainer.getItem(0).getItem());
+                && input0.is(pContainer.getItem(0).getItem())
+                && input1.is(pContainer.getItem(2).getItem())
+                && input2.is(pContainer.getItem(3).getItem());
     }
 
     @Override
@@ -59,6 +65,15 @@ public class BasicPerformanceElectrolyserRecipe implements Recipe<SimpleContaine
     public ItemStack getInput0Item() {
         return input0;
     }
+
+    public ItemStack getInput1Item() {
+        return input1;
+    }
+
+    public ItemStack getInput2Item() {
+        return input2;
+    }
+
 
     public ItemStack getOutput0Item() {
         return output0;
@@ -113,10 +128,12 @@ public class BasicPerformanceElectrolyserRecipe implements Recipe<SimpleContaine
             float energy = GsonHelper.getAsFloat(pJson, "energy", 1);
             float time = GsonHelper.getAsFloat(pJson, "time", 1);
             ItemStack input0 = BasicPerformanceElectrolyserRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input0"));
+            ItemStack input1 = BasicPerformanceElectrolyserRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input1"));
+            ItemStack input2 = BasicPerformanceElectrolyserRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input2"));
             ItemStack output0 = BasicPerformanceElectrolyserRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output0"));
             ItemStack output1 = BasicPerformanceElectrolyserRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output1"));
 
-            return new BasicPerformanceElectrolyserRecipe(pRecipeId, energy, time, input0, output0, output1);
+            return new BasicPerformanceElectrolyserRecipe(pRecipeId, energy, time, input0, input1, input2, output0, output1);
         }
 
         @Override
@@ -124,10 +141,12 @@ public class BasicPerformanceElectrolyserRecipe implements Recipe<SimpleContaine
             float energy = pBuffer.readFloat();
             float time = pBuffer.readFloat();
             ItemStack input0 = pBuffer.readItem();
+            ItemStack input1 = pBuffer.readItem();
+            ItemStack input2 = pBuffer.readItem();
             ItemStack output0 = pBuffer.readItem();
             ItemStack output1 = pBuffer.readItem();
 
-            return new BasicPerformanceElectrolyserRecipe(pRecipeId, energy, time, input0, output0, output1);
+            return new BasicPerformanceElectrolyserRecipe(pRecipeId, energy, time, input0, input1, input2, output0, output1);
         }
 
         @Override
@@ -135,6 +154,8 @@ public class BasicPerformanceElectrolyserRecipe implements Recipe<SimpleContaine
             pBuffer.writeFloat(pRecipe.energy);
             pBuffer.writeFloat(pRecipe.time);
             pBuffer.writeItem(pRecipe.input0.getContainerItem());
+            pBuffer.writeItem(pRecipe.input1.getContainerItem());
+            pBuffer.writeItem(pRecipe.input2.getContainerItem());
             pBuffer.writeItem(pRecipe.output0.getContainerItem());
             pBuffer.writeItem(pRecipe.output1.getContainerItem());
         }

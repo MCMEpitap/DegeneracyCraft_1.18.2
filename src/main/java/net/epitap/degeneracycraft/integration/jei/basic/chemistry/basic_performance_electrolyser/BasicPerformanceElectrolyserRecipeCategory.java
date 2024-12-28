@@ -109,6 +109,8 @@ public class BasicPerformanceElectrolyserRecipeCategory implements IRecipeCatego
     @Override
     public void setRecipe(@Nonnull IRecipeLayoutBuilder builder, @Nonnull BasicPerformanceElectrolyserRecipe recipe, @Nonnull IFocusGroup focusGroup) {
         builder.addSlot(RecipeIngredientRole.INPUT, 26, 25).addItemStack(recipe.getInput0Item());
+        builder.addSlot(RecipeIngredientRole.INPUT, 44, 7).addItemStack(recipe.getInput1Item());
+        builder.addSlot(RecipeIngredientRole.INPUT, 44, 43).addItemStack(recipe.getInput2Item());
         builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 7).addItemStack(recipe.getOutput0Item());
         builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 43).addItemStack(recipe.getOutput1Item());
 

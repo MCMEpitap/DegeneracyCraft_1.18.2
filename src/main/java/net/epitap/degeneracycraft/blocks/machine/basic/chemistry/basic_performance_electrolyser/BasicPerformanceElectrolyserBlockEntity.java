@@ -60,7 +60,7 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 1 -> false;
+                case 1, 4, 5 -> false;
                 case 2, 3 -> stack.getItem() == DCItems.EMPTY_CONTAINER.get();
                 case 6 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
                         || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
@@ -93,9 +93,11 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
             Map.of(
                     Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 4, (outputSlot, stack) -> false)),
-                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (inputSlot, stack) ->
-                            itemHandler.isItemValid(0, stack))));
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 1 || out == 4 || out == 5,
+                            (out, stack) -> false)),
+                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0 || in == 2 || in == 3,
+                            (in, stack) -> itemHandler.isItemValid(0, stack) || itemHandler.isItemValid(2, stack) || itemHandler.isItemValid(3, stack)))
+            );
 
     public BasicPerformanceElectrolyserBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(DCBlockEntities.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
@@ -228,12 +230,14 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
         Optional<BasicPerformanceElectrolyserRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && !isHaltDevice(blockEntity)
-                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item(), match.get().getOutput1Item())) {
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergy(blockEntity) && !isHaltDevice(blockEntity)
+                && hasNotReachedStackLimit(blockEntity)) {
 
             if (checkConsumeCount(blockEntity)) {
                 consumeItem(blockEntity);
                 blockEntity.consumeCount();
+                blockEntity.itemHandler.setStackInSlot(1, new ItemStack(DCItems.EMPTY_CONTAINER.get(),
+                        blockEntity.itemHandler.getStackInSlot(1).getCount() + 1));
             }
 
             if (blockEntity.isPowered0) {
@@ -305,6 +309,19 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
                 && blockEntity.itemHandler.getStackInSlot(3).getCount() >= match.get().getInput2Item().getCount();
     }
 
+    private static boolean hasAmountEnergy(BasicPerformanceElectrolyserBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicPerformanceElectrolyserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
+
+        return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
+    }
+
     public static boolean checkConsumeCount(BasicPerformanceElectrolyserBlockEntity blockEntity) {
         return blockEntity.consumeCounter == 0;
     }
@@ -362,14 +379,17 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
     public void resetConsumeCount() {
         this.consumeCounter = 0;
     }
-
-    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output0, ItemStack output1) {
-        return (inventory.getItem(4).getItem() == output0.getItem() || inventory.getItem(4).isEmpty())
-                || (inventory.getItem(5).getItem() == output1.getItem() || inventory.getItem(5).isEmpty());
-    }
-
     private static boolean hasNotReachedStackLimit(BasicPerformanceElectrolyserBlockEntity blockEntity) {
-        return (blockEntity.itemHandler.getStackInSlot(4).getCount() < blockEntity.itemHandler.getStackInSlot(4).getMaxStackSize())
-                || (blockEntity.itemHandler.getStackInSlot(5).getCount() < blockEntity.itemHandler.getStackInSlot(5).getMaxStackSize());
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicPerformanceElectrolyserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
+
+        return (blockEntity.itemHandler.getStackInSlot(4).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(4).getMaxStackSize())
+                && (blockEntity.itemHandler.getStackInSlot(5).getCount() + match.get().getOutput1Item().getCount() <= blockEntity.itemHandler.getStackInSlot(5).getMaxStackSize());
     }
 }

@@ -94,9 +94,9 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
     private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
             Map.of(Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 1, (outputSlot, stack) -> false)),
-                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (index) -> index == 0 || index == 2,
-                            (index, stack) -> itemHandler.isItemValid(0, stack) || itemHandler.isItemValid(2, stack)))
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 1, (out, stack) -> false)),
+                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0 || in == 2,
+                            (in, stack) -> itemHandler.isItemValid(0, stack) || itemHandler.isItemValid(2, stack)))
             );
 
     public BasicPowerSteamGeneratorBlockEntity(BlockPos pos, BlockState state) {

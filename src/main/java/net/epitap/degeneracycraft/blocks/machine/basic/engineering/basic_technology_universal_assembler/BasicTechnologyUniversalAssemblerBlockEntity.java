@@ -410,7 +410,7 @@ public class BasicTechnologyUniversalAssemblerBlockEntity extends BlockEntity im
         Optional<BasicTechnologyUniversalAssemblerRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(9).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(9).getItem().isEmpty();
+        return blockEntity.itemHandler.getStackInSlot(9).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(9).isEmpty();
     }
 }
 

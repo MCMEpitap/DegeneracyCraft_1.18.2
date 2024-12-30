@@ -64,6 +64,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
+                case 2 -> false;
                 case 3 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
                         || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
                 case 4 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
@@ -232,8 +233,8 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && !isHaltDevice(blockEntity)
-                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
+                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
 
             if (checkConsumeCount(blockEntity)) {
                 consumeItem(blockEntity);
@@ -308,6 +309,19 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
                 && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount();
     }
 
+    private static boolean hasEnergyRecipe(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+
+        return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
+    }
+
     public static boolean checkConsumeCount(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
         return blockEntity.consumeCounter == 0;
     }
@@ -363,11 +377,29 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         this.consumeCounter = 0;
     }
 
-    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
-        return inventory.getItem(2).getItem() == output.getItem() || inventory.getItem(2).isEmpty();
+    private static boolean hasNotReachedStackLimit(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+
+        return blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(2).getMaxStackSize();
     }
 
-    private static boolean hasNotReachedStackLimit(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(2).getCount() < blockEntity.itemHandler.getStackInSlot(2).getMaxStackSize();
+    private static boolean canInsertItemIntoOutputSlot(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+
+        return blockEntity.itemHandler.getStackInSlot(2).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(2).isEmpty();
     }
 }

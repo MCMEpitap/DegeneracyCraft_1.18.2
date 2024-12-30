@@ -230,14 +230,12 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
         Optional<BasicPerformanceElectrolyserRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity) &&
-                !isHaltDevice(blockEntity) && hasNotReachedStackLimit(blockEntity)) {
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
+                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
 
             if (checkConsumeCount(blockEntity)) {
                 consumeItem(blockEntity);
                 blockEntity.consumeCount();
-                blockEntity.itemHandler.setStackInSlot(1, new ItemStack(DCItems.EMPTY_CONTAINER.get(),
-                        blockEntity.itemHandler.getStackInSlot(1).getCount() + 1));
             }
 
             if (blockEntity.isPowered0) {
@@ -340,7 +338,8 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
             blockEntity.itemHandler.extractItem(2, match.get().getInput1Item().getCount(), false);
             blockEntity.itemHandler.extractItem(3, match.get().getInput2Item().getCount(), false);
-
+            blockEntity.itemHandler.setStackInSlot(1, new ItemStack(DCItems.EMPTY_CONTAINER.get(),
+                    blockEntity.itemHandler.getStackInSlot(1).getCount() + 1));
         }
     }
 
@@ -391,5 +390,19 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
 
         return (blockEntity.itemHandler.getStackInSlot(4).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(4).getMaxStackSize())
                 && (blockEntity.itemHandler.getStackInSlot(5).getCount() + match.get().getOutput1Item().getCount() <= blockEntity.itemHandler.getStackInSlot(5).getMaxStackSize());
+    }
+
+    private static boolean canInsertItemIntoOutputSlot(BasicPerformanceElectrolyserBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicPerformanceElectrolyserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
+
+        return (blockEntity.itemHandler.getStackInSlot(4).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(4).isEmpty())
+                && (blockEntity.itemHandler.getStackInSlot(5).getItem() == match.get().getOutput1Item().getItem() || blockEntity.itemHandler.getStackInSlot(5).isEmpty());
     }
 }

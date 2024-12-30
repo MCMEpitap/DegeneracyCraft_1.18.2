@@ -1086,7 +1086,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("advancements." + "degeneracycraft" + ".hybrid_physics" + ".title", "複合物理学(Hybrids Physics)");
         add("advancements." + "degeneracycraft" + ".hybrid_physics" + ".description", "目指せ、現象集約");
 
-        add("advancements." + "degeneracycraft" + ".imitation_magic_engineering" + ".title", "模造魔道工学(Imitation Magic Engineering)");
+        add("advancements." + "degeneracycraft" + ".imitation_magic_engineering" + ".title", "模造魔導工学(Imitation Magic Engineering)");
         add("advancements." + "degeneracycraft" + ".imitation_magic_engineering" + ".description", "目指せ、神秘解読");
 
         add("advancements." + "Awakening with \"The Fool\"" + ".title", "ある\"愚者\"の目覚め");

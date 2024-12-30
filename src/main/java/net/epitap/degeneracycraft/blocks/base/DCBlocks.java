@@ -483,7 +483,7 @@ public class DCBlocks {
                         case "chemistry" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.BLUE));
                         case "engineering" ->
-                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.BLACK));
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.DARK_GRAY));
                         case "formal_science" ->
                                 pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.science." + scienceName).withStyle(ChatFormatting.AQUA));
                         case "geo_science" ->

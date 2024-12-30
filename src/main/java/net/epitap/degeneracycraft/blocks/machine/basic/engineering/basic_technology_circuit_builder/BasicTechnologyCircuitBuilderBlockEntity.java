@@ -230,8 +230,8 @@ public class BasicTechnologyCircuitBuilderBlockEntity extends BlockEntity implem
         Optional<BasicTechnologyCircuitBuilderRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyCircuitBuilderRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && !isHaltDevice(blockEntity)
-                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergy(blockEntity) && !isHaltDevice(blockEntity)
+                && hasNotReachedStackLimit(blockEntity)) {
 
             if (checkConsumeCount(blockEntity)) {
                 consumeItem(blockEntity);
@@ -317,6 +317,19 @@ public class BasicTechnologyCircuitBuilderBlockEntity extends BlockEntity implem
                 && blockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
     }
 
+    private static boolean hasAmountEnergy(BasicTechnologyCircuitBuilderBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicTechnologyCircuitBuilderRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyCircuitBuilderRecipe.Type.INSTANCE, inventory, level);
+
+        return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
+    }
+
     public static boolean checkConsumeCount(BasicTechnologyCircuitBuilderBlockEntity blockEntity) {
         return blockEntity.consumeCounter == 0;
     }
@@ -375,12 +388,18 @@ public class BasicTechnologyCircuitBuilderBlockEntity extends BlockEntity implem
         this.consumeCounter = 0;
     }
 
-    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
-        return inventory.getItem(9).getItem() == output.getItem() || inventory.getItem(9).isEmpty();
-    }
 
     private static boolean hasNotReachedStackLimit(BasicTechnologyCircuitBuilderBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(9).getCount() < blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicTechnologyCircuitBuilderRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyCircuitBuilderRecipe.Type.INSTANCE, inventory, level);
+
+        return blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
     }
 }
 

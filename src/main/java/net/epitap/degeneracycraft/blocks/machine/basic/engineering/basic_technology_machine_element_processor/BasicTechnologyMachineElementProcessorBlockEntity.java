@@ -231,7 +231,8 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
                 .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && !isHaltDevice(blockEntity)
-                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
+                && hasNotReachedStackLimit(blockEntity)
+                && canInsertItemIntoOutputSlot(blockEntity)) {
 
             if (checkConsumeCount(blockEntity)) {
                 consumeItem(blockEntity);
@@ -423,16 +424,36 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
 //        this.getProgressRandom = 0;
 //    }
 
-    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
-        return inventory.getItem(9).getItem() == output.getItem() || inventory.getItem(9).isEmpty();
-    }
 
     private static boolean hasNotReachedStackLimit(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(9).getCount() < blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+
+
+        return blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
     }
 
 //    private static boolean hasNotReachedStackLimit(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
 //        return blockEntity.itemHandler.getStackInSlot(9).getCount() < blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize()
 //                && blockEntity.itemHandler.getStackInSlot(10).getCount() < blockEntity.itemHandler.getStackInSlot(10).getMaxStackSize();
 //    }
+
+    private static boolean canInsertItemIntoOutputSlot(BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+
+        return blockEntity.itemHandler.getStackInSlot(9).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(9).isEmpty();
+    }
 }

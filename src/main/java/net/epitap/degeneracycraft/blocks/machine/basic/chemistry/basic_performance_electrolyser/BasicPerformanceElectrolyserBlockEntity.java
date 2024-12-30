@@ -230,8 +230,8 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
         Optional<BasicPerformanceElectrolyserRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergy(blockEntity) && !isHaltDevice(blockEntity)
-                && hasNotReachedStackLimit(blockEntity)) {
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity) &&
+                !isHaltDevice(blockEntity) && hasNotReachedStackLimit(blockEntity)) {
 
             if (checkConsumeCount(blockEntity)) {
                 consumeItem(blockEntity);
@@ -309,7 +309,7 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
                 && blockEntity.itemHandler.getStackInSlot(3).getCount() >= match.get().getInput2Item().getCount();
     }
 
-    private static boolean hasAmountEnergy(BasicPerformanceElectrolyserBlockEntity blockEntity) {
+    private static boolean hasEnergyRecipe(BasicPerformanceElectrolyserBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {

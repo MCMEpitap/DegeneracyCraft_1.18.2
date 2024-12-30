@@ -62,6 +62,7 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
+                case 9 -> false;
                 case 10 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
                         || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
                 case 11 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
@@ -93,8 +94,8 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
             Map.of(
                     Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 9, (outputSlot, stack) -> false)),
-                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (inputSlot, stack) ->
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (out, stack) -> false)),
+                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) ->
                             itemHandler.isItemValid(0, stack))));
 
     public BasicTechnologyMachinePartProcessorBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
@@ -228,8 +229,8 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
         Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && !isHaltDevice(blockEntity)
-                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
+                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
 
             if (checkConsumeCount(blockEntity)) {
                 consumeItem(blockEntity);
@@ -311,6 +312,19 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
                 && blockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
     }
 
+    private static boolean hasEnergyRecipe(BasicTechnologyMachinePartProcessorBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+
+        return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
+    }
+
     public static boolean checkConsumeCount(BasicTechnologyMachinePartProcessorBlockEntity blockEntity) {
         return blockEntity.consumeCounter == 0;
     }
@@ -389,12 +403,30 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
         this.consumeCounter = 0;
     }
 
-
-    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
-        return inventory.getItem(9).getItem() == output.getItem() || inventory.getItem(9).isEmpty();
-    }
-
     private static boolean hasNotReachedStackLimit(BasicTechnologyMachinePartProcessorBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(9).getCount() < blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+
+        return blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
     }
+
+    private static boolean canInsertItemIntoOutputSlot(BasicTechnologyMachinePartProcessorBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicTechnologyMachineElementProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE, inventory, level);
+
+        return blockEntity.itemHandler.getStackInSlot(9).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(9).isEmpty();
+    }
+
 }

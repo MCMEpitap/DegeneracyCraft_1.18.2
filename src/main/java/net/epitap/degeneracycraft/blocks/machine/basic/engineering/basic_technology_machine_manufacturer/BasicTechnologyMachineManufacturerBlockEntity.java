@@ -93,8 +93,8 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
     private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
             Map.of(Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 9, (outputSlot, stack) -> false)),
-                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (inputSlot, stack) ->
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (out, stack) -> false)),
+                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) ->
                             itemHandler.isItemValid(0, stack))));
 
     public BasicTechnologyMachineManufacturerBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
@@ -229,8 +229,9 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
         Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && !isHaltDevice(blockEntity)
-                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
+                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)
+        ) {
 
             if (checkConsumeCount(blockEntity)) {
                 consumeItem(blockEntity);
@@ -317,6 +318,19 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
                 && blockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
     }
 
+    private static boolean hasEnergyRecipe(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
+
+        return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
+    }
+
     public static boolean checkConsumeCount(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
         return blockEntity.consumeCounter == 0;
     }
@@ -375,12 +389,31 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
         this.consumeCounter = 0;
     }
 
-    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
-        return inventory.getItem(9).getItem() == output.getItem() || inventory.getItem(9).isEmpty();
+    private static boolean hasNotReachedStackLimit(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
+
+        return blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
     }
 
-    private static boolean hasNotReachedStackLimit(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(9).getCount() < blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
+    private static boolean canInsertItemIntoOutputSlot(BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicTechnologyMachineManufacturerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE, inventory, level);
+
+        return blockEntity.itemHandler.getStackInSlot(9).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(9).isEmpty();
     }
+
 }
 

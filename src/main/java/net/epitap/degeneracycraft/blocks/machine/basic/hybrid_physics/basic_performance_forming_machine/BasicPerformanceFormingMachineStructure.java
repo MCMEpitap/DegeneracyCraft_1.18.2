@@ -1,8 +1,6 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
-import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlock;
-import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlockEntity;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -29,8 +27,8 @@ public class BasicPerformanceFormingMachineStructure {
     }
 
 
-    public static boolean isFormed(Level level, BlockPos pos, BlockState state, BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
-        Direction facing = state.getValue(BasicPerformanceElectricArcFurnaceBlock.FACING);
+    public static boolean isFormed(Level level, BlockPos pos, BlockState state, BasicPerformanceFormingMachineBlockEntity blockEntity) {
+        Direction facing = state.getValue(BasicPerformanceFormingMachineBlock.FACING);
         BlockPos basePos = blockEntity.getBlockPos();
 
         structure0 = new String[][][]{
@@ -83,8 +81,8 @@ public class BasicPerformanceFormingMachineStructure {
         return true;
     }
 
-    public static boolean isPowered0(Level level, BlockPos pos, BlockState state, BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
-        Direction facing = state.getValue(BasicPerformanceElectricArcFurnaceBlock.FACING);
+    public static boolean isPowered0(Level level, BlockPos pos, BlockState state, BasicPerformanceFormingMachineBlockEntity blockEntity) {
+        Direction facing = state.getValue(BasicPerformanceFormingMachineBlock.FACING);
         BlockPos basePos = blockEntity.getBlockPos();
 
         structure1 = new String[][][]{
@@ -141,8 +139,8 @@ public class BasicPerformanceFormingMachineStructure {
     }
 
 
-    public static void hologram(Level level, BlockPos pos, BlockState state, BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
-        Direction facing = state.getValue(BasicPerformanceElectricArcFurnaceBlock.FACING);
+    public static void hologram(Level level, BlockPos pos, BlockState state, BasicPerformanceFormingMachineBlockEntity blockEntity) {
+        Direction facing = state.getValue(BasicPerformanceFormingMachineBlock.FACING);
         BlockPos basePos = blockEntity.getBlockPos();
 
         structureH0 = new String[][][]{

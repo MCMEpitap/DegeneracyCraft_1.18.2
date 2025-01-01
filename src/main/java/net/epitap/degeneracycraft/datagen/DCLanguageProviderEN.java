@@ -828,7 +828,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_BLOCK.get(), "Basic Precision Extrusion Assist System");
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_forming_machine_block",
                 "Basic Performance Forming Machine");
-        add(DCBlocks.BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_BLOCK.get(), "Basic Precision Extrusion Assist System (Hologram)");
+        add(DCBlocks.BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_HOLO_BLOCK.get(), "Basic Precision Extrusion Assist System (Hologram)");
         add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_BLOCK.get(), "Basic Performance Forming Machine Bus");
         add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_HOLO_BLOCK.get(), "Basic Performance Forming Machine Bus (Hologram)");
         add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK.get(), "Basic Performance Forming Machine Port");

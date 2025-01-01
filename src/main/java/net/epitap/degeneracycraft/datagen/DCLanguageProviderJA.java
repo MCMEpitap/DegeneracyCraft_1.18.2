@@ -834,7 +834,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_BLOCK.get(), "基本性能押出補助装置");
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_forming_machine_block",
                 "基本性能形成機用");
-        add(DCBlocks.BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_BLOCK.get(), "基本性能押出補助装置 (ホログラム)");
+        add(DCBlocks.BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_HOLO_BLOCK.get(), "基本性能押出補助装置 (ホログラム)");
         add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_BLOCK.get(), "基本性能形成機バス");
         add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_HOLO_BLOCK.get(), "基本性能形成機バス (ホログラム)");
         add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK.get(), "基本性能形成機ポート");

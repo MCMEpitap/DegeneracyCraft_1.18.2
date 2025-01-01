@@ -865,6 +865,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("jei." + "degeneracycraft_basic_technology_machine_part_processor", "基本技術機械部品加工機 レシピ");
 
         add("jei." + "degeneracycraft_basic_performance_electric_arc_furnace", "基本性能電気アーク炉 レシピ");
+        add("jei." + "degeneracycraft_basic_performance_forming_machine", "基本性能形成機 レシピ");
 
         add("itemGroup." + "degeneracycraft_material", "Degeneracy Craft 材料");
         add("itemGroup." + "degeneracycraft_machine_elements", "Degeneracy Craft 機械要素");

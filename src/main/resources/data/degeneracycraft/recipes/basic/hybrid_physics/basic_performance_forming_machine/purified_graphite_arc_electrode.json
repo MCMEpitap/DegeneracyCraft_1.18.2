@@ -1,0 +1,15 @@
+{
+  "type": "degeneracycraft:basic_performance_forming_machine_recipe",
+  "energy": 3000.0,
+  "time": 10.0,
+  "input0": {
+    "item": "minecraft:coal",
+    "count": 4
+  },
+  "input1": {
+    "item": "degeneracycraft:chlorine_gas"
+  },
+  "output0": {
+    "item": "degeneracycraft:purified_graphite_arc_electrode"
+  }
+}

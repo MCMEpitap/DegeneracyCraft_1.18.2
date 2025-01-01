@@ -1,5 +1,5 @@
 {
-  "type": "degeneracycraft:basic_technology_machine_element_processor_recipe",
+  "type": "degeneracycraft:basic_performance_electric_arc_furnace_recipe",
   "energy": 5000.0,
   "time": 30.0,
   "input0": {

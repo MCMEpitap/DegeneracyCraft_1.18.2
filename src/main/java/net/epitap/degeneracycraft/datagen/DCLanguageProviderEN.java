@@ -852,6 +852,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("jei." + "degeneracycraft_basic_technology_machine_part_processor", "Basic Technology Machine Part Processor Recipe");
 
         add("jei." + "degeneracycraft_basic_performance_electric_arc_furnace", "Basic Performance Electric Arc Furnace Recipe");
+        add("jei." + "degeneracycraft_basic_performance_forming_machine", "Basic Performance Forming Machine Recipe");
 
 
         add("itemGroup." + "degeneracycraft_material", "Degeneracy Craft Material");

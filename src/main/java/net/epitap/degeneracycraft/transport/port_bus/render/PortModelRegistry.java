@@ -14,8 +14,7 @@ public class PortModelRegistry {
     public enum DCPortModel {
         BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK_EXTRACT("block/basic_performance_electrolyser_bus_block_extract"),
         BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK_EXTRACT("block/basic_performance_electrolyser_port_block_extract"),
-        BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK_EXTRACT("block/basic_performance_electric_arc_furnace_bus_block_extract"),
-        BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK_EXTRACT("block/basic_performance_electric_arc_furnace_port_block_extract"),
+
         BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK_EXTRACT("block/basic_power_steam_generator_bus_block_extract"),
         BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK_EXTRACT("block/basic_power_steam_generator_port_block_extract"),
         BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK_EXTRACT("block/basic_technology_machine_manufacturer_bus_block_extract"),
@@ -27,7 +26,12 @@ public class PortModelRegistry {
         BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK_EXTRACT("block/basic_technology_machine_element_processor_bus_block_extract"),
         BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK_EXTRACT("block/basic_technology_machine_element_processor_port_block_extract"),
         BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BUS_BLOCK_EXTRACT("block/basic_technology_machine_part_processor_bus_block_extract"),
-        BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_BLOCK_EXTRACT("block/basic_technology_machine_part_processor_port_block_extract");
+        BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_BLOCK_EXTRACT("block/basic_technology_machine_part_processor_port_block_extract"),
+
+        BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK_EXTRACT("block/basic_performance_electric_arc_furnace_bus_block_extract"),
+        BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK_EXTRACT("block/basic_performance_electric_arc_furnace_port_block_extract"),
+        BASIC_PERFORMANCE_FORMING_MACHINE_BUS_BLOCK_EXTRACT("block/basic_performance_forming_machine_bus_block_extract"),
+        BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK_EXTRACT("block/basic_performance_forming_machine_port_block_extract");
 
         private final ResourceLocation resource;
         private final TransportModelValue<BakedModel> cachedModel;

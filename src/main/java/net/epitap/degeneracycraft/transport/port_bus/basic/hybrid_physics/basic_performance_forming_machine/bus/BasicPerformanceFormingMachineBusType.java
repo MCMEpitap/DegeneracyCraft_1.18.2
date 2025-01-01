@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.port_bus.basic.hybrid_physics.basic_performance_electric_arc_furnace.bus;
+package net.epitap.degeneracycraft.transport.port_bus.basic.hybrid_physics.basic_performance_forming_machine.bus;
 
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeIEnergyUtils;
@@ -17,14 +17,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class BasicPerformanceElectricArcFurnaceBusType extends PortTypeBase<Void> {
-    public static final BasicPerformanceElectricArcFurnaceBusType INSTANCE = new BasicPerformanceElectricArcFurnaceBusType();
+public class BasicPerformanceFormingMachineBusType extends PortTypeBase<Void> {
+    public static final BasicPerformanceFormingMachineBusType INSTANCE = new BasicPerformanceFormingMachineBusType();
 
-    public BasicPerformanceElectricArcFurnaceBusType() {
+    public BasicPerformanceFormingMachineBusType() {
     }
 
     public String getKey() {
-        return "basic_performance_electric_arc_furnace_bus_block";
+        return "basic_performance_forming_machine_bus_block";
     }
 
     public boolean canImport(BlockEntity blockEntity, Direction direction) {
@@ -32,7 +32,7 @@ public class BasicPerformanceElectricArcFurnaceBusType extends PortTypeBase<Void
     }
 
     public String getTranslationKey() {
-        return "basic_performance_electric_arc_furnace_bus_block";
+        return "basic_performance_forming_machine_bus_block";
     }
 
     public ItemStack getIcon() {

@@ -38,21 +38,16 @@ import java.util.Map;
 import java.util.Optional;
 
 public class BasicPerformanceFormingMachineBlockEntity extends BlockEntity implements MenuProvider {
-    public float BP_EA_FURNACE_CAPACITY = 50000F;
-    public float BP_EA_FURNACE_TRANSFER = 32F;
-    public float BP_EA_FURNACE_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
-    public float BP_EA_FURNACE_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
-    public float BP_EA_FURNACE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
-    public float BP_EA_FURNACE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
+    public float BP_F_MACHINE_CAPACITY = 50000F;
+    public float BP_F_MACHINE_TRANSFER = 32F;
+    public float BP_F_MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
+    public float BP_F_MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
+    public float BP_F_MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
+    public float BP_F_MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
     public final ContainerData data;
     public int counter;
     public int getProgressPercent;
     private int consumeCounter;
-    public boolean formed0;
-    public boolean formed1;
-    public boolean formed2;
-    public boolean formed3;
-    public boolean powered0_1;
     public boolean isFormed;
     public boolean isPowered0;
     public final ItemStackHandler itemHandler = new ItemStackHandler(5) {
@@ -73,7 +68,7 @@ public class BasicPerformanceFormingMachineBlockEntity extends BlockEntity imple
         }
     };
 
-    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BP_EA_FURNACE_CAPACITY, BP_EA_FURNACE_TRANSFER) {
+    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BP_F_MACHINE_CAPACITY, BP_F_MACHINE_TRANSFER) {
         @Override
         public void onEnergyChanged() {
             setChanged();
@@ -242,12 +237,12 @@ public class BasicPerformanceFormingMachineBlockEntity extends BlockEntity imple
             }
 
             if (blockEntity.isPowered0) {
-                blockEntity.counter += blockEntity.BP_EA_FURNACE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BP_EA_FURNACE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
+                blockEntity.counter += blockEntity.BP_F_MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BP_F_MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else if (blockEntity.isFormed) {
-                blockEntity.counter += blockEntity.BP_EA_FURNACE_MANUFACTURING_SPEED_MODIFIER_FORMED;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BP_EA_FURNACE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
+                blockEntity.counter += blockEntity.BP_F_MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BP_F_MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else {
                 blockEntity.counter++;

@@ -9,6 +9,7 @@ import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_techno
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.test.BasicPowerSteamGeneratorMultiblockStructure;
@@ -34,10 +35,6 @@ public class DCRecipeTypes {
     public static final RegistryObject<RecipeSerializer<BasicPerformanceElectrolyserRecipe>> BASIC_PERFORMANCE_ELECTROLYSER_SERIALIZER =
             SERIALIZERS.register("basic_performance_electrolyser_recipe", () -> BasicPerformanceElectrolyserRecipe.Serializer.INSTANCE);
 
-
-    public static final RegistryObject<RecipeSerializer<BasicPerformanceElectricArcFurnaceRecipe>> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_SERIALIZER =
-            SERIALIZERS.register("basic_performance_electric_arc_furnace_recipe", () -> BasicPerformanceElectricArcFurnaceRecipe.Serializer.INSTANCE);
-
     public static final RegistryObject<RecipeSerializer<BasicPowerSteamGeneratorRecipe>> BASIC_POWER_STEAM_GENERATOR_SERIALIZER =
             SERIALIZERS.register("basic_power_steam_generator_recipe", () -> BasicPowerSteamGeneratorRecipe.Serializer.INSTANCE);
 
@@ -53,6 +50,14 @@ public class DCRecipeTypes {
             SERIALIZERS.register("basic_technology_machine_element_processor_recipe", () -> BasicTechnologyMachineElementProcessorRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<BasicTechnologyMachinePartProcessorRecipe>> BASIC_MACHINE_PART_PROCESSOR_SERIALIZER =
             SERIALIZERS.register("basic_technology_machine_part_processor_recipe", () -> BasicTechnologyMachinePartProcessorRecipe.Serializer.INSTANCE);
+
+
+    public static final RegistryObject<RecipeSerializer<BasicPerformanceElectricArcFurnaceRecipe>> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_SERIALIZER =
+            SERIALIZERS.register("basic_performance_electric_arc_furnace_recipe", () -> BasicPerformanceElectricArcFurnaceRecipe.Serializer.INSTANCE);
+
+
+    public static final RegistryObject<RecipeSerializer<BasicPerformanceFormingMachineRecipe>> BASIC_PERFORMANCE_FORMING_MACHINE_SERIALIZER =
+            SERIALIZERS.register("basic_performance_forming_machine_recipe", () -> BasicPerformanceFormingMachineRecipe.Serializer.INSTANCE);
 
     public static final RegistryObject<RecipeSerializer<BasicPowerSteamGeneratorMultiblockStructure>> BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_MULTIBLOCK_STRUCTURE_SERIALIZER =
             SERIALIZERS.register("basic_power_thermal_generator_multiblock_structure", () -> BasicPowerSteamGeneratorMultiblockStructure.Serializer.INSTANCE);

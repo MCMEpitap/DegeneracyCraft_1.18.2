@@ -684,19 +684,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "Basic Strength Chemistry Multiblock Material Storage Block");
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "Basic Strength Chemistry Multiblock Material Storage Block (Hologram)");
 
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Base Frame Block");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Base Frame Block (Hologram)");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Machine Frame Block");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Machine Frame Block (Hologram)");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Structure Frame Block");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Structure Frame Block (Hologram)");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Structure Glass Block");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Structure Glass Block (Hologram)");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Energy Storage Block");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Energy Storage Block (Hologram)");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Material Storage Block");
-        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Material Storage Block (Hologram)");
-
         add(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Component Manufacture Machine");
         add(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Part Manufacture Machine");
 
@@ -714,6 +701,20 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "Basic Strength Engineering Multiblock Energy Storage Block (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "Basic Strength Engineering Multiblock Material Storage Block");
         add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "Basic Strength Engineering Multiblock Material Storage Block (Hologram)");
+
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Base Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Base Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Machine Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Machine Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Structure Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Structure Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Structure Glass Block");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Structure Glass Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Energy Storage Block");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Energy Storage Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Material Storage Block");
+        add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Material Storage Block (Hologram)");
+
 //        add(DCBlocks.LOW_STERNGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),"Low Strength Engineering Multiblock Machine Frame Block");
         add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get(), "Low Strength Engineering Multiblock Structure Frame Block");
         add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get(), "Low Strength Engineering Multiblock Structure Glass Block");
@@ -732,18 +733,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK.get(), "Basic Performance Electrolyser Bus (Hologram)");
         add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get(), "Basic Performance Electrolyser Port");
         add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(), "Basic Performance Electrolyser Port (Hologram)");
-
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get(), "Basic Performance Electric Arc Furnace");
-        add("tooltip." + "degeneracycraft." + "basic_performance_electric_arc_furnace_block",
-                "Basic Electric Arc Furnace. Machines that use electrical discharges to react at high temperatures.");
-        add(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_BLOCK.get(), "Basic Flow Cooling System");
-        add("tooltip." + "degeneracycraft.ability" + "basic_performance_electric_arc_furnace_block",
-                "For Basic Performance Electric Arc Furnace");
-        add(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK.get(), "Basic Flow Cooling System (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK.get(), "Basic Performance Electric Arc Furnace Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_HOLO_BLOCK.get(), "Basic Performance Electric Arc Furnace Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK.get(), "Basic Performance Electric Arc Furnace Port");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK.get(), "Basic Performance Electric Arc Furnace Port (Hologram)");
 
         add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get(), "Basic Power Steam Generator");
         add("tooltip." + "degeneracycraft." + "basic_power_steam_generator_block",
@@ -821,6 +810,29 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add(DCBlocks.PULVERIZER_BLOCK.get(), "Pulverizer");
 
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get(), "Basic Performance Electric Arc Furnace");
+        add("tooltip." + "degeneracycraft." + "basic_performance_electric_arc_furnace_block",
+                "Basic Electric Arc Furnace. Machines that use electrical discharges to react at high temperatures.");
+        add(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_BLOCK.get(), "Basic Flow Cooling System");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_electric_arc_furnace_block",
+                "For Basic Performance Electric Arc Furnace");
+        add(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK.get(), "Basic Flow Cooling System (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK.get(), "Basic Performance Electric Arc Furnace Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_HOLO_BLOCK.get(), "Basic Performance Electric Arc Furnace Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK.get(), "Basic Performance Electric Arc Furnace Port");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK.get(), "Basic Performance Electric Arc Furnace Port (Hologram)");
+
+        add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK.get(), "Basic Performance Forming Machine");
+        add("tooltip." + "degeneracycraft." + "basic_performance_forming_machine_block",
+                "Basic Performance Forming Machine. Pressure induced shape change of matter.");
+        add(DCBlocks.BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_BLOCK.get(), "Basic Precision Extrusion Assist System");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_forming_machine_block",
+                "Basic Performance Forming Machine");
+        add(DCBlocks.BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_BLOCK.get(), "Basic Precision Extrusion Assist System (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_BLOCK.get(), "Basic Performance Forming Machine Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_HOLO_BLOCK.get(), "Basic Performance Forming Machine Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK.get(), "Basic Performance Forming Machine Port");
+        add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_HOLO_BLOCK.get(), "Basic Performance Forming Machine Port (Hologram)");
 
         add(DCUniqueBlocks.SIMPLE_TELESCOPE_RIGHT_PILLAR.get(), "Simple Telescope Right Pillar");
         add(DCUniqueBlocks.SIMPLE_TELESCOPE_LEFT_PILLAR.get(), "Simple Telescope Left Pillar");

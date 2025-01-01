@@ -903,6 +903,21 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_electric_arc_furnace_port_block"));
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_electric_arc_furnace_port_holo_block"));
+
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_forming_machine_block"));
+        withExistingParent(DCBlocks.BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_BLOCK.getId().getPath(),
+                modLoc("block/basic_precision_extrusion_assist_system_block"));
+        withExistingParent(DCBlocks.BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_precision_extrusion_assist_system_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_forming_machine_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_forming_machine_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_forming_machine_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_forming_machine_port_holo_block"));
 //        withExistingParent(DCBlocks.OVERWORLD_CASSITERITE_ORE.getId().getPath(),
 //                modLoc("block/overworld_cassiterite_ore"));
 //        withExistingParent(DCBlocks.DEEPSLATE_CASSITERITE_ORE.getId().getPath(),

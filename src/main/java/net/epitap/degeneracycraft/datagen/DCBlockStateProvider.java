@@ -140,6 +140,13 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicPerformanceElectricArcFurnacePort();
         registerBasicPerformanceElectricArcFurnacePortHolo();
 
+        registerBasicPerformanceFormingMachine();
+        registerBasicPrecisionExtrusionAssistSystem();
+        registerBasicPrecisionExtrusionAssistSystemHolo();
+        registerBasicPerformanceFormingMachineBus();
+        registerBasicPerformanceFormingMachineBusHolo();
+        registerBasicPerformanceFormingMachinePort();
+        registerBasicPerformanceFormingMachinePortHolo();
 
     }
 
@@ -1459,6 +1466,98 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_holo_block"));
         model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceFormingMachine() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_forming_machine_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/basic_performance_forming_machine_down"));
+        model.texture("up", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/basic_performance_forming_machine_up"));
+        model.texture("north", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/basic_performance_forming_machine_front"));
+        model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/basic_performance_forming_machine_side"));
+        model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/basic_performance_forming_machine_side"));
+        model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/basic_performance_forming_machine_side"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPrecisionExtrusionAssistSystem() {
+        BlockModelBuilder model = models().getBuilder("block/basic_precision_extrusion_assist_system_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_block"));
+        model.texture("up", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_block"));
+        model.texture("north", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_block"));
+        model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_block"));
+        model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_block"));
+        model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_block"));
+        orientedBlock(DCBlocks.BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPrecisionExtrusionAssistSystemHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_precision_extrusion_assist_system_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceFormingMachineBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_forming_machine_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceFormingMachineBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_forming_machine_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+
+    private void registerBasicPerformanceFormingMachinePort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_forming_machine_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_block"));
+        model.texture("up", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_block"));
+        model.texture("north", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_block"));
+        model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_block"));
+        model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_block"));
+        model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceFormingMachinePortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_forming_machine_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
 

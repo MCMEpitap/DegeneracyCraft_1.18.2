@@ -10,6 +10,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technol
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineBlockEntity;
@@ -154,6 +155,16 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicTechnologyMachinePartProcessorPortBlockEntity>> BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_technology_machine_part_processor_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicTechnologyMachinePartProcessorPortBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicTechnologyMultiblockEquipmentFabricatorBlockEntity>> BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_multiblock_equipment_fabricator_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologyMultiblockEquipmentFabricatorBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicTechnologyMultiblockEquipmentFabricatorBusBlockEntity>> BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_multiblock_equipment_fabricator_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologyMultiblockEquipmentFabricatorBusBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicTechnologyMultiblockEquipmentFabricatorPortBlockEntity>> BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_multiblock_equipment_fabricator_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologyMultiblockEquipmentFabricatorPortBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_BLOCK.get()).build(null));
+
 
     public static final RegistryObject<BlockEntityType<BasicPhaseBoltManufactureMachineBlockEntity>> BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_phase_bolt_manufacture_machine_block_entity", () ->

@@ -9,6 +9,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technol
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineMenu;
@@ -70,6 +71,8 @@ public class DCMenuTypes {
             registerMenuType(BasicTechnologyMachineElementProcessorMenu::new, "basic_technology_machine_element_processor_menu");
     public static final RegistryObject<MenuType<BasicTechnologyMachinePartProcessorMenu>> BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_MACHINE_MENU =
             registerMenuType(BasicTechnologyMachinePartProcessorMenu::new, "basic_technology_machine_part_processor_menu");
+    public static final RegistryObject<MenuType<BasicTechnologyMultiblockEquipmentFabricatorMenu>> BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_MENU =
+            registerMenuType(BasicTechnologyMultiblockEquipmentFabricatorMenu::new, "basic_technology_multiblock_equipment_fabricator_menu");
     public static final RegistryObject<MenuType<BasicPhaseBoltManufactureMachineMenu>> BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_MENU =
             registerMenuType(BasicPhaseBoltManufactureMachineMenu::new, "basic_phase_bolt_manufacture_menu");
 

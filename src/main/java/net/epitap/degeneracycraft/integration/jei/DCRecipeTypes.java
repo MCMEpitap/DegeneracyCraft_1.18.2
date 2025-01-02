@@ -7,6 +7,7 @@ import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_techno
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipe;
@@ -45,11 +46,12 @@ public class DCRecipeTypes {
             SERIALIZERS.register("basic_technology_universal_assembler_recipe", () -> BasicTechnologyUniversalAssemblerRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<BasicTechnologyCircuitBuilderRecipe>> BASIC_PRECISION_CIRCUIT_BUILDER_SERIALIZER =
             SERIALIZERS.register("basic_technology_circuit_builder_recipe", () -> BasicTechnologyCircuitBuilderRecipe.Serializer.INSTANCE);
-
     public static final RegistryObject<RecipeSerializer<BasicTechnologyMachineElementProcessorRecipe>> BASIC_MACHINE_ELEMENT_PROCESSOR_SERIALIZER =
             SERIALIZERS.register("basic_technology_machine_element_processor_recipe", () -> BasicTechnologyMachineElementProcessorRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<BasicTechnologyMachinePartProcessorRecipe>> BASIC_MACHINE_PART_PROCESSOR_SERIALIZER =
             SERIALIZERS.register("basic_technology_machine_part_processor_recipe", () -> BasicTechnologyMachinePartProcessorRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<BasicTechnologyMultiblockEquipmentFabricatorRecipe>> BASIC_MULTIBLOCK_EQUIPMENT_FABRICATOR_SERIALIZER =
+            SERIALIZERS.register("basic_technology_multiblock_equipment_fabricator_recipe", () -> BasicTechnologyMultiblockEquipmentFabricatorRecipe.Serializer.INSTANCE);
 
 
     public static final RegistryObject<RecipeSerializer<BasicPerformanceElectricArcFurnaceRecipe>> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_SERIALIZER =

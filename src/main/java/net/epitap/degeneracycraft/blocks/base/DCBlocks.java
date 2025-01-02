@@ -10,6 +10,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technol
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorBlock;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineBlock;
@@ -367,6 +368,32 @@ public class DCBlocks {
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_BLOCK = registerBlock("basic_technology_machine_part_processor_port_block", () ->
             new BasicTechnologyMachinePartProcessorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_technology_machine_part_processor_port_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+
+    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BLOCK = registerTooltipBasicMachineBlock("basic_technology_multiblock_equipment_fabricator_block", () ->
+                    new BasicTechnologyMultiblockEquipmentFabricatorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "Lv0:3×3×3",
+            "Lv1:3×3×3",
+            "Base:Speed ×1.00,Energy Usage ×1.00",
+            "Lv0:Speed ×2.00,Energy Usage ×1.50",
+            "Lv1:Speed ×3.00,Energy Usage ×2.00",
+            "basic_technology_multiblock_equipment_fabricator_block", "engineering", "basic");
+    public static final RegistryObject<Block> BASIC_EFFICIENCY_EQUIPMENT_PRODUCTION_AUXILIARY_SYSTEM_BLOCK = registerTooltipMultiblockAbilityBlock("basic_efficiency_equipment_production_auxiliary_system_block", () ->
+                    new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "basic_technology_multiblock_equipment_fabricator_block",
+            "engineering",
+            "basic");
+
+    public static final RegistryObject<Block> BASIC_EFFICIENCY_EQUIPMENT_PRODUCTION_AUXILIARY_SYSTEM_HOLO_BLOCK = registerHoloBlock("basic_efficiency_equipment_production_auxiliary_system_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+
+    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_BLOCK = registerBlock("basic_technology_multiblock_equipment_fabricator_bus_block", () ->
+            new BasicTechnologyMachinePartProcessorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_technology_multiblock_equipment_fabricator_bus_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_BLOCK = registerBlock("basic_technology_multiblock_equipment_fabricator_port_block", () ->
+            new BasicTechnologyMachinePartProcessorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_technology_multiblock_equipment_fabricator_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
 

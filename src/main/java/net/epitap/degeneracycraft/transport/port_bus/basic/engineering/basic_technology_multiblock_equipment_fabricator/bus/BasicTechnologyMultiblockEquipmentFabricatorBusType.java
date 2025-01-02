@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_machine_part_processor.bus;
+package net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_multiblock_equipment_fabricator.bus;
 
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeIEnergyUtils;
@@ -17,14 +17,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class BasicTechnologyMachinePartProcessorBusType extends PortTypeBase<Void> {
-    public static final BasicTechnologyMachinePartProcessorBusType INSTANCE = new BasicTechnologyMachinePartProcessorBusType();
+public class BasicTechnologyMultiblockEquipmentFabricatorBusType extends PortTypeBase<Void> {
+    public static final BasicTechnologyMultiblockEquipmentFabricatorBusType INSTANCE = new BasicTechnologyMultiblockEquipmentFabricatorBusType();
 
-    public BasicTechnologyMachinePartProcessorBusType() {
+    public BasicTechnologyMultiblockEquipmentFabricatorBusType() {
     }
 
     public String getKey() {
-        return "basic_technology_machine_part_processor_bus_block";
+        return "basic_technology_multiblock_equipment_fabricator_bus_block";
     }
 
     public boolean canImport(BlockEntity blockEntity, Direction direction) {
@@ -32,7 +32,7 @@ public class BasicTechnologyMachinePartProcessorBusType extends PortTypeBase<Voi
     }
 
     public String getTranslationKey() {
-        return "basic_technology_machine_part_processor_bus_block";
+        return "basic_technology_multiblock_equipment_fabricator_bus_block";
     }
 
     public ItemStack getIcon() {

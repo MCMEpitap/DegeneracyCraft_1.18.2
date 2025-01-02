@@ -27,6 +27,8 @@ public class PortModelRegistry {
         BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK_EXTRACT("block/basic_technology_machine_element_processor_port_block_extract"),
         BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BUS_BLOCK_EXTRACT("block/basic_technology_machine_part_processor_bus_block_extract"),
         BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_BLOCK_EXTRACT("block/basic_technology_machine_part_processor_port_block_extract"),
+        BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_BLOCK_EXTRACT("block/basic_technology_multiblock_equipment_fabricator_bus_block_extract"),
+        BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_BLOCK_EXTRACT("block/basic_technology_multiblock_equipment_fabricator_port_block_extract"),
 
         BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK_EXTRACT("block/basic_performance_electric_arc_furnace_bus_block_extract"),
         BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK_EXTRACT("block/basic_performance_electric_arc_furnace_port_block_extract"),

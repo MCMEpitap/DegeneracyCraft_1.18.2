@@ -38,7 +38,7 @@ import java.util.Map;
 import java.util.Optional;
 
 public class BasicPerformanceFormingMachineBlockEntity extends BlockEntity implements MenuProvider {
-    public float BP_F_MACHINE_CAPACITY = 50000F;
+    public float BP_F_MACHINE_CAPACITY = 30000F;
     public float BP_F_MACHINE_TRANSFER = 32F;
     public float BP_F_MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
     public float BP_F_MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
@@ -97,7 +97,7 @@ public class BasicPerformanceFormingMachineBlockEntity extends BlockEntity imple
                             itemHandler.isItemValid(0, stack))));
 
     public BasicPerformanceFormingMachineBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+        super(DCBlockEntities.BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {

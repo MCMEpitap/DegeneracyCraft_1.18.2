@@ -4,8 +4,6 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.render.EnergyInfoArea;
-import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorBlockEntity;
-import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorMenu;
 import net.epitap.degeneracycraft.util.MouseUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -18,13 +16,13 @@ import net.minecraft.world.entity.player.Inventory;
 import java.util.List;
 import java.util.Optional;
 
-public class BasicTechnologyMultiblockEquipmentFabricatorScreen extends AbstractContainerScreen<BasicTechnologyMachinePartProcessorMenu> {
+public class BasicTechnologyMultiblockEquipmentFabricatorScreen extends AbstractContainerScreen<BasicTechnologyMultiblockEquipmentFabricatorMenu> {
     private static final ResourceLocation TEXTURE =
             new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_technology_multiblock_equipment_fabricator/basic_technology_multiblock_equipment_fabricator_gui.png");
     private EnergyInfoArea energyInfoArea;
 
 
-    public BasicTechnologyMultiblockEquipmentFabricatorScreen(BasicTechnologyMachinePartProcessorMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public BasicTechnologyMultiblockEquipmentFabricatorScreen(BasicTechnologyMultiblockEquipmentFabricatorMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
         this.imageWidth = 176;
         this.imageHeight = 166;
@@ -61,7 +59,7 @@ public class BasicTechnologyMultiblockEquipmentFabricatorScreen extends Abstract
                 80, 11, 0xFFFFFF);
 
 
-        if (BasicTechnologyMachinePartProcessorBlockEntity.isHaltDevice(menu.blockEntity)) {
+        if (BasicTechnologyMultiblockEquipmentFabricatorBlockEntity.isHaltDevice(menu.blockEntity)) {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".halt"),
                     133, 66, 0xFFFFFF);
         }
@@ -151,7 +149,7 @@ public class BasicTechnologyMultiblockEquipmentFabricatorScreen extends Abstract
     }
 
     private void renderHaltTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
-        if (BasicTechnologyMachinePartProcessorBlockEntity.isHaltDevice(menu.blockEntity)
+        if (BasicTechnologyMultiblockEquipmentFabricatorBlockEntity.isHaltDevice(menu.blockEntity)
                 && isMouseAboveArea(pMouseX, pMouseY, x, y, 117, 64, 40, 10))
             renderTooltip(pPoseStack, this.HaltTooltips(),
                     Optional.empty(), pMouseX - x, pMouseY - y);

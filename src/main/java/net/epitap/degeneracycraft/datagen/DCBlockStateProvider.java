@@ -119,6 +119,15 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicTechnologyMachinePartProcessorPort();
         registerBasicTechnologyMachinePartProcessorPortHolo();
 
+        registerBasicTechnologyMultiblockEquipmentFabricator();
+        registerBasicEfficiencyEquipmentProductionAuxiliarySystem();
+        registerBasicEfficiencyEquipmentProductionAuxiliarySystemHolo();
+        registerBasicTechnologyMultiblockEquipmentFabricatorBus();
+        registerBasicTechnologyMultiblockEquipmentFabricatorBusHolo();
+        registerBasicTechnologyMultiblockEquipmentFabricatorPort();
+        registerBasicTechnologyMultiblockEquipmentFabricatorPortHolo();
+
+
         registerBasicStrengthHybridPhysicsMultiblockBaseFrame();
         registerBasicStrengthHybridPhysicsMultiblockBaseFrameHolo();
         registerBasicStrengthHybridPhysicsMultiblockMachineFrame();
@@ -1217,6 +1226,98 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/port/basic_technology_machine_part_processor_port_holo_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/port/basic_technology_machine_part_processor_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyMultiblockEquipmentFabricator() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_multiblock_equipment_fabricator_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/basic_technology_multiblock_equipment_fabricator_down"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/basic_technology_multiblock_equipment_fabricator_up"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/basic_technology_multiblock_equipment_fabricator_front"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/basic_technology_multiblock_equipment_fabricator_side"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/basic_technology_multiblock_equipment_fabricator_side"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/basic_technology_multiblock_equipment_fabricator_side"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicEfficiencyEquipmentProductionAuxiliarySystem() {
+        BlockModelBuilder model = models().getBuilder("block/basic_efficiency_equipment_production_auxiliary_system_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_block"));
+        model.texture("up", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_block"));
+        model.texture("north", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_block"));
+        model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_block"));
+        model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_block"));
+        model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_EQUIPMENT_PRODUCTION_AUXILIARY_SYSTEM_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicEfficiencyEquipmentProductionAuxiliarySystemHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_efficiency_equipment_production_auxiliary_system_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_holo_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_EQUIPMENT_PRODUCTION_AUXILIARY_SYSTEM_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyMultiblockEquipmentFabricatorBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_multiblock_equipment_fabricator_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyMultiblockEquipmentFabricatorBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_multiblock_equipment_fabricator_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+
+    private void registerBasicTechnologyMultiblockEquipmentFabricatorPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_multiblock_equipment_fabricator_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyMultiblockEquipmentFabricatorPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_multiblock_equipment_fabricator_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
 

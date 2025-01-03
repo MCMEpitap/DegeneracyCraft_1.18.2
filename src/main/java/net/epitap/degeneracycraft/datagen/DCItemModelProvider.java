@@ -863,6 +863,21 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_machine_part_processor_port_holo_block"));
 
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_multiblock_equipment_fabricator_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_EQUIPMENT_PRODUCTION_AUXILIARY_SYSTEM_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_equipment_production_auxiliary_system_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_EQUIPMENT_PRODUCTION_AUXILIARY_SYSTEM_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_equipment_production_auxiliary_system_holo_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_multiblock_equipment_fabricator_bus_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_multiblock_equipment_fabricator_bus_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_multiblock_equipment_fabricator_port_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_multiblock_equipment_fabricator_port_holo_block"));
+
 
         withExistingParent(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_hybrid_physics_multiblock_base_frame_block"));

@@ -807,6 +807,18 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_BLOCK.get(), "Basic Technology Machine Part Processor Port");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_HOLO_BLOCK.get(), "Basic Technology Machine Part Processor Port (Hologram)");
 
+        add(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BLOCK.get(), "Basic Technology Multiblock Equipment Fabricator");
+        add("tooltip." + "degeneracycraft." + "basic_technology_multiblock_equipment_fabricator_block",
+                "Basic multi-block equipment fabrication machine. Mainly used for fabrication of equipment blocks.");
+        add(DCBlocks.BASIC_EFFICIENCY_EQUIPMENT_PRODUCTION_AUXILIARY_SYSTEM_BLOCK.get(), "Basic Efficiency Equipment Production Auxiliary System");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_multiblock_equipment_fabricator_block",
+                "For Basic Technology Multiblock Equipment Fabricator");
+        add(DCBlocks.BASIC_EFFICIENCY_EQUIPMENT_PRODUCTION_AUXILIARY_SYSTEM_HOLO_BLOCK.get(), "Basic Efficiency Equipment Production Auxiliary System (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_BLOCK.get(), "Basic Technology Multiblock Equipment Fabricator Bus");
+        add(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_HOLO_BLOCK.get(), "Basic Technology Multiblock Equipment Fabricator Bus (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_BLOCK.get(), "Basic Technology Multiblock Equipment Fabricator Port");
+        add(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_HOLO_BLOCK.get(), "Basic Technology Multiblock Equipment Fabricator Port (Hologram)");
+
 
         add(DCBlocks.PULVERIZER_BLOCK.get(), "Pulverizer");
 

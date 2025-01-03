@@ -815,6 +815,18 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_BLOCK.get(), "基本技術機械部品加工機ポート");
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_HOLO_BLOCK.get(), "基本技術機械部品加工機ポート (ホログラム)");
 
+        add(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BLOCK.get(), "基本技術マルチブロック設備製作機");
+        add("tooltip." + "degeneracycraft." + "basic_technology_multiblock_equipment_fabricator_block",
+                "基本的なマルチブロック設備製作機. 設備ブロックの製作がメイン.");
+        add(DCBlocks.BASIC_EFFICIENCY_EQUIPMENT_PRODUCTION_AUXILIARY_SYSTEM_BLOCK.get(), "基本効率設備生産補助システム");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_multiblock_equipment_fabricator_block",
+                "基本技術マルチブロック設備製作機用");
+        add(DCBlocks.BASIC_EFFICIENCY_EQUIPMENT_PRODUCTION_AUXILIARY_SYSTEM_HOLO_BLOCK.get(), "基本効率設備生産補助システム (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_BLOCK.get(), "基本技術マルチブロック設備製作機バス");
+        add(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_HOLO_BLOCK.get(), "基本技術マルチブロック設備製作機バス (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_BLOCK.get(), "基本技術マルチブロック設備製作機ポート");
+        add(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_HOLO_BLOCK.get(), "基本技術マルチブロック設備製作機ポート (ホログラム)");
+
 
         add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get(), "基本性能電気アーク炉");
         add("tooltip." + "degeneracycraft." + "basic_performance_electric_arc_furnace_block",

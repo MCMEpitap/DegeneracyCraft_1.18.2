@@ -45,8 +45,9 @@ public class BasicTechnologyMultiblockEquipmentFabricatorMenu extends AbstractCo
                 }
             }
             this.addSlot(new SlotItemHandler(handler, 9, 116, 25));
-            this.addSlot(new SlotItemHandler(handler, 10, 134, 25));
-            this.addSlot(new SlotItemHandler(handler, 11, 71, 59));
+            this.addSlot(new SlotItemHandler(handler, 10, 71, 59));
+            this.addSlot(new SlotItemHandler(handler, 11, 98, 62));
+
         });
         addDataSlots(data);
     }

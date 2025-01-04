@@ -1,0 +1,35 @@
+{
+  "type": "degeneracycraft:basic_technology_multiblock_equipment_fabricator_recipe",
+  "energy": 1000.0,
+  "time": 10.0,
+  "input0": {
+    "item": "minecraft:redstone"
+  },
+  "input1": {
+    "item": "degeneracycraft:copper_wire"
+  },
+  "input2": {
+    "item": "minecraft:redstone"
+  },
+  "input3": {
+    "item": "degeneracycraft:iron_wire"
+  },
+  "input4": {
+    "item": "degeneracycraft:iron_plate"
+  },
+  "input5": {
+    "item": "degeneracycraft:iron_wire"
+  },
+  "input6": {
+    "item": "minecraft:redstone"
+  },
+  "input7": {
+    "item": "degeneracycraft:copper_wire"
+  },
+  "input8": {
+    "item": "minecraft:redstone"
+  },
+  "output0": {
+    "item": "degeneracycraft:basic_circuit"
+  }
+}

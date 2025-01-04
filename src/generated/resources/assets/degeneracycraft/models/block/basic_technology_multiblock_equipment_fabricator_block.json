@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/basic_technology_multiblock_equipment_fabricator_down",
+    "up": "degeneracycraft:block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/basic_technology_multiblock_equipment_fabricator_up",
+    "north": "degeneracycraft:block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/basic_technology_multiblock_equipment_fabricator_front",
+    "south": "degeneracycraft:block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/basic_technology_multiblock_equipment_fabricator_side",
+    "east": "degeneracycraft:block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/basic_technology_multiblock_equipment_fabricator_side",
+    "west": "degeneracycraft:block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/basic_technology_multiblock_equipment_fabricator_side"
+  }
+}

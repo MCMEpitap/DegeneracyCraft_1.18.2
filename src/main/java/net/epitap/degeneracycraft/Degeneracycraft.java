@@ -87,17 +87,7 @@ public class Degeneracycraft {
         eventBus.addListener(PipeModelRegistry::onModelBake);
         eventBus.addListener(PortModelRegistry::onModelRegister);
         eventBus.addListener(PortModelRegistry::onModelBake);
-
-//        eventBus.addListener(this::onAddReloadListeners);
-
-//        MinecraftForge.EVENT_BUS.addListener(this::onServerStarting);
-
     }
-//    public static final MultiBlockStructureLoader STRUCTURE_LOADER = new MultiBlockStructureLoader("structures");
-//
-//    private void onServerStarting(ServerStartingEvent event) {
-//        STRUCTURE_LOADER.register();
-//    }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(DCMessages::register);

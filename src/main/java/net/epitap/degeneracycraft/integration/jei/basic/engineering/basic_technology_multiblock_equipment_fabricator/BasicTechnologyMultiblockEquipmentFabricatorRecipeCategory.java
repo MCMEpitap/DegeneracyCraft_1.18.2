@@ -42,7 +42,7 @@ public class BasicTechnologyMultiblockEquipmentFabricatorRecipeCategory implemen
 
     @Override
     public Component getTitle() {
-        return new TranslatableComponent("jei.degeneracycraft_basic_technology_machine_part_processor");
+        return new TranslatableComponent("jei.basic_technology_multiblock_equipment_fabricator_recipe");
     }
 
     @Override

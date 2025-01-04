@@ -33,6 +33,8 @@ import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_tec
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_machine_manufacturer.port.BasicTechnologyMachineManufacturerPortBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_machine_part_processor.bus.BasicTechnologyMachinePartProcessorBusBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_machine_part_processor.port.BasicTechnologyMachinePartProcessorPortBlockEntity;
+import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_multiblock_equipment_fabricator.bus.BasicTechnologyMultiblockEquipmentFabricatorBusBlockEntity;
+import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_multiblock_equipment_fabricator.port.BasicTechnologyMultiblockEquipmentFabricatorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_universal_assembler.bus.BasicTechnologyUniversalAssemblerBusBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_universal_assembler.port.BasicTechnologyUniversalAssemblerPortBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.hybrid_physics.basic_performance_electric_arc_furnace.bus.BasicPerformanceElectricArcFurnaceBusBlockEntity;
@@ -171,12 +173,12 @@ public class DCBlockEntities {
                     BlockEntityType.Builder.of(BasicPhaseBoltManufactureMachineBlockEntity::new, DCBlocks.BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_BLOCK.get()).build(null));
 
 
-    public static final RegistryObject<BlockEntityType<BasicStrengthHybridPhysicsMultiblockMaterialStorageBlockEntity>> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_strength_hybrid_physics_multiblock_energy_storage_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicStrengthHybridPhysicsMultiblockMaterialStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicStrengthHybridPhysicsMultiblockEnergyStorageBlockEntity>> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_strength_hybrid_physics_multiblock_material_storage_block_entity", () ->
                     BlockEntityType.Builder.of(BasicStrengthHybridPhysicsMultiblockEnergyStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthHybridPhysicsMultiblockMaterialStorageBlockEntity>> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_hybrid_physics_multiblock_energy_storage_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthHybridPhysicsMultiblockMaterialStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<BasicPerformanceElectricArcFurnaceBlockEntity>> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_electric_arc_furnace_block_entity", () ->

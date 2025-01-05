@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.storage.basic.chemistry.material_storage.basic_strength_chemistry_multiblock_material_storage;
+package net.epitap.degeneracycraft.blocks.storage.basic.astronomy.material_storage.basic_strength_astronomy_multiblock_material_storage;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.base.DCMenuTypes;
@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class BasicStrengthChemistryMultiblockMaterialStorageMenu extends AbstractContainerMenu {
+public class BasicStrengthAstronomyMultiblockMaterialStorageMenu extends AbstractContainerMenu {
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
     private static final int PLAYER_INVENTORY_COLUMN_COUNT = 9;
@@ -22,17 +22,17 @@ public class BasicStrengthChemistryMultiblockMaterialStorageMenu extends Abstrac
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
     private static final int TE_INVENTORY_SLOT_COUNT = 18;
 
-    public final BasicStrengthChemistryMultiblockMaterialStorageBlockEntity blockEntity;
+    public final BasicStrengthAstronomyMultiblockMaterialStorageBlockEntity blockEntity;
     public final Level level;
     public final ContainerData data;
 
-    public BasicStrengthChemistryMultiblockMaterialStorageMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
+    public BasicStrengthAstronomyMultiblockMaterialStorageMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
         this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(0));
     }
 
-    public BasicStrengthChemistryMultiblockMaterialStorageMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_MENU.get(), id);
-        blockEntity = (BasicStrengthChemistryMultiblockMaterialStorageBlockEntity) entity;
+    public BasicStrengthAstronomyMultiblockMaterialStorageMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
+        super(DCMenuTypes.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_MENU.get(), id);
+        blockEntity = (BasicStrengthAstronomyMultiblockMaterialStorageBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
         addPlayerInventory(inv);
@@ -53,7 +53,7 @@ public class BasicStrengthChemistryMultiblockMaterialStorageMenu extends Abstrac
         addDataSlots(data);
     }
 
-    public BasicStrengthChemistryMultiblockMaterialStorageBlockEntity getBlockEntity() {
+    public BasicStrengthAstronomyMultiblockMaterialStorageBlockEntity getBlockEntity() {
         return this.blockEntity;
     }
 
@@ -93,7 +93,7 @@ public class BasicStrengthChemistryMultiblockMaterialStorageMenu extends Abstrac
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get());
+                player, DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

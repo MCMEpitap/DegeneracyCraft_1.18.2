@@ -42,10 +42,45 @@ public class DCMenuTypes {
     public static final RegistryObject<MenuType<BasicPrecisionTelescopeMenu>> BASIC_PRECISION_TELESCOPE_MENU =
             registerMenuType(BasicPrecisionTelescopeMenu::new, "basic_precision_telescope_menu");
 
+    public static final RegistryObject<MenuType<BasicStrengthAstronomyMultiblockEnergyStorageMenu>> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_MENU =
+            registerMenuType(BasicStrengthAstronomyMultiblockEnergyStorageMenu::new, "basic_strength_astronomy_multiblock_energy_storage_menu");
+    public static final RegistryObject<MenuType<BasicStrengthAstronomyMultiblockMaterialStorageMenu>> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_MENU =
+            registerMenuType(BasicStrengthAstronomyMultiblockMaterialStorageMenu::new, "basic_strength_astronomy_multiblock_material_storage_menu");
+
+    public static final RegistryObject<MenuType<BasicStrengthBiologyMultiblockEnergyStorageMenu>> BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_STORAGE_MENU =
+            registerMenuType(BasicStrengthBiologyMultiblockEnergyStorageMenu::new, "basic_strength_biology_multiblock_energy_storage_menu");
+    public static final RegistryObject<MenuType<BasicStrengthBiologyMultiblockMaterialStorageMenu>> BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_MATERIAL_STORAGE_MENU =
+            registerMenuType(BasicStrengthBiologyMultiblockMaterialStorageMenu::new, "basic_strength_biology_multiblock_material_storage_menu");
+
     public static final RegistryObject<MenuType<BasicStrengthChemistryMultiblockEnergyStorageMenu>> BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_MENU =
             registerMenuType(BasicStrengthChemistryMultiblockEnergyStorageMenu::new, "basic_strength_chemistry_multiblock_energy_storage_menu");
     public static final RegistryObject<MenuType<BasicStrengthChemistryMultiblockMaterialStorageMenu>> BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_MENU =
             registerMenuType(BasicStrengthChemistryMultiblockMaterialStorageMenu::new, "basic_strength_chemistry_multiblock_material_storage_menu");
+
+    public static final RegistryObject<MenuType<BasicStrengthEngineeringMultiblockEnergyStorageMenu>> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_MENU =
+            registerMenuType(BasicStrengthEngineeringMultiblockEnergyStorageMenu::new, "basic_strength_multiblock_energy_storage_menu");
+    public static final RegistryObject<MenuType<BasicStrengthEngineeringMultiblockMaterialStorageMenu>> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_MENU =
+            registerMenuType(BasicStrengthEngineeringMultiblockMaterialStorageMenu::new, "basic_strength_multiblock_material_storage_menu");
+
+    public static final RegistryObject<MenuType<BasicStrengthFormalScienceMultiblockEnergyStorageMenu>> BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_MENU =
+            registerMenuType(BasicStrengthFormalScienceMultiblockEnergyStorageMenu::new, "basic_strength_formal_science_multiblock_energy_storage_menu");
+    public static final RegistryObject<MenuType<BasicStrengthFormalScienceMultiblockMaterialStorageMenu>> BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_MENU =
+            registerMenuType(BasicStrengthFormalScienceMultiblockMaterialStorageMenu::new, "basic_strength_formal_science_multiblock_material_storage_menu");
+
+    public static final RegistryObject<MenuType<BasicStrengthGeoScienceMultiblockEnergyStorageMenu>> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_MENU =
+            registerMenuType(BasicStrengthGeoScienceMultiblockEnergyStorageMenu::new, "basic_strength_geo_science_multiblock_energy_storage_menu");
+    public static final RegistryObject<MenuType<BasicStrengthGeoScienceMultiblockMaterialStorageMenu>> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_MENU =
+            registerMenuType(BasicStrengthGeoScienceMultiblockMaterialStorageMenu::new, "basic_strength_geo_science_multiblock_material_storage_menu");
+
+    public static final RegistryObject<MenuType<BasicStrengthHybridPhysicsMultiblockEnergyStorageMenu>> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_MENU =
+            registerMenuType(BasicStrengthHybridPhysicsMultiblockEnergyStorageMenu::new, "basic_strength_hybrid_physics_multiblock_energy_storage_menu");
+    public static final RegistryObject<MenuType<BasicStrengthHybridPhysicsMultiblockMaterialStorageMenu>> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_MENU =
+            registerMenuType(BasicStrengthHybridPhysicsMultiblockMaterialStorageMenu::new, "basic_strength_hybrid_physics_multiblock_material_storage_menu");
+
+    public static final RegistryObject<MenuType<BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageMenu>> BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_MENU =
+            registerMenuType(BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageMenu::new, "basic_strength_imitation_magic_engineering_multiblock_energy_storage_menu");
+    public static final RegistryObject<MenuType<BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageMenu>> BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_MENU =
+            registerMenuType(BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageMenu::new, "basic_strength_imitation_magic_engineering_multiblock_material_storage_menu");
 
     public static final RegistryObject<MenuType<BasicPerformanceElectrolyserMenu>> BASIC_PERFORMANCE_ELECTROLYSER_MENU =
             registerMenuType(BasicPerformanceElectrolyserMenu::new, "basic_performance_electrolyser_menu");
@@ -54,10 +89,7 @@ public class DCMenuTypes {
 
     public static final RegistryObject<MenuType<RedstonePoweredMachinePartManufactureMachineMenu>> REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_MENU =
             registerMenuType(RedstonePoweredMachinePartManufactureMachineMenu::new, "redstone_powered_machine_part_manufacture_machine_menu");
-    public static final RegistryObject<MenuType<BasicStrengthEngineeringMultiblockEnergyStorageMenu>> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_MENU =
-            registerMenuType(BasicStrengthEngineeringMultiblockEnergyStorageMenu::new, "basic_strength_multiblock_energy_storage_menu");
-    public static final RegistryObject<MenuType<BasicStrengthEngineeringMultiblockMaterialStorageMenu>> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_MENU =
-            registerMenuType(BasicStrengthEngineeringMultiblockMaterialStorageMenu::new, "basic_strength_multiblock_material_storage_menu");
+
 
     public static final RegistryObject<MenuType<BasicPowerSteamGeneratorMenu>> BASIC_POWER_STEAM_GENERATOR_MENU =
             registerMenuType(BasicPowerSteamGeneratorMenu::new, "basic_power_steam_generator_menu");
@@ -76,10 +108,6 @@ public class DCMenuTypes {
     public static final RegistryObject<MenuType<BasicPhaseBoltManufactureMachineMenu>> BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_MENU =
             registerMenuType(BasicPhaseBoltManufactureMachineMenu::new, "basic_phase_bolt_manufacture_menu");
 
-    public static final RegistryObject<MenuType<BasicStrengthHybridPhysicsMultiblockEnergyStorageMenu>> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_MENU =
-            registerMenuType(BasicStrengthHybridPhysicsMultiblockEnergyStorageMenu::new, "basic_strength_hybrid_physics_multiblock_energy_storage_menu");
-    public static final RegistryObject<MenuType<BasicStrengthHybridPhysicsMultiblockMaterialStorageMenu>> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_MENU =
-            registerMenuType(BasicStrengthHybridPhysicsMultiblockMaterialStorageMenu::new, "basic_strength_hybrid_physics_multiblock_material_storage_menu");
 
     public static final RegistryObject<MenuType<BasicPerformanceElectricArcFurnaceMenu>> BASIC_PERFORMANCE_ARC_ELECTRIC_FURNACE_MENU =
             registerMenuType(BasicPerformanceElectricArcFurnaceMenu::new, "basic_performance_electric_arc_furnace_menu");

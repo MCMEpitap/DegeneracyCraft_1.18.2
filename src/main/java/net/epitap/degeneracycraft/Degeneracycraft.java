@@ -21,8 +21,8 @@ import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machin
 import net.epitap.degeneracycraft.blocks.screen.PulverizerScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.energy_storage.basic_strength_chemistry_multiblock_energy_storage.BasicStrengthChemistryMultiblockEnergyStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.material_storage.basic_strength_chemistry_multiblock_material_storage.BasicStrengthChemistryMultiblockMaterialStorageScreen;
-import net.epitap.degeneracycraft.blocks.storage.basic.engineering.energy_storage.basic_strength_engineering_multiblock_energy_storage.BasicStrengthEngineeringMultiblockEnergyStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.material_storage.basic_strength_engineering_multiblock_material_storage.BasicStrengthEngineeringMultiblockMaterialStorageScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.energy_storage.basic_strength_formal_science_multiblock_energy_storage.BasicStrengthFormalScienceMultiblockEnergyStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_storage.basic_strength_hybrid_physics_multiblock_energy_storage.BasicStrengthHybridPhysicsMultiblockEnergyStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.material_storage.basic_strength_hybrid_physics_multiblock_material_storage.BasicStrengthHybridPhysicsMultiblockMaterialStorageScreen;
 import net.epitap.degeneracycraft.blocks.unique.basic.simple_telescope.simple_telescope_core.SimpleTelescopeCoreScreen;
@@ -115,7 +115,7 @@ public class Degeneracycraft {
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_MENU.get(), BasicStrengthChemistryMultiblockMaterialStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_ELECTROLYSER_MENU.get(), BasicPerformanceElectrolyserScreen::new);
 
-        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthEngineeringMultiblockEnergyStorageScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthFormalScienceMultiblockEnergyStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_MENU.get(), BasicStrengthEngineeringMultiblockMaterialStorageScreen::new);
 
         MenuScreens.register(DCMenuTypes.BASIC_POWER_STEAM_GENERATOR_MENU.get(), BasicPowerSteamGeneratorScreen::new);

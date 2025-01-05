@@ -25,6 +25,8 @@ import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.energy_storage.
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.material_storage.basic_strength_chemistry_multiblock_material_storage.BasicStrengthChemistryMultiblockMaterialStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.energy_storage.basic_strength_engineering_multiblock_energy_storage.BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.material_storage.basic_strength_engineering_multiblock_material_storage.BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.energy_storage.basic_strength_formal_science_multiblock_energy_storage.BasicStrengthFormalScienceMultiblockEnergyStorageBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.material_storage.basic_strength_formal_science_multiblock_material_storage.BasicStrengthFormalScienceMultiblockMaterialStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_storage.basic_strength_hybrid_physics_multiblock_energy_storage.BasicStrengthHybridPhysicsMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.material_storage.basic_strength_hybrid_physics_multiblock_material_storage.BasicStrengthHybridPhysicsMultiblockMaterialStorageBlockEntity;
 import net.epitap.degeneracycraft.transport.port_bus.basic.chemistry.basic_performance_electrolyser.bus.BasicPerformanceElectrolyserBusBlockEntity;
@@ -99,12 +101,12 @@ public class DCBlockEntities {
             BLOCK_ENTITIES.register("basic_strength_chemistry_multiblock_material_storage_block_entity", () ->
                     BlockEntityType.Builder.of(BasicStrengthChemistryMultiblockMaterialStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()).build(null));
 
-    public static final RegistryObject<BlockEntityType<BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity>> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_strength_engineering_multiblock_material_storage_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity>> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_strength_engineering_multiblock_energy_storage_block_entity", () ->
                     BlockEntityType.Builder.of(BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity>> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_engineering_multiblock_material_storage_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthEngineeringMultiblockMaterialStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<BasicStrengthFormalScienceMultiblockEnergyStorageBlockEntity>> BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_strength_formal_science_multiblock_energy_storage_block_entity", () ->

@@ -133,7 +133,6 @@ public class DCBlockEntities {
             BLOCK_ENTITIES.register("basic_strength_hybrid_physics_multiblock_energy_storage_block_entity", () ->
                     BlockEntityType.Builder.of(BasicStrengthHybridPhysicsMultiblockMaterialStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()).build(null));
 
-
     public static final RegistryObject<BlockEntityType<BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageBlockEntity>> BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_strength_imitation_magic_engineering_multiblock_energy_storage_block_entity", () ->
                     BlockEntityType.Builder.of(BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()).build(null));

@@ -671,6 +671,32 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_ROBOT_ARM.get(), "Basic Robot Arm");
         add(DCItems.BASIC_TURBINE.get(), "Basic Turbine");
 
+        add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Astronomy Multiblock Base Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Astronomy Multiblock Base Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Astronomy Multiblock Machine Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), "Basic Strength Astronomy Multiblock Machine Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "Basic Strength Astronomy Multiblock Structure Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "Basic Strength Astronomy Multiblock Structure Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), "Basic Strength Astronomy Multiblock Structure Glass Block");
+        add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "Basic Strength Astronomy Multiblock Structure Glass Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(), "Basic Strength Astronomy Multiblock Energy Storage Block");
+        add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "Basic Strength Astronomy Multiblock Energy Storage Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "Basic Strength Astronomy Multiblock Material Storage Block");
+        add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "Basic Strength Astronomy Multiblock Material Storage Block (Hologram)");
+
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Biology Multiblock Base Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Biology Multiblock Base Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Biology Multiblock Machine Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), "Basic Strength Biology Multiblock Machine Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "Basic Strength Biology Multiblock Structure Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "Basic Strength Biology Multiblock Structure Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), "Basic Strength Biology Multiblock Structure Glass Block");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "Basic Strength Biology Multiblock Structure Glass Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(), "Basic Strength Biology Multiblock Energy Storage Block");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "Basic Strength Biology Multiblock Energy Storage Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "Basic Strength Biology Multiblock Material Storage Block");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "Basic Strength Biology Multiblock Material Storage Block (Hologram)");
+
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Chemistry Multiblock Base Frame Block");
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Chemistry Multiblock Base Frame Block (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Chemistry Multiblock Machine Frame Block");
@@ -683,11 +709,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "Basic Strength Chemistry Multiblock Energy Storage Block (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "Basic Strength Chemistry Multiblock Material Storage Block");
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "Basic Strength Chemistry Multiblock Material Storage Block (Hologram)");
-
-        add(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Component Manufacture Machine");
-        add(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Part Manufacture Machine");
-
-        add(DCBlocks.REINFORCED_PLANKS.get(), "Reinforced Planks");
 
         add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Engineering Multiblock Base Frame Block");
         add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Engineering Multiblock Base Frame Block (Hologram)");
@@ -702,6 +723,32 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "Basic Strength Engineering Multiblock Material Storage Block");
         add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "Basic Strength Engineering Multiblock Material Storage Block (Hologram)");
 
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Formal Science Multiblock Base Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Formal Science Multiblock Base Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Formal Science Multiblock Machine Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), "Basic Strength Formal Science Multiblock Machine Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "Basic Strength Formal Science Multiblock Structure Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "Basic Strength Formal Science Multiblock Structure Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), "Basic Strength Formal Science Multiblock Structure Glass Block");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "Basic Strength Formal Science Multiblock Structure Glass Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(), "Basic Strength Formal Science Multiblock Energy Storage Block");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "Basic Strength Formal Science Multiblock Energy Storage Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "Basic Strength Formal Science Multiblock Material Storage Block");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "Basic Strength Formal Science Multiblock Material Storage Block (Hologram)");
+
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Geo Science Multiblock Base Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Geo Science Multiblock Base Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Geo Science Multiblock Machine Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), "Basic Strength Geo Science Multiblock Machine Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "Basic Strength Geo Science Multiblock Structure Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "Basic Strength Geo Science Multiblock Structure Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), "Basic Strength Geo Science Multiblock Structure Glass Block");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "Basic Strength Geo Science Multiblock Structure Glass Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(), "Basic Strength Geo Science Multiblock Energy Storage Block");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "Basic Strength Geo Science Multiblock Energy Storage Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "Basic Strength Geo Science Multiblock Material Storage Block");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "Basic Strength Geo Science Multiblock Material Storage Block (Hologram)");
+
         add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Base Frame Block");
         add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Base Frame Block (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Machine Frame Block");
@@ -714,6 +761,26 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Energy Storage Block (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Material Storage Block");
         add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Material Storage Block (Hologram)");
+
+        add(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Imitation Magic Engineering Multiblock Base Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Imitation Magic Engineering Multiblock Base Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Imitation Magic Engineering Multiblock Machine Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), "Basic Strength Imitation Magic Engineering Multiblock Machine Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "Basic Strength Imitation Magic Engineering Multiblock Structure Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "Basic Strength Imitation Magic Engineering Multiblock Structure Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), "Basic Strength Imitation Magic Engineering Multiblock Structure Glass Block");
+        add(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "Basic Strength Imitation Magic Engineering Multiblock Structure Glass Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(), "Basic Strength Imitation Magic Engineering Multiblock Energy Storage Block");
+        add(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "Basic Strength Imitation Magic Engineering Multiblock Energy Storage Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "Basic Strength Imitation Magic Engineering Multiblock Material Storage Block");
+        add(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "Basic Strength Imitation Magic Engineering Multiblock Material Storage Block (Hologram)");
+
+
+        add(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Component Manufacture Machine");
+        add(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Part Manufacture Machine");
+
+        add(DCBlocks.REINFORCED_PLANKS.get(), "Reinforced Planks");
+
 
 //        add(DCBlocks.LOW_STERNGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),"Low Strength Engineering Multiblock Machine Frame Block");
         add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get(), "Low Strength Engineering Multiblock Structure Frame Block");

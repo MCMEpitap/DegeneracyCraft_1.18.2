@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_frame/basic_strength_imitation_magic_engineering_multiblock_structure_frame_block",
+    "up": "degeneracycraft:block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_frame/basic_strength_imitation_magic_engineering_multiblock_structure_frame_block",
+    "north": "degeneracycraft:block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_frame/basic_strength_imitation_magic_engineering_multiblock_structure_frame_block",
+    "south": "degeneracycraft:block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_frame/basic_strength_imitation_magic_engineering_multiblock_structure_frame_block",
+    "east": "degeneracycraft:block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_frame/basic_strength_imitation_magic_engineering_multiblock_structure_frame_block",
+    "west": "degeneracycraft:block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_frame/basic_strength_imitation_magic_engineering_multiblock_structure_frame_block"
+  }
+}

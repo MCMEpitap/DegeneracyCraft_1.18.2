@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_energy_storage/basic_strength_formal_science_multiblock_energy_storage_block",
+    "up": "degeneracycraft:block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_energy_storage/basic_strength_formal_science_multiblock_energy_storage_block",
+    "north": "degeneracycraft:block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_energy_storage/basic_strength_formal_science_multiblock_energy_storage_block",
+    "south": "degeneracycraft:block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_energy_storage/basic_strength_formal_science_multiblock_energy_storage_block",
+    "east": "degeneracycraft:block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_energy_storage/basic_strength_formal_science_multiblock_energy_storage_block",
+    "west": "degeneracycraft:block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_energy_storage/basic_strength_formal_science_multiblock_energy_storage_block"
+  }
+}

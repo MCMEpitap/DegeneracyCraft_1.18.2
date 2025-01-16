@@ -122,8 +122,6 @@ public class BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity extends 
     public static void tick(Level level, BlockPos pPos, BlockState pState, BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity blockEntity) {
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
-
-
     }
 
 }

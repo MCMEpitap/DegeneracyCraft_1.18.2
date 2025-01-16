@@ -12,7 +12,6 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.server.level.ServerChunkCache;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -272,9 +271,9 @@ private void updateList() {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
-    public void syncData(ServerPlayer player) {
-        player.connection.send(getUpdatePacket());
-    }
+//    public void syncData(ServerPlayer player) {
+//        player.connection.send(getUpdatePacket());
+//    }
 
     public void syncData() {
         if (level == null || level.isClientSide) {

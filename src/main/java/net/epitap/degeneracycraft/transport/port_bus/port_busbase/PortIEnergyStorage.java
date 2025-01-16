@@ -15,16 +15,17 @@ public class PortIEnergyStorage implements IEnergyStorage {
     }
 
     public void tick() {
+        this.lastReceived = this.pipe.getLevel().getGameTime();
         if (this.pipe.getLevel().getGameTime() - this.lastReceived > 1F) {
-//            BasicPowerThermalGeneratorBusType.INSTANCE.extractEnergy(this.pipe, this.side);
+            BasicPowerSteamGeneratorBusType.INSTANCE.extractEnergy(this.pipe, this.side);
+//            BasicPowerSteamGeneratorBusType.INSTANCE.receiveEnergy(this.pipe, this.side, 32F, false);
         }
     }
 
-    public float receiveEnergyFloat(float maxReceive, boolean simulate) {
-        this.lastReceived = this.pipe.getLevel().getGameTime();
-//        return BasicPowerThermalGeneratorBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
-        return 0F;
-    }
+//    public float receiveEnergyFloat(float maxReceive, boolean simulate) {
+//        this.lastReceived = this.pipe.getLevel().getGameTime();
+//        return BasicPowerSteamGeneratorBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
+//    }
 
 
     public float extractEnergyFloat(float maxExtract, boolean simulate) {

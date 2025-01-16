@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.pipe.basic.energy;
+package net.epitap.degeneracycraft.transport.pipe.low.energy;
 
 import net.epitap.degeneracycraft.transport.pipe.pipebase.*;
 import net.minecraft.core.BlockPos;
@@ -13,14 +13,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class BasicEnergyPipeType extends PipeTypeBase<Void> {
-    public static final BasicEnergyPipeType INSTANCE = new BasicEnergyPipeType();
+public class LowEnergyPipeType extends PipeTypeBase<Void> {
+    public static final LowEnergyPipeType INSTANCE = new LowEnergyPipeType();
 
-    public BasicEnergyPipeType() {
+    public LowEnergyPipeType() {
     }
 
     public String getKey() {
-        return "basic_energy_pipe";
+        return "low_energy_pipe";
     }
 
     public boolean canImport(BlockEntity blockEntity, Direction direction) {
@@ -28,17 +28,17 @@ public class BasicEnergyPipeType extends PipeTypeBase<Void> {
     }
 
     public String getTranslationKey() {
-        return "basic_energy_pipe";
+        return "low_energy_pipe";
     }
 
     public ItemStack getIcon() {
-        return new ItemStack(PipeBlocks.BASIC_ENERGY_PIPE_BLOCK);
+        return new ItemStack(PipeBlocks.LOW_ENERGY_PIPE_BLOCK);
     }
 
     public void tick(PipeWorkBlockEntity blockEntity) {
     }
 
-    public void extractEnergy(PipeWorkBlockEntity blockEntity, Direction side){
+    public void extractEnergy(PipeWorkBlockEntity blockEntity, Direction side) {
         if (blockEntity.pipeExtracting(side)) {
             IEnergyStorage energyStorage = this.getEnergyStorage(blockEntity, blockEntity.getBlockPos().relative(side), side.getOpposite());
             if (energyStorage != null && energyStorage.canExtract()) {
@@ -66,7 +66,7 @@ public class BasicEnergyPipeType extends PipeTypeBase<Void> {
             int p = blockEntity.get3dData(side, this) % connections.size();
             List<IEnergyStorage> destinations = new ArrayList(connections.size());
 
-            for(int i = 0; i < connections.size(); ++i) {
+            for (int i = 0; i < connections.size(); ++i) {
                 int index = (i + p) % connections.size();
                 PipeBlockEntityBase.Connection connection = connections.get(index);
                 IEnergyStorage destination = this.getEnergyStorage(blockEntity, connection.pos(), connection.direction());
@@ -77,8 +77,8 @@ public class BasicEnergyPipeType extends PipeTypeBase<Void> {
 
             Iterator var13 = destinations.iterator();
 
-            while(var13.hasNext()) {
-                IEnergyStorage destination = (IEnergyStorage)var13.next();
+            while (var13.hasNext()) {
+                IEnergyStorage destination = (IEnergyStorage) var13.next();
                 float simulatedExtract = energyStorage.extractEnergy((int) Math.min(Math.max(completeAmount / destinations.size(), 1), energyToTransfer), true);
                 if (simulatedExtract > 0) {
                     float transferred = PipeIEnergyUtils.pushEnergy(energyStorage, destination, simulatedExtract);
@@ -105,8 +105,8 @@ public class BasicEnergyPipeType extends PipeTypeBase<Void> {
             float energyToTransfer = maxReceive;
             Iterator var8 = connections.iterator();
 
-            while(var8.hasNext()) {
-                PipeBlockEntityBase.Connection connection = (PipeBlockEntityBase.Connection)var8.next();
+            while (var8.hasNext()) {
+                PipeBlockEntityBase.Connection connection = (PipeBlockEntityBase.Connection) var8.next();
                 if (energyToTransfer <= 0) {
                     break;
                 }
@@ -131,7 +131,7 @@ public class BasicEnergyPipeType extends PipeTypeBase<Void> {
     }
 
     public float getTickRate() {
-        return 64F;
+        return 2048F;
     }
 
 }

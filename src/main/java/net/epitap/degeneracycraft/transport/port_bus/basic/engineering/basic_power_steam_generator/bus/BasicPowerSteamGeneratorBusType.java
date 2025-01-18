@@ -1,8 +1,8 @@
 package net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_steam_generator.bus;
 
 import net.epitap.degeneracycraft.item.DCItems;
-import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeIEnergyUtils;
 import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortBlockEntityBase;
+import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortIEnergyStorageUtils;
 import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortTypeBase;
 import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortWorkBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -66,12 +66,12 @@ public class BasicPowerSteamGeneratorBusType extends PortTypeBase<Void> {
             float completeAmount = this.getTickRate(blockEntity, side);
             float energyToTransfer = completeAmount;
             int p = blockEntity.get3dData(side, this) % connections.size();
-            List<IEnergyStorage> destinations = new ArrayList(connections.size());
+            List<BasicPowerSteamGeneratorBusEnergyStorage> destinations = new ArrayList(connections.size());
 
             for (int i = 0; i < connections.size(); ++i) {
                 int index = (i + p) % connections.size();
                 PortBlockEntityBase.Connection connection = connections.get(index);
-                IEnergyStorage destination = this.getEnergyStorage(blockEntity, connection.pos(), connection.direction());
+                BasicPowerSteamGeneratorBusEnergyStorage destination = this.getEnergyStorage(blockEntity, connection.pos(), connection.direction());
                 if (destination != null && destination.canReceive() && destination.receiveEnergy(1, true) >= 1) {
                     destinations.add(destination);
                 }
@@ -80,10 +80,10 @@ public class BasicPowerSteamGeneratorBusType extends PortTypeBase<Void> {
             Iterator var13 = destinations.iterator();
 
             while (var13.hasNext()) {
-                IEnergyStorage destination = (IEnergyStorage) var13.next();
+                BasicPowerSteamGeneratorBusEnergyStorage destination = (BasicPowerSteamGeneratorBusEnergyStorage) var13.next();
                 float simulatedExtract = energyStorage.extractEnergy((int) Math.min(Math.max(completeAmount / destinations.size(), 1), energyToTransfer), true);
                 if (simulatedExtract > 0) {
-                    float transferred = PipeIEnergyUtils.pushEnergy(energyStorage, destination, simulatedExtract);
+                    float transferred = PortIEnergyStorageUtils.pushEnergy(energyStorage, destination, simulatedExtract);
                     if (transferred > 0) {
                         energyToTransfer -= transferred;
                     }
@@ -113,7 +113,7 @@ public class BasicPowerSteamGeneratorBusType extends PortTypeBase<Void> {
                     break;
                 }
 
-                IEnergyStorage destination = this.getEnergyStorage(blockEntity, connection.pos(), connection.direction());
+                BasicPowerSteamGeneratorBusEnergyStorage destination = this.getEnergyStorage(blockEntity, connection.pos(), connection.direction());
                 if (destination != null && destination.canReceive()) {
                     float extracted = destination.receiveEnergy((int) Math.min(energyToTransfer, maxReceive), simulate);
                     energyToTransfer -= extracted;
@@ -127,9 +127,9 @@ public class BasicPowerSteamGeneratorBusType extends PortTypeBase<Void> {
     }
 
     @Nullable
-    private IEnergyStorage getEnergyStorage(PortWorkBlockEntity blockEntity, BlockPos pos, Direction direction) {
+    private BasicPowerSteamGeneratorBusEnergyStorage getEnergyStorage(PortWorkBlockEntity blockEntity, BlockPos pos, Direction direction) {
         BlockEntity energyBlockEntity = blockEntity.getLevel().getBlockEntity(pos);
-        return energyBlockEntity == null ? null : energyBlockEntity.getCapability(CapabilityEnergy.ENERGY, direction).orElse(null);
+        return energyBlockEntity == null ? null : (BasicPowerSteamGeneratorBusEnergyStorage) energyBlockEntity.getCapability(CapabilityEnergy.ENERGY, direction).orElse(null);
     }
 
     public float getTickRate() {

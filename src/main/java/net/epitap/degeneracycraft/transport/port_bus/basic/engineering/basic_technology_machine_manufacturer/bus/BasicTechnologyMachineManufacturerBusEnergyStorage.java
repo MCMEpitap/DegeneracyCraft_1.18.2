@@ -1,29 +1,30 @@
-//package net.epitap.degeneracycraft.transport.pipe.pipebase;
+//package net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_technology_machine_manufacturer.bus;
 //
-//import net.epitap.degeneracycraft.transport.pipe.energy.BasicEnergyPipeType;
+//import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortWorkBlockEntity;
 //import net.minecraft.core.Direction;
 //import net.minecraftforge.energy.IEnergyStorage;
 //
-//public class PipeIEnergyStorage implements IEnergyStorage {
-//    protected PipeWorkBlockEntity pipe;
+//public class BasicTechnologyMachineManufacturerBusEnergyStorage implements IEnergyStorage {
+//    protected PortWorkBlockEntity pipe;
 //    protected Direction side;
 //    protected float lastReceived;
 //
-//    public PipeIEnergyStorage(PipeWorkBlockEntity pipe, Direction side) {
+//    public BasicTechnologyMachineManufacturerBusEnergyStorage(PortWorkBlockEntity pipe, Direction side) {
 //        this.pipe = pipe;
 //        this.side = side;
 //    }
 //
 //    public void tick() {
+//        this.lastReceived = this.pipe.getLevel().getGameTime();
 //        if (this.pipe.getLevel().getGameTime() - this.lastReceived > 1F) {
-//            BasicEnergyPipeType.INSTANCE.extractEnergy(this.pipe, this.side);
+//            BasicTechnologyMachineManufacturerBusType.INSTANCE.extractEnergy(this.pipe, this.side);
+//
 //        }
 //    }
 //
 //    public float receiveEnergyFloat(float maxReceive, boolean simulate) {
 //        this.lastReceived = this.pipe.getLevel().getGameTime();
-//
-//        return BasicEnergyPipeType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
+//        return BasicTechnologyMachineManufacturerBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
 //    }
 //
 //
@@ -43,7 +44,8 @@
 //    @Override
 //    public int receiveEnergy(int maxReceive, boolean simulate) {
 //        this.lastReceived = this.pipe.getLevel().getGameTime();
-//        return (int) BasicEnergyPipeType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
+//
+//        return (int) BasicTechnologyMachineManufacturerBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
 //    }
 //
 //    @Override

@@ -1,31 +1,30 @@
-package net.epitap.degeneracycraft.transport.port_bus.port_busbase;
+package net.epitap.degeneracycraft.transport.pipe.basic.energy;
 
-import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusType;
+import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeWorkBlockEntity;
 import net.minecraft.core.Direction;
 import net.minecraftforge.energy.IEnergyStorage;
 
-public class PortIEnergyStorage implements IEnergyStorage {
-    protected PortWorkBlockEntity pipe;
+public class BasicEnergyPipeEnergyStorage implements IEnergyStorage {
+    protected PipeWorkBlockEntity pipe;
     protected Direction side;
     protected float lastReceived;
 
-    public PortIEnergyStorage(PortWorkBlockEntity pipe, Direction side) {
+    public BasicEnergyPipeEnergyStorage(PipeWorkBlockEntity pipe, Direction side) {
         this.pipe = pipe;
         this.side = side;
     }
 
     public void tick() {
-        this.lastReceived = this.pipe.getLevel().getGameTime();
         if (this.pipe.getLevel().getGameTime() - this.lastReceived > 1F) {
-            BasicPowerSteamGeneratorBusType.INSTANCE.extractEnergy(this.pipe, this.side);
-//            BasicPowerSteamGeneratorBusType.INSTANCE.receiveEnergy(this.pipe, this.side, 32F, false);
+            BasicEnergyPipeType.INSTANCE.extractEnergy(this.pipe, this.side);
         }
     }
 
-//    public float receiveEnergyFloat(float maxReceive, boolean simulate) {
-//        this.lastReceived = this.pipe.getLevel().getGameTime();
-//        return BasicPowerSteamGeneratorBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
-//    }
+    public float receiveEnergyFloat(float maxReceive, boolean simulate) {
+        this.lastReceived = this.pipe.getLevel().getGameTime();
+
+        return BasicEnergyPipeType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
+    }
 
 
     public float extractEnergyFloat(float maxExtract, boolean simulate) {
@@ -44,7 +43,7 @@ public class PortIEnergyStorage implements IEnergyStorage {
     @Override
     public int receiveEnergy(int maxReceive, boolean simulate) {
         this.lastReceived = this.pipe.getLevel().getGameTime();
-        return (int) BasicPowerSteamGeneratorBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
+        return (int) BasicEnergyPipeType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
     }
 
     @Override

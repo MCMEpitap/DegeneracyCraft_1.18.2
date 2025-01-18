@@ -1,15 +1,15 @@
-package net.epitap.degeneracycraft.transport.port_bus.port_busbase;
+package net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_steam_generator.bus;
 
-import net.epitap.degeneracycraft.transport.port_bus.basic.engineering.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusType;
+import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortWorkBlockEntity;
 import net.minecraft.core.Direction;
 import net.minecraftforge.energy.IEnergyStorage;
 
-public class PortIEnergyStorage implements IEnergyStorage {
+public class BasicPowerSteamGeneratorBusEnergyStorage implements IEnergyStorage {
     protected PortWorkBlockEntity pipe;
     protected Direction side;
     protected float lastReceived;
 
-    public PortIEnergyStorage(PortWorkBlockEntity pipe, Direction side) {
+    public BasicPowerSteamGeneratorBusEnergyStorage(PortWorkBlockEntity pipe, Direction side) {
         this.pipe = pipe;
         this.side = side;
     }
@@ -18,14 +18,14 @@ public class PortIEnergyStorage implements IEnergyStorage {
         this.lastReceived = this.pipe.getLevel().getGameTime();
         if (this.pipe.getLevel().getGameTime() - this.lastReceived > 1F) {
             BasicPowerSteamGeneratorBusType.INSTANCE.extractEnergy(this.pipe, this.side);
-//            BasicPowerSteamGeneratorBusType.INSTANCE.receiveEnergy(this.pipe, this.side, 32F, false);
+
         }
     }
 
-//    public float receiveEnergyFloat(float maxReceive, boolean simulate) {
-//        this.lastReceived = this.pipe.getLevel().getGameTime();
-//        return BasicPowerSteamGeneratorBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
-//    }
+    public float receiveEnergyFloat(float maxReceive, boolean simulate) {
+        this.lastReceived = this.pipe.getLevel().getGameTime();
+        return BasicPowerSteamGeneratorBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
+    }
 
 
     public float extractEnergyFloat(float maxExtract, boolean simulate) {

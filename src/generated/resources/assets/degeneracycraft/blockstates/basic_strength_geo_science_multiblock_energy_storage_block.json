@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "degeneracycraft:block/basic_strength_geo_science_multiblock_energy_storage_block",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "degeneracycraft:block/basic_strength_geo_science_multiblock_energy_storage_block",
+      "x": -90
+    },
+    "facing=north": {
+      "model": "degeneracycraft:block/basic_strength_geo_science_multiblock_energy_storage_block"
+    },
+    "facing=south": {
+      "model": "degeneracycraft:block/basic_strength_geo_science_multiblock_energy_storage_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "degeneracycraft:block/basic_strength_geo_science_multiblock_energy_storage_block",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "degeneracycraft:block/basic_strength_geo_science_multiblock_energy_storage_block",
+      "y": 90
+    }
+  }
+}

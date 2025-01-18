@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/biology/basic_strength_biology_multiblock_machine_frame/basic_strength_biology_multiblock_machine_frame_block",
+    "up": "degeneracycraft:block/multiblock/basic/biology/basic_strength_biology_multiblock_machine_frame/basic_strength_biology_multiblock_machine_frame_block",
+    "north": "degeneracycraft:block/multiblock/basic/biology/basic_strength_biology_multiblock_machine_frame/basic_strength_biology_multiblock_machine_frame_block",
+    "south": "degeneracycraft:block/multiblock/basic/biology/basic_strength_biology_multiblock_machine_frame/basic_strength_biology_multiblock_machine_frame_block",
+    "east": "degeneracycraft:block/multiblock/basic/biology/basic_strength_biology_multiblock_machine_frame/basic_strength_biology_multiblock_machine_frame_block",
+    "west": "degeneracycraft:block/multiblock/basic/biology/basic_strength_biology_multiblock_machine_frame/basic_strength_biology_multiblock_machine_frame_block"
+  }
+}

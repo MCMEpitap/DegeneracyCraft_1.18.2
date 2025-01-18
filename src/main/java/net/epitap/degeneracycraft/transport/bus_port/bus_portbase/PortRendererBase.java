@@ -5,7 +5,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
-import net.epitap.degeneracycraft.transport.pipe.parametor.PipeTransportModelValue;
+import net.epitap.degeneracycraft.transport.bus_port.parametor.PortTransportModelValue;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -24,7 +24,7 @@ public abstract class PortRendererBase implements BlockEntityRenderer<PortBlockE
 
     protected Minecraft minecraft;
     protected BlockEntityRendererProvider.Context renderer;
-    protected PipeTransportModelValue<BakedModel> cachedModel;
+    protected PortTransportModelValue<BakedModel> cachedModel;
 
     public PortRendererBase(BlockEntityRendererProvider.Context renderer) {
         this.renderer = renderer;
@@ -39,7 +39,7 @@ public abstract class PortRendererBase implements BlockEntityRenderer<PortBlockE
         VertexConsumer b = buffer.getBuffer(RenderType.solid());
 
         for (Direction side : Direction.values()) {
-            if (pipe.pipeExtracting(side)) {
+            if (pipe.portExtracting(side)) {
                 renderReader(side, matrixStack, b, quads, combinedLight, combinedOverlay);
             }
         }

@@ -15,6 +15,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.energy.CapabilityEnergy;
 
 public class BasicPerformanceElectrolyserBusBlock extends PortBlockBase {
+
     public BasicPerformanceElectrolyserBusBlock(Properties properties) {
         super();
     }

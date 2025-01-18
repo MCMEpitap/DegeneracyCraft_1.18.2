@@ -1,9 +1,10 @@
 package net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.bus;
 
 
-import net.epitap.degeneracycraft.transport.port_bus.port_busbase.PortRendererBase;
-import net.epitap.degeneracycraft.transport.port_bus.render.PortModelRegistry;
+import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortRendererBase;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+
+import static net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortModelRegistry.DCPortModel;
 
 public class BasicPerformanceFormingMachineBusRenderer extends PortRendererBase {
     public BasicPerformanceFormingMachineBusRenderer(BlockEntityRendererProvider.Context renderer) {
@@ -11,7 +12,7 @@ public class BasicPerformanceFormingMachineBusRenderer extends PortRendererBase 
     }
 
     @Override
-    public PortModelRegistry.DCPortModel getModel() {
-        return PortModelRegistry.DCPortModel.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_BLOCK_EXTRACT;
+    public DCPortModel getModel() {
+        return DCPortModel.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_BLOCK_EXTRACT;
     }
 }

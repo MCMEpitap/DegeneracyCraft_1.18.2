@@ -35,6 +35,8 @@ import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineeri
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.material_storage.basic_strength_imitation_magic_engineering_multiblock_material_storage.BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageBlock;
 import net.epitap.degeneracycraft.item.DCCreativeTab;
 import net.epitap.degeneracycraft.item.DCItems;
+import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.bus.BasicPerformanceElectrolyserBusBlock;
+import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.port.BasicPerformanceElectrolyserPortBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_power_steam_generator.port.BasicPowerSteamGeneratorPortBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_element_processor.bus.BasicTechnologyMachineElementProcessorBusBlock;
@@ -371,11 +373,11 @@ public class DCBlocks {
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK = registerBlock("basic_performance_electrolyser_bus_block", () ->
-            new BasicPerformanceElectricArcFurnaceBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+            new BasicPerformanceElectrolyserBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_electrolyser_bus_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK = registerBlock("basic_performance_electrolyser_port_block", () ->
-            new BasicPerformanceElectricArcFurnacePortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+            new BasicPerformanceElectrolyserPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_electrolyser_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 

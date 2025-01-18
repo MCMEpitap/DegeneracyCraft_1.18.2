@@ -27,6 +27,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.*;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
@@ -39,6 +40,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public abstract class PortBlockBase extends Block implements PortIItemBlock, SimpleWaterloggedBlock, EntityBlock {
+    public static final DirectionProperty FACING = BlockStateProperties.FACING;
+
     public static final BooleanProperty DOWN = BooleanProperty.create("down");
     public static final BooleanProperty UP = BooleanProperty.create("up");
     public static final BooleanProperty NORTH = BooleanProperty.create("north");
@@ -294,6 +297,7 @@ public abstract class PortBlockBase extends Block implements PortIItemBlock, Sim
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(UP, DOWN, NORTH, SOUTH, EAST, WEST, HAS_DATA, WATERLOGGED);
+        builder.add(FACING);
     }
 
     public static final VoxelShape SHAPE_NORTH = Block.box(0D, 0D, 0D, 16D, 16D, 2D);
@@ -530,7 +534,6 @@ public abstract class PortBlockBase extends Block implements PortIItemBlock, Sim
             return null;
         }
     }
-
 
     public abstract BlockEntity createBlockEntity(BlockPos pos, BlockState state);
 }

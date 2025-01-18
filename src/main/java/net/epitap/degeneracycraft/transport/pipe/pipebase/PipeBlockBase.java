@@ -2,7 +2,7 @@ package net.epitap.degeneracycraft.transport.pipe.pipebase;
 
 import net.epitap.degeneracycraft.item.DCCreativeTab;
 import net.epitap.degeneracycraft.item.tool.WrenchItem;
-import net.epitap.degeneracycraft.transport.parametor.*;
+import net.epitap.degeneracycraft.transport.pipe.parametor.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.FluidTags;
@@ -38,7 +38,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Arrays;
 import java.util.List;
 
-public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleWaterloggedBlock,EntityBlock {
+public abstract class PipeBlockBase extends Block implements PipeIItemBlock, SimpleWaterloggedBlock, EntityBlock {
     public static final BooleanProperty DOWN = BooleanProperty.create("down");
     public static final BooleanProperty UP = BooleanProperty.create("up");
     public static final BooleanProperty NORTH = BooleanProperty.create("north");
@@ -302,12 +302,12 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
     public static final VoxelShape SHAPE_UP = Block.box(5D, 12D, 5D, 11D, 16D, 11D);
     public static final VoxelShape SHAPE_DOWN = Block.box(5D, 0D, 5D, 11D, 5D, 11D);
     public static final VoxelShape SHAPE_CORE = Block.box(4D, 4D, 4D, 12D, 12D, 12D);
-    public static final VoxelShape SHAPE_EXTRACT_NORTH = TransportVoxelShape.combine(SHAPE_NORTH, Block.box(4D, 4D, 0D, 12D, 12D, 1D));
-    public static final VoxelShape SHAPE_EXTRACT_SOUTH = TransportVoxelShape.combine(SHAPE_SOUTH, Block.box(4D, 4D, 15D, 12D, 12D, 16D));
-    public static final VoxelShape SHAPE_EXTRACT_EAST = TransportVoxelShape.combine(SHAPE_EAST, Block.box(15D, 4D, 4D, 16D, 12D, 12D));
-    public static final VoxelShape SHAPE_EXTRACT_WEST = TransportVoxelShape.combine(SHAPE_WEST, Block.box(0D, 4D, 4D, 1D, 12D, 12D));
-    public static final VoxelShape SHAPE_EXTRACT_UP = TransportVoxelShape.combine(SHAPE_UP, Block.box(4D, 15D, 4D, 12D, 16D, 12D));
-    public static final VoxelShape SHAPE_EXTRACT_DOWN = TransportVoxelShape.combine(SHAPE_DOWN, Block.box(4D, 0D, 4D, 12D, 1D, 12D));
+    public static final VoxelShape SHAPE_EXTRACT_NORTH = PipeTransportVoxelShape.combine(SHAPE_NORTH, Block.box(4D, 4D, 0D, 12D, 12D, 1D));
+    public static final VoxelShape SHAPE_EXTRACT_SOUTH = PipeTransportVoxelShape.combine(SHAPE_SOUTH, Block.box(4D, 4D, 15D, 12D, 12D, 16D));
+    public static final VoxelShape SHAPE_EXTRACT_EAST = PipeTransportVoxelShape.combine(SHAPE_EAST, Block.box(15D, 4D, 4D, 16D, 12D, 12D));
+    public static final VoxelShape SHAPE_EXTRACT_WEST = PipeTransportVoxelShape.combine(SHAPE_WEST, Block.box(0D, 4D, 4D, 1D, 12D, 12D));
+    public static final VoxelShape SHAPE_EXTRACT_UP = PipeTransportVoxelShape.combine(SHAPE_UP, Block.box(4D, 15D, 4D, 12D, 16D, 12D));
+    public static final VoxelShape SHAPE_EXTRACT_DOWN = PipeTransportVoxelShape.combine(SHAPE_DOWN, Block.box(4D, 0D, 4D, 12D, 1D, 12D));
 
 
     public VoxelShape getShape(BlockGetter blockReader, BlockPos pos, BlockState state, boolean advanced) {
@@ -319,44 +319,44 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
         VoxelShape shape = SHAPE_CORE;
         if (state.getValue(UP)) {
             if (pipe != null && pipe.pipeExtracting(Direction.UP)) {
-                shape = TransportVoxelShape.combine(shape, SHAPE_EXTRACT_UP);
+                shape = PipeTransportVoxelShape.combine(shape, SHAPE_EXTRACT_UP);
             } else {
-                shape = TransportVoxelShape.combine(shape, SHAPE_UP);
+                shape = PipeTransportVoxelShape.combine(shape, SHAPE_UP);
             }
         }
         if (state.getValue(DOWN)) {
             if (pipe != null && pipe.pipeExtracting(Direction.DOWN)) {
-                shape = TransportVoxelShape.combine(shape, SHAPE_EXTRACT_DOWN);
+                shape = PipeTransportVoxelShape.combine(shape, SHAPE_EXTRACT_DOWN);
             } else {
-                shape = TransportVoxelShape.combine(shape, SHAPE_DOWN);
+                shape = PipeTransportVoxelShape.combine(shape, SHAPE_DOWN);
             }
         }
         if (state.getValue(SOUTH)) {
             if (pipe != null && pipe.pipeExtracting(Direction.SOUTH)) {
-                shape = TransportVoxelShape.combine(shape, SHAPE_EXTRACT_SOUTH);
+                shape = PipeTransportVoxelShape.combine(shape, SHAPE_EXTRACT_SOUTH);
             } else {
-                shape = TransportVoxelShape.combine(shape, SHAPE_SOUTH);
+                shape = PipeTransportVoxelShape.combine(shape, SHAPE_SOUTH);
             }
         }
         if (state.getValue(NORTH)) {
             if (pipe != null && pipe.pipeExtracting(Direction.NORTH)) {
-                shape = TransportVoxelShape.combine(shape, SHAPE_EXTRACT_NORTH);
+                shape = PipeTransportVoxelShape.combine(shape, SHAPE_EXTRACT_NORTH);
             } else {
-                shape = TransportVoxelShape.combine(shape, SHAPE_NORTH);
+                shape = PipeTransportVoxelShape.combine(shape, SHAPE_NORTH);
             }
         }
         if (state.getValue(EAST)) {
             if (pipe != null && pipe.pipeExtracting(Direction.EAST)) {
-                shape = TransportVoxelShape.combine(shape, SHAPE_EXTRACT_EAST);
+                shape = PipeTransportVoxelShape.combine(shape, SHAPE_EXTRACT_EAST);
             } else {
-                shape = TransportVoxelShape.combine(shape, SHAPE_EAST);
+                shape = PipeTransportVoxelShape.combine(shape, SHAPE_EAST);
             }
         }
         if (state.getValue(WEST)) {
             if (pipe != null && pipe.pipeExtracting(Direction.WEST)) {
-                shape = TransportVoxelShape.combine(shape, SHAPE_EXTRACT_WEST);
+                shape = PipeTransportVoxelShape.combine(shape, SHAPE_EXTRACT_WEST);
             } else {
-                shape = TransportVoxelShape.combine(shape, SHAPE_WEST);
+                shape = PipeTransportVoxelShape.combine(shape, SHAPE_WEST);
             }
         }
         return shape;
@@ -375,7 +375,7 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
     }
 
     public VoxelShape getSelectionShape(BlockState state, BlockGetter world, BlockPos pos, Player player) {
-        Value2D<Direction, VoxelShape> selection = getSelection(state, world, pos, player);
+        PipeValue2D<Direction, VoxelShape> selection = getSelection(state, world, pos, player);
 
         if (selection.getKey() == null) {
             return getShape(world, pos, state, true);
@@ -390,25 +390,25 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
         return selection.getValue();
     }
 
-    private static final List<Value3D<VoxelShape, BooleanProperty, Direction>> SHAPES = Arrays.asList(
-            new Value3D<>(SHAPE_NORTH, NORTH, Direction.NORTH),
-            new Value3D<>(SHAPE_SOUTH, SOUTH, Direction.SOUTH),
-            new Value3D<>(SHAPE_WEST, WEST, Direction.WEST),
-            new Value3D<>(SHAPE_EAST, EAST, Direction.EAST),
-            new Value3D<>(SHAPE_UP, UP, Direction.UP),
-            new Value3D<>(SHAPE_DOWN, DOWN, Direction.DOWN)
+    private static final List<PipeValue3D<VoxelShape, BooleanProperty, Direction>> SHAPES = Arrays.asList(
+            new PipeValue3D<>(SHAPE_NORTH, NORTH, Direction.NORTH),
+            new PipeValue3D<>(SHAPE_SOUTH, SOUTH, Direction.SOUTH),
+            new PipeValue3D<>(SHAPE_WEST, WEST, Direction.WEST),
+            new PipeValue3D<>(SHAPE_EAST, EAST, Direction.EAST),
+            new PipeValue3D<>(SHAPE_UP, UP, Direction.UP),
+            new PipeValue3D<>(SHAPE_DOWN, DOWN, Direction.DOWN)
     );
 
-    private static final List<Value2D<VoxelShape, Direction>> EXTRACT_SHAPES = Arrays.asList(
-            new Value2D<>(SHAPE_EXTRACT_NORTH, Direction.NORTH),
-            new Value2D<>(SHAPE_EXTRACT_SOUTH, Direction.SOUTH),
-            new Value2D<>(SHAPE_EXTRACT_WEST, Direction.WEST),
-            new Value2D<>(SHAPE_EXTRACT_EAST, Direction.EAST),
-            new Value2D<>(SHAPE_EXTRACT_UP, Direction.UP),
-            new Value2D<>(SHAPE_EXTRACT_DOWN, Direction.DOWN)
+    private static final List<PipeValue2D<VoxelShape, Direction>> EXTRACT_SHAPES = Arrays.asList(
+            new PipeValue2D<>(SHAPE_EXTRACT_NORTH, Direction.NORTH),
+            new PipeValue2D<>(SHAPE_EXTRACT_SOUTH, Direction.SOUTH),
+            new PipeValue2D<>(SHAPE_EXTRACT_WEST, Direction.WEST),
+            new PipeValue2D<>(SHAPE_EXTRACT_EAST, Direction.EAST),
+            new PipeValue2D<>(SHAPE_EXTRACT_UP, Direction.UP),
+            new PipeValue2D<>(SHAPE_EXTRACT_DOWN, Direction.DOWN)
     );
 
-    public Value2D<Direction, VoxelShape> getSelection(BlockState state, BlockGetter blockReader, BlockPos pos, Player player) {
+    public PipeValue2D<Direction, VoxelShape> getSelection(BlockState state, BlockGetter blockReader, BlockPos pos, Player player) {
         Vec3 start = player.getEyePosition(1F);
         Vec3 end = start.add(player.getLookAngle().normalize().scale(getBlockReachDistance(player)));
 
@@ -422,14 +422,14 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
         }
 
         if (!(blockReader instanceof LevelAccessor)) {
-            return new Value2D<>(direction, voxelShape);
+            return new PipeValue2D<>(direction, voxelShape);
         }
 
         PipeBlockEntityBase pipe = getBlockEntity((LevelAccessor) blockReader, pos);
 
         for (int i = 0; i < Direction.values().length; i++) {
-            Value2D<VoxelShape, Direction> extract = EXTRACT_SHAPES.get(i);
-            Value3D<VoxelShape, BooleanProperty, Direction> shape = SHAPES.get(i);
+            PipeValue2D<VoxelShape, Direction> extract = EXTRACT_SHAPES.get(i);
+            PipeValue3D<VoxelShape, BooleanProperty, Direction> shape = SHAPES.get(i);
             if (pipe != null && pipe.pipeExtracting(extract.getValue())) {
                 d = checkShape(state, blockReader, pos, start, end, extract.getKey(), pipe, extract.getValue());
                 if (d < shortest) {
@@ -446,7 +446,7 @@ public abstract class PipeBlockBase extends Block implements IItemBlock, SimpleW
                 }
             }
         }
-        return new Value2D<>(direction, voxelShape);
+        return new PipeValue2D<>(direction, voxelShape);
     }
 
     public float getBlockReachDistance(Player player) {

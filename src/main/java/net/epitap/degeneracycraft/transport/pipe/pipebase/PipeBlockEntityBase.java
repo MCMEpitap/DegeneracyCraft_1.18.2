@@ -1,7 +1,7 @@
 package net.epitap.degeneracycraft.transport.pipe.pipebase;
 
-import net.epitap.degeneracycraft.transport.parametor.GettingDirection;
-import net.epitap.degeneracycraft.transport.parametor.ITickBlockEntity;
+import net.epitap.degeneracycraft.transport.pipe.parametor.PipeGettingDirection;
+import net.epitap.degeneracycraft.transport.pipe.parametor.PipeITickBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.ByteTag;
@@ -23,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public abstract class PipeBlockEntityBase extends BlockEntity implements ITickBlockEntity {
+public abstract class PipeBlockEntityBase extends BlockEntity implements PipeITickBlockEntity {
     @Nullable
     public List<Connection> connectionList;
     protected boolean[] extractingSides;
@@ -114,7 +114,7 @@ private void updateList() {
         return;
     }
 
-        Map<GettingDirection, Integer> connections = new HashMap<>();
+    Map<PipeGettingDirection, Integer> connections = new HashMap<>();
 
         Map<BlockPos, Integer> posList = new HashMap<>();
         List<BlockPos> pipePositions = new ArrayList<>();
@@ -131,7 +131,7 @@ private void updateList() {
         connectionList = connections.entrySet().stream().map(entry -> new Connection(entry.getKey().getPos(), entry.getKey().getDirection(), entry.getValue())).collect(Collectors.toList());
     }
 
-    public void addPipeList(Level world, BlockPos position, Map<BlockPos, Integer> list, List<BlockPos> travelPositions, Map<GettingDirection, Integer> insertPositions, int distance) {
+    public void addPipeList(Level world, BlockPos position, Map<BlockPos, Integer> list, List<BlockPos> travelPositions, Map<PipeGettingDirection, Integer> insertPositions, int distance) {
         Block block = world.getBlockState(position).getBlock();
         if (!(block instanceof PipeBlockBase pipeBlock)) {
             return;
@@ -139,13 +139,13 @@ private void updateList() {
         for (Direction direction : Direction.values()) {
             if (pipeBlock.pipeConnected(world, position, direction)) {
                 BlockPos blockPos = position.relative(direction);
-                GettingDirection gettingDirection = new GettingDirection(blockPos, direction.getOpposite());
+                PipeGettingDirection pipeGettingDirection = new PipeGettingDirection(blockPos, direction.getOpposite());
                 if (canPipeInsertMode(position, direction)) {
-                    if (!insertPositions.containsKey(gettingDirection)) {
-                        insertPositions.put(gettingDirection, distance);
+                    if (!insertPositions.containsKey(pipeGettingDirection)) {
+                        insertPositions.put(pipeGettingDirection, distance);
                     } else {
-                        if (insertPositions.get(gettingDirection) > distance) {
-                            insertPositions.put(gettingDirection, distance);
+                        if (insertPositions.get(pipeGettingDirection) > distance) {
+                            insertPositions.put(pipeGettingDirection, distance);
                         }
                     }
                 } else {

@@ -42,6 +42,8 @@ import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.item.DCTextItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortBlockClickEvent;
+import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortBlockEntities;
+import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortBlocks;
 import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortModelRegistry;
 import net.epitap.degeneracycraft.transport.pipe.parametor.PipeModelRegistry;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeBlockClickEvent;
@@ -86,6 +88,10 @@ public class Degeneracycraft {
         eventBus.addGenericListener(Item.class, PipeBlocks::registerItems);
         eventBus.addGenericListener(Block.class, PipeBlocks::registerBlocks);
         eventBus.addGenericListener(BlockEntityType.class, PipeBlockEntities::registerBlockEntities);
+
+        eventBus.addGenericListener(Item.class, PortBlocks::registerItems);
+        eventBus.addGenericListener(Block.class, PortBlocks::registerBlocks);
+        eventBus.addGenericListener(BlockEntityType.class, PortBlockEntities::registerBlockEntities);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::commonSetup);
@@ -276,7 +282,7 @@ public class Degeneracycraft {
 
 
         PipeBlockEntities.clientSetup();
-//        PortBlockEntities.clientSetup();
+        PortBlockEntities.clientSetup();
 
     }
 

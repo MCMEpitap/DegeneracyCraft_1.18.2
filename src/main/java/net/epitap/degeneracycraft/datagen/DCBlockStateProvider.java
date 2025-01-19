@@ -220,6 +220,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicPerformanceFormingMachinePort();
         registerBasicPerformanceFormingMachinePortHolo();
 
+
+//        registerTestBus();
     }
 
     private void registerReinforcedPlanks() {
@@ -1718,32 +1720,6 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicPowerSteamGeneratorPort() {
-        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_port_block");
-        model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
-        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.get(),
-                state -> model);
-    }
-
-    private void registerBasicPowerSteamGeneratorPortHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_port_holo_block");
-        model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
-        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.get(),
-                state -> model);
-    }
-
     private void registerBasicPowerSteamGeneratorBus() {
         BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_bus_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
@@ -1767,6 +1743,32 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
         orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPowerSteamGeneratorPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPowerSteamGeneratorPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
 
@@ -2504,6 +2506,19 @@ public class DCBlockStateProvider extends BlockStateProvider {
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
+
+//    private void registerTestBus() {
+//        BlockModelBuilder model = models().getBuilder("block/test_pipe");
+//        model.parent(models().getExistingFile(mcLoc("cube")));
+//        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+//        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+//        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+//        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+//        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+//        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+//        orientedBlock(DCBlocks.TEST_BLOCK.get(),
+//                state -> model);
+//    }
 
     private void orientedBlock(Block block, Function<BlockState, ModelFile> modelFunc) {
         getVariantBuilder(block)

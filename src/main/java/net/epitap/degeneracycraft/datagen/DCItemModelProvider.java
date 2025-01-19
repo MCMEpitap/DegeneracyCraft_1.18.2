@@ -930,8 +930,8 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_endurance_high_temperature_combustion_chamber_block"));
         withExistingParent(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_endurance_high_temperature_combustion_chamber_holo_block"));
-        withExistingParent(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_power_steam_generator_bus_block"));
+//        withExistingParent(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.getId().getPath(),
+//                modLoc("block/basic_power_steam_generator_bus_block"));
         withExistingParent(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_power_steam_generator_bus_holo_block"));
         withExistingParent(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.getId().getPath(),
@@ -1075,6 +1075,10 @@ public class DCItemModelProvider extends ItemModelProvider {
 //                modLoc("block/universal_assembler_phase2"));
 //        withExistingParent(DCBlocks.UNIVERSAL_ASSEMBLER_PHASE9_BLOCK.getId().getPath(),
 //                modLoc("block/universal_assembler_phase9"));
+
+
+//        withExistingParent(DCBlocks.TEST_BLOCK.getId().getPath(),
+//                modLoc("block/test_pipe"));
     }
 
     private ItemModelBuilder simpleItem(Item item) {

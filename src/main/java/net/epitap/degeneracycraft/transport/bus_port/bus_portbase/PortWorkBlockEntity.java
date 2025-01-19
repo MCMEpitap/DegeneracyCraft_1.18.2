@@ -3,8 +3,6 @@ package net.epitap.degeneracycraft.transport.bus_port.bus_portbase;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.bus.BasicPerformanceElectrolyserBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.bus.BasicPerformanceElectrolyserBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.port.BasicPerformanceElectrolyserPortType;
-import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusEnergyStorage;
-import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_power_steam_generator.port.BasicPowerSteamGeneratorPortType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_circuit_builder.bus.BasicTechnologyCircuitBuilderBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_circuit_builder.bus.BasicTechnologyCircuitBuilderBusType;
@@ -27,6 +25,8 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.bus.BasicPerformanceFormingMachineBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.bus.BasicPerformanceFormingMachineBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.port.BasicPerformanceFormingMachinePortType;
+import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.test.BasicPowerSteamGeneratorBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.test.BasicPowerSteamGeneratorBusType;
 import net.epitap.degeneracycraft.transport.bus_port.parametor.PortItemHandler;
 import net.epitap.degeneracycraft.transport.bus_port.parametor.PortSetLazyOptional;
 import net.minecraft.core.BlockPos;
@@ -65,7 +65,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
     protected PortSetLazyOptional<BasicPerformanceElectricArcFurnaceBusEnergyStorage> basicPerformanceElectricArcFurnaceBusEnergyStorageStored;
     protected PortSetLazyOptional<BasicPerformanceFormingMachineBusEnergyStorage> basicPerformanceFormingMachineBusEnergyStorageStored;
 
-
+    //    protected PortSetLazyOptional<BasicPowerSteamGeneratorBusEnergyStorage> testStored;
     private int recursionDepth;
 
 
@@ -86,6 +86,8 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
         basicPerformanceElectricArcFurnaceBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicPerformanceFormingMachineBusEnergyStorageStored = new PortSetLazyOptional<>();
+
+//        testStored = new PortSetLazyOptional<>();
     }
 
     @Nonnull
@@ -171,6 +173,13 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 return itemStored.get(side).cast();
             }
         }
+
+//        else if (cap == CapabilityEnergy.ENERGY && hasType(BasicPowerSteamGeneratorBusType.INSTANCE)) {
+//            if (side != null) {
+//                return testStored.get(side).cast();
+//            }
+//        }
+
         return super.getCapability(cap, side);
     }
 
@@ -282,6 +291,14 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 }
             }
         }
+
+//        if (hasType(BasicPowerSteamGeneratorBusType.INSTANCE)) {
+//            for (Direction side : Direction.values()) {
+//                if (portExtracting(side)) {
+//                    testStored.get(side).ifPresent(BasicPowerSteamGeneratorBusEnergyStorage::tick);
+//                }
+//            }
+//        }
     }
 
     @Override
@@ -344,6 +361,11 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicPerformanceFormingMachinePortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
         }
+
+
+//        if (hasType(BasicPowerSteamGeneratorBusType.INSTANCE)) {
+//            testStored.revalidate(side, storage -> extracting, (storage) -> new BasicPowerSteamGeneratorBusEnergyStorage(this, storage));
+//        }
     }
 
     @Override
@@ -405,6 +427,10 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicPerformanceFormingMachinePortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
         }
+
+//        if (hasType(BasicPowerSteamGeneratorBusType.INSTANCE)) {
+//            testStored.revalidate(this::portExtracting, (side) -> new BasicPowerSteamGeneratorBusEnergyStorage(this, side));
+//        }
     }
 
     @Override
@@ -430,6 +456,8 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         basicPerformanceElectricArcFurnaceBusEnergyStorageStored.invalidate();
         basicPerformanceFormingMachineBusEnergyStorageStored.invalidate();
 
+
+//        testStored.invalidate();
         super.setRemoved();
     }
 

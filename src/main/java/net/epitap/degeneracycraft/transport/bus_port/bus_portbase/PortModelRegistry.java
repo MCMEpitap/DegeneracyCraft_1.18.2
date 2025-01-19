@@ -33,7 +33,8 @@ public class PortModelRegistry {
         BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK_EXTRACT("block/basic_performance_electric_arc_furnace_bus_block_extract"),
         BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK_EXTRACT("block/basic_performance_electric_arc_furnace_port_block_extract"),
         BASIC_PERFORMANCE_FORMING_MACHINE_BUS_BLOCK_EXTRACT("block/basic_performance_forming_machine_bus_block_extract"),
-        BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK_EXTRACT("block/basic_performance_forming_machine_port_block_extract");
+        BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK_EXTRACT("block/basic_performance_forming_machine_port_block_extract"),
+        TEST_EXTRACT("block/test_extract");
 
         private final ResourceLocation resource;
         private final PortTransportModelValue<BakedModel> cachedModel;

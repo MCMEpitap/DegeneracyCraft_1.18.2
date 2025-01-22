@@ -138,7 +138,7 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
 
     @Override
     public <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-        if (cap == CapabilityEnergy.ENERGY && (side == Direction.UP || side == Direction.DOWN || side == Direction.NORTH)) {
+        if (cap == CapabilityEnergy.ENERGY && (side == Direction.UP || side == Direction.DOWN)) {
             return lazyEnergyHandler.cast();
         } else if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
             if (side == null) {

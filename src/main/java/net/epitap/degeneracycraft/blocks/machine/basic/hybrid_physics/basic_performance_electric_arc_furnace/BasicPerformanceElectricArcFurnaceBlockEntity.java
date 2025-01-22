@@ -142,7 +142,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
 
     @Override
     public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-        if (cap == CapabilityEnergy.ENERGY && (side == Direction.UP || side == Direction.NORTH)) {
+        if (cap == CapabilityEnergy.ENERGY && (side == Direction.UP || side == Direction.DOWN)) {
             return lazyEnergyHandler.cast();
         } else if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
             if (side == null) {

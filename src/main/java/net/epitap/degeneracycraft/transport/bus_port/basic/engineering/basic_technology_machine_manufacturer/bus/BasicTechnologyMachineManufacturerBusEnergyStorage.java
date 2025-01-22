@@ -15,15 +15,14 @@ public class BasicTechnologyMachineManufacturerBusEnergyStorage implements IEner
     }
 
     public void tick() {
-        this.lastReceived = this.pipe.getLevel().getGameTime();
         if (this.pipe.getLevel().getGameTime() - this.lastReceived > 1F) {
             BasicTechnologyMachineManufacturerBusType.INSTANCE.extractEnergy(this.pipe, this.side);
-
         }
     }
 
     public float receiveEnergyFloat(float maxReceive, boolean simulate) {
         this.lastReceived = this.pipe.getLevel().getGameTime();
+
         return BasicTechnologyMachineManufacturerBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
     }
 
@@ -44,7 +43,6 @@ public class BasicTechnologyMachineManufacturerBusEnergyStorage implements IEner
     @Override
     public int receiveEnergy(int maxReceive, boolean simulate) {
         this.lastReceived = this.pipe.getLevel().getGameTime();
-
         return (int) BasicTechnologyMachineManufacturerBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
     }
 

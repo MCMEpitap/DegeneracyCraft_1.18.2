@@ -15,15 +15,14 @@ public class BasicPerformanceElectrolyserBusEnergyStorage implements IEnergyStor
     }
 
     public void tick() {
-        this.lastReceived = this.pipe.getLevel().getGameTime();
         if (this.pipe.getLevel().getGameTime() - this.lastReceived > 1F) {
             BasicPerformanceElectrolyserBusType.INSTANCE.extractEnergy(this.pipe, this.side);
-
         }
     }
 
     public float receiveEnergyFloat(float maxReceive, boolean simulate) {
         this.lastReceived = this.pipe.getLevel().getGameTime();
+
         return BasicPerformanceElectrolyserBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
     }
 

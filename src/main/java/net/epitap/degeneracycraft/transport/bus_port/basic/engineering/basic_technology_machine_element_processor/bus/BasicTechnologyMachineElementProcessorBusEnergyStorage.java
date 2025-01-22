@@ -15,15 +15,14 @@ public class BasicTechnologyMachineElementProcessorBusEnergyStorage implements I
     }
 
     public void tick() {
-        this.lastReceived = this.pipe.getLevel().getGameTime();
         if (this.pipe.getLevel().getGameTime() - this.lastReceived > 1F) {
             BasicTechnologyMachineElementProcessorBusType.INSTANCE.extractEnergy(this.pipe, this.side);
-
         }
     }
 
     public float receiveEnergyFloat(float maxReceive, boolean simulate) {
         this.lastReceived = this.pipe.getLevel().getGameTime();
+
         return BasicTechnologyMachineElementProcessorBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
     }
 

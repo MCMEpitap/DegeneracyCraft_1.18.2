@@ -356,7 +356,7 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
     }
 
     public static boolean isHaltDevice(BasicTechnologyMachinePartProcessorBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(12).is(DCItems.MACHINE_HALT_DEVICE.get());
+        return blockEntity.itemHandler.getStackInSlot(11).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
     private static void craftItem(BasicTechnologyMachinePartProcessorBlockEntity blockEntity) {

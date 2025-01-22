@@ -3,6 +3,8 @@ package net.epitap.degeneracycraft.transport.bus_port.bus_portbase;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.bus.BasicPerformanceElectrolyserBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.bus.BasicPerformanceElectrolyserBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.port.BasicPerformanceElectrolyserPortType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_power_steam_generator.port.BasicPowerSteamGeneratorPortType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_circuit_builder.bus.BasicTechnologyCircuitBuilderBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_circuit_builder.bus.BasicTechnologyCircuitBuilderBusType;
@@ -25,8 +27,6 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.bus.BasicPerformanceFormingMachineBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.bus.BasicPerformanceFormingMachineBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.port.BasicPerformanceFormingMachinePortType;
-import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.test.BasicPowerSteamGeneratorBusEnergyStorage;
-import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.test.BasicPowerSteamGeneratorBusType;
 import net.epitap.degeneracycraft.transport.bus_port.parametor.PortItemHandler;
 import net.epitap.degeneracycraft.transport.bus_port.parametor.PortSetLazyOptional;
 import net.minecraft.core.BlockPos;

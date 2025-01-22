@@ -16,7 +16,6 @@ import net.minecraftforge.energy.CapabilityEnergy;
 
 public class BasicTechnologyMachinePartProcessorBusBlock extends PortBlockBase {
     public BasicTechnologyMachinePartProcessorBusBlock(Properties properties) {
-        super();
     }
 
     public boolean enabledConnectTo(LevelAccessor world, BlockPos pos, Direction facing) {

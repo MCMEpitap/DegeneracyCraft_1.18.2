@@ -16,13 +16,12 @@ import net.minecraftforge.energy.CapabilityEnergy;
 
 public class BasicPerformanceFormingMachineBusBlock extends PortBlockBase {
     public BasicPerformanceFormingMachineBusBlock(Properties properties) {
-        super();
     }
 
     public boolean enabledConnectTo(LevelAccessor world, BlockPos pos, Direction facing) {
         BlockEntity blockEntity = world.getBlockEntity(pos.relative(facing));
         return blockEntity != null && (blockEntity.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).isPresent()
-                || (blockEntity.getBlockState().is(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get())
+                || (blockEntity.getBlockState().is(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK.get())
                 && blockEntity.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).isPresent()));
     }
 

@@ -15,15 +15,14 @@ public class BasicPerformanceFormingMachineBusEnergyStorage implements IEnergySt
     }
 
     public void tick() {
-        this.lastReceived = this.pipe.getLevel().getGameTime();
         if (this.pipe.getLevel().getGameTime() - this.lastReceived > 1F) {
             BasicPerformanceFormingMachineBusType.INSTANCE.extractEnergy(this.pipe, this.side);
-
         }
     }
 
     public float receiveEnergyFloat(float maxReceive, boolean simulate) {
         this.lastReceived = this.pipe.getLevel().getGameTime();
+
         return BasicPerformanceFormingMachineBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
     }
 

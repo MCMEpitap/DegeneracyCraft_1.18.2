@@ -1,10 +1,10 @@
 package net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_manufacturer.bus;
 
-import net.epitap.degeneracycraft.item.DCItems;
+import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortBlockEntityBase;
 import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortTypeBase;
 import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortWorkBlockEntity;
-import net.epitap.degeneracycraft.transport.bus_port.parametor.PortIEnergyStorageUtils;
+import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeIEnergyUtils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
@@ -24,7 +24,7 @@ public class BasicTechnologyMachineManufacturerBusType extends PortTypeBase<Void
     }
 
     public String getKey() {
-        return "basic_technology_machine_manufacturer_bus";
+        return "basic_technology_machine_manufacturer_bus_block";
     }
 
     public boolean canImport(BlockEntity blockEntity, Direction direction) {
@@ -32,11 +32,11 @@ public class BasicTechnologyMachineManufacturerBusType extends PortTypeBase<Void
     }
 
     public String getTranslationKey() {
-        return "basic_technology_machine_manufacturer_bus";
+        return "basic_technology_machine_manufacturer_bus_block";
     }
 
     public ItemStack getIcon() {
-        return new ItemStack(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+        return new ItemStack(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK.get());
     }
 
     public void tick(PortWorkBlockEntity blockEntity) {
@@ -51,6 +51,7 @@ public class BasicTechnologyMachineManufacturerBusType extends PortTypeBase<Void
             }
         }
     }
+
 
     public float receiveEnergy(PortWorkBlockEntity blockEntity, Direction side, float amount, boolean simulate) {
         if (!blockEntity.portExtracting(side)) {
@@ -84,7 +85,7 @@ public class BasicTechnologyMachineManufacturerBusType extends PortTypeBase<Void
                 IEnergyStorage destination = (IEnergyStorage) var13.next();
                 float simulatedExtract = energyStorage.extractEnergy((int) Math.min(Math.max(completeAmount / destinations.size(), 1), energyToTransfer), true);
                 if (simulatedExtract > 0) {
-                    float transferred = PortIEnergyStorageUtils.pushEnergy(energyStorage, destination, simulatedExtract);
+                    float transferred = PipeIEnergyUtils.pushEnergy(energyStorage, destination, simulatedExtract);
                     if (transferred > 0) {
                         energyToTransfer -= transferred;
                     }
@@ -134,7 +135,7 @@ public class BasicTechnologyMachineManufacturerBusType extends PortTypeBase<Void
     }
 
     public float getTickRate() {
-        return Float.MAX_VALUE;
+        return 64F;
     }
 
 }

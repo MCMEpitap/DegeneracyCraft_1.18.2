@@ -1,6 +1,6 @@
 package net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_element_processor.bus;
 
-import net.epitap.degeneracycraft.item.DCItems;
+import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortBlockEntityBase;
 import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortTypeBase;
 import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortWorkBlockEntity;
@@ -24,7 +24,7 @@ public class BasicTechnologyMachineElementProcessorBusType extends PortTypeBase<
     }
 
     public String getKey() {
-        return "basic_technology_machine_element_processor_bus";
+        return "basic_technology_machine_element_processor_bus_block";
     }
 
     public boolean canImport(BlockEntity blockEntity, Direction direction) {
@@ -32,11 +32,11 @@ public class BasicTechnologyMachineElementProcessorBusType extends PortTypeBase<
     }
 
     public String getTranslationKey() {
-        return "basic_technology_machine_element_processor_bus";
+        return "basic_technology_machine_element_processor_bus_block";
     }
 
     public ItemStack getIcon() {
-        return new ItemStack(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+        return new ItemStack(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK.get());
     }
 
     public void tick(PortWorkBlockEntity blockEntity) {
@@ -51,6 +51,7 @@ public class BasicTechnologyMachineElementProcessorBusType extends PortTypeBase<
             }
         }
     }
+
 
     public float receiveEnergy(PortWorkBlockEntity blockEntity, Direction side, float amount, boolean simulate) {
         if (!blockEntity.portExtracting(side)) {
@@ -134,7 +135,7 @@ public class BasicTechnologyMachineElementProcessorBusType extends PortTypeBase<
     }
 
     public float getTickRate() {
-        return Float.MAX_VALUE;
+        return 64F;
     }
 
 }

@@ -15,15 +15,14 @@ public class BasicPerformanceElectricArcFurnaceBusEnergyStorage implements IEner
     }
 
     public void tick() {
-        this.lastReceived = this.pipe.getLevel().getGameTime();
         if (this.pipe.getLevel().getGameTime() - this.lastReceived > 1F) {
             BasicPerformanceElectricArcFurnaceBusType.INSTANCE.extractEnergy(this.pipe, this.side);
-
         }
     }
 
     public float receiveEnergyFloat(float maxReceive, boolean simulate) {
         this.lastReceived = this.pipe.getLevel().getGameTime();
+
         return BasicPerformanceElectricArcFurnaceBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
     }
 

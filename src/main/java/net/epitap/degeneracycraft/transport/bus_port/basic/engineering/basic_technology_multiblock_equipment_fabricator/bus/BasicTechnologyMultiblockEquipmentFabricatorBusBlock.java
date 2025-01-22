@@ -16,13 +16,13 @@ import net.minecraftforge.energy.CapabilityEnergy;
 
 public class BasicTechnologyMultiblockEquipmentFabricatorBusBlock extends PortBlockBase {
     public BasicTechnologyMultiblockEquipmentFabricatorBusBlock(Properties properties) {
-        super();
     }
 
     public boolean enabledConnectTo(LevelAccessor world, BlockPos pos, Direction facing) {
         BlockEntity blockEntity = world.getBlockEntity(pos.relative(facing));
         return blockEntity != null && (blockEntity.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).isPresent()
-                || blockEntity.getBlockState().is(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BLOCK.get()));
+                || (blockEntity.getBlockState().is(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_BLOCK.get())
+                && blockEntity.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).isPresent()));
     }
 
     public boolean judgePort(LevelAccessor world, BlockPos pos, Direction facing) {

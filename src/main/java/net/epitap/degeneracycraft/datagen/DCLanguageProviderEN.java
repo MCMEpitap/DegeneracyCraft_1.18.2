@@ -808,7 +808,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_power_steam_generator_block",
                 "For Basic Power Steam Generator");
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), "Basic Endurance High Temperature Combustion Chamber (Hologram)");
-//        add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.get(), "Basic Power Steam Generator Bus");
+        add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.get(), "Basic Power Steam Generator Bus");
         add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_HOLO_BLOCK.get(), "Basic Power Steam Generator Bus (Hologram)");
         add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.get(), "Basic Power Steam Generator Port");
         add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.get(), "Basic Power Steam Generator Port (Hologram)");

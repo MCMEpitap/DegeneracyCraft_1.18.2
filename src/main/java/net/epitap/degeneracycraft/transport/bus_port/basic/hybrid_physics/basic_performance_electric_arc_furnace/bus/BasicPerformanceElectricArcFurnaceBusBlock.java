@@ -16,7 +16,6 @@ import net.minecraftforge.energy.CapabilityEnergy;
 
 public class BasicPerformanceElectricArcFurnaceBusBlock extends PortBlockBase {
     public BasicPerformanceElectricArcFurnaceBusBlock(Properties properties) {
-        super();
     }
 
     public boolean enabledConnectTo(LevelAccessor world, BlockPos pos, Direction facing) {

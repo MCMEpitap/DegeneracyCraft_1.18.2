@@ -35,6 +35,7 @@ import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineeri
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.material_storage.basic_strength_imitation_magic_engineering_multiblock_material_storage.BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.bus.BasicPerformanceElectrolyserBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.port.BasicPerformanceElectrolyserPortBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_power_steam_generator.port.BasicPowerSteamGeneratorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_circuit_builder.port.BasicTechnologyCircuitBuilderPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_element_processor.bus.BasicTechnologyMachineElementProcessorBusBlockEntity;
@@ -51,7 +52,6 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_electric_arc_furnace.port.BasicPerformanceElectricArcFurnacePortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.bus.BasicPerformanceFormingMachineBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.port.BasicPerformanceFormingMachinePortBlockEntity;
-import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.test.BasicPowerSteamGeneratorBusBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -155,7 +155,7 @@ public class DCBlockEntities {
             BLOCK_ENTITIES.register("basic_power_steam_generator_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPowerSteamGeneratorBlockEntity::new, DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicPowerSteamGeneratorBusBlockEntity>> BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_power_steam_generator_bus_block", () ->
+            BLOCK_ENTITIES.register("basic_power_steam_generator_bus_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPowerSteamGeneratorBusBlockEntity::new, DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicPowerSteamGeneratorPortBlockEntity>> BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_power_steam_generator_port_block_entity", () ->

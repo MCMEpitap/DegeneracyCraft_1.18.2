@@ -658,6 +658,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.MACHINE_HALT_DEVICE.get(), "機械停止デバイス");
 
         add(DCItems.BASIC_CIRCUIT.get(), "基本回路");
+        add(DCItems.BASIC_COMBINEDSHAFT.get(), "基本結合シャフト");
         add(DCItems.BASIC_DIODE.get(), "基本ダイオード");
         add(DCItems.BASIC_DRIVECHAIN.get(), "基本ドライブチェーン");
         add(DCItems.BASIC_INSCRIBE_NEEDLE.get(), "基本刻印針");
@@ -940,6 +941,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("jei." + "degeneracycraft_basic_technology_universal_assembler", "基本技術万能加工機 レシピ");
         add("jei." + "degeneracycraft_basic_technology_circuit_builder", "基本技術回路構築機 レシピ");
         add("jei." + "degeneracycraft_basic_technology_machine_part_processor", "基本技術機械部品加工機 レシピ");
+        add("jei." + "degeneracycraft_basic_technology_multiblock_equipment_fabricator", "基本技術マルチブロック設備製作機 レシピ");
+
 
         add("jei." + "degeneracycraft_basic_performance_electric_arc_furnace", "基本性能電気アーク炉 レシピ");
         add("jei." + "degeneracycraft_basic_performance_forming_machine", "基本性能形成機 レシピ");

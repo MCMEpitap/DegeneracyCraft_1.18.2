@@ -669,6 +669,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicMaterialCommonItem(DCItems.WATER_CONTAINER.get());
 
         basicPartItem(DCItems.BASIC_CIRCUIT.get());
+        basicPartItem(DCItems.BASIC_COMBINEDSHAFT.get());
         basicPartItem(DCItems.BASIC_DIODE.get());
         basicPartItem(DCItems.BASIC_DRIVECHAIN.get());
         basicPartItem(DCItems.BASIC_INSCRIBE_NEEDLE.get());

@@ -1,0 +1,35 @@
+{
+  "type": "degeneracycraft:basic_technology_machine_part_processor_recipe",
+  "energy": 1000.0,
+  "time": 10.0,
+  "input0": {
+    "item": "degeneracycraft:copper_wire"
+  },
+  "input1": {
+    "item": "degeneracycraft:iron_spring"
+  },
+  "input2": {
+    "item": "degeneracycraft:copper_wire"
+  },
+  "input3": {
+    "item": "degeneracycraft:iron_shaft"
+  },
+  "input4": {
+    "item": "degeneracycraft:iron_shaftcoupling"
+  },
+  "input5": {
+    "item": "degeneracycraft:iron_shaft"
+  },
+  "input6": {
+    "item": "degeneracycraft:copper_wire"
+  },
+  "input7": {
+    "item": "degeneracycraft:iron_spring"
+  },
+  "input8": {
+    "item": "degeneracycraft:copper_wire"
+  },
+  "output0": {
+    "item": "degeneracycraft:basic_combinedshaft"
+  }
+}

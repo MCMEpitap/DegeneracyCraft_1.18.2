@@ -658,6 +658,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.MACHINE_HALT_DEVICE.get(), "Machine Halt Device");
 
         add(DCItems.BASIC_CIRCUIT.get(), "Basic Circuit");
+        add(DCItems.BASIC_COMBINEDSHAFT.get(), "Basic Combined Shaft");
         add(DCItems.BASIC_DIODE.get(), "Basic Diode");
         add(DCItems.BASIC_DRIVECHAIN.get(), "Basic Drive Chain");
         add(DCItems.BASIC_INSCRIBE_NEEDLE.get(), "Basic Inscribe Needle");
@@ -929,6 +930,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("jei." + "degeneracycraft_basic_technology_universal_assembler", "Basic Technology Universal Assembler Recipe");
         add("jei." + "degeneracycraft_basic_technology_circuit_builder", "Basic Technology Circuit Builder Recipe");
         add("jei." + "degeneracycraft_basic_technology_machine_part_processor", "Basic Technology Machine Part Processor Recipe");
+        add("jei." + "degeneracycraft_basic_technology_multiblock_equipment_fabricator", "Basic Technology Multiblock Equipment Fabricator Recipe");
 
         add("jei." + "degeneracycraft_basic_performance_electric_arc_furnace", "Basic Performance Electric Arc Furnace Recipe");
         add("jei." + "degeneracycraft_basic_performance_forming_machine", "Basic Performance Forming Machine Recipe");

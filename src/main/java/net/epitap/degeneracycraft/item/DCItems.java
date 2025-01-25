@@ -476,6 +476,10 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> SILICON_INGOT = registerAtomicItem("silicon_ingot", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "silicon", "initial");
     public static final RegistryObject<Item> SILICON_NUGGET = registerAtomicItem("silicon_nugget", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "silicon", "initial");
 
+    public static final RegistryObject<Item> TIN_INGOT = registerAtomicItem("tin_ingot", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "silicon", "initial");
+    public static final RegistryObject<Item> TIN_NUGGET = registerAtomicItem("tin_nugget", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "silicon", "initial");
+
+
     public static final RegistryObject<Item> EMPTY_CONTAINER = ITEMS.register("empty_container", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
     public static final RegistryObject<Item> WATER_CONTAINER = ITEMS.register("water_container", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
 
@@ -757,7 +761,7 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> BASIC_INSCRIBE_NEEDLE = ITEMS.register("basic_inscribe_needle", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
     public static final RegistryObject<Item> BASIC_INSCRIBED_CIRCUIT = ITEMS.register("basic_inscribed_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
-    public static final RegistryObject<Item> BASIC_LINKAGE = ITEMS.register("basic_linkageu", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_LINKAGE = ITEMS.register("basic_linkage", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_MACHINE_SCREEN = ITEMS.register("basic_machine_screen", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_MOTOR = ITEMS.register("basic_motor", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_PROCESSING_BASE = ITEMS.register("basic_processing_base", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));

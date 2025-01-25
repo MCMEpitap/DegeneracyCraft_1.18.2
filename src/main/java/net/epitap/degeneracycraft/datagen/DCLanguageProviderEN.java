@@ -642,6 +642,11 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.SILICON_NUGGET.get(), "Silicon Nugget");
         add(DCBlocks.SILICON_BLOCK.get(), "Silicon Block");
 
+        add(DCItems.TIN_INGOT.get(), "Tin Ingot");
+        add(DCItems.TIN_NUGGET.get(), "Tin Nugget");
+        add(DCBlocks.TIN_BLOCK.get(), "Tin Block");
+
+
         add(DCItems.PURIFIED_GRAPHITE_ARC_ELECTRODE.get(), "Purified Graphite Arc Electrode");
 
 
@@ -1026,6 +1031,13 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "hydrogen" + ".boiling", "Boiling Point:20.28 K");
         add("tooltip." + "degeneracycraft." + "hydrogen" + ".formula", "Chemical Formula:H");
 
+        add("tooltip." + "degeneracycraft." + "iron" + ".name", "Element Name:Iron");
+        add("tooltip." + "degeneracycraft." + "iron" + ".number", "Atomic Number:26");
+        add("tooltip." + "degeneracycraft." + "iron" + ".weight", "Atomic Weight:55.85 g/mol");
+        add("tooltip." + "degeneracycraft." + "iron" + ".melting", "Melting Point:1811 K");
+        add("tooltip." + "degeneracycraft." + "iron" + ".boiling", "Boiling Point:3134 K");
+        add("tooltip." + "degeneracycraft." + "iron" + ".formula", "Chemical Formula:Fe");
+
         add("tooltip." + "degeneracycraft." + "silicon" + ".name", "Element Name:Silicon");
         add("tooltip." + "degeneracycraft." + "silicon" + ".number", "Atomic Number:14");
         add("tooltip." + "degeneracycraft." + "silicon" + ".weight", "Atomic Weight:28.04 g/mol");
@@ -1033,12 +1045,13 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "silicon" + ".boiling", "Boiling Point:3265 K");
         add("tooltip." + "degeneracycraft." + "silicon" + ".formula", "Chemical Formula:Si");
 
-        add("tooltip." + "degeneracycraft." + "iron" + ".name", "Element Name:Iron");
-        add("tooltip." + "degeneracycraft." + "iron" + ".number", "Atomic Number:26");
-        add("tooltip." + "degeneracycraft." + "iron" + ".weight", "Atomic Weight:55.85 g/mol");
-        add("tooltip." + "degeneracycraft." + "iron" + ".melting", "Melting Point:1811 K");
-        add("tooltip." + "degeneracycraft." + "iron" + ".boiling", "Boiling Point:3134 K");
-        add("tooltip." + "degeneracycraft." + "iron" + ".formula", "Chemical Formula:Fe");
+        add("tooltip." + "degeneracycraft." + "tin" + ".name", "Element Name:Tin");
+        add("tooltip." + "degeneracycraft." + "tin" + ".number", "Atomic Number:50");
+        add("tooltip." + "degeneracycraft." + "tin" + ".weight", "Atomic Weight:118.7 g/mol");
+        add("tooltip." + "degeneracycraft." + "tin" + ".melting", "Melting Point:505.8 K");
+        add("tooltip." + "degeneracycraft." + "tin" + ".boiling", "Boiling Point:2875 K");
+        add("tooltip." + "degeneracycraft." + "tin" + ".formula", "Chemical Formula:Sn");
+
 
         add("tooltip." + "degeneracycraft." + "requiredenergy.", "Required Energy:");
         add("tooltip." + "degeneracycraft." + "requiredenergyusage.", "Required Energy Usage:");

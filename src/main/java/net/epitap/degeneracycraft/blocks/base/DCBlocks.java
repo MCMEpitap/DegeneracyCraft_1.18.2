@@ -89,7 +89,10 @@ public class DCBlocks {
     public static final TagKey<Block> CASSITERITE_ORE = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(Degeneracycraft.MOD_ID, "cassiterite_ore"));
 
     public static final RegistryObject<Block> SILICON_BLOCK = registerTooltipMeterialElementBlock("silicon_block", () -> new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f, 10.0f)),
-            DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "silicon", "initial");
+            DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "silicon", "basic");
+    public static final RegistryObject<Block> TIN_BLOCK = registerTooltipMeterialElementBlock("tin_block", () -> new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f, 10.0f)),
+            DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "tin", "basic");
+
 
     public static final RegistryObject<Block> OVERWORLD_GRAVITATION_ORE = registerBlock("overworld_gravitation_ore", () -> new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()),
             DCCreativeTab.DEGENERACYCRAFT_ORE_TAB);

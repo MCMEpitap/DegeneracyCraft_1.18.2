@@ -645,6 +645,9 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.SILICON_INGOT.get(), "ケイ素インゴット");
         add(DCItems.SILICON_NUGGET.get(), "ケイ素塊");
         add(DCBlocks.SILICON_BLOCK.get(), "ケイ素ブロック");
+        add(DCItems.TIN_INGOT.get(), "スズインゴット");
+        add(DCItems.TIN_NUGGET.get(), "スズ塊");
+        add(DCBlocks.TIN_BLOCK.get(), "スズブロック");
 
 
         add(DCItems.PURIFIED_GRAPHITE_ARC_ELECTRODE.get(), "純化済黒鉛アーク電極");
@@ -1053,6 +1056,13 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "iron" + ".melting", "融点:1811 K");
         add("tooltip." + "degeneracycraft." + "iron" + ".boiling", "沸点:3134 K");
         add("tooltip." + "degeneracycraft." + "iron" + ".formula", "化学式:Fe");
+
+        add("tooltip." + "degeneracycraft." + "tin" + ".name", "物質名:スズ");
+        add("tooltip." + "degeneracycraft." + "tin" + ".number", "原子番号:50");
+        add("tooltip." + "degeneracycraft." + "tin" + ".weight", "原子量:118.7 g/mol");
+        add("tooltip." + "degeneracycraft." + "tin" + ".melting", "融点:505.8 K");
+        add("tooltip." + "degeneracycraft." + "tin" + ".boiling", "沸点:2875 K");
+        add("tooltip." + "degeneracycraft." + "tin" + ".formula", "化学式:Sn");
 
 
         add("tooltip." + "degeneracycraft." + "requiredenergy.", "要求電力総量:");

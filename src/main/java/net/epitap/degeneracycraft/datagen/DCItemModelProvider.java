@@ -632,6 +632,11 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.SILICON_BLOCK.getId().getPath(),
                 modLoc("block/silicon_block"));
 
+        elementTinMaterialItem(DCItems.TIN_INGOT.get());
+        elementTinMaterialItem(DCItems.TIN_NUGGET.get());
+        withExistingParent(DCBlocks.TIN_BLOCK.getId().getPath(),
+                modLoc("block/tin_block"));
+
         basicInscribedCircuitItem(DCItems.BASIC_PRECISION_BOLT_INSCRIBED_CIRCUIT.get());
         basicInscribedCircuitItem(DCItems.BASIC_PRECISION_KEY_INSCRIBED_CIRCUIT.get());
         basicInscribedCircuitItem(DCItems.BASIC_PRECISION_ROD_INSCRIBED_CIRCUIT.get());
@@ -1243,6 +1248,12 @@ public class DCItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/material/element/silicon/" + item.getRegistryName().getPath()));
+    }
+
+    private ItemModelBuilder elementTinMaterialItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/material/element/tin/" + item.getRegistryName().getPath()));
     }
 
     private ItemModelBuilder elementCopperItem(Item item) {

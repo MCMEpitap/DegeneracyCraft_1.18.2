@@ -427,17 +427,35 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.IRON_JOINT.get(), "Iron Joint");
         add(DCItems.IRON_KEY.get(),"Iron Key");
         add(DCItems.IRON_NUT.get(),"Iron Nut");
-        add(DCItems.IRON_PIPE.get(),"Iron Pipe");
-        add(DCItems.IRON_PIPEJOINT.get(),"Iron PipeJoint");
+        add(DCItems.IRON_PIPE.get(), "Iron Pipe");
+        add(DCItems.IRON_PIPEJOINT.get(), "Iron PipeJoint");
         add(DCItems.IRON_PLATE.get(), "Iron Plate");
         add(DCItems.IRON_RIVET.get(), "Iron Rivet");
         add(DCItems.IRON_ROD.get(), "Iron Rod");
-        add(DCItems.IRON_SHAFT.get(),"Iron Shaft");
-        add(DCItems.IRON_SHAFTCOUPLING.get(),"Iron ShaftCoupling");
-        add(DCItems.IRON_SHAPESTEEL.get(),"Iron ShapeSteel");
+        add(DCItems.IRON_SHAFT.get(), "Iron Shaft");
+        add(DCItems.IRON_SHAFTCOUPLING.get(), "Iron ShaftCoupling");
+        add(DCItems.IRON_SHAPESTEEL.get(), "Iron ShapeSteel");
         add(DCItems.IRON_SPRING.get(), "Iron Spring");
         add(DCItems.IRON_WIRE.get(), "Iron Wire");
-        
+
+        add(DCItems.TIN_BEARING.get(), "Tin Bearing");
+        add(DCItems.TIN_BOLT.get(), "Tin Bolt");
+        add(DCItems.TIN_CAM.get(), "Tin Cam");
+        add(DCItems.TIN_CHAIN.get(), "Tin Chain");
+        add(DCItems.TIN_GEAR.get(), "Tin Gear");
+        add(DCItems.TIN_JOINT.get(), "Tin Joint");
+        add(DCItems.TIN_KEY.get(), "Tin Key");
+        add(DCItems.TIN_NUT.get(), "Tin Nut");
+        add(DCItems.TIN_PIPE.get(), "Tin Pipe");
+        add(DCItems.TIN_PIPEJOINT.get(), "Tin PipeJoint");
+        add(DCItems.TIN_PLATE.get(), "Tin Plate");
+        add(DCItems.TIN_RIVET.get(), "Tin Rivet");
+        add(DCItems.TIN_ROD.get(), "Tin Rod");
+        add(DCItems.TIN_SHAFT.get(), "Tin Shaft");
+        add(DCItems.TIN_SHAFTCOUPLING.get(), "Tin ShaftCoupling");
+        add(DCItems.TIN_SHAPESTEEL.get(), "Tin ShapeSteel");
+        add(DCItems.TIN_SPRING.get(), "Tin Spring");
+        add(DCItems.TIN_WIRE.get(), "Tin Wire");
 //        //Basic Class Iron Machine Component
 //        add(DCItems.BASIC_CLASS_IRON_BEARING.get(),"Basic Class Iron Bearing");
 //        add(DCItems.BASIC_CLASS_IRON_BOLT.get(),"Basic Class Iron Bolt");

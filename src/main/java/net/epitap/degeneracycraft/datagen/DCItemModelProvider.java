@@ -452,6 +452,26 @@ public class DCItemModelProvider extends ItemModelProvider {
         elementIronItem(DCItems.IRON_SHAPESTEEL.get());
         elementIronItem(DCItems.IRON_SPRING.get());
         elementIronItem(DCItems.IRON_WIRE.get());
+
+        elementTinItem(DCItems.TIN_BEARING.get());
+        elementTinItem(DCItems.TIN_BOLT.get());
+        elementTinItem(DCItems.TIN_CAM.get());
+        elementTinItem(DCItems.TIN_CHAIN.get());
+        elementTinItem(DCItems.TIN_GEAR.get());
+        elementTinItem(DCItems.TIN_JOINT.get());
+        elementTinItem(DCItems.TIN_KEY.get());
+        elementTinItem(DCItems.TIN_NUT.get());
+        elementTinItem(DCItems.TIN_PIPE.get());
+        elementTinItem(DCItems.TIN_PIPEJOINT.get());
+        elementTinItem(DCItems.TIN_PLATE.get());
+        elementTinItem(DCItems.TIN_RIVET.get());
+        elementTinItem(DCItems.TIN_ROD.get());
+        elementTinItem(DCItems.TIN_SHAFT.get());
+        elementTinItem(DCItems.TIN_SHAFTCOUPLING.get());
+        elementTinItem(DCItems.TIN_SHAPESTEEL.get());
+        elementTinItem(DCItems.TIN_SPRING.get());
+        elementTinItem(DCItems.TIN_WIRE.get());
+
 //        simpleItem(DCItems.BASIC_CLASS_IRON_BEARING.get());
 //        simpleItem(DCItems.BASIC_CLASS_IRON_BOLT.get());
 //        simpleItem(DCItems.BASIC_CLASS_IRON_CAM.get());
@@ -1266,6 +1286,12 @@ public class DCItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/element/iron/" + item.getRegistryName().getPath()));
+    }
+
+    private ItemModelBuilder elementTinItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/element/tin/" + item.getRegistryName().getPath()));
     }
 
     private ItemModelBuilder basicPartItem(Item item) {

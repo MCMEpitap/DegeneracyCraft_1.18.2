@@ -30,6 +30,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerEndCassiteriteOre();
 
         registerSiliconBlock();
+        registerTinBlock();
 
         registerBasicStrengthAstronomyMultiblockBaseFrame();
         registerBasicStrengthAstronomyMultiblockBaseFrameHolo();
@@ -313,6 +314,19 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("east", modLoc("block/material/element/silicon/silicon_block"));
         model.texture("west", modLoc("block/material/element/silicon/silicon_block"));
         orientedBlock(DCBlocks.SILICON_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerTinBlock() {
+        BlockModelBuilder model = models().getBuilder("block/tin_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/material/element/tin/tin_block"));
+        model.texture("up", modLoc("block/material/element/tin/tin_block"));
+        model.texture("north", modLoc("block/material/element/tin/tin_block"));
+        model.texture("south", modLoc("block/material/element/tin/tin_block"));
+        model.texture("east", modLoc("block/material/element/tin/tin_block"));
+        model.texture("west", modLoc("block/material/element/tin/tin_block"));
+        orientedBlock(DCBlocks.TIN_BLOCK.get(),
                 state -> model);
     }
 

@@ -541,7 +541,26 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> IRON_SPRING = registerAtomicItem("iron_spring", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "iron", "initial");
     public static final RegistryObject<Item> IRON_WIRE = registerAtomicItem("iron_wire", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "iron", "initial");
 
-//    public static final RegistryObject<Item> BASIC_CLASS_IRON_BEARING = ITEMS.register("basic_class_iron_bearing",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB)));
+    public static final RegistryObject<Item> TIN_BEARING = registerAtomicItem("tin_bearing", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+    public static final RegistryObject<Item> TIN_BOLT = registerAtomicItem("tin_bolt", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+    public static final RegistryObject<Item> TIN_CAM = registerAtomicItem("tin_cam", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+    public static final RegistryObject<Item> TIN_CHAIN = registerAtomicItem("tin_chain", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+    public static final RegistryObject<Item> TIN_GEAR = registerAtomicItem("tin_gear", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+    public static final RegistryObject<Item> TIN_JOINT = registerAtomicItem("tin_joint", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+    public static final RegistryObject<Item> TIN_KEY = registerAtomicItem("tin_key", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+    public static final RegistryObject<Item> TIN_NUT = registerAtomicItem("tin_nut", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+    public static final RegistryObject<Item> TIN_PIPE = registerAtomicItem("tin_pipe", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+    public static final RegistryObject<Item> TIN_PIPEJOINT = registerAtomicItem("tin_pipejoint", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+    public static final RegistryObject<Item> TIN_PLATE = registerAtomicItem("tin_plate", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+    public static final RegistryObject<Item> TIN_RIVET = registerAtomicItem("tin_rivet", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+    public static final RegistryObject<Item> TIN_ROD = registerAtomicItem("tin_rod", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+    public static final RegistryObject<Item> TIN_SHAFT = registerAtomicItem("tin_shaft", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+    public static final RegistryObject<Item> TIN_SHAFTCOUPLING = registerAtomicItem("tin_shaftcoupling", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+    public static final RegistryObject<Item> TIN_SHAPESTEEL = registerAtomicItem("tin_shapesteel", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+    public static final RegistryObject<Item> TIN_SPRING = registerAtomicItem("tin_spring", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+    public static final RegistryObject<Item> TIN_WIRE = registerAtomicItem("tin_wire", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+
+    //    public static final RegistryObject<Item> BASIC_CLASS_IRON_BEARING = ITEMS.register("basic_class_iron_bearing",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB)));
 //    public static final RegistryObject<Item> BASIC_CLASS_IRON_BOLT = ITEMS.register("basic_class_iron_bolt",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB)));
 //    public static final RegistryObject<Item> BASIC_CLASS_IRON_CAM = ITEMS.register("basic_class_iron_cam",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB)));
 //    public static final RegistryObject<Item> BASIC_CLASS_IRON_CHAIN = ITEMS.register("basic_class_iron_chain",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB)));

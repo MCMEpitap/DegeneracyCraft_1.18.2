@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/material/element/tin/tin_block",
+    "up": "degeneracycraft:block/material/element/tin/tin_block",
+    "north": "degeneracycraft:block/material/element/tin/tin_block",
+    "south": "degeneracycraft:block/material/element/tin/tin_block",
+    "east": "degeneracycraft:block/material/element/tin/tin_block",
+    "west": "degeneracycraft:block/material/element/tin/tin_block"
+  }
+}

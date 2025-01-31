@@ -442,6 +442,25 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.IRON_SPRING.get(), "鉄のバネ");
         add(DCItems.IRON_WIRE.get(), "鉄のワイヤー");
 
+        add(DCItems.TIN_BEARING.get(), "スズの軸受");
+        add(DCItems.TIN_BOLT.get(), "スズのボルト");
+        add(DCItems.TIN_CAM.get(), "スズのカム");
+        add(DCItems.TIN_CHAIN.get(), "スズのチェーン");
+        add(DCItems.TIN_GEAR.get(), "スズの歯車");
+        add(DCItems.TIN_JOINT.get(), "スズの継手");
+        add(DCItems.TIN_KEY.get(), "スズのキー");
+        add(DCItems.TIN_NUT.get(), "スズのナット");
+        add(DCItems.TIN_PIPE.get(), "スズの管");
+        add(DCItems.TIN_PIPEJOINT.get(), "スズの管継手");
+        add(DCItems.TIN_PLATE.get(), "スズの板");
+        add(DCItems.TIN_RIVET.get(), "スズのリベット");
+        add(DCItems.TIN_ROD.get(), "スズの棒");
+        add(DCItems.TIN_SHAFT.get(), "スズの軸");
+        add(DCItems.TIN_SHAFTCOUPLING.get(), "スズの軸継手");
+        add(DCItems.TIN_SHAPESTEEL.get(), "スズの型鋼");
+        add(DCItems.TIN_SPRING.get(), "スズのバネ");
+        add(DCItems.TIN_WIRE.get(), "スズのワイヤー");
+
         //Basic Class Iron Machine Component
 //        add(DCItems.BASIC_CLASS_IRON_BEARING.get(),"基本等級 鉄の軸受");
 //        add(DCItems.BASIC_CLASS_IRON_BOLT.get(),"基本等級 鉄のボルト");

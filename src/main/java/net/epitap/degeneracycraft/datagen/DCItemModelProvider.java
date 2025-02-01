@@ -713,6 +713,13 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicPartItem(DCItems.BASIC_ROBOT_ARM.get());
         basicPartItem(DCItems.BASIC_TURBINE.get());
 
+        basicPartItem(DCItems.BASIC_ASTRONOMY_CIRCUIT.get());
+        basicPartItem(DCItems.BASIC_BIOLOGY_CIRCUIT.get());
+        basicPartItem(DCItems.BASIC_CHEMISTRY_CIRCUIT.get());
+        basicPartItem(DCItems.BASIC_ENGINEERING_CIRCUIT.get());
+        basicPartItem(DCItems.BASIC_FORMAL_SCIENCE_CIRCUIT.get());
+        basicPartItem(DCItems.BASIC_GEO_SCIENCE_CIRCUIT.get());
+        basicPartItem(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_CIRCUIT.get());
 
         simpleItem(DCItems.RAW_GRAVITATION_ORE.get());
 

@@ -22,9 +22,9 @@ import javax.annotation.Nonnull;
 
 
 public class BasicTechnologyCircuitBuilderRecipeCategory implements IRecipeCategory<BasicTechnologyCircuitBuilderRecipe> {
-    public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_precision_circuit_builder_recipe");
+    public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_technology_circuit_builder_recipe");
     public final static ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_uid.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_uid.png");
     private final IDrawable background;
     private final IDrawable icon;
 
@@ -45,7 +45,7 @@ public class BasicTechnologyCircuitBuilderRecipeCategory implements IRecipeCateg
 
     @Override
     public Component getTitle() {
-        return new TranslatableComponent("jei.degeneracycraft_basic_precision_circuit_builder");
+        return new TranslatableComponent("jei.degeneracycraft_basic_technology_circuit_builder");
     }
 
     @Override

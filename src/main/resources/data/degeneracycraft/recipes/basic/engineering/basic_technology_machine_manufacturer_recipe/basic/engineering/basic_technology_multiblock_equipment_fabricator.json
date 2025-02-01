@@ -1,0 +1,35 @@
+{
+  "type": "degeneracycraft:basic_technology_machine_manufacturer_recipe",
+  "energy": 30000.0,
+  "time": 60.0,
+  "input0": {
+    "item": "degeneracycraft:basic_robot_arm"
+  },
+  "input1": {
+    "item": "degeneracycraft:basic_machine_screen"
+  },
+  "input2": {
+    "item": "degeneracycraft:basic_robot_arm"
+  },
+  "input3": {
+    "item": "degeneracycraft:basic_processing_circuit"
+  },
+  "input4": {
+    "item": "degeneracycraft:basic_combinedshaft"
+  },
+  "input5": {
+    "item": "degeneracycraft:basic_processing_circuit"
+  },
+  "input6": {
+    "item": "degeneracycraft:basic_reinforced_plate"
+  },
+  "input7": {
+    "item": "degeneracycraft:basic_redstone_battery"
+  },
+  "input8": {
+    "item": "degeneracycraft:basic_reinforced_plate"
+  },
+  "output0": {
+    "item": "degeneracycraft:basic_technology_multiblock_equipment_fabricator_block"
+  }
+}

@@ -12,24 +12,24 @@
     "item": "degeneracycraft:basic_robot_arm"
   },
   "input3": {
-    "item": "degeneracycraft:basic_processing_circuit"
+    "item": "degeneracycraft:basic_motor"
   },
   "input4": {
-    "item": "degeneracycraft:basic_combinedshaft"
+    "item": "degeneracycraft:basic_processing_base"
   },
   "input5": {
-    "item": "degeneracycraft:basic_processing_circuit"
+    "item": "degeneracycraft:basic_motor"
   },
   "input6": {
-    "item": "degeneracycraft:basic_reinforced_plate"
+    "item": "degeneracycraft:basic_combinedshaft"
   },
   "input7": {
     "item": "degeneracycraft:basic_redstone_battery"
   },
   "input8": {
-    "item": "degeneracycraft:basic_reinforced_plate"
+    "item": "degeneracycraft:basic_combinedshaft"
   },
   "output0": {
-    "item": "degeneracycraft:basic_technology_multiblock_equipment_fabricator_block"
+    "item": "degeneracycraft:basic_performance_electrolyser_block"
   }
 }

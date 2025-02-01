@@ -695,6 +695,14 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_ROBOT_ARM.get(), "基本ロボットアーム");
         add(DCItems.BASIC_TURBINE.get(), "基本タービン");
 
+        add(DCItems.BASIC_ASTRONOMY_CIRCUIT.get(), "基本天文学回路");
+        add(DCItems.BASIC_BIOLOGY_CIRCUIT.get(), "基本生物学回路");
+        add(DCItems.BASIC_CHEMISTRY_CIRCUIT.get(), "基本化学回路");
+        add(DCItems.BASIC_ENGINEERING_CIRCUIT.get(), "基本工学回路");
+        add(DCItems.BASIC_FORMAL_SCIENCE_CIRCUIT.get(), "基本形式科学回路");
+        add(DCItems.BASIC_GEO_SCIENCE_CIRCUIT.get(), "基本地学回路");
+        add(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_CIRCUIT.get(), "基本模造魔導工学回路");
+
         add(DCItems.SIMPLE_CONVEX_LENS.get(), "簡易凸レンズ");
         add(DCItems.SIMPLE_CONCAVE_LENS.get(), "簡易凹レンズ");
 

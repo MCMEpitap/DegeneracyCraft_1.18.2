@@ -797,6 +797,15 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> BASIC_ROBOT_ARM = ITEMS.register("basic_robot_arm", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_TURBINE = ITEMS.register("basic_turbine", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
+    public static final RegistryObject<Item> BASIC_ASTRONOMY_CIRCUIT = ITEMS.register("basic_astronomy_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_BIOLOGY_CIRCUIT = ITEMS.register("basic_biology_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_CHEMISTRY_CIRCUIT = ITEMS.register("basic_chemistry_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_ENGINEERING_CIRCUIT = ITEMS.register("basic_engineering_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_FORMAL_SCIENCE_CIRCUIT = ITEMS.register("basic_formal_science_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_GEO_SCIENCE_CIRCUIT = ITEMS.register("basic_geo_science_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_IMITATION_MAGIC_ENGINEERING_CIRCUIT = ITEMS.register("basic_imitation_magic_engineering_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+
+
     public static final RegistryObject<Item> CAMMDA_TIER1 = ITEMS.register("cammda_tier1", () -> new CAMMDA_Tier1(DCTier.CAMMDA_TIER1, 0, 0, new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB).stacksTo(1)));
 
     public static final RegistryObject<Item> GUN_ITEM = ITEMS.register("gun_item", () -> new GunItem(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB).stacksTo(1)));
@@ -903,17 +912,55 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
                     pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicName + ".melting").withStyle(ChatFormatting.BLUE));
                     pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicName + ".boiling").withStyle(ChatFormatting.RED));
                     pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + atomicName + ".formula").withStyle(ChatFormatting.AQUA));
-                }else{
+                } else {
                     pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.tooltipitem").withStyle(ChatFormatting.YELLOW));
                 }
             }
         });
     }
 
+    private static <T extends Item> RegistryObject<Item> registerCircuitItem(String name, CreativeModeTab tab, String chemicalSubstanceName, String phase) {
+        return DCItems.ITEMS.register(name, () -> new Item(new Item.Properties().tab(tab)) {
+            @Override
+            public void appendHoverText(ItemStack pStack, @Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {
+                if (Screen.hasShiftDown()) {
+                    switch (phase) {
+                        case "initial" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.WHITE));
+                        case "basic" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.RED));
+                        case "low" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.GOLD));
+                        case "medium" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.YELLOW));
+                        case "high" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.GREEN));
+                        case "super" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.DARK_GREEN));
+                        case "over" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.AQUA));
+                        case "ultra" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.BLUE));
+                        case "anti" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.DARK_BLUE));
+                        case "imaginary" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.LIGHT_PURPLE));
+                        case "infinity" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.DARK_GRAY));
+                        default -> throw new IllegalStateException("Unexpected value: " + phase);
+                    }
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + chemicalSubstanceName + ".formula").withStyle(ChatFormatting.AQUA));
+                } else {
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.tooltipitem").withStyle(ChatFormatting.YELLOW));
+                }
+            }
+        });
+    }
 
-    public static void register(IEventBus eventBus){
+    public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
+
     @Override
     public ItemStack makeIcon() {
         return null;

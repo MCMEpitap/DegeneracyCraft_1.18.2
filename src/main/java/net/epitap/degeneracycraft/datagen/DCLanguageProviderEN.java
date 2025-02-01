@@ -699,6 +699,14 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_ROBOT_ARM.get(), "Basic Robot Arm");
         add(DCItems.BASIC_TURBINE.get(), "Basic Turbine");
 
+        add(DCItems.BASIC_ASTRONOMY_CIRCUIT.get(), "Basic Astronomy Circuit");
+        add(DCItems.BASIC_BIOLOGY_CIRCUIT.get(), "Basic Biology Circuit");
+        add(DCItems.BASIC_CHEMISTRY_CIRCUIT.get(), "Basic Chemistry Circuit");
+        add(DCItems.BASIC_ENGINEERING_CIRCUIT.get(), "Basic Engineering Circuit");
+        add(DCItems.BASIC_FORMAL_SCIENCE_CIRCUIT.get(), "Basic Formal Science Circuit");
+        add(DCItems.BASIC_GEO_SCIENCE_CIRCUIT.get(), "Basic Geo Science Circuit");
+        add(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_CIRCUIT.get(), "Basic Imitation Magic Engineering Circuit");
+
         add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Astronomy Multiblock Base Frame Block");
         add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Astronomy Multiblock Base Frame Block (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Astronomy Multiblock Machine Frame Block");

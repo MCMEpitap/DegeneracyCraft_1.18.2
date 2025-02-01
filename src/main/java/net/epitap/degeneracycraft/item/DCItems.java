@@ -486,6 +486,9 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> EMPTY_CONTAINER = ITEMS.register("empty_container", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
     public static final RegistryObject<Item> WATER_CONTAINER = registerChemicalSubstanceItem("water_container", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "water", "basic");
 
+    public static final RegistryObject<Item> HYDROCHLORIC_ACID_CONTAINER = registerChemicalSubstanceItem("hydrochloric_acid_container", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrochloric_acid", "basic");
+    public static final RegistryObject<Item> HYDROGEN_CHLORIDE_GAS = registerChemicalSubstanceItem("hydrogen_chloride_gas", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrogen_chloride", "basic");
+
     //Machine Component Group
 
     public static final TagKey<Item> COPPER_MACHINE_COMPONENT = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(Degeneracycraft.MOD_ID, "copper_machine_component"));

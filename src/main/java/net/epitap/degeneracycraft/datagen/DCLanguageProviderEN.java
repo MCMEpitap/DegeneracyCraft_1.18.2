@@ -676,6 +676,9 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.EMPTY_CONTAINER.get(), "Empty Container");
         add(DCItems.WATER_CONTAINER.get(), "Water Container");
 
+        add(DCItems.HYDROGEN_CHLORIDE_GAS.get(), "Hydrogen Chloride Gas");
+        add(DCItems.HYDROCHLORIC_ACID_CONTAINER.get(), "Hydrochloric Acid Container");
+
         add(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "Multiblock Structure Hologram Visualizer");
         add(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "Basic Technology Multiblock Structure Hologram Visualizer");
         add(DCItems.MACHINE_HALT_DEVICE.get(), "Machine Halt Device");

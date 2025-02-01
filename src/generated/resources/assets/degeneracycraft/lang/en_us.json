@@ -852,6 +852,7 @@
   "tooltip.degeneracycraft.tin.number": "Atomic Number:50",
   "tooltip.degeneracycraft.tin.weight": "Atomic Weight:118.7 g/mol",
   "tooltip.degeneracycraft.tooltipitem": "Show Material Detail by shift key",
+  "tooltip.degeneracycraft.water.formula": "Chemical Formula:H\u2082O",
   "tooltip.degeneracycraft.work": "Machine Working",
   "tooltip.degeneracycraft.wrench": "Export \u2192 Import \u2192 DisConnection \u2192 Export... Pipe Mode change by shift light click",
   "tooltip.degeneracycraft.wrenchitem": "Show Wrench Detail by shift key"

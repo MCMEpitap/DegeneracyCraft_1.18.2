@@ -698,8 +698,12 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.SIMPLE_CONVEX_LENS.get(), "簡易凸レンズ");
         add(DCItems.SIMPLE_CONCAVE_LENS.get(), "簡易凹レンズ");
 
+
         add(DCItems.EMPTY_CONTAINER.get(), "空の容器");
         add(DCItems.WATER_CONTAINER.get(), "水容器");
+
+        add(DCItems.HYDROGEN_CHLORIDE_GAS.get(), "塩化水素ガス");
+        add(DCItems.HYDROCHLORIC_ACID_CONTAINER.get(), "塩酸容器");
 
         add(DCBlocks.PULVERIZER_BLOCK.get(), "粉砕機");
 

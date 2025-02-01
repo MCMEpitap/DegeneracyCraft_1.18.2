@@ -683,6 +683,9 @@ public class DCItemModelProvider extends ItemModelProvider {
         deviceItem(DCItems.MACHINE_HALT_DEVICE.get());
 
 
+        basicMaterialChemistryItem(DCItems.HYDROCHLORIC_ACID_CONTAINER.get());
+        basicMaterialChemistryItem(DCItems.HYDROGEN_CHLORIDE_GAS.get());
+
         basicMaterialCommonItem(DCItems.COMPRESSED_PLANKS.get());
         basicMaterialCommonItem(DCItems.COMPRESSED_REDSTONE.get());
 
@@ -692,6 +695,7 @@ public class DCItemModelProvider extends ItemModelProvider {
 
         basicMaterialCommonItem(DCItems.EMPTY_CONTAINER.get());
         basicMaterialCommonItem(DCItems.WATER_CONTAINER.get());
+
 
         basicPartItem(DCItems.BASIC_CIRCUIT.get());
         basicPartItem(DCItems.BASIC_COMBINEDSHAFT.get());
@@ -1305,6 +1309,12 @@ public class DCItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/inscribed_circuit/" + item.getRegistryName().getPath()));
+    }
+
+    private ItemModelBuilder basicMaterialChemistryItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/material/basic/chemistry/" + item.getRegistryName().getPath()));
     }
 
     private ItemModelBuilder basicMaterialCommonItem(Item item) {

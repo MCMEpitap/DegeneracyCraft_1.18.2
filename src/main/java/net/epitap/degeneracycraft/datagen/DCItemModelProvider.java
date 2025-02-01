@@ -703,6 +703,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicPartItem(DCItems.BASIC_MACHINE_SCREEN.get());
         basicPartItem(DCItems.BASIC_MOTOR.get());
         basicPartItem(DCItems.BASIC_PROCESSING_BASE.get());
+        basicPartItem(DCItems.BASIC_PROCESSING_CIRCUIT.get());
         basicPartItem(DCItems.BASIC_REDSTONE_BATTERY.get());
         basicPartItem(DCItems.BASIC_REINFORCED_PLATE.get());
         basicPartItem(DCItems.BASIC_ROBOT_ARM.get());

@@ -690,6 +690,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_MACHINE_SCREEN.get(), "Basic Machine Screen");
         add(DCItems.BASIC_MOTOR.get(), "Basic Motor");
         add(DCItems.BASIC_PROCESSING_BASE.get(), "Basic Processing Base");
+        add(DCItems.BASIC_PROCESSING_CIRCUIT.get(), "Basic Processing Circuit");
         add(DCItems.BASIC_REDSTONE_BATTERY.get(), "Basic Redstone Battery");
         add(DCItems.BASIC_REINFORCED_PLATE.get(), "Basic Reinforced Plate");
         add(DCItems.BASIC_ROBOT_ARM.get(), "Basic Robot Arm");

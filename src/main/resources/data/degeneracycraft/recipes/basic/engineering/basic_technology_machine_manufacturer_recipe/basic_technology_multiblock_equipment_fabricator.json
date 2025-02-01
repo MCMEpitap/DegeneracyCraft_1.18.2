@@ -12,13 +12,13 @@
     "item": "degeneracycraft:basic_robot_arm"
   },
   "input3": {
-    "item": "degeneracycraft:basic_motor"
+    "item": "degeneracycraft:basic_processing_circuit"
   },
   "input4": {
-    "item": "degeneracycraft:basic_robot_arm"
+    "item": "degeneracycraft:basic_combinedshaft"
   },
   "input5": {
-    "item": "degeneracycraft:basic_motor"
+    "item": "degeneracycraft:basic_processing_circuit"
   },
   "input6": {
     "item": "degeneracycraft:basic_reinforced_plate"

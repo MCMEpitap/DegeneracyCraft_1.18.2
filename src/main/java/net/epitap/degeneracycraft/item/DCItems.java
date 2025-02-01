@@ -468,16 +468,16 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
 
     //Element Item
 
-    public static final RegistryObject<Item> HYDROGEN_GAS = registerAtomicItem("hydrogen_gas", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "hydrogen", "initial");
+    public static final RegistryObject<Item> HYDROGEN_GAS = registerAtomicItem("hydrogen_gas", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "hydrogen", "basic");
 
-    public static final RegistryObject<Item> CHLORINE_GAS = registerAtomicItem("chlorine_gas", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "chlorine", "initial");
+    public static final RegistryObject<Item> CHLORINE_GAS = registerAtomicItem("chlorine_gas", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "chlorine", "basic");
 
 
-    public static final RegistryObject<Item> SILICON_INGOT = registerAtomicItem("silicon_ingot", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "silicon", "initial");
-    public static final RegistryObject<Item> SILICON_NUGGET = registerAtomicItem("silicon_nugget", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "silicon", "initial");
+    public static final RegistryObject<Item> SILICON_INGOT = registerAtomicItem("silicon_ingot", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "silicon", "basic");
+    public static final RegistryObject<Item> SILICON_NUGGET = registerAtomicItem("silicon_nugget", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "silicon", "basic");
 
-    public static final RegistryObject<Item> TIN_INGOT = registerAtomicItem("tin_ingot", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "silicon", "initial");
-    public static final RegistryObject<Item> TIN_NUGGET = registerAtomicItem("tin_nugget", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "silicon", "initial");
+    public static final RegistryObject<Item> TIN_INGOT = registerAtomicItem("tin_ingot", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "tin", "basic");
+    public static final RegistryObject<Item> TIN_NUGGET = registerAtomicItem("tin_nugget", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "tin", "basic");
 
 
     public static final RegistryObject<Item> EMPTY_CONTAINER = ITEMS.register("empty_container", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
@@ -784,6 +784,7 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> BASIC_MACHINE_SCREEN = ITEMS.register("basic_machine_screen", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_MOTOR = ITEMS.register("basic_motor", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_PROCESSING_BASE = ITEMS.register("basic_processing_base", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_PROCESSING_CIRCUIT = ITEMS.register("basic_processing_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
     public static final RegistryObject<Item> BASIC_REDSTONE_BATTERY = ITEMS.register("basic_redstone_battery", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_REINFORCED_PLATE = ITEMS.register("basic_reinforced_plate", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));

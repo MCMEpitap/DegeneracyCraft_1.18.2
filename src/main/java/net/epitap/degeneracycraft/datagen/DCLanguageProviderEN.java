@@ -1072,6 +1072,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "tin" + ".formula", "Chemical Formula:Sn");
 
 
+        add("tooltip." + "degeneracycraft." + "water" + ".formula", "Chemical Formula:H₂O");
+
         add("tooltip." + "degeneracycraft." + "requiredenergy.", "Required Energy:");
         add("tooltip." + "degeneracycraft." + "requiredenergyusage.", "Required Energy Usage:");
         add("tooltip." + "degeneracycraft." + "requiredtime.", "Required time:");

@@ -480,8 +480,11 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> TIN_NUGGET = registerAtomicItem("tin_nugget", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "tin", "basic");
 
 
+    //public static final RegistryObject<Item> PURIFIED_GRAPHITE_ARC_ELECTRODE = ITEMS.register("purified_graphite_arc_electrode", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
+
+
     public static final RegistryObject<Item> EMPTY_CONTAINER = ITEMS.register("empty_container", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
-    public static final RegistryObject<Item> WATER_CONTAINER = ITEMS.register("water_container", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
+    public static final RegistryObject<Item> WATER_CONTAINER = registerChemicalSubstanceItem("water_container", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "water", "basic");
 
     //Machine Component Group
 
@@ -541,19 +544,19 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> IRON_SPRING = registerAtomicItem("iron_spring", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "iron", "initial");
     public static final RegistryObject<Item> IRON_WIRE = registerAtomicItem("iron_wire", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "iron", "initial");
 
-    public static final RegistryObject<Item> TIN_BEARING = registerAtomicItem("tin_bearing", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
-    public static final RegistryObject<Item> TIN_BOLT = registerAtomicItem("tin_bolt", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
-    public static final RegistryObject<Item> TIN_CAM = registerAtomicItem("tin_cam", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
-    public static final RegistryObject<Item> TIN_CHAIN = registerAtomicItem("tin_chain", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
-    public static final RegistryObject<Item> TIN_GEAR = registerAtomicItem("tin_gear", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
-    public static final RegistryObject<Item> TIN_JOINT = registerAtomicItem("tin_joint", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
-    public static final RegistryObject<Item> TIN_KEY = registerAtomicItem("tin_key", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
-    public static final RegistryObject<Item> TIN_NUT = registerAtomicItem("tin_nut", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
-    public static final RegistryObject<Item> TIN_PIPE = registerAtomicItem("tin_pipe", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
-    public static final RegistryObject<Item> TIN_PIPEJOINT = registerAtomicItem("tin_pipejoint", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
-    public static final RegistryObject<Item> TIN_PLATE = registerAtomicItem("tin_plate", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
-    public static final RegistryObject<Item> TIN_RIVET = registerAtomicItem("tin_rivet", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
-    public static final RegistryObject<Item> TIN_ROD = registerAtomicItem("tin_rod", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
+    public static final RegistryObject<Item> TIN_BEARING = registerAtomicItem("tin_bearing", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "basic");
+    public static final RegistryObject<Item> TIN_BOLT = registerAtomicItem("tin_bolt", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "basic");
+    public static final RegistryObject<Item> TIN_CAM = registerAtomicItem("tin_cam", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "basic");
+    public static final RegistryObject<Item> TIN_CHAIN = registerAtomicItem("tin_chain", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "basic");
+    public static final RegistryObject<Item> TIN_GEAR = registerAtomicItem("tin_gear", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "basic");
+    public static final RegistryObject<Item> TIN_JOINT = registerAtomicItem("tin_joint", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "basic");
+    public static final RegistryObject<Item> TIN_KEY = registerAtomicItem("tin_key", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "basic");
+    public static final RegistryObject<Item> TIN_NUT = registerAtomicItem("tin_nut", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "basic");
+    public static final RegistryObject<Item> TIN_PIPE = registerAtomicItem("tin_pipe", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "basic");
+    public static final RegistryObject<Item> TIN_PIPEJOINT = registerAtomicItem("tin_pipejoint", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "basic");
+    public static final RegistryObject<Item> TIN_PLATE = registerAtomicItem("tin_plate", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "basic");
+    public static final RegistryObject<Item> TIN_RIVET = registerAtomicItem("tin_rivet", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "basic");
+    public static final RegistryObject<Item> TIN_ROD = registerAtomicItem("tin_rod", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "basic");
     public static final RegistryObject<Item> TIN_SHAFT = registerAtomicItem("tin_shaft", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
     public static final RegistryObject<Item> TIN_SHAFTCOUPLING = registerAtomicItem("tin_shaftcoupling", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
     public static final RegistryObject<Item> TIN_SHAPESTEEL = registerAtomicItem("tin_shapesteel", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "tin", "initial");
@@ -822,6 +825,44 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
 //            }
 //        });
 //    }
+
+    private static <T extends Item> RegistryObject<Item> registerChemicalSubstanceItem(String name, CreativeModeTab tab, String chemicalSubstanceName, String phase) {
+        return DCItems.ITEMS.register(name, () -> new Item(new Item.Properties().tab(tab)) {
+            @Override
+            public void appendHoverText(ItemStack pStack, @Nullable Level level, List<Component> pTooltip, TooltipFlag pFlag) {
+                if (Screen.hasShiftDown()) {
+                    switch (phase) {
+                        case "initial" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.WHITE));
+                        case "basic" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.RED));
+                        case "low" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.GOLD));
+                        case "medium" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.YELLOW));
+                        case "high" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.GREEN));
+                        case "super" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.DARK_GREEN));
+                        case "over" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.AQUA));
+                        case "ultra" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.BLUE));
+                        case "anti" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.DARK_BLUE));
+                        case "imaginary" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.LIGHT_PURPLE));
+                        case "infinity" ->
+                                pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.ipp." + phase).withStyle(ChatFormatting.DARK_GRAY));
+                        default -> throw new IllegalStateException("Unexpected value: " + phase);
+                    }
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft." + chemicalSubstanceName + ".formula").withStyle(ChatFormatting.AQUA));
+                } else {
+                    pTooltip.add(new TranslatableComponent("tooltip.degeneracycraft.tooltipitem").withStyle(ChatFormatting.YELLOW));
+                }
+            }
+        });
+    }
 
     private static <T extends Item> RegistryObject<Item> registerAtomicItem(String name, CreativeModeTab tab, String atomicName, String phase) {
         return DCItems.ITEMS.register(name, () -> new Item(new Item.Properties().tab(tab)) {

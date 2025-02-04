@@ -37,13 +37,13 @@ import java.util.Map;
 import java.util.Optional;
 
 public class BasicTechnologyCircuitBuilderBlockEntity extends BlockEntity implements MenuProvider {
-    public float BP_C_BUILDER_CAPACITY = 20000F;
-    public float BP_C_BUILDER_TRANSFER = 16F;
+    public float MACHINE_CAPACITY = 20000F;
+    public float MACHINE_TRANSFER = 16F;
 
-    public float BP_C_BUILDER_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
-    public float BP_C_BUILDER_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
-    public float BP_C_BUILDER_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
-    public float BP_C_BUILDER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
+    public float MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
+    public float MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
+    public float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
+    public float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
     protected final ContainerData data;
     public int counter;
     public int getProgressPercent;
@@ -69,7 +69,7 @@ public class BasicTechnologyCircuitBuilderBlockEntity extends BlockEntity implem
         }
     };
 
-    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BP_C_BUILDER_CAPACITY, BP_C_BUILDER_TRANSFER) {
+    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(MACHINE_CAPACITY, MACHINE_TRANSFER) {
         @Override
         public void onEnergyChanged() {
             setChanged();
@@ -239,12 +239,12 @@ public class BasicTechnologyCircuitBuilderBlockEntity extends BlockEntity implem
             }
 
             if (blockEntity.isPowered0) {
-                blockEntity.counter += blockEntity.BP_C_BUILDER_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BP_C_BUILDER_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
+                blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else if (blockEntity.isFormed) {
-                blockEntity.counter += blockEntity.BP_C_BUILDER_MANUFACTURING_SPEED_MODIFIER_FORMED;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BP_C_BUILDER_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
+                blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else {
                 blockEntity.counter++;

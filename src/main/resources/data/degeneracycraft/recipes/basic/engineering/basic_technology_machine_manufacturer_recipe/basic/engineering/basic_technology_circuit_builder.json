@@ -1,6 +1,6 @@
 {
   "type": "degeneracycraft:basic_technology_machine_manufacturer_recipe",
-  "energy": 10000.0,
+  "energy": 20000.0,
   "time": 60.0,
   "input0": {
     "item": "degeneracycraft:basic_robot_arm"
@@ -15,19 +15,19 @@
     "item": "degeneracycraft:basic_motor"
   },
   "input4": {
-    "item": "degeneracycraft:basic_inscribe_needle"
+    "item": "degeneracycraft:basic_processing_base"
   },
   "input5": {
     "item": "degeneracycraft:basic_motor"
   },
   "input6": {
-    "item": "degeneracycraft:basic_linkage"
+    "item": "degeneracycraft:basic_combinedshaft"
   },
   "input7": {
     "item": "degeneracycraft:basic_redstone_battery"
   },
   "input8": {
-    "item": "degeneracycraft:basic_drivechain"
+    "item": "degeneracycraft:basic_combinedshaft"
   },
   "output0": {
     "item": "degeneracycraft:basic_technology_circuit_builder_block"

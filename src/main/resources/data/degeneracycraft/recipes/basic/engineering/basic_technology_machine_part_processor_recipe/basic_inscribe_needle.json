@@ -1,0 +1,35 @@
+{
+  "type": "degeneracycraft:basic_technology_machine_part_processor_recipe",
+  "energy": 1000.0,
+  "time": 10.0,
+  "input0": {
+    "item": "degeneracycraft:iron_plate"
+  },
+  "input1": {
+    "item": "degeneracycraft:iron_spring"
+  },
+  "input2": {
+    "item": "degeneracycraft:iron_plate"
+  },
+  "input3": {
+    "item": "degeneracycraft:copper_gear"
+  },
+  "input4": {
+    "item": "degeneracycraft:iron_shaft"
+  },
+  "input5": {
+    "item": "degeneracycraft:copper_gear"
+  },
+  "input6": {
+    "item": "minecraft:air"
+  },
+  "input7": {
+    "item": "degeneracycraft:iron_rod"
+  },
+  "input8": {
+    "item": "minecraft:air"
+  },
+  "output0": {
+    "item": "degeneracycraft:basic_drivechain"
+  }
+}

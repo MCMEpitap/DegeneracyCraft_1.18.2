@@ -1099,6 +1099,9 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
         add("tooltip." + "degeneracycraft." + "water" + ".formula", "化学式:H₂O");
 
+        add("tooltip." + "degeneracycraft." + "hydrochloric_acid" + ".formula", "化学式:HCl");
+        add("tooltip." + "degeneracycraft." + "hydrogen_chloride" + ".formula", "化学式:HCl");
+
 
         add("tooltip." + "degeneracycraft." + "requiredenergy.", "要求電力総量:");
         add("tooltip." + "degeneracycraft." + "requiredenergyusage.", "要求電力使用量:");

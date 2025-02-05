@@ -701,6 +701,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_ENGINEERING_CIRCUIT.get(), "基本工学回路");
         add(DCItems.BASIC_FORMAL_SCIENCE_CIRCUIT.get(), "基本形式科学回路");
         add(DCItems.BASIC_GEO_SCIENCE_CIRCUIT.get(), "基本地学回路");
+        add(DCItems.BASIC_HYBRID_PHYSICS_CIRCUIT.get(), "基本複合物理学回路");
         add(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_CIRCUIT.get(), "基本模造魔導工学回路");
 
         add(DCItems.SIMPLE_CONVEX_LENS.get(), "簡易凸レンズ");

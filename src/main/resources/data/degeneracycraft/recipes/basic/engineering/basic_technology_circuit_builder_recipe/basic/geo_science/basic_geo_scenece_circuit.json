@@ -15,7 +15,7 @@
     "item": "degeneracycraft:basic_diode"
   },
   "input4": {
-    "item": "degeneracycraft:iron_wire"
+    "item": "degeneracycraft:iron_plate"
   },
   "input5": {
     "item": "degeneracycraft:basic_diode"
@@ -30,6 +30,6 @@
     "item": "degeneracycraft:iron_wire"
   },
   "output0": {
-    "item": "degeneracycraft:basic_biology_circuit"
+    "item": "degeneracycraft:basic_geo_science_circuit"
   }
 }

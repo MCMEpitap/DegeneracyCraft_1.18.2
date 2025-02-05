@@ -705,6 +705,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_ENGINEERING_CIRCUIT.get(), "Basic Engineering Circuit");
         add(DCItems.BASIC_FORMAL_SCIENCE_CIRCUIT.get(), "Basic Formal Science Circuit");
         add(DCItems.BASIC_GEO_SCIENCE_CIRCUIT.get(), "Basic Geo Science Circuit");
+        add(DCItems.BASIC_HYBRID_PHYSICS_CIRCUIT.get(), "Basic Hybrid Physics Circuit");
         add(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_CIRCUIT.get(), "Basic Imitation Magic Engineering Circuit");
 
         add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Astronomy Multiblock Base Frame Block");

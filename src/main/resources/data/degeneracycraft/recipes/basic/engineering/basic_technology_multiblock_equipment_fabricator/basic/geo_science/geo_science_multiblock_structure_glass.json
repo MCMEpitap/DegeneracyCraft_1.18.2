@@ -7,27 +7,31 @@
     "count": 2
   },
   "input1": {
-    "item": "degeneracycraft:iron_bolt"
+    "item": "minecraft:glass",
+    "count": 4
   },
   "input2": {
     "item": "degeneracycraft:iron_rivet",
     "count": 2
   },
   "input3": {
-    "item": "degeneracycraft:iron_plate"
+    "item": "minecraft:glass",
+    "count": 4
   },
   "input4": {
     "item": "degeneracycraft:basic_strength_geo_science_multiblock_machine_frame_block"
   },
   "input5": {
-    "item": "degeneracycraft:iron_plate"
+    "item": "minecraft:glass",
+    "count": 4
   },
   "input6": {
     "item": "degeneracycraft:iron_rivet",
     "count": 2
   },
   "input7": {
-    "item": "degeneracycraft:iron_nut"
+    "item": "minecraft:glass",
+    "count": 4
   },
   "input8": {
     "item": "degeneracycraft:iron_rivet",

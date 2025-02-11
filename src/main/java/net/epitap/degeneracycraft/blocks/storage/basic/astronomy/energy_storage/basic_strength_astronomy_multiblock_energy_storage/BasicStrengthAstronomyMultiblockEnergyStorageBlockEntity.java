@@ -27,7 +27,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class BasicStrengthAstronomyMultiblockEnergyStorageBlockEntity extends BlockEntity implements MenuProvider {
-    public float BS_ME_STORAGE_CAPACITY = 40000F;
+    public float BS_ME_STORAGE_CAPACITY = 100000F;
     public float BS_ME_STORAGE_TRANSFER = 32F;
     public final ContainerData data;
 

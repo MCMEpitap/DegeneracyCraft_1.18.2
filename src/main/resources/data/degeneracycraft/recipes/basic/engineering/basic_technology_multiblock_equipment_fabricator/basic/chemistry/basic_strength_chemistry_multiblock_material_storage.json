@@ -1,0 +1,41 @@
+{
+  "type": "degeneracycraft:basic_technology_multiblock_equipment_fabricator_recipe",
+  "energy": 10000.0,
+  "time": 20.0,
+  "input0": {
+    "item": "degeneracycraft:tin_plate",
+    "count": 2
+  },
+  "input1": {
+    "item": "degeneracycraft:iron_pipe",
+    "count": 2
+  },
+  "input2": {
+    "item": "degeneracycraft:tin_plate",
+    "count": 2
+  },
+  "input3": {
+    "item": "minecraft:chest"
+  },
+  "input4": {
+    "item": "degeneracycraft:basic_strength_chemistry_multiblock_machine_frame_block"
+  },
+  "input5": {
+    "item": "minecraft:chest"
+  },
+  "input6": {
+    "item": "degeneracycraft:tin_plate",
+    "count": 2
+  },
+  "input7": {
+    "item": "degeneracycraft:iron_pipe",
+    "count": 2
+  },
+  "input8": {
+    "item": "degeneracycraft:tin_plate",
+    "count": 2
+  },
+  "output0": {
+    "item": "degeneracycraft:basic_strength_chemistry_multiblock_material_storage_block"
+  }
+}

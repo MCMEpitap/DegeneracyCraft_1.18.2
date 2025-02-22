@@ -563,6 +563,32 @@ public class DCBlocks {
             new BasicPhaseBoltManufactureMachineBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
 
 
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK = registerTooltipBasicMachineBlock("basic_performance_machine_data_installer_block", () ->
+                    new BasicPerformanceMachineDataInstallerBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "Lv0:3×3×3",
+            "Lv1:3×3×3",
+            "Base:Speed ×1.00,Energy Usage ×1.00",
+            "Lv0:Speed ×2.00,Energy Usage ×1.50",
+            "Lv1:Speed ×3.00,Energy Usage ×2.00",
+            "basic_performance_machine_data_installer_block", "hybrid_physics", "basic");
+    public static final RegistryObject<Block> BASIC_SPEED_DATA_READER_BLOCK = registerTooltipMultiblockAbilityBlock("basic_speed_data_reader_block", () ->
+                    new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "basic_performance_machine_data_installer_block",
+            "hybrid_physics",
+            "basic");
+    public static final RegistryObject<Block> BASIC_SPEED_DATA_READER_HOLO_BLOCK = registerHoloBlock("basic_speed_data_reader_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_BLOCK = registerBlock("basic_performance_machine_data_installer_bus_block", () ->
+            new BasicPerformanceMachineDataInstallerBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_machine_data_installer_bus_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_BLOCK = registerBlock("basic_performance_machine_data_installer_port_block", () ->
+            new BasicPerformanceMachineDataInstallerPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_machine_data_installer_port_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+
+
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK = registerTooltipBasicMachineBlock("basic_performance_electric_arc_furnace_block", () ->
                     new BasicPerformanceElectricArcFurnaceBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "Lv0:3×3×3",

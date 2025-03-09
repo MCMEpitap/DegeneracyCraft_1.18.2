@@ -30,6 +30,11 @@ public class PortModelRegistry {
         BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_BLOCK_EXTRACT("block/basic_technology_multiblock_equipment_fabricator_bus_block_extract"),
         BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_BLOCK_EXTRACT("block/basic_technology_multiblock_equipment_fabricator_port_block_extract"),
 
+
+        BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_BLOCK_EXTRACT("block/basic_performance_machine_data_installer_bus_block_extract"),
+        BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_BLOCK_EXTRACT("block/basic_performance_machine_data_installer_port_block_extract"),
+
+
         BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK_EXTRACT("block/basic_performance_electric_arc_furnace_bus_block_extract"),
         BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK_EXTRACT("block/basic_performance_electric_arc_furnace_port_block_extract"),
         BASIC_PERFORMANCE_FORMING_MACHINE_BUS_BLOCK_EXTRACT("block/basic_performance_forming_machine_bus_block_extract"),

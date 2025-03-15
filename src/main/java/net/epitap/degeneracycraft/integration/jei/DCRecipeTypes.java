@@ -9,6 +9,7 @@ import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_techno
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipe;
@@ -54,8 +55,8 @@ public class DCRecipeTypes {
             SERIALIZERS.register("basic_technology_multiblock_equipment_fabricator_recipe", () -> BasicTechnologyMultiblockEquipmentFabricatorRecipe.Serializer.INSTANCE);
 
 
-    public static final RegistryObject<RecipeSerializer<BasicPerformanceElectricArcFurnaceRecipe>> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER__SERIALIZER =
-            SERIALIZERS.register("basic_performance_machine_data_installer_recipe", () -> BasicPerformanceElectricArcFurnaceRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<BasicPerformanceMachineDataInstallerRecipe>> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER__SERIALIZER =
+            SERIALIZERS.register("basic_performance_machine_data_installer_recipe", () -> BasicPerformanceMachineDataInstallerRecipe.Serializer.INSTANCE);
 
 
     public static final RegistryObject<RecipeSerializer<BasicPerformanceElectricArcFurnaceRecipe>> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_SERIALIZER =

@@ -852,7 +852,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get(), "Basic Technology Machine Manufacturer");
         add("tooltip." + "degeneracycraft." + "basic_technology_machine_manufacturer_block",
-                "Basic machine manufacturer. Without it, more complex machines cannot be made.");
+                "Basic machine manufacturer. Without it, more complex machine cannot be made.");
         add(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_BLOCK.get(), "Basic Efficiency Machine Processing Chamber");
         add("tooltip." + "degeneracycraft.ability" + "basic_technology_machine_manufacturer_block",
                 "For Basic Technology Machine Manufacturer");
@@ -864,7 +864,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get(), "Basic Technology Universal Assembler");
         add("tooltip." + "degeneracycraft." + "basic_technology_universal_assembler_block",
-                "Basic Universal Assembler. Machines for creating industrial items.");
+                "Basic Universal Assembler. Machine for creating industrial items.");
         add(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_BLOCK.get(), "Basic Operation Assembling Chamber");
         add("tooltip." + "degeneracycraft.ability" + "basic_technology_universal_assembler_block",
                 "For Basic Technology Universal Assembler");
@@ -876,7 +876,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BLOCK.get(), "Basic Technology Circuit Builder");
         add("tooltip." + "degeneracycraft." + "basic_technology_circuit_builder_block",
-                "Basic Circuit Builder. Machines to fabricate circuits and their components.");
+                "Basic Circuit Builder. Machine to fabricate circuits and their components.");
         add(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_BLOCK.get(), "Basic Purity Circuit Clean Room");
         add("tooltip." + "degeneracycraft.ability" + "basic_technology_circuit_builder_block",
                 "For Basic Precision Circuit Builder");
@@ -924,11 +924,22 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_HOLO_BLOCK.get(), "Basic Technology Multiblock Equipment Fabricator Port (Hologram)");
 
 
-        add(DCBlocks.PULVERIZER_BLOCK.get(), "Pulverizer");
+        add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK.get(), "Basic Performance Machine Data Installer");
+        add("tooltip." + "degeneracycraft." + "basic_performance_machine_data_installer_block",
+                "Basic Electric Arc Furnace. Machine that install machine data into memory circuits.");
+        add(DCBlocks.BASIC_SPEED_DATA_READER_BLOCK.get(), "Basic Speed Data Reader");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_machine_data_installer_block",
+                "For Basic Basic Performance Machine Data Installer");
+        add(DCBlocks.BASIC_SPEED_DATA_READER_HOLO_BLOCK.get(), "Basic Speed Data Reader (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_BLOCK.get(), "Basic Performance Machine Data Installer Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_HOLO_BLOCK.get(), "Basic Performance Machine Data Installer Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_BLOCK.get(), "Basic Performance Machine Data Installer Port");
+        add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK.get(), "Basic Performance Machine Data Installer Port (Hologram)");
+
 
         add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get(), "Basic Performance Electric Arc Furnace");
         add("tooltip." + "degeneracycraft." + "basic_performance_electric_arc_furnace_block",
-                "Basic Electric Arc Furnace. Machines that use electrical discharges to react at high temperatures.");
+                "Basic Electric Arc Furnace. Machine that use electrical discharges to react at high temperatures.");
         add(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_BLOCK.get(), "Basic Flow Cooling System");
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_electric_arc_furnace_block",
                 "For Basic Performance Electric Arc Furnace");
@@ -953,6 +964,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCUniqueBlocks.SIMPLE_TELESCOPE_RIGHT_PILLAR.get(), "Simple Telescope Right Pillar");
         add(DCUniqueBlocks.SIMPLE_TELESCOPE_LEFT_PILLAR.get(), "Simple Telescope Left Pillar");
 
+        add(DCBlocks.PULVERIZER_BLOCK.get(), "Pulverizer");
+
         add("message." + "degeneracycraft_redstone_powered_machine_element_manufacture_machine", "Phase 0 Initial");
         add("screen." + "degeneracycraft_pulverizer", "Pulverizer Screen");
 
@@ -967,6 +980,10 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("jei." + "degeneracycraft_basic_technology_circuit_builder", "Basic Technology Circuit Builder Recipe");
         add("jei." + "degeneracycraft_basic_technology_machine_part_processor", "Basic Technology Machine Part Processor Recipe");
         add("jei." + "degeneracycraft_basic_technology_multiblock_equipment_fabricator", "Basic Technology Multiblock Equipment Fabricator Recipe");
+
+
+        add("jei." + "degeneracycraft_basic_performance_machine_data_installer", "Basic Performance Machine Data Installer Recipe");
+
 
         add("jei." + "degeneracycraft_basic_performance_electric_arc_furnace", "Basic Performance Electric Arc Furnace Recipe");
         add("jei." + "degeneracycraft_basic_performance_forming_machine", "Basic Performance Forming Machine Recipe");

@@ -1069,6 +1069,23 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_multiblock_equipment_fabricator_port_holo_block"));
 
+
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_machine_data_installer_block"));
+        withExistingParent(DCBlocks.BASIC_SPEED_DATA_READER_BLOCK.getId().getPath(),
+                modLoc("block/basic_speed_data_reader_block"));
+        withExistingParent(DCBlocks.BASIC_SPEED_DATA_READER_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_speed_data_reader_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_machine_data_installer_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_machine_data_installer_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_machine_data_installer_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_machine_data_installer_port_holo_block"));
+
+
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_electric_arc_furnace_block"));
         withExistingParent(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_BLOCK.getId().getPath(),

@@ -205,6 +205,16 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicTechnologyMultiblockEquipmentFabricatorPort();
         registerBasicTechnologyMultiblockEquipmentFabricatorPortHolo();
 
+
+        registerBasicPerformanceMachineDataInstaller();
+        registerBasicSpeedDataReader();
+        registerBasicSpeedDataReaderHolo();
+        registerBasicPerformanceMachineDataInstallerBus();
+        registerBasicPerformanceMachineDataInstallerBusHolo();
+        registerBasicPerformanceMachineDataInstallerPort();
+        registerBasicPerformanceMachineDataInstallerPortHolo();
+
+
         registerBasicPerformanceElectricArcFurnace();
         registerBasicFlowCoolingSystem();
         registerBasicFlowCoolingSystemHolo();
@@ -2333,6 +2343,99 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_holo_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+
+    private void registerBasicPerformanceMachineDataInstaller() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_machine_data_installer_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/basic_performance_machine_data_installer_down"));
+        model.texture("up", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/basic_performance_machine_data_installer_up"));
+        model.texture("north", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/basic_performance_machine_data_installer_front"));
+        model.texture("south", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/basic_performance_machine_data_installer_side"));
+        model.texture("east", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/basic_performance_machine_data_installer_side"));
+        model.texture("west", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/basic_performance_machine_data_installer_side"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicSpeedDataReader() {
+        BlockModelBuilder model = models().getBuilder("block/basic_speed_data_reader_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block"));
+        model.texture("up", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block"));
+        model.texture("north", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block"));
+        model.texture("south", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block"));
+        model.texture("east", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block"));
+        model.texture("west", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block"));
+        orientedBlock(DCBlocks.BASIC_SPEED_DATA_READER_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicSpeedDataReaderHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_speed_data_reader_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_holo_block"));
+        orientedBlock(DCBlocks.BASIC_SPEED_DATA_READER_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceMachineDataInstallerBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_machine_data_installer_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceMachineDataInstallerBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_machine_data_installer_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+
+    private void registerBasicPerformanceMachineDataInstallerPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_machine_data_installer_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_block"));
+        model.texture("up", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_block"));
+        model.texture("north", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_block"));
+        model.texture("south", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_block"));
+        model.texture("east", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_block"));
+        model.texture("west", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceMachineDataInstallerPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_machine_data_installer_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
 

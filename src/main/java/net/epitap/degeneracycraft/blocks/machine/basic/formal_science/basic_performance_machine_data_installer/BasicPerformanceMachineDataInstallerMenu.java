@@ -39,7 +39,7 @@ public class BasicPerformanceMachineDataInstallerMenu extends AbstractContainerM
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler, 0, 8, 25));
+            this.addSlot(new SlotItemHandler(handler, 0, 26, 25));
             this.addSlot(new SlotItemHandler(handler, 1, 26, 43));
             this.addSlot(new SlotItemHandler(handler, 2, 116, 25));
             this.addSlot(new SlotItemHandler(handler, 3, 71, 59));

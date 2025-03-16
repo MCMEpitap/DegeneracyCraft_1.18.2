@@ -710,6 +710,15 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_HYBRID_PHYSICS_CIRCUIT.get(), "Basic Hybrid Physics Circuit");
         add(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_CIRCUIT.get(), "Basic Imitation Magic Engineering Circuit");
 
+        add(DCItems.BASIC_ASTRONOMY_MEMORY_CIRCUIT.get(), "Basic Astronomy Memory Circuit");
+        add(DCItems.BASIC_BIOLOGY_MEMORY_CIRCUIT.get(), "Basic Biology Memory Circuit");
+        add(DCItems.BASIC_CHEMISTRY_MEMORY_CIRCUIT.get(), "Basic Chemistry Memory Circuit");
+        add(DCItems.BASIC_ENGINEERING_MEMORY_CIRCUIT.get(), "Basic Engineering Memory Circuit");
+        add(DCItems.BASIC_FORMAL_SCIENCE_MEMORY_CIRCUIT.get(), "Basic Formal Science Memory Circuit");
+        add(DCItems.BASIC_GEO_SCIENCE_MEMORY_CIRCUIT.get(), "Basic Geo Science Memory Circuit");
+        add(DCItems.BASIC_HYBRID_PHYSICS_MEMORY_CIRCUIT.get(), "Basic Hybrid Physics Memory Circuit");
+        add(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT.get(), "Basic Imitation Magic Engineering Memory Circuit");
+
         add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Astronomy Multiblock Base Frame Block");
         add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Astronomy Multiblock Base Frame Block (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Astronomy Multiblock Machine Frame Block");

@@ -817,7 +817,7 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> BASIC_FORMAL_SCIENCE_MEMORY_CIRCUIT = ITEMS.register("basic_formal_science_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_GEO_SCIENCE_MEMORY_CIRCUIT = ITEMS.register("basic_geo_science_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_HYBRID_PHYSICS_MEMORY_CIRCUIT = ITEMS.register("basic_hybrid_physics_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
-//    public static final RegistryObject<Item> BASIC_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT = ITEMS.register("basic_imitation_magic_engineering_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT = ITEMS.register("basic_imitation_magic_engineering_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
     public static final RegistryObject<Item> CAMMDA_TIER1 = ITEMS.register("cammda_tier1", () -> new CAMMDA_Tier1(DCTier.CAMMDA_TIER1, 0, 0, new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB).stacksTo(1)));
 

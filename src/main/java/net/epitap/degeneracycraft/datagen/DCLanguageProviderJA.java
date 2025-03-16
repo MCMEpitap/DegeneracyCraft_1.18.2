@@ -706,14 +706,14 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_HYBRID_PHYSICS_CIRCUIT.get(), "基本複合物理学回路");
         add(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_CIRCUIT.get(), "基本模造魔導工学回路");
 
-        add(DCItems.BASIC_ASTRONOMY_CIRCUIT.get(), "基本天文学記憶回路");
-        add(DCItems.BASIC_BIOLOGY_CIRCUIT.get(), "基本生物学記憶回路");
-        add(DCItems.BASIC_CHEMISTRY_CIRCUIT.get(), "基本化学記憶回路");
-        add(DCItems.BASIC_ENGINEERING_CIRCUIT.get(), "基本工学記憶回路");
-        add(DCItems.BASIC_FORMAL_SCIENCE_CIRCUIT.get(), "基本形式科学記憶回路");
-        add(DCItems.BASIC_GEO_SCIENCE_CIRCUIT.get(), "基本地学記憶回路");
-        add(DCItems.BASIC_HYBRID_PHYSICS_CIRCUIT.get(), "基本複合物理学記憶回路");
-        add(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_CIRCUIT.get(), "基本模造魔導工学記憶回路");
+        add(DCItems.BASIC_ASTRONOMY_MEMORY_CIRCUIT.get(), "基本天文学記憶回路");
+        add(DCItems.BASIC_BIOLOGY_MEMORY_CIRCUIT.get(), "基本生物学記憶回路");
+        add(DCItems.BASIC_CHEMISTRY_MEMORY_CIRCUIT.get(), "基本化学記憶回路");
+        add(DCItems.BASIC_ENGINEERING_MEMORY_CIRCUIT.get(), "基本工学記憶回路");
+        add(DCItems.BASIC_FORMAL_SCIENCE_MEMORY_CIRCUIT.get(), "基本形式科学記憶回路");
+        add(DCItems.BASIC_GEO_SCIENCE_MEMORY_CIRCUIT.get(), "基本地学記憶回路");
+        add(DCItems.BASIC_HYBRID_PHYSICS_MEMORY_CIRCUIT.get(), "基本複合物理学記憶回路");
+        add(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT.get(), "基本模造魔導工学記憶回路");
 
         add(DCItems.SIMPLE_CONVEX_LENS.get(), "簡易凸レンズ");
         add(DCItems.SIMPLE_CONCAVE_LENS.get(), "簡易凹レンズ");

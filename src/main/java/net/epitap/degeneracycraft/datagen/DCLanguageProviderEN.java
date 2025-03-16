@@ -685,6 +685,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add(DCItems.BASIC_CIRCUIT.get(), "Basic Circuit");
         add(DCItems.BASIC_COMBINEDSHAFT.get(), "Basic Combined Shaft");
+        add(DCItems.BASIC_CONDENSER.get(), "Basic Condenser");
         add(DCItems.BASIC_DIODE.get(), "Basic Diode");
         add(DCItems.BASIC_DRIVECHAIN.get(), "Basic Drive Chain");
         add(DCItems.BASIC_INSCRIBE_NEEDLE.get(), "Basic Inscribe Needle");
@@ -697,6 +698,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_REDSTONE_BATTERY.get(), "Basic Redstone Battery");
         add(DCItems.BASIC_REINFORCED_PLATE.get(), "Basic Reinforced Plate");
         add(DCItems.BASIC_ROBOT_ARM.get(), "Basic Robot Arm");
+        add(DCItems.BASIC_TRANSISTOR.get(), "Basic Transistor");
         add(DCItems.BASIC_TURBINE.get(), "Basic Turbine");
 
         add(DCItems.BASIC_ASTRONOMY_CIRCUIT.get(), "Basic Astronomy Circuit");

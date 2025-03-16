@@ -698,6 +698,7 @@ public class DCItemModelProvider extends ItemModelProvider {
 
 
         basicPartItem(DCItems.BASIC_CIRCUIT.get());
+        basicPartItem(DCItems.BASIC_CONDENSER.get());
         basicPartItem(DCItems.BASIC_COMBINEDSHAFT.get());
         basicPartItem(DCItems.BASIC_DIODE.get());
         basicPartItem(DCItems.BASIC_DRIVECHAIN.get());
@@ -711,6 +712,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicPartItem(DCItems.BASIC_REDSTONE_BATTERY.get());
         basicPartItem(DCItems.BASIC_REINFORCED_PLATE.get());
         basicPartItem(DCItems.BASIC_ROBOT_ARM.get());
+        basicPartItem(DCItems.BASIC_TRANSISTOR.get());
         basicPartItem(DCItems.BASIC_TURBINE.get());
 
         basicPartItem(DCItems.BASIC_ASTRONOMY_CIRCUIT.get());

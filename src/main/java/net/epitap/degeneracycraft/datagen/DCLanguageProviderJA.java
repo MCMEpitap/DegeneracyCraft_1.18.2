@@ -681,6 +681,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
         add(DCItems.BASIC_CIRCUIT.get(), "基本回路");
         add(DCItems.BASIC_COMBINEDSHAFT.get(), "基本結合シャフト");
+        add(DCItems.BASIC_CONDENSER.get(), "基本コンデンサー");
         add(DCItems.BASIC_DIODE.get(), "基本ダイオード");
         add(DCItems.BASIC_DRIVECHAIN.get(), "基本ドライブチェーン");
         add(DCItems.BASIC_INSCRIBE_NEEDLE.get(), "基本刻印針");
@@ -693,6 +694,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_REDSTONE_BATTERY.get(), "基本レッドストーン電池");
         add(DCItems.BASIC_REINFORCED_PLATE.get(), "基本強化プレート");
         add(DCItems.BASIC_ROBOT_ARM.get(), "基本ロボットアーム");
+        add(DCItems.BASIC_TRANSISTOR.get(), "基本トランジスタ");
         add(DCItems.BASIC_TURBINE.get(), "基本タービン");
 
         add(DCItems.BASIC_ASTRONOMY_CIRCUIT.get(), "基本天文学回路");

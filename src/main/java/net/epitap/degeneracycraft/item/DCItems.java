@@ -819,6 +819,25 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> BASIC_HYBRID_PHYSICS_MEMORY_CIRCUIT = ITEMS.register("basic_hybrid_physics_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT = ITEMS.register("basic_imitation_magic_engineering_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
+
+    public static final RegistryObject<Item> BASIC_PERFORMANCE_ELECTROLYSER_CIRCUIT = ITEMS.register("basic_performance_electrolyser_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+
+
+    public static final RegistryObject<Item> BASIC_POWER_STEAM_GENERATOR_CIRCUIT = ITEMS.register("basic_power_steam_generator_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_CIRCUIT = ITEMS.register("basic_technology_machine_manufacturer_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_TECHNOLOGY_CIRCUIT_BUILDER_CIRCUIT = ITEMS.register("basic_technology_circuit_builder_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_CIRCUIT = ITEMS.register("basic_technology_machine_element_processor_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_CIRCUIT = ITEMS.register("basic_technology_machine_part_processor_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_CIRCUIT = ITEMS.register("basic_technology_multiblock_equipment_fabricator_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+
+
+    public static final RegistryObject<Item> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_CIRCUIT = ITEMS.register("basic_performance_machine_data_installer_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+
+
+    public static final RegistryObject<Item> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_CIRCUIT = ITEMS.register("basic_performance_electric_arc_furnace_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_PERFORMANCE_FORMING_MACHINE_CIRCUIT = ITEMS.register("basic_performance_forming_machine_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+
+
     public static final RegistryObject<Item> CAMMDA_TIER1 = ITEMS.register("cammda_tier1", () -> new CAMMDA_Tier1(DCTier.CAMMDA_TIER1, 0, 0, new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB).stacksTo(1)));
 
     public static final RegistryObject<Item> GUN_ITEM = ITEMS.register("gun_item", () -> new GunItem(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB).stacksTo(1)));

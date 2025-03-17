@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "degeneracycraft:item/part/basic/machine_circuit/basic_technology_machine_element_processor_circuit"
+  }
+}

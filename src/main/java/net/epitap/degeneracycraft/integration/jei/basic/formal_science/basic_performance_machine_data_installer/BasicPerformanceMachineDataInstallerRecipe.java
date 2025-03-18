@@ -21,14 +21,16 @@ public class BasicPerformanceMachineDataInstallerRecipe implements Recipe<Simple
     final float time;
     final ItemStack input0;
     final ItemStack input1;
+    final ItemStack input2;
     final ItemStack output0;
 
-    public BasicPerformanceMachineDataInstallerRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack input1, ItemStack output0) {
+    public BasicPerformanceMachineDataInstallerRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack input1, ItemStack input2, ItemStack output0) {
         this.id = id;
         this.energy = energy;
         this.time = time;
         this.input0 = input0;
         this.input1 = input1;
+        this.input2 = input2;
         this.output0 = output0;
     }
 
@@ -64,6 +66,11 @@ public class BasicPerformanceMachineDataInstallerRecipe implements Recipe<Simple
     public ItemStack getInput1Item() {
         return input1;
     }
+
+    public ItemStack getInput2Item() {
+        return input2;
+    }
+
 
     public ItemStack getOutput0Item() {
         return output0;
@@ -115,9 +122,10 @@ public class BasicPerformanceMachineDataInstallerRecipe implements Recipe<Simple
             float time = GsonHelper.getAsFloat(pJson, "time", 1);
             ItemStack input0 = BasicPerformanceMachineDataInstallerRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input0"));
             ItemStack input1 = BasicPerformanceMachineDataInstallerRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input1"));
+            ItemStack input2 = BasicPerformanceMachineDataInstallerRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input2"));
             ItemStack output0 = BasicPerformanceMachineDataInstallerRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output0"));
 
-            return new BasicPerformanceMachineDataInstallerRecipe(pRecipeId, energy, time, input0, input1, output0);
+            return new BasicPerformanceMachineDataInstallerRecipe(pRecipeId, energy, time, input0, input1, input2, output0);
         }
 
         @Override
@@ -126,9 +134,10 @@ public class BasicPerformanceMachineDataInstallerRecipe implements Recipe<Simple
             float time = pBuffer.readFloat();
             ItemStack input0 = pBuffer.readItem();
             ItemStack input1 = pBuffer.readItem();
+            ItemStack input2 = pBuffer.readItem();
             ItemStack output0 = pBuffer.readItem();
 
-            return new BasicPerformanceMachineDataInstallerRecipe(pRecipeId, energy, time, input0, input1, output0);
+            return new BasicPerformanceMachineDataInstallerRecipe(pRecipeId, energy, time, input0, input1, input2, output0);
         }
 
         @Override
@@ -137,6 +146,7 @@ public class BasicPerformanceMachineDataInstallerRecipe implements Recipe<Simple
             pBuffer.writeFloat(pRecipe.time);
             pBuffer.writeItem(pRecipe.input0.getContainerItem());
             pBuffer.writeItem(pRecipe.input1.getContainerItem());
+            pBuffer.writeItem(pRecipe.input2.getContainerItem());
             pBuffer.writeItem(pRecipe.output0.getContainerItem());
         }
     }

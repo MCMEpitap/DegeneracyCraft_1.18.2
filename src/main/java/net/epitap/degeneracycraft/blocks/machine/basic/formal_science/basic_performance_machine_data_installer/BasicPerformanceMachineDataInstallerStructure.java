@@ -196,8 +196,8 @@ public class BasicPerformanceMachineDataInstallerStructure {
             removeHolograms(level, basePos, facing, blockMapping);
             return;
         }
-        boolean visualizer0 = blockEntity.itemHandler.getStackInSlot(3).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
-        boolean visualizer1 = blockEntity.itemHandler.getStackInSlot(3).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+        boolean visualizer0 = blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+        boolean visualizer1 = blockEntity.itemHandler.getStackInSlot(4).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
 
 
         for (int y = minY; y <= maxY; y++) {

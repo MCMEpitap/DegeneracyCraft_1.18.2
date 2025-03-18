@@ -38,7 +38,7 @@ import java.util.Map;
 import java.util.Optional;
 
 public class BasicPerformanceMachineDataInstallerBlockEntity extends BlockEntity implements MenuProvider {
-    public float MACHINE_CAPACITY = 30000F;
+    public float MACHINE_CAPACITY = 40000F;
     public float MACHINE_TRANSFER = 32F;
     public float MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
     public float MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
@@ -59,10 +59,10 @@ public class BasicPerformanceMachineDataInstallerBlockEntity extends BlockEntity
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 2 -> false;
-                case 3 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
+                case 3 -> false;
+                case 4 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
                         || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
-                case 4 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
+                case 5 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -92,7 +92,7 @@ public class BasicPerformanceMachineDataInstallerBlockEntity extends BlockEntity
             Map.of(
                     Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 2, (outputSlot, stack) -> false)),
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 3, (outputSlot, stack) -> false)),
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (inputSlot, stack) ->
                             itemHandler.isItemValid(0, stack))));
 
@@ -301,7 +301,9 @@ public class BasicPerformanceMachineDataInstallerBlockEntity extends BlockEntity
                 .getRecipeFor(BasicPerformanceFormingMachineRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
                 && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount();
+
     }
 
     private static boolean hasEnergyRecipe(BasicPerformanceMachineDataInstallerBlockEntity blockEntity) {

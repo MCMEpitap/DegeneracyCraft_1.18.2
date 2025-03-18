@@ -1,0 +1,17 @@
+{
+  "type": "degeneracycraft:basic_performance_machine_data_installer_recipe",
+  "energy": 10000.0,
+  "time": 50.0,
+  "input0": {
+    "item": "degeneracycraft:basic_power_steam_generator_block"
+  },
+  "input1": {
+    "item": "degeneracycraft:basic_engineering_memory_circuit"
+  },
+  "input2": {
+    "item": "degeneracycraft:basic_processing_circuit"
+  },
+  "output0": {
+    "item": "degeneracycraft:basic_power_steam_generator_circuit"
+  }
+}

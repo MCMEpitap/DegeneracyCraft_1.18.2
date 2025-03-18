@@ -24,7 +24,7 @@ import javax.annotation.Nonnull;
 public class BasicPerformanceMachineDataInstallerRecipeCategory implements IRecipeCategory<BasicPerformanceMachineDataInstallerRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_performance_machine_data_installer_recipe");
     public final static ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/hybrid_physics/basic_performance_machine_data_installer/basic_performance_machine_data_installer_uid.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/formal_science/basic_performance_machine_data_installer/basic_performance_machine_data_installer_uid.png");
     private final IDrawable background;
     private final IDrawable icon;
 

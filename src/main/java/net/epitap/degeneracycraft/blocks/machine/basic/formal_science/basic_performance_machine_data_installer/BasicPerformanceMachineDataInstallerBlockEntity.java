@@ -3,7 +3,7 @@ package net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_per
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerRecipe;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -50,7 +50,7 @@ public class BasicPerformanceMachineDataInstallerBlockEntity extends BlockEntity
     private int consumeCounter;
     public boolean isFormed;
     public boolean isPowered0;
-    public final ItemStackHandler itemHandler = new ItemStackHandler(5) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(6) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -225,8 +225,8 @@ public class BasicPerformanceMachineDataInstallerBlockEntity extends BlockEntity
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<BasicPerformanceFormingMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceFormingMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceMachineDataInstallerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceMachineDataInstallerRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
@@ -268,8 +268,8 @@ public class BasicPerformanceMachineDataInstallerBlockEntity extends BlockEntity
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceFormingMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceFormingMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceMachineDataInstallerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceMachineDataInstallerRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return blockEntity.data.get(0) >= match.get().getRequiredTime() * 20;
@@ -284,8 +284,8 @@ public class BasicPerformanceMachineDataInstallerBlockEntity extends BlockEntity
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceFormingMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceFormingMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceMachineDataInstallerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceMachineDataInstallerRecipe.Type.INSTANCE, inventory, level);
 
         return match.isPresent();
     }
@@ -297,12 +297,12 @@ public class BasicPerformanceMachineDataInstallerBlockEntity extends BlockEntity
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceFormingMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceFormingMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceMachineDataInstallerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceMachineDataInstallerRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
                 && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount();
+                && blockEntity.itemHandler.getStackInSlot(2).getCount() >= match.get().getInput2Item().getCount();
 
     }
 
@@ -313,8 +313,8 @@ public class BasicPerformanceMachineDataInstallerBlockEntity extends BlockEntity
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceFormingMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceFormingMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceMachineDataInstallerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceMachineDataInstallerRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
     }
@@ -330,12 +330,12 @@ public class BasicPerformanceMachineDataInstallerBlockEntity extends BlockEntity
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceFormingMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceFormingMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceMachineDataInstallerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceMachineDataInstallerRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
-            blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
             blockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(2, match.get().getInput2Item().getCount(), false);
         }
     }
 
@@ -350,12 +350,12 @@ public class BasicPerformanceMachineDataInstallerBlockEntity extends BlockEntity
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceFormingMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceFormingMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceMachineDataInstallerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceMachineDataInstallerRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
-            blockEntity.itemHandler.setStackInSlot(2, new ItemStack(match.get().getOutput0Item().getItem(),
-                    blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount()));
+            blockEntity.itemHandler.setStackInSlot(3, new ItemStack(match.get().getOutput0Item().getItem(),
+                    blockEntity.itemHandler.getStackInSlot(3).getCount() + match.get().getOutput0Item().getCount()));
             blockEntity.resetProgress();
             blockEntity.resetConsumeCount();
 
@@ -381,10 +381,10 @@ public class BasicPerformanceMachineDataInstallerBlockEntity extends BlockEntity
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceFormingMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceFormingMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceMachineDataInstallerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceMachineDataInstallerRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(2).getMaxStackSize();
+        return blockEntity.itemHandler.getStackInSlot(3).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(3).getMaxStackSize();
     }
 
     private static boolean canInsertItemIntoOutputSlot(BasicPerformanceMachineDataInstallerBlockEntity blockEntity) {
@@ -394,9 +394,9 @@ public class BasicPerformanceMachineDataInstallerBlockEntity extends BlockEntity
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceFormingMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceFormingMachineRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceMachineDataInstallerRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceMachineDataInstallerRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(2).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(2).isEmpty();
+        return blockEntity.itemHandler.getStackInSlot(3).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(3).isEmpty();
     }
 }

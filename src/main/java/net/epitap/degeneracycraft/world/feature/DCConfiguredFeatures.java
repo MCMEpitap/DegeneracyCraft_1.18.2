@@ -16,10 +16,17 @@ public class DCConfiguredFeatures {
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, DCBlocks.DEEPSLATE_CASSITERITE_ORE.get().defaultBlockState())
     );
 
+    public static final List<OreConfiguration.TargetBlockState> OVERWORLD_GRAVITATION_ORE = List.of(
+            OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, DCBlocks.OVERWORLD_GRAVITATION_ORE.get().defaultBlockState())
+
+    );
 
     public static final Holder<ConfiguredFeature<OreConfiguration, ?>> OVERWORLD_CASSITERITE_ORE_GENERATION = FeatureUtils.register("overworld_cassiterite_ore",
-            Feature.ORE, new OreConfiguration(OVERWORLD_CASSITERITE_ORE,10));
+            Feature.ORE, new OreConfiguration(OVERWORLD_CASSITERITE_ORE, 10));
     public static final Holder<ConfiguredFeature<OreConfiguration, ?>> DEEPSLATE_CASSITERITE_ORE_GENERATION = FeatureUtils.register("deepslate_cassiterite_ore",
-            Feature.ORE, new OreConfiguration(OVERWORLD_CASSITERITE_ORE,64));
+            Feature.ORE, new OreConfiguration(OVERWORLD_CASSITERITE_ORE, 64));
+
+    public static final Holder<ConfiguredFeature<OreConfiguration, ?>> OVERWORLD_GRAVITATION_ORE_GENERATION = FeatureUtils.register("deepslate_cassiterite_ore",
+            Feature.ORE, new OreConfiguration(OVERWORLD_CASSITERITE_ORE, 64));
 
 }

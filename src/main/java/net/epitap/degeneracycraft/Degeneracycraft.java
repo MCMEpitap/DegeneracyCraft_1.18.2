@@ -1,7 +1,6 @@
 package net.epitap.degeneracycraft;
 
 import com.electronwill.nightconfig.core.Config;
-import com.mojang.logging.LogUtils;
 import net.epitap.degeneracycraft.blocks.base.*;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPrecisionTelescopeScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserScreen;
@@ -50,6 +49,7 @@ import net.epitap.degeneracycraft.transport.pipe.parametor.PipeModelRegistry;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeBlockClickEvent;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeBlockEntities;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeBlocks;
+import net.epitap.degeneracycraft.world.structure.DCStructures;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -63,13 +63,13 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
-import org.slf4j.Logger;
+import org.apache.logging.log4j.Logger;
+
 
 @Mod(Degeneracycraft.MOD_ID)
 public class Degeneracycraft {
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "degeneracycraft";
-    public static final org.apache.logging.log4j.Logger logger = LogManager.getLogger(MOD_ID);
     public static Config config;
 
     public Degeneracycraft() {
@@ -85,6 +85,7 @@ public class Degeneracycraft {
         DCMenuTypes.register(eventBus);
         DCUniqueMenuTypes.register(eventBus);
         DCRecipeTypes.register(eventBus);
+        DCStructures.register(eventBus);
 
         eventBus.addGenericListener(Item.class, PipeBlocks::registerItems);
         eventBus.addGenericListener(Block.class, PipeBlocks::registerBlocks);

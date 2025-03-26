@@ -19,7 +19,7 @@ import java.util.Optional;
 public class BasicTechnologyCircuitBuilderScreen extends AbstractContainerScreen<BasicTechnologyCircuitBuilderMenu> {
 
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_precision_circuit_builder/basic_precision_circuit_builder_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_gui.png");
     private EnergyInfoArea energyInfoArea;
 
 

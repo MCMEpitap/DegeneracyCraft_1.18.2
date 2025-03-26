@@ -8,6 +8,7 @@
     {
       "weight": 1,
       "element": {
+
         // This side piece will only spawn if this piece is entirely outside or inside the calling piece's bounding box
         // Intersecting pieces is not allowed in Jigsaw structures so plan accordingly!
         // To spawn a piece entirely outside a calling piece, make sure the Jigsaw block of the calling
@@ -15,7 +16,7 @@
         // inside a calling piece, have the jigsaw block face inward and that there is enough space in
         // the calling piece's boundaries to spawn a smaller inner piece.
 
-        // Also, heads up, the structure_tutorial:run_down_house_left_side piece has a Jigsaw Block
+        // Also, heads up, the degeneracycraft:run_down_house_left_side piece has a Jigsaw Block
         // that is targeting this pool directly. Be sure to change that Jigsaw Block's target pool
         // to make this side pool spawn in your own mod.
         "location": "degeneracycraft:run_down_house_right_side",
@@ -25,6 +26,7 @@
       }
     },
     {
+
       // A second entry here means the starting piece's Jigsaw Block has a 50% chance of spawning
       // this golden right side piece instead of the regular right side. Think of it like a lottery.
       "weight": 1,

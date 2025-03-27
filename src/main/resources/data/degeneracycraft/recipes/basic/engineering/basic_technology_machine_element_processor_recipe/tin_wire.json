@@ -3,7 +3,7 @@
   "energy": 500.0,
   "time": 10.0,
   "input0": {
-    "item": "minecraft:air"
+    "item": "minecraft:tin_ingot"
   },
   "input1": {
     "item": "minecraft:tin_ingot"

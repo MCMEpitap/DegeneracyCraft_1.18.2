@@ -3,7 +3,7 @@
   "energy": 200.0,
   "time": 5.0,
   "input0": {
-    "item": "minecraft:air"
+    "item": "minecraft:copper_ingot"
   },
   "input1": {
     "item": "minecraft:copper_ingot"

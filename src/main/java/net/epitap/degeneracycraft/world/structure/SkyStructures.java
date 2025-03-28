@@ -35,6 +35,7 @@ public class SkyStructures extends StructureFeature<JigsawConfiguration> {
         super(CODEC, SkyStructures::createPiecesGenerator, PostPlacementProcessor.NONE);
     }
 
+
     /**
      *        : WARNING!!! DO NOT FORGET THIS METHOD!!!! :
      * If you do not override step method, your structure WILL crash the biome as it is being parsed!
@@ -44,7 +45,7 @@ public class SkyStructures extends StructureFeature<JigsawConfiguration> {
      */
     @Override
     public GenerationStep.Decoration step() {
-        return GenerationStep.Decoration.SURFACE_STRUCTURES;
+        return GenerationStep.Decoration.UNDERGROUND_ORES;
     }
 
     /*
@@ -96,7 +97,7 @@ public class SkyStructures extends StructureFeature<JigsawConfiguration> {
         // Set's our spawning blockpos's y offset to be 60 blocks up.
         // Since we are going to have heightmap/terrain height spawning set to true further down, this will make it so we spawn 60 blocks above terrain.
         // If we wanted to spawn on ocean floor, we would set heightmap/terrain height spawning to false and the grab the y value of the terrain with OCEAN_FLOOR_WG heightmap.
-        blockpos = blockpos.above(60);
+        blockpos = blockpos.below(30);
 
         Optional<PieceGenerator<JigsawConfiguration>> structurePiecesGenerator =
                 JigsawPlacement.addPieces(

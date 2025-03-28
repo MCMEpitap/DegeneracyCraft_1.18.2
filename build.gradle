@@ -335,6 +335,8 @@ dependencies {
 //        implementation fg.deobf("curse.maven:more-chests-737045:4199855")
         //        implementation fg.deobf("curse.maven:iron-chests-228756:3966367")
 //        implementation fg.deobf("curse.maven:compactstorage-223703:4352472")
+
+        implementation fg.deobf("curse.maven:effortless-building-302113:4369816")
     }
 }
 // Example for how to get properties into the manifest for reading at runtime.

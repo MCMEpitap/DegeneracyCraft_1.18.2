@@ -87,6 +87,8 @@ public class Degeneracycraft {
         DCRecipeTypes.register(eventBus);
         DCStructures.register(eventBus);
 
+
+
         eventBus.addGenericListener(Item.class, PipeBlocks::registerItems);
         eventBus.addGenericListener(Block.class, PipeBlocks::registerBlocks);
         eventBus.addGenericListener(BlockEntityType.class, PipeBlockEntities::registerBlockEntities);

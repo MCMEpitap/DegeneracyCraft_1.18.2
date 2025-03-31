@@ -6,7 +6,7 @@
     "item": "minecraft:air"
   },
   "input1": {
-    "item": "minecraft:chest"
+    "item": "degeneracycraft:basic_equipment_container"
   },
   "input2": {
     "item": "minecraft:air"

@@ -1,0 +1,35 @@
+{
+  "type": "degeneracycraft:basic_technology_machine_part_processor_recipe",
+  "energy": 1000.0,
+  "time": 10.0,
+  "input0": {
+    "item": "degeneracycraft:iron_bolt"
+  },
+  "input1": {
+    "item": "degeneracycraft:iron_plate"
+  },
+  "input2": {
+    "item": "degeneracycraft:iron_bolt"
+  },
+  "input3": {
+    "item": "degeneracycraft:iron_plate"
+  },
+  "input4": {
+    "item": "minecraft:chest"
+  },
+  "input5": {
+    "item": "degeneracycraft:iron_plate"
+  },
+  "input6": {
+    "item": "degeneracycraft:iron_nut"
+  },
+  "input7": {
+    "item": "degeneracycraft:iron_plate"
+  },
+  "input8": {
+    "item": "degeneracycraft:iron_nut"
+  },
+  "output0": {
+    "item": "degeneracycraft:basic_equipment_container"
+  }
+}

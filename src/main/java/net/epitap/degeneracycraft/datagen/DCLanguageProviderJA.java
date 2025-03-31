@@ -16,11 +16,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
     @Override
     protected void addTranslations() {
         add("itemGroup." + "degeneracycraft", "Degeneracy Craft");
-        add(DCBlocks.OVERWORLD_GRAVITATION_ORE.get(),"重力波鉱石");
-//        add(DCBlocks.OVERWORLD_CASSITERITE_ORE.get(), "錫石");
-//        add(DCBlocks.DEEPSLATE_CASSITERITE_ORE.get(), "深層錫石");
-//        add(DCBlocks.NETHER_CASSITERITE_ORE.get(), "ネザー錫石");
-//        add(DCBlocks.END_CASSITERITE_ORE.get(), "エンド錫石");
+
 
         add(DCItems.RAW_BAUXITE_ORE.get(), "鉄ばん土鉱の原石");
         add(DCItems.BAUXITE_DUST.get(),"鉄ばん土鉱の粉");
@@ -726,6 +722,13 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.HYDROCHLORIC_ACID_CONTAINER.get(), "塩酸容器");
 
         add(DCBlocks.PULVERIZER_BLOCK.get(), "粉砕機");
+
+
+        add(DCBlocks.OVERWORLD_GRAVITATION_ORE.get(),"重力波鉱石");
+        add(DCBlocks.OVERWORLD_CASSITERITE_ORE.get(), "錫石");
+        add(DCBlocks.DEEPSLATE_CASSITERITE_ORE.get(), "深層錫石");
+        add(DCBlocks.NETHER_CASSITERITE_ORE.get(), "ネザー錫石");
+        add(DCBlocks.END_CASSITERITE_ORE.get(), "エンド錫石");
 
         add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "基本強度天文学多重構造機械用基礎フレーム");
         add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "基本強度天文学多重構造機械用基礎フレーム (ホログラム)");

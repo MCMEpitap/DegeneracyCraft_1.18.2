@@ -739,8 +739,17 @@ public class DCItemModelProvider extends ItemModelProvider {
 
         withExistingParent(DCBlocks.REINFORCED_PLANKS.getId().getPath(),
                 modLoc("block/reinforced_planks"));
-        withExistingParent(DCBlocks.OVERWORLD_GRAVITATION_ORE.getId().getPath(),
-                modLoc("block/overworld_gravitation_ore_block"));
+        withExistingParent(DCBlocks.OVERWORLD_CASSITERITE_ORE.getId().getPath(),
+                modLoc("block/overworld_cassiterite_ore_block"));
+        withExistingParent(DCBlocks.DEEPSLATE_CASSITERITE_ORE.getId().getPath(),
+                modLoc("block/deepslate_cassiterite_ore_block"));
+        withExistingParent(DCBlocks.NETHER_CASSITERITE_ORE.getId().getPath(),
+                modLoc("block/nether_cassiterite_ore_block"));
+        withExistingParent(DCBlocks.END_CASSITERITE_ORE.getId().getPath(),
+                modLoc("block/end_cassiterite_ore_block"));
+
+
+
 
 
         withExistingParent(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_BLOCK.getId().getPath(),

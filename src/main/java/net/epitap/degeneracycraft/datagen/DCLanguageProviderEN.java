@@ -689,6 +689,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_CONVEYORBELT.get(), "Basic Conveyor Belt");
         add(DCItems.BASIC_DIODE.get(), "Basic Diode");
         add(DCItems.BASIC_DRIVECHAIN.get(), "Basic Drive Chain");
+        add(DCItems.BASIC_EQUIPMENT_CONTAINER.get(), "Basic Equipment Container");
         add(DCItems.BASIC_INSCRIBE_NEEDLE.get(), "Basic Inscribe Needle");
         add(DCItems.BASIC_INSCRIBED_CIRCUIT.get(), "Basic Inscribed Circuit");
         add(DCItems.BASIC_LINKAGE.get(), "Basic Linkage");

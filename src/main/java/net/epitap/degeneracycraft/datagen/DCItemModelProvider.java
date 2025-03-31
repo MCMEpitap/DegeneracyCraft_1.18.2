@@ -703,6 +703,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicPartItem(DCItems.BASIC_CONVEYORBELT.get());
         basicPartItem(DCItems.BASIC_DIODE.get());
         basicPartItem(DCItems.BASIC_DRIVECHAIN.get());
+        basicPartItem(DCItems.BASIC_EQUIPMENT_CONTAINER.get());
         basicPartItem(DCItems.BASIC_INSCRIBE_NEEDLE.get());
         basicPartItem(DCItems.BASIC_INSCRIBED_CIRCUIT.get());
         basicPartItem(DCItems.BASIC_LINKAGE.get());

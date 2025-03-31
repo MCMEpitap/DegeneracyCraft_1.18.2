@@ -681,6 +681,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_CONVEYORBELT.get(), "基本ベルトコンベアー");
         add(DCItems.BASIC_DIODE.get(), "基本ダイオード");
         add(DCItems.BASIC_DRIVECHAIN.get(), "基本ドライブチェーン");
+        add(DCItems.BASIC_EQUIPMENT_CONTAINER.get(), "基本装置コンテナ");
         add(DCItems.BASIC_INSCRIBE_NEEDLE.get(), "基本刻印針");
         add(DCItems.BASIC_INSCRIBED_CIRCUIT.get(), "基本刻印回路");
         add(DCItems.BASIC_LINKAGE.get(), "基本リンゲージ");

@@ -784,6 +784,7 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> BASIC_CONVEYORBELT = ITEMS.register("basic_conveyorbelt", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_DIODE = ITEMS.register("basic_diode", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_DRIVECHAIN = ITEMS.register("basic_drivechain", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_EQUIPMENT_CONTAINER = ITEMS.register("basic_equipment_container", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_INSCRIBE_NEEDLE = ITEMS.register("basic_inscribe_needle", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_INSCRIBED_CIRCUIT = ITEMS.register("basic_inscribed_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_LINKAGE = ITEMS.register("basic_linkage", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));

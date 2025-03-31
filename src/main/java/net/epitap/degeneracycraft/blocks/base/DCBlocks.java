@@ -608,7 +608,6 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK = registerHoloBlock("basic_flow_cooling_system_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK = registerBlock("basic_performance_electric_arc_furnace_bus_block", () ->
             new BasicPerformanceElectricArcFurnaceBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_electric_arc_furnace_bus_holo_block", () ->
@@ -633,7 +632,6 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_HOLO_BLOCK = registerHoloBlock("basic_precision_extrusion_assist_system_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
     public static final RegistryObject<Block> BASIC_PERFORMANCE_FORMING_MACHINE_BUS_BLOCK = registerBlock("basic_performance_forming_machine_bus_block", () ->
             new BasicPerformanceFormingMachineBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> BASIC_PERFORMANCE_FORMING_MACHINE_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_forming_machine_bus_holo_block", () ->

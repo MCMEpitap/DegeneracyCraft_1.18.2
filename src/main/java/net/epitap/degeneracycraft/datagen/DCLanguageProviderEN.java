@@ -686,6 +686,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_CIRCUIT.get(), "Basic Circuit");
         add(DCItems.BASIC_COMBINEDSHAFT.get(), "Basic Combined Shaft");
         add(DCItems.BASIC_CONDENSER.get(), "Basic Condenser");
+        add(DCItems.BASIC_CONVEYORBELT.get(), "Basic Conveyor Belt");
         add(DCItems.BASIC_DIODE.get(), "Basic Diode");
         add(DCItems.BASIC_DRIVECHAIN.get(), "Basic Drive Chain");
         add(DCItems.BASIC_INSCRIBE_NEEDLE.get(), "Basic Inscribe Needle");
@@ -718,6 +719,13 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_GEO_SCIENCE_MEMORY_CIRCUIT.get(), "Basic Geo Science Memory Circuit");
         add(DCItems.BASIC_HYBRID_PHYSICS_MEMORY_CIRCUIT.get(), "Basic Hybrid Physics Memory Circuit");
         add(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT.get(), "Basic Imitation Magic Engineering Memory Circuit");
+
+
+        add(DCBlocks.OVERWORLD_GRAVITATION_ORE.get(),"Gravitation Ore");
+        add(DCBlocks.OVERWORLD_CASSITERITE_ORE.get(), "Cassiterite Ore");
+        add(DCBlocks.DEEPSLATE_CASSITERITE_ORE.get(), "DeepSlate Cassiterite Ore");
+        add(DCBlocks.NETHER_CASSITERITE_ORE.get(), "Nether Cassiterite Ore");
+        add(DCBlocks.END_CASSITERITE_ORE.get(), "End Cassiterite Ore");
 
         add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Astronomy Multiblock Base Frame Block");
         add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Astronomy Multiblock Base Frame Block (Hologram)");

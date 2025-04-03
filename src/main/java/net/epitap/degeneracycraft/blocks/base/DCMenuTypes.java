@@ -12,6 +12,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technol
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineMenu;
@@ -120,8 +121,20 @@ public class DCMenuTypes {
             registerMenuType(BasicPhaseBoltManufactureMachineMenu::new, "basic_phase_bolt_manufacture_menu");
 
 
+
+
+
+
+
     public static final RegistryObject<MenuType<BasicPerformanceMachineDataInstallerMenu>> BASIC_PERFORMANCE_MACHINE_DARA_INSTALLER_MENU =
             registerMenuType(BasicPerformanceMachineDataInstallerMenu::new, "basic_performance_machine_data_installer_menu");
+
+
+    public static final RegistryObject<MenuType<BasicPerformanceRockCrasherMenu>> BASIC_PERFORMANCE_ROCK_CRASHER_MENU =
+            registerMenuType(BasicPerformanceRockCrasherMenu::new, "basic_performance_rock_crasher_menu");
+
+
+
 
 
     public static final RegistryObject<MenuType<BasicPerformanceElectricArcFurnaceMenu>> BASIC_PERFORMANCE_ARC_ELECTRIC_FURNACE_MENU =

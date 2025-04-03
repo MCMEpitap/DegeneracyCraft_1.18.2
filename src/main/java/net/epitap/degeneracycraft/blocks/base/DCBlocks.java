@@ -13,7 +13,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technol
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerBlock;
-import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlock;
+import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineBlock;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlock;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineBlock;
@@ -364,8 +364,8 @@ public class DCBlocks {
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTROLYSER_BLOCK = registerTooltipBasicMachineBlock("basic_performance_electrolyser_block", () ->
                     new BasicPerformanceElectrolyserBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
-            "Lv0:3×3×3",
-            "Lv1:3×3×3",
+            "Lv0:5×3×3",
+            "Lv1:5×3×3",
             "Base:Speed ×1.00,Energy Usage ×1.00",
             "Lv0:Speed ×2.00,Energy Usage ×1.50",
             "Lv1:Speed ×3.00,Energy Usage ×2.00",
@@ -592,11 +592,65 @@ public class DCBlocks {
     public static final RegistryObject<Block> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_machine_data_installer_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK = registerTooltipBasicMachineBlock("basic_performance_rock_crasher_block", () ->
+                    new BasicPerformanceMachineDataInstallerBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "Lv0:3×4×3",
+            "Lv1:3×4×3",
+            "Base:Speed ×1.00,Energy Usage ×1.00",
+            "Lv0:Speed ×2.00,Energy Usage ×1.50",
+            "Lv1:Speed ×3.00,Energy Usage ×2.00",
+            "basic_performance_rock_crasher_block", "formal_science", "basic");
+    public static final RegistryObject<Block> BASIC_CRASHING_BASE_BLOCK = registerTooltipMultiblockAbilityBlock("basic_crashing_base_block", () ->
+                    new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "basic_performance_rock_crasher_block",
+            "geo_science",
+            "basic");
+    public static final RegistryObject<Block> BASIC_CRASHING_BASE_HOLO_BLOCK = registerHoloBlock("basic_crashing_base_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_ROCK_CRASHER_BUS_BLOCK = registerBlock("basic_performance_rock_crasher_bus_block", () ->
+            new BasicPerformanceMachineDataInstallerBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_ROCK_CRASHER_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_rock_crasher_bus_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK = registerBlock("basic_performance_rock_crasher_port_block", () ->
+            new BasicPerformanceMachineDataInstallerPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_ROCK_CRASHER_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_rock_crasher_port_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK = registerTooltipBasicMachineBlock("basic_performance_electric_arc_furnace_block", () ->
-                    new BasicPerformanceElectricArcFurnaceBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
-            "Lv0:3×3×3",
-            "Lv1:3×3×3",
+                    new BasicPerformanceRockCrasherBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "Lv0:3×4×3",
+            "Lv1:3×4×3",
             "Base:Speed ×1.00,Energy Usage ×1.00",
             "Lv0:Speed ×2.00,Energy Usage ×1.50",
             "Lv1:Speed ×3.00,Energy Usage ×2.00",
@@ -619,8 +673,8 @@ public class DCBlocks {
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK = registerTooltipBasicMachineBlock("basic_performance_forming_machine_block", () ->
                     new BasicPerformanceFormingMachineBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
-            "Lv0:3×3×3",
-            "Lv1:3×3×3",
+            "Lv0:5×3×3",
+            "Lv1:5×3×3",
             "Base:Speed ×1.00,Energy Usage ×1.00",
             "Lv0:Speed ×2.00,Energy Usage ×1.50",
             "Lv1:Speed ×3.00,Energy Usage ×2.00",

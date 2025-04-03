@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace;
+package net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
@@ -37,7 +37,7 @@ import javax.annotation.Nonnull;
 import java.util.Map;
 import java.util.Optional;
 
-public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity implements MenuProvider {
+public class BasicPerformanceRockCrasherBlockEntity extends BlockEntity implements MenuProvider {
     public float MACHINE_CAPACITY = 50000F;
     public float MACHINE_TRANSFER = 32F;
     public float MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
@@ -55,7 +55,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
     public boolean powered0_1;
     public boolean isFormed;
     public boolean isPowered0;
-    public final ItemStackHandler itemHandler = new ItemStackHandler(5) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(6) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -64,10 +64,10 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 2 -> false;
-                case 3 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
+                case 1,2,3 -> false;
+                case 4 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
                         || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
-                case 4 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
+                case 5 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -101,14 +101,14 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (inputSlot, stack) ->
                             itemHandler.isItemValid(0, stack))));
 
-    public BasicPerformanceElectricArcFurnaceBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+    public BasicPerformanceRockCrasherBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
+        super(DCBlockEntities.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> BasicPerformanceElectricArcFurnaceBlockEntity.this.counter;
-                    case 1 -> BasicPerformanceElectricArcFurnaceBlockEntity.this.getProgressPercent;
+                    case 0 -> BasicPerformanceRockCrasherBlockEntity.this.counter;
+                    case 1 -> BasicPerformanceRockCrasherBlockEntity.this.getProgressPercent;
                     default -> 0;
                 };
             }
@@ -116,9 +116,9 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
             @Override
             public void set(int index, int value) {
                 if (index == 0) {
-                    BasicPerformanceElectricArcFurnaceBlockEntity.this.counter = value;
+                    BasicPerformanceRockCrasherBlockEntity.this.counter = value;
                 } else if (index == 1) {
-                    BasicPerformanceElectricArcFurnaceBlockEntity.this.getProgressPercent = value;
+                    BasicPerformanceRockCrasherBlockEntity.this.getProgressPercent = value;
                 }
             }
 
@@ -133,7 +133,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return new BasicPerformanceElectricArcFurnaceMenu(pContainerId, pInventory, this, this.data);
+        return new BasicPerformanceRockCrasherMenu(pContainerId, pInventory, this, this.data);
     }
 
     public Component getDisplayName() {
@@ -149,7 +149,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
                 return lazyItemHandler.cast();
             }
             if (directionWrappedHandlerMap.containsKey(side)) {
-                Direction localDir = this.getBlockState().getValue(BasicPerformanceElectricArcFurnaceBlock.FACING);
+                Direction localDir = this.getBlockState().getValue(BasicPerformanceRockCrasherBlock.FACING);
 
                 if (side == Direction.UP || side == Direction.DOWN) {
                     return directionWrappedHandlerMap.get(side).cast();
@@ -212,11 +212,11 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
-    public static void tick(Level level, BlockPos pos, BlockState state, BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
-        blockEntity.isFormed = BasicPerformanceElectricArcFurnaceStructure.isFormed(level, pos, state, blockEntity);
-        blockEntity.isPowered0 = BasicPerformanceElectricArcFurnaceStructure.isPowered0(level, pos, state, blockEntity);
+    public static void tick(Level level, BlockPos pos, BlockState state, BasicPerformanceRockCrasherBlockEntity blockEntity) {
+        blockEntity.isFormed = BasicPerformanceRockCrasherStructure.isFormed(level, pos, state, blockEntity);
+        blockEntity.isPowered0 = BasicPerformanceRockCrasherStructure.isPowered0(level, pos, state, blockEntity);
 
-        BasicPerformanceElectricArcFurnaceStructure.hologram(level, pos, state, blockEntity);
+        BasicPerformanceRockCrasherStructure.hologram(level, pos, state, blockEntity);
 
         blockEntity.getProgressPercent = 0;
 
@@ -266,7 +266,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         setChanged(level, pos, state);
     }
 
-    public static boolean craftCheck(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+    public static boolean craftCheck(BasicPerformanceRockCrasherBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -282,7 +282,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         return false;
     }
 
-    private static boolean hasRecipe(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+    private static boolean hasRecipe(BasicPerformanceRockCrasherBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -295,7 +295,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         return match.isPresent();
     }
 
-    private static boolean hasAmountRecipe(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+    private static boolean hasAmountRecipe(BasicPerformanceRockCrasherBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -309,7 +309,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
                 && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount();
     }
 
-    private static boolean hasEnergyRecipe(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+    private static boolean hasEnergyRecipe(BasicPerformanceRockCrasherBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -322,11 +322,11 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
     }
 
-    public static boolean checkConsumeCount(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+    public static boolean checkConsumeCount(BasicPerformanceRockCrasherBlockEntity blockEntity) {
         return blockEntity.consumeCounter == 0;
     }
 
-    private static void consumeItem(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+    private static void consumeItem(BasicPerformanceRockCrasherBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -346,7 +346,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         this.consumeCounter = 1;
     }
 
-    private static void craftItem(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+    private static void craftItem(BasicPerformanceRockCrasherBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -365,7 +365,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         }
     }
 
-    public static boolean isHaltDevice(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+    public static boolean isHaltDevice(BasicPerformanceRockCrasherBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
@@ -377,7 +377,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         this.consumeCounter = 0;
     }
 
-    private static boolean hasNotReachedStackLimit(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+    private static boolean hasNotReachedStackLimit(BasicPerformanceRockCrasherBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -390,7 +390,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         return blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(2).getMaxStackSize();
     }
 
-    private static boolean canInsertItemIntoOutputSlot(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+    private static boolean canInsertItemIntoOutputSlot(BasicPerformanceRockCrasherBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {

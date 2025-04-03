@@ -13,6 +13,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technol
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlockEntity;
@@ -225,6 +226,12 @@ public class DCBlockEntities {
                     BlockEntityType.Builder.of(BasicPhaseBoltManufactureMachineBlockEntity::new, DCBlocks.BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_BLOCK.get()).build(null));
 
 
+
+
+
+
+
+
     public static final RegistryObject<BlockEntityType<BasicPerformanceMachineDataInstallerBlockEntity>> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_machine_data_installer_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceMachineDataInstallerBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK.get()).build(null));
@@ -234,6 +241,29 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicPerformanceMachineDataInstallerPortBlockEntity>> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_machine_data_installer_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceMachineDataInstallerPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_BLOCK.get()).build(null));
+
+
+
+
+
+
+
+    public static final RegistryObject<BlockEntityType<BasicPerformanceRockCrasherBlockEntity>> BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_rock_crasher_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceRockCrasherBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceRockCrasherBusBlockEntity>> BASIC_PERFORMANCE_ROCK_CRASHER_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_rock_crasher_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceRockCrasherBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceRockCrasherPortBlockEntity>> BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_rock_crasher_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceRockCrasherPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK.get()).build(null));
+
+
+
+
+
+
+
 
 
     public static final RegistryObject<BlockEntityType<BasicPerformanceElectricArcFurnaceBlockEntity>> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK_ENTITY =

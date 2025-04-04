@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/geo_science/basic_performance_rock_crasher/basic_performance_rock_crasher_down",
+    "up": "degeneracycraft:block/machine/basic/geo_science/basic_performance_rock_crasher/basic_performance_rock_crasher_up",
+    "north": "degeneracycraft:block/machine/basic/geo_science/basic_performance_rock_crasher/basic_performance_rock_crasher_front",
+    "south": "degeneracycraft:block/machine/basic/geo_science/basic_performance_rock_crasher/basic_performance_rock_crasher_side",
+    "east": "degeneracycraft:block/machine/basic/geo_science/basic_performance_rock_crasher/basic_performance_rock_crasher_side",
+    "west": "degeneracycraft:block/machine/basic/geo_science/basic_performance_rock_crasher/basic_performance_rock_crasher_side"
+  }
+}

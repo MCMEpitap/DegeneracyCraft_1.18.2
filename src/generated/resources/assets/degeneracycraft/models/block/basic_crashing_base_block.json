@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_block",
+    "up": "degeneracycraft:block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_block",
+    "north": "degeneracycraft:block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_block",
+    "south": "degeneracycraft:block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_block",
+    "east": "degeneracycraft:block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_block",
+    "west": "degeneracycraft:block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_block"
+  }
+}

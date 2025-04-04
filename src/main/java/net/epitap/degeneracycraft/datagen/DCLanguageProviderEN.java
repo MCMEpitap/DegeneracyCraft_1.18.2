@@ -954,6 +954,11 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_HOLO_BLOCK.get(), "Basic Technology Multiblock Equipment Fabricator Port (Hologram)");
         add(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_CIRCUIT.get(), "Basic Technology Multiblock Equipment Fabricator Circuit");
 
+        
+        
+        
+        
+        
 
         add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK.get(), "Basic Performance Machine Data Installer");
         add("tooltip." + "degeneracycraft." + "basic_performance_machine_data_installer_block",
@@ -968,6 +973,37 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK.get(), "Basic Performance Machine Data Installer Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_CIRCUIT.get(), "Basic Performance Machine Data Installer Circuit");
 
+
+
+
+
+
+
+        add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get(), "Basic Performance Rock Crasher");
+        add("tooltip." + "degeneracycraft." + "basic_performance_rock_crasher_block",
+                "Basic Performance Rock Crasher. Effective use of stones.");
+        add(DCBlocks.BASIC_CRASHING_BASE_BLOCK.get(), "Basic Crashing Base");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_rock_crasher_block",
+                "For Basic Performance Rock Crasher");
+        add(DCBlocks.BASIC_CRASHING_BASE_HOLO_BLOCK.get(), "Basic Crashing Base (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_BLOCK.get(), "Basic Performance Rock Crasher Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_HOLO_BLOCK.get(), "Basic Performance Rock Crasher Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK.get(), "Basic Performance Rock Crasher Port");
+        add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_HOLO_BLOCK.get(), "Basic Performance Rock Crasher Port (Hologram)");
+        add(DCItems.BASIC_PERFORMANCE_ROCK_CRASHER_CIRCUIT.get(), "Basic Performance Rock Crasher Circuit");
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
         add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get(), "Basic Performance Electric Arc Furnace");
         add("tooltip." + "degeneracycraft." + "basic_performance_electric_arc_furnace_block",

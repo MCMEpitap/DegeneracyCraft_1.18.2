@@ -215,6 +215,16 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicPerformanceMachineDataInstallerPortHolo();
 
 
+
+        registerBasicPerformanceRockCrasher();
+        registerBasicCrashingBase();
+        registerBasicCrashingBaseHolo();
+        registerBasicPerformanceRockCrasherBus();
+        registerBasicPerformanceRockCrasherBusHolo();
+        registerBasicPerformanceRockCrasherPort();
+        registerBasicPerformanceRockCrasherPortHolo();
+
+
         registerBasicPerformanceElectricArcFurnace();
         registerBasicFlowCoolingSystem();
         registerBasicFlowCoolingSystemHolo();
@@ -2347,6 +2357,24 @@ public class DCBlockStateProvider extends BlockStateProvider {
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     private void registerBasicPerformanceMachineDataInstaller() {
         BlockModelBuilder model = models().getBuilder("block/basic_performance_machine_data_installer_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
@@ -2438,6 +2466,123 @@ public class DCBlockStateProvider extends BlockStateProvider {
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private void registerBasicPerformanceRockCrasher() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_rock_crasher_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/basic_performance_rock_crasher_down"));
+        model.texture("up", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/basic_performance_rock_crasher_up"));
+        model.texture("north", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/basic_performance_rock_crasher_front"));
+        model.texture("south", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/basic_performance_rock_crasher_side"));
+        model.texture("east", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/basic_performance_rock_crasher_side"));
+        model.texture("west", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/basic_performance_rock_crasher_side"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicCrashingBase() {
+        BlockModelBuilder model = models().getBuilder("block/basic_crashing_base_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_block"));
+        model.texture("up", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_block"));
+        model.texture("north", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_block"));
+        model.texture("south", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_block"));
+        model.texture("east", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_block"));
+        model.texture("west", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_block"));
+        orientedBlock(DCBlocks.BASIC_CRASHING_BASE_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicCrashingBaseHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_crashing_base_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_holo_block"));
+        orientedBlock(DCBlocks.BASIC_CRASHING_BASE_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceRockCrasherBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_rock_crasher_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceRockCrasherBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_rock_crasher_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+
+    private void registerBasicPerformanceRockCrasherPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_rock_crasher_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_block"));
+        model.texture("up", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_block"));
+        model.texture("north", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_block"));
+        model.texture("south", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_block"));
+        model.texture("east", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_block"));
+        model.texture("west", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceRockCrasherPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_rock_crasher_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+
+
+
+
+
+
+
+
+
 
 
     private void registerBasicPerformanceElectricArcFurnace() {

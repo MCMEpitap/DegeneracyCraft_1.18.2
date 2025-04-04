@@ -956,18 +956,43 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_CIRCUIT.get(), "基本技術マルチブロック設備製作機回路");
 
 
+
+
+
+
         add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK.get(), "基本性能機械データインストーラー");
         add("tooltip." + "degeneracycraft." + "basic_performance_machine_data_installer_block",
                 "基本的な機械データインストーラー. 機械のデータを記憶回路にインストールする機械.");
         add(DCBlocks.BASIC_SPEED_DATA_READER_BLOCK.get(), "基本速度データ読込機");
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_machine_data_installer_block",
-                "基本的な機械データインストーラー用");
+                "基本性能機械データインストーラー用");
         add(DCBlocks.BASIC_SPEED_DATA_READER_HOLO_BLOCK.get(), "基本速度データ読込機 (ホログラム)");
         add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_BLOCK.get(), "基本性能機械データインストーラーバス");
         add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_HOLO_BLOCK.get(), "基本性能機械データインストーラーバス (ホログラム)");
         add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_BLOCK.get(), "基本性能機械データインストーラーポート");
         add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK.get(), "基本性能機械データインストーラーポート (ホログラム)");
         add(DCItems.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_CIRCUIT.get(), "基本性能機械データインストーラー回路");
+
+
+
+
+
+
+
+        add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get(), "基本性能岩石破砕機");
+        add("tooltip." + "degeneracycraft." + "basic_performance_rock_crasher_block",
+                "基本的な岩石破砕機. 石の有効活用を.");
+        add(DCBlocks.BASIC_CRASHING_BASE_BLOCK.get(), "基本破砕ベース");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_rock_crasher_block",
+                "基本性能岩石破砕機用");
+        add(DCBlocks.BASIC_CRASHING_BASE_HOLO_BLOCK.get(), "基本破砕ベース (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_BLOCK.get(), "基本性能岩石破砕機バス");
+        add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_HOLO_BLOCK.get(), "基本性能岩石破砕機バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK.get(), "基本性能岩石破砕機ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_HOLO_BLOCK.get(), "基本性能岩石破砕機ポート (ホログラム)");
+        add(DCItems.BASIC_PERFORMANCE_ROCK_CRASHER_CIRCUIT.get(), "基本性能岩石破砕機回路");
+
+
 
 
         add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get(), "基本性能電気アーク炉");

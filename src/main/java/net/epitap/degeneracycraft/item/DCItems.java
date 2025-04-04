@@ -832,6 +832,8 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
 
     public static final RegistryObject<Item> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_CIRCUIT = ITEMS.register("basic_performance_machine_data_installer_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
+    public static final RegistryObject<Item> BASIC_PERFORMANCE_ROCK_CRASHER_CIRCUIT = ITEMS.register("basic_performance_rock_crasher_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+
 
     public static final RegistryObject<Item> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_CIRCUIT = ITEMS.register("basic_performance_electric_arc_furnace_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_PERFORMANCE_FORMING_MACHINE_CIRCUIT = ITEMS.register("basic_performance_forming_machine_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));

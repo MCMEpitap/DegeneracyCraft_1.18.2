@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "degeneracycraft:basic_flow_cooling_system_block"
+          "name": "degeneracycraft:basic_speed_data_reader_block"
         }
       ],
       "conditions": [

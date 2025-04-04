@@ -1102,6 +1102,8 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicMachineCircuitItem(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_CIRCUIT.get());
 
 
+        
+        
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_machine_data_installer_block"));
         withExistingParent(DCBlocks.BASIC_SPEED_DATA_READER_BLOCK.getId().getPath(),
@@ -1117,6 +1119,28 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_machine_data_installer_port_holo_block"));
         basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_CIRCUIT.get());
+
+        
+        
+
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_rock_crasher_block"));
+        withExistingParent(DCBlocks.BASIC_CRASHING_BASE_BLOCK.getId().getPath(),
+                modLoc("block/basic_crashing_base_block"));
+        withExistingParent(DCBlocks.BASIC_CRASHING_BASE_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_crashing_base_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_rock_crasher_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_rock_crasher_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_rock_crasher_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_rock_crasher_port_holo_block"));
+        basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_ROCK_CRASHER_CIRCUIT.get());
+
+        
+        
 
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.getId().getPath(),

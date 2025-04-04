@@ -212,13 +212,31 @@ public class DCBlockLootTableProvider extends BlockLoot {
         this.add(DCBlocks.PULVERIZER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.PULVERIZER_BLOCK.get()));
 
 
+
+
+
+
+
         this.add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK.get()));
-        this.add(DCBlocks.BASIC_SPEED_DATA_READER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_BLOCK.get()));
+        this.add(DCBlocks.BASIC_SPEED_DATA_READER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_SPEED_DATA_READER_BLOCK.get()));
         this.add(DCBlocks.BASIC_SPEED_DATA_READER_HOLO_BLOCK.get(), block -> noDrop());
         this.add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_BLOCK.get()));
         this.add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_HOLO_BLOCK.get(), block -> noDrop());
         this.add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_BLOCK.get()));
         this.add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK.get(), block -> noDrop());
+
+
+
+        this.add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get()));
+        this.add(DCBlocks.BASIC_CRASHING_BASE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_CRASHING_BASE_BLOCK.get()));
+        this.add(DCBlocks.BASIC_CRASHING_BASE_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_HOLO_BLOCK.get(), block -> noDrop());
+
+
+
 
 
         this.add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get()));

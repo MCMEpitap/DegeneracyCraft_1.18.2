@@ -1,0 +1,34 @@
+{
+    "type": "degeneracycraft:vein_sparse",
+    "config": {
+        "yMin": -64,
+        "yMax": 64,
+        "size": 100,
+        "spread": 15,
+        "dimensions": {
+            "isBlacklist": false,
+            "filter": ["overworld"]
+        },
+        "blocks": {
+            "default": [
+                {
+                    "block": "minecraft:lapis_ore",
+                    "chance": 1.0
+                }
+            ],
+            "minecraft:deepslate": [
+                {
+                    "block": "minecraft:deepslate_lapis_ore",
+                    "chance": 1.0
+                }
+            ]
+        },
+        "samples": [
+            {
+                "block": "degeneracycraft:overworld_gravitation_ore",
+                "chance": 1.0
+            }
+        ],
+        "generationWeight": 5
+    }
+}

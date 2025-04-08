@@ -4,3 +4,5 @@ About Multiblock display in JEI by mikerooni
 https://github.com/GregTechCEu/GregTech-Modern/tree/1.19.2
 About Multiblock display in JEI by yefancy
 https://github.com/Low-Drag-MC/LDLib
+About Ore Generation by oitsjustjose
+https://github.com/oitsjustjose/Geolosys

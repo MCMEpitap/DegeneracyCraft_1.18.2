@@ -1,0 +1,33 @@
+{
+  "type": "degeneracycraft:vein_dense",
+  "config": {
+    "yMin": -64,
+    "yMax": 32,
+    "size": 100,
+    "dimensions": {
+      "isBlacklist": false,
+      "filter": ["degeneracycraft:test"]
+    },
+    "blocks": {
+      "default": [
+        {
+          "block": "minecraft:gold_ore",
+          "chance": 1
+        }
+      ],
+      "minecraft:deepslate": [
+        {
+          "block": "minecraft:deepslate_gold_ore",
+          "chance": 1
+        }
+      ]
+    },
+    "samples": [
+      {
+        "block": "minecraft:deepslate_gold_ore",
+        "chance": 1.0
+      }
+    ],
+    "generationWeight": 4
+  }
+}

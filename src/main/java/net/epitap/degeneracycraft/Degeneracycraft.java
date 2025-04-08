@@ -50,26 +50,53 @@ import net.epitap.degeneracycraft.transport.pipe.parametor.PipeModelRegistry;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeBlockClickEvent;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeBlockEntities;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeBlocks;
-import net.epitap.degeneracycraft.world.structure.DCStructures;
+import net.epitap.degeneracycraft.world.dimention.DCDimentions;
+import net.epitap.degeneracycraft.world.feature.ore.WorldGenVeinDataLoader;
+import net.epitap.degeneracycraft.world.feature.ore.main.DCOresAPI;
+import net.epitap.degeneracycraft.world.feature.ore.main.DCOresClient;
+import net.epitap.degeneracycraft.world.feature.ore.main.DCOresFeatures;
+import net.epitap.degeneracycraft.world.feature.ore.check.*;
+import net.epitap.degeneracycraft.world.feature.ore.network.ClientProxy;
+import net.epitap.degeneracycraft.world.feature.ore.network.CommonConfig;
+import net.epitap.degeneracycraft.world.feature.ore.network.CommonProxy;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.core.Direction;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ICapabilitySerializable;
+import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.event.AddReloadListenerEvent;
+import net.minecraftforge.event.AttachCapabilitiesEvent;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLPaths;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 
 
 @Mod(Degeneracycraft.MOD_ID)
 public class Degeneracycraft {
     public static final Logger LOGGER = LogManager.getLogger();
+    public static CommonProxy proxy = DistExecutor.safeRunForDist(() -> ClientProxy::new, () -> CommonProxy::new);
     public static final String MOD_ID = "degeneracycraft";
     public static Config config;
 
@@ -86,7 +113,9 @@ public class Degeneracycraft {
         DCMenuTypes.register(eventBus);
         DCUniqueMenuTypes.register(eventBus);
         DCRecipeTypes.register(eventBus);
-        DCStructures.register(eventBus);
+//        DCStructures.register(eventBus);
+
+        DCDimentions.register();
 
 
 
@@ -108,6 +137,10 @@ public class Degeneracycraft {
         eventBus.addListener(PipeModelRegistry::onModelBake);
         eventBus.addListener(PortModelRegistry::onModelRegister);
         eventBus.addListener(PortModelRegistry::onModelBake);
+
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> DCOresClient::setup);
+
+        this.configSetup();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -117,8 +150,97 @@ public class Degeneracycraft {
 
     }
 
-    private void setup(final FMLCommonSetupEvent event) {
+    private void configSetup() {
+//        ModLoadingContext.get().registerConfig(Type.CLIENT, ClientConfig.CLIENT_CONFIG);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfig.COMMON_CONFIG);
+        CommonConfig.loadConfig(CommonConfig.COMMON_CONFIG, FMLPaths.CONFIGDIR.get().resolve("common.toml"));
     }
+
+    private void setup(final FMLCommonSetupEvent event) {
+        DCOresAPI.init();
+        proxy.init();
+    }
+
+    @SubscribeEvent
+    public void onSlashReload(AddReloadListenerEvent evt) {
+        evt.addListener(new WorldGenVeinDataLoader());
+    }
+    @SubscribeEvent
+    public void registerCaps(RegisterCapabilitiesEvent event) {
+        event.register(VeinCheck.class);
+        event.register(ChunkCheck.class);
+    }
+    @SubscribeEvent
+    public void attachWorldCaps(AttachCapabilitiesEvent<Level> event) {
+        if (event.getObject().isClientSide()) {
+            return;
+        }
+
+        try {
+            final LazyOptional<IVeinCheck> inst = LazyOptional.of(VeinCheck::new);
+            final ICapabilitySerializable<CompoundTag> provider = new ICapabilitySerializable<>() {
+                @Override
+                public <T> @NotNull LazyOptional<T> getCapability(@NotNull Capability<T> cap, Direction side) {
+                    return VeinCheck.CAPABILITY.orEmpty(cap, inst);
+                }
+
+                @Override
+                public CompoundTag serializeNBT() {
+                    IVeinCheck cap = this.getCapability(VeinCheck.CAPABILITY)
+                            .orElseThrow(RuntimeException::new);
+                    return cap.serializeNBT();
+                }
+
+                @Override
+                public void deserializeNBT(CompoundTag nbt) {
+                    IVeinCheck cap = this.getCapability(VeinCheck.CAPABILITY)
+                            .orElseThrow(RuntimeException::new);
+                    cap.deserializeNBT(nbt);
+                }
+            };
+            event.addCapability(Contants.VEIN_CAPABILITY_NAME, provider);
+            event.addListener(inst::invalidate);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            final LazyOptional<IChunkCheck> inst = LazyOptional.of(ChunkCheck::new);
+            final ICapabilitySerializable<CompoundTag> provider = new ICapabilitySerializable<>() {
+                @Override
+                public <T> @NotNull LazyOptional<T> getCapability(@NotNull Capability<T> cap, Direction side) {
+                    return ChunkCheck.CAPABILITY.orEmpty(cap, inst);
+                }
+
+                @Override
+                public CompoundTag serializeNBT() {
+                    IChunkCheck cap = this.getCapability(ChunkCheck.CAPABILITY)
+                            .orElseThrow(RuntimeException::new);
+                    return cap.serializeNBT();
+                }
+
+                @Override
+                public void deserializeNBT(CompoundTag nbt) {
+                    IChunkCheck cap = this.getCapability(ChunkCheck.CAPABILITY)
+                            .orElseThrow(RuntimeException::new);
+                    cap.deserializeNBT(nbt);
+                }
+            };
+            event.addCapability(Contants.CHUNKGEN_CAPABILITY_NAME, provider);
+            event.addListener(inst::invalidate);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+    public static class RegistryEvents {
+        @SubscribeEvent
+        public static void onFeaturesRegistry(final RegistryEvent.Register<Feature<?>> featureRegistryEvent) {
+            DCOresFeatures.register(featureRegistryEvent);
+        }
+    }
+
+
 
     private void clientSetup(final FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get(), RenderType.translucent());
@@ -317,5 +439,12 @@ public class Degeneracycraft {
         PortBlockEntities.clientSetup();
 
     }
+
+
+
+
+
+
+
 
 }

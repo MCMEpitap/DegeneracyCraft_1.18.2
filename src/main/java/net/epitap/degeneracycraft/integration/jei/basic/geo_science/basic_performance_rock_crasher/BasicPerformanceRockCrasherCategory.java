@@ -24,7 +24,7 @@ import javax.annotation.Nonnull;
 public class BasicPerformanceRockCrasherCategory implements IRecipeCategory<BasicPerformanceRockCrasherRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_performance_rock_crasher_recipe");
     public final static ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/hybrid_physics/basic_performance_rock_crasher/basic_performance_rock_crasher_uid.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/geo_science/basic_performance_rock_crasher/basic_performance_rock_crasher_uid.png");
     private final IDrawable background;
     private final IDrawable icon;
 
@@ -110,8 +110,8 @@ public class BasicPerformanceRockCrasherCategory implements IRecipeCategory<Basi
     public void setRecipe(@Nonnull IRecipeLayoutBuilder builder, @Nonnull BasicPerformanceRockCrasherRecipe recipe, @Nonnull IFocusGroup focusGroup) {
         builder.addSlot(RecipeIngredientRole.INPUT, 26, 25).addItemStack(recipe.getInput0Item());
         builder.addSlot(RecipeIngredientRole.OUTPUT, 98, 25).addItemStack(recipe.getOutput0Item());
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 25).addItemStack(recipe.getOutput0Item());
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 134, 25).addItemStack(recipe.getOutput0Item());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 25).addItemStack(recipe.getOutput1Item());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 134, 25).addItemStack(recipe.getOutput2Item());
 
     }
 }

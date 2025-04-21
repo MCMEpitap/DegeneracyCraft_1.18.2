@@ -3,7 +3,7 @@ package net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_perfor
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherRecipe;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -38,7 +38,7 @@ import java.util.Map;
 import java.util.Optional;
 
 public class BasicPerformanceRockCrasherBlockEntity extends BlockEntity implements MenuProvider {
-    public float MACHINE_CAPACITY = 50000F;
+    public float MACHINE_CAPACITY = 20000F;
     public float MACHINE_TRANSFER = 32F;
     public float MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
     public float MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
@@ -48,6 +48,13 @@ public class BasicPerformanceRockCrasherBlockEntity extends BlockEntity implemen
     public int counter;
     public int getProgressPercent;
     private int consumeCounter;
+    public double output_Slot1_Random = 0.5F;
+    public double output_Slot1_Randomizer;
+    public double output_Slot2_Random = 0.25F;
+    public double output_Slot2_Randomizer;
+
+
+
 
     public boolean isFormed;
     public boolean isPowered0;
@@ -226,8 +233,8 @@ public class BasicPerformanceRockCrasherBlockEntity extends BlockEntity implemen
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceRockCrasherRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
@@ -269,8 +276,8 @@ public class BasicPerformanceRockCrasherBlockEntity extends BlockEntity implemen
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceRockCrasherRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return blockEntity.data.get(0) >= match.get().getRequiredTime() * 20;
@@ -285,8 +292,8 @@ public class BasicPerformanceRockCrasherBlockEntity extends BlockEntity implemen
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceRockCrasherRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE, inventory, level);
 
         return match.isPresent();
     }
@@ -298,11 +305,10 @@ public class BasicPerformanceRockCrasherBlockEntity extends BlockEntity implemen
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceRockCrasherRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount();
+        return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount();
     }
 
     private static boolean hasEnergyRecipe(BasicPerformanceRockCrasherBlockEntity blockEntity) {
@@ -312,8 +318,8 @@ public class BasicPerformanceRockCrasherBlockEntity extends BlockEntity implemen
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceRockCrasherRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
     }
@@ -329,12 +335,11 @@ public class BasicPerformanceRockCrasherBlockEntity extends BlockEntity implemen
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceRockCrasherRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
         }
     }
 
@@ -349,12 +354,23 @@ public class BasicPerformanceRockCrasherBlockEntity extends BlockEntity implemen
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceRockCrasherRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
-            blockEntity.itemHandler.setStackInSlot(2, new ItemStack(match.get().getOutput0Item().getItem(),
-                    blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount()));
+            blockEntity.itemHandler.setStackInSlot(1, new ItemStack(match.get().getOutput0Item().getItem(),
+                    blockEntity.itemHandler.getStackInSlot(1).getCount() + match.get().getOutput0Item().getCount()));
+            blockEntity.output_Slot1_Randomizer = Math.random();
+            blockEntity.output_Slot2_Randomizer = Math.random();
+
+            if (blockEntity.output_Slot1_Randomizer <= blockEntity.output_Slot1_Random){
+                blockEntity.itemHandler.setStackInSlot(2, new ItemStack(match.get().getOutput1Item().getItem(),
+                        blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput1Item().getCount()));
+            }
+            if (blockEntity.output_Slot2_Randomizer <= blockEntity.output_Slot2_Random){
+                blockEntity.itemHandler.setStackInSlot(3, new ItemStack(match.get().getOutput2Item().getItem(),
+                        blockEntity.itemHandler.getStackInSlot(3).getCount() + match.get().getOutput2Item().getCount()));
+            }
             blockEntity.resetProgress();
             blockEntity.resetConsumeCount();
 
@@ -380,10 +396,12 @@ public class BasicPerformanceRockCrasherBlockEntity extends BlockEntity implemen
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceRockCrasherRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(2).getMaxStackSize();
+        return blockEntity.itemHandler.getStackInSlot(1).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(1).getMaxStackSize()
+                && blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput1Item().getCount() <= blockEntity.itemHandler.getStackInSlot(2).getMaxStackSize()
+                && blockEntity.itemHandler.getStackInSlot(3).getCount() + match.get().getOutput2Item().getCount() <= blockEntity.itemHandler.getStackInSlot(3).getMaxStackSize();
     }
 
     private static boolean canInsertItemIntoOutputSlot(BasicPerformanceRockCrasherBlockEntity blockEntity) {
@@ -393,9 +411,11 @@ public class BasicPerformanceRockCrasherBlockEntity extends BlockEntity implemen
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceRockCrasherRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(2).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(2).isEmpty();
+        return blockEntity.itemHandler.getStackInSlot(1).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(1).isEmpty()
+                && blockEntity.itemHandler.getStackInSlot(2).getItem() == match.get().getOutput1Item().getItem() || blockEntity.itemHandler.getStackInSlot(2).isEmpty()
+                && blockEntity.itemHandler.getStackInSlot(3).getItem() == match.get().getOutput2Item().getItem() || blockEntity.itemHandler.getStackInSlot(3).isEmpty();
     }
 }

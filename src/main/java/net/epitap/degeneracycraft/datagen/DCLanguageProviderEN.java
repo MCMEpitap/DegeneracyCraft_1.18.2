@@ -1056,6 +1056,14 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("jei." + "degeneracycraft_basic_performance_machine_data_installer", "Basic Performance Machine Data Installer Recipe");
 
 
+
+
+        add("jei." + "degeneracycraft_basic_performance_rock_crasher", "Basic Performance Rock Crasher Recipe");
+
+
+
+
+
         add("jei." + "degeneracycraft_basic_performance_electric_arc_furnace", "Basic Performance Electric Arc Furnace Recipe");
         add("jei." + "degeneracycraft_basic_performance_forming_machine", "Basic Performance Forming Machine Recipe");
 

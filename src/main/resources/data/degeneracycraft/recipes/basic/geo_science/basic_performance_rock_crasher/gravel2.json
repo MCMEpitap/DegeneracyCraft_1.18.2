@@ -1,0 +1,17 @@
+{
+  "type": "degeneracycraft:basic_performance_rock_crasher_recipe",
+  "energy": 500.0,
+  "time": 10.0,
+  "input0": {
+    "item": "minecraft:cobbled_deepslate"
+  },
+  "output0": {
+    "item": "minecraft:gravel"
+  },
+  "output1": {
+    "item": "minecraft:coal"
+  },
+  "output2": {
+    "item": "minecraft:raw_iron"
+  }
+}

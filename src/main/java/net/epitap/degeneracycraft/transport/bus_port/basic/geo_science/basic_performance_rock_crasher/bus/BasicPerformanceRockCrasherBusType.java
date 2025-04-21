@@ -36,7 +36,7 @@ public class BasicPerformanceRockCrasherBusType extends PortTypeBase<Void> {
     }
 
     public ItemStack getIcon() {
-        return new ItemStack(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_BLOCK.get());
+        return new ItemStack(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_BLOCK.get());
     }
 
     public void tick(PortWorkBlockEntity blockEntity) {

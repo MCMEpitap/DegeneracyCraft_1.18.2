@@ -120,7 +120,7 @@ public class BasicPerformanceRockCrasherRecipe implements Recipe<SimpleContainer
             ItemStack input0 = BasicPerformanceRockCrasherRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input0"));
             ItemStack output0 = BasicPerformanceRockCrasherRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output0"));
             ItemStack output1 = BasicPerformanceRockCrasherRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output1"));
-            ItemStack output2 = BasicPerformanceRockCrasherRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output1"));
+            ItemStack output2 = BasicPerformanceRockCrasherRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output2"));
             return new BasicPerformanceRockCrasherRecipe(pRecipeId, energy, time, input0, output0, output1, output2);
         }
 

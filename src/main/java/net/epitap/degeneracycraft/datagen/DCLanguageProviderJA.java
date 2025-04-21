@@ -1047,6 +1047,18 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("jei." + "degeneracycraft_basic_technology_multiblock_equipment_fabricator", "基本技術マルチブロック設備製作機 レシピ");
 
 
+
+
+        add("jei." + "degeneracycraft_basic_performance_machine_data_installer", "基本性能機械データインストーラー レシピ");
+
+
+
+
+        add("jei." + "degeneracycraft_basic_performance_rock_crasher", "基本性能岩石破砕機 レシピ");
+
+
+
+
         add("jei." + "degeneracycraft_basic_performance_electric_arc_furnace", "基本性能電気アーク炉 レシピ");
         add("jei." + "degeneracycraft_basic_performance_forming_machine", "基本性能形成機 レシピ");
 

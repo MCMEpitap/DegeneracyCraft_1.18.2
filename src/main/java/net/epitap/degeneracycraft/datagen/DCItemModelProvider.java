@@ -752,6 +752,9 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/end_cassiterite_ore_block"));
 
 
+        withExistingParent(DCBlocks.OVERWORLD_GRAVITATION_ORE.getId().getPath(),
+                modLoc("block/overworld_gravitation_ore_block"));
+
 
 
 

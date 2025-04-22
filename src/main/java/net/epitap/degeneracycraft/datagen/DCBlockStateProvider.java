@@ -254,6 +254,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/material/basic/common/reinforced_planks"));
         model.texture("east", modLoc("block/material/basic/common/reinforced_planks"));
         model.texture("west", modLoc("block/material/basic/common/reinforced_planks"));
+        model.texture("particle", modLoc("block/material/basic/common/reinforced_planks"));
         orientedBlock(DCBlocks.REINFORCED_PLANKS.get(),
                 state -> model);
     }
@@ -268,6 +269,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/ore/gravitation_ore/overworld_gravitation_ore"));
         model.texture("east", modLoc("block/ore/gravitation_ore/overworld_gravitation_ore"));
         model.texture("west", modLoc("block/ore/gravitation_ore/overworld_gravitation_ore"));
+        model.texture("particle", modLoc("block/ore/gravitation_ore/overworld_gravitation_ore"));
         orientedBlock(DCBlocks.OVERWORLD_GRAVITATION_ORE.get(),
                 state -> model);
     }
@@ -281,6 +283,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/ore/cassiterite/overworld_cassiterite_ore"));
         model.texture("east", modLoc("block/ore/cassiterite/overworld_cassiterite_ore"));
         model.texture("west", modLoc("block/ore/cassiterite/overworld_cassiterite_ore"));
+        model.texture("particle", modLoc("block/ore/cassiterite/overworld_cassiterite_ore"));
         orientedBlock(DCBlocks.OVERWORLD_CASSITERITE_ORE.get(),
                 state -> model);
     }
@@ -294,6 +297,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/ore/cassiterite/deepslate_cassiterite_ore"));
         model.texture("east", modLoc("block/ore/cassiterite/deepslate_cassiterite_ore"));
         model.texture("west", modLoc("block/ore/cassiterite/deepslate_cassiterite_ore"));
+        model.texture("particle", modLoc("block/ore/cassiterite/deepslate_cassiterite_ore"));
+
         orientedBlock(DCBlocks.DEEPSLATE_CASSITERITE_ORE.get(),
                 state -> model);
     }
@@ -307,6 +312,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/ore/cassiterite/nether_cassiterite_ore"));
         model.texture("east", modLoc("block/ore/cassiterite/nether_cassiterite_ore"));
         model.texture("west", modLoc("block/ore/cassiterite/nether_cassiterite_ore"));
+        model.texture("particle", modLoc("block/ore/cassiterite/nether_cassiterite_ore"));
         orientedBlock(DCBlocks.NETHER_CASSITERITE_ORE.get(),
                 state -> model);
     }
@@ -320,6 +326,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/ore/cassiterite/end_cassiterite_ore"));
         model.texture("east", modLoc("block/ore/cassiterite/end_cassiterite_ore"));
         model.texture("west", modLoc("block/ore/cassiterite/end_cassiterite_ore"));
+        model.texture("particle", modLoc("block/ore/cassiterite/end_cassiterite_ore"));
         orientedBlock(DCBlocks.END_CASSITERITE_ORE.get(),
                 state -> model);
     }
@@ -332,7 +339,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("north", modLoc("block/material/element/silicon/silicon_block"));
         model.texture("south", modLoc("block/material/element/silicon/silicon_block"));
         model.texture("east", modLoc("block/material/element/silicon/silicon_block"));
-        model.texture("west", modLoc("block/material/element/silicon/silicon_block"));
+        model.texture("particle", modLoc("block/material/element/silicon/silicon_block"));
         orientedBlock(DCBlocks.SILICON_BLOCK.get(),
                 state -> model);
     }
@@ -346,6 +353,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/material/element/tin/tin_block"));
         model.texture("east", modLoc("block/material/element/tin/tin_block"));
         model.texture("west", modLoc("block/material/element/tin/tin_block"));
+        model.texture("particle", modLoc("block/material/element/tin/tin_block"));
         orientedBlock(DCBlocks.TIN_BLOCK.get(),
                 state -> model);
     }
@@ -359,6 +367,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_base_frame/basic_strength_astronomy_multiblock_base_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_base_frame/basic_strength_astronomy_multiblock_base_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_base_frame/basic_strength_astronomy_multiblock_base_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_base_frame/basic_strength_astronomy_multiblock_base_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -372,6 +381,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_base_frame/basic_strength_astronomy_multiblock_base_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_base_frame/basic_strength_astronomy_multiblock_base_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_base_frame/basic_strength_astronomy_multiblock_base_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_base_frame/basic_strength_astronomy_multiblock_base_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -385,6 +395,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_machine_frame/basic_strength_astronomy_multiblock_machine_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_machine_frame/basic_strength_astronomy_multiblock_machine_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_machine_frame/basic_strength_astronomy_multiblock_machine_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_machine_frame/basic_strength_astronomy_multiblock_machine_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -398,6 +409,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_machine_frame/basic_strength_astronomy_multiblock_machine_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_machine_frame/basic_strength_astronomy_multiblock_machine_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_machine_frame/basic_strength_astronomy_multiblock_machine_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_machine_frame/basic_strength_astronomy_multiblock_machine_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -411,6 +423,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_frame/basic_strength_astronomy_multiblock_structure_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_frame/basic_strength_astronomy_multiblock_structure_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_frame/basic_strength_astronomy_multiblock_structure_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_frame/basic_strength_astronomy_multiblock_structure_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -424,6 +437,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_frame/basic_strength_astronomy_multiblock_structure_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_frame/basic_strength_astronomy_multiblock_structure_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_frame/basic_strength_astronomy_multiblock_structure_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_frame/basic_strength_astronomy_multiblock_structure_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -437,6 +451,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_glass/basic_strength_astronomy_multiblock_structure_glass_block"));
         model.texture("east", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_glass/basic_strength_astronomy_multiblock_structure_glass_block"));
         model.texture("west", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_glass/basic_strength_astronomy_multiblock_structure_glass_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_glass/basic_strength_astronomy_multiblock_structure_glass_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(),
                 state -> model);
     }
@@ -450,6 +465,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_glass/basic_strength_astronomy_multiblock_structure_glass_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_glass/basic_strength_astronomy_multiblock_structure_glass_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_glass/basic_strength_astronomy_multiblock_structure_glass_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_glass/basic_strength_astronomy_multiblock_structure_glass_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -463,6 +479,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_energy_storage/basic_strength_astronomy_multiblock_energy_storage_block"));
         model.texture("east", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_energy_storage/basic_strength_astronomy_multiblock_energy_storage_block"));
         model.texture("west", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_energy_storage/basic_strength_astronomy_multiblock_energy_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_energy_storage/basic_strength_astronomy_multiblock_energy_storage_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(),
                 state -> model);
     }
@@ -476,6 +493,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_energy_storage/basic_strength_astronomy_multiblock_energy_storage_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_energy_storage/basic_strength_astronomy_multiblock_energy_storage_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_energy_storage/basic_strength_astronomy_multiblock_energy_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_energy_storage/basic_strength_astronomy_multiblock_energy_storage_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -489,6 +507,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_block"));
         model.texture("east", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_block"));
         model.texture("west", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
                 state -> model);
     }
@@ -502,6 +521,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -515,6 +535,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_base_frame/basic_strength_biology_multiblock_base_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_base_frame/basic_strength_biology_multiblock_base_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_base_frame/basic_strength_biology_multiblock_base_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_base_frame/basic_strength_biology_multiblock_base_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_BASE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -528,6 +549,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_base_frame/basic_strength_biology_multiblock_base_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_base_frame/basic_strength_biology_multiblock_base_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_base_frame/basic_strength_biology_multiblock_base_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_base_frame/basic_strength_biology_multiblock_base_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -541,6 +563,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_machine_frame/basic_strength_biology_multiblock_machine_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_machine_frame/basic_strength_biology_multiblock_machine_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_machine_frame/basic_strength_biology_multiblock_machine_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_machine_frame/basic_strength_biology_multiblock_machine_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -554,6 +577,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_machine_frame/basic_strength_biology_multiblock_machine_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_machine_frame/basic_strength_biology_multiblock_machine_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_machine_frame/basic_strength_biology_multiblock_machine_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_machine_frame/basic_strength_biology_multiblock_machine_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -567,6 +591,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_frame/basic_strength_biology_multiblock_structure_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_frame/basic_strength_biology_multiblock_structure_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_frame/basic_strength_biology_multiblock_structure_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_frame/basic_strength_biology_multiblock_structure_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -580,6 +605,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_frame/basic_strength_biology_multiblock_structure_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_frame/basic_strength_biology_multiblock_structure_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_frame/basic_strength_biology_multiblock_structure_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_frame/basic_strength_biology_multiblock_structure_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -593,6 +619,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_glass/basic_strength_biology_multiblock_structure_glass_block"));
         model.texture("east", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_glass/basic_strength_biology_multiblock_structure_glass_block"));
         model.texture("west", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_glass/basic_strength_biology_multiblock_structure_glass_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_glass/basic_strength_biology_multiblock_structure_glass_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(),
                 state -> model);
     }
@@ -606,6 +633,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_glass/basic_strength_biology_multiblock_structure_glass_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_glass/basic_strength_biology_multiblock_structure_glass_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_glass/basic_strength_biology_multiblock_structure_glass_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_glass/basic_strength_biology_multiblock_structure_glass_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -619,6 +647,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_energy_storage/basic_strength_biology_multiblock_energy_storage_block"));
         model.texture("east", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_energy_storage/basic_strength_biology_multiblock_energy_storage_block"));
         model.texture("west", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_energy_storage/basic_strength_biology_multiblock_energy_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_energy_storage/basic_strength_biology_multiblock_energy_storage_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(),
                 state -> model);
     }
@@ -632,6 +661,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_energy_storage/basic_strength_biology_multiblock_energy_storage_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_energy_storage/basic_strength_biology_multiblock_energy_storage_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_energy_storage/basic_strength_biology_multiblock_energy_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_energy_storage/basic_strength_biology_multiblock_energy_storage_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -645,6 +675,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_block"));
         model.texture("east", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_block"));
         model.texture("west", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
                 state -> model);
     }
@@ -658,6 +689,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -671,6 +703,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_base_frame/basic_strength_chemistry_multiblock_base_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_base_frame/basic_strength_chemistry_multiblock_base_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_base_frame/basic_strength_chemistry_multiblock_base_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_base_frame/basic_strength_chemistry_multiblock_base_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_BASE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -684,6 +717,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_base_frame/basic_strength_chemistry_multiblock_base_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_base_frame/basic_strength_chemistry_multiblock_base_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_base_frame/basic_strength_chemistry_multiblock_base_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_base_frame/basic_strength_chemistry_multiblock_base_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -697,6 +731,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_machine_frame/basic_strength_chemistry_multiblock_machine_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_machine_frame/basic_strength_chemistry_multiblock_machine_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_machine_frame/basic_strength_chemistry_multiblock_machine_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_machine_frame/basic_strength_chemistry_multiblock_machine_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -710,6 +745,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_machine_frame/basic_strength_chemistry_multiblock_machine_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_machine_frame/basic_strength_chemistry_multiblock_machine_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_machine_frame/basic_strength_chemistry_multiblock_machine_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_machine_frame/basic_strength_chemistry_multiblock_machine_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -723,6 +759,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -736,6 +773,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -749,6 +787,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_glass/basic_strength_chemistry_multiblock_structure_glass_block"));
         model.texture("east", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_glass/basic_strength_chemistry_multiblock_structure_glass_block"));
         model.texture("west", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_glass/basic_strength_chemistry_multiblock_structure_glass_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_glass/basic_strength_chemistry_multiblock_structure_glass_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(),
                 state -> model);
     }
@@ -762,6 +801,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_glass/basic_strength_chemistry_multiblock_structure_glass_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_glass/basic_strength_chemistry_multiblock_structure_glass_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_glass/basic_strength_chemistry_multiblock_structure_glass_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_glass/basic_strength_chemistry_multiblock_structure_glass_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -775,6 +815,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_energy_storage/basic_strength_chemistry_multiblock_energy_storage_block"));
         model.texture("east", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_energy_storage/basic_strength_chemistry_multiblock_energy_storage_block"));
         model.texture("west", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_energy_storage/basic_strength_chemistry_multiblock_energy_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_energy_storage/basic_strength_chemistry_multiblock_energy_storage_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(),
                 state -> model);
     }
@@ -788,6 +829,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_energy_storage/basic_strength_chemistry_multiblock_energy_storage_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_energy_storage/basic_strength_chemistry_multiblock_energy_storage_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_energy_storage/basic_strength_chemistry_multiblock_energy_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_energy_storage/basic_strength_chemistry_multiblock_energy_storage_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -801,6 +843,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_block"));
         model.texture("east", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_block"));
         model.texture("west", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
                 state -> model);
     }
@@ -814,6 +857,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -827,6 +871,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_base_frame/basic_strength_engineering_multiblock_base_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_base_frame/basic_strength_engineering_multiblock_base_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_base_frame/basic_strength_engineering_multiblock_base_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_base_frame/basic_strength_engineering_multiblock_base_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -840,6 +885,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_base_frame/basic_strength_engineering_multiblock_base_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_base_frame/basic_strength_engineering_multiblock_base_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_base_frame/basic_strength_engineering_multiblock_base_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_base_frame/basic_strength_engineering_multiblock_base_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -853,6 +899,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_machine_frame/basic_strength_engineering_multiblock_machine_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_machine_frame/basic_strength_engineering_multiblock_machine_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_machine_frame/basic_strength_engineering_multiblock_machine_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_machine_frame/basic_strength_engineering_multiblock_machine_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -866,6 +913,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_machine_frame/basic_strength_engineering_multiblock_machine_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_machine_frame/basic_strength_engineering_multiblock_machine_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_machine_frame/basic_strength_engineering_multiblock_machine_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_machine_frame/basic_strength_engineering_multiblock_machine_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -879,6 +927,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_structure_frame/basic_strength_engineering_multiblock_structure_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_structure_frame/basic_strength_engineering_multiblock_structure_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_structure_frame/basic_strength_engineering_multiblock_structure_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_structure_frame/basic_strength_engineering_multiblock_structure_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -892,6 +941,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_structure_frame/basic_strength_engineering_multiblock_structure_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_structure_frame/basic_strength_engineering_multiblock_structure_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_structure_frame/basic_strength_engineering_multiblock_structure_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_structure_frame/basic_strength_engineering_multiblock_structure_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -905,6 +955,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_structure_glass/basic_strength_engineering_multiblock_structure_glass_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_structure_glass/basic_strength_engineering_multiblock_structure_glass_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_structure_glass/basic_strength_engineering_multiblock_structure_glass_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_structure_glass/basic_strength_engineering_multiblock_structure_glass_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(),
                 state -> model);
     }
@@ -918,6 +969,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_structure_glass/basic_strength_engineering_multiblock_structure_glass_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_structure_glass/basic_strength_engineering_multiblock_structure_glass_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_structure_glass/basic_strength_engineering_multiblock_structure_glass_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/basic_strength_engineering_multiblock_structure_glass/basic_strength_engineering_multiblock_structure_glass_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -931,6 +983,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_energy_storage/basic_strength_engineering_multiblock_energy_storage_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_energy_storage/basic_strength_engineering_multiblock_energy_storage_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_energy_storage/basic_strength_engineering_multiblock_energy_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_energy_storage/basic_strength_engineering_multiblock_energy_storage_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(),
                 state -> model);
     }
@@ -944,6 +997,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_energy_storage/basic_strength_engineering_multiblock_energy_storage_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_energy_storage/basic_strength_engineering_multiblock_energy_storage_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_energy_storage/basic_strength_engineering_multiblock_energy_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_energy_storage/basic_strength_engineering_multiblock_energy_storage_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -957,6 +1011,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
                 state -> model);
     }
@@ -970,6 +1025,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -983,6 +1039,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_base_frame/basic_strength_formal_science_multiblock_base_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_base_frame/basic_strength_formal_science_multiblock_base_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_base_frame/basic_strength_formal_science_multiblock_base_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_base_frame/basic_strength_formal_science_multiblock_base_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -996,6 +1053,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_base_frame/basic_strength_formal_science_multiblock_base_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_base_frame/basic_strength_formal_science_multiblock_base_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_base_frame/basic_strength_formal_science_multiblock_base_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_base_frame/basic_strength_formal_science_multiblock_base_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1009,6 +1067,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_machine_frame/basic_strength_formal_science_multiblock_machine_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_machine_frame/basic_strength_formal_science_multiblock_machine_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_machine_frame/basic_strength_formal_science_multiblock_machine_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_machine_frame/basic_strength_formal_science_multiblock_machine_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -1022,6 +1081,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_machine_frame/basic_strength_formal_science_multiblock_machine_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_machine_frame/basic_strength_formal_science_multiblock_machine_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_machine_frame/basic_strength_formal_science_multiblock_machine_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_machine_frame/basic_strength_formal_science_multiblock_machine_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1035,6 +1095,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_structure_frame/basic_strength_formal_science_multiblock_structure_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_structure_frame/basic_strength_formal_science_multiblock_structure_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_structure_frame/basic_strength_formal_science_multiblock_structure_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_structure_frame/basic_strength_formal_science_multiblock_structure_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -1048,6 +1109,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_structure_frame/basic_strength_formal_science_multiblock_structure_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_structure_frame/basic_strength_formal_science_multiblock_structure_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_structure_frame/basic_strength_formal_science_multiblock_structure_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_structure_frame/basic_strength_formal_science_multiblock_structure_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1061,6 +1123,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_structure_glass/basic_strength_formal_science_multiblock_structure_glass_block"));
         model.texture("east", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_structure_glass/basic_strength_formal_science_multiblock_structure_glass_block"));
         model.texture("west", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_structure_glass/basic_strength_formal_science_multiblock_structure_glass_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_structure_glass/basic_strength_formal_science_multiblock_structure_glass_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(),
                 state -> model);
     }
@@ -1074,6 +1137,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_structure_glass/basic_strength_formal_science_multiblock_structure_glass_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_structure_glass/basic_strength_formal_science_multiblock_structure_glass_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_structure_glass/basic_strength_formal_science_multiblock_structure_glass_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_structure_glass/basic_strength_formal_science_multiblock_structure_glass_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1087,6 +1151,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_energy_storage/basic_strength_formal_science_multiblock_energy_storage_block"));
         model.texture("east", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_energy_storage/basic_strength_formal_science_multiblock_energy_storage_block"));
         model.texture("west", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_energy_storage/basic_strength_formal_science_multiblock_energy_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_energy_storage/basic_strength_formal_science_multiblock_energy_storage_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(),
                 state -> model);
     }
@@ -1100,6 +1165,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_energy_storage/basic_strength_formal_science_multiblock_energy_storage_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_energy_storage/basic_strength_formal_science_multiblock_energy_storage_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_energy_storage/basic_strength_formal_science_multiblock_energy_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_energy_storage/basic_strength_formal_science_multiblock_energy_storage_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1113,6 +1179,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_block"));
         model.texture("east", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_block"));
         model.texture("west", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
                 state -> model);
     }
@@ -1126,6 +1193,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1139,6 +1207,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_base_frame/basic_strength_geo_science_multiblock_base_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_base_frame/basic_strength_geo_science_multiblock_base_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_base_frame/basic_strength_geo_science_multiblock_base_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_base_frame/basic_strength_geo_science_multiblock_base_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -1152,6 +1221,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_base_frame/basic_strength_geo_science_multiblock_base_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_base_frame/basic_strength_geo_science_multiblock_base_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_base_frame/basic_strength_geo_science_multiblock_base_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_base_frame/basic_strength_geo_science_multiblock_base_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1165,6 +1235,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_machine_frame/basic_strength_geo_science_multiblock_machine_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_machine_frame/basic_strength_geo_science_multiblock_machine_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_machine_frame/basic_strength_geo_science_multiblock_machine_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_machine_frame/basic_strength_geo_science_multiblock_machine_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -1178,6 +1249,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_machine_frame/basic_strength_geo_science_multiblock_machine_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_machine_frame/basic_strength_geo_science_multiblock_machine_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_machine_frame/basic_strength_geo_science_multiblock_machine_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_machine_frame/basic_strength_geo_science_multiblock_machine_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1191,6 +1263,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_structure_frame/basic_strength_geo_science_multiblock_structure_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_structure_frame/basic_strength_geo_science_multiblock_structure_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_structure_frame/basic_strength_geo_science_multiblock_structure_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_structure_frame/basic_strength_geo_science_multiblock_structure_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -1204,6 +1277,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_structure_frame/basic_strength_geo_science_multiblock_structure_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_structure_frame/basic_strength_geo_science_multiblock_structure_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_structure_frame/basic_strength_geo_science_multiblock_structure_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_structure_frame/basic_strength_geo_science_multiblock_structure_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1217,6 +1291,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_structure_glass/basic_strength_geo_science_multiblock_structure_glass_block"));
         model.texture("east", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_structure_glass/basic_strength_geo_science_multiblock_structure_glass_block"));
         model.texture("west", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_structure_glass/basic_strength_geo_science_multiblock_structure_glass_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_structure_glass/basic_strength_geo_science_multiblock_structure_glass_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(),
                 state -> model);
     }
@@ -1230,6 +1305,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_structure_glass/basic_strength_geo_science_multiblock_structure_glass_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_structure_glass/basic_strength_geo_science_multiblock_structure_glass_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_structure_glass/basic_strength_geo_science_multiblock_structure_glass_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_structure_glass/basic_strength_geo_science_multiblock_structure_glass_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1243,6 +1319,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_energy_storage/basic_strength_geo_science_multiblock_energy_storage_block"));
         model.texture("east", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_energy_storage/basic_strength_geo_science_multiblock_energy_storage_block"));
         model.texture("west", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_energy_storage/basic_strength_geo_science_multiblock_energy_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_energy_storage/basic_strength_geo_science_multiblock_energy_storage_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(),
                 state -> model);
     }
@@ -1256,6 +1333,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_energy_storage/basic_strength_geo_science_multiblock_energy_storage_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_energy_storage/basic_strength_geo_science_multiblock_energy_storage_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_energy_storage/basic_strength_geo_science_multiblock_energy_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_energy_storage/basic_strength_geo_science_multiblock_energy_storage_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1269,6 +1347,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_block"));
         model.texture("east", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_block"));
         model.texture("west", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
                 state -> model);
     }
@@ -1282,6 +1361,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1295,6 +1375,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_base_frame/basic_strength_hybrid_physics_multiblock_base_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_base_frame/basic_strength_hybrid_physics_multiblock_base_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_base_frame/basic_strength_hybrid_physics_multiblock_base_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_base_frame/basic_strength_hybrid_physics_multiblock_base_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -1308,6 +1389,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_base_frame/basic_strength_hybrid_physics_multiblock_base_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_base_frame/basic_strength_hybrid_physics_multiblock_base_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_base_frame/basic_strength_hybrid_physics_multiblock_base_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_base_frame/basic_strength_hybrid_physics_multiblock_base_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1321,6 +1403,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_machine_frame/basic_strength_hybrid_physics_multiblock_machine_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_machine_frame/basic_strength_hybrid_physics_multiblock_machine_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_machine_frame/basic_strength_hybrid_physics_multiblock_machine_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_machine_frame/basic_strength_hybrid_physics_multiblock_machine_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -1334,6 +1417,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_machine_frame/basic_strength_hybrid_physics_multiblock_machine_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_machine_frame/basic_strength_hybrid_physics_multiblock_machine_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_machine_frame/basic_strength_hybrid_physics_multiblock_machine_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_machine_frame/basic_strength_hybrid_physics_multiblock_machine_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1347,6 +1431,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_structure_frame/basic_strength_hybrid_physics_multiblock_structure_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_structure_frame/basic_strength_hybrid_physics_multiblock_structure_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_structure_frame/basic_strength_hybrid_physics_multiblock_structure_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_structure_frame/basic_strength_hybrid_physics_multiblock_structure_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -1360,6 +1445,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_structure_frame/basic_strength_hybrid_physics_multiblock_structure_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_structure_frame/basic_strength_hybrid_physics_multiblock_structure_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_structure_frame/basic_strength_hybrid_physics_multiblock_structure_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_structure_frame/basic_strength_hybrid_physics_multiblock_structure_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1373,6 +1459,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_structure_glass/basic_strength_hybrid_physics_multiblock_structure_glass_block"));
         model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_structure_glass/basic_strength_hybrid_physics_multiblock_structure_glass_block"));
         model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_structure_glass/basic_strength_hybrid_physics_multiblock_structure_glass_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_structure_glass/basic_strength_hybrid_physics_multiblock_structure_glass_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(),
                 state -> model);
     }
@@ -1386,6 +1473,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_structure_glass/basic_strength_hybrid_physics_multiblock_structure_glass_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_structure_glass/basic_strength_hybrid_physics_multiblock_structure_glass_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_structure_glass/basic_strength_hybrid_physics_multiblock_structure_glass_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_structure_glass/basic_strength_hybrid_physics_multiblock_structure_glass_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1399,6 +1487,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_energy_storage/basic_strength_hybrid_physics_multiblock_energy_storage_block"));
         model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_energy_storage/basic_strength_hybrid_physics_multiblock_energy_storage_block"));
         model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_energy_storage/basic_strength_hybrid_physics_multiblock_energy_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_energy_storage/basic_strength_hybrid_physics_multiblock_energy_storage_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(),
                 state -> model);
     }
@@ -1412,6 +1501,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_energy_storage/basic_strength_hybrid_physics_multiblock_energy_storage_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_energy_storage/basic_strength_hybrid_physics_multiblock_energy_storage_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_energy_storage/basic_strength_hybrid_physics_multiblock_energy_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_energy_storage/basic_strength_hybrid_physics_multiblock_energy_storage_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1425,6 +1515,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_block"));
         model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_block"));
         model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
                 state -> model);
     }
@@ -1438,6 +1529,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1451,6 +1543,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_base_frame/basic_strength_imitation_magic_engineering_multiblock_base_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_base_frame/basic_strength_imitation_magic_engineering_multiblock_base_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_base_frame/basic_strength_imitation_magic_engineering_multiblock_base_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_base_frame/basic_strength_imitation_magic_engineering_multiblock_base_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_BASE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -1464,6 +1557,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_base_frame/basic_strength_imitation_magic_engineering_multiblock_base_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_base_frame/basic_strength_imitation_magic_engineering_multiblock_base_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_base_frame/basic_strength_imitation_magic_engineering_multiblock_base_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_base_frame/basic_strength_imitation_magic_engineering_multiblock_base_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1477,6 +1571,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_machine_frame/basic_strength_imitation_magic_engineering_multiblock_machine_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_machine_frame/basic_strength_imitation_magic_engineering_multiblock_machine_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_machine_frame/basic_strength_imitation_magic_engineering_multiblock_machine_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_machine_frame/basic_strength_imitation_magic_engineering_multiblock_machine_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -1490,6 +1585,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_machine_frame/basic_strength_imitation_magic_engineering_multiblock_machine_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_machine_frame/basic_strength_imitation_magic_engineering_multiblock_machine_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_machine_frame/basic_strength_imitation_magic_engineering_multiblock_machine_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_machine_frame/basic_strength_imitation_magic_engineering_multiblock_machine_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1503,6 +1599,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_frame/basic_strength_imitation_magic_engineering_multiblock_structure_frame_block"));
         model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_frame/basic_strength_imitation_magic_engineering_multiblock_structure_frame_block"));
         model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_frame/basic_strength_imitation_magic_engineering_multiblock_structure_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_frame/basic_strength_imitation_magic_engineering_multiblock_structure_frame_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(),
                 state -> model);
     }
@@ -1516,6 +1613,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_frame/basic_strength_imitation_magic_engineering_multiblock_structure_frame_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_frame/basic_strength_imitation_magic_engineering_multiblock_structure_frame_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_frame/basic_strength_imitation_magic_engineering_multiblock_structure_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_frame/basic_strength_imitation_magic_engineering_multiblock_structure_frame_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1529,6 +1627,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_glass/basic_strength_imitation_magic_engineering_multiblock_structure_glass_block"));
         model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_glass/basic_strength_imitation_magic_engineering_multiblock_structure_glass_block"));
         model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_glass/basic_strength_imitation_magic_engineering_multiblock_structure_glass_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_glass/basic_strength_imitation_magic_engineering_multiblock_structure_glass_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(),
                 state -> model);
     }
@@ -1542,6 +1641,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_glass/basic_strength_imitation_magic_engineering_multiblock_structure_glass_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_glass/basic_strength_imitation_magic_engineering_multiblock_structure_glass_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_glass/basic_strength_imitation_magic_engineering_multiblock_structure_glass_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_structure_glass/basic_strength_imitation_magic_engineering_multiblock_structure_glass_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1555,6 +1655,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_energy_storage/basic_strength_imitation_magic_engineering_multiblock_energy_storage_block"));
         model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_energy_storage/basic_strength_imitation_magic_engineering_multiblock_energy_storage_block"));
         model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_energy_storage/basic_strength_imitation_magic_engineering_multiblock_energy_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_energy_storage/basic_strength_imitation_magic_engineering_multiblock_energy_storage_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(),
                 state -> model);
     }
@@ -1568,6 +1669,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_energy_storage/basic_strength_imitation_magic_engineering_multiblock_energy_storage_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_energy_storage/basic_strength_imitation_magic_engineering_multiblock_energy_storage_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_energy_storage/basic_strength_imitation_magic_engineering_multiblock_energy_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_energy_storage/basic_strength_imitation_magic_engineering_multiblock_energy_storage_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1581,6 +1683,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_block"));
         model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_block"));
         model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
                 state -> model);
     }
@@ -1594,6 +1697,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1607,6 +1711,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_side"));
         model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_side"));
         model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_side"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_front"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get(),
                 state -> model);
     }
@@ -1620,6 +1725,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"));
         model.texture("east", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"));
         model.texture("west", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"));
         orientedBlock(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_BLOCK.get(),
                 state -> model);
     }
@@ -1633,6 +1739,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
         orientedBlock(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1646,6 +1753,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_block"));
         model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_block"));
         model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.get(),
                 state -> model);
     }
@@ -1659,6 +1767,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_holo_block"));
         model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_holo_block"));
         model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_holo_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1672,6 +1781,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_block"));
         model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_block"));
         model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get(),
                 state -> model);
     }
@@ -1685,6 +1795,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_holo_block"));
         model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_holo_block"));
         model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1698,6 +1809,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_block"));
         model.texture("east", modLoc("block/machine/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_side"));
         model.texture("west", modLoc("block/machine/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_side"));
+        model.texture("particle", modLoc("block/machine/initial/redstone_powered_machine_element_manufacture_machine/redstone_powered_machine_element_manufacture_machine_block"));
         orientedBlock(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get(),
                 state -> model);
     }
@@ -1711,6 +1823,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_block"));
         model.texture("east", modLoc("block/machine/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_side"));
         model.texture("west", modLoc("block/machine/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_side"));
+        model.texture("particle", modLoc("block/machine/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_block"));
         orientedBlock(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(),
                 state -> model);
     }
@@ -1724,6 +1837,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_side"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_side"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_side"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_front"));
         orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get(),
                 state -> model);
     }
@@ -1737,6 +1851,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
         orientedBlock(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(),
                 state -> model);
     }
@@ -1750,6 +1865,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
         orientedBlock(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1763,6 +1879,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
         orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.get(),
                 state -> model);
     }
@@ -1776,6 +1893,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
         orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1789,6 +1907,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
         orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.get(),
                 state -> model);
     }
@@ -1802,6 +1921,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1815,6 +1935,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_side"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_side"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_side"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_front"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get(),
                 state -> model);
     }
@@ -1828,6 +1949,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_processing_chamber/basic_efficiency_machine_processing_chamber_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_processing_chamber/basic_efficiency_machine_processing_chamber_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_processing_chamber/basic_efficiency_machine_processing_chamber_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_processing_chamber/basic_efficiency_machine_processing_chamber_block"));
         orientedBlock(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_BLOCK.get(),
                 state -> model);
     }
@@ -1841,6 +1963,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_processing_chamber/basic_efficiency_machine_processing_chamber_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_processing_chamber/basic_efficiency_machine_processing_chamber_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_processing_chamber/basic_efficiency_machine_processing_chamber_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_processing_chamber/basic_efficiency_machine_processing_chamber_holo_block"));
         orientedBlock(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1853,6 +1976,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK.get(),
                 state -> model);
     }
@@ -1860,13 +1984,13 @@ public class DCBlockStateProvider extends BlockStateProvider {
     private void registerBasicTechnologyMachineManufacturerBusHolo() {
         BlockModelBuilder model = models().getBuilder("block/basic_technology_machine_manufacturer_bus_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-
         model.texture("down", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block"));
         model.texture("up", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block"));
         model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block"));
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/bus/basic_technology_machine_manufacturer_bus_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1880,6 +2004,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK.get(),
                 state -> model);
     }
@@ -1893,6 +2018,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_holo_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_holo_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_machine_manufacturer/port/basic_technology_machine_manufacturer_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1906,6 +2032,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/basic_technology_universal_assembler_side"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/basic_technology_universal_assembler_side"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/basic_technology_universal_assembler_side"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/basic_technology_universal_assembler_front"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get(),
                 state -> model);
     }
@@ -1919,6 +2046,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_operation_assembling_chamber/basic_operation_assembling_chamber_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_operation_assembling_chamber/basic_operation_assembling_chamber_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_operation_assembling_chamber/basic_operation_assembling_chamber_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/abilityblock/basic_operation_assembling_chamber/basic_operation_assembling_chamber_block"));
         orientedBlock(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_BLOCK.get(),
                 state -> model);
     }
@@ -1932,6 +2060,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_operation_assembling_chamber/basic_operation_assembling_chamber_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_operation_assembling_chamber/basic_operation_assembling_chamber_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_operation_assembling_chamber/basic_operation_assembling_chamber_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/abilityblock/basic_operation_assembling_chamber/basic_operation_assembling_chamber_holo_block"));
         orientedBlock(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1945,6 +2074,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/bus/basic_technology_universal_assembler_bus_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/bus/basic_technology_universal_assembler_bus_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/bus/basic_technology_universal_assembler_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/bus/basic_technology_universal_assembler_bus_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_BLOCK.get(),
                 state -> model);
     }
@@ -1958,6 +2088,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/bus/basic_technology_universal_assembler_bus_holo_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/bus/basic_technology_universal_assembler_bus_holo_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/bus/basic_technology_universal_assembler_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/bus/basic_technology_universal_assembler_bus_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1971,6 +2102,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/port/basic_technology_universal_assembler_port_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/port/basic_technology_universal_assembler_port_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/port/basic_technology_universal_assembler_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/port/basic_technology_universal_assembler_port_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_BLOCK.get(),
                 state -> model);
     }
@@ -1984,6 +2116,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/port/basic_technology_universal_assembler_port_holo_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/port/basic_technology_universal_assembler_port_holo_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/port/basic_technology_universal_assembler_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_universal_assembler/port/basic_technology_universal_assembler_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -1997,6 +2130,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_side"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_side"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_side"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/basic_technology_circuit_builder_front"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BLOCK.get(),
                 state -> model);
     }
@@ -2010,6 +2144,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_purity_circuit_clean_room/basic_purity_circuit_clean_room_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_purity_circuit_clean_room/basic_purity_circuit_clean_room_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_purity_circuit_clean_room/basic_purity_circuit_clean_room_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/abilityblock/basic_purity_circuit_clean_room/basic_purity_circuit_clean_room_block"));
         orientedBlock(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_BLOCK.get(),
                 state -> model);
     }
@@ -2023,6 +2158,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_purity_circuit_clean_room/basic_purity_circuit_clean_room_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_purity_circuit_clean_room/basic_purity_circuit_clean_room_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_purity_circuit_clean_room/basic_purity_circuit_clean_room_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/abilityblock/basic_purity_circuit_clean_room/basic_purity_circuit_clean_room_holo_block"));
         orientedBlock(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2036,6 +2172,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_BLOCK.get(),
                 state -> model);
     }
@@ -2049,6 +2186,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_holo_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_holo_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/bus/basic_technology_circuit_builder_bus_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2062,6 +2200,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_BLOCK.get(),
                 state -> model);
     }
@@ -2075,6 +2214,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_holo_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_holo_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_circuit_builder/port/basic_technology_circuit_builder_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2089,6 +2229,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_side"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_side"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_side"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/basic_technology_machine_element_processor_front"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(),
                 state -> model);
     }
@@ -2102,6 +2243,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_block"));
         orientedBlock(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSING_CHAMBER_BLOCK.get(),
                 state -> model);
     }
@@ -2115,6 +2257,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_holo_block"));
         orientedBlock(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSING_CHAMBER_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2128,6 +2271,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK.get(),
                 state -> model);
     }
@@ -2141,6 +2285,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_holo_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_holo_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/bus/basic_technology_machine_element_processor_bus_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2155,6 +2300,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(),
                 state -> model);
     }
@@ -2168,6 +2314,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port_holo_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port_holo_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_machine_element_processor/port/basic_technology_machine_element_processor_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2181,6 +2328,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/basic_technology_machine_part_processor_side"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/basic_technology_machine_part_processor_side"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/basic_technology_machine_part_processor_side"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/basic_technology_machine_part_processor_front"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BLOCK.get(),
                 state -> model);
     }
@@ -2194,6 +2342,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_block"));
         orientedBlock(DCBlocks.BASIC_EFFICIENCY_MACHINE_PART_PROCESSING_CHAMBER_BLOCK.get(),
                 state -> model);
     }
@@ -2207,6 +2356,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_part_processing_chamber/basic_efficiency_machine_part_processing_chamber_holo_block"));
         orientedBlock(DCBlocks.BASIC_EFFICIENCY_MACHINE_PART_PROCESSING_CHAMBER_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2232,7 +2382,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/bus/basic_technology_machine_part_processor_bus_holo_block"));
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/bus/basic_technology_machine_part_processor_bus_holo_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/bus/basic_technology_machine_part_processor_bus_holo_block"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/bus/basic_technology_machine_part_processor_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/bus/basic_technology_machine_part_processor_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/bus/basic_technology_machine_part_processor_bus_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BUS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2247,6 +2398,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/port/basic_technology_machine_part_processor_port_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/port/basic_technology_machine_part_processor_port_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/port/basic_technology_machine_part_processor_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/port/basic_technology_machine_part_processor_port_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_BLOCK.get(),
                 state -> model);
     }
@@ -2260,6 +2412,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/port/basic_technology_machine_part_processor_port_holo_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/port/basic_technology_machine_part_processor_port_holo_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/port/basic_technology_machine_part_processor_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_machine_part_processor/port/basic_technology_machine_part_processor_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2273,6 +2426,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/basic_technology_multiblock_equipment_fabricator_side"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/basic_technology_multiblock_equipment_fabricator_side"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/basic_technology_multiblock_equipment_fabricator_side"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/basic_technology_multiblock_equipment_fabricator_front"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BLOCK.get(),
                 state -> model);
     }
@@ -2286,6 +2440,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_block"));
         orientedBlock(DCBlocks.BASIC_EFFICIENCY_EQUIPMENT_PRODUCTION_AUXILIARY_SYSTEM_BLOCK.get(),
                 state -> model);
     }
@@ -2299,6 +2454,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/abilityblock/basic_efficiency_equipment_production_auxiliary_system/basic_efficiency_equipment_production_auxiliary_system_holo_block"));
         orientedBlock(DCBlocks.BASIC_EFFICIENCY_EQUIPMENT_PRODUCTION_AUXILIARY_SYSTEM_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2312,6 +2468,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_BLOCK.get(),
                 state -> model);
     }
@@ -2325,6 +2482,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_holo_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_holo_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/bus/basic_technology_multiblock_equipment_fabricator_bus_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2339,6 +2497,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_BLOCK.get(),
                 state -> model);
     }
@@ -2352,6 +2511,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_holo_block"));
         model.texture("east", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_holo_block"));
         model.texture("west", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/engineering/basic_technology_multiblock_equipment_fabricator/port/basic_technology_multiblock_equipment_fabricator_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2384,6 +2544,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/basic_performance_machine_data_installer_side"));
         model.texture("east", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/basic_performance_machine_data_installer_side"));
         model.texture("west", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/basic_performance_machine_data_installer_side"));
+        model.texture("particle", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/basic_performance_machine_data_installer_front"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK.get(),
                 state -> model);
     }
@@ -2397,6 +2558,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block"));
         model.texture("east", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block"));
         model.texture("west", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block"));
         orientedBlock(DCBlocks.BASIC_SPEED_DATA_READER_BLOCK.get(),
                 state -> model);
     }
@@ -2410,6 +2572,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_holo_block"));
         orientedBlock(DCBlocks.BASIC_SPEED_DATA_READER_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2423,6 +2586,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_block"));
         model.texture("east", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_block"));
         model.texture("west", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_BLOCK.get(),
                 state -> model);
     }
@@ -2436,6 +2600,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_holo_block"));
         model.texture("east", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_holo_block"));
         model.texture("west", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/bus/basic_performance_machine_data_installer_bus_holo_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2450,6 +2615,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_block"));
         model.texture("east", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_block"));
         model.texture("west", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_BLOCK.get(),
                 state -> model);
     }
@@ -2463,6 +2629,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_holo_block"));
         model.texture("east", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_holo_block"));
         model.texture("west", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/formal_science/basic_performance_machine_data_installer/port/basic_performance_machine_data_installer_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2491,6 +2658,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/basic_performance_rock_crasher_side"));
         model.texture("east", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/basic_performance_rock_crasher_side"));
         model.texture("west", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/basic_performance_rock_crasher_side"));
+        model.texture("particle", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/basic_performance_rock_crasher_front"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get(),
                 state -> model);
     }
@@ -2504,6 +2672,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_block"));
         model.texture("east", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_block"));
         model.texture("west", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_block"));
         orientedBlock(DCBlocks.BASIC_CRASHING_BASE_BLOCK.get(),
                 state -> model);
     }
@@ -2517,6 +2686,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_crashing_base/basic_crashing_base_holo_block"));
         orientedBlock(DCBlocks.BASIC_CRASHING_BASE_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2530,6 +2700,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_block"));
         model.texture("east", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_block"));
         model.texture("west", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_BLOCK.get(),
                 state -> model);
     }
@@ -2543,6 +2714,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_holo_block"));
         model.texture("east", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_holo_block"));
         model.texture("west", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/bus/basic_performance_rock_crasher_bus_holo_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2557,6 +2729,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_block"));
         model.texture("east", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_block"));
         model.texture("west", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK.get(),
                 state -> model);
     }
@@ -2570,6 +2743,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_holo_block"));
         model.texture("east", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_holo_block"));
         model.texture("west", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/geo_science/basic_performance_rock_crasher/port/basic_performance_rock_crasher_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2594,6 +2768,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/basic_performance_electric_arc_furnace_side"));
         model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/basic_performance_electric_arc_furnace_side"));
         model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/basic_performance_electric_arc_furnace_side"));
+        model.texture("particle", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/basic_performance_electric_arc_furnace_front"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get(),
                 state -> model);
     }
@@ -2607,6 +2782,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block"));
         model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block"));
         model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_block"));
         orientedBlock(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_BLOCK.get(),
                 state -> model);
     }
@@ -2620,6 +2796,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block"));
         orientedBlock(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2633,6 +2810,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_block"));
         model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_block"));
         model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK.get(),
                 state -> model);
     }
@@ -2646,6 +2824,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_holo_block"));
         model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_holo_block"));
         model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/bus/basic_performance_electric_arc_furnace_bus_holo_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2660,6 +2839,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_block"));
         model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_block"));
         model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK.get(),
                 state -> model);
     }
@@ -2673,6 +2853,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_holo_block"));
         model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_holo_block"));
         model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/hybrid_physics/basic_performance_electric_arc_furnace/port/basic_performance_electric_arc_furnace_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2686,6 +2867,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/basic_performance_forming_machine_side"));
         model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/basic_performance_forming_machine_side"));
         model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/basic_performance_forming_machine_side"));
+        model.texture("particle", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/basic_performance_forming_machine_front"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK.get(),
                 state -> model);
     }
@@ -2699,6 +2881,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_block"));
         model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_block"));
         model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_block"));
         orientedBlock(DCBlocks.BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_BLOCK.get(),
                 state -> model);
     }
@@ -2712,6 +2895,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_holo_block"));
         model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_holo_block"));
         model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_holo_block"));
         orientedBlock(DCBlocks.BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2725,6 +2909,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_block"));
         model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_block"));
         model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_BLOCK.get(),
                 state -> model);
     }
@@ -2738,6 +2923,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_holo_block"));
         model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_holo_block"));
         model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/bus/basic_performance_forming_machine_bus_holo_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_HOLO_BLOCK.get(),
                 state -> model);
     }
@@ -2752,6 +2938,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_block"));
         model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_block"));
         model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK.get(),
                 state -> model);
     }
@@ -2765,6 +2952,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_holo_block"));
         model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_holo_block"));
         model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }

@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/ore/gravitation_ore/overworld_gravitation_ore",
     "south": "degeneracycraft:block/ore/gravitation_ore/overworld_gravitation_ore",
     "east": "degeneracycraft:block/ore/gravitation_ore/overworld_gravitation_ore",
-    "west": "degeneracycraft:block/ore/gravitation_ore/overworld_gravitation_ore"
+    "west": "degeneracycraft:block/ore/gravitation_ore/overworld_gravitation_ore",
+    "particle": "degeneracycraft:block/ore/gravitation_ore/overworld_gravitation_ore"
   }
 }

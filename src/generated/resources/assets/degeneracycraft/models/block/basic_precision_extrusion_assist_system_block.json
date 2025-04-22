@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_block",
     "south": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_block",
     "east": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_block",
-    "west": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_block"
+    "west": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_block",
+    "particle": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_precision_extrusion_assist_system/basic_precision_extrusion_assist_system_block"
   }
 }

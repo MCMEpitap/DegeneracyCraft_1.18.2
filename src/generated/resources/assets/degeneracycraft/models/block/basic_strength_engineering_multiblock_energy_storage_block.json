@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_energy_storage/basic_strength_engineering_multiblock_energy_storage_block",
     "south": "degeneracycraft:block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_energy_storage/basic_strength_engineering_multiblock_energy_storage_block",
     "east": "degeneracycraft:block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_energy_storage/basic_strength_engineering_multiblock_energy_storage_block",
-    "west": "degeneracycraft:block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_energy_storage/basic_strength_engineering_multiblock_energy_storage_block"
+    "west": "degeneracycraft:block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_energy_storage/basic_strength_engineering_multiblock_energy_storage_block",
+    "particle": "degeneracycraft:block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_energy_storage/basic_strength_engineering_multiblock_energy_storage_block"
   }
 }

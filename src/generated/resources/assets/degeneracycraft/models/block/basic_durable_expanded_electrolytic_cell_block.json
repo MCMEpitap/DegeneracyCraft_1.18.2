@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block",
     "south": "degeneracycraft:block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block",
     "east": "degeneracycraft:block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block",
-    "west": "degeneracycraft:block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"
+    "west": "degeneracycraft:block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block",
+    "particle": "degeneracycraft:block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"
   }
 }

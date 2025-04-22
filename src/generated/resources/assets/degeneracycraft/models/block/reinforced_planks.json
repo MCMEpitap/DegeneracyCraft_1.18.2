@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/material/basic/common/reinforced_planks",
     "south": "degeneracycraft:block/material/basic/common/reinforced_planks",
     "east": "degeneracycraft:block/material/basic/common/reinforced_planks",
-    "west": "degeneracycraft:block/material/basic/common/reinforced_planks"
+    "west": "degeneracycraft:block/material/basic/common/reinforced_planks",
+    "particle": "degeneracycraft:block/material/basic/common/reinforced_planks"
   }
 }

@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_energy_storage/basic_strength_geo_science_multiblock_energy_storage_block",
     "south": "degeneracycraft:block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_energy_storage/basic_strength_geo_science_multiblock_energy_storage_block",
     "east": "degeneracycraft:block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_energy_storage/basic_strength_geo_science_multiblock_energy_storage_block",
-    "west": "degeneracycraft:block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_energy_storage/basic_strength_geo_science_multiblock_energy_storage_block"
+    "west": "degeneracycraft:block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_energy_storage/basic_strength_geo_science_multiblock_energy_storage_block",
+    "particle": "degeneracycraft:block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_energy_storage/basic_strength_geo_science_multiblock_energy_storage_block"
   }
 }

@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_glass/basic_strength_astronomy_multiblock_structure_glass_holo_block",
     "south": "degeneracycraft:block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_glass/basic_strength_astronomy_multiblock_structure_glass_holo_block",
     "east": "degeneracycraft:block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_glass/basic_strength_astronomy_multiblock_structure_glass_holo_block",
-    "west": "degeneracycraft:block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_glass/basic_strength_astronomy_multiblock_structure_glass_holo_block"
+    "west": "degeneracycraft:block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_glass/basic_strength_astronomy_multiblock_structure_glass_holo_block",
+    "particle": "degeneracycraft:block/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_structure_glass/basic_strength_astronomy_multiblock_structure_glass_holo_block"
   }
 }

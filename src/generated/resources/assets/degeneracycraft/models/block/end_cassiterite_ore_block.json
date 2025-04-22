@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/ore/cassiterite/end_cassiterite_ore",
     "south": "degeneracycraft:block/ore/cassiterite/end_cassiterite_ore",
     "east": "degeneracycraft:block/ore/cassiterite/end_cassiterite_ore",
-    "west": "degeneracycraft:block/ore/cassiterite/end_cassiterite_ore"
+    "west": "degeneracycraft:block/ore/cassiterite/end_cassiterite_ore",
+    "particle": "degeneracycraft:block/ore/cassiterite/end_cassiterite_ore"
   }
 }

@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block",
     "south": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block",
     "east": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block",
-    "west": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"
+    "west": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block",
+    "particle": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"
   }
 }

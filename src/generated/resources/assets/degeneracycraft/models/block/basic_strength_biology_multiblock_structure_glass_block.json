@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_glass/basic_strength_biology_multiblock_structure_glass_block",
     "south": "degeneracycraft:block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_glass/basic_strength_biology_multiblock_structure_glass_block",
     "east": "degeneracycraft:block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_glass/basic_strength_biology_multiblock_structure_glass_block",
-    "west": "degeneracycraft:block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_glass/basic_strength_biology_multiblock_structure_glass_block"
+    "west": "degeneracycraft:block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_glass/basic_strength_biology_multiblock_structure_glass_block",
+    "particle": "degeneracycraft:block/multiblock/basic/biology/basic_strength_biology_multiblock_structure_glass/basic_strength_biology_multiblock_structure_glass_block"
   }
 }

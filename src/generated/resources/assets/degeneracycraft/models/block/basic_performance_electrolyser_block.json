@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_front",
     "south": "degeneracycraft:block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_side",
     "east": "degeneracycraft:block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_side",
-    "west": "degeneracycraft:block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_side"
+    "west": "degeneracycraft:block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_side",
+    "particle": "degeneracycraft:block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_front"
   }
 }

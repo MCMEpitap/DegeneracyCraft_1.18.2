@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/machine/basic/hybrid_physics/basic_performance_forming_machine/basic_performance_forming_machine_front",
     "south": "degeneracycraft:block/machine/basic/hybrid_physics/basic_performance_forming_machine/basic_performance_forming_machine_side",
     "east": "degeneracycraft:block/machine/basic/hybrid_physics/basic_performance_forming_machine/basic_performance_forming_machine_side",
-    "west": "degeneracycraft:block/machine/basic/hybrid_physics/basic_performance_forming_machine/basic_performance_forming_machine_side"
+    "west": "degeneracycraft:block/machine/basic/hybrid_physics/basic_performance_forming_machine/basic_performance_forming_machine_side",
+    "particle": "degeneracycraft:block/machine/basic/hybrid_physics/basic_performance_forming_machine/basic_performance_forming_machine_front"
   }
 }

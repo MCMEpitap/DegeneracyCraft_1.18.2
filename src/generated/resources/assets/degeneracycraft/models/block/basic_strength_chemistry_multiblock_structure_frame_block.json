@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_block",
     "south": "degeneracycraft:block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_block",
     "east": "degeneracycraft:block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_block",
-    "west": "degeneracycraft:block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_block"
+    "west": "degeneracycraft:block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_block",
+    "particle": "degeneracycraft:block/multiblock/basic/chemistry/basic_strength_chemistry_multiblock_structure_frame/basic_strength_chemistry_multiblock_structure_frame_block"
   }
 }

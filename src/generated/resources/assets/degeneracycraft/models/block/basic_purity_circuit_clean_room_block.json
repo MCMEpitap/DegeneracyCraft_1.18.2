@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_purity_circuit_clean_room/basic_purity_circuit_clean_room_block",
     "south": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_purity_circuit_clean_room/basic_purity_circuit_clean_room_block",
     "east": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_purity_circuit_clean_room/basic_purity_circuit_clean_room_block",
-    "west": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_purity_circuit_clean_room/basic_purity_circuit_clean_room_block"
+    "west": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_purity_circuit_clean_room/basic_purity_circuit_clean_room_block",
+    "particle": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_purity_circuit_clean_room/basic_purity_circuit_clean_room_block"
   }
 }

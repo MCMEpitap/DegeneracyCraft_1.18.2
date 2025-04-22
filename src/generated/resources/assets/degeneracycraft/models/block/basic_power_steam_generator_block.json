@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_front",
     "south": "degeneracycraft:block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_side",
     "east": "degeneracycraft:block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_side",
-    "west": "degeneracycraft:block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_side"
+    "west": "degeneracycraft:block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_side",
+    "particle": "degeneracycraft:block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_front"
   }
 }

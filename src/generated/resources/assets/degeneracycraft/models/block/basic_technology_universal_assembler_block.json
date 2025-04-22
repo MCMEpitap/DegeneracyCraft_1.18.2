@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/machine/basic/engineering/basic_technology_universal_assembler/basic_technology_universal_assembler_front",
     "south": "degeneracycraft:block/machine/basic/engineering/basic_technology_universal_assembler/basic_technology_universal_assembler_side",
     "east": "degeneracycraft:block/machine/basic/engineering/basic_technology_universal_assembler/basic_technology_universal_assembler_side",
-    "west": "degeneracycraft:block/machine/basic/engineering/basic_technology_universal_assembler/basic_technology_universal_assembler_side"
+    "west": "degeneracycraft:block/machine/basic/engineering/basic_technology_universal_assembler/basic_technology_universal_assembler_side",
+    "particle": "degeneracycraft:block/machine/basic/engineering/basic_technology_universal_assembler/basic_technology_universal_assembler_front"
   }
 }

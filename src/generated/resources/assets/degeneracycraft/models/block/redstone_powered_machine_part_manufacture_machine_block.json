@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/machine/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_block",
     "south": "degeneracycraft:block/machine/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_block",
     "east": "degeneracycraft:block/machine/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_side",
-    "west": "degeneracycraft:block/machine/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_side"
+    "west": "degeneracycraft:block/machine/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_side",
+    "particle": "degeneracycraft:block/machine/initial/redstone_powered_machine_part_manufacture_machine/redstone_powered_machine_part_manufacture_machine_block"
   }
 }

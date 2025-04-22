@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_block",
     "south": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_block",
     "east": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_block",
-    "west": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_block"
+    "west": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_block",
+    "particle": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_efficiency_machine_element_processing_chamber/basic_efficiency_machine_element_processing_chamber_block"
   }
 }

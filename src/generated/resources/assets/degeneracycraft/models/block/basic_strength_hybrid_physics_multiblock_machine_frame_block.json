@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_machine_frame/basic_strength_hybrid_physics_multiblock_machine_frame_block",
     "south": "degeneracycraft:block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_machine_frame/basic_strength_hybrid_physics_multiblock_machine_frame_block",
     "east": "degeneracycraft:block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_machine_frame/basic_strength_hybrid_physics_multiblock_machine_frame_block",
-    "west": "degeneracycraft:block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_machine_frame/basic_strength_hybrid_physics_multiblock_machine_frame_block"
+    "west": "degeneracycraft:block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_machine_frame/basic_strength_hybrid_physics_multiblock_machine_frame_block",
+    "particle": "degeneracycraft:block/multiblock/basic/hybrid_physics/basic_strength_hybrid_physics_multiblock_machine_frame/basic_strength_hybrid_physics_multiblock_machine_frame_block"
   }
 }

@@ -6,6 +6,7 @@
     "north": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block",
     "south": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block",
     "east": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block",
-    "west": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block"
+    "west": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block",
+    "particle": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_flow_cooling_system/basic_flow_cooling_system_holo_block"
   }
 }

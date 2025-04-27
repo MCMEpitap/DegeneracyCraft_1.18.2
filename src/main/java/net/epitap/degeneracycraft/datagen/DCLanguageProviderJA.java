@@ -1281,6 +1281,9 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft" + ".power_modifier_3", "出力倍率 ×3.00");
         add("tooltip." + "degeneracycraft" + ".halt", "機械強制停止中");
 
+        add("tooltip." + "degeneracycraft" + ".material" + ".chance" + "50", "50%の確率で獲得");
+        add("tooltip." + "degeneracycraft" + ".material" + ".chance" + "25", "25%の確率で獲得");
+
         add("advancements." + "degeneracycraft" + ".astronomy" + ".title", "天文学(Astronomy)");
         add("advancements." + "degeneracycraft" + ".astronomy" + ".description", "目指せ、星間飛行");
 

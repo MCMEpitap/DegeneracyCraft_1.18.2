@@ -1202,6 +1202,9 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft" + ".power_modifier_3", "Power Modifier ×3.00");
         add("tooltip." + "degeneracycraft" + ".halt", "Machine Forced Stop");
 
+        add("tooltip." + "degeneracycraft" + ".material" + ".chance" + "50", "50% chance of gaining");
+        add("tooltip." + "degeneracycraft" + ".material" + ".chance" + "25", "25% chance of gaining");
+
 
         add("tooltip." + "degeneracycraft." + "requiredenergy." + "iron_bearing" + ".phase0", "Required Energy:0 FE");
         add("tooltip." + "degeneracycraft." + "requiredenergyusage." + "iron_bearing" + ".phase0", "Required Energy Usage:0 FE/t");
@@ -1282,6 +1285,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "requiredenergyusage." + "iron_spring" + ".phase0", "Required Energy Usage:0 FE/t");
         add("tooltip." + "degeneracycraft." + "requiredtime." + "iron_spring" + ".phase0", "Required time:100 tick (5 sec)");
         add("tooltip." + "degeneracycraft." + "msmultiplication." + "iron_spring" + ".phase0", "Output Multiplication:×1 ~ ×1");
+
+
 
 
         add("advancements." + "degeneracycraft" + ".astronomy" + ".title", "Astronomy");

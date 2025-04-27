@@ -206,15 +206,15 @@ public class BasicPerformanceRockCrasherStructure {
         blockMapping.put("E", DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK);
         blockMapping.put("I", DCBlocks.BASIC_CRASHING_BASE_HOLO_BLOCK);
 
-        boolean displayHologram = blockEntity.itemHandler.getStackInSlot(5).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()) ||
-                blockEntity.itemHandler.getStackInSlot(5).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+        boolean displayHologram = blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()) ||
+                blockEntity.itemHandler.getStackInSlot(4).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
 
         if (!displayHologram) {
             removeHolograms(level, basePos, facing, blockMapping);
             return;
         }
-        boolean visualizer0 = blockEntity.itemHandler.getStackInSlot(5).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
-        boolean visualizer1 = blockEntity.itemHandler.getStackInSlot(5).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+        boolean visualizer0 = blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+        boolean visualizer1 = blockEntity.itemHandler.getStackInSlot(4).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
 
 
         for (int y = minY; y <= maxY; y++) {

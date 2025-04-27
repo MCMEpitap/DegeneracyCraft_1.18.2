@@ -818,6 +818,8 @@
   "tooltip.degeneracycraft.iron.name": "Element Name:Iron",
   "tooltip.degeneracycraft.iron.number": "Atomic Number:26",
   "tooltip.degeneracycraft.iron.weight": "Atomic Weight:55.85 g/mol",
+  "tooltip.degeneracycraft.material.chance25": "25% chance of gaining",
+  "tooltip.degeneracycraft.material.chance50": "50% chance of gaining",
   "tooltip.degeneracycraft.msmultiplication.iron_bearing.phase0": "Output Multiplication:\u00D71 ~ \u00D71",
   "tooltip.degeneracycraft.msmultiplication.iron_bolt.phase0": "Output Multiplication:\u00D71 ~ \u00D71",
   "tooltip.degeneracycraft.msmultiplication.iron_cam.phase0": "Output Multiplication:\u00D71 ~ \u00D71",

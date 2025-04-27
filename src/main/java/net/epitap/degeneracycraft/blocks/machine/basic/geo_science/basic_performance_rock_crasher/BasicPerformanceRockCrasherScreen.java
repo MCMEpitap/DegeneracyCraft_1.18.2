@@ -59,6 +59,7 @@ public class BasicPerformanceRockCrasherScreen extends AbstractContainerScreen<B
                 80, 11, 0xFFFFFF);
 
 
+
         if (BasicPerformanceRockCrasherBlockEntity.isHaltDevice(menu.blockEntity)) {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".halt"),
                     133, 66, 0xFFFFFF);
@@ -81,6 +82,8 @@ public class BasicPerformanceRockCrasherScreen extends AbstractContainerScreen<B
         renderWorkTooltips(pPoseStack, pMouseX, pMouseY, x, y);
         renderFormedTooltips(pPoseStack, pMouseX, pMouseY, x, y);
         renderHaltTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+        renderChance1Tooltips(pPoseStack, pMouseX, pMouseY, x, y);
+        renderChance2Tooltips(pPoseStack, pMouseX, pMouseY, x, y);
     }
 
     private void renderProcessModifierTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
@@ -158,6 +161,29 @@ public class BasicPerformanceRockCrasherScreen extends AbstractContainerScreen<B
     public List<Component> HaltTooltips() {
         return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".halt"));
     }
+
+    private void renderChance1Tooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
+        if (BasicPerformanceRockCrasherBlockEntity.isHaltDevice(menu.blockEntity)
+                && isMouseAboveArea(pMouseX, pMouseY, x, y, 116, 25, 18, 18))
+            renderTooltip(pPoseStack, this.Chance1Tooltips(),
+                    Optional.empty(), pMouseX - x, pMouseY - y);
+    }
+
+    public List<Component> Chance1Tooltips() {
+        return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".material" + ".chance" + "50"));
+    }
+
+    private void renderChance2Tooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
+        if (BasicPerformanceRockCrasherBlockEntity.isHaltDevice(menu.blockEntity)
+                && isMouseAboveArea(pMouseX, pMouseY, x, y, 134, 25, 18, 18))
+            renderTooltip(pPoseStack, this.Chance2Tooltips(),
+                    Optional.empty(), pMouseX - x, pMouseY - y);
+    }
+
+    public List<Component> Chance2Tooltips() {
+        return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".material" + ".chance" + "25"));
+    }
+
 
     private boolean isMouseAboveArea(int pMouseX, int pMouseY, int x, int y, int offsetX, int offsetY, int width, int height) {
         return MouseUtil.isMouseOver(pMouseX, pMouseY, x + offsetX, y + offsetY, width, height);

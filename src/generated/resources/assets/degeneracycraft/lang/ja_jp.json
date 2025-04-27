@@ -818,6 +818,8 @@
   "tooltip.degeneracycraft.iron.name": "\u7269\u8CEA\u540D:\u9244",
   "tooltip.degeneracycraft.iron.number": "\u539F\u5B50\u756A\u53F7:26",
   "tooltip.degeneracycraft.iron.weight": "\u539F\u5B50\u91CF:55.85 g/mol",
+  "tooltip.degeneracycraft.material.chance25": "25%\u306E\u78BA\u7387\u3067\u7372\u5F97",
+  "tooltip.degeneracycraft.material.chance50": "50%\u306E\u78BA\u7387\u3067\u7372\u5F97",
   "tooltip.degeneracycraft.msmultiplication.iron_bearing.phase0": "\u8A2D\u5099\u751F\u7523\u500D\u7387:\u00D71 ~ \u00D71",
   "tooltip.degeneracycraft.msmultiplication.iron_bolt.phase0": "\u8A2D\u5099\u751F\u7523\u500D\u7387:\u00D71 ~ \u00D71",
   "tooltip.degeneracycraft.msmultiplication.iron_cam.phase0": "\u8A2D\u5099\u751F\u7523\u500D\u7387:\u00D71 ~ \u00D71",

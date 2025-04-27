@@ -58,6 +58,8 @@ public class BasicPerformanceRockCrasherScreen extends AbstractContainerScreen<B
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, menu.getProgressPercent() + " %",
                 80, 11, 0xFFFFFF);
 
+        //test
+
 
 
         if (BasicPerformanceRockCrasherBlockEntity.isHaltDevice(menu.blockEntity)) {

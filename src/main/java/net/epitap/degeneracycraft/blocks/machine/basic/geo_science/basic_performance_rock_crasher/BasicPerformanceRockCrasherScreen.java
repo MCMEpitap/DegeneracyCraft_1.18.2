@@ -165,8 +165,7 @@ public class BasicPerformanceRockCrasherScreen extends AbstractContainerScreen<B
     }
 
     private void renderChance1Tooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
-        if (BasicPerformanceRockCrasherBlockEntity.isHaltDevice(menu.blockEntity)
-                && isMouseAboveArea(pMouseX, pMouseY, x, y, 116, 7, 18, 18))
+        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 116, 7, 18, 18))
             renderTooltip(pPoseStack, this.Chance1Tooltips(),
                     Optional.empty(), pMouseX - x, pMouseY - y);
     }
@@ -176,8 +175,7 @@ public class BasicPerformanceRockCrasherScreen extends AbstractContainerScreen<B
     }
 
     private void renderChance2Tooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
-        if (BasicPerformanceRockCrasherBlockEntity.isHaltDevice(menu.blockEntity)
-                && isMouseAboveArea(pMouseX, pMouseY, x, y, 134, 7, 18, 18))
+        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 134, 7, 18, 18))
             renderTooltip(pPoseStack, this.Chance2Tooltips(),
                     Optional.empty(), pMouseX - x, pMouseY - y);
     }

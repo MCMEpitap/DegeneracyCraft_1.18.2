@@ -339,6 +339,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("north", modLoc("block/material/element/silicon/silicon_block"));
         model.texture("south", modLoc("block/material/element/silicon/silicon_block"));
         model.texture("east", modLoc("block/material/element/silicon/silicon_block"));
+        model.texture("west", modLoc("block/material/element/silicon/silicon_block"));
         model.texture("particle", modLoc("block/material/element/silicon/silicon_block"));
         orientedBlock(DCBlocks.SILICON_BLOCK.get(),
                 state -> model);

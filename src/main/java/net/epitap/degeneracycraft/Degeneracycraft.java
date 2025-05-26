@@ -2,7 +2,7 @@ package net.epitap.degeneracycraft;
 
 import com.electronwill.nightconfig.core.Config;
 import net.epitap.degeneracycraft.blocks.base.*;
-import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPrecisionTelescopeScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorScreen;
@@ -252,7 +252,7 @@ public class Degeneracycraft {
         MenuScreens.register(DCMenuTypes.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_MENU.get(), RedstonePoweredMachinePartManufactureMachineScreen::new);
 
 
-        MenuScreens.register(DCMenuTypes.BASIC_PRECISION_TELESCOPE_MENU.get(), BasicPrecisionTelescopeScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_PRECISION_TELESCOPE_MENU.get(), BasicPerformanceAstronomicalTelescopeScreen::new);
 
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthAstronomyMultiblockEnergyStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_MENU.get(), BasicStrengthAstronomyMultiblockMaterialStorageScreen::new);

@@ -16,14 +16,14 @@ import net.minecraft.world.entity.player.Inventory;
 import java.util.List;
 import java.util.Optional;
 
-public class BasicPrecisionTelescopeScreen extends AbstractContainerScreen<BasicPrecisionTelescopeMenu> {
+public class BasicPerformanceAstronomicalTelescopeScreen extends AbstractContainerScreen<BasicPerformanceAstronomicalTelescopeMenu> {
 
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/basic_technology_machine_manufacturer/basic_technology_machine_manufacturer_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/basic_performance_astronomical_telescope/basic_performance_astronomical_telescope_gui.png");
     private EnergyInfoArea energyInfoArea;
 
 
-    public BasicPrecisionTelescopeScreen(BasicPrecisionTelescopeMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public BasicPerformanceAstronomicalTelescopeScreen(BasicPerformanceAstronomicalTelescopeMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
         this.imageWidth = 176;
         this.imageHeight = 166;
@@ -60,7 +60,7 @@ public class BasicPrecisionTelescopeScreen extends AbstractContainerScreen<Basic
                 80, 11, 0xFFFFFF);
 
 
-        if (BasicPrecisionTelescopeBlockEntity.isHaltDevice(menu.blockEntity)) {
+        if (BasicPerformanceAstronomicalTelescopeBlockEntity.isHaltDevice(menu.blockEntity)) {
             drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".halt"),
                     133, 66, 0xFFFFFF);
         }

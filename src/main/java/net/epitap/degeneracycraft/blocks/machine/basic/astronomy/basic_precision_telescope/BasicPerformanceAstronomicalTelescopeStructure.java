@@ -10,18 +10,18 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class BasicPrecisionTelescopeStructure {
-    public static boolean isFormed(BasicPrecisionTelescopeBlockEntity blockEntity) {
+public class BasicPerformanceAstronomicalTelescopeStructure {
+    public static boolean isFormed(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
         return blockEntity.isFormed = blockEntity.formed0 && blockEntity.formed1 && blockEntity.formed2;
     }
 
-    public static boolean isPowered0(BasicPrecisionTelescopeBlockEntity blockEntity) {
+    public static boolean isPowered0(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
         return blockEntity.isPowered0 = blockEntity.powered0_1 && blockEntity.isFormed;
     }
 
 
-    public static boolean isFormed0(Level level, BlockPos pos, BlockState state, BasicPrecisionTelescopeBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPrecisionTelescopeBlock.FACING);
+    public static boolean isFormed0(Level level, BlockPos pos, BlockState state, BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicPerformanceAstronomicalTelescopeBlock.FACING);
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;
@@ -49,8 +49,8 @@ public class BasicPrecisionTelescopeStructure {
         return blockEntity.formed0 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6 && pos7 && pos8;
     }
 
-    public static boolean isFormed1(Level level, BlockPos pos, BlockState state, BasicPrecisionTelescopeBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPrecisionTelescopeBlock.FACING);
+    public static boolean isFormed1(Level level, BlockPos pos, BlockState state, BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicPerformanceAstronomicalTelescopeBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -80,8 +80,8 @@ public class BasicPrecisionTelescopeStructure {
         return blockEntity.formed1 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6;
     }
 
-    public static boolean isFormed2(Level level, BlockPos pos, BlockState state, BasicPrecisionTelescopeBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPrecisionTelescopeBlock.FACING);
+    public static boolean isFormed2(Level level, BlockPos pos, BlockState state, BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicPerformanceAstronomicalTelescopeBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -109,8 +109,8 @@ public class BasicPrecisionTelescopeStructure {
         return blockEntity.formed2 = pos0 && pos1 && pos2 && pos3 && pos4 && pos5 && pos6 && pos7 && pos8;
     }
 
-    public static boolean powered0_1(Level level, BlockPos pos, BlockState state, BasicPrecisionTelescopeBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPrecisionTelescopeBlock.FACING);
+    public static boolean powered0_1(Level level, BlockPos pos, BlockState state, BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicPerformanceAstronomicalTelescopeBlock.FACING);
         /*relative position getCounterClockWise=+x,above=+y,nothing=+z*/
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
@@ -122,8 +122,8 @@ public class BasicPrecisionTelescopeStructure {
     }
 
 
-    public static void hologram(Level level, BlockPos pos, BlockState state, BasicPrecisionTelescopeBlockEntity blockEntity) {
-        Direction dir = state.getValue(BasicPrecisionTelescopeBlock.FACING);
+    public static void hologram(Level level, BlockPos pos, BlockState state, BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
+        Direction dir = state.getValue(BasicPerformanceAstronomicalTelescopeBlock.FACING);
         BlockPos blockpos = new BlockPos(blockEntity.getBlockPos());
         Direction reX = dir.getCounterClockWise();
         Direction reZ = dir;

@@ -19,10 +19,10 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 
-public class BasicPrecisionTelescopeBlock extends BlockBase {
+public class BasicPerformanceAstronomicalTelescopeBlock extends BlockBase {
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
 
-    public BasicPrecisionTelescopeBlock(Properties properties) {
+    public BasicPerformanceAstronomicalTelescopeBlock(Properties properties) {
         super(properties);
     }
 
@@ -35,8 +35,8 @@ public class BasicPrecisionTelescopeBlock extends BlockBase {
     public void onRemove(BlockState pState, Level level, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = level.getBlockEntity(pPos);
-            if (blockEntity instanceof BasicPrecisionTelescopeBlockEntity) {
-                ((BasicPrecisionTelescopeBlockEntity) blockEntity).drops();
+            if (blockEntity instanceof BasicPerformanceAstronomicalTelescopeBlockEntity) {
+                ((BasicPerformanceAstronomicalTelescopeBlockEntity) blockEntity).drops();
             }
         }
         super.onRemove(pState, level, pPos, pNewState, pIsMoving);
@@ -47,8 +47,8 @@ public class BasicPrecisionTelescopeBlock extends BlockBase {
                                  Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
         if (!level.isClientSide()) {
             BlockEntity entity = level.getBlockEntity(pPos);
-            if (entity instanceof BasicPrecisionTelescopeBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer) pPlayer), (BasicPrecisionTelescopeBlockEntity) entity, pPos);
+            if (entity instanceof BasicPerformanceAstronomicalTelescopeBlockEntity) {
+                NetworkHooks.openGui(((ServerPlayer) pPlayer), (BasicPerformanceAstronomicalTelescopeBlockEntity) entity, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
@@ -60,14 +60,14 @@ public class BasicPrecisionTelescopeBlock extends BlockBase {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return new BasicPrecisionTelescopeBlockEntity(pPos, pState);
+        return new BasicPerformanceAstronomicalTelescopeBlockEntity(pPos, pState);
     }
 
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState pState, BlockEntityType<T> blockEntityType) {
-        return createTickerHelper(blockEntityType, DCBlockEntities.BASIC_PRECISION_TELESCOPE_BLOCK_ENTITY.get(),
-                BasicPrecisionTelescopeBlockEntity::tick);
+        return createTickerHelper(blockEntityType, DCBlockEntities.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK_ENTITY.get(),
+                BasicPerformanceAstronomicalTelescopeBlockEntity::tick);
     }
 
     @javax.annotation.Nullable

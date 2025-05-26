@@ -378,7 +378,7 @@ public class BasicPerformanceRockCrasherBlockEntity extends BlockEntity implemen
     }
 
     public static boolean isHaltDevice(BasicPerformanceRockCrasherBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MACHINE_HALT_DEVICE.get());
+        return blockEntity.itemHandler.getStackInSlot(5).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
     public void resetProgress() {

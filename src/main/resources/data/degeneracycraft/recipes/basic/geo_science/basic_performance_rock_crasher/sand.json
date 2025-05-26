@@ -1,0 +1,17 @@
+{
+  "type": "degeneracycraft:basic_performance_rock_crasher_recipe",
+  "energy": 500.0,
+  "time": 10.0,
+  "input0": {
+    "item": "minecraft:gravel"
+  },
+  "output0": {
+    "item": "minecraft:sand"
+  },
+  "output1": {
+    "item": "minecraft:flint"
+  },
+  "output2": {
+    "item": "minecraft:raw_copper"
+  }
+}

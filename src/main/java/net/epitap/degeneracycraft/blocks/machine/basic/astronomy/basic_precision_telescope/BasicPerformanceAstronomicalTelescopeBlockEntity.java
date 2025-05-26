@@ -36,8 +36,8 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Map;
 import java.util.Optional;
 
-public class BasicPrecisionTelescopeBlockEntity extends BlockEntity implements MenuProvider {
-    public float BP_TELESCOPE_CAPACITY = 20000F;
+public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntity implements MenuProvider {
+    public float BP_TELESCOPE_CAPACITY = 50000F;
     public float BP_TELESCOPE_TRANSFER = 16F;
 
     public float BP_TELESCOPE_RESEARCH_SPEED_MODIFIER_FORMED = 2F;
@@ -107,14 +107,14 @@ public class BasicPrecisionTelescopeBlockEntity extends BlockEntity implements M
                     Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (out, stack) -> false)));
 
-    public BasicPrecisionTelescopeBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.BASIC_PRECISION_TELESCOPE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+    public BasicPerformanceAstronomicalTelescopeBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
+        super(DCBlockEntities.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> BasicPrecisionTelescopeBlockEntity.this.counter;
-                    case 1 -> BasicPrecisionTelescopeBlockEntity.this.getProgressPercent;
+                    case 0 -> BasicPerformanceAstronomicalTelescopeBlockEntity.this.counter;
+                    case 1 -> BasicPerformanceAstronomicalTelescopeBlockEntity.this.getProgressPercent;
                     default -> 0;
                 };
             }
@@ -122,9 +122,9 @@ public class BasicPrecisionTelescopeBlockEntity extends BlockEntity implements M
             @Override
             public void set(int index, int value) {
                 if (index == 0) {
-                    BasicPrecisionTelescopeBlockEntity.this.counter = value;
+                    BasicPerformanceAstronomicalTelescopeBlockEntity.this.counter = value;
                 } else if (index == 1) {
-                    BasicPrecisionTelescopeBlockEntity.this.getProgressPercent = value;
+                    BasicPerformanceAstronomicalTelescopeBlockEntity.this.getProgressPercent = value;
                 }
             }
 
@@ -143,7 +143,7 @@ public class BasicPrecisionTelescopeBlockEntity extends BlockEntity implements M
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return new BasicPrecisionTelescopeMenu(pContainerId, pInventory, this, this.data);
+        return new BasicPerformanceAstronomicalTelescopeMenu(pContainerId, pInventory, this, this.data);
     }
 
     @Override
@@ -155,7 +155,7 @@ public class BasicPrecisionTelescopeBlockEntity extends BlockEntity implements M
                 return lazyItemHandler.cast();
             }
             if (directionWrappedHandlerMap.containsKey(side)) {
-                Direction localDir = this.getBlockState().getValue(BasicPrecisionTelescopeBlock.FACING);
+                Direction localDir = this.getBlockState().getValue(BasicPerformanceAstronomicalTelescopeBlock.FACING);
 
                 if (side == Direction.UP || side == Direction.DOWN) {
                     return directionWrappedHandlerMap.get(side).cast();
@@ -219,15 +219,15 @@ public class BasicPrecisionTelescopeBlockEntity extends BlockEntity implements M
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
-    public static void tick(Level level, BlockPos pos, BlockState state, BasicPrecisionTelescopeBlockEntity blockEntity) {
-        blockEntity.formed0 = BasicPrecisionTelescopeStructure.isFormed0(level, pos, state, blockEntity);
-        blockEntity.formed1 = BasicPrecisionTelescopeStructure.isFormed1(level, pos, state, blockEntity);
-        blockEntity.formed2 = BasicPrecisionTelescopeStructure.isFormed2(level, pos, state, blockEntity);
-        blockEntity.powered0_1 = BasicPrecisionTelescopeStructure.powered0_1(level, pos, state, blockEntity);
-        blockEntity.isFormed = BasicPrecisionTelescopeStructure.isFormed(blockEntity);
-        blockEntity.isPowered0 = BasicPrecisionTelescopeStructure.isPowered0(blockEntity);
+    public static void tick(Level level, BlockPos pos, BlockState state, BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
+        blockEntity.formed0 = BasicPerformanceAstronomicalTelescopeStructure.isFormed0(level, pos, state, blockEntity);
+        blockEntity.formed1 = BasicPerformanceAstronomicalTelescopeStructure.isFormed1(level, pos, state, blockEntity);
+        blockEntity.formed2 = BasicPerformanceAstronomicalTelescopeStructure.isFormed2(level, pos, state, blockEntity);
+        blockEntity.powered0_1 = BasicPerformanceAstronomicalTelescopeStructure.powered0_1(level, pos, state, blockEntity);
+        blockEntity.isFormed = BasicPerformanceAstronomicalTelescopeStructure.isFormed(blockEntity);
+        blockEntity.isPowered0 = BasicPerformanceAstronomicalTelescopeStructure.isPowered0(blockEntity);
 
-        BasicPrecisionTelescopeStructure.hologram(level, pos, state, blockEntity);
+        BasicPerformanceAstronomicalTelescopeStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
 
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
@@ -280,7 +280,7 @@ public class BasicPrecisionTelescopeBlockEntity extends BlockEntity implements M
     }
 
 
-    private static boolean hasAmountEnergyRecipe(BasicPrecisionTelescopeBlockEntity blockEntity) {
+    private static boolean hasAmountEnergyRecipe(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -293,11 +293,11 @@ public class BasicPrecisionTelescopeBlockEntity extends BlockEntity implements M
         return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / (match.get().getRequiredTime() * 20F);
     }
 
-    public static boolean isHaltDevice(BasicPrecisionTelescopeBlockEntity blockEntity) {
+    public static boolean isHaltDevice(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(11).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
-    public static boolean craftCheck(BasicPrecisionTelescopeBlockEntity blockEntity) {
+    public static boolean craftCheck(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -313,7 +313,7 @@ public class BasicPrecisionTelescopeBlockEntity extends BlockEntity implements M
         return false;
     }
 
-    private static boolean hasRecipe(BasicPrecisionTelescopeBlockEntity blockEntity) {
+    private static boolean hasRecipe(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -326,7 +326,7 @@ public class BasicPrecisionTelescopeBlockEntity extends BlockEntity implements M
         return match.isPresent();
     }
 
-    public static boolean hasAmountRecipe(BasicPrecisionTelescopeBlockEntity blockEntity) {
+    public static boolean hasAmountRecipe(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -347,7 +347,7 @@ public class BasicPrecisionTelescopeBlockEntity extends BlockEntity implements M
                 && blockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
     }
 
-    private static void craftItem(BasicPrecisionTelescopeBlockEntity blockEntity) {
+    private static void craftItem(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -383,7 +383,7 @@ public class BasicPrecisionTelescopeBlockEntity extends BlockEntity implements M
         return inventory.getItem(9).getItem() == output.getItem() || inventory.getItem(9).isEmpty();
     }
 
-    private static boolean hasNotReachedStackLimit(BasicPrecisionTelescopeBlockEntity blockEntity) {
+    private static boolean hasNotReachedStackLimit(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(9).getCount() < blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
     }
 }

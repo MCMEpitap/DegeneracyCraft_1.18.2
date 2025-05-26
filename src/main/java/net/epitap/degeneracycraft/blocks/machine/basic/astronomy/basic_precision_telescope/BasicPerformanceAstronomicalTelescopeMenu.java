@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class BasicPrecisionTelescopeMenu extends AbstractContainerMenu {
+public class BasicPerformanceAstronomicalTelescopeMenu extends AbstractContainerMenu {
 
     private static final int HOTBAR_SLOT_COUNT = 9;
     private static final int PLAYER_INVENTORY_ROW_COUNT = 3;
@@ -23,17 +23,17 @@ public class BasicPrecisionTelescopeMenu extends AbstractContainerMenu {
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
     private static final int TE_INVENTORY_SLOT_COUNT = 12;
-    public final BasicPrecisionTelescopeBlockEntity blockEntity;
+    public final BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
-    public BasicPrecisionTelescopeMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
+    public BasicPerformanceAstronomicalTelescopeMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
         this(pContainerId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
     }
 
-    public BasicPrecisionTelescopeMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
+    public BasicPerformanceAstronomicalTelescopeMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
         super(DCMenuTypes.BASIC_PRECISION_TELESCOPE_MENU.get(), pContainerId);
-        blockEntity = ((BasicPrecisionTelescopeBlockEntity) entity);
+        blockEntity = ((BasicPerformanceAstronomicalTelescopeBlockEntity) entity);
         this.level = inv.player.level;
         this.data = data;
 
@@ -66,7 +66,7 @@ public class BasicPrecisionTelescopeMenu extends AbstractContainerMenu {
         return data.get(0) > 0;
     }
 
-    public BasicPrecisionTelescopeBlockEntity getBlockEntity() {
+    public BasicPerformanceAstronomicalTelescopeBlockEntity getBlockEntity() {
         return this.blockEntity;
     }
 
@@ -106,7 +106,7 @@ public class BasicPrecisionTelescopeMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player pPlayer) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                pPlayer, DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get());
+                pPlayer, DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

@@ -35,6 +35,8 @@ import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_sto
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.material_storage.basic_strength_hybrid_physics_multiblock_material_storage.BasicStrengthHybridPhysicsMultiblockMaterialStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.energy_storage.basic_strength_imitation_magic_engineering_multiblock_energy_storage.BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.material_storage.basic_strength_imitation_magic_engineering_multiblock_material_storage.BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus.BasicPerformanceAstronomicalTelescopeBusBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.port.BasicPerformanceAstronomicalTelescopePortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.bus.BasicPerformanceElectrolyserBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.port.BasicPerformanceElectrolyserPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusBlockEntity;
@@ -86,10 +88,6 @@ public class DCBlockEntities {
             BLOCK_ENTITIES.register("redstone_powered_machine_part_manufacture_machine_block_entity", () ->
                     BlockEntityType.Builder.of(RedstonePoweredMachinePartManufactureMachineBlockEntity::new, DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get()).build(null));
 
-
-    public static final RegistryObject<BlockEntityType<BasicPerformanceAstronomicalTelescopeBlockEntity>> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_precision_telescope_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicPerformanceAstronomicalTelescopeBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<BasicStrengthAstronomyMultiblockEnergyStorageBlockEntity>> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_strength_astronomy_multiblock_energy_storage_block_entity", () ->
@@ -146,6 +144,21 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageBlockEntity>> BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_strength_imitation_magic_engineering_multiblock_material_storage_block_entity", () ->
                     BlockEntityType.Builder.of(BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()).build(null));
+
+
+
+    public static final RegistryObject<BlockEntityType<BasicPerformanceAstronomicalTelescopeBlockEntity>> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_astronomical_telescope_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceAstronomicalTelescopeBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceAstronomicalTelescopeBusBlockEntity>> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_astronomical_telescope_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus.BasicPerformanceAstronomicalTelescopeBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceAstronomicalTelescopePortBlockEntity>> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_astronomical_telescope_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceAstronomicalTelescopePortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK.get()).build(null));
+
+
+
 
     public static final RegistryObject<BlockEntityType<BasicPerformanceElectrolyserBlockEntity>> BASIC_PERFORMANCE_ELECTROLYSER_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_electrolyser_block_entity", () ->

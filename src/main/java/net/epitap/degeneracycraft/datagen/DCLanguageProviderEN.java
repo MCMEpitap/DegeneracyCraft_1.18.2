@@ -847,6 +847,35 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(PipeBlocks.BASIC_ITEM_PIPE_BLOCK, "Basic Item Pipe");
         add(PipeBlocks.BASIC_ENERGY_PIPE_BLOCK, "Basic Energy Pipe");
 
+
+
+
+
+
+        add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get(), "Basic Performance Astronomical Telescope");
+        add("tooltip." + "degeneracycraft." + "basic_performance_astronomical_telescope_block",
+                "Basic Astronomical Telescope. Record information about the stars.");
+        add(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_BLOCK.get(), "Basic Precision Objective Lens");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_astronomical_telescope_block",
+                "For Basic Performance Astronomical Telescope");
+        add(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_HOLO_BLOCK.get(), "Basic Precision Objective Lens (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK.get(), "Basic Performance Astronomical Telescope Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_HOLO_BLOCK.get(), "Basic Performance Astronomical Telescope Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK.get(), "Basic Performance Astronomical Telescope Port");
+        add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.get(), "Basic Performance Astronomical Telescope Port (Hologram)");
+        add(DCItems.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT.get(), "Basic Performance Astronomical Telescope Circuit");
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get(), "Basic Performance Electrolyser");
         add("tooltip." + "degeneracycraft." + "basic_performance_electrolyser_block",
                 "Basic Electrolyser. Reacting substances by electrolysis.");

@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.port;
+package net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.port;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortBlockEntityBase;
@@ -16,12 +16,12 @@ import net.minecraftforge.items.ItemHandlerHelper;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class BasicPerformanceElectrolyserPortType extends PortTypeBase<Item> {
-    public static final BasicPerformanceElectrolyserPortType INSTANCE = new BasicPerformanceElectrolyserPortType();
+public class BasicPerformanceAstronomicalTelescopePortType extends PortTypeBase<Item> {
+    public static final BasicPerformanceAstronomicalTelescopePortType INSTANCE = new BasicPerformanceAstronomicalTelescopePortType();
 
     @Override
     public String getKey() {
-        return "basic_performance_electrolyser_port_block";
+        return "basic_performance_astronomical_telescope_port_block";
     }
 
     @Override
@@ -31,12 +31,12 @@ public class BasicPerformanceElectrolyserPortType extends PortTypeBase<Item> {
 
     @Override
     public String getTranslationKey() {
-        return "basic_performance_electrolyser_port_block";
+        return "basic_performance_astronomical_telescope_port_block";
     }
 
     @Override
     public ItemStack getIcon() {
-        return new ItemStack(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get());
+        return new ItemStack(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK.get());
     }
 
     @Override

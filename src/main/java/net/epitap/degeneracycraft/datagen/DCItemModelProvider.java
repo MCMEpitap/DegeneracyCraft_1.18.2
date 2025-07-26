@@ -958,6 +958,43 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_imitation_magic_engineering_multiblock_material_storage_holo_block"));
 
+
+
+
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_astronomical_telescope_block"));
+        withExistingParent(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_BLOCK.getId().getPath(),
+                modLoc("block/basic_precision_objective_lens_block"));
+        withExistingParent(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_precision_objective_lens_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_astronomical_telescope_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_astronomical_telescope_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_astronomical_telescope_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_astronomical_telescope_port_holo_block"));
+        basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT.get());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_electrolyser_block"));
         withExistingParent(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_BLOCK.getId().getPath(),

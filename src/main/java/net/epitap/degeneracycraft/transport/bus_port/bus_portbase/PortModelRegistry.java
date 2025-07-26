@@ -12,6 +12,11 @@ import net.minecraftforge.client.model.ForgeModelBakery;
 
 public class PortModelRegistry {
     public enum DCPortModel {
+        BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK_EXTRACT("block/basic_performance_astronomical_telescope_bus_block_extract"),
+        BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK_EXTRACT("block/basic_performance_astronomical_telescope_port_block_extract"),
+
+
+
         BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK_EXTRACT("block/basic_performance_electrolyser_bus_block_extract"),
         BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK_EXTRACT("block/basic_performance_electrolyser_port_block_extract"),
 

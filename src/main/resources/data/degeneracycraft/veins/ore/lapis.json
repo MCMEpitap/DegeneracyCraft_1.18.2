@@ -13,7 +13,11 @@
             "default": [
                 {
                     "block": "minecraft:lapis_ore",
-                    "chance": 1.0
+                    "chance": 0.2
+                },
+                {
+                    "block": "minecraft:stone",
+                    "chance": 0.8
                 }
             ],
             "minecraft:deepslate": [
@@ -25,10 +29,11 @@
         },
         "samples": [
             {
-                "block": "degeneracycraft:overworld_gravitation_ore",
+                "block": "minecraft:deepslate_lapis_ore",
                 "chance": 1.0
             }
         ],
-        "generationWeight": 5
+        "generationWeight": 30,
+        "veinSpaces" : 0.5
     }
 }

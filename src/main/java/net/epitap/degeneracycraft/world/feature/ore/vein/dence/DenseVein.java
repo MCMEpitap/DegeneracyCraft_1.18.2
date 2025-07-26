@@ -32,6 +32,8 @@ public class DenseVein implements IVein {
     private int yMax;
     private int size;
     private int genWt;
+    private float genSp;
+    private double randamizer = Math.random();
     private HashSet<BlockState> blockStateMatchers;
     private String[] dimFilter;
     private boolean isDimFilterBl;
@@ -49,7 +51,9 @@ public class DenseVein implements IVein {
 
     public DenseVein(HashMap<String, HashMap<BlockState, Float>> oreBlocks, HashMap<BlockState, Float> sampleBlocks,
                      int yMin,
-                     int yMax, int size, int genWt, String[] dimFilter, boolean isDimFilterBl,
+                     int yMax, int size, int genWt,
+                     float genSp,
+                     String[] dimFilter, boolean isDimFilterBl,
                      @Nullable List<BiomeDictionary.Type> biomeTypes, @Nullable List<Biome> biomeFilter,
                      @Nullable boolean isBiomeFilterBl, HashSet<BlockState> blockStateMatchers) {
         this.oreToWtMap = oreBlocks;
@@ -58,6 +62,7 @@ public class DenseVein implements IVein {
         this.yMax = yMax;
         this.size = size;
         this.genWt = genWt;
+        this.genSp = genSp;
         this.dimFilter = dimFilter;
         this.isDimFilterBl = isDimFilterBl;
         this.biomeTypeFilter = biomeTypes;
@@ -207,25 +212,26 @@ public class DenseVein implements IVein {
                                 double layerRadZ = ((double) z + 0.5D - zn) / (radius / 2.0D);
 
                                 if (layerRadX * layerRadX + layerRadY * layerRadY + layerRadZ * layerRadZ < 1.0D) {
-                                    BlockPos placePos = new BlockPos(x, y, z);
-                                    BlockState current = level.getBlockState(placePos);
-                                    BlockState tmp = this.getOre(current);
-                                    if (tmp == null) {
-                                        continue;
-                                    }
+//                                    if (this.randamizer <= 0.5d) {
+                                        BlockPos placePos = new BlockPos(x, y, z);
+                                        BlockState current = level.getBlockState(placePos);
+                                        BlockState tmp = this.getOre(current);
+                                        if (tmp == null) {
+                                            continue;
+                                        }
 
-                                    // Skip this block if it can't replace the target block or doesn't have a
-                                    // manually-configured replacer in the blocks object
-                                    if (!(this.getBlockStateMatchers().contains(current)
-                                            || this.oreToWtMap
-                                            .containsKey(current.getBlock().getRegistryName().toString()))) {
-                                        continue;
-                                    }
-
-                                    if (FeatureUtils.enqueueBlockPlacement(level, new ChunkPos(pos), placePos, tmp,
-                                            veins, chunksGenerated)) {
-                                        totlPlaced++;
-                                    }
+                                        // Skip this block if it can't replace the target block or doesn't have a
+                                        // manually-configured replacer in the blocks object
+                                        if (!(this.getBlockStateMatchers().contains(current)
+                                                || this.oreToWtMap
+                                                .containsKey(current.getBlock().getRegistryName().toString()))) {
+                                            continue;
+                                        }
+                                        if (FeatureUtils.enqueueBlockPlacement(level, new ChunkPos(pos), placePos, tmp,
+                                                veins, chunksGenerated)) {
+                                            totlPlaced++;
+                                        }
+//                                    }
                                 }
                             }
                         }
@@ -293,6 +299,8 @@ public class DenseVein implements IVein {
             int yMax = json.get("yMax").getAsInt();
             int size = json.get("size").getAsInt();
             int genWt = json.get("generationWeight").getAsInt();
+            float genSp = json.get("veinSpaces").getAsFloat();
+
 
             // Dimensions
             String[] dimFilter = SerializerUtils.getDimFilter(json);
@@ -315,7 +323,7 @@ public class DenseVein implements IVein {
                 blockStateMatchers = SerializerUtils.toBlockStateList(json.get("blockStateMatchers").getAsJsonArray());
             }
 
-            return new DenseVein(oreBlocks, sampleBlocks, yMin, yMax, size, genWt, dimFilter, isDimFilterBl,
+            return new DenseVein(oreBlocks, sampleBlocks, yMin, yMax, size, genWt, genSp, dimFilter, isDimFilterBl,
                     biomeTypeFilter, biomeFilter, isBiomeFilterBl, blockStateMatchers);
         } catch (Exception e) {
             Degeneracycraft.LOGGER.error("Failed to parse: {}", e.getMessage());
@@ -346,8 +354,12 @@ public class DenseVein implements IVein {
         config.addProperty("yMax", this.yMax);
         config.addProperty("size", this.size);
         config.addProperty("generationWeight", this.genWt);
+
+        config.addProperty("veinSpaces", this.genSp);
+
         config.add("dimensions", dimensions);
         config.add("biomes", biomes);
+
 
         // Glue the two parts of this together.
         json.addProperty("type", JSON_TYPE);

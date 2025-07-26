@@ -847,6 +847,28 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(PipeBlocks.BASIC_ITEM_PIPE_BLOCK, "基本アイテムパイプ");
         add(PipeBlocks.BASIC_ENERGY_PIPE_BLOCK, "基本エネルギーパイプ");
 
+
+        add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get(), "基本性能天体望遠鏡");
+        add("tooltip." + "degeneracycraft." + "basic_performance_astronomical_telescope_block",
+                "基本的な天体望遠鏡. 星々の情報を記録する.");
+        add(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_BLOCK.get(), "基本精度対物レンズ");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_astronomical_telescope_block",
+                "基本性能天体望遠鏡用");
+        add(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_HOLO_BLOCK.get(), "基本精度対物レンズ (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK.get(), "基本性能天体望遠鏡バス");
+        add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_HOLO_BLOCK.get(), "基本性能天体望遠鏡バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK.get(), "基本性能天体望遠鏡ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.get(), "基本性能天体望遠鏡ポート (ホログラム)");
+        add(DCItems.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT.get(), "基本性能天体望遠鏡回路");
+
+
+
+
+
+
+
+
+
         add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get(), "基本性能電解槽");
         add("tooltip." + "degeneracycraft." + "basic_performance_electrolyser_block",
                 "基本的な電解槽. 電気分解によって物質を反応させる.");

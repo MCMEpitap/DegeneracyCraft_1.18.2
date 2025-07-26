@@ -3,7 +3,7 @@
   "config": {
     "yMin": -64,
     "yMax": 32,
-    "size": 100,
+    "size": 60,
     "dimensions": {
       "isBlacklist": false,
       "filter": ["degeneracycraft:test"]
@@ -11,14 +11,38 @@
     "blocks": {
       "default": [
         {
+          "block": "minecraft:stone",
+          "chance": 0.50
+        },
+        {
           "block": "minecraft:gold_ore",
-          "chance": 1
+          "chance": 0.20
+        },
+        {
+          "block": "minecraft:iron_ore",
+          "chance": 0.10
+        },
+        {
+          "block": null,
+          "chance": 0.20
         }
       ],
       "minecraft:deepslate": [
         {
-          "block": "minecraft:deepslate_gold_ore",
-          "chance": 1
+          "block": "minecraft:stone",
+          "chance": 0.50
+        },
+        {
+          "block": "minecraft:gold_ore",
+          "chance": 0.20
+        },
+        {
+          "block": "minecraft:iron_ore",
+          "chance": 0.10
+        },
+        {
+          "block": null,
+          "chance": 0.20
         }
       ]
     },
@@ -28,6 +52,7 @@
         "chance": 1.0
       }
     ],
-    "generationWeight": 4
+    "generationWeight": 4,
+    "veinSpaces" : 0.5
   }
 }

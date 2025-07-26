@@ -4,6 +4,7 @@ import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_precision_telescope.BasicPrecisionTelescopeRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorRecipe;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -37,13 +38,13 @@ import java.util.Map;
 import java.util.Optional;
 
 public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntity implements MenuProvider {
-    public float BP_TELESCOPE_CAPACITY = 50000F;
-    public float BP_TELESCOPE_TRANSFER = 16F;
+    public float MACHINE_CAPACITY = 50000F;
+    public float MACHINE_TRANSFER = 16F;
 
-    public float BP_TELESCOPE_RESEARCH_SPEED_MODIFIER_FORMED = 2F;
-    public float BP_TELESCOPE_RESEARCH_SPEED_MODIFIER_POWERED_0 = 3F;
-    public float BP_TELESCOPE_RESEARCH_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
-    public float BP_TELESCOPE_RESEARCH_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
+    public float MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
+    public float MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
+    public float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
+    public float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
     protected final ContainerData data;
     public int counter;
     public int getProgressPercent;
@@ -54,7 +55,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     public boolean powered0_1;
     public boolean isFormed;
     public boolean isPowered0;
-    public final ItemStackHandler itemHandler = new ItemStackHandler(7) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(5) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -62,25 +63,17 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            for (int i = 0; i < 5; i++) {
-                if (slot == i && !stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
-                        && !stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
-                        && !stack.is(DCItems.MACHINE_HALT_DEVICE.get())) {
-                    return true;
-                }
-            }
-            if (slot == 5) {
-                return stack.is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get())
-                        || stack.is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
-            }
-            if (slot == 6) {
-                return stack.is(DCItems.MACHINE_HALT_DEVICE.get());
-            }
-            return false;
+            return switch (slot) {
+                case 2 -> false;
+                case 3 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
+                        || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
+                case 4 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
+                default -> super.isItemValid(slot, stack);
+            };
         }
     };
 
-    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BP_TELESCOPE_CAPACITY, BP_TELESCOPE_TRANSFER) {
+    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(MACHINE_CAPACITY, MACHINE_TRANSFER) {
         @Override
         public void onEnergyChanged() {
             setChanged();
@@ -105,7 +98,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
             Map.of(Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
                     Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 9, (out, stack) -> false)));
+                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 2, (out, stack) -> false)));
 
     public BasicPerformanceAstronomicalTelescopeBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(DCBlockEntities.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
@@ -220,12 +213,9 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
-        blockEntity.formed0 = BasicPerformanceAstronomicalTelescopeStructure.isFormed0(level, pos, state, blockEntity);
-        blockEntity.formed1 = BasicPerformanceAstronomicalTelescopeStructure.isFormed1(level, pos, state, blockEntity);
-        blockEntity.formed2 = BasicPerformanceAstronomicalTelescopeStructure.isFormed2(level, pos, state, blockEntity);
-        blockEntity.powered0_1 = BasicPerformanceAstronomicalTelescopeStructure.powered0_1(level, pos, state, blockEntity);
-        blockEntity.isFormed = BasicPerformanceAstronomicalTelescopeStructure.isFormed(blockEntity);
-        blockEntity.isPowered0 = BasicPerformanceAstronomicalTelescopeStructure.isPowered0(blockEntity);
+        blockEntity.isFormed = BasicPerformanceAstronomicalTelescopeStructure.isFormed(level, pos, state, blockEntity);
+        blockEntity.isPowered0 = BasicPerformanceAstronomicalTelescopeStructure.isPowered0(level, pos, state, blockEntity);
+
 
         BasicPerformanceAstronomicalTelescopeStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
@@ -244,20 +234,20 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
                 .getRecipeFor(BasicPrecisionTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
-                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(inventory, match.get().getOutput0Item())) {
+                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
             blockEntity.getProgressRandom = (int) (Math.random() * 100);
 
             if (blockEntity.isPowered0) {
                 if (blockEntity.getProgressRandom <= 1) {
-                    blockEntity.counter += blockEntity.BP_TELESCOPE_RESEARCH_SPEED_MODIFIER_POWERED_0;
+                    blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
                 }
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BP_TELESCOPE_RESEARCH_ENERGY_USAGE_MODIFIER_POWERED_0
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else if (blockEntity.isFormed) {
                 if (blockEntity.getProgressRandom <= 0) {
-                    blockEntity.counter += blockEntity.BP_TELESCOPE_RESEARCH_SPEED_MODIFIER_FORMED;
+                    blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
                 }
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BP_TELESCOPE_RESEARCH_ENERGY_USAGE_MODIFIER_FORMED
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else {
                 if (blockEntity.getProgressRandom <= 0) {
@@ -294,7 +284,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     }
 
     public static boolean isHaltDevice(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(11).is(DCItems.MACHINE_HALT_DEVICE.get());
+        return blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
     public static boolean craftCheck(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
@@ -337,14 +327,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
                 .getRecipeFor(BasicPrecisionTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(2).getCount() >= match.get().getInput2Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(3).getCount() >= match.get().getInput3Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(4).getCount() >= match.get().getInput4Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(5).getCount() >= match.get().getInput5Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(6).getCount() >= match.get().getInput6Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(7).getCount() >= match.get().getInput7Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
+                && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount();
     }
 
     private static void craftItem(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
@@ -359,17 +342,9 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
 
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(2, match.get().getInput2Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(3, match.get().getInput3Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(4, match.get().getInput4Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(5, match.get().getInput5Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(6, match.get().getInput6Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(7, match.get().getInput7Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(8, match.get().getInput8Item().getCount(), false);
 
-            blockEntity.itemHandler.setStackInSlot(9, new ItemStack(match.get().getOutput0Item().getItem(),
-                    blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
+            blockEntity.itemHandler.setStackInSlot(2, new ItemStack(match.get().getOutput0Item().getItem(),
+                    blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount()));
 
             blockEntity.resetProgress();
         }
@@ -379,12 +354,31 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         this.counter = 0;
     }
 
-    private static boolean canInsertItemIntoOutputSlot(SimpleContainer inventory, ItemStack output) {
-        return inventory.getItem(9).getItem() == output.getItem() || inventory.getItem(9).isEmpty();
+    private static boolean hasNotReachedStackLimit(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicTechnologyMultiblockEquipmentFabricatorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMultiblockEquipmentFabricatorRecipe.Type.INSTANCE, inventory, level);
+
+        return blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(2).getMaxStackSize();
     }
 
-    private static boolean hasNotReachedStackLimit(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(9).getCount() < blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
+    private static boolean canInsertItemIntoOutputSlot(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicTechnologyMultiblockEquipmentFabricatorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMultiblockEquipmentFabricatorRecipe.Type.INSTANCE, inventory, level);
+
+        return blockEntity.itemHandler.getStackInSlot(2).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(2).isEmpty();
     }
+
 }
 

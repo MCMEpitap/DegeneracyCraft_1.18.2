@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.bus;
+package net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortBlockEntityBase;
@@ -17,14 +17,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class BasicPerformanceElectrolyserBusType extends PortTypeBase<Void> {
-    public static final BasicPerformanceElectrolyserBusType INSTANCE = new BasicPerformanceElectrolyserBusType();
+public class BasicPerformanceAstronomicalTelescopeBusType extends PortTypeBase<Void> {
+    public static final BasicPerformanceAstronomicalTelescopeBusType INSTANCE = new BasicPerformanceAstronomicalTelescopeBusType();
 
-    public BasicPerformanceElectrolyserBusType() {
+    public BasicPerformanceAstronomicalTelescopeBusType() {
     }
 
     public String getKey() {
-        return "basic_performance_electrolyser_bus_block";
+        return "basic_performance_astronomical_telescope_bus_block";
     }
 
     public boolean canImport(BlockEntity blockEntity, Direction direction) {
@@ -32,11 +32,11 @@ public class BasicPerformanceElectrolyserBusType extends PortTypeBase<Void> {
     }
 
     public String getTranslationKey() {
-        return "basic_performance_electrolyser_bus_block";
+        return "basic_performance_astronomical_telescope_processor_bus_block";
     }
 
     public ItemStack getIcon() {
-        return new ItemStack(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.get());
+        return new ItemStack(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK.get());
     }
 
     public void tick(PortWorkBlockEntity blockEntity) {

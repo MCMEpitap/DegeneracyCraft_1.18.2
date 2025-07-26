@@ -11,6 +11,6 @@ public class BasicPerformanceElectrolyserBusRenderer extends PortRendererBase {
 
     @Override
     public DCPortModel getModel() {
-        return DCPortModel.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK_EXTRACT;
+        return DCPortModel.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK_EXTRACT;
     }
 }

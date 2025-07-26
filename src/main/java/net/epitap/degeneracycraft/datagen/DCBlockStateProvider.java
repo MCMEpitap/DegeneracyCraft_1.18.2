@@ -137,6 +137,16 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthImitationMagicEngineeringMultiblockMaterialStorageHolo();
 
 
+
+        registerBasicPerformanceAstronomicalTelescope();
+        registerBasicPrecisionObjectiveLens();
+        registerBasicPrecisionObjectiveLensHolo();
+        registerBasicPerformanceAstronomicalTelescopeBus();
+        registerBasicPerformanceAstronomicalTelescopeBusHolo();
+        registerBasicPerformanceAstronomicalTelescopePort();
+        registerBasicPerformanceAstronomicalTelescopePortHolo();
+
+
         registerBasicPerformanceElectrolyser();
         registerBasicDurableExpandedElectrolyticCell();
         registerBasicDurableExpandedElectrolyticCellHolo();
@@ -1702,6 +1712,113 @@ public class DCBlockStateProvider extends BlockStateProvider {
         orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
+
+    
+    
+    
+    private void registerBasicPerformanceAstronomicalTelescope() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_astronomical_telescope_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/basic_performance_astronomical_telescope_down"));
+        model.texture("up", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/basic_performance_astronomical_telescope_up"));
+        model.texture("north", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/basic_performance_astronomical_telescope_front"));
+        model.texture("south", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/basic_performance_astronomical_telescope_side"));
+        model.texture("east", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/basic_performance_astronomical_telescope_side"));
+        model.texture("west", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/basic_performance_astronomical_telescope_side"));
+        model.texture("particle", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/basic_performance_astronomical_telescope_front"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPrecisionObjectiveLens() {
+        BlockModelBuilder model = models().getBuilder("block/basic_precision_objective_lens_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_block"));
+        model.texture("up", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_block"));
+        model.texture("north", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_block"));
+        model.texture("south", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_block"));
+        model.texture("east", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_block"));
+        model.texture("west", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_block"));
+        orientedBlock(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPrecisionObjectiveLensHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_precision_objective_lens_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceAstronomicalTelescopeBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_astronomical_telescope_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/bus/basic_performance_astronomical_telescope_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/bus/basic_performance_astronomical_telescope_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/bus/basic_performance_astronomical_telescope_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/bus/basic_performance_astronomical_telescope_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/bus/basic_performance_astronomical_telescope_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/bus/basic_performance_astronomical_telescope_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/bus/basic_performance_astronomical_telescope_bus_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceAstronomicalTelescopeBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_astronomical_telescope_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/bus/basic_performance_astronomical_telescope_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/bus/basic_performance_astronomical_telescope_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/bus/basic_performance_astronomical_telescope_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/bus/basic_performance_astronomical_telescope_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/bus/basic_performance_astronomical_telescope_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/bus/basic_performance_astronomical_telescope_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/bus/basic_performance_astronomical_telescope_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceAstronomicalTelescopePort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_astronomical_telescope_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/port/basic_performance_astronomical_telescope_port_block"));
+        model.texture("up", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/port/basic_performance_astronomical_telescope_port_block"));
+        model.texture("north", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/port/basic_performance_astronomical_telescope_port_block"));
+        model.texture("south", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/port/basic_performance_astronomical_telescope_port_block"));
+        model.texture("east", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/port/basic_performance_astronomical_telescope_port_block"));
+        model.texture("west", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/port/basic_performance_astronomical_telescope_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/port/basic_performance_astronomical_telescope_port_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceAstronomicalTelescopePortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_astronomical_telescope_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/port/basic_performance_astronomical_telescope_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/port/basic_performance_astronomical_telescope_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/port/basic_performance_astronomical_telescope_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/port/basic_performance_astronomical_telescope_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/port/basic_performance_astronomical_telescope_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/port/basic_performance_astronomical_telescope_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/port/basic_performance_astronomical_telescope_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+    
+    
+    
+    
+    
+    
 
     private void registerBasicPerformanceElectrolyser() {
         BlockModelBuilder model = models().getBuilder("block/basic_performance_electrolyser_block");

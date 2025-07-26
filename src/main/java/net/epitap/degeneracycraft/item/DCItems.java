@@ -817,6 +817,7 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> BASIC_HYBRID_PHYSICS_MEMORY_CIRCUIT = ITEMS.register("basic_hybrid_physics_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT = ITEMS.register("basic_imitation_magic_engineering_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
+    public static final RegistryObject<Item> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT = ITEMS.register("basic_performance_astronomical_telescope_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
     public static final RegistryObject<Item> BASIC_PERFORMANCE_ELECTROLYSER_CIRCUIT = ITEMS.register("basic_performance_electrolyser_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 

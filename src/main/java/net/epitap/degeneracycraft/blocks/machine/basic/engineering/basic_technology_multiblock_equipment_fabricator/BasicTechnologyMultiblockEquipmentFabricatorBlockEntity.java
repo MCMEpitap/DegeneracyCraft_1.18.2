@@ -427,5 +427,4 @@ public class BasicTechnologyMultiblockEquipmentFabricatorBlockEntity extends Blo
 
         return blockEntity.itemHandler.getStackInSlot(9).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(9).isEmpty();
     }
-
 }

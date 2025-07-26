@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/astronomy/basic_performance_astronomical_telescope/basic_performance_astronomical_telescope_down",
+    "up": "degeneracycraft:block/machine/basic/astronomy/basic_performance_astronomical_telescope/basic_performance_astronomical_telescope_up",
+    "north": "degeneracycraft:block/machine/basic/astronomy/basic_performance_astronomical_telescope/basic_performance_astronomical_telescope_front",
+    "south": "degeneracycraft:block/machine/basic/astronomy/basic_performance_astronomical_telescope/basic_performance_astronomical_telescope_side",
+    "east": "degeneracycraft:block/machine/basic/astronomy/basic_performance_astronomical_telescope/basic_performance_astronomical_telescope_side",
+    "west": "degeneracycraft:block/machine/basic/astronomy/basic_performance_astronomical_telescope/basic_performance_astronomical_telescope_side",
+    "particle": "degeneracycraft:block/machine/basic/astronomy/basic_performance_astronomical_telescope/basic_performance_astronomical_telescope_front"
+  }
+}

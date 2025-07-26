@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_block",
+    "up": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_block",
+    "north": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_block",
+    "south": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_block",
+    "east": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_block",
+    "west": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_block",
+    "particle": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_precision_objective_lens/basic_precision_objective_lens_block"
+  }
+}

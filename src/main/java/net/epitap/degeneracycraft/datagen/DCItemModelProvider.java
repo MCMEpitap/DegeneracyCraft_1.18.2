@@ -675,16 +675,21 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicInscribedCircuitItem(DCItems.BASIC_PRECISION_CHAIN_INSCRIBED_CIRCUIT.get());
 
 
-        basicMaterialHybridPhysicsItem(DCItems.PURIFIED_GRAPHITE_ARC_ELECTRODE.get());
 
+        dataChipItem(DCItems.DESIGNATED_DATA_CHIP_MOON.get());
 
         deviceItem(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
         deviceItem(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
         deviceItem(DCItems.MACHINE_HALT_DEVICE.get());
 
+//        basicMaterialAstronomyItem(DCItems.ASTRONOMY_DATA_STORAGE.get());
+        dataStorageAstronomyItem(DCItems.STAR_DATA_STORAGE_MOON.get());
 
         basicMaterialChemistryItem(DCItems.HYDROCHLORIC_ACID_CONTAINER.get());
         basicMaterialChemistryItem(DCItems.HYDROGEN_CHLORIDE_GAS.get());
+
+
+        basicMaterialHybridPhysicsItem(DCItems.PURIFIED_GRAPHITE_ARC_ELECTRODE.get());
 
         basicMaterialCommonItem(DCItems.COMPRESSED_PLANKS.get());
         basicMaterialCommonItem(DCItems.COMPRESSED_REDSTONE.get());
@@ -1243,6 +1248,18 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/" + item.getRegistryName().getPath()));
     }
 
+    private ItemModelBuilder dataChipItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/data_chip/" + item.getRegistryName().getPath()));
+    }
+
+    private ItemModelBuilder dataStorageAstronomyItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/data_storage/astronomy/" + item.getRegistryName().getPath()));
+    }
+
     private ItemModelBuilder deviceItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
@@ -1436,6 +1453,12 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/inscribed_circuit/" + item.getRegistryName().getPath()));
     }
 
+    private ItemModelBuilder basicMaterialAstronomyItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/material/basic/astronomy/" + item.getRegistryName().getPath()));
+    }
+
     private ItemModelBuilder basicMaterialChemistryItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
@@ -1460,13 +1483,11 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/machine_circuit/" + item.getRegistryName().getPath()));
     }
 
-
     private ItemModelBuilder recipe_tooltip_item(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/" + "recipe_tooltip"));
     }
-
 
     private ItemModelBuilder phaseItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),

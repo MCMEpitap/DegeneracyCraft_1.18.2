@@ -3,7 +3,7 @@
   "energy": 1000.0,
   "time": 10.0,
   "input0": {
-    "item": "degeneracycraft:copper_wire"
+    "item": "degeneracycraft:iron_plate"
   },
   "input1": {
     "item": "degeneracycraft:iron_plate"

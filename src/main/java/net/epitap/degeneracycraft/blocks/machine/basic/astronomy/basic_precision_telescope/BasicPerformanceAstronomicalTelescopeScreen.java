@@ -19,7 +19,7 @@ import java.util.Optional;
 public class BasicPerformanceAstronomicalTelescopeScreen extends AbstractContainerScreen<BasicPerformanceAstronomicalTelescopeMenu> {
 
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/basic_performance_astronomical_telescope/basic_performance_astronomical_telescope_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/astronomy/basic_performance_astronomical_telescope/basic_performance_astronomical_telescope_gui.png");
     private EnergyInfoArea energyInfoArea;
 
 

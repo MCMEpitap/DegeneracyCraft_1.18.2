@@ -840,6 +840,13 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> BASIC_PERFORMANCE_FORMING_MACHINE_CIRCUIT = ITEMS.register("basic_performance_forming_machine_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
 
+
+    public static final RegistryObject<Item> DESIGNATED_DATA_CHIP_MOON = ITEMS.register("designated_data_chip_moon", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+
+//    public static final RegistryObject<Item> BASIC_ASTRONOMY_DATA_STORAGE = ITEMS.register("astronomy_data_storage", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> STAR_DATA_STORAGE_MOON = ITEMS.register("star_data_storage_moon", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+
+
     public static final RegistryObject<Item> CAMMDA_TIER1 = ITEMS.register("cammda_tier1", () -> new CAMMDA_Tier1(DCTier.CAMMDA_TIER1, 0, 0, new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB).stacksTo(1)));
 
     public static final RegistryObject<Item> GUN_ITEM = ITEMS.register("gun_item", () -> new GunItem(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB).stacksTo(1)));

@@ -32,7 +32,7 @@ public class BasicPerformanceAstronomicalTelescopeMenu extends AbstractContainer
     }
 
     public BasicPerformanceAstronomicalTelescopeMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_PRECISION_TELESCOPE_MENU.get(), pContainerId);
+        super(DCMenuTypes.BASIC_PERFORMANCE_ASTROMICAL_TELESCOPE_MENU.get(), pContainerId);
         blockEntity = ((BasicPerformanceAstronomicalTelescopeBlockEntity) entity);
         this.level = inv.player.level;
         this.data = data;

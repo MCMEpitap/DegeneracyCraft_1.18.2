@@ -1,6 +1,7 @@
 package net.epitap.degeneracycraft.integration.jei;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
+import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderRecipe;
@@ -29,6 +30,8 @@ public class DCRecipeTypes {
 //    public static final RegistryObject<RecipeSerializer<Pulverization>> PULVERIZATION_SERIALIZER =
 //            SERIALIZERS.register("pulverization",()-> Pulverization.Serializer.INSTANCE);
 
+    public static final RegistryObject<RecipeSerializer<BasicPerformanceAstronomicalTelescopeRecipe>> BASIC_PRECISION_TELESCOPE_SERIALIZER =
+            SERIALIZERS.register("basic_performance_astronomical_telescope_recipe", () -> BasicPerformanceAstronomicalTelescopeRecipe.Serializer.INSTANCE);
 
     public static final RegistryObject<RecipeSerializer<RedstonePoweredMachineElementManufactureMachineRecipe>> REDSTONE_POWERED_MACHINE_COMPONENT_MANUFACTURE_MACHINE_SERIALIZER =
             SERIALIZERS.register("redstone_powered_machine_element_manufacture_machine_recipe", () -> RedstonePoweredMachineElementManufactureMachineRecipe.Serializer.INSTANCE);

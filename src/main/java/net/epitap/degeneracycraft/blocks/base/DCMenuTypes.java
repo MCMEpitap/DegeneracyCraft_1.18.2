@@ -51,8 +51,8 @@ public class DCMenuTypes {
 
     public static final RegistryObject<MenuType<PulverizerMenu>> PULVERIZER_MENU =
             registerMenuType(PulverizerMenu::new, "pulverizer_menu");
-    public static final RegistryObject<MenuType<BasicPerformanceAstronomicalTelescopeMenu>> BASIC_PRECISION_TELESCOPE_MENU =
-            registerMenuType(BasicPerformanceAstronomicalTelescopeMenu::new, "basic_precision_telescope_menu");
+    public static final RegistryObject<MenuType<BasicPerformanceAstronomicalTelescopeMenu>> BASIC_PERFORMANCE_ASTROMICAL_TELESCOPE_MENU =
+            registerMenuType(BasicPerformanceAstronomicalTelescopeMenu::new, "basic_performance_astronomical_telescope_menu");
 
     public static final RegistryObject<MenuType<BasicStrengthAstronomyMultiblockEnergyStorageMenu>> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_MENU =
             registerMenuType(BasicStrengthAstronomyMultiblockEnergyStorageMenu::new, "basic_strength_astronomy_multiblock_energy_storage_menu");

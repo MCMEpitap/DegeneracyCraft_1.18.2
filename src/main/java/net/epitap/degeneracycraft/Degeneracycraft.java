@@ -252,8 +252,6 @@ public class Degeneracycraft {
         MenuScreens.register(DCMenuTypes.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_MENU.get(), RedstonePoweredMachinePartManufactureMachineScreen::new);
 
 
-        MenuScreens.register(DCMenuTypes.BASIC_PRECISION_TELESCOPE_MENU.get(), BasicPerformanceAstronomicalTelescopeScreen::new);
-
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthAstronomyMultiblockEnergyStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_MENU.get(), BasicStrengthAstronomyMultiblockMaterialStorageScreen::new);
 
@@ -277,6 +275,14 @@ public class Degeneracycraft {
 
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_MENU.get(), BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageScreen::new);
+
+
+
+
+        MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_ASTROMICAL_TELESCOPE_MENU.get(), BasicPerformanceAstronomicalTelescopeScreen::new);
+
+
+
 
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_ELECTROLYSER_MENU.get(), BasicPerformanceElectrolyserScreen::new);
 

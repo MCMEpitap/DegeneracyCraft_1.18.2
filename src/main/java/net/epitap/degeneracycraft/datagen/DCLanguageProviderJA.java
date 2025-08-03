@@ -664,6 +664,9 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.TIN_NUGGET.get(), "スズ塊");
         add(DCBlocks.TIN_BLOCK.get(), "スズブロック");
 
+        add(DCItems.DESIGNATED_DATA_CHIP_MOON.get(), "指定データチップ [月]");
+        add(DCItems.STAR_DATA_STORAGE_MOON.get(), "天体データストレージ[月]");
+
 
         add(DCItems.PURIFIED_GRAPHITE_ARC_ELECTRODE.get(), "純化済黒鉛アーク電極");
 
@@ -1057,6 +1060,10 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("screen." + "degeneracycraft_pulverizer", "粉砕機 画面");
         add("jei." + "degeneracycraft_redstone_powered_machine_element_manufacture_machine", "レッドストーン動力機械要素製作機 レシピ");
         add("jei." + "degeneracycraft_redstone_powered_machine_part_manufacture_machine", "レッドストーン動力機械部品製作機 レシピ");
+
+
+        add("jei." + "basic_performance_astronomical_telescope", "基本性能天体望遠鏡 レシピ");
+
 
 
         add("jei." + "degeneracycraft_basic_performance_electrolyser", "基本性能電解槽 レシピ");

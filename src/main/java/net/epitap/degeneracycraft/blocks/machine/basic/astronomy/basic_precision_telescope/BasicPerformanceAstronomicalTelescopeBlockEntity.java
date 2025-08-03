@@ -3,8 +3,7 @@ package net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precisio
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_precision_telescope.BasicPrecisionTelescopeRecipe;
-import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeRecipe;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -230,8 +229,8 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<BasicPrecisionTelescopeRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPrecisionTelescopeRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
@@ -277,8 +276,8 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPrecisionTelescopeRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPrecisionTelescopeRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / (match.get().getRequiredTime() * 20F);
     }
@@ -294,8 +293,8 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPrecisionTelescopeRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPrecisionTelescopeRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return blockEntity.data.get(0) > match.get().getRequiredTime() * 20;
@@ -310,8 +309,8 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPrecisionTelescopeRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPrecisionTelescopeRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         return match.isPresent();
     }
@@ -323,8 +322,8 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPrecisionTelescopeRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPrecisionTelescopeRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
                 && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount();
@@ -337,8 +336,8 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPrecisionTelescopeRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPrecisionTelescopeRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
@@ -361,8 +360,8 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMultiblockEquipmentFabricatorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMultiblockEquipmentFabricatorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(2).getMaxStackSize();
     }
@@ -374,8 +373,8 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMultiblockEquipmentFabricatorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMultiblockEquipmentFabricatorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(2).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(2).isEmpty();
     }

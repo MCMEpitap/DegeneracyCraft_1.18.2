@@ -664,6 +664,9 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.TIN_NUGGET.get(), "Tin Nugget");
         add(DCBlocks.TIN_BLOCK.get(), "Tin Block");
 
+        add(DCItems.DESIGNATED_DATA_CHIP_MOON.get(), "Designated Data Chip [Moon]");
+        add(DCItems.STAR_DATA_STORAGE_MOON.get(), "Star Data Storage [Moon]");
+
 
         add(DCItems.PURIFIED_GRAPHITE_ARC_ELECTRODE.get(), "Purified Graphite Arc Electrode");
 
@@ -1071,6 +1074,10 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add("jei." + "degeneracycraft_redstone_powered_machine_element_manufacture_machine", "Redstone Powered Machine Element Manufacture Machine Recipe");
         add("jei." + "degeneracycraft_redstone_powered_machine_part_manufacture_machine", "Redstone Powered Machine Part Manufacture Machine Recipe");
+
+        add("jei." + "basic_performance_astronomical_telescope", "Basic Performance Astronomical Telescope Recipe");
+
+
 
         add("jei." + "degeneracycraft_basic_performance_electrolyser", "Basic Performance Electrolyser Recipe");
 

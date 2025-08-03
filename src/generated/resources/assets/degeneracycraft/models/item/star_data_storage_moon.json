@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "degeneracycraft:item/data_storage/astronomy/star_data_storage_moon"
+  }
+}

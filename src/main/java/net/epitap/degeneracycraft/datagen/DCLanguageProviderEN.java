@@ -1222,10 +1222,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "hydrogen_chloride" + ".formula", "Chemical Formula:HCl");
 
 
-        add("tooltip." + "degeneracycraft." + "requiredenergy.", "Required Energy:");
-        add("tooltip." + "degeneracycraft." + "requiredenergyusage.", "Required Energy Usage:");
-        add("tooltip." + "degeneracycraft." + "requiredtime.", "Required time:");
-        add("tooltip." + "degeneracycraft." + "sec.", " Sec");
+
 
 
         add("tooltip." + "degeneracycraft" + ".structure" + ".off", "No Multiblock Structure");
@@ -1241,6 +1238,12 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft" + ".material" + ".chance" + "50", "50% chance of gaining");
         add("tooltip." + "degeneracycraft" + ".material" + ".chance" + "25", "25% chance of gaining");
 
+        add("tooltip." + "degeneracycraft." + "requiredenergy.", "Required Energy:");
+        add("tooltip." + "degeneracycraft." + "requiredenergyusage.", "Required Energy Usage:");
+        add("tooltip." + "degeneracycraft." + "requiredtime.", "Required time:");
+        add("tooltip." + "degeneracycraft." + "sec.", " Sec");
+
+        add("tooltip." + "degeneracycraft." + "night.", "Work in Night");
 
         add("tooltip." + "degeneracycraft." + "requiredenergy." + "iron_bearing" + ".phase0", "Required Energy:0 FE");
         add("tooltip." + "degeneracycraft." + "requiredenergyusage." + "iron_bearing" + ".phase0", "Required Energy Usage:0 FE/t");

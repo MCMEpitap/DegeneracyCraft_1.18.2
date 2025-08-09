@@ -377,6 +377,14 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
 
+
+
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+
+
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(), RenderType.translucent());

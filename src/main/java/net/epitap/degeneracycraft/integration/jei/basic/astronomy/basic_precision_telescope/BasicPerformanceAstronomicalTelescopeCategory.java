@@ -64,6 +64,7 @@ public class BasicPerformanceAstronomicalTelescopeCategory implements IRecipeCat
         drawRequiredEnergy(recipe, stack);
         drawRequiredEnergyUsage(recipe, stack);
         drawRequiredTime(recipe, stack);
+        drawRequiredCondition(recipe, stack);
     }
 
     protected void drawPhase(PoseStack poseStack) {
@@ -104,6 +105,12 @@ public class BasicPerformanceAstronomicalTelescopeCategory implements IRecipeCat
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredtime."), 17, 127, 0xFFFFFF);
         fontRenderer.draw(poseStack, recipe.getRequiredTime() * 20 + " tick" + " " + "(" + recipe.getRequiredTime() + " Sec" + ")", 17, 137, 0xFFFFFF);
+    }
+
+    protected void drawRequiredCondition(BasicPerformanceAstronomicalTelescopeRecipe recipe, PoseStack poseStack) {
+        Minecraft minecraft = Minecraft.getInstance();
+        Font fontRenderer = minecraft.font;
+        fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.night."), 80, 127, 0xFFFFFF);
     }
 
 

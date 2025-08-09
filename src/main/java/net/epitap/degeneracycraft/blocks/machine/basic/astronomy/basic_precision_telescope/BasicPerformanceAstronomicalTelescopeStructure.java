@@ -17,7 +17,7 @@ import java.util.function.Supplier;
 public class BasicPerformanceAstronomicalTelescopeStructure {
     static int minX = -1, maxX = 1;
     static int minY = -1, maxY = 1;
-    static int minZ = -2, maxZ = 0;
+    static int minZ = -1, maxZ = 1;
     public static String[][][] structure0;
     public static String[][][] structure1;
     public static String[][][] structureH0;
@@ -50,10 +50,10 @@ public class BasicPerformanceAstronomicalTelescopeStructure {
 
         Map<String, Predicate<BlockState>> blockConditions = new HashMap<>();
         blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
-        blockConditions.put("G", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get()));
-        blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get()));
+//        blockConditions.put("G", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get()));
+        blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK.get()));
         blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
-        blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK.get()));
+        blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK.get()));
         blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
         blockConditions.put("A", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_BLOCK.get()));
 
@@ -105,10 +105,10 @@ public class BasicPerformanceAstronomicalTelescopeStructure {
 
         Map<String, Predicate<BlockState>> blockConditions = new HashMap<>();
         blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
-        blockConditions.put("G", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get()));
-        blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get()));
+//        blockConditions.put("G", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get()));
+        blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK.get()));
         blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
-        blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK.get()));
+        blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK.get()));
         blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
         blockConditions.put("A", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_BLOCK.get()));
         blockConditions.put("L", blockState -> blockState.is(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_BLOCK.get()));
@@ -183,14 +183,23 @@ public class BasicPerformanceAstronomicalTelescopeStructure {
 
         Map<String, Supplier<Block>> blockMapping = new HashMap<>();
         blockMapping.put("F", DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK);
-        blockMapping.put("G", DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK);
-        blockMapping.put("P", DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_HOLO_BLOCK);
+//        blockMapping.put("G", DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK);
+        blockMapping.put("P", DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK);
         blockMapping.put("S", DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK);
-        blockMapping.put("B", DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_HOLO_BLOCK);
+        blockMapping.put("B", DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_HOLO_BLOCK);
         blockMapping.put("E", DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK);
-        blockMapping.put("C", DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSING_CHAMBER_HOLO_BLOCK);
+        blockMapping.put("A", DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK);
         blockMapping.put("L", DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_HOLO_BLOCK);
 
+//        blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
+////        blockConditions.put("G", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get()));
+//        blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK.get()));
+//        blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
+//        blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK.get()));
+//        blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
+//        blockConditions.put("A", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_BLOCK.get()));
+//        blockConditions.put("L", blockState -> blockState.is(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_BLOCK.get()));
+//
         boolean displayHologram = blockEntity.itemHandler.getStackInSlot(3).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()) ||
                 blockEntity.itemHandler.getStackInSlot(3).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
 
@@ -272,10 +281,10 @@ public class BasicPerformanceAstronomicalTelescopeStructure {
     private static boolean isExpectedBlock(BlockState blockState, String blockKey) {
         return switch (blockKey) {
             case "F" -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-            case "G" -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get());
-            case "P" -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get());
+//            case "G" -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get());
+            case "P" -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK.get());
             case "S" -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get());
-            case "B" -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK.get());
+            case "B" -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK.get());
             case "E" -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get());
             case "A" -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_BLOCK.get());
             case "L" -> blockState.is(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_HOLO_BLOCK.get());

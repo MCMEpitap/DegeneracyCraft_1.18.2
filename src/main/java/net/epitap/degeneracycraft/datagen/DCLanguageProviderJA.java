@@ -1159,6 +1159,13 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("Lv0:Speed ×2.00,Energy Usage ×1.50", "Lv0マルチブロック:加工速度 ×2.00 要求電力量 ×1.50");
         add("Lv1:Speed ×3.00,Energy Usage ×2.00", "Lv1マルチブロック:加工速度 ×3.00 要求電力量 ×2.00");
 
+        add("tooltip." + "degeneracycraft." + "requiredenergy.", "要求電力総量:");
+        add("tooltip." + "degeneracycraft." + "requiredenergyusage.", "要求電力使用量:");
+        add("tooltip." + "degeneracycraft." + "requiredtime.", "要求時間:");
+        add("tooltip." + "degeneracycraft." + "sec.", " 秒");
+
+        add("tooltip." + "degeneracycraft." + "night.", "夜に稼働");
+
         add("tooltip." + "degeneracycraft." + "science." + "astronomy", "科学分野:天文学");
         add("tooltip." + "degeneracycraft." + "science." + "biology", "科学分野:生物");
         add("tooltip." + "degeneracycraft." + "science." + "chemistry", "科学分野:化学");
@@ -1211,11 +1218,6 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "hydrochloric_acid" + ".formula", "化学式:HCl");
         add("tooltip." + "degeneracycraft." + "hydrogen_chloride" + ".formula", "化学式:HCl");
 
-
-        add("tooltip." + "degeneracycraft." + "requiredenergy.", "要求電力総量:");
-        add("tooltip." + "degeneracycraft." + "requiredenergyusage.", "要求電力使用量:");
-        add("tooltip." + "degeneracycraft." + "requiredtime.", "要求時間:");
-        add("tooltip." + "degeneracycraft." + "sec.", " 秒");
 
 
         add("tooltip." + "degeneracycraft." + "requiredenergy." + "iron_bearing" + ".phase0", "要求電力総量:0 FE");

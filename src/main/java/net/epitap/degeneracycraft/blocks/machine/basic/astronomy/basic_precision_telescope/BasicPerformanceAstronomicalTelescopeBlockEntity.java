@@ -48,10 +48,8 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     public int counter;
     public int getProgressPercent;
     public int getProgressRandom;
-    public boolean formed0;
-    public boolean formed1;
-    public boolean formed2;
-    public boolean powered0_1;
+    public long getTime;
+
     public boolean isFormed;
     public boolean isPowered0;
     public final ItemStackHandler itemHandler = new ItemStackHandler(5) {
@@ -233,32 +231,49 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
                 .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
+                && isAboveAirBlock(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
-            blockEntity.getProgressRandom = (int) (Math.random() * 100);
+//            blockEntity.getProgressRandom = (int) (Math.random() * 100);
 
-            if (blockEntity.isPowered0) {
-                if (blockEntity.getProgressRandom <= 1) {
+//            if (blockEntity.isPowered0) {
+//                if (blockEntity.getProgressRandom <= 1) {
+//                    blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
+//                }
+//                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
+//                        * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
+//            } else if (blockEntity.isFormed) {
+//                if (blockEntity.getProgressRandom <= 0) {
+//                    blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
+//                }
+//                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
+//                        * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
+//            } else {
+//                if (blockEntity.getProgressRandom <= 0) {
+//                    blockEntity.counter++;
+//                }
+//                blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
+//            }
+            if(isTime(blockEntity)) {
+                if (blockEntity.isPowered0) {
                     blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
-                }
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
-                        * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-            } else if (blockEntity.isFormed) {
-                if (blockEntity.getProgressRandom <= 0) {
+                    blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
+                            * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
+                } else if (blockEntity.isFormed) {
                     blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
-                }
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
-                        * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-            } else {
-                if (blockEntity.getProgressRandom <= 0) {
+                    blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
+                            * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
+                } else {
                     blockEntity.counter++;
+                    blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
                 }
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
-            }
+                blockEntity.getProgressPercent = blockEntity.counter;
 //            blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
-            blockEntity.getProgressPercent = blockEntity.counter;
+            }
+
             if (craftCheck(blockEntity)) {
                 craftItem(blockEntity);
             }
+
             setChanged(level, pos, state);
 
         } else {
@@ -267,7 +282,6 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         }
         setChanged(level, pos, state);
     }
-
 
     private static boolean hasAmountEnergyRecipe(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
         Level level = blockEntity.level;
@@ -284,6 +298,32 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
 
     public static boolean isHaltDevice(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MACHINE_HALT_DEVICE.get());
+    }
+
+    private static boolean isTime(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
+        Level level = blockEntity.getLevel();
+        if (level != null) {
+            blockEntity.getTime = level.getDayTime();
+        }
+        return 12000 <= blockEntity.getTime && blockEntity.getTime <= 23999;
+    }
+
+    private static boolean isAboveAirBlock(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
+        Level level = blockEntity.getLevel();
+        BlockPos basePos = blockEntity.getBlockPos();
+
+        int maxY = level.getMaxBuildHeight() - 1;
+
+        int startY = basePos.getY() + 1;
+
+        for (int y = startY; y <= maxY; y++) {
+            BlockPos checkPos = new BlockPos(basePos.getX(), y, basePos.getZ());
+            if (!level.getBlockState(checkPos).isAir()) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public static boolean craftCheck(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
@@ -378,6 +418,16 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
 
         return blockEntity.itemHandler.getStackInSlot(2).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(2).isEmpty();
     }
+
+//    private static BlockPos getRelativePos(BlockPos basePos, int x, int y, int z, Direction facing) {
+//        return switch (facing) {
+//            case NORTH -> basePos.relative(Direction.WEST, x).relative(Direction.UP, y).relative(Direction.NORTH, z);
+//            case SOUTH -> basePos.relative(Direction.EAST, x).relative(Direction.UP, y).relative(Direction.SOUTH, z);
+//            case WEST -> basePos.relative(Direction.SOUTH, x).relative(Direction.UP, y).relative(Direction.WEST, z);
+//            case EAST -> basePos.relative(Direction.NORTH, x).relative(Direction.UP, y).relative(Direction.EAST, z);
+//            default -> basePos;
+//        };
+//    }
 
 }
 

@@ -38,7 +38,8 @@ public class PortModelRegistry {
 
         BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_BLOCK_EXTRACT("block/basic_performance_machine_data_installer_bus_block_extract"),
         BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_BLOCK_EXTRACT("block/basic_performance_machine_data_installer_port_block_extract"),
-
+        BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BUS_BLOCK_EXTRACT("block/basic_performance_designated_data_injector_bus_block_extract"),
+        BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_BLOCK_EXTRACT("block/basic_performance_designated_data_injector_port_block_extract"),
 
         BASIC_PERFORMANCE_ROCK_CRASHER_BUS_BLOCK_EXTRACT("block/basic_performance_rock_crasher_bus_block_extract"),
         BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK_EXTRACT("block/basic_performance_rock_crasher_port_block_extract"),

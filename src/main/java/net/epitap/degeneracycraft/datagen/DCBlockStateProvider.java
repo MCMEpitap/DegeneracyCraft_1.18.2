@@ -215,6 +215,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicTechnologyMultiblockEquipmentFabricatorPort();
         registerBasicTechnologyMultiblockEquipmentFabricatorPortHolo();
 
+        
+        
 
         registerBasicPerformanceMachineDataInstaller();
         registerBasicSpeedDataReader();
@@ -223,6 +225,17 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicPerformanceMachineDataInstallerBusHolo();
         registerBasicPerformanceMachineDataInstallerPort();
         registerBasicPerformanceMachineDataInstallerPortHolo();
+
+        registerBasicPerformanceDesignatedDataInjector();
+        registerBasicSpeedCalculationAuxiliaryWriteDevice();
+        registerBasicSpeedCalculationAuxiliaryWriteDeviceHolo();
+        registerBasicPerformanceDesignatedDataInjectorBus();
+        registerBasicPerformanceDesignatedDataInjectorBusHolo();
+        registerBasicPerformanceDesignatedDataInjectorPort();
+        registerBasicPerformanceDesignatedDataInjectorPortHolo();
+        
+        
+        
 
 
 
@@ -2752,7 +2765,104 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
+    private void registerBasicPerformanceDesignatedDataInjector() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_designated_data_injector_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/basic_performance_designated_data_injector_down"));
+        model.texture("up", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/basic_performance_designated_data_injector_up"));
+        model.texture("north", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/basic_performance_designated_data_injector_front"));
+        model.texture("south", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/basic_performance_designated_data_injector_side"));
+        model.texture("east", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/basic_performance_designated_data_injector_side"));
+        model.texture("west", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/basic_performance_designated_data_injector_side"));
+        model.texture("particle", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/basic_performance_designated_data_injector_front"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BLOCK.get(),
+                state -> model);
+    }
 
+    private void registerBasicSpeedCalculationAuxiliaryWriteDevice() {
+        BlockModelBuilder model = models().getBuilder("block/basic_speed_calculation_auxiliary_write_device_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block"));
+        model.texture("up", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block"));
+        model.texture("north", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block"));
+        model.texture("south", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block"));
+        model.texture("east", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block"));
+        model.texture("west", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block"));
+        orientedBlock(DCBlocks.BASIC_SPEED_CALCULATION_AUXILIARY_WRITE_DEVICE_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicSpeedCalculationAuxiliaryWriteDeviceHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_speed_calculation_auxiliary_write_device_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_holo_block"));
+        orientedBlock(DCBlocks.BASIC_SPEED_CALCULATION_AUXILIARY_WRITE_DEVICE_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceDesignatedDataInjectorBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_designated_data_injector_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceDesignatedDataInjectorBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_designated_data_injector_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+
+    private void registerBasicPerformanceDesignatedDataInjectorPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_designated_data_injector_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/port/basic_performance_designated_data_injector_port_block"));
+        model.texture("up", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/port/basic_performance_designated_data_injector_port_block"));
+        model.texture("north", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/port/basic_performance_designated_data_injector_port_block"));
+        model.texture("south", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/port/basic_performance_designated_data_injector_port_block"));
+        model.texture("east", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/port/basic_performance_designated_data_injector_port_block"));
+        model.texture("west", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/port/basic_performance_designated_data_injector_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/port/basic_performance_designated_data_injector_port_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceDesignatedDataInjectorPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_designated_data_injector_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/port/basic_performance_designated_data_injector_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/port/basic_performance_designated_data_injector_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/port/basic_performance_designated_data_injector_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/port/basic_performance_designated_data_injector_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/port/basic_performance_designated_data_injector_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/port/basic_performance_designated_data_injector_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/formal_science/basic_performance_designated_data_injector/port/basic_performance_designated_data_injector_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
 
 
 

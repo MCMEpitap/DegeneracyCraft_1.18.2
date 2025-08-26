@@ -11,6 +11,6 @@ public class BasicPerformanceAstronomicalTelescopeBusRenderer extends PortRender
 
     @Override
     public DCPortModel getModel() {
-        return DCPortModel.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK_EXTRACT;
+        return DCPortModel.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK_EXTRACT;
     }
 }

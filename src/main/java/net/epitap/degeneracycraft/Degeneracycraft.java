@@ -12,6 +12,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technol
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceScreen;
@@ -52,10 +53,10 @@ import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeBlockEntities;
 import net.epitap.degeneracycraft.transport.pipe.pipebase.PipeBlocks;
 import net.epitap.degeneracycraft.world.dimention.DCDimentions;
 import net.epitap.degeneracycraft.world.feature.ore.WorldGenVeinDataLoader;
+import net.epitap.degeneracycraft.world.feature.ore.check.*;
 import net.epitap.degeneracycraft.world.feature.ore.main.DCOresAPI;
 import net.epitap.degeneracycraft.world.feature.ore.main.DCOresClient;
 import net.epitap.degeneracycraft.world.feature.ore.main.DCOresFeatures;
-import net.epitap.degeneracycraft.world.feature.ore.check.*;
 import net.epitap.degeneracycraft.world.feature.ore.network.ClientProxy;
 import net.epitap.degeneracycraft.world.feature.ore.network.CommonConfig;
 import net.epitap.degeneracycraft.world.feature.ore.network.CommonProxy;
@@ -302,6 +303,7 @@ public class Degeneracycraft {
 
 
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_MACHINE_DARA_INSTALLER_MENU.get(), BasicPerformanceMachineDataInstallerScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_MENU.get(), BasicPerformanceDesignatedDataInjectorScreen::new);
 
 
 
@@ -427,6 +429,17 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_SPEED_DATA_READER_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_SPEED_CALCULATION_AUXILIARY_WRITE_DEVICE_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+
+
+
+
+
+
+
 
 
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_CRASHING_BASE_HOLO_BLOCK.get(), RenderType.translucent());

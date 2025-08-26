@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block",
+    "up": "degeneracycraft:block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block",
+    "north": "degeneracycraft:block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block",
+    "south": "degeneracycraft:block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block",
+    "east": "degeneracycraft:block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block",
+    "west": "degeneracycraft:block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block",
+    "particle": "degeneracycraft:block/multiblock/basic/formal_science/abilityblock/basic_speed_data_reader/basic_speed_data_reader_block"
+  }
+}

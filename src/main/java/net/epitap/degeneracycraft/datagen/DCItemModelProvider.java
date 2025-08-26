@@ -1164,7 +1164,22 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_machine_data_installer_port_holo_block"));
         basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_CIRCUIT.get());
-
+        
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_designated_data_injector_block"));
+        withExistingParent(DCBlocks.BASIC_SPEED_CALCULATION_AUXILIARY_WRITE_DEVICE_BLOCK.getId().getPath(),
+                modLoc("block/basic_speed_calculation_auxiliary_write_device_block"));
+        withExistingParent(DCBlocks.BASIC_SPEED_CALCULATION_AUXILIARY_WRITE_DEVICE_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_speed_calculation_auxiliary_write_device_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_designated_data_injector_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_designated_data_injector_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_designated_data_injector_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_designated_data_injector_port_holo_block"));
+        basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_CIRCUIT.get());
         
         
 

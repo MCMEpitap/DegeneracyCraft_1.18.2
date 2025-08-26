@@ -11,6 +11,6 @@ public class BasicPerformanceMachineDataInstallerPortRenderer extends PortRender
 
     @Override
     public DCPortModel getModel() {
-        return DCPortModel.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK_EXTRACT;
+        return DCPortModel.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_BLOCK_EXTRACT;
     }
 }

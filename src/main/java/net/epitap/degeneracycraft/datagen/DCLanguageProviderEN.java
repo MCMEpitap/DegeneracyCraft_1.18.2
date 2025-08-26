@@ -1005,6 +1005,21 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK.get(), "Basic Performance Machine Data Installer Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_CIRCUIT.get(), "Basic Performance Machine Data Installer Circuit");
 
+        add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BLOCK.get(), "Basic Performance Designated Data Injector");
+        add("tooltip." + "degeneracycraft." + "basic_performance_designated_data_injector_block",
+                "Basic Designated Data Injector. Create data chips for specific applications.");
+        add(DCBlocks.BASIC_SPEED_CALCULATION_AUXILIARY_WRITE_DEVICE_BLOCK.get(), "Basic Speed Calculation Auxiliary Write Device");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_designated_data_injector_block",
+                "For Basic Performance Designated Data Injector");
+        add(DCBlocks.BASIC_SPEED_CALCULATION_AUXILIARY_WRITE_DEVICE_HOLO_BLOCK.get(), "Basic Speed Calculation Auxiliary Write Device (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BUS_BLOCK.get(), "Basic Performance Designated Data Injector Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BUS_HOLO_BLOCK.get(), "Basic Performance Designated Data Injector Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_BLOCK.get(), "Basic Performance Designated Data Injector Port");
+        add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_HOLO_BLOCK.get(), "Basic Performance Designated Data Injector Port (Hologram)");
+        add(DCItems.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_CIRCUIT.get(), "Basic Performance Designated Data Injector Circuit");
+        
+        
+        
 
 
 
@@ -1090,6 +1105,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
 
         add("jei." + "degeneracycraft_basic_performance_machine_data_installer", "Basic Performance Machine Data Installer Recipe");
+        add("jei." + "degeneracycraft_basic_performance_designated_data_injector", "Basic Performance Designated Data Injector Recipe");
 
 
 

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_block",
+    "up": "degeneracycraft:block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_block",
+    "north": "degeneracycraft:block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_block",
+    "south": "degeneracycraft:block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_block",
+    "east": "degeneracycraft:block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_block",
+    "west": "degeneracycraft:block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_block",
+    "particle": "degeneracycraft:block/machine/basic/formal_science/basic_performance_designated_data_injector/bus/basic_performance_designated_data_injector_bus_block"
+  }
+}

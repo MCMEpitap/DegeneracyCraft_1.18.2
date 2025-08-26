@@ -1,0 +1,23 @@
+{
+  "type": "degeneracycraft:basic_performance_designated_data_injector_recipe",
+  "energy": 5000.0,
+  "time": 20.0,
+  "input0": {
+    "item": "minecraft:cobblestone"
+  },
+  "input1": {
+    "item": "minecraft:cobbled_deepslate"
+  },
+  "input2": {
+    "item": "degeneracycraft:basic_formal_science_memory_circuit"
+  },
+  "input3": {
+    "item": "minecraft:iron_ingot"
+  },
+  "input4": {
+    "item": "minecraft:quartz"
+  },
+  "output0": {
+    "item": "degeneracycraft:designated_data_chip_moon"
+  }
+}

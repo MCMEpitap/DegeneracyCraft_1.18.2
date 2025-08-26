@@ -998,6 +998,18 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK.get(), "基本性能機械データインストーラーポート (ホログラム)");
         add(DCItems.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_CIRCUIT.get(), "基本性能機械データインストーラー回路");
 
+        add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BLOCK.get(), "基本性能指定データ注入機");
+        add("tooltip." + "degeneracycraft." + "basic_performance_designated_data_injector_block",
+                "基本的な指定データ注入機. 特定の用途に使用するためのデータチップを作成する.");
+        add(DCBlocks.BASIC_SPEED_CALCULATION_AUXILIARY_WRITE_DEVICE_BLOCK.get(), "基本速度計算補助書込装置");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_designated_data_injector_block",
+                "基本性能指定データ注入機用");
+        add(DCBlocks.BASIC_SPEED_CALCULATION_AUXILIARY_WRITE_DEVICE_HOLO_BLOCK.get(), "基本速度計算補助書込装置 (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BUS_BLOCK.get(), "基本性能指定データ注入機バス");
+        add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BUS_HOLO_BLOCK.get(), "基本性能指定データ注入機バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_BLOCK.get(), "基本性能指定データ注入機ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_HOLO_BLOCK.get(), "基本性能指定データ注入機ポート (ホログラム)");
+        add(DCItems.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_CIRCUIT.get(), "基本性能指定データ注入機回路");
 
 
 
@@ -1079,6 +1091,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
         add("jei." + "degeneracycraft_basic_performance_machine_data_installer", "基本性能機械データインストーラー レシピ");
+        add("jei." + "degeneracycraft_basic_performance_designated_data_injector", "基本性能指定データ注入機 レシピ");
 
 
 

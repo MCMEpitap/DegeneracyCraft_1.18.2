@@ -189,8 +189,8 @@ public class BasicPerformanceMachineDataInstallerStructure {
         blockMapping.put("E", DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK);
         blockMapping.put("R", DCBlocks.BASIC_SPEED_DATA_READER_HOLO_BLOCK);
 
-        boolean displayHologram = blockEntity.itemHandler.getStackInSlot(3).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()) ||
-                blockEntity.itemHandler.getStackInSlot(3).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+        boolean displayHologram = blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()) ||
+                blockEntity.itemHandler.getStackInSlot(4).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
 
         if (!displayHologram) {
             removeHolograms(level, basePos, facing, blockMapping);

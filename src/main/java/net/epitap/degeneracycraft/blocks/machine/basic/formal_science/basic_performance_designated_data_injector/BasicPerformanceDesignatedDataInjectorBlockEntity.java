@@ -7,12 +7,14 @@ import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_per
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
+import net.epitap.degeneracycraft.networking.packet.DCItemStackSyncS2CPacket;
 import net.epitap.degeneracycraft.util.WrappedHandler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -21,6 +23,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -50,7 +53,7 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
     private int consumeCounter;
     public boolean isFormed;
     public boolean isPowered0;
-    public final ItemStackHandler itemHandler = new ItemStackHandler() {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(8) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -59,10 +62,10 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 6 -> false;
-                case 7 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
+                case 5 -> false;
+                case 6 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
                         || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
-                case 8 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
+                case 7 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -97,7 +100,7 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
                             itemHandler.isItemValid(0, stack))));
 
     public BasicPerformanceDesignatedDataInjectorBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+        super(DCBlockEntities.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {
@@ -340,7 +343,7 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
             blockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
             blockEntity.itemHandler.extractItem(2, match.get().getInput2Item().getCount(), false);
             blockEntity.itemHandler.extractItem(3, match.get().getInput3Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(4, match.get().getInput2Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(4, match.get().getInput4Item().getCount(), false);
         }
     }
 
@@ -359,8 +362,8 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
                 .getRecipeFor(BasicPerformanceDesignatedDataInjectorRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
-            blockEntity.itemHandler.setStackInSlot(3, new ItemStack(match.get().getOutput0Item().getItem(),
-                    blockEntity.itemHandler.getStackInSlot(3).getCount() + match.get().getOutput0Item().getCount()));
+            blockEntity.itemHandler.setStackInSlot(5, new ItemStack(match.get().getOutput0Item().getItem(),
+                    blockEntity.itemHandler.getStackInSlot(5).getCount() + match.get().getOutput0Item().getCount()));
             blockEntity.resetProgress();
             blockEntity.resetConsumeCount();
 
@@ -368,7 +371,7 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
     }
 
     public static boolean isHaltDevice(BasicPerformanceDesignatedDataInjectorBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MACHINE_HALT_DEVICE.get());
+        return blockEntity.itemHandler.getStackInSlot(7).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
     public void resetProgress() {
@@ -389,7 +392,7 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
         Optional<BasicPerformanceDesignatedDataInjectorRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceDesignatedDataInjectorRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(3).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(3).getMaxStackSize();
+        return blockEntity.itemHandler.getStackInSlot(5).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(5).getMaxStackSize();
     }
 
     private static boolean canInsertItemIntoOutputSlot(BasicPerformanceDesignatedDataInjectorBlockEntity blockEntity) {
@@ -402,6 +405,52 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
         Optional<BasicPerformanceDesignatedDataInjectorRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceDesignatedDataInjectorRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(3).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(3).isEmpty();
+        return blockEntity.itemHandler.getStackInSlot(5).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(5).isEmpty();
     }
+
+
+
+
+
+
+    public void insertRecipeInputsFromPlayer(ServerPlayer player, Recipe<?> recipe) {
+        if (!(recipe instanceof BasicPerformanceDesignatedDataInjectorRecipe r)) return;
+
+        player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(playerInv -> {
+            this.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(machineInv -> {
+                insertItemFromPlayer(playerInv, machineInv, r.getInput0Item(), 0);
+                insertItemFromPlayer(playerInv, machineInv, r.getInput1Item(), 1);
+                insertItemFromPlayer(playerInv, machineInv, r.getInput2Item(), 2);
+                insertItemFromPlayer(playerInv, machineInv, r.getInput3Item(), 3);
+                insertItemFromPlayer(playerInv, machineInv, r.getInput4Item(), 4);
+            });
+        });
+
+        this.setChanged();
+        this.level.sendBlockUpdated(this.worldPosition, this.getBlockState(), this.getBlockState(), 3);
+    }
+
+    private void insertItemFromPlayer(IItemHandler playerInv, IItemHandler machineInv, ItemStack required, int slotIndex) {
+        if (required.isEmpty()) return;
+        int needed = required.getCount();
+
+        for (int i = 0; i < playerInv.getSlots() && needed > 0; i++) {
+            ItemStack fromSlot = playerInv.getStackInSlot(i);
+            if (!fromSlot.sameItem(required)) continue;
+
+            int toExtract = Math.min(needed, fromSlot.getCount());
+            ItemStack extracted = playerInv.extractItem(i, toExtract, false);
+            ItemStack leftover = machineInv.insertItem(slotIndex, extracted, false);
+
+            needed = leftover.isEmpty() ? 0 : leftover.getCount();
+        }
+    }
+
+    public void setItemInSlot(int slot, ItemStack stack) {
+        this.itemHandler.setStackInSlot(slot, stack);
+        setChanged();
+        // クライアントに同期
+        DCMessages.sendToClients(new DCItemStackSyncS2CPacket(this.itemHandler, this.worldPosition));
+    }
+
 }

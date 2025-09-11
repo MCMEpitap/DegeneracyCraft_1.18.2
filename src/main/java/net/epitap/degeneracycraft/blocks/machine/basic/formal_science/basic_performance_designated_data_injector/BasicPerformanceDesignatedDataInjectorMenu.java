@@ -21,7 +21,7 @@ public class BasicPerformanceDesignatedDataInjectorMenu extends AbstractContaine
     private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 6;
+    public static final int TE_INVENTORY_SLOT_COUNT = 8;
     public final BasicPerformanceDesignatedDataInjectorBlockEntity blockEntity;
     public final Level level;
     public final ContainerData data;
@@ -39,12 +39,14 @@ public class BasicPerformanceDesignatedDataInjectorMenu extends AbstractContaine
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler, 0, 26, 7));
-            this.addSlot(new SlotItemHandler(handler, 1, 26, 25));
-            this.addSlot(new SlotItemHandler(handler, 2, 26, 43));
-            this.addSlot(new SlotItemHandler(handler, 3, 116, 25));
-            this.addSlot(new SlotItemHandler(handler, 4, 71, 59));
-            this.addSlot(new SlotItemHandler(handler, 5, 98, 62));
+            this.addSlot(new SlotItemHandler(handler, 0, 8, 7));
+            this.addSlot(new SlotItemHandler(handler, 1, 44, 7));
+            this.addSlot(new SlotItemHandler(handler, 2, 26, 25));
+            this.addSlot(new SlotItemHandler(handler, 3, 8, 43));
+            this.addSlot(new SlotItemHandler(handler, 4, 44, 43));
+            this.addSlot(new SlotItemHandler(handler, 5, 116, 25));
+            this.addSlot(new SlotItemHandler(handler, 6, 71, 59));
+            this.addSlot(new SlotItemHandler(handler, 7, 98, 62));
         });
         addDataSlots(data);
     }
@@ -65,37 +67,81 @@ public class BasicPerformanceDesignatedDataInjectorMenu extends AbstractContaine
         return this.blockEntity;
     }
 
+//    @Override
+//    public ItemStack quickMoveStack(Player playerIn, int index) {
+//        Slot sourceSlot = slots.get(index);
+//        if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;  //EMPTY_ITEM
+//        ItemStack sourceStack = sourceSlot.getItem();
+//        ItemStack copyOfSourceStack = sourceStack.copy();
+//
+//        // Check if the slot clicked is one of the vanilla container slots
+//        if (index < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
+//            // This is a vanilla container slot so merge the stack into the tile inventory
+//            if (!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX, TE_INVENTORY_FIRST_SLOT_INDEX
+//                    + TE_INVENTORY_SLOT_COUNT, false)) {
+//                return ItemStack.EMPTY;  // EMPTY_ITEM
+//            }
+//        } else if (index < TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT) {
+//            // This is a TE slot so merge the stack into the players inventory
+//            if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false)) {
+//                return ItemStack.EMPTY;
+//            }
+//        } else {
+//            System.out.println("Invalid slotIndex:" + index);
+//            return ItemStack.EMPTY;
+//        }
+//        // If stack size == 0 (the entire stack was moved) set slot contents to null
+//        if (sourceStack.getCount() == 0) {
+//            sourceSlot.set(ItemStack.EMPTY);
+//        } else {
+//            sourceSlot.setChanged();
+//        }
+//        sourceSlot.onTake(playerIn, sourceStack);
+//        return copyOfSourceStack;
+//
+//    }
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {
         Slot sourceSlot = slots.get(index);
-        if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;  //EMPTY_ITEM
+        if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;
+
         ItemStack sourceStack = sourceSlot.getItem();
         ItemStack copyOfSourceStack = sourceStack.copy();
 
-        // Check if the slot clicked is one of the vanilla container slots
+        // --- プレイヤー側から機械へ ---
         if (index < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
-            // This is a vanilla container slot so merge the stack into the tile inventory
-            if (!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX, TE_INVENTORY_FIRST_SLOT_INDEX
-                    + TE_INVENTORY_SLOT_COUNT, false)) {
-                return ItemStack.EMPTY;  // EMPTY_ITEM
+            // 入力スロット (0〜4)
+            if (tryMoveToRange(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX, TE_INVENTORY_FIRST_SLOT_INDEX + 5)) {
             }
-        } else if (index < TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT) {
-            // This is a TE slot so merge the stack into the players inventory
-            if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false)) {
+            // 出力スロット (5) → 直接は入れない
+            else if (tryMoveToRange(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX + 6, TE_INVENTORY_FIRST_SLOT_INDEX + 8)) {
+            }
+            else {
+                return ItemStack.EMPTY;
+            }
+        }
+        // --- 機械側からプレイヤーへ ---
+        else if (index < TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT) {
+            if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX,
+                    VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false)) {
                 return ItemStack.EMPTY;
             }
         } else {
             System.out.println("Invalid slotIndex:" + index);
             return ItemStack.EMPTY;
         }
-        // If stack size == 0 (the entire stack was moved) set slot contents to null
-        if (sourceStack.getCount() == 0) {
+
+        if (sourceStack.isEmpty()) {
             sourceSlot.set(ItemStack.EMPTY);
         } else {
             sourceSlot.setChanged();
         }
         sourceSlot.onTake(playerIn, sourceStack);
         return copyOfSourceStack;
+    }
+
+    private boolean tryMoveToRange(ItemStack stack, int start, int end) {
+        return this.moveItemStackTo(stack, start, end, false);
     }
 
     @Override

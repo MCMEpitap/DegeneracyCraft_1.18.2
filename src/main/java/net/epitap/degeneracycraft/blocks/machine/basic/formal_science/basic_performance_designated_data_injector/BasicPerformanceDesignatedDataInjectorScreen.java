@@ -18,7 +18,7 @@ import java.util.Optional;
 
 public class BasicPerformanceDesignatedDataInjectorScreen extends AbstractContainerScreen<BasicPerformanceDesignatedDataInjectorMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/formal_science/basic_performance_machine_data_installer/basic_performance_machine_data_installer_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/formal_science/basic_performance_designated_data_injector/basic_performance_designated_data_injector_gui.png");
     private EnergyInfoArea energyInfoArea;
 
 

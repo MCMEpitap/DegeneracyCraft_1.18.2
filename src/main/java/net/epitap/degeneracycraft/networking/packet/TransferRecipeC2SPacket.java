@@ -5,49 +5,52 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.level.Level;
 import net.minecraftforge.network.NetworkEvent;
 
-import java.util.Optional;
+import java.util.Objects;
 import java.util.function.Supplier;
 
 public class TransferRecipeC2SPacket {
-    private final BlockPos pos;
-    private final ResourceLocation recipeId;
 
-    public TransferRecipeC2SPacket(BlockPos pos, Recipe<?> recipe) {
+    private final BlockPos pos;
+    private final String recipeId; // ResourceLocationの文字列で送る
+
+    public TransferRecipeC2SPacket(BlockPos pos, String recipeId) {
         this.pos = pos;
-        this.recipeId = recipe.getId();
+        this.recipeId = recipeId;
     }
 
     public TransferRecipeC2SPacket(FriendlyByteBuf buf) {
         this.pos = buf.readBlockPos();
-        this.recipeId = buf.readResourceLocation();
+        this.recipeId = buf.readUtf();
     }
 
     public void toBytes(FriendlyByteBuf buf) {
         buf.writeBlockPos(pos);
-        buf.writeResourceLocation(recipeId);
+        buf.writeUtf(recipeId);
     }
 
-    public void handle(Supplier<NetworkEvent.Context> ctx) {
-        ctx.get().enqueueWork(() -> {
-            ServerPlayer player = ctx.get().getSender();
+    public boolean handle(Supplier<NetworkEvent.Context> supplier) {
+        NetworkEvent.Context context = supplier.get();
+        context.enqueueWork(() -> {
+            ServerPlayer player = context.getSender();
             if (player == null) return;
-            Level level = player.level;
-            if (!(level.getBlockEntity(pos) instanceof BasicPerformanceDesignatedDataInjectorBlockEntity be)) return;
 
-            Optional<? extends Recipe<?>> opt = level.getRecipeManager().byKey(recipeId);
-            if (opt.isEmpty()) return;
+            player.level.getRecipeManager().byKey(Objects.requireNonNull(ResourceLocation.tryParse(recipeId)))
+                    .ifPresent(recipe -> {
+                        if (player.level.getBlockEntity(pos) instanceof BasicPerformanceDesignatedDataInjectorBlockEntity blockEntity) {
+                            // サーバー側でアイテム補充
+                            blockEntity.insertRecipeInputsFromPlayer(player, recipe);
 
-            be.insertRecipeInputsFromPlayer(player, opt.get());
-
-            // 同期
-            be.setChanged();
-            level.sendBlockUpdated(pos, be.getBlockState(), be.getBlockState(), 3);
+                            // クライアントに同期
+                            net.epitap.degeneracycraft.networking.DCMessages.sendToClients(
+                                    new net.epitap.degeneracycraft.networking.packet.DCItemStackSyncS2CPacket(
+                                            blockEntity.itemHandler, blockEntity.getBlockPos()
+                                    )
+                            );
+                        }
+                    });
         });
-        ctx.get().setPacketHandled(true);
+        return true;
     }
 }
-

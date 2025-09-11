@@ -235,8 +235,8 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
 
             if (checkConsumeCount(blockEntity)) {
-                consumeItem(blockEntity);
-                blockEntity.consumeCount();
+//
+//                blockEntity.consumeCount();
             }
 
             if (blockEntity.isPowered0) {
@@ -254,6 +254,7 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
             blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
             if (craftCheck(blockEntity)) {
                 craftItem(blockEntity);
+                consumeItem(blockEntity);
             }
             setChanged(level, pos, state);
         } else {

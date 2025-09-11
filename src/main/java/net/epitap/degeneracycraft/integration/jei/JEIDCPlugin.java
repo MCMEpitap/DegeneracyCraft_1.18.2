@@ -42,6 +42,7 @@ import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_techno
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_designated_data_injector.CommonRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherCategory;
@@ -54,7 +55,6 @@ import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machi
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineRecipeCategory;
-import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_designated_data_injector.CommonRecipeTransferHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -305,21 +305,13 @@ public class JEIDCPlugin implements IModPlugin {
 
     @Override
     public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
-//        @SuppressWarnings("unchecked")
-//        RecipeType<Recipe<?>> type = new RecipeType<>(
-//                new ResourceLocation("degeneracycraft", "basic_performance_machine_data_installer_recipe"),
-//                BasicPerformanceDesignatedDataInjectorRecipe.class
-//        );
-//        registration.addRecipeTransferHandler(new CommonRecipeTransferHandler<>(
-//                BasicPerformanceDesignatedDataInjectorMenu.class,
-//                0, 5,
-//                8, 36
+
 //        ),BasicPerformanceDesignatedDataInjectorRecipeCategory.TYPE);
 //        registration.addRecipeTransferHandler(
 //                BasicPerformanceDesignatedDataInjectorMenu.class,
 //                BasicPerformanceDesignatedDataInjectorRecipeCategory.TYPE,
 //                0, 5,   // マシンのレシピスロット (0～4)
-//                8, 28   // プレイヤーインベントリスロット (8～35)
+//                8, 36   // プレイヤーインベントリスロット (8～35)
 //        );
 
         registration.addRecipeTransferHandler(

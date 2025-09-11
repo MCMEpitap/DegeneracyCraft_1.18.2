@@ -67,71 +67,31 @@ public class BasicPerformanceDesignatedDataInjectorMenu extends AbstractContaine
         return this.blockEntity;
     }
 
-//    @Override
-//    public ItemStack quickMoveStack(Player playerIn, int index) {
-//        Slot sourceSlot = slots.get(index);
-//        if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;  //EMPTY_ITEM
-//        ItemStack sourceStack = sourceSlot.getItem();
-//        ItemStack copyOfSourceStack = sourceStack.copy();
-//
-//        // Check if the slot clicked is one of the vanilla container slots
-//        if (index < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
-//            // This is a vanilla container slot so merge the stack into the tile inventory
-//            if (!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX, TE_INVENTORY_FIRST_SLOT_INDEX
-//                    + TE_INVENTORY_SLOT_COUNT, false)) {
-//                return ItemStack.EMPTY;  // EMPTY_ITEM
-//            }
-//        } else if (index < TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT) {
-//            // This is a TE slot so merge the stack into the players inventory
-//            if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false)) {
-//                return ItemStack.EMPTY;
-//            }
-//        } else {
-//            System.out.println("Invalid slotIndex:" + index);
-//            return ItemStack.EMPTY;
-//        }
-//        // If stack size == 0 (the entire stack was moved) set slot contents to null
-//        if (sourceStack.getCount() == 0) {
-//            sourceSlot.set(ItemStack.EMPTY);
-//        } else {
-//            sourceSlot.setChanged();
-//        }
-//        sourceSlot.onTake(playerIn, sourceStack);
-//        return copyOfSourceStack;
-//
-//    }
     @Override
     public ItemStack quickMoveStack(Player playerIn, int index) {
         Slot sourceSlot = slots.get(index);
         if (sourceSlot == null || !sourceSlot.hasItem()) return ItemStack.EMPTY;
-
         ItemStack sourceStack = sourceSlot.getItem();
         ItemStack copyOfSourceStack = sourceStack.copy();
 
-        // --- プレイヤー側から機械へ ---
+        // Check if the slot clicked is one of the vanilla container slots
         if (index < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
-            // 入力スロット (0〜4)
-            if (tryMoveToRange(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX, TE_INVENTORY_FIRST_SLOT_INDEX + 5)) {
+            // This is a vanilla container slot so merge the stack into the tile inventory
+            if (!moveItemStackTo(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX, TE_INVENTORY_FIRST_SLOT_INDEX
+                    + TE_INVENTORY_SLOT_COUNT, false)) {
+                return ItemStack.EMPTY;  // EMPTY_ITEM
             }
-            // 出力スロット (5) → 直接は入れない
-            else if (tryMoveToRange(sourceStack, TE_INVENTORY_FIRST_SLOT_INDEX + 6, TE_INVENTORY_FIRST_SLOT_INDEX + 8)) {
-            }
-            else {
-                return ItemStack.EMPTY;
-            }
-        }
-        // --- 機械側からプレイヤーへ ---
-        else if (index < TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT) {
-            if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX,
-                    VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false)) {
+        } else if (index < TE_INVENTORY_FIRST_SLOT_INDEX + TE_INVENTORY_SLOT_COUNT) {
+            // This is a TE slot so merge the stack into the players inventory
+            if (!moveItemStackTo(sourceStack, VANILLA_FIRST_SLOT_INDEX, VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT, false)) {
                 return ItemStack.EMPTY;
             }
         } else {
             System.out.println("Invalid slotIndex:" + index);
             return ItemStack.EMPTY;
         }
-
-        if (sourceStack.isEmpty()) {
+        // If stack size == 0 (the entire stack was moved) set slot contents to null
+        if (sourceStack.getCount() == 0) {
             sourceSlot.set(ItemStack.EMPTY);
         } else {
             sourceSlot.setChanged();
@@ -140,9 +100,6 @@ public class BasicPerformanceDesignatedDataInjectorMenu extends AbstractContaine
         return copyOfSourceStack;
     }
 
-    private boolean tryMoveToRange(ItemStack stack, int start, int end) {
-        return this.moveItemStackTo(stack, start, end, false);
-    }
 
     @Override
     public boolean stillValid(Player player) {

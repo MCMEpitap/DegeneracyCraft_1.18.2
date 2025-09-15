@@ -3,7 +3,7 @@ package net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_techno
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorRecipe;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -13,6 +13,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -21,6 +22,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -225,16 +227,11 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<BasicTechnologyMultiblockEquipmentFabricatorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMultiblockEquipmentFabricatorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyMachinePartProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachinePartProcessorRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
-
-            if (checkConsumeCount(blockEntity)) {
-                consumeItem(blockEntity);
-                blockEntity.consumeCount();
-            }
 
             if (blockEntity.isPowered0) {
                 blockEntity.counter += blockEntity.BT_MP_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
@@ -250,12 +247,12 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
             }
             blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
             if (craftCheck(blockEntity)) {
+                consumeItem(blockEntity);
                 craftItem(blockEntity);
             }
             setChanged(level, pos, state);
         } else {
             blockEntity.resetProgress();
-            blockEntity.resetConsumeCount();
             setChanged(level, pos, state);
         }
         setChanged(level, pos, state);
@@ -268,8 +265,8 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMultiblockEquipmentFabricatorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMultiblockEquipmentFabricatorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyMachinePartProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachinePartProcessorRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return blockEntity.data.get(0) >= match.get().getRequiredTime() * 20;
@@ -284,8 +281,8 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMultiblockEquipmentFabricatorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMultiblockEquipmentFabricatorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyMachinePartProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachinePartProcessorRecipe.Type.INSTANCE, inventory, level);
 
         return match.isPresent();
     }
@@ -297,8 +294,8 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMultiblockEquipmentFabricatorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMultiblockEquipmentFabricatorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyMachinePartProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachinePartProcessorRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
                 && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
@@ -318,14 +315,10 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMultiblockEquipmentFabricatorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMultiblockEquipmentFabricatorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyMachinePartProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachinePartProcessorRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
-    }
-
-    public static boolean checkConsumeCount(BasicTechnologyMachinePartProcessorBlockEntity blockEntity) {
-        return blockEntity.consumeCounter == 0;
     }
 
     private static void consumeItem(BasicTechnologyMachinePartProcessorBlockEntity blockEntity) {
@@ -335,8 +328,8 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMultiblockEquipmentFabricatorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMultiblockEquipmentFabricatorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyMachinePartProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachinePartProcessorRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
@@ -351,10 +344,6 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
         }
     }
 
-    public void consumeCount() {
-        this.consumeCounter = 1;
-    }
-
     public static boolean isHaltDevice(BasicTechnologyMachinePartProcessorBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(11).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
@@ -366,15 +355,14 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMultiblockEquipmentFabricatorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMultiblockEquipmentFabricatorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyMachinePartProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachinePartProcessorRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             blockEntity.itemHandler.setStackInSlot(9, new ItemStack(match.get().getOutput0Item().getItem(),
                     blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
 
             blockEntity.resetProgress();
-            blockEntity.resetConsumeCount();
         }
     }
 
@@ -385,8 +373,8 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
             inventory.setItem(i, this.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMultiblockEquipmentFabricatorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMultiblockEquipmentFabricatorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyMachinePartProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachinePartProcessorRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return (this.data.get(0) / (match.get().getRequiredTime() * 20)) * 100;
@@ -398,10 +386,6 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
         this.counter = 0;
     }
 
-    public void resetConsumeCount() {
-        this.consumeCounter = 0;
-    }
-
     private static boolean hasNotReachedStackLimit(BasicTechnologyMachinePartProcessorBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
@@ -409,8 +393,8 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMultiblockEquipmentFabricatorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMultiblockEquipmentFabricatorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyMachinePartProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachinePartProcessorRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
     }
@@ -422,10 +406,53 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicTechnologyMultiblockEquipmentFabricatorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicTechnologyMultiblockEquipmentFabricatorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyMachinePartProcessorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyMachinePartProcessorRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(9).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(9).isEmpty();
     }
 
+    public void insertRecipeInputsFromPlayer(ServerPlayer player, Recipe<?> recipe, boolean shift) {
+        if (!(recipe instanceof BasicTechnologyMachinePartProcessorRecipe recipeData)) return;
+
+        player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(playerInv -> {
+            this.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(machineInv -> {
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput0Item(), 0, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput1Item(), 1, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput2Item(), 2, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput3Item(), 3, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput4Item(), 4, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput5Item(), 5, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput6Item(), 6, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput7Item(), 7, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput8Item(), 8, shift);
+            });
+        });
+
+        this.setChanged();
+        this.level.sendBlockUpdated(this.worldPosition, this.getBlockState(), this.getBlockState(), 3);
+    }
+
+
+    private void insertItemFromPlayer(IItemHandler playerInv, IItemHandler machineInv, ItemStack required, int slotIndex, boolean shift) {
+        if (required.isEmpty()) return;
+
+        int needed = shift ? Integer.MAX_VALUE : required.getCount();
+
+        for (int i = 0; i < playerInv.getSlots() && needed > 0; i++) {
+            ItemStack fromSlot = playerInv.getStackInSlot(i);
+            if (!fromSlot.sameItem(required)) continue;
+
+            int toExtract = Math.min(needed, fromSlot.getCount());
+            ItemStack extracted = playerInv.extractItem(i, toExtract, false);
+            ItemStack leftover = machineInv.insertItem(slotIndex, extracted, false);
+
+            if (!leftover.isEmpty()) {
+                needed -= (toExtract - leftover.getCount());
+                playerInv.insertItem(i, leftover, false);
+            } else {
+                needed -= toExtract;
+            }
+        }
+    }
 }

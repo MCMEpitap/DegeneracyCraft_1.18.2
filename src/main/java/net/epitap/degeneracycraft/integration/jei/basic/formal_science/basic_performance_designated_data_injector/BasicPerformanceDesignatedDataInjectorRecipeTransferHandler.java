@@ -8,7 +8,9 @@ import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.TransferRecipeC2SPacket;
 import net.minecraft.world.entity.player.Player;
 
-public class CommonRecipeTransferHandler<T extends BasicPerformanceDesignatedDataInjectorMenu, R extends BasicPerformanceDesignatedDataInjectorRecipe>
+import javax.annotation.Nullable;
+
+public class BasicPerformanceDesignatedDataInjectorRecipeTransferHandler<T extends BasicPerformanceDesignatedDataInjectorMenu, R extends BasicPerformanceDesignatedDataInjectorRecipe>
         implements IRecipeTransferHandler<T, BasicPerformanceDesignatedDataInjectorRecipe> {
 
     private final Class<T> containerClass;
@@ -17,9 +19,9 @@ public class CommonRecipeTransferHandler<T extends BasicPerformanceDesignatedDat
     private final int inventorySlotStart;
     private final int inventorySlotCount;
 
-    public CommonRecipeTransferHandler(Class<T> containerClass,
-                                       int recipeSlotStart, int recipeSlotCount,
-                                       int inventorySlotStart, int inventorySlotCount) {
+    public BasicPerformanceDesignatedDataInjectorRecipeTransferHandler(Class<T> containerClass,
+                                                                       int recipeSlotStart, int recipeSlotCount,
+                                                                       int inventorySlotStart, int inventorySlotCount) {
         this.containerClass = containerClass;
         this.recipeSlotStart = recipeSlotStart;
         this.recipeSlotCount = recipeSlotCount;
@@ -39,7 +41,7 @@ public class CommonRecipeTransferHandler<T extends BasicPerformanceDesignatedDat
 
 
     @Override
-    public IRecipeTransferError transferRecipe(
+    public @Nullable IRecipeTransferError transferRecipe(
             BasicPerformanceDesignatedDataInjectorMenu container,
             BasicPerformanceDesignatedDataInjectorRecipe recipe,
             IRecipeSlotsView recipeSlots,
@@ -47,10 +49,13 @@ public class CommonRecipeTransferHandler<T extends BasicPerformanceDesignatedDat
             boolean maxTransfer,
             boolean doTransfer
     ) {
-        // doTransfer が false の場合はチェックだけで終了
-        if (!doTransfer) return null;
-        DCMessages.sendToServer(new TransferRecipeC2SPacket(container.blockEntity.getBlockPos(), recipe.getId().toString()));
+        if (!doTransfer) {
+            return null;
+        }
+
+        DCMessages.sendToServer(new TransferRecipeC2SPacket(container.blockEntity.getBlockPos(),recipe.getId(),maxTransfer)
+        );
+
         return null;
     }
-
 }

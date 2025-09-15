@@ -8,6 +8,7 @@ import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
+import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
@@ -57,6 +58,10 @@ public class BasicPerformanceElectrolyserRecipeCategory implements IRecipeCatego
     public IDrawable getIcon() {
         return this.icon;
     }
+
+
+    public static final RecipeType<BasicPerformanceElectrolyserRecipe> TYPE =
+            new RecipeType<>(UID, BasicPerformanceElectrolyserRecipe.class);
 
     @Override
     public void draw(BasicPerformanceElectrolyserRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {

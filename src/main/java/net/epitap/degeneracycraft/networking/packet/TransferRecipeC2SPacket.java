@@ -1,56 +1,121 @@
 package net.epitap.degeneracycraft.networking.packet;
 
+import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkEvent;
 
-import java.util.Objects;
 import java.util.function.Supplier;
 
 public class TransferRecipeC2SPacket {
-
+    private final ResourceLocation recipeId;
     private final BlockPos pos;
-    private final String recipeId; // ResourceLocationの文字列で送る
+    private final boolean shift;
 
-    public TransferRecipeC2SPacket(BlockPos pos, String recipeId) {
+    public TransferRecipeC2SPacket(BlockPos pos, ResourceLocation recipeId, boolean shift) {
         this.pos = pos;
         this.recipeId = recipeId;
+        this.shift = shift;
     }
 
     public TransferRecipeC2SPacket(FriendlyByteBuf buf) {
+        this.recipeId = buf.readResourceLocation();
         this.pos = buf.readBlockPos();
-        this.recipeId = buf.readUtf();
+        this.shift = buf.readBoolean();
     }
 
+    // --- エンコード ---
     public void toBytes(FriendlyByteBuf buf) {
+        buf.writeResourceLocation(recipeId);
         buf.writeBlockPos(pos);
-        buf.writeUtf(recipeId);
+        buf.writeBoolean(shift);
     }
 
-    public boolean handle(Supplier<NetworkEvent.Context> supplier) {
-        NetworkEvent.Context context = supplier.get();
-        context.enqueueWork(() -> {
-            ServerPlayer player = context.getSender();
+    public void handle(Supplier<NetworkEvent.Context> ctx) {
+        ctx.get().enqueueWork(() -> {
+            ServerPlayer player = ctx.get().getSender();
             if (player == null) return;
 
-            player.level.getRecipeManager().byKey(Objects.requireNonNull(ResourceLocation.tryParse(recipeId)))
-                    .ifPresent(recipe -> {
-                        if (player.level.getBlockEntity(pos) instanceof BasicPerformanceDesignatedDataInjectorBlockEntity blockEntity) {
-                            // サーバー側でアイテム補充
-                            blockEntity.insertRecipeInputsFromPlayer(player, recipe);
+            player.level.getRecipeManager().byKey(recipeId).ifPresent(recipe -> {
+                if (player.level.getBlockEntity(pos) instanceof RedstonePoweredMachineElementManufactureMachineBlockEntity blockEntity) {
+                    blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
+                }
 
-                            // クライアントに同期
-                            net.epitap.degeneracycraft.networking.DCMessages.sendToClients(
-                                    new net.epitap.degeneracycraft.networking.packet.DCItemStackSyncS2CPacket(
-                                            blockEntity.itemHandler, blockEntity.getBlockPos()
-                                    )
-                            );
-                        }
-                    });
+
+
+                if (player.level.getBlockEntity(pos) instanceof BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
+                    blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
+                }
+
+
+
+                if (player.level.getBlockEntity(pos) instanceof BasicPerformanceElectrolyserBlockEntity blockEntity) {
+                    blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
+                }
+
+
+
+                if (player.level.getBlockEntity(pos) instanceof BasicTechnologyCircuitBuilderBlockEntity blockEntity) {
+                    blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
+                }
+                if (player.level.getBlockEntity(pos) instanceof BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
+                    blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
+                }
+                if (player.level.getBlockEntity(pos) instanceof BasicTechnologyMachineManufacturerBlockEntity blockEntity) {
+                    blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
+                }
+                if (player.level.getBlockEntity(pos) instanceof BasicTechnologyMachinePartProcessorBlockEntity blockEntity) {
+                    blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
+                }
+                if (player.level.getBlockEntity(pos) instanceof BasicTechnologyMultiblockEquipmentFabricatorBlockEntity blockEntity) {
+                    blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
+                }
+                if (player.level.getBlockEntity(pos) instanceof BasicTechnologyUniversalAssemblerBlockEntity blockEntity) {
+                    blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
+                }
+
+
+
+                if (player.level.getBlockEntity(pos) instanceof BasicPerformanceDesignatedDataInjectorBlockEntity blockEntity) {
+                    blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
+                }
+                if (player.level.getBlockEntity(pos) instanceof BasicPerformanceDesignatedDataInjectorBlockEntity blockEntity) {
+                    blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
+                }
+
+
+
+                if (player.level.getBlockEntity(pos) instanceof BasicPerformanceRockCrasherBlockEntity blockEntity) {
+                    blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
+                }
+
+
+
+                if (player.level.getBlockEntity(pos) instanceof BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
+                    blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
+                }
+                if (player.level.getBlockEntity(pos) instanceof BasicPerformanceFormingMachineBlockEntity blockEntity) {
+                    blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
+                }
+
+
+            });
         });
-        return true;
+        ctx.get().setPacketHandled(true);
     }
+
 }

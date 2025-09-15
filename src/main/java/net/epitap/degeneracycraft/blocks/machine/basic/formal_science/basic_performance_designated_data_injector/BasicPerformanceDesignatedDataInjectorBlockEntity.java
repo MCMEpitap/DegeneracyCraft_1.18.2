@@ -7,7 +7,6 @@ import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_per
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
-import net.epitap.degeneracycraft.networking.packet.DCItemStackSyncS2CPacket;
 import net.epitap.degeneracycraft.util.WrappedHandler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -234,11 +233,6 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
 
-            if (checkConsumeCount(blockEntity)) {
-//
-//                blockEntity.consumeCount();
-            }
-
             if (blockEntity.isPowered0) {
                 blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
@@ -259,7 +253,6 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
             setChanged(level, pos, state);
         } else {
             blockEntity.resetProgress();
-            blockEntity.resetConsumeCount();
             setChanged(level, pos, state);
         }
         setChanged(level, pos, state);
@@ -325,10 +318,6 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
         return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
     }
 
-    public static boolean checkConsumeCount(BasicPerformanceDesignatedDataInjectorBlockEntity blockEntity) {
-        return blockEntity.consumeCounter == 0;
-    }
-
     private static void consumeItem(BasicPerformanceDesignatedDataInjectorBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
@@ -348,10 +337,6 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
         }
     }
 
-    public void consumeCount() {
-        this.consumeCounter = 1;
-    }
-
     private static void craftItem(BasicPerformanceDesignatedDataInjectorBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
@@ -366,7 +351,6 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
             blockEntity.itemHandler.setStackInSlot(5, new ItemStack(match.get().getOutput0Item().getItem(),
                     blockEntity.itemHandler.getStackInSlot(5).getCount() + match.get().getOutput0Item().getCount()));
             blockEntity.resetProgress();
-            blockEntity.resetConsumeCount();
 
         }
     }
@@ -377,10 +361,6 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
 
     public void resetProgress() {
         this.counter = 0;
-    }
-
-    public void resetConsumeCount() {
-        this.consumeCounter = 0;
     }
 
     private static boolean hasNotReachedStackLimit(BasicPerformanceDesignatedDataInjectorBlockEntity blockEntity) {
@@ -409,21 +389,16 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
         return blockEntity.itemHandler.getStackInSlot(5).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(5).isEmpty();
     }
 
-
-
-
-
-
-    public void insertRecipeInputsFromPlayer(ServerPlayer player, Recipe<?> recipe) {
-        if (!(recipe instanceof BasicPerformanceDesignatedDataInjectorRecipe r)) return;
+    public void insertRecipeInputsFromPlayer(ServerPlayer player, Recipe<?> recipe, boolean shift) {
+        if (!(recipe instanceof BasicPerformanceDesignatedDataInjectorRecipe recipeData)) return;
 
         player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(playerInv -> {
             this.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(machineInv -> {
-                insertItemFromPlayer(playerInv, machineInv, r.getInput0Item(), 0);
-                insertItemFromPlayer(playerInv, machineInv, r.getInput1Item(), 1);
-                insertItemFromPlayer(playerInv, machineInv, r.getInput2Item(), 2);
-                insertItemFromPlayer(playerInv, machineInv, r.getInput3Item(), 3);
-                insertItemFromPlayer(playerInv, machineInv, r.getInput4Item(), 4);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput0Item(), 0, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput1Item(), 1, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput2Item(), 2, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput3Item(), 3, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput4Item(), 4, shift);
             });
         });
 
@@ -431,9 +406,11 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
         this.level.sendBlockUpdated(this.worldPosition, this.getBlockState(), this.getBlockState(), 3);
     }
 
-    private void insertItemFromPlayer(IItemHandler playerInv, IItemHandler machineInv, ItemStack required, int slotIndex) {
+
+    private void insertItemFromPlayer(IItemHandler playerInv, IItemHandler machineInv, ItemStack required, int slotIndex, boolean shift) {
         if (required.isEmpty()) return;
-        int needed = required.getCount();
+
+        int needed = shift ? Integer.MAX_VALUE : required.getCount();
 
         for (int i = 0; i < playerInv.getSlots() && needed > 0; i++) {
             ItemStack fromSlot = playerInv.getStackInSlot(i);
@@ -443,15 +420,12 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
             ItemStack extracted = playerInv.extractItem(i, toExtract, false);
             ItemStack leftover = machineInv.insertItem(slotIndex, extracted, false);
 
-            needed = leftover.isEmpty() ? 0 : leftover.getCount();
+            if (!leftover.isEmpty()) {
+                needed -= (toExtract - leftover.getCount());
+                playerInv.insertItem(i, leftover, false);
+            } else {
+                needed -= toExtract;
+            }
         }
     }
-
-    public void setItemInSlot(int slot, ItemStack stack) {
-        this.itemHandler.setStackInSlot(slot, stack);
-        setChanged();
-        // クライアントに同期
-        DCMessages.sendToClients(new DCItemStackSyncS2CPacket(this.itemHandler, this.worldPosition));
-    }
-
 }

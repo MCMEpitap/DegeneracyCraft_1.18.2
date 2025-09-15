@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_rock_crasher;
+package net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_precision_telescope;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.constants.VanillaTypes;
@@ -8,6 +8,7 @@ import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
+import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
@@ -21,16 +22,16 @@ import net.minecraft.world.item.ItemStack;
 import javax.annotation.Nonnull;
 
 
-public class BasicPerformanceRockCrasherCategory implements IRecipeCategory<BasicPerformanceRockCrasherRecipe> {
-    public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_performance_rock_crasher_recipe");
+public class BasicPerformanceAstronomicalTelescopeRecipeCategory implements IRecipeCategory<BasicPerformanceAstronomicalTelescopeRecipe> {
+    public final static ResourceLocation UID = new ResourceLocation(Degeneracycraft.MOD_ID, "basic_performance_astronomical_telescope_recipe");
     public final static ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/geo_science/basic_performance_rock_crasher/basic_performance_rock_crasher_uid.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/astronomy/basic_performance_astronomical_telescope/basic_performance_astronomical_telescope_uid.png");
     private final IDrawable background;
     private final IDrawable icon;
 
-    public BasicPerformanceRockCrasherCategory(IGuiHelper helper) {
+    public BasicPerformanceAstronomicalTelescopeRecipeCategory(IGuiHelper helper) {
         this.background = helper.createDrawable(TEXTURE, 0, 0, 176, 154);
-        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get()));
+        this.icon = helper.createDrawableIngredient(VanillaTypes.ITEM, new ItemStack(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get()));
     }
 
     @Override
@@ -39,13 +40,13 @@ public class BasicPerformanceRockCrasherCategory implements IRecipeCategory<Basi
     }
 
     @Override
-    public Class<? extends BasicPerformanceRockCrasherRecipe> getRecipeClass() {
-        return BasicPerformanceRockCrasherRecipe.class;
+    public Class<? extends BasicPerformanceAstronomicalTelescopeRecipe> getRecipeClass() {
+        return BasicPerformanceAstronomicalTelescopeRecipe.class;
     }
 
     @Override
     public Component getTitle() {
-        return new TranslatableComponent("jei.degeneracycraft_basic_performance_rock_crasher");
+        return new TranslatableComponent("jei.basic_performance_astronomical_telescope");
     }
 
     @Override
@@ -58,12 +59,17 @@ public class BasicPerformanceRockCrasherCategory implements IRecipeCategory<Basi
         return this.icon;
     }
 
+    public static final RecipeType<BasicPerformanceAstronomicalTelescopeRecipe> TYPE =
+            new RecipeType<>(UID, BasicPerformanceAstronomicalTelescopeRecipe.class);
+
+
     @Override
-    public void draw(BasicPerformanceRockCrasherRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
+    public void draw(BasicPerformanceAstronomicalTelescopeRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
         drawPhase(stack);
         drawRequiredEnergy(recipe, stack);
         drawRequiredEnergyUsage(recipe, stack);
         drawRequiredTime(recipe, stack);
+        drawRequiredCondition(recipe, stack);
     }
 
     protected void drawPhase(PoseStack poseStack) {
@@ -72,7 +78,7 @@ public class BasicPerformanceRockCrasherCategory implements IRecipeCategory<Basi
         fontRenderer.draw(poseStack, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"), 15, 67, 0xFF0000);
     }
 
-    protected void drawRequiredEnergy(BasicPerformanceRockCrasherRecipe recipe, PoseStack poseStack) {
+    protected void drawRequiredEnergy(BasicPerformanceAstronomicalTelescopeRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergy."), 17, 87, 0xFFFFFF);
@@ -84,7 +90,7 @@ public class BasicPerformanceRockCrasherCategory implements IRecipeCategory<Basi
         }
     }
 
-    protected void drawRequiredEnergyUsage(BasicPerformanceRockCrasherRecipe recipe, PoseStack poseStack) {
+    protected void drawRequiredEnergyUsage(BasicPerformanceAstronomicalTelescopeRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergyusage."), 17, 107, 0xFFFFFF);
@@ -96,23 +102,28 @@ public class BasicPerformanceRockCrasherCategory implements IRecipeCategory<Basi
             fontRenderer.draw(poseStack, (energyUsage + " FE/t"), 17, 117, 0xFFFFFF);
         }
 
+//        fontRenderer.draw(poseStack, (recipe.getRequiredEnergy() / recipe.getRequiredTime() / 20F + " FE/t"), 17, 117, 0xFFFFFF);
     }
 
-    protected void drawRequiredTime(BasicPerformanceRockCrasherRecipe recipe, PoseStack poseStack) {
+    protected void drawRequiredTime(BasicPerformanceAstronomicalTelescopeRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredtime."), 17, 127, 0xFFFFFF);
         fontRenderer.draw(poseStack, recipe.getRequiredTime() * 20 + " tick" + " " + "(" + recipe.getRequiredTime() + " Sec" + ")", 17, 137, 0xFFFFFF);
     }
 
+    protected void drawRequiredCondition(BasicPerformanceAstronomicalTelescopeRecipe recipe, PoseStack poseStack) {
+        Minecraft minecraft = Minecraft.getInstance();
+        Font fontRenderer = minecraft.font;
+        fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.night."), 80, 127, 0xFFFFFF);
+    }
+
 
     @Override
-    public void setRecipe(@Nonnull IRecipeLayoutBuilder builder, @Nonnull BasicPerformanceRockCrasherRecipe recipe, @Nonnull IFocusGroup focusGroup) {
+    public void setRecipe(@Nonnull IRecipeLayoutBuilder builder, @Nonnull BasicPerformanceAstronomicalTelescopeRecipe recipe, @Nonnull IFocusGroup focusGroup) {
         builder.addSlot(RecipeIngredientRole.INPUT, 26, 25).addItemStack(recipe.getInput0Item());
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 98, 25).addItemStack(recipe.getOutput0Item());
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 25).addItemStack(recipe.getOutput1Item());
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 134, 25).addItemStack(recipe.getOutput2Item());
-
+        builder.addSlot(RecipeIngredientRole.INPUT, 26, 43).addItemStack(recipe.getInput1Item());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 25).addItemStack(recipe.getOutput0Item());
     }
 }
 

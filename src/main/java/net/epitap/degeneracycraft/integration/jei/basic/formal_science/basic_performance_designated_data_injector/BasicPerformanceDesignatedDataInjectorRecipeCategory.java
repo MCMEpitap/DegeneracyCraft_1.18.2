@@ -62,11 +62,6 @@ public class BasicPerformanceDesignatedDataInjectorRecipeCategory implements IRe
     public static final RecipeType<BasicPerformanceDesignatedDataInjectorRecipe> TYPE =
             new RecipeType<>(UID, BasicPerformanceDesignatedDataInjectorRecipe.class);
 
-    @Override
-    public RecipeType<BasicPerformanceDesignatedDataInjectorRecipe> getRecipeType() {
-        return TYPE;
-    }
-
 
     @Override
     public void draw(BasicPerformanceDesignatedDataInjectorRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {
@@ -124,12 +119,7 @@ public class BasicPerformanceDesignatedDataInjectorRecipeCategory implements IRe
         builder.addSlot(RecipeIngredientRole.INPUT, 8, 43).addItemStack(recipe.getInput3Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 44, 43).addItemStack(recipe.getInput4Item());
         builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 25).addItemStack(recipe.getOutput0Item());
-//        builder.addSlot(RecipeIngredientRole.INPUT, 8, 7).addIngredients(Ingredient.of(recipe.getInput0Item()));
-//        builder.addSlot(RecipeIngredientRole.INPUT, 44, 7).addIngredients(Ingredient.of(recipe.getInput1Item()));
-//        builder.addSlot(RecipeIngredientRole.INPUT, 26, 25).addIngredients(Ingredient.of(recipe.getInput2Item()));
-//        builder.addSlot(RecipeIngredientRole.INPUT, 8, 43).addIngredients(Ingredient.of(recipe.getInput3Item()));
-//        builder.addSlot(RecipeIngredientRole.INPUT, 44, 43).addIngredients(Ingredient.of(recipe.getInput4Item()));
-//        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 25).addIngredients(Ingredient.of(recipe.getOutput0Item()));
+
     }
 }
 

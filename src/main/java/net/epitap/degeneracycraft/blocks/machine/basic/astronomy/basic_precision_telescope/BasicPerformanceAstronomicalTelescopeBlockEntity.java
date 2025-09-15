@@ -13,6 +13,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -21,6 +22,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -266,11 +268,10 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
                     blockEntity.counter++;
                     blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
                 }
-                blockEntity.getProgressPercent = blockEntity.counter;
-//            blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
+            blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
             }
-
             if (craftCheck(blockEntity)) {
+                consumeItem(blockEntity);
                 craftItem(blockEntity);
             }
 
@@ -369,7 +370,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
                 && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount();
     }
 
-    private static void craftItem(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
+    private static void consumeItem(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -381,7 +382,21 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
 
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
+        }
+    }
 
+    private static void craftItem(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
+
+        if (match.isPresent()) {
             blockEntity.itemHandler.setStackInSlot(2, new ItemStack(match.get().getOutput0Item().getItem(),
                     blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount()));
 
@@ -419,15 +434,42 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         return blockEntity.itemHandler.getStackInSlot(2).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(2).isEmpty();
     }
 
-//    private static BlockPos getRelativePos(BlockPos basePos, int x, int y, int z, Direction facing) {
-//        return switch (facing) {
-//            case NORTH -> basePos.relative(Direction.WEST, x).relative(Direction.UP, y).relative(Direction.NORTH, z);
-//            case SOUTH -> basePos.relative(Direction.EAST, x).relative(Direction.UP, y).relative(Direction.SOUTH, z);
-//            case WEST -> basePos.relative(Direction.SOUTH, x).relative(Direction.UP, y).relative(Direction.WEST, z);
-//            case EAST -> basePos.relative(Direction.NORTH, x).relative(Direction.UP, y).relative(Direction.EAST, z);
-//            default -> basePos;
-//        };
-//    }
+    public void insertRecipeInputsFromPlayer(ServerPlayer player, Recipe<?> recipe, boolean shift) {
+        if (!(recipe instanceof BasicPerformanceAstronomicalTelescopeRecipe recipeData)) return;
+
+        player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(playerInv -> {
+            this.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(machineInv -> {
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput0Item(), 0, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput1Item(), 1, shift);
+            });
+        });
+
+        this.setChanged();
+        this.level.sendBlockUpdated(this.worldPosition, this.getBlockState(), this.getBlockState(), 3);
+    }
+
+
+    private void insertItemFromPlayer(IItemHandler playerInv, IItemHandler machineInv, ItemStack required, int slotIndex, boolean shift) {
+        if (required.isEmpty()) return;
+
+        int needed = shift ? Integer.MAX_VALUE : required.getCount();
+
+        for (int i = 0; i < playerInv.getSlots() && needed > 0; i++) {
+            ItemStack fromSlot = playerInv.getStackInSlot(i);
+            if (!fromSlot.sameItem(required)) continue;
+
+            int toExtract = Math.min(needed, fromSlot.getCount());
+            ItemStack extracted = playerInv.extractItem(i, toExtract, false);
+            ItemStack leftover = machineInv.insertItem(slotIndex, extracted, false);
+
+            if (!leftover.isEmpty()) {
+                needed -= (toExtract - leftover.getCount());
+                playerInv.insertItem(i, leftover, false);
+            } else {
+                needed -= toExtract;
+            }
+        }
+    }
 
 }
 

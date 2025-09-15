@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -15,6 +16,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -262,5 +264,48 @@ public class RedstonePoweredMachineElementManufactureMachineBlockEntity extends 
         return blockEntity.itemHandler.getStackInSlot(9).getCount() < blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
     }
 
+    public void insertRecipeInputsFromPlayer(ServerPlayer player, Recipe<?> recipe, boolean shift) {
+        if (!(recipe instanceof RedstonePoweredMachineElementManufactureMachineRecipe recipeData)) return;
+
+        player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(playerInv -> {
+            this.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(machineInv -> {
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput0Item(), 0, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput1Item(), 1, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput2Item(), 2, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput3Item(), 3, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput4Item(), 4, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput5Item(), 5, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput6Item(), 6, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput7Item(), 7, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput8Item(), 8, shift);
+            });
+        });
+
+        this.setChanged();
+        this.level.sendBlockUpdated(this.worldPosition, this.getBlockState(), this.getBlockState(), 3);
+    }
+
+
+    private void insertItemFromPlayer(IItemHandler playerInv, IItemHandler machineInv, ItemStack required, int slotIndex, boolean shift) {
+        if (required.isEmpty()) return;
+
+        int needed = shift ? Integer.MAX_VALUE : required.getCount();
+
+        for (int i = 0; i < playerInv.getSlots() && needed > 0; i++) {
+            ItemStack fromSlot = playerInv.getStackInSlot(i);
+            if (!fromSlot.sameItem(required)) continue;
+
+            int toExtract = Math.min(needed, fromSlot.getCount());
+            ItemStack extracted = playerInv.extractItem(i, toExtract, false);
+            ItemStack leftover = machineInv.insertItem(slotIndex, extracted, false);
+
+            if (!leftover.isEmpty()) {
+                needed -= (toExtract - leftover.getCount());
+                playerInv.insertItem(i, leftover, false);
+            } else {
+                needed -= toExtract;
+            }
+        }
+    }
 }
 

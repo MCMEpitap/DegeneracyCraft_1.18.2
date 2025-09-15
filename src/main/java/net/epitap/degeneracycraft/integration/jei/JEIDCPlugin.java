@@ -6,53 +6,79 @@ import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.*;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
+import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineScreen;
+import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineScreen;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineScreen;
-import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorRecipeCategory;
-import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_designated_data_injector.CommonRecipeTransferHandler;
+import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerRecipeCategory;
-import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineRecipeCategory;
 import net.minecraft.client.Minecraft;
@@ -78,7 +104,7 @@ public class JEIDCPlugin implements IModPlugin {
 
 
         registration.addRecipeCategories(new
-                BasicPerformanceAstronomicalTelescopeCategory(registration.getJeiHelpers().getGuiHelper()));
+                BasicPerformanceAstronomicalTelescopeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
 
 
@@ -127,7 +153,7 @@ public class JEIDCPlugin implements IModPlugin {
 
 
         registration.addRecipeCategories(new
-                BasicPerformanceRockCrasherCategory(registration.getJeiHelpers().getGuiHelper()));
+                BasicPerformanceRockCrasherRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
 
 
@@ -161,7 +187,7 @@ public class JEIDCPlugin implements IModPlugin {
 
         List<BasicPerformanceAstronomicalTelescopeRecipe> basicPerformanceAstronomicalTelescopeRecipe =
                 rm.getAllRecipesFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE);
-        registration.addRecipes(new RecipeType<>(BasicPerformanceAstronomicalTelescopeCategory.UID, BasicPerformanceAstronomicalTelescopeRecipe.class), basicPerformanceAstronomicalTelescopeRecipe);
+        registration.addRecipes(new RecipeType<>(BasicPerformanceAstronomicalTelescopeRecipeCategory.UID, BasicPerformanceAstronomicalTelescopeRecipe.class), basicPerformanceAstronomicalTelescopeRecipe);
 
 
 
@@ -210,7 +236,7 @@ public class JEIDCPlugin implements IModPlugin {
 
         List<BasicPerformanceRockCrasherRecipe> basicPerformanceRockCrasherRecipes =
                 rm.getAllRecipesFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE);
-        registration.addRecipes(new RecipeType<>(BasicPerformanceRockCrasherCategory.UID, BasicPerformanceRockCrasherRecipe.class), basicPerformanceRockCrasherRecipes);
+        registration.addRecipes(new RecipeType<>(BasicPerformanceRockCrasherRecipeCategory.UID, BasicPerformanceRockCrasherRecipe.class), basicPerformanceRockCrasherRecipes);
 
 
 
@@ -235,7 +261,7 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeClickArea(RedstonePoweredMachinePartManufactureMachineScreen.class, 64, 20, 29, 8, RedstonePoweredMachinePartManufactureMachineRecipeCategory.UID);
 
 
-        registration.addRecipeClickArea(BasicPerformanceAstronomicalTelescopeScreen.class, 64, 20, 29, 8, BasicPerformanceAstronomicalTelescopeCategory.UID);
+        registration.addRecipeClickArea(BasicPerformanceAstronomicalTelescopeScreen.class, 64, 20, 29, 8, BasicPerformanceAstronomicalTelescopeRecipeCategory.UID);
 
 
         registration.addRecipeClickArea(BasicPerformanceElectrolyserScreen.class, 64, 20, 29, 8, BasicPerformanceElectrolyserRecipeCategory.UID);
@@ -259,7 +285,7 @@ public class JEIDCPlugin implements IModPlugin {
 
 
 
-        registration.addRecipeClickArea(BasicPerformanceRockCrasherScreen.class, 64, 20, 29, 8, BasicPerformanceRockCrasherCategory.UID);
+        registration.addRecipeClickArea(BasicPerformanceRockCrasherScreen.class, 64, 20, 29, 8, BasicPerformanceRockCrasherRecipeCategory.UID);
 
 
 
@@ -276,7 +302,7 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get()), RedstonePoweredMachineElementManufactureMachineRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get()), RedstonePoweredMachinePartManufactureMachineRecipeCategory.UID);
 
-        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get()), BasicPerformanceAstronomicalTelescopeCategory.UID);
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get()), BasicPerformanceAstronomicalTelescopeRecipeCategory.UID);
 
 
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get()), BasicPerformanceElectrolyserRecipeCategory.UID);
@@ -298,30 +324,143 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK.get()), BasicPerformanceFormingMachineRecipeCategory.UID);
     }
 
-//    public static final RecipeType<BasicPerformanceDesignatedDataInjectorRecipe> DATA_INJECTOR_TYPE =
-//            new RecipeType<>(
-//                    new ResourceLocation("degeneracycraft", "basic_performance_machine_data_installer_recipe"),
-//                    BasicPerformanceDesignatedDataInjectorRecipe.class);
-
     @Override
     public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
+        registration.addRecipeTransferHandler(
+                new RedstonePoweredMachineElementManufactureMachineRecipeTransferHandler<>(
+                        RedstonePoweredMachineElementManufactureMachineMenu.class,
+                        0, 9,
+                        10, 36
+                ),
+                RedstonePoweredMachineElementManufactureMachineRecipeCategory.TYPE
+        );
 
-//        ),BasicPerformanceDesignatedDataInjectorRecipeCategory.TYPE);
-//        registration.addRecipeTransferHandler(
-//                BasicPerformanceDesignatedDataInjectorMenu.class,
-//                BasicPerformanceDesignatedDataInjectorRecipeCategory.TYPE,
-//                0, 5,   // マシンのレシピスロット (0～4)
-//                8, 36   // プレイヤーインベントリスロット (8～35)
-//        );
+
+
 
         registration.addRecipeTransferHandler(
-                new CommonRecipeTransferHandler<>(
+                new BasicPerformanceAstronomicalTelescopeRecipeTransferHandler<>(
+                        BasicPerformanceAstronomicalTelescopeMenu.class,
+                        0, 2,
+                        5, 36
+                ),
+                BasicPerformanceAstronomicalTelescopeRecipeCategory.TYPE
+        );
+
+
+
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceElectrolyserRecipeTransferHandler<>(
+                        BasicPerformanceElectrolyserMenu.class,
+                        0, 3,
+                        8, 36
+                ),
+                BasicPerformanceElectrolyserRecipeCategory.TYPE
+        );
+
+
+
+        registration.addRecipeTransferHandler(
+                new BasicTechnologyCircuitBuilderRecipeTransferHandler<>(
+                        BasicTechnologyCircuitBuilderMenu.class,
+                        0, 9,
+                        12, 36
+                ),
+                BasicTechnologyCircuitBuilderRecipeCategory.TYPE
+        );
+        registration.addRecipeTransferHandler(
+                new BasicTechnologyMachineElementProcessorRecipeTransferHandler<>(
+                        BasicTechnologyMachineElementProcessorMenu.class,
+                        0, 9,
+                        12, 36
+                ),
+                BasicTechnologyMachineElementProcessorRecipeCategory.TYPE
+        );
+        registration.addRecipeTransferHandler(
+                new BasicTechnologyMachineManufacturerRecipeTransferHandler<>(
+                        BasicTechnologyMachineManufacturerMenu.class,
+                        0, 9,
+                        12, 36
+                ),
+                BasicTechnologyMachineManufacturerRecipeCategory.TYPE
+        );
+        registration.addRecipeTransferHandler(
+                new BasicTechnologyMachinePartProcessorRecipeTransferHandler<>(
+                        BasicTechnologyMachinePartProcessorMenu.class,
+                        0, 9,
+                        12, 36
+                ),
+                BasicTechnologyMachinePartProcessorRecipeCategory.TYPE
+        );
+        registration.addRecipeTransferHandler(
+                new BasicTechnologyMultiblockEquipmentFabricatorRecipeTransferHandler<>(
+                        BasicTechnologyMultiblockEquipmentFabricatorMenu.class,
+                        0, 9,
+                        12, 36
+                ),
+                BasicTechnologyMultiblockEquipmentFabricatorRecipeCategory.TYPE
+        );
+
+
+
+        registration.addRecipeTransferHandler(
+                new BasicTechnologyUniversalAssemblerRecipeTransferHandler<>(
+                        BasicTechnologyUniversalAssemblerMenu.class,
+                        0, 9,
+                        12, 36
+                ),
+                BasicTechnologyUniversalAssemblerRecipeCategory.TYPE
+        );
+
+
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceDesignatedDataInjectorRecipeTransferHandler<>(
                         BasicPerformanceDesignatedDataInjectorMenu.class,
-                        0, 5,   // 入力スロット0〜4
-                        8, 36   // プレイヤーインベントリ8〜35
+                        0, 5,
+                        8, 36
                 ),
                 BasicPerformanceDesignatedDataInjectorRecipeCategory.TYPE
         );
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceMachineDataInstallerRecipeTransferHandler<>(
+                        BasicPerformanceMachineDataInstallerMenu.class,
+                        0, 3,
+                        6, 36
+                ),
+                BasicPerformanceMachineDataInstallerRecipeCategory.TYPE
+        );
+
+
+
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceRockCrasherTransferHandler<>(
+                        BasicPerformanceRockCrasherMenu.class,
+                        0, 1,
+                        6, 36
+                ),
+                BasicPerformanceRockCrasherRecipeCategory.TYPE
+        );
+
+
+
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceElectricArcFurnaceTransferHandler<>(
+                        BasicPerformanceElectricArcFurnaceMenu.class,
+                        0, 2,
+                        6, 36
+                ),
+                BasicPerformanceElectricArcFurnaceRecipeCategory.TYPE
+        );
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceFormingMachineRecipeTransferHandler<>(
+                        BasicPerformanceFormingMachineMenu.class,
+                        0, 2,
+                        6, 36
+                ),
+                BasicPerformanceFormingMachineRecipeCategory.TYPE
+        );
+
+
 
     }
 

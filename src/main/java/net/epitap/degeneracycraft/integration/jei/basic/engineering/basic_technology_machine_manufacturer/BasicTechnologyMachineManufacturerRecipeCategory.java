@@ -8,6 +8,7 @@ import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
+import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
@@ -57,6 +58,9 @@ public class BasicTechnologyMachineManufacturerRecipeCategory implements IRecipe
     public IDrawable getIcon() {
         return this.icon;
     }
+
+    public static final RecipeType<BasicTechnologyMachineManufacturerRecipe> TYPE =
+            new RecipeType<>(UID, BasicTechnologyMachineManufacturerRecipe.class);
 
     @Override
     public void draw(BasicTechnologyMachineManufacturerRecipe recipe, IRecipeSlotsView recipeSlotsView, PoseStack stack, double mouseX, double mouseY) {

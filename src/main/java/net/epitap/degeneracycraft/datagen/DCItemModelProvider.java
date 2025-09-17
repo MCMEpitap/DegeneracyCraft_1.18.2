@@ -702,44 +702,44 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicMaterialCommonItem(DCItems.WATER_CONTAINER.get());
 
 
-        basicPartItem(DCItems.BASIC_CIRCUIT.get());
-        basicPartItem(DCItems.BASIC_CONDENSER.get());
-        basicPartItem(DCItems.BASIC_COMBINEDSHAFT.get());
-        basicPartItem(DCItems.BASIC_CONVEYORBELT.get());
-        basicPartItem(DCItems.BASIC_CONDUCTOR_WIRE.get());
-        basicPartItem(DCItems.BASIC_DIODE.get());
-        basicPartItem(DCItems.BASIC_DRIVECHAIN.get());
-        basicPartItem(DCItems.BASIC_EQUIPMENT_CONTAINER.get());
-        basicPartItem(DCItems.BASIC_INSCRIBE_NEEDLE.get());
-        basicPartItem(DCItems.BASIC_INSCRIBED_CIRCUIT.get());
-        basicPartItem(DCItems.BASIC_LINKAGE.get());
-        basicPartItem(DCItems.BASIC_MACHINE_SCREEN.get());
-        basicPartItem(DCItems.BASIC_MOTOR.get());
-        basicPartItem(DCItems.BASIC_PROCESSING_BASE.get());
-        basicPartItem(DCItems.BASIC_PROCESSING_CIRCUIT.get());
-        basicPartItem(DCItems.BASIC_REDSTONE_BATTERY.get());
-        basicPartItem(DCItems.BASIC_REINFORCED_PLATE.get());
-        basicPartItem(DCItems.BASIC_ROBOT_ARM.get());
-        basicPartItem(DCItems.BASIC_TRANSISTOR.get());
-        basicPartItem(DCItems.BASIC_TURBINE.get());
+        basicPartEngineeringItem(DCItems.BASIC_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_CONDENSER.get());
+        basicPartEngineeringItem(DCItems.BASIC_COMBINEDSHAFT.get());
+        basicPartEngineeringItem(DCItems.BASIC_CONVEYORBELT.get());
+        basicPartEngineeringItem(DCItems.BASIC_CONDUCTOR_WIRE.get());
+        basicPartEngineeringItem(DCItems.BASIC_DIODE.get());
+        basicPartEngineeringItem(DCItems.BASIC_DRIVECHAIN.get());
+        basicPartEngineeringItem(DCItems.BASIC_EQUIPMENT_CONTAINER.get());
+        basicPartEngineeringItem(DCItems.BASIC_INSCRIBE_NEEDLE.get());
+        basicPartEngineeringItem(DCItems.BASIC_INSCRIBED_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_LINKAGE.get());
+        basicPartEngineeringItem(DCItems.BASIC_MACHINE_SCREEN.get());
+        basicPartEngineeringItem(DCItems.BASIC_MOTOR.get());
+        basicPartEngineeringItem(DCItems.BASIC_PROCESSING_BASE.get());
+        basicPartEngineeringItem(DCItems.BASIC_PROCESSING_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_REDSTONE_BATTERY.get());
+        basicPartEngineeringItem(DCItems.BASIC_REINFORCED_PLATE.get());
+        basicPartEngineeringItem(DCItems.BASIC_ROBOT_ARM.get());
+        basicPartEngineeringItem(DCItems.BASIC_TRANSISTOR.get());
+        basicPartEngineeringItem(DCItems.BASIC_TURBINE.get());
 
-        basicPartItem(DCItems.BASIC_ASTRONOMY_CIRCUIT.get());
-        basicPartItem(DCItems.BASIC_BIOLOGY_CIRCUIT.get());
-        basicPartItem(DCItems.BASIC_CHEMISTRY_CIRCUIT.get());
-        basicPartItem(DCItems.BASIC_ENGINEERING_CIRCUIT.get());
-        basicPartItem(DCItems.BASIC_FORMAL_SCIENCE_CIRCUIT.get());
-        basicPartItem(DCItems.BASIC_GEO_SCIENCE_CIRCUIT.get());
-        basicPartItem(DCItems.BASIC_HYBRID_PHYSICS_CIRCUIT.get());
-        basicPartItem(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_ASTRONOMY_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_BIOLOGY_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_CHEMISTRY_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_ENGINEERING_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_FORMAL_SCIENCE_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_GEO_SCIENCE_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_HYBRID_PHYSICS_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_CIRCUIT.get());
 
-        basicPartItem(DCItems.BASIC_ASTRONOMY_MEMORY_CIRCUIT.get());
-        basicPartItem(DCItems.BASIC_BIOLOGY_MEMORY_CIRCUIT.get());
-        basicPartItem(DCItems.BASIC_CHEMISTRY_MEMORY_CIRCUIT.get());
-        basicPartItem(DCItems.BASIC_ENGINEERING_MEMORY_CIRCUIT.get());
-        basicPartItem(DCItems.BASIC_FORMAL_SCIENCE_MEMORY_CIRCUIT.get());
-        basicPartItem(DCItems.BASIC_GEO_SCIENCE_MEMORY_CIRCUIT.get());
-        basicPartItem(DCItems.BASIC_HYBRID_PHYSICS_MEMORY_CIRCUIT.get());
-        basicPartItem(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_ASTRONOMY_MEMORY_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_BIOLOGY_MEMORY_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_CHEMISTRY_MEMORY_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_ENGINEERING_MEMORY_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_FORMAL_SCIENCE_MEMORY_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_GEO_SCIENCE_MEMORY_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_HYBRID_PHYSICS_MEMORY_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT.get());
 
 
         simpleItem(DCItems.RAW_GRAVITATION_ORE.get());
@@ -1456,10 +1456,10 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/element/tin/" + item.getRegistryName().getPath()));
     }
 
-    private ItemModelBuilder basicPartItem(Item item) {
+    private ItemModelBuilder basicPartEngineeringItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/" + item.getRegistryName().getPath()));
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/engineering/" + item.getRegistryName().getPath()));
     }
 
     private ItemModelBuilder basicInscribedCircuitItem(Item item) {

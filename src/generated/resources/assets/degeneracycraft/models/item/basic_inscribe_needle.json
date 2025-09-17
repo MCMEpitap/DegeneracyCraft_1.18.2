@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/part/basic/basic_inscribe_needle"
+    "layer0": "degeneracycraft:item/part/basic/engineering/basic_inscribe_needle"
   }
 }

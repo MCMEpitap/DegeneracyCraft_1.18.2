@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/part/basic/basic_conductor_wire"
+    "layer0": "degeneracycraft:item/part/basic/engineering/basic_conductor_wire"
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/part/basic/basic_diode"
+    "layer0": "degeneracycraft:item/part/basic/engineering/basic_diode"
   }
 }

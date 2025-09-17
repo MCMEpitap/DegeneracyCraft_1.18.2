@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/part/basic/basic_equipment_container"
+    "layer0": "degeneracycraft:item/part/basic/engineering/basic_equipment_container"
   }
 }

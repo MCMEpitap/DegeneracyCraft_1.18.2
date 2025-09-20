@@ -678,11 +678,23 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "基本技術マルチブロック設備ホログラム投影機");
         add(DCItems.MACHINE_HALT_DEVICE.get(), "機械停止デバイス");
 
+
+
+        add(DCItems.SIMPLE_CONVEX_LENS.get(), "簡易凸レンズ");
+        add(DCItems.SIMPLE_CONCAVE_LENS.get(), "簡易凹レンズ");
+
+
+
+        add(DCItems.SIMPLE_CHEMICAL_CONTAINER.get(), "簡易化学コンテナ");
+
+
+
         add(DCItems.BASIC_CIRCUIT.get(), "基本回路");
         add(DCItems.BASIC_COMBINEDSHAFT.get(), "基本結合シャフト");
         add(DCItems.BASIC_CONDENSER.get(), "基本コンデンサー");
-        add(DCItems.BASIC_CONVEYORBELT.get(), "基本ベルトコンベアー");
         add(DCItems.BASIC_CONDUCTOR_WIRE.get(), "基本導線");
+        add(DCItems.BASIC_CONVEYORBELT.get(), "基本ベルトコンベアー");
+        add(DCItems.BASIC_CYLINDER.get(), "基本シリンダー");
         add(DCItems.BASIC_DIODE.get(), "基本ダイオード");
         add(DCItems.BASIC_DRIVECHAIN.get(), "基本ドライブチェーン");
         add(DCItems.BASIC_EQUIPMENT_CONTAINER.get(), "基本装置コンテナ");
@@ -717,15 +729,15 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_HYBRID_PHYSICS_MEMORY_CIRCUIT.get(), "基本複合物理学記憶回路");
         add(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT.get(), "基本模造魔導工学記憶回路");
 
-        add(DCItems.SIMPLE_CONVEX_LENS.get(), "簡易凸レンズ");
-        add(DCItems.SIMPLE_CONCAVE_LENS.get(), "簡易凹レンズ");
+
 
 
         add(DCItems.EMPTY_CONTAINER.get(), "空の容器");
         add(DCItems.WATER_CONTAINER.get(), "水容器");
 
+        add(DCItems.POTTASSIUM_NITRATE_DUST.get(), "硝酸カリウムの粉");
+        add(DCItems.HYDROCHLORIC_ACID_SOLUTION.get(), "塩酸溶液");
         add(DCItems.HYDROGEN_CHLORIDE_GAS.get(), "塩化水素ガス");
-        add(DCItems.HYDROCHLORIC_ACID_CONTAINER.get(), "塩酸容器");
 
         add(DCBlocks.PULVERIZER_BLOCK.get(), "粉砕機");
 

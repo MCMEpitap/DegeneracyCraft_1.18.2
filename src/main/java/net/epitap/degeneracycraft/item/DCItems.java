@@ -486,7 +486,9 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> EMPTY_CONTAINER = ITEMS.register("empty_container", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
     public static final RegistryObject<Item> WATER_CONTAINER = registerChemicalSubstanceItem("water_container", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "water", "basic");
 
-    public static final RegistryObject<Item> HYDROCHLORIC_ACID_CONTAINER = registerChemicalSubstanceItem("hydrochloric_acid_container", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrochloric_acid", "basic");
+
+    public static final RegistryObject<Item> POTTASSIUM_NITRATE_DUST = registerChemicalSubstanceItem("potassium_nitrate_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrochloric_acid", "basic");
+    public static final RegistryObject<Item> HYDROCHLORIC_ACID_SOLUTION = registerChemicalSubstanceItem("hydrochloric_acid_solution", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrochloric_acid", "basic");
     public static final RegistryObject<Item> HYDROGEN_CHLORIDE_GAS = registerChemicalSubstanceItem("hydrogen_chloride_gas", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrogen_chloride", "basic");
 
     //Machine Component Group
@@ -775,14 +777,22 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
 
 
     public static final RegistryObject<Item> MACHINE_HALT_DEVICE = ITEMS.register("machine_halt_device", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB)));
-    public static final RegistryObject<Item> SIMPLE_CONCAVE_LENS = ITEMS.register("simple_concave_lens", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
-    public static final RegistryObject<Item> SIMPLE_CONVEX_LENS = ITEMS.register("simple_convex_lens", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
+    public static final RegistryObject<Item> SIMPLE_CONCAVE_LENS = ITEMS.register("simple_concave_lens", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_CONVEX_LENS = ITEMS.register("simple_convex_lens", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+
+
+
+    public static final RegistryObject<Item> SIMPLE_CHEMICAL_CONTAINER = ITEMS.register("simple_chemical_container", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+
+
+
 
     public static final RegistryObject<Item> BASIC_CIRCUIT = ITEMS.register("basic_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_COMBINEDSHAFT = ITEMS.register("basic_combinedshaft", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_CONDENSER = ITEMS.register("basic_condenser", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_CONDUCTOR_WIRE = ITEMS.register("basic_conductor_wire", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_CONVEYORBELT = ITEMS.register("basic_conveyorbelt", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_CYLINDER = ITEMS.register("basic_cylinder", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_DIODE = ITEMS.register("basic_diode", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_DRIVECHAIN = ITEMS.register("basic_drivechain", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_EQUIPMENT_CONTAINER = ITEMS.register("basic_equipment_container", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));

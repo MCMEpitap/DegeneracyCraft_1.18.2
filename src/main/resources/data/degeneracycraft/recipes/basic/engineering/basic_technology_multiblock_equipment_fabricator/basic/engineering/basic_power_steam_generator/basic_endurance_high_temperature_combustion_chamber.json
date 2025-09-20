@@ -1,0 +1,35 @@
+{
+  "type": "degeneracycraft:basic_technology_multiblock_equipment_fabricator_recipe",
+  "energy": 5000.0,
+  "time": 50.0,
+  "input0": {
+    "item": "degeneracycraft:basic_reinforced_plate"
+  },
+  "input1": {
+    "item": "degeneracycraft:basic_reinforced_plate"
+  },
+  "input2": {
+    "item": "degeneracycraft:basic_reinforced_plate"
+  },
+  "input3": {
+    "item": "degeneracycraft:basic_reinforced_plate"
+  },
+  "input4": {
+    "item": "degeneracycraft:basic_equipment_container"
+  },
+  "input5": {
+    "item": "degeneracycraft:basic_reinforced_plate"
+  },
+  "input6": {
+    "item": "degeneracycraft:basic_reinforced_plate"
+  },
+  "input7": {
+    "item": "degeneracycraft:basic_reinforced_plate"
+  },
+  "input8": {
+    "item": "degeneracycraft:basic_reinforced_plate"
+  },
+  "output0": {
+    "item": "degeneracycraft:basic_endurance_high_temperature_combustion_chamber_block"
+  }
+}

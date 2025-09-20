@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/part/basic/machine_circuit/basic_performance_electric_arc_furnace_circuit"
+    "layer0": "degeneracycraft:item/part/basic/engineering/machine_circuit/basic_performance_electric_arc_furnace_circuit"
   }
 }

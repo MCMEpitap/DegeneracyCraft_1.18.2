@@ -247,8 +247,8 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
             }
             blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
             if (craftCheck(blockEntity)) {
-                craftItem(blockEntity);
                 consumeItem(blockEntity);
+                craftItem(blockEntity);
             }
             setChanged(level, pos, state);
         } else {
@@ -405,7 +405,6 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
         this.setChanged();
         this.level.sendBlockUpdated(this.worldPosition, this.getBlockState(), this.getBlockState(), 3);
     }
-
 
     private void insertItemFromPlayer(IItemHandler playerInv, IItemHandler machineInv, ItemStack required, int slotIndex, boolean shift) {
         if (required.isEmpty()) return;

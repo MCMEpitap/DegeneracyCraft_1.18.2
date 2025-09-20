@@ -674,23 +674,35 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.COMPRESSED_PLANKS.get(), "Compressed Planks");
         add(DCItems.COMPRESSED_REDSTONE.get(), "Compressed Redstone");
 
-        add(DCItems.SIMPLE_CONVEX_LENS.get(), "Simple Convex Lens");
-        add(DCItems.SIMPLE_CONCAVE_LENS.get(), "Simple Concave Lens");
+
         add(DCItems.EMPTY_CONTAINER.get(), "Empty Container");
         add(DCItems.WATER_CONTAINER.get(), "Water Container");
 
+        add(DCItems.POTTASSIUM_NITRATE_DUST.get(), "Pottassium Nitrite Dust");
+        add(DCItems.HYDROCHLORIC_ACID_SOLUTION.get(), "Hydrochloric Acid Solution");
         add(DCItems.HYDROGEN_CHLORIDE_GAS.get(), "Hydrogen Chloride Gas");
-        add(DCItems.HYDROCHLORIC_ACID_CONTAINER.get(), "Hydrochloric Acid Container");
 
         add(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "Multiblock Structure Hologram Visualizer");
         add(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "Basic Technology Multiblock Structure Hologram Visualizer");
         add(DCItems.MACHINE_HALT_DEVICE.get(), "Machine Halt Device");
 
+
+
+        add(DCItems.SIMPLE_CONVEX_LENS.get(), "Simple Convex Lens");
+        add(DCItems.SIMPLE_CONCAVE_LENS.get(), "Simple Concave Lens");
+
+
+
+        add(DCItems.SIMPLE_CHEMICAL_CONTAINER.get(), "Simple Chemical Container");
+
+
+
         add(DCItems.BASIC_CIRCUIT.get(), "Basic Circuit");
         add(DCItems.BASIC_COMBINEDSHAFT.get(), "Basic Combined Shaft");
         add(DCItems.BASIC_CONDENSER.get(), "Basic Condenser");
-        add(DCItems.BASIC_CONVEYORBELT.get(), "Basic Conveyor Belt");
         add(DCItems.BASIC_CONDUCTOR_WIRE.get(), "Basic Conductor Wire");
+        add(DCItems.BASIC_CONVEYORBELT.get(), "Basic Conveyor Belt");
+        add(DCItems.BASIC_CYLINDER.get(), "Basic Cylinder");
         add(DCItems.BASIC_DIODE.get(), "Basic Diode");
         add(DCItems.BASIC_DRIVECHAIN.get(), "Basic Drive Chain");
         add(DCItems.BASIC_EQUIPMENT_CONTAINER.get(), "Basic Equipment Container");

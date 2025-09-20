@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/part/basic/machine_circuit/basic_technology_machine_manufacturer_circuit"
+    "layer0": "degeneracycraft:item/part/basic/engineering/machine_circuit/basic_technology_machine_manufacturer_circuit"
   }
 }

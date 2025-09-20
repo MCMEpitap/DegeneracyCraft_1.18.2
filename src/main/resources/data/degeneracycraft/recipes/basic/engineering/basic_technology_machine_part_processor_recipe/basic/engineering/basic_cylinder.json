@@ -1,0 +1,35 @@
+{
+  "type": "degeneracycraft:basic_technology_machine_part_processor_recipe",
+  "energy": 1000.0,
+  "time": 10.0,
+  "input0": {
+    "item": "minecraft:air"
+  },
+  "input1": {
+    "item": "degeneracycraft:copper_spring"
+  },
+  "input2": {
+    "item": "degeneracycraft:iron_bearing"
+  },
+  "input3": {
+    "item": "degeneracycraft:iron_pipe"
+  },
+  "input4": {
+    "item": "degeneracycraft:iron_pipe"
+  },
+  "input5": {
+    "item": "degeneracycraft:iron_pipe"
+  },
+  "input6": {
+    "item": "degeneracycraft:iron_bearing"
+  },
+  "input7": {
+    "item": "degeneracycraft:copper_spring"
+  },
+  "input8": {
+    "item": "minecraft:air"
+  },
+  "output0": {
+    "item": "degeneracycraft:basic_cylinder"
+  }
+}

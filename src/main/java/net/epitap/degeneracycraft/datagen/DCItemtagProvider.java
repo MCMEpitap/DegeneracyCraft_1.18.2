@@ -223,6 +223,27 @@ public class DCItemtagProvider extends ItemTagsProvider {
                     .add(DCItems.LIMESTONE_ORESINTER.get())
                     .add(DCItems.LIMESTONE_INGOT.get());
             //
+            tag(DCItems.NITRATINE_MULTIPLIED_ORE_MATERIAL)
+                    .add(DCItems.RAW_NITRATINE_ORE.get())
+                    .add(DCItems.NITRATINE_DUST.get())
+                    .add(DCItems.NITRATINE_PUREDUST.get())
+                    .add(DCItems.NITRATINE_LEACHATE.get())
+                    .add(DCItems.NITRATINE_CONCENTRATE.get())
+                    .add(DCItems.NITRATINE_PLASMA.get())
+                    .add(DCItems.NITRATINE_DEGENERATEMATTER.get())
+                    .add(DCItems.NITRATINE_SOUP.get())
+                    .add(DCItems.NITRATINE_IMAGINARYMATTER.get())
+                    .add(DCItems.STABLE_NITRATINE_IMAGINARYMATTER.get())
+                    .add(DCItems.NITRATINE_TACHYON.get())
+                    .add(DCItems.NITRATINE_ANTIMATTER.get())
+                    .add(DCItems.NITRATINE_ULTRAHOTPLASMA.get())
+                    .add(DCItems.NITRATINE_OVERFLUID.get())
+                    .add(DCItems.NITRATINE_CRYSTAL.get())
+                    .add(DCItems.NITRATINE_PRECIPITATE.get())
+                    .add(DCItems.NITRATINE_WASHEDDUST.get())
+                    .add(DCItems.NITRATINE_ORESINTER.get())
+                    .add(DCItems.NITRATINE_INGOT.get());
+            //
             tag(DCItems.PEGMATITE_MULTIPLIED_ORE_MATERIAL)
                     .add(DCItems.RAW_PEGMATITE_ORE.get())
                     .add(DCItems.PEGMATITE_DUST.get())

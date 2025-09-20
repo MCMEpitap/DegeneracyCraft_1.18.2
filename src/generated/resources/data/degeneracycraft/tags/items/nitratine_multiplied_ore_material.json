@@ -1,0 +1,24 @@
+{
+  "replace": false,
+  "values": [
+    "degeneracycraft:raw_nitratine_ore",
+    "degeneracycraft:nitratine_dust",
+    "degeneracycraft:nitratine_puredust",
+    "degeneracycraft:nitratine_leachate",
+    "degeneracycraft:nitratine_concentrate",
+    "degeneracycraft:nitratine_plasma",
+    "degeneracycraft:nitratine_degeneratematter",
+    "degeneracycraft:nitratine_soup",
+    "degeneracycraft:nitratine_imaginarymatter",
+    "degeneracycraft:stable_nitratine_imaginarymatter",
+    "degeneracycraft:nitratine_tachyon",
+    "degeneracycraft:nitratine_antimatter",
+    "degeneracycraft:nitratine_ultrahotplasma",
+    "degeneracycraft:nitratine_overfluid",
+    "degeneracycraft:nitratine_crystal",
+    "degeneracycraft:nitratine_precipitate",
+    "degeneracycraft:nitratine_washeddust",
+    "degeneracycraft:nitratine_oresinter",
+    "degeneracycraft:nitratine_ingot"
+  ]
+}

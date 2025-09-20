@@ -38,6 +38,8 @@ public class DCItems extends CreativeModeTab {
     public static final TagKey<Item> IRON_MULTIPLIED_ORE_MATERIAL =TagKey.create(Registry.ITEM_REGISTRY,new ResourceLocation(Degeneracycraft.MOD_ID,"iron_multiplied_ore_material"));
     public static final TagKey<Item> LATERITE_MULTIPLIED_ORE_MATERIAL =TagKey.create(Registry.ITEM_REGISTRY,new ResourceLocation(Degeneracycraft.MOD_ID,"laterite_multiplied_ore_material"));
     public static final TagKey<Item> LIMESTONE_MULTIPLIED_ORE_MATERIAL =TagKey.create(Registry.ITEM_REGISTRY,new ResourceLocation(Degeneracycraft.MOD_ID,"limestone_multiplied_ore_material"));
+    public static final TagKey<Item> NITRATINE_MULTIPLIED_ORE_MATERIAL =TagKey.create(Registry.ITEM_REGISTRY,new ResourceLocation(Degeneracycraft.MOD_ID,"nitratine_multiplied_ore_material"));
+
     public static final TagKey<Item> PHOSPHORITE_MULTIPLIED_ORE_MATERIAL =TagKey.create(Registry.ITEM_REGISTRY,new ResourceLocation(Degeneracycraft.MOD_ID,"phosphorite_multiplied_ore_material"));
     public static final TagKey<Item> PEGMATITE_MULTIPLIED_ORE_MATERIAL =TagKey.create(Registry.ITEM_REGISTRY,new ResourceLocation(Degeneracycraft.MOD_ID,"pegmatite_multiplied_ore_material"));
     public static final TagKey<Item> PYROLUSITE_MULTIPLIED_ORE_MATERIAL = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(Degeneracycraft.MOD_ID, "pyrolusite_multiplied_ore_material"));
@@ -213,7 +215,7 @@ public class DCItems extends CreativeModeTab {
 //    public static final RegistryObject<Item> IRON_ORESINTER  = ITEMS.register("iron_oresinter",()-> new DCItemTooltip(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
 //
 //Laterite item group
-public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_laterite_ore", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_laterite_ore", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> LATERITE_DUST = ITEMS.register("laterite_dust", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> LATERITE_PUREDUST = ITEMS.register("laterite_puredust",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> LATERITE_LEACHATE = ITEMS.register("laterite_leachate",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
@@ -254,7 +256,27 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> LIMESTONE_ORESINTER = ITEMS.register("limestone_oresinter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> LIMESTONE_INGOT = ITEMS.register("limestone_ingot", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_INGOT_TAB)));
 
-
+    //Nitratine item group
+    public static final RegistryObject<Item> RAW_NITRATINE_ORE = ITEMS.register("raw_nitratine_ore",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> NITRATINE_DUST = ITEMS.register("nitratine_dust",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> NITRATINE_PUREDUST = ITEMS.register("nitratine_puredust",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> NITRATINE_LEACHATE = ITEMS.register("nitratine_leachate",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> NITRATINE_CONCENTRATE = ITEMS.register("nitratine_concentrate",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> NITRATINE_PLASMA = ITEMS.register("nitratine_plasma",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> NITRATINE_DEGENERATEMATTER = ITEMS.register("nitratine_degeneratematter",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> NITRATINE_SOUP = ITEMS.register("nitratine_soup",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> NITRATINE_IMAGINARYMATTER = ITEMS.register("nitratine_imaginarymatter",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> STABLE_NITRATINE_IMAGINARYMATTER = ITEMS.register("stable_nitratine_imaginarymatter",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> NITRATINE_TACHYON = ITEMS.register("nitratine_tachyon",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> NITRATINE_ANTIMATTER = ITEMS.register("nitratine_antimatter",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> NITRATINE_ULTRAHOTPLASMA = ITEMS.register("nitratine_ultrahotplasma", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> NITRATINE_OVERFLUID = ITEMS.register("nitratine_overfluid", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> NITRATINE_CRYSTAL = ITEMS.register("nitratine_crystal", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> NITRATINE_PRECIPITATE = ITEMS.register("nitratine_precipitate",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> NITRATINE_WASHEDDUST = ITEMS.register("nitratine_washeddust",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> NITRATINE_ORESINTER = ITEMS.register("nitratine_oresinter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> NITRATINE_INGOT = ITEMS.register("nitratine_ingot", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_INGOT_TAB)));
+    
     // Pegmatite item group
     public static final RegistryObject<Item> RAW_PEGMATITE_ORE = ITEMS.register("raw_pegmatite_ore",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> PEGMATITE_DUST = ITEMS.register("pegmatite_dust",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
@@ -275,6 +297,7 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> PEGMATITE_WASHEDDUST = ITEMS.register("pegmatite_washeddust", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> PEGMATITE_ORESINTER = ITEMS.register("pegmatite_oresinter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> PEGMATITE_INGOT = ITEMS.register("pegmatite_ingot", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_INGOT_TAB)));
+    
     //Pentlandite item group
     public static final RegistryObject<Item> RAW_PENTLANDITE_ORE = ITEMS.register("raw_pentlandite_ore", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> PENTLANDITE_DUST = ITEMS.register("pentlandite_dust", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
@@ -316,7 +339,7 @@ public static final RegistryObject<Item> RAW_LATERITE_ORE = ITEMS.register("raw_
     public static final RegistryObject<Item> PHOSPHORITE_WASHEDDUST = ITEMS.register("phosphorite_washeddust",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> PHOSPHORITE_ORESINTER = ITEMS.register("phosphorite_oresinter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> PHOSPHORITE_INGOT = ITEMS.register("phosphorite_ingot", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_INGOT_TAB)));
-
+    
     //Pyrolusite item group
     public static final RegistryObject<Item> RAW_PYROLUSITE_ORE = ITEMS.register("raw_pyrolusite_ore",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> PYROLUSITE_DUST = ITEMS.register("pyrolusite_dust",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));

@@ -40,6 +40,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         ingotMaterialItem(DCItems.GRAPHITE_INGOT.get());
         ingotMaterialItem(DCItems.LATERITE_INGOT.get());
         ingotMaterialItem(DCItems.LIMESTONE_INGOT.get());
+        ingotMaterialItem(DCItems.NITRATINE_INGOT.get());
         ingotMaterialItem(DCItems.PENTLANDITE_INGOT.get());
         ingotMaterialItem(DCItems.PHOSPHORITE_INGOT.get());
         ingotMaterialItem(DCItems.PYROLUSITE_INGOT.get());
@@ -242,6 +243,25 @@ public class DCItemModelProvider extends ItemModelProvider {
         oreMaterialLimestoneItem(DCItems.LIMESTONE_PRECIPITATE.get());
         oreMaterialLimestoneItem(DCItems.LIMESTONE_WASHEDDUST.get());
         oreMaterialLimestoneItem(DCItems.LIMESTONE_ORESINTER.get());
+        //
+        oreMaterialNitratineItem(DCItems.RAW_NITRATINE_ORE.get());
+        oreMaterialNitratineItem(DCItems.NITRATINE_DUST.get());
+        oreMaterialNitratineItem(DCItems.NITRATINE_PUREDUST.get());
+        oreMaterialNitratineItem(DCItems.NITRATINE_LEACHATE.get());
+        oreMaterialNitratineItem(DCItems.NITRATINE_CONCENTRATE.get());
+        oreMaterialNitratineItem(DCItems.NITRATINE_PLASMA.get());
+        oreMaterialNitratineItem(DCItems.NITRATINE_DEGENERATEMATTER.get());
+        oreMaterialNitratineItem(DCItems.NITRATINE_SOUP.get());
+        oreMaterialNitratineItem(DCItems.NITRATINE_IMAGINARYMATTER.get());
+        oreMaterialNitratineItem(DCItems.STABLE_NITRATINE_IMAGINARYMATTER.get());
+        oreMaterialNitratineItem(DCItems.NITRATINE_TACHYON.get());
+        oreMaterialNitratineItem(DCItems.NITRATINE_ANTIMATTER.get());
+        oreMaterialNitratineItem(DCItems.NITRATINE_ULTRAHOTPLASMA.get());
+        oreMaterialNitratineItem(DCItems.NITRATINE_OVERFLUID.get());
+        oreMaterialNitratineItem(DCItems.NITRATINE_CRYSTAL.get());
+        oreMaterialNitratineItem(DCItems.NITRATINE_PRECIPITATE.get());
+        oreMaterialNitratineItem(DCItems.NITRATINE_WASHEDDUST.get());
+        oreMaterialNitratineItem(DCItems.NITRATINE_ORESINTER.get());
         //
         oreMaterialPentlanditeItem(DCItems.RAW_PENTLANDITE_ORE.get());
         oreMaterialPentlanditeItem(DCItems.PENTLANDITE_DUST.get());
@@ -1367,6 +1387,12 @@ public class DCItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/limestone/" + item.getRegistryName().getPath()));
+    }
+
+    private ItemModelBuilder oreMaterialNitratineItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/nitratine/" + item.getRegistryName().getPath()));
     }
 
     private ItemModelBuilder oreMaterialPentlanditeItem(Item item) {

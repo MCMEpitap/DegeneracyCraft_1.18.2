@@ -219,6 +219,26 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.LIMESTONE_ORESINTER.get(), "石灰石の焼結鉱");
         add(DCItems.LIMESTONE_INGOT.get(), "石灰石インゴット");
         //
+        add(DCItems.RAW_NITRATINE_ORE.get(), "チリ硝石の原石");
+        add(DCItems.NITRATINE_DUST.get(),"チリ硝石の粉");
+        add(DCItems.NITRATINE_PUREDUST.get(),"チリ硝石の純粋な粉");
+        add(DCItems.NITRATINE_LEACHATE.get(),"チリ硝石の浸出液");
+        add(DCItems.NITRATINE_CONCENTRATE.get(),"チリ硝石の濃縮液");
+        add(DCItems.NITRATINE_PLASMA.get(),"チリ硝石のプラズマ");
+        add(DCItems.NITRATINE_DEGENERATEMATTER.get(),"チリ硝石の縮退物質");
+        add(DCItems.NITRATINE_SOUP.get(),"チリ硝石のスープ");
+        add(DCItems.NITRATINE_IMAGINARYMATTER.get(),"チリ硝石の虚数物質");
+        add(DCItems.STABLE_NITRATINE_IMAGINARYMATTER.get(),"安定したチリ硝石の虚数物質");
+        add(DCItems.NITRATINE_TACHYON.get(), "チリ硝石のタキオン");
+        add(DCItems.NITRATINE_ANTIMATTER.get(), "チリ硝石の反物質");
+        add(DCItems.NITRATINE_ULTRAHOTPLASMA.get(), "チリ硝石の超高温プラズマ");
+        add(DCItems.NITRATINE_OVERFLUID.get(), "チリ硝石の過流動体");
+        add(DCItems.NITRATINE_CRYSTAL.get(), "チリ硝石の結晶塊");
+        add(DCItems.NITRATINE_PRECIPITATE.get(), "チリ硝石の沈殿物");
+        add(DCItems.NITRATINE_WASHEDDUST.get(), "チリ硝石の洗浄された粉");
+        add(DCItems.NITRATINE_ORESINTER.get(), "チリ硝石の焼結鉱");
+        add(DCItems.NITRATINE_INGOT.get(), "チリ硝石インゴット");
+        //
         add(DCItems.RAW_PENTLANDITE_ORE.get(), "ペントランド鉱の原石");
         add(DCItems.PENTLANDITE_DUST.get(), "ペントランド鉱の粉");
         add(DCItems.PENTLANDITE_PUREDUST.get(), "ペントランド鉱の純粋な粉");

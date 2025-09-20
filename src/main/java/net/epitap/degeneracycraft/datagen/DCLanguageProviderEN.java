@@ -218,6 +218,26 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.LIMESTONE_ORESINTER.get(), "Limestone Oresinter");
         add(DCItems.LIMESTONE_INGOT.get(), "Limestone Ingot");
         //
+        add(DCItems.RAW_NITRATINE_ORE.get(), "Nitranite Raw Chunk");
+        add(DCItems.NITRATINE_DUST.get(),"Nitranite Dust");
+        add(DCItems.NITRATINE_PUREDUST.get(),"Nitranite Pure Dust");
+        add(DCItems.NITRATINE_LEACHATE.get(),"Nitranite Leachate");
+        add(DCItems.NITRATINE_CONCENTRATE.get(),"Nitranite Concentrate");
+        add(DCItems.NITRATINE_PLASMA.get(),"Nitranite Plasma");
+        add(DCItems.NITRATINE_DEGENERATEMATTER.get(),"Nitranite Degenerate Matter");
+        add(DCItems.NITRATINE_SOUP.get(),"Nitranite Soup");
+        add(DCItems.NITRATINE_IMAGINARYMATTER.get(),"Nitranite Imaginary Matter");
+        add(DCItems.STABLE_NITRATINE_IMAGINARYMATTER.get(), "Stable Nitranite Imaginary Matter");
+        add(DCItems.NITRATINE_TACHYON.get(), "Nitranite Tachyon");
+        add(DCItems.NITRATINE_ANTIMATTER.get(), "Nitranite Antimatter");
+        add(DCItems.NITRATINE_ULTRAHOTPLASMA.get(), "Nitranite Ultrahot Plasma");
+        add(DCItems.NITRATINE_OVERFLUID.get(), "Nitranite Over Fluid");
+        add(DCItems.NITRATINE_CRYSTAL.get(), "Nitranite Crystal");
+        add(DCItems.NITRATINE_PRECIPITATE.get(), "Nitranite Precipitate");
+        add(DCItems.NITRATINE_WASHEDDUST.get(), "Nitranite Washed Dust");
+        add(DCItems.NITRATINE_ORESINTER.get(), "Nitranite Oresinter");
+        add(DCItems.NITRATINE_INGOT.get(), "Nitranite Ingot");
+        //
         add(DCItems.RAW_PENTLANDITE_ORE.get(), "Pentlandite Raw Chunk");
         add(DCItems.PENTLANDITE_DUST.get(), "Pentlandite Dust");
         add(DCItems.PENTLANDITE_PUREDUST.get(), "Pentlandite Pure Dust");

@@ -21,8 +21,8 @@ public class BasicTechnologyMachineElementProcessorBusBlock extends PortBlockBas
     public boolean enabledConnectTo(LevelAccessor world, BlockPos pos, Direction facing) {
         BlockEntity blockEntity = world.getBlockEntity(pos.relative(facing));
         return blockEntity != null && (blockEntity.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).isPresent()
-                || (blockEntity.getBlockState().is(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK.get())
-                && blockEntity.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).isPresent()));
+                || blockEntity.getBlockState().is(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get())
+                || blockEntity.getBlockState().is(this));
     }
 
     public boolean judgePort(LevelAccessor world, BlockPos pos, Direction facing) {

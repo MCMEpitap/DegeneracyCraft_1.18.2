@@ -21,8 +21,8 @@ public class BasicPowerSteamGeneratorBusBlock extends PortBlockBase {
     public boolean enabledConnectTo(LevelAccessor world, BlockPos pos, Direction facing) {
         BlockEntity blockEntity = world.getBlockEntity(pos.relative(facing));
         return blockEntity != null && (blockEntity.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).isPresent()
-                || (blockEntity.getBlockState().is(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get())
-                && blockEntity.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).isPresent()));
+                || blockEntity.getBlockState().is(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get())
+                || blockEntity.getBlockState().is(this));
     }
 
     public boolean judgePort(LevelAccessor world, BlockPos pos, Direction facing) {

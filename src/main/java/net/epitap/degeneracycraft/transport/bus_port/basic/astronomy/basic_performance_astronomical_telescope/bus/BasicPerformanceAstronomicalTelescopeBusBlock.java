@@ -21,8 +21,8 @@ public class BasicPerformanceAstronomicalTelescopeBusBlock extends PortBlockBase
     public boolean enabledConnectTo(LevelAccessor world, BlockPos pos, Direction facing) {
         BlockEntity blockEntity = world.getBlockEntity(pos.relative(facing));
         return blockEntity != null && (blockEntity.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).isPresent()
-                || (blockEntity.getBlockState().is(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get())
-                && blockEntity.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).isPresent()));
+                || blockEntity.getBlockState().is(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get())
+                || blockEntity.getBlockState().is(this));
     }
 
     public boolean judgePort(LevelAccessor world, BlockPos pos, Direction facing) {

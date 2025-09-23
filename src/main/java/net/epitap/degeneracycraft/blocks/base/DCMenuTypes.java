@@ -2,6 +2,7 @@ package net.epitap.degeneracycraft.blocks.base;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorMenu;
@@ -52,8 +53,6 @@ public class DCMenuTypes {
 
     public static final RegistryObject<MenuType<PulverizerMenu>> PULVERIZER_MENU =
             registerMenuType(PulverizerMenu::new, "pulverizer_menu");
-    public static final RegistryObject<MenuType<BasicPerformanceAstronomicalTelescopeMenu>> BASIC_PERFORMANCE_ASTROMICAL_TELESCOPE_MENU =
-            registerMenuType(BasicPerformanceAstronomicalTelescopeMenu::new, "basic_performance_astronomical_telescope_menu");
 
     public static final RegistryObject<MenuType<BasicStrengthAstronomyMultiblockEnergyStorageMenu>> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_MENU =
             registerMenuType(BasicStrengthAstronomyMultiblockEnergyStorageMenu::new, "basic_strength_astronomy_multiblock_energy_storage_menu");
@@ -95,13 +94,25 @@ public class DCMenuTypes {
     public static final RegistryObject<MenuType<BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageMenu>> BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_MENU =
             registerMenuType(BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageMenu::new, "basic_strength_imitation_magic_engineering_multiblock_material_storage_menu");
 
-    public static final RegistryObject<MenuType<BasicPerformanceElectrolyserMenu>> BASIC_PERFORMANCE_ELECTROLYSER_MENU =
-            registerMenuType(BasicPerformanceElectrolyserMenu::new, "basic_performance_electrolyser_menu");
+
+
     public static final RegistryObject<MenuType<RedstonePoweredMachineElementManufactureMachineMenu>> REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_MENU =
             registerMenuType(RedstonePoweredMachineElementManufactureMachineMenu::new, "redstone_powered_machine_element_manufacture_machine_menu");
 
     public static final RegistryObject<MenuType<RedstonePoweredMachinePartManufactureMachineMenu>> REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_MENU =
             registerMenuType(RedstonePoweredMachinePartManufactureMachineMenu::new, "redstone_powered_machine_part_manufacture_machine_menu");
+
+
+
+    public static final RegistryObject<MenuType<BasicPerformanceAstronomicalTelescopeMenu>> BASIC_PERFORMANCE_ASTROMICAL_TELESCOPE_MENU =
+            registerMenuType(BasicPerformanceAstronomicalTelescopeMenu::new, "basic_performance_astronomical_telescope_menu");
+
+
+
+    public static final RegistryObject<MenuType<BasicPerformanceElectrolyserMenu>> BASIC_PERFORMANCE_ELECTROLYSER_MENU =
+            registerMenuType(BasicPerformanceElectrolyserMenu::new, "basic_performance_electrolyser_menu");
+    public static final RegistryObject<MenuType<BasicPerformanceCompoundPurifierMenu>> BASIC_PERFORMANCE_COMPOUND_PURIFIER_MENU =
+            registerMenuType(BasicPerformanceCompoundPurifierMenu::new, "basic_performance_compound_purifier_menu");
 
 
     public static final RegistryObject<MenuType<BasicPowerSteamGeneratorMenu>> BASIC_POWER_STEAM_GENERATOR_MENU =
@@ -134,17 +145,8 @@ public class DCMenuTypes {
 
 
 
-
-
-
-
-
-
-
     public static final RegistryObject<MenuType<BasicPerformanceRockCrasherMenu>> BASIC_PERFORMANCE_ROCK_CRASHER_MENU =
             registerMenuType(BasicPerformanceRockCrasherMenu::new, "basic_performance_rock_crasher_menu");
-
-
 
 
 

@@ -21,7 +21,7 @@ public class BasicPerformanceCompoundPurifierBusBlock extends PortBlockBase {
     public boolean enabledConnectTo(LevelAccessor world, BlockPos pos, Direction facing) {
         BlockEntity blockEntity = world.getBlockEntity(pos.relative(facing));
         return blockEntity != null && (blockEntity.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).isPresent()
-                || (blockEntity.getBlockState().is(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get())
+                || (blockEntity.getBlockState().is(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.get())
                 && blockEntity.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite()).isPresent()));
     }
 
@@ -31,12 +31,12 @@ public class BasicPerformanceCompoundPurifierBusBlock extends PortBlockBase {
     }
 
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new BasicPerformanceElectrolyserBusBlockEntity(pos, state);
+        return new BasicPerformanceCompoundPurifierBusBlockEntity(pos, state);
     }
 
     public InteractionResult portSideLaunch(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, Direction facing) {
         BlockEntity blockentity = world.getBlockEntity(pos);
-        if (blockentity instanceof BasicPerformanceElectrolyserBusBlockEntity && this.portExtracting(world, pos, facing)) {
+        if (blockentity instanceof BasicPerformanceCompoundPurifierBusBlockEntity && this.portExtracting(world, pos, facing)) {
             if (world.isClientSide) {
                 return InteractionResult.SUCCESS;
             }

@@ -16,12 +16,12 @@ import net.minecraftforge.items.ItemHandlerHelper;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class BasicPerformanceElectrolyserPortType extends PortTypeBase<Item> {
-    public static final BasicPerformanceElectrolyserPortType INSTANCE = new BasicPerformanceElectrolyserPortType();
+public class BasicPerformanceCompoundPurifierPortType extends PortTypeBase<Item> {
+    public static final BasicPerformanceCompoundPurifierPortType INSTANCE = new BasicPerformanceCompoundPurifierPortType();
 
     @Override
     public String getKey() {
-        return "basic_performance_electrolyser_port_block";
+        return "basic_performance_compound_purifier_port_block";
     }
 
     @Override
@@ -31,12 +31,12 @@ public class BasicPerformanceElectrolyserPortType extends PortTypeBase<Item> {
 
     @Override
     public String getTranslationKey() {
-        return "basic_performance_electrolyser_port_block";
+        return "basic_performance_compound_purifier_port_block";
     }
 
     @Override
     public ItemStack getIcon() {
-        return new ItemStack(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get());
+        return new ItemStack(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.get());
     }
 
     @Override

@@ -4,13 +4,13 @@ import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortModelRegis
 import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortRendererBase;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 
-public class BasicPerformanceElectrolyserBusRenderer extends PortRendererBase {
-    public BasicPerformanceElectrolyserBusRenderer(BlockEntityRendererProvider.Context renderer) {
+public class BasicPerformanceCompoundPurifierBusRenderer extends PortRendererBase {
+    public BasicPerformanceCompoundPurifierBusRenderer(BlockEntityRendererProvider.Context renderer) {
         super(renderer);
     }
 
     @Override
     public DCPortModel getModel() {
-        return DCPortModel.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK_EXTRACT;
+        return DCPortModel.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK_EXTRACT;
     }
 }

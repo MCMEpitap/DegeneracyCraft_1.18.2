@@ -3,6 +3,7 @@ package net.epitap.degeneracycraft.blocks.base;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.entity.machine.PulverizerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorBlockEntity;
@@ -38,6 +39,8 @@ import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineeri
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.material_storage.basic_strength_imitation_magic_engineering_multiblock_material_storage.BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus.BasicPerformanceAstronomicalTelescopeBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.port.BasicPerformanceAstronomicalTelescopePortBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_compound_purifier.bus.BasicPerformanceCompoundPurifierBusBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_compound_purifier.port.BasicPerformanceCompoundPurifierPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.bus.BasicPerformanceElectrolyserBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.port.BasicPerformanceElectrolyserPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusBlockEntity;
@@ -172,6 +175,15 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicPerformanceElectrolyserPortBlockEntity>> BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_electrolyser_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceElectrolyserPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceCompoundPurifierBlockEntity>> BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_compound_purifier_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceCompoundPurifierBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceCompoundPurifierBusBlockEntity>> BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_compound_purifier_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceCompoundPurifierBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceCompoundPurifierPortBlockEntity>> BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_compound_purifier_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceCompoundPurifierPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.get()).build(null));
 
 
 
@@ -197,7 +209,6 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicTechnologyMachineManufacturerBusBlockEntity>> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_technology_machine_manufacturer_bus_block_entity", () ->
                     BlockEntityType.Builder.of(BasicTechnologyMachineManufacturerBusBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK.get()).build(null));
-
     public static final RegistryObject<BlockEntityType<BasicTechnologyUniversalAssemblerBlockEntity>> BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_technology_universal_assembler_block_entity", () ->
                     BlockEntityType.Builder.of(BasicTechnologyUniversalAssemblerBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get()).build(null));

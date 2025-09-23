@@ -19,6 +19,10 @@ public class PortModelRegistry {
 
         BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK_EXTRACT("block/basic_performance_electrolyser_bus_block_extract"),
         BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK_EXTRACT("block/basic_performance_electrolyser_port_block_extract"),
+        BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK_EXTRACT("block/basic_performance_compound_purifier_bus_block_extract"),
+        BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK_EXTRACT("block/basic_performance_compound_purifier_port_block_extract"),
+
+
 
         BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK_EXTRACT("block/basic_power_steam_generator_bus_block_extract"),
         BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK_EXTRACT("block/basic_power_steam_generator_port_block_extract"),
@@ -36,13 +40,17 @@ public class PortModelRegistry {
         BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_BLOCK_EXTRACT("block/basic_technology_multiblock_equipment_fabricator_port_block_extract"),
 
 
+
         BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_BLOCK_EXTRACT("block/basic_performance_machine_data_installer_bus_block_extract"),
         BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_BLOCK_EXTRACT("block/basic_performance_machine_data_installer_port_block_extract"),
         BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BUS_BLOCK_EXTRACT("block/basic_performance_designated_data_injector_bus_block_extract"),
         BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_BLOCK_EXTRACT("block/basic_performance_designated_data_injector_port_block_extract"),
 
+
+
         BASIC_PERFORMANCE_ROCK_CRASHER_BUS_BLOCK_EXTRACT("block/basic_performance_rock_crasher_bus_block_extract"),
         BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK_EXTRACT("block/basic_performance_rock_crasher_port_block_extract"),
+
 
 
         BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK_EXTRACT("block/basic_performance_electric_arc_furnace_bus_block_extract"),

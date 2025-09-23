@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_block",
+    "up": "degeneracycraft:block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_block",
+    "north": "degeneracycraft:block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_block",
+    "south": "degeneracycraft:block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_block",
+    "east": "degeneracycraft:block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_block",
+    "west": "degeneracycraft:block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_block",
+    "particle": "degeneracycraft:block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_block"
+  }
+}

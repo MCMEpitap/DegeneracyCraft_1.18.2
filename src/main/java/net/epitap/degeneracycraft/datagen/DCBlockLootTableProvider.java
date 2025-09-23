@@ -151,7 +151,17 @@ public class DCBlockLootTableProvider extends BlockLoot {
         this.add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK.get(), block -> noDrop());
         this.add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get()));
         this.add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(), block -> noDrop());
+        
+        this.add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.get()));
+        this.add(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_BLOCK.get()));
+        this.add(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_HOLO_BLOCK.get(), block -> noDrop());
 
+        
+        
         this.add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get()));
         this.add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get()));
         this.add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), block -> noDrop());

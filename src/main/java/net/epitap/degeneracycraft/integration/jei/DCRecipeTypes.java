@@ -2,6 +2,7 @@ package net.epitap.degeneracycraft.integration.jei;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderRecipe;
@@ -40,11 +41,13 @@ public class DCRecipeTypes {
 
     public static final RegistryObject<RecipeSerializer<BasicPerformanceElectrolyserRecipe>> BASIC_PERFORMANCE_ELECTROLYSER_SERIALIZER =
             SERIALIZERS.register("basic_performance_electrolyser_recipe", () -> BasicPerformanceElectrolyserRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<BasicPerformanceCompoundPurifierRecipe>> BASIC_PERFORMANCE_COMPOUND_PURIFIER_SERIALIZER =
+            SERIALIZERS.register("basic_performance_compound_purifier_recipe", () -> BasicPerformanceCompoundPurifierRecipe.Serializer.INSTANCE);
+
+
 
     public static final RegistryObject<RecipeSerializer<BasicPowerSteamGeneratorRecipe>> BASIC_POWER_STEAM_GENERATOR_SERIALIZER =
             SERIALIZERS.register("basic_power_steam_generator_recipe", () -> BasicPowerSteamGeneratorRecipe.Serializer.INSTANCE);
-
-
     public static final RegistryObject<RecipeSerializer<BasicTechnologyMachineManufacturerRecipe>> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_SERIALIZER =
             SERIALIZERS.register("basic_technology_machine_manufacturer_recipe", () -> BasicTechnologyMachineManufacturerRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<BasicTechnologyUniversalAssemblerRecipe>> BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_SERIALIZER =

@@ -4,26 +4,26 @@ import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortWorkBlockE
 import net.minecraft.core.Direction;
 import net.minecraftforge.energy.IEnergyStorage;
 
-public class BasicPerformanceElectrolyserBusEnergyStorage implements IEnergyStorage {
+public class BasicPerformanceCompoundPurifierBusEnergyStorage implements IEnergyStorage {
     protected PortWorkBlockEntity pipe;
     protected Direction side;
     protected float lastReceived;
 
-    public BasicPerformanceElectrolyserBusEnergyStorage(PortWorkBlockEntity pipe, Direction side) {
+    public BasicPerformanceCompoundPurifierBusEnergyStorage(PortWorkBlockEntity pipe, Direction side) {
         this.pipe = pipe;
         this.side = side;
     }
 
     public void tick() {
         if (this.pipe.getLevel().getGameTime() - this.lastReceived > 1F) {
-            BasicPerformanceElectrolyserBusType.INSTANCE.extractEnergy(this.pipe, this.side);
+            BasicPerformanceCompoundPurifierBusType.INSTANCE.extractEnergy(this.pipe, this.side);
         }
     }
 
     public float receiveEnergyFloat(float maxReceive, boolean simulate) {
         this.lastReceived = this.pipe.getLevel().getGameTime();
 
-        return BasicPerformanceElectrolyserBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
+        return BasicPerformanceCompoundPurifierBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
     }
 
 
@@ -43,7 +43,7 @@ public class BasicPerformanceElectrolyserBusEnergyStorage implements IEnergyStor
     @Override
     public int receiveEnergy(int maxReceive, boolean simulate) {
         this.lastReceived = this.pipe.getLevel().getGameTime();
-        return (int) BasicPerformanceElectrolyserBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
+        return (int) BasicPerformanceCompoundPurifierBusType.INSTANCE.receiveEnergy(this.pipe, this.side, maxReceive, simulate);
     }
 
     @Override

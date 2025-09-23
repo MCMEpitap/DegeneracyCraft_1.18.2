@@ -17,14 +17,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class BasicPerformanceElectrolyserBusType extends PortTypeBase<Void> {
-    public static final BasicPerformanceElectrolyserBusType INSTANCE = new BasicPerformanceElectrolyserBusType();
+public class BasicPerformanceCompoundPurifierBusType extends PortTypeBase<Void> {
+    public static final BasicPerformanceCompoundPurifierBusType INSTANCE = new BasicPerformanceCompoundPurifierBusType();
 
-    public BasicPerformanceElectrolyserBusType() {
+    public BasicPerformanceCompoundPurifierBusType() {
     }
 
     public String getKey() {
-        return "basic_performance_electrolyser_bus_block";
+        return "basic_performance_compound_purifier_bus_block";
     }
 
     public boolean canImport(BlockEntity blockEntity, Direction direction) {
@@ -32,11 +32,11 @@ public class BasicPerformanceElectrolyserBusType extends PortTypeBase<Void> {
     }
 
     public String getTranslationKey() {
-        return "basic_performance_electrolyser_bus_block";
+        return "basic_performance_compound_purifier_bus_block";
     }
 
     public ItemStack getIcon() {
-        return new ItemStack(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.get());
+        return new ItemStack(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.get());
     }
 
     public void tick(PortWorkBlockEntity blockEntity) {

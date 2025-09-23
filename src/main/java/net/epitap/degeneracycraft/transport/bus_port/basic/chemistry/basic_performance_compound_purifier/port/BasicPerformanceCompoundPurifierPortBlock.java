@@ -14,17 +14,18 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.items.CapabilityItemHandler;
 
-public class BasicPerformanceElectrolyserPortBlock extends PortBlockBase {
+public class BasicPerformanceCompoundPurifierPortBlock extends PortBlockBase {
 
-    public BasicPerformanceElectrolyserPortBlock(Properties properties) {
+    public BasicPerformanceCompoundPurifierPortBlock(Properties properties) {
         super();
     }
 
     @Override
     public boolean enabledConnectTo(LevelAccessor world, BlockPos pos, Direction facing) {
         BlockEntity blockEntity = world.getBlockEntity(pos.relative(facing));
-        return (blockEntity != null && (blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, facing.getOpposite()).isPresent()
-                || blockEntity.getBlockState().is(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get())));
+        return blockEntity != null && blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, facing.getOpposite()).isPresent()
+                || (blockEntity.getBlockState().is(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.get())
+                || blockEntity.getBlockState().is(this));
     }
 
     @Override
@@ -36,13 +37,13 @@ public class BasicPerformanceElectrolyserPortBlock extends PortBlockBase {
 
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new BasicPerformanceElectrolyserPortBlockEntity(pos, state);
+        return new BasicPerformanceCompoundPurifierPortBlockEntity(pos, state);
     }
 
     @Override
     public InteractionResult portSideLaunch(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, Direction direction) {
         BlockEntity blockentity = level.getBlockEntity(pos);
-        if ((blockentity instanceof BasicPerformanceElectrolyserPortBlockEntity) && portExtracting(level, pos, direction)) {
+        if ((blockentity instanceof BasicPerformanceCompoundPurifierPortBlockEntity) && portExtracting(level, pos, direction)) {
             if (level.isClientSide) {
                 return InteractionResult.SUCCESS;
             }

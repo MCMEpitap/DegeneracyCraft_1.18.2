@@ -147,6 +147,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicPerformanceAstronomicalTelescopePortHolo();
 
 
+        
         registerBasicPerformanceElectrolyser();
         registerBasicDurableExpandedElectrolyticCell();
         registerBasicDurableExpandedElectrolyticCellHolo();
@@ -154,10 +155,19 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicPerformanceElectrolyserBusHolo();
         registerBasicPerformanceElectrolyserPort();
         registerBasicPerformanceElectrolyserPortHolo();
-
+        
+        registerBasicPerformanceCompoundPurifier();
+        registerBasicDurableHighSpeedChemicalReactor();
+        registerBasicDurableHighSpeedChemicalReactorHolo();
+        registerBasicPerformanceCompoundPurifierBus();
+        registerBasicPerformanceCompoundPurifierBusHolo();
+        registerBasicPerformanceCompoundPurifierPort();
+        registerBasicPerformanceCompoundPurifierPortHolo();
+        
+        
         registerRedstonePoweredMachineElementManufactureMachine();
         registerRedstonePoweredMachinePartManufactureMachine();
-
+        
         registerBasicPowerSteamGenerator();
         registerBasicEnduranceHighTemperatureCombustionChamber();
         registerBasicEnduranceHighTemperatureCombustionChamberHolo();
@@ -165,7 +175,6 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicPowerSteamGeneratorBusHolo();
         registerBasicPowerSteamGeneratorPort();
         registerBasicPowerSteamGeneratorPortHolo();
-
 
         registerBasicTechnologyMachineManufacturer();
         registerBasicEfficiencyMachineProcessingChamber();
@@ -1930,6 +1939,107 @@ public class DCBlockStateProvider extends BlockStateProvider {
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
+    
+    private void registerBasicPerformanceCompoundPurifier() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_compound_purifier_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/basic_performance_compound_purifier_down"));
+        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/basic_performance_compound_purifier_up"));
+        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/basic_performance_compound_purifier_front"));
+        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/basic_performance_compound_purifier_side"));
+        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/basic_performance_compound_purifier_side"));
+        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/basic_performance_compound_purifier_side"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/basic_performance_compound_purifier_front"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicDurableHighSpeedChemicalReactor() {
+        BlockModelBuilder model = models().getBuilder("block/basic_durable_high_speed_chemical_reactor_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_block"));
+        model.texture("up", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_block"));
+        model.texture("north", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_block"));
+        model.texture("south", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_block"));
+        model.texture("east", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_block"));
+        model.texture("west", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_block"));
+        orientedBlock(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicDurableHighSpeedChemicalReactorHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_durable_high_speed_chemical_reactor_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_high_speed_chemical_reactor/basic_durable_high_speed_chemical_reactor_holo_block"));
+        orientedBlock(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceCompoundPurifierBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_compound_purifier_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/bus/basic_performance_compound_purifier_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/bus/basic_performance_compound_purifier_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/bus/basic_performance_compound_purifier_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/bus/basic_performance_compound_purifier_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/bus/basic_performance_compound_purifier_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/bus/basic_performance_compound_purifier_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/bus/basic_performance_compound_purifier_bus_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceCompoundPurifierBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_compound_purifier_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/bus/basic_performance_compound_purifier_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/bus/basic_performance_compound_purifier_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/bus/basic_performance_compound_purifier_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/bus/basic_performance_compound_purifier_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/bus/basic_performance_compound_purifier_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/bus/basic_performance_compound_purifier_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/bus/basic_performance_compound_purifier_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceCompoundPurifierPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_compound_purifier_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/port/basic_performance_compound_purifier_port_block"));
+        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/port/basic_performance_compound_purifier_port_block"));
+        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/port/basic_performance_compound_purifier_port_block"));
+        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/port/basic_performance_compound_purifier_port_block"));
+        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/port/basic_performance_compound_purifier_port_block"));
+        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/port/basic_performance_compound_purifier_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/port/basic_performance_compound_purifier_port_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceCompoundPurifierPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_compound_purifier_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/port/basic_performance_compound_purifier_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/port/basic_performance_compound_purifier_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/port/basic_performance_compound_purifier_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/port/basic_performance_compound_purifier_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/port/basic_performance_compound_purifier_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/port/basic_performance_compound_purifier_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_compound_purifier/port/basic_performance_compound_purifier_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+    
+    
+    
 
     private void registerRedstonePoweredMachineElementManufactureMachine() {
         BlockModelBuilder model = models().getBuilder("block/redstone_powered_machine_element_manufacture_machine_block");

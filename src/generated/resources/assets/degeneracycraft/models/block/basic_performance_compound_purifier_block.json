@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/chemistry/basic_performance_compound_purifier/basic_performance_compound_purifier_down",
+    "up": "degeneracycraft:block/machine/basic/chemistry/basic_performance_compound_purifier/basic_performance_compound_purifier_up",
+    "north": "degeneracycraft:block/machine/basic/chemistry/basic_performance_compound_purifier/basic_performance_compound_purifier_front",
+    "south": "degeneracycraft:block/machine/basic/chemistry/basic_performance_compound_purifier/basic_performance_compound_purifier_side",
+    "east": "degeneracycraft:block/machine/basic/chemistry/basic_performance_compound_purifier/basic_performance_compound_purifier_side",
+    "west": "degeneracycraft:block/machine/basic/chemistry/basic_performance_compound_purifier/basic_performance_compound_purifier_side",
+    "particle": "degeneracycraft:block/machine/basic/chemistry/basic_performance_compound_purifier/basic_performance_compound_purifier_front"
+  }
+}

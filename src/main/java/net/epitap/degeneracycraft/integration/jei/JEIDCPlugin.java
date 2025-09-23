@@ -8,6 +8,8 @@ import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderMenu;
@@ -38,6 +40,9 @@ import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machin
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeRecipeTransferHandler;
+import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserRecipeTransferHandler;
@@ -110,6 +115,9 @@ public class JEIDCPlugin implements IModPlugin {
 
         registration.addRecipeCategories(new
                 BasicPerformanceElectrolyserRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new
+                BasicPerformanceCompoundPurifierRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+
 
 
         registration.addRecipeCategories(new
@@ -194,6 +202,10 @@ public class JEIDCPlugin implements IModPlugin {
         List<BasicPerformanceElectrolyserRecipe> basicPerformanceElectrolyserRecipe =
                 rm.getAllRecipesFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicPerformanceElectrolyserRecipeCategory.UID, BasicPerformanceElectrolyserRecipe.class), basicPerformanceElectrolyserRecipe);
+        List<BasicPerformanceCompoundPurifierRecipe> basicPerformanceCompoundPurifierRecipe =
+                rm.getAllRecipesFor(BasicPerformanceCompoundPurifierRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicPerformanceCompoundPurifierRecipeCategory.UID, BasicPerformanceCompoundPurifierRecipe.class), basicPerformanceCompoundPurifierRecipe);
+
 
 
         List<BasicPowerSteamGeneratorRecipe> basicPowerSteamGeneratorRecipes =
@@ -265,6 +277,8 @@ public class JEIDCPlugin implements IModPlugin {
 
 
         registration.addRecipeClickArea(BasicPerformanceElectrolyserScreen.class, 64, 20, 29, 8, BasicPerformanceElectrolyserRecipeCategory.UID);
+        registration.addRecipeClickArea(BasicPerformanceCompoundPurifierScreen.class, 64, 20, 29, 8, BasicPerformanceCompoundPurifierRecipeCategory.UID);
+
 
 
         registration.addRecipeClickArea(BasicTechnologyMachineManufacturerScreen.class, 64, 20, 29, 8, BasicTechnologyMachineManufacturerRecipeCategory.UID);
@@ -302,10 +316,15 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get()), RedstonePoweredMachineElementManufactureMachineRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get()), RedstonePoweredMachinePartManufactureMachineRecipeCategory.UID);
 
+
+
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get()), BasicPerformanceAstronomicalTelescopeRecipeCategory.UID);
 
 
+
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get()), BasicPerformanceElectrolyserRecipeCategory.UID);
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.get()), BasicPerformanceCompoundPurifierRecipeCategory.UID);
+
 
 
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get()), BasicTechnologyMachineManufacturerRecipeCategory.UID);
@@ -356,6 +375,15 @@ public class JEIDCPlugin implements IModPlugin {
                         8, 36
                 ),
                 BasicPerformanceElectrolyserRecipeCategory.TYPE
+        );
+
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceCompoundPurifierRecipeTransferHandler<>(
+                        BasicPerformanceCompoundPurifierMenu.class,
+                        0, 3,
+                        8, 36
+                ),
+                BasicPerformanceCompoundPurifierRecipeCategory.TYPE
         );
 
 

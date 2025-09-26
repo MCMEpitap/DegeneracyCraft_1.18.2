@@ -917,6 +917,20 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(), "基本性能電解槽ポート (ホログラム)");
         add(DCItems.BASIC_PERFORMANCE_ELECTROLYSER_CIRCUIT.get(), "基本性能電解槽回路");
 
+        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.get(), "基本性能化合物精製機");
+        add("tooltip." + "degeneracycraft." + "basic_performance_compound_purifier_block",
+                "基本的な化合物精製機. 鉱石のインゴットを化学反応用に精製する.");
+        add(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_BLOCK.get(), "基本耐用高速化学反応室");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_compound_purifier_block",
+                "基本性能化合物精製機用");
+        add(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_HOLO_BLOCK.get(), "基本耐用高速化学反応室 (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.get(), "基本性能化合物精製機バス");
+        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_HOLO_BLOCK.get(), "基本性能化合物精製機バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.get(), "基本性能化合物精製機ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_HOLO_BLOCK.get(), "基本性能化合物精製機ポート (ホログラム)");
+        add(DCItems.BASIC_PERFORMANCE_COMPOUND_PURIFIER_CIRCUIT.get(), "基本性能化合物精製機回路");
+
+        
 
         add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get(), "基本出力蒸気発電機");
         add("tooltip." + "degeneracycraft." + "basic_power_steam_generator_block",
@@ -1111,6 +1125,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
         add("jei." + "degeneracycraft_basic_performance_electrolyser", "基本性能電解槽 レシピ");
+        add("jei." + "degeneracycraft_basic_performance_compound_purifier", "基本性能電解槽 レシピ");
+
 
         add("jei." + "degeneracycraft_basic_technology_machine_manufacturer", "基本技術機械製造機 レシピ");
         add("jei." + "degeneracycraft_basic_technology_machine_element_processor", "基本技術機械要素加工機 レシピ");

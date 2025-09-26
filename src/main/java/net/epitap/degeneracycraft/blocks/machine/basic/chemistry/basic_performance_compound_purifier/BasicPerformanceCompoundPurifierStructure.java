@@ -33,28 +33,28 @@ public class BasicPerformanceCompoundPurifierStructure {
 
         structure0 = new String[][][]{
                 {
-                        {"F", "F", "F", "F", "F"},
-                        {"F", "F", "F", "F", "F"},
-                        {"F", "E", "B", "E", "F"}
+                        {"F", "F", "F"},
+                        {"F", "F", "F"},
+                        {"E", "B", "E"}
                 },
                 {
-                        {"F", "F", "F", "F", "F"},
-                        {"F", " ", "H", " ", "F"},
-                        {"F", "P", " ", "P", "F",}
+                        {"F", "F", "F"},
+                        {"F", " ", "F"},
+                        {"P", " ", "P"}
                 },
                 {
-                        {"F", "F", "F", "F", "F"},
-                        {"F", "F", "F", "F", "F"},
-                        {"F", "S", "F", "S", "F"}
+                        {"F", "F", "F"},
+                        {"F", "F", "F"},
+                        {"S", "F", "S"}
                 }
         };
 
         Map<String, Predicate<BlockState>> blockConditions = new HashMap<>();
         blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
-        blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get()));
+        blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.get()));
         blockConditions.put("H", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MACHINE_FRAME_BLOCK.get()));
         blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
-        blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.get()));
+        blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.get()));
         blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
 
 
@@ -88,30 +88,30 @@ public class BasicPerformanceCompoundPurifierStructure {
 
         structure1 = new String[][][]{
                 {
-                        {"F", "F", "F", "F", "F"},
-                        {"F", "F", "F", "F", "F"},
-                        {"F", "E", "B", "E", "F"}
+                        {"F", "F", "F"},
+                        {"F", "F", "F"},
+                        {"E", "B", "E"}
                 },
                 {
-                        {"F", "F", "F", "F", "F"},
-                        {"F", "C", "H", "C", "F"},
-                        {"F", "P", " ", "P", "F",}
+                        {"F", "F", "F"},
+                        {"F", "R", "F"},
+                        {"P", " ", "P"}
                 },
                 {
-                        {"F", "F", "F", "F", "F"},
-                        {"F", "F", "F", "F", "F"},
-                        {"F", "S", "F", "S", "F"}
+                        {"F", "F", "F"},
+                        {"F", "F", "F"},
+                        {"S", "F", "S"}
                 }
         };
 
         Map<String, Predicate<BlockState>> blockConditions = new HashMap<>();
         blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
-        blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get()));
+        blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.get()));
         blockConditions.put("H", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MACHINE_FRAME_BLOCK.get()));
         blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
-        blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.get()));
+        blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.get()));
         blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
-        blockConditions.put("C", blockState -> blockState.is(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_BLOCK.get()));
+        blockConditions.put("R", blockState -> blockState.is(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_HOLO_BLOCK.get()));
 
 
         for (int y = minY; y <= maxY; y++) {
@@ -147,58 +147,58 @@ public class BasicPerformanceCompoundPurifierStructure {
 
         structureH0 = new String[][][]{
                 {
-                        {"F", "F", "F", "F", "F"},
-                        {"F", "F", "F", "F", "F"},
-                        {"F", "E", "B", "E", "F"}
+                        {"F", "F", "F"},
+                        {"F", "F", "F"},
+                        {"E", "B", "E"}
                 },
                 {
-                        {"F", "F", "F", "F", "F"},
-                        {"F", " ", "H", " ", "F"},
-                        {"F", "P", " ", "P", "F",}
+                        {"F", "F", "F"},
+                        {"F", " ", "F"},
+                        {"P", " ", "P"}
                 },
                 {
-                        {"F", "F", "F", "F", "F"},
-                        {"F", "F", "F", "F", "F"},
-                        {"F", "S", "F", "S", "F"}
+                        {"F", "F", "F"},
+                        {"F", "F", "F"},
+                        {"S", "F", "S"}
                 }
         };
 
         structureH1 = new String[][][]{
                 {
-                        {"F", "F", "F", "F", "F"},
-                        {"F", "F", "F", "F", "F"},
-                        {"F", "E", "B", "E", "F"}
+                        {"F", "F", "F"},
+                        {"F", "F", "F"},
+                        {"E", "B", "E"}
                 },
                 {
-                        {"F", "F", "F", "F", "F"},
-                        {"F", "C", "H", "C", "F"},
-                        {"F", "P", " ", "P", "F",}
+                        {"F", "F", "F"},
+                        {"F", "R", "F"},
+                        {"P", " ", "P"}
                 },
                 {
-                        {"F", "F", "F", "F", "F"},
-                        {"F", "F", "F", "F", "F"},
-                        {"F", "S", "F", "S", "F"}
+                        {"F", "F", "F"},
+                        {"F", "F", "F"},
+                        {"S", "F", "S"}
                 }
         };
 
         Map<String, Supplier<Block>> blockMapping = new HashMap<>();
         blockMapping.put("F", DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK);
-        blockMapping.put("P", DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK);
+        blockMapping.put("P", DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_HOLO_BLOCK);
         blockMapping.put("H", DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK);
         blockMapping.put("S", DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK);
-        blockMapping.put("B", DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK);
+        blockMapping.put("B", DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_HOLO_BLOCK);
         blockMapping.put("E", DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK);
-        blockMapping.put("C", DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_HOLO_BLOCK);
+        blockMapping.put("R", DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_HOLO_BLOCK);
 
-        boolean displayHologram = blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()) ||
-                blockEntity.itemHandler.getStackInSlot(4).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+        boolean displayHologram = blockEntity.itemHandler.getStackInSlot(5).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()) ||
+                blockEntity.itemHandler.getStackInSlot(5).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
 
         if (!displayHologram) {
             removeHolograms(level, basePos, facing, blockMapping);
             return;
         }
-        boolean visualizer0 = blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
-        boolean visualizer1 = blockEntity.itemHandler.getStackInSlot(4).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+        boolean visualizer0 = blockEntity.itemHandler.getStackInSlot(5).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+        boolean visualizer1 = blockEntity.itemHandler.getStackInSlot(5).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
 
 
         for (int y = minY; y <= maxY; y++) {
@@ -271,12 +271,12 @@ public class BasicPerformanceCompoundPurifierStructure {
     private static boolean isExpectedBlock(BlockState blockState, String blockKey) {
         return switch (blockKey) {
             case "F" -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-            case "P" -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get());
+            case "P" -> blockState.is(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.get());
             case "H" -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
             case "S" -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get());
-            case "B" -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.get());
+            case "B" -> blockState.is(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.get());
             case "E" -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get());
-            case "C" -> blockState.is(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_BLOCK.get());
+            case "R" -> blockState.is(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_BLOCK.get());
             default -> false;
         };
     }

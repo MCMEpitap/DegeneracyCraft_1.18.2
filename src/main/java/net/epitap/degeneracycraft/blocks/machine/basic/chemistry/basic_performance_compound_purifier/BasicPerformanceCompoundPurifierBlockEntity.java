@@ -3,7 +3,7 @@ package net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performa
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierRecipe;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -40,7 +40,7 @@ import java.util.Map;
 import java.util.Optional;
 
 public class BasicPerformanceCompoundPurifierBlockEntity extends BlockEntity implements MenuProvider {
-    public float BP_ELECTROLYSER_CAPACITY = 50000F;
+    public float BP_ELECTROLYSER_CAPACITY = 30000F;
     public float BP_ELECTROLYSER_TRANSFER = 32F;
     public float BP_ELECTROLYSER_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
     public float BP_ELECTROLYSER_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
@@ -53,7 +53,7 @@ public class BasicPerformanceCompoundPurifierBlockEntity extends BlockEntity imp
 
     public boolean isFormed;
     public boolean isPowered0;
-    public final ItemStackHandler itemHandler = new ItemStackHandler(8) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(7) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -62,11 +62,11 @@ public class BasicPerformanceCompoundPurifierBlockEntity extends BlockEntity imp
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 1, 4, 5 -> false;
-                case 2, 3 -> stack.getItem() == DCItems.EMPTY_CONTAINER.get();
-                case 6 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
+                case 3 -> stack.getItem() == DCItems.EMPTY_CONTAINER.get();
+                case 4 -> false;
+                case 5 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
                         || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
-                case 7 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
+                case 6 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -229,8 +229,8 @@ public class BasicPerformanceCompoundPurifierBlockEntity extends BlockEntity imp
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<BasicPerformanceElectrolyserRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceCompoundPurifierRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceCompoundPurifierRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
@@ -267,8 +267,8 @@ public class BasicPerformanceCompoundPurifierBlockEntity extends BlockEntity imp
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectrolyserRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceCompoundPurifierRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceCompoundPurifierRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return blockEntity.data.get(0) >= match.get().getRequiredTime() * 20;
@@ -283,8 +283,8 @@ public class BasicPerformanceCompoundPurifierBlockEntity extends BlockEntity imp
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectrolyserRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceCompoundPurifierRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceCompoundPurifierRecipe.Type.INSTANCE, inventory, level);
 
         return match.isPresent();
     }
@@ -296,12 +296,12 @@ public class BasicPerformanceCompoundPurifierBlockEntity extends BlockEntity imp
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectrolyserRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceCompoundPurifierRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceCompoundPurifierRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(2).getCount() >= match.get().getInput1Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(3).getCount() >= match.get().getInput2Item().getCount();
+                && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(2).getCount() >= match.get().getInput2Item().getCount();
     }
 
     private static boolean hasEnergyRecipe(BasicPerformanceCompoundPurifierBlockEntity blockEntity) {
@@ -311,14 +311,10 @@ public class BasicPerformanceCompoundPurifierBlockEntity extends BlockEntity imp
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectrolyserRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceCompoundPurifierRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceCompoundPurifierRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
-    }
-
-    public static boolean checkConsumeCount(BasicPerformanceCompoundPurifierBlockEntity blockEntity) {
-        return blockEntity.consumeCounter == 0;
     }
 
     private static void consumeItem(BasicPerformanceCompoundPurifierBlockEntity blockEntity) {
@@ -328,14 +324,14 @@ public class BasicPerformanceCompoundPurifierBlockEntity extends BlockEntity imp
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectrolyserRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceCompoundPurifierRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceCompoundPurifierRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(2, match.get().getInput1Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(3, match.get().getInput2Item().getCount(), false);
-            blockEntity.itemHandler.setStackInSlot(1, new ItemStack(DCItems.EMPTY_CONTAINER.get(),
+            blockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(2, match.get().getInput2Item().getCount(), false);
+            blockEntity.itemHandler.setStackInSlot(3, new ItemStack(DCItems.EMPTY_CONTAINER.get(),
                     blockEntity.itemHandler.getStackInSlot(1).getCount() + 1));
         }
     }
@@ -347,21 +343,19 @@ public class BasicPerformanceCompoundPurifierBlockEntity extends BlockEntity imp
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectrolyserRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceCompoundPurifierRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceCompoundPurifierRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             blockEntity.itemHandler.setStackInSlot(4, new ItemStack(match.get().getOutput0Item().getItem(),
                     blockEntity.itemHandler.getStackInSlot(4).getCount() + match.get().getOutput0Item().getCount()));
-            blockEntity.itemHandler.setStackInSlot(5, new ItemStack(match.get().getOutput1Item().getItem(),
-                    blockEntity.itemHandler.getStackInSlot(5).getCount() + match.get().getOutput1Item().getCount()));
             blockEntity.resetProgress();
             blockEntity.resetConsumeCount();
         }
     }
 
     public static boolean isHaltDevice(BasicPerformanceCompoundPurifierBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MACHINE_HALT_DEVICE.get());
+        return blockEntity.itemHandler.getStackInSlot(6).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
     public void resetProgress() {
@@ -378,11 +372,10 @@ public class BasicPerformanceCompoundPurifierBlockEntity extends BlockEntity imp
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectrolyserRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceCompoundPurifierRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceCompoundPurifierRecipe.Type.INSTANCE, inventory, level);
 
-        return (blockEntity.itemHandler.getStackInSlot(4).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(4).getMaxStackSize())
-                && (blockEntity.itemHandler.getStackInSlot(5).getCount() + match.get().getOutput1Item().getCount() <= blockEntity.itemHandler.getStackInSlot(5).getMaxStackSize());
+        return blockEntity.itemHandler.getStackInSlot(4).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(4).getMaxStackSize();
     }
 
     private static boolean canInsertItemIntoOutputSlot(BasicPerformanceCompoundPurifierBlockEntity blockEntity) {
@@ -392,21 +385,20 @@ public class BasicPerformanceCompoundPurifierBlockEntity extends BlockEntity imp
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectrolyserRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceCompoundPurifierRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceCompoundPurifierRecipe.Type.INSTANCE, inventory, level);
 
-        return (blockEntity.itemHandler.getStackInSlot(4).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(4).isEmpty())
-                && (blockEntity.itemHandler.getStackInSlot(5).getItem() == match.get().getOutput1Item().getItem() || blockEntity.itemHandler.getStackInSlot(5).isEmpty());
+        return blockEntity.itemHandler.getStackInSlot(4).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(4).isEmpty();
     }
 
     public void insertRecipeInputsFromPlayer(ServerPlayer player, Recipe<?> recipe, boolean shift) {
-        if (!(recipe instanceof BasicPerformanceElectrolyserRecipe recipeData)) return;
+        if (!(recipe instanceof BasicPerformanceCompoundPurifierRecipe recipeData)) return;
 
         player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(playerInv -> {
             this.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(machineInv -> {
                 insertItemFromPlayer(playerInv, machineInv, recipeData.getInput0Item(), 0, shift);
-                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput1Item(), 2, shift);
-                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput2Item(), 3, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput1Item(), 1, shift);
+                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput2Item(), 2, shift);
             });
         });
 

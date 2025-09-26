@@ -924,6 +924,20 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(), "Basic Performance Electrolyser Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_ELECTROLYSER_CIRCUIT.get(), "Basic Performance Electrolyser Circuit");
 
+        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.get(), "Basic Performance Compound Purifier");
+        add("tooltip." + "degeneracycraft." + "basic_performance_compound_purifier_block",
+                "基本的な化合物精製機. 鉱石のインゴットを化学反応用に精製する.");
+        add(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_BLOCK.get(), "Basic Durable High Speed Chemical Reactor");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_compound_purifier_block",
+                "For Basic Performance Compound Purifier");
+        add(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_HOLO_BLOCK.get(), "Basic Durable High Speed Chemical Reactor (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.get(), "Basic Performance Compound Purifier Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_HOLO_BLOCK.get(), "Basic Performance Compound Purifier Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.get(), "Basic Performance Compound Purifier Port");
+        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_HOLO_BLOCK.get(), "Basic Performance Compound Purifier Port (Hologram)");
+        add(DCItems.BASIC_PERFORMANCE_COMPOUND_PURIFIER_CIRCUIT.get(), "Basic Performance Compound Purifier Circuit");
+        
+        
 
         add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get(), "Basic Power Steam Generator");
         add("tooltip." + "degeneracycraft." + "basic_power_steam_generator_block",

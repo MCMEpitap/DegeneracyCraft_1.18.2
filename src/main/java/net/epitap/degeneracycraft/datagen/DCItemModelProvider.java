@@ -1039,12 +1039,30 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_electrolyser_bus_block"));
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_electrolyser_bus_block"));
+                modLoc("block/basic_performance_electrolyser_bus_holo_block"));
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_electrolyser_port_block"));
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_electrolyser_port_holo_block"));
         basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_ELECTROLYSER_CIRCUIT.get());
+        
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_compound_purifier_block"));
+        withExistingParent(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_BLOCK.getId().getPath(),
+                modLoc("block/basic_durable_high_speed_chemical_reactor_block"));
+        withExistingParent(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_durable_high_speed_chemical_reactor_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_compound_purifier_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_compound_purifier_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_compound_purifier_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_compound_purifier_port_holo_block"));
+        basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_COMPOUND_PURIFIER_CIRCUIT.get());
+
+
 
         withExistingParent(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.getId().getPath(),
                 modLoc("block/redstone_powered_machine_element_manufacture_machine_block"));

@@ -698,7 +698,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.EMPTY_CONTAINER.get(), "Empty Container");
         add(DCItems.WATER_CONTAINER.get(), "Water Container");
 
-        add(DCItems.POTTASSIUM_NITRATE_DUST.get(), "Pottassium Nitrite Dust");
+        add(DCItems.POTASSIUM_NITRATE_DUST.get(), "Pottassium Nitrite Dust");
         add(DCItems.HYDROCHLORIC_ACID_SOLUTION.get(), "Hydrochloric Acid Solution");
         add(DCItems.HYDROGEN_CHLORIDE_GAS.get(), "Hydrogen Chloride Gas");
 

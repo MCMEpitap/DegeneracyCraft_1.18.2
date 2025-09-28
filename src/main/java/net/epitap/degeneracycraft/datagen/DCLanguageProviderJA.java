@@ -755,7 +755,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.EMPTY_CONTAINER.get(), "空の容器");
         add(DCItems.WATER_CONTAINER.get(), "水容器");
 
-        add(DCItems.POTTASSIUM_NITRATE_DUST.get(), "硝酸カリウムの粉");
+        add(DCItems.POTASSIUM_NITRATE_DUST.get(), "硝酸カリウムの粉");
         add(DCItems.HYDROCHLORIC_ACID_SOLUTION.get(), "塩酸溶液");
         add(DCItems.HYDROGEN_CHLORIDE_GAS.get(), "塩化水素ガス");
 
@@ -1276,8 +1276,11 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
         add("tooltip." + "degeneracycraft." + "water" + ".formula", "化学式:H₂O");
 
+
+
         add("tooltip." + "degeneracycraft." + "hydrochloric_acid" + ".formula", "化学式:HCl");
         add("tooltip." + "degeneracycraft." + "hydrogen_chloride" + ".formula", "化学式:HCl");
+        add("tooltip." + "degeneracycraft." + "potassium_nitrate" + ".formula", "化学式:KNO₃");
 
 
 

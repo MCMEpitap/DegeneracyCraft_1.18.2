@@ -510,7 +510,7 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> WATER_CONTAINER = registerChemicalSubstanceItem("water_container", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "water", "basic");
 
 
-    public static final RegistryObject<Item> POTTASSIUM_NITRATE_DUST = registerChemicalSubstanceItem("potassium_nitrate_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrochloric_acid", "basic");
+    public static final RegistryObject<Item> POTASSIUM_NITRATE_DUST = registerChemicalSubstanceItem("potassium_nitrate_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrochloric_acid", "basic");
     public static final RegistryObject<Item> HYDROCHLORIC_ACID_SOLUTION = registerChemicalSubstanceItem("hydrochloric_acid_solution", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrochloric_acid", "basic");
     public static final RegistryObject<Item> HYDROGEN_CHLORIDE_GAS = registerChemicalSubstanceItem("hydrogen_chloride_gas", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrogen_chloride", "basic");
 

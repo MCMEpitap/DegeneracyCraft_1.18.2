@@ -709,7 +709,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicMaterialCommonItem(DCItems.WATER_CONTAINER.get());
 
 
-        basicMaterialChemistryItem(DCItems.POTTASSIUM_NITRATE_DUST.get());
+        basicMaterialChemistryItem(DCItems.POTASSIUM_NITRATE_DUST.get());
         basicMaterialChemistryItem(DCItems.HYDROCHLORIC_ACID_SOLUTION.get());
         basicMaterialChemistryItem(DCItems.HYDROGEN_CHLORIDE_GAS.get());
 

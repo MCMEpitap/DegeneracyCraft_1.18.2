@@ -706,7 +706,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
         add(DCItems.SIMPLE_CHEMICAL_CONTAINER.get(), "簡易化学コンテナ");
-
+        add(DCItems.SIMPLE_ORE_SORTING_FILTER.get(), "簡易選鉱フィルター");
 
 
         add(DCItems.BASIC_CIRCUIT.get(), "基本回路");
@@ -755,9 +755,13 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.EMPTY_CONTAINER.get(), "空の容器");
         add(DCItems.WATER_CONTAINER.get(), "水容器");
 
-        add(DCItems.POTASSIUM_NITRATE_DUST.get(), "硝酸カリウムの粉");
+
         add(DCItems.HYDROCHLORIC_ACID_SOLUTION.get(), "塩酸溶液");
         add(DCItems.HYDROGEN_CHLORIDE_GAS.get(), "塩化水素ガス");
+        add(DCItems.POTASSIUM_CHLORIDE_DUST.get(), "塩化カリウムの粉");
+        add(DCItems.POTASSIUM_NITRATE_DUST.get(), "硝酸カリウムの粉");
+        add(DCItems.SODIUM_CHLORIDE_DUST.get(), "塩化ナトリウムの粉");
+        add(DCItems.SODIUM_NITRATE_DUST.get(), "塩化カリウムの粉");
 
         add(DCBlocks.PULVERIZER_BLOCK.get(), "粉砕機");
 

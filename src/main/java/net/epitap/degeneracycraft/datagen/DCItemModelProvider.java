@@ -677,6 +677,14 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.TIN_BLOCK.getId().getPath(),
                 modLoc("block/tin_block"));
 
+
+        substanceItem(DCItems.HYDROCHLORIC_ACID_SOLUTION.get());
+        substanceItem(DCItems.HYDROGEN_CHLORIDE_GAS.get());
+        substanceItem(DCItems.POTASSIUM_CHLORIDE_DUST.get());
+        substanceItem(DCItems.POTASSIUM_NITRATE_DUST.get());
+        substanceItem(DCItems.SODIUM_CHLORIDE_DUST.get());
+        substanceItem(DCItems.SODIUM_NITRATE_DUST.get());
+
         basicInscribedCircuitItem(DCItems.BASIC_PRECISION_BOLT_INSCRIBED_CIRCUIT.get());
         basicInscribedCircuitItem(DCItems.BASIC_PRECISION_KEY_INSCRIBED_CIRCUIT.get());
         basicInscribedCircuitItem(DCItems.BASIC_PRECISION_ROD_INSCRIBED_CIRCUIT.get());
@@ -702,6 +710,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         deviceItem(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
         deviceItem(DCItems.MACHINE_HALT_DEVICE.get());
 
+
 //        basicMaterialAstronomyItem(DCItems.ASTRONOMY_DATA_STORAGE.get());
         dataStorageAstronomyItem(DCItems.STAR_DATA_STORAGE_MOON.get());
 
@@ -709,9 +718,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicMaterialCommonItem(DCItems.WATER_CONTAINER.get());
 
 
-        basicMaterialChemistryItem(DCItems.POTASSIUM_NITRATE_DUST.get());
-        basicMaterialChemistryItem(DCItems.HYDROCHLORIC_ACID_SOLUTION.get());
-        basicMaterialChemistryItem(DCItems.HYDROGEN_CHLORIDE_GAS.get());
+
 
 
         basicMaterialHybridPhysicsItem(DCItems.PURIFIED_GRAPHITE_ARC_ELECTRODE.get());
@@ -728,6 +735,7 @@ public class DCItemModelProvider extends ItemModelProvider {
 
 
         basicPartChemistryItem(DCItems.SIMPLE_CHEMICAL_CONTAINER.get());
+        basicPartChemistryItem(DCItems.SIMPLE_ORE_SORTING_FILTER.get());
 
 
 
@@ -1509,6 +1517,13 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/element/tin/" + item.getRegistryName().getPath()));
     }
+
+    private ItemModelBuilder substanceItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/material/substance/" + item.getRegistryName().getPath()));
+    }
+
 
     private ItemModelBuilder basicPartAstronomyItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),

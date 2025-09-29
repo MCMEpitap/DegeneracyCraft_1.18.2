@@ -698,9 +698,13 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.EMPTY_CONTAINER.get(), "Empty Container");
         add(DCItems.WATER_CONTAINER.get(), "Water Container");
 
-        add(DCItems.POTASSIUM_NITRATE_DUST.get(), "Pottassium Nitrite Dust");
         add(DCItems.HYDROCHLORIC_ACID_SOLUTION.get(), "Hydrochloric Acid Solution");
         add(DCItems.HYDROGEN_CHLORIDE_GAS.get(), "Hydrogen Chloride Gas");
+        add(DCItems.POTASSIUM_CHLORIDE_DUST.get(), "Pottassium Chloride Dust");
+        add(DCItems.POTASSIUM_NITRATE_DUST.get(), "Pottassium Nitrite Dust");
+        add(DCItems.SODIUM_CHLORIDE_DUST.get(), "Sodium Chloride Dust");
+        add(DCItems.SODIUM_NITRATE_DUST.get(), "Sodium Nitrate Dust");
+
 
         add(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "Multiblock Structure Hologram Visualizer");
         add(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "Basic Technology Multiblock Structure Hologram Visualizer");
@@ -714,6 +718,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
 
         add(DCItems.SIMPLE_CHEMICAL_CONTAINER.get(), "Simple Chemical Container");
+        add(DCItems.SIMPLE_ORE_SORTING_FILTER.get(), "Simple Ore Sorting Filter");
 
 
 

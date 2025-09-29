@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/material/basic/chemistry/hydrochloric_acid_solution"
+    "layer0": "degeneracycraft:item/material/substance/hydrochloric_acid_solution"
   }
 }

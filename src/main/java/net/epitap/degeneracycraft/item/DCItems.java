@@ -2,6 +2,7 @@ package net.epitap.degeneracycraft.item;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.item.tool.CAMMDA_Tier1;
+import net.epitap.degeneracycraft.item.tool.FilterItem;
 import net.epitap.degeneracycraft.item.tool.WrenchItem;
 import net.epitap.degeneracycraft.item.tool.test.GunItem;
 import net.epitap.degeneracycraft.tier.DCTier;
@@ -509,10 +510,12 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> EMPTY_CONTAINER = ITEMS.register("empty_container", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
     public static final RegistryObject<Item> WATER_CONTAINER = registerChemicalSubstanceItem("water_container", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "water", "basic");
 
-
-    public static final RegistryObject<Item> POTASSIUM_NITRATE_DUST = registerChemicalSubstanceItem("potassium_nitrate_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrochloric_acid", "basic");
     public static final RegistryObject<Item> HYDROCHLORIC_ACID_SOLUTION = registerChemicalSubstanceItem("hydrochloric_acid_solution", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrochloric_acid", "basic");
     public static final RegistryObject<Item> HYDROGEN_CHLORIDE_GAS = registerChemicalSubstanceItem("hydrogen_chloride_gas", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrogen_chloride", "basic");
+    public static final RegistryObject<Item> POTASSIUM_CHLORIDE_DUST = registerChemicalSubstanceItem("potassium_chloride_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "potassium_chloride", "basic");
+    public static final RegistryObject<Item> POTASSIUM_NITRATE_DUST = registerChemicalSubstanceItem("potassium_nitrate_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "potassium_nitrate", "basic");
+    public static final RegistryObject<Item> SODIUM_CHLORIDE_DUST = registerChemicalSubstanceItem("sodium_chloride_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "sodium_chloride", "basic");
+    public static final RegistryObject<Item> SODIUM_NITRATE_DUST = registerChemicalSubstanceItem("sodium_nitrate_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "sodium_nitrate", "basic");
 
     //Machine Component Group
 
@@ -806,6 +809,7 @@ public class DCItems extends CreativeModeTab {
 
 
     public static final RegistryObject<Item> SIMPLE_CHEMICAL_CONTAINER = ITEMS.register("simple_chemical_container", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_ORE_SORTING_FILTER = ITEMS.register("simple_ore_sorting_filter", () -> new FilterItem(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
 
 

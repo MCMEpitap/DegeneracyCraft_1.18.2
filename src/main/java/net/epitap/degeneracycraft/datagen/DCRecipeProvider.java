@@ -85,7 +85,8 @@ public class DCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .define('e', DCItems.EMPTY_CONTAINER.get())
                 .group("degeneracycraft")
                 .unlockedBy("ingots/iron", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_INGOT))
-                .save(pFinishedRecipeConsumer);
+                .save(pFinishedRecipeConsumer)
+        ;
 
         ShapedRecipeBuilder.shaped(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get())
                 .pattern(" i ")
@@ -137,6 +138,17 @@ public class DCRecipeProvider extends RecipeProvider implements IConditionBuilde
                 .define('D', DCItems.BASIC_DRIVECHAIN.get())
                 .define('L', DCItems.BASIC_LINKAGE.get())
                 .define('B', DCItems.BASIC_REDSTONE_BATTERY.get())
+                .group("degeneracycraft")
+                .unlockedBy("ingots/iron", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_INGOT))
+                .save(pFinishedRecipeConsumer);
+
+        ShapedRecipeBuilder.shaped(DCItems.SIMPLE_ORE_SORTING_FILTER.get())
+                .pattern("PLP")
+                .pattern("CPC")
+                .pattern("PLP")
+                .define('P', Items.PAPER)
+                .define('L', Items.LAPIS_LAZULI)
+                .define('C', Items.COAL)
                 .group("degeneracycraft")
                 .unlockedBy("ingots/iron", InventoryChangeTrigger.TriggerInstance.hasItems(Items.IRON_INGOT))
                 .save(pFinishedRecipeConsumer);

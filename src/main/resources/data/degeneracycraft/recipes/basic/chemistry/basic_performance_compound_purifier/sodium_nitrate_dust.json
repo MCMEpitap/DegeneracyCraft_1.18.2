@@ -1,0 +1,17 @@
+{
+  "type": "degeneracycraft:basic_performance_compound_purifier_recipe",
+  "energy": 1000.0,
+  "time": 10.0,
+  "input0": {
+    "item": "degeneracycraft:nitratine_ingot"
+  },
+  "input1": {
+    "item": "degeneracycraft:simple_ore_sorting_filter"
+  },
+  "input2": {
+    "item": "degeneracycraft:water_container"
+  },
+  "output0": {
+    "item": "degeneracycraft:sodium_nitrate_dust"
+  }
+}

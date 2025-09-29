@@ -1284,8 +1284,10 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
         add("tooltip." + "degeneracycraft." + "hydrochloric_acid" + ".formula", "化学式:HCl");
         add("tooltip." + "degeneracycraft." + "hydrogen_chloride" + ".formula", "化学式:HCl");
+        add("tooltip." + "degeneracycraft." + "potassium_chloride" + ".formula", "化学式:KCl");
         add("tooltip." + "degeneracycraft." + "potassium_nitrate" + ".formula", "化学式:KNO₃");
-
+        add("tooltip." + "degeneracycraft." + "sodium_chloride" + ".formula", "化学式:NaCl");
+        add("tooltip." + "degeneracycraft." + "sodium_nitrate" + ".formula", "化学式:NaNO₃");
 
 
         add("tooltip." + "degeneracycraft." + "requiredenergy." + "iron_bearing" + ".phase0", "要求電力総量:0 FE");

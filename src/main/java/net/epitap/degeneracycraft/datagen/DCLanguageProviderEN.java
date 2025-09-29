@@ -1287,6 +1287,10 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add("tooltip." + "degeneracycraft." + "hydrochloric_acid" + ".formula", "Chemical Formula:HCl");
         add("tooltip." + "degeneracycraft." + "hydrogen_chloride" + ".formula", "Chemical Formula:HCl");
+        add("tooltip." + "degeneracycraft." + "potassium_chloride" + ".formula", "Chemical Formula:KCl");
+        add("tooltip." + "degeneracycraft." + "potassium_nitrate" + ".formula", "Chemical Formula:KNO₃");
+        add("tooltip." + "degeneracycraft." + "sodium_chloride" + ".formula", "Chemical Formula:NaCl");
+        add("tooltip." + "degeneracycraft." + "sodium_nitrate" + ".formula", "Chemical Formula:NaNO₃");
 
 
 

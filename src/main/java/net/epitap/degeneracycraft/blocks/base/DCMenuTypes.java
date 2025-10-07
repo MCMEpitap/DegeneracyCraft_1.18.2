@@ -2,6 +2,7 @@ package net.epitap.degeneracycraft.blocks.base;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineMenu;
@@ -109,10 +110,13 @@ public class DCMenuTypes {
 
 
 
-    public static final RegistryObject<MenuType<BasicPerformanceElectrolyserMenu>> BASIC_PERFORMANCE_ELECTROLYSER_MENU =
-            registerMenuType(BasicPerformanceElectrolyserMenu::new, "basic_performance_electrolyser_menu");
+
+    public static final RegistryObject<MenuType<BasicPerformanceChemicalReactorMenu>> BASIC_PERFORMANCE_CHEMICAL_REACTOR_MENU =
+            registerMenuType(BasicPerformanceChemicalReactorMenu::new, "basic_performance_chemical_reactor_menu");
     public static final RegistryObject<MenuType<BasicPerformanceCompoundPurifierMenu>> BASIC_PERFORMANCE_COMPOUND_PURIFIER_MENU =
             registerMenuType(BasicPerformanceCompoundPurifierMenu::new, "basic_performance_compound_purifier_menu");
+    public static final RegistryObject<MenuType<BasicPerformanceElectrolyserMenu>> BASIC_PERFORMANCE_ELECTROLYSER_MENU =
+            registerMenuType(BasicPerformanceElectrolyserMenu::new, "basic_performance_electrolyser_menu");
 
 
     public static final RegistryObject<MenuType<BasicPowerSteamGeneratorMenu>> BASIC_POWER_STEAM_GENERATOR_MENU =

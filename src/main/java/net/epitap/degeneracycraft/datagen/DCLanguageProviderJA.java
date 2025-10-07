@@ -902,24 +902,18 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
 
-
-
-
-
-
-
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get(), "基本性能電解槽");
-        add("tooltip." + "degeneracycraft." + "basic_performance_electrolyser_block",
-                "基本的な電解槽. 電気分解によって物質を反応させる.");
-        add(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_BLOCK.get(), "基本耐用拡張電解セル");
-        add("tooltip." + "degeneracycraft.ability" + "basic_performance_electrolyser_block",
-                "基本性能電解槽用");
-        add(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_HOLO_BLOCK.get(), "基本耐用拡張電解セル (ホログラム)");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.get(), "基本性能電解槽バス");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK.get(), "基本性能電解槽バス (ホログラム)");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get(), "基本性能電解槽ポート");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(), "基本性能電解槽ポート (ホログラム)");
-        add(DCItems.BASIC_PERFORMANCE_ELECTROLYSER_CIRCUIT.get(), "基本性能電解槽回路");
+        add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BLOCK.get(), "基本性能化学反応機");
+        add("tooltip." + "degeneracycraft." + "basic_performance_chemical_reactor_block",
+                "基本的な化学反応機. 化学反応を起こし新たな物質を作り出す.");
+        add(DCBlocks.BASIC_RATE_COMPOUND_AGITATION_SYSTEM_BLOCK.get(), "基本割合化合物混成システム");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_chemical_reactor_block",
+                "基本性能化学反応機用");
+        add(DCBlocks.BASIC_RATE_COMPOUND_AGITATION_SYSTEM_HOLO_BLOCK.get(), "基本割合化合物混成システム (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_BLOCK.get(), "基本性能化学反応機バス");
+        add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_HOLO_BLOCK.get(), "基本性能化学反応機バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_PORT_BLOCK.get(), "基本性能化学反応機ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_PORT_HOLO_BLOCK.get(), "基本性能化学反応機ポート (ホログラム)");
+        add(DCItems.BASIC_PERFORMANCE_CHEMICAL_REACTOR_CIRCUIT.get(), "基本性能化学反応機回路");
 
         add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.get(), "基本性能化合物精製機");
         add("tooltip." + "degeneracycraft." + "basic_performance_compound_purifier_block",
@@ -933,6 +927,19 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.get(), "基本性能化合物精製機ポート");
         add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_HOLO_BLOCK.get(), "基本性能化合物精製機ポート (ホログラム)");
         add(DCItems.BASIC_PERFORMANCE_COMPOUND_PURIFIER_CIRCUIT.get(), "基本性能化合物精製機回路");
+
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get(), "基本性能電解槽");
+        add("tooltip." + "degeneracycraft." + "basic_performance_electrolyser_block",
+                "基本的な電解槽. 電気分解によって物質を反応させる.");
+        add(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_BLOCK.get(), "基本耐用拡張電解セル");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_electrolyser_block",
+                "基本性能電解槽用");
+        add(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_HOLO_BLOCK.get(), "基本耐用拡張電解セル (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.get(), "基本性能電解槽バス");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK.get(), "基本性能電解槽バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get(), "基本性能電解槽ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(), "基本性能電解槽ポート (ホログラム)");
+        add(DCItems.BASIC_PERFORMANCE_ELECTROLYSER_CIRCUIT.get(), "基本性能電解槽回路");
 
         
 
@@ -1129,7 +1136,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
         add("jei." + "degeneracycraft_basic_performance_electrolyser", "基本性能電解槽 レシピ");
-        add("jei." + "degeneracycraft_basic_performance_compound_purifier", "基本性能電解槽 レシピ");
+        add("jei." + "degeneracycraft_basic_performance_compound_purifier", "基本性能化合物精製機 レシピ");
 
 
         add("jei." + "degeneracycraft_basic_technology_machine_manufacturer", "基本技術機械製造機 レシピ");

@@ -111,7 +111,7 @@ public class BasicPerformanceCompoundPurifierStructure {
         blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
         blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.get()));
         blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
-        blockConditions.put("R", blockState -> blockState.is(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_HOLO_BLOCK.get()));
+        blockConditions.put("R", blockState -> blockState.is(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_BLOCK.get()));
 
 
         for (int y = minY; y <= maxY; y++) {

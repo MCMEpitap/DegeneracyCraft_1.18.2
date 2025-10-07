@@ -103,7 +103,7 @@ public class BasicTechnologyMachinePartProcessorMenu extends AbstractContainerMe
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get());
+                player, DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

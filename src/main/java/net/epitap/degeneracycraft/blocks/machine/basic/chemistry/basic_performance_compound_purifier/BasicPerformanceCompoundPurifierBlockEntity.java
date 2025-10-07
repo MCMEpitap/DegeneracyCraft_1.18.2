@@ -331,8 +331,7 @@ public class BasicPerformanceCompoundPurifierBlockEntity extends BlockEntity imp
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
             blockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
             blockEntity.itemHandler.extractItem(2, match.get().getInput2Item().getCount(), false);
-            blockEntity.itemHandler.setStackInSlot(3, new ItemStack(DCItems.EMPTY_CONTAINER.get(),
-                    blockEntity.itemHandler.getStackInSlot(1).getCount() + 1));
+            blockEntity.itemHandler.setStackInSlot(3, new ItemStack(DCItems.EMPTY_CONTAINER.get(), 1));
         }
     }
 
@@ -388,7 +387,7 @@ public class BasicPerformanceCompoundPurifierBlockEntity extends BlockEntity imp
         Optional<BasicPerformanceCompoundPurifierRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceCompoundPurifierRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(4).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(4).isEmpty();
+        return (blockEntity.itemHandler.getStackInSlot(4).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(4).isEmpty());
     }
 
     public void insertRecipeInputsFromPlayer(ServerPlayer player, Recipe<?> recipe, boolean shift) {

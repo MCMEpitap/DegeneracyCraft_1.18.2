@@ -1022,21 +1022,37 @@ public class DCItemModelProvider extends ItemModelProvider {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_chemical_reactor_block"));
+        withExistingParent(DCBlocks.BASIC_RATE_COMPOUND_AGITATION_SYSTEM_BLOCK.getId().getPath(),
+                modLoc("block/basic_rate_compound_agitation_system_block"));
+        withExistingParent(DCBlocks.BASIC_RATE_COMPOUND_AGITATION_SYSTEM_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_rate_compound_agitation_system_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_chemical_reactor_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_chemical_reactor_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_chemical_reactor_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_chemical_reactor_port_holo_block"));
+        basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_CHEMICAL_REACTOR_CIRCUIT.get());
+        
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_compound_purifier_block"));
+        withExistingParent(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_BLOCK.getId().getPath(),
+                modLoc("block/basic_durable_high_speed_chemical_reactor_block"));
+        withExistingParent(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_durable_high_speed_chemical_reactor_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_compound_purifier_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_compound_purifier_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_compound_purifier_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_compound_purifier_port_holo_block"));
+        basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_COMPOUND_PURIFIER_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_electrolyser_block"));
@@ -1054,21 +1070,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_electrolyser_port_holo_block"));
         basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_ELECTROLYSER_CIRCUIT.get());
         
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_compound_purifier_block"));
-        withExistingParent(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_BLOCK.getId().getPath(),
-                modLoc("block/basic_durable_high_speed_chemical_reactor_block"));
-        withExistingParent(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_durable_high_speed_chemical_reactor_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_compound_purifier_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_compound_purifier_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_compound_purifier_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_compound_purifier_port_holo_block"));
-        basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_COMPOUND_PURIFIER_CIRCUIT.get());
 
 
 

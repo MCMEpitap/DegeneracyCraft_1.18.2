@@ -112,11 +112,10 @@ public class JEIDCPlugin implements IModPlugin {
                 BasicPerformanceAstronomicalTelescopeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
 
-
-        registration.addRecipeCategories(new
-                BasicPerformanceElectrolyserRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
                 BasicPerformanceCompoundPurifierRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new
+                BasicPerformanceElectrolyserRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
 
 
@@ -198,13 +197,12 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipes(new RecipeType<>(BasicPerformanceAstronomicalTelescopeRecipeCategory.UID, BasicPerformanceAstronomicalTelescopeRecipe.class), basicPerformanceAstronomicalTelescopeRecipe);
 
 
-
-        List<BasicPerformanceElectrolyserRecipe> basicPerformanceElectrolyserRecipe =
-                rm.getAllRecipesFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE);
-        registration.addRecipes(new RecipeType<>(BasicPerformanceElectrolyserRecipeCategory.UID, BasicPerformanceElectrolyserRecipe.class), basicPerformanceElectrolyserRecipe);
         List<BasicPerformanceCompoundPurifierRecipe> basicPerformanceCompoundPurifierRecipe =
                 rm.getAllRecipesFor(BasicPerformanceCompoundPurifierRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicPerformanceCompoundPurifierRecipeCategory.UID, BasicPerformanceCompoundPurifierRecipe.class), basicPerformanceCompoundPurifierRecipe);
+        List<BasicPerformanceElectrolyserRecipe> basicPerformanceElectrolyserRecipe =
+                rm.getAllRecipesFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicPerformanceElectrolyserRecipeCategory.UID, BasicPerformanceElectrolyserRecipe.class), basicPerformanceElectrolyserRecipe);
 
 
 
@@ -273,11 +271,13 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeClickArea(RedstonePoweredMachinePartManufactureMachineScreen.class, 64, 20, 29, 8, RedstonePoweredMachinePartManufactureMachineRecipeCategory.UID);
 
 
+
         registration.addRecipeClickArea(BasicPerformanceAstronomicalTelescopeScreen.class, 64, 20, 29, 8, BasicPerformanceAstronomicalTelescopeRecipeCategory.UID);
 
 
-        registration.addRecipeClickArea(BasicPerformanceElectrolyserScreen.class, 64, 20, 29, 8, BasicPerformanceElectrolyserRecipeCategory.UID);
+
         registration.addRecipeClickArea(BasicPerformanceCompoundPurifierScreen.class, 64, 20, 29, 8, BasicPerformanceCompoundPurifierRecipeCategory.UID);
+        registration.addRecipeClickArea(BasicPerformanceElectrolyserScreen.class, 64, 20, 29, 8, BasicPerformanceElectrolyserRecipeCategory.UID);
 
 
 
@@ -321,9 +321,8 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get()), BasicPerformanceAstronomicalTelescopeRecipeCategory.UID);
 
 
-
-        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get()), BasicPerformanceElectrolyserRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.get()), BasicPerformanceCompoundPurifierRecipeCategory.UID);
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get()), BasicPerformanceElectrolyserRecipeCategory.UID);
 
 
 
@@ -369,6 +368,15 @@ public class JEIDCPlugin implements IModPlugin {
 
 
         registration.addRecipeTransferHandler(
+                new BasicPerformanceCompoundPurifierRecipeTransferHandler<>(
+                        BasicPerformanceCompoundPurifierMenu.class,
+                        0, 3,
+                        7, 36
+                ),
+                BasicPerformanceCompoundPurifierRecipeCategory.TYPE
+        );
+
+        registration.addRecipeTransferHandler(
                 new BasicPerformanceElectrolyserRecipeTransferHandler<>(
                         BasicPerformanceElectrolyserMenu.class,
                         0, 3,
@@ -377,14 +385,7 @@ public class JEIDCPlugin implements IModPlugin {
                 BasicPerformanceElectrolyserRecipeCategory.TYPE
         );
 
-        registration.addRecipeTransferHandler(
-                new BasicPerformanceCompoundPurifierRecipeTransferHandler<>(
-                        BasicPerformanceCompoundPurifierMenu.class,
-                        0, 3,
-                        8, 36
-                ),
-                BasicPerformanceCompoundPurifierRecipeCategory.TYPE
-        );
+
 
 
 

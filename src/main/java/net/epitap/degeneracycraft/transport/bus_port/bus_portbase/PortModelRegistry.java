@@ -17,10 +17,12 @@ public class PortModelRegistry {
 
 
 
-        BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK_EXTRACT("block/basic_performance_electrolyser_bus_block_extract"),
-        BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK_EXTRACT("block/basic_performance_electrolyser_port_block_extract"),
+        BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_BLOCK_EXTRACT("block/basic_performance_chemical_reactor_bus_block_extract"),
+        BASIC_PERFORMANCE_CHEMICAL_REACTOR_PORT_BLOCK_EXTRACT("block/basic_performance_chemical_reactor_port_block_extract"),
         BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK_EXTRACT("block/basic_performance_compound_purifier_bus_block_extract"),
         BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK_EXTRACT("block/basic_performance_compound_purifier_port_block_extract"),
+        BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK_EXTRACT("block/basic_performance_electrolyser_bus_block_extract"),
+        BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK_EXTRACT("block/basic_performance_electrolyser_port_block_extract"),
 
 
 

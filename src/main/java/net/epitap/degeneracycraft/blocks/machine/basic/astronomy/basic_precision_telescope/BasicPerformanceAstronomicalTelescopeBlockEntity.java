@@ -431,7 +431,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(2).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(2).isEmpty();
+        return (blockEntity.itemHandler.getStackInSlot(2).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(2).isEmpty());
     }
 
     public void insertRecipeInputsFromPlayer(ServerPlayer player, Recipe<?> recipe, boolean shift) {

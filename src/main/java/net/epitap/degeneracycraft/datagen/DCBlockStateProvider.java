@@ -147,6 +147,22 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicPerformanceAstronomicalTelescopePortHolo();
 
 
+
+        registerBasicPerformanceChemicalReactor();
+        registerBasicRateCompoundAgitationSystem();
+        registerBasicRateCompoundAgitationSystemHolo();
+        registerBasicPerformanceChemicalReactorBus();
+        registerBasicPerformanceChemicalReactorBusHolo();
+        registerBasicPerformanceChemicalReactorPort();
+        registerBasicPerformanceChemicalReactorPortHolo();
+
+        registerBasicPerformanceCompoundPurifier();
+        registerBasicDurableHighSpeedChemicalReactor();
+        registerBasicDurableHighSpeedChemicalReactorHolo();
+        registerBasicPerformanceCompoundPurifierBus();
+        registerBasicPerformanceCompoundPurifierBusHolo();
+        registerBasicPerformanceCompoundPurifierPort();
+        registerBasicPerformanceCompoundPurifierPortHolo();
         
         registerBasicPerformanceElectrolyser();
         registerBasicDurableExpandedElectrolyticCell();
@@ -156,13 +172,6 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicPerformanceElectrolyserPort();
         registerBasicPerformanceElectrolyserPortHolo();
         
-        registerBasicPerformanceCompoundPurifier();
-        registerBasicDurableHighSpeedChemicalReactor();
-        registerBasicDurableHighSpeedChemicalReactorHolo();
-        registerBasicPerformanceCompoundPurifierBus();
-        registerBasicPerformanceCompoundPurifierBusHolo();
-        registerBasicPerformanceCompoundPurifierPort();
-        registerBasicPerformanceCompoundPurifierPortHolo();
         
         
         registerRedstonePoweredMachineElementManufactureMachine();
@@ -1835,108 +1844,104 @@ public class DCBlockStateProvider extends BlockStateProvider {
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
-    
-    
-    
-    
-    
-    
 
-    private void registerBasicPerformanceElectrolyser() {
-        BlockModelBuilder model = models().getBuilder("block/basic_performance_electrolyser_block");
+
+
+    private void registerBasicPerformanceChemicalReactor() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_chemical_reactor_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_down"));
-        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_up"));
-        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_front"));
-        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_side"));
-        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_side"));
-        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_side"));
-        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_front"));
-        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get(),
+        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/basic_performance_chemical_reactor_down"));
+        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/basic_performance_chemical_reactor_up"));
+        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/basic_performance_chemical_reactor_front"));
+        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/basic_performance_chemical_reactor_side"));
+        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/basic_performance_chemical_reactor_side"));
+        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/basic_performance_chemical_reactor_side"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/basic_performance_chemical_reactor_front"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicDurableExpandedElectrolyticCell() {
-        BlockModelBuilder model = models().getBuilder("block/basic_durable_expanded_electrolytic_cell_block");
+    private void registerBasicRateCompoundAgitationSystem() {
+        BlockModelBuilder model = models().getBuilder("block/basic_rate_compound_agitation_system_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"));
-        model.texture("up", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"));
-        model.texture("north", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"));
-        model.texture("south", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"));
-        model.texture("east", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"));
-        model.texture("west", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"));
-        orientedBlock(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_rate_compound_agitation_system/basic_rate_compound_agitation_system_block"));
+        model.texture("up", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_rate_compound_agitation_system/basic_rate_compound_agitation_system_block"));
+        model.texture("north", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_rate_compound_agitation_system/basic_rate_compound_agitation_system_block"));
+        model.texture("south", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_rate_compound_agitation_system/basic_rate_compound_agitation_system_block"));
+        model.texture("east", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_rate_compound_agitation_system/basic_rate_compound_agitation_system_block"));
+        model.texture("west", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_rate_compound_agitation_system/basic_rate_compound_agitation_system_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_rate_compound_agitation_system/basic_rate_compound_agitation_system_block"));
+        orientedBlock(DCBlocks.BASIC_RATE_COMPOUND_AGITATION_SYSTEM_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicDurableExpandedElectrolyticCellHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_durable_expanded_electrolytic_cell_holo_block");
+    private void registerBasicRateCompoundAgitationSystemHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_rate_compound_agitation_system_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
-        model.texture("up", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
-        model.texture("north", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
-        model.texture("south", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
-        model.texture("east", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
-        model.texture("west", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
-        orientedBlock(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_rate_compound_agitation_system/basic_rate_compound_agitation_system_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_rate_compound_agitation_system/basic_rate_compound_agitation_system_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_rate_compound_agitation_system/basic_rate_compound_agitation_system_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_rate_compound_agitation_system/basic_rate_compound_agitation_system_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_rate_compound_agitation_system/basic_rate_compound_agitation_system_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_rate_compound_agitation_system/basic_rate_compound_agitation_system_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_rate_compound_agitation_system/basic_rate_compound_agitation_system_holo_block"));
+        orientedBlock(DCBlocks.BASIC_RATE_COMPOUND_AGITATION_SYSTEM_HOLO_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicPerformanceElectrolyserBus() {
-        BlockModelBuilder model = models().getBuilder("block/basic_performance_electrolyser_bus_block");
+    private void registerBasicPerformanceChemicalReactorBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_chemical_reactor_bus_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_block"));
-        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_block"));
-        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_block"));
-        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_block"));
-        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_block"));
-        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_block"));
-        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_block"));
-        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.get(),
+        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/bus/basic_performance_chemical_reactor_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/bus/basic_performance_chemical_reactor_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/bus/basic_performance_chemical_reactor_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/bus/basic_performance_chemical_reactor_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/bus/basic_performance_chemical_reactor_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/bus/basic_performance_chemical_reactor_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/bus/basic_performance_chemical_reactor_bus_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicPerformanceElectrolyserBusHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_performance_electrolyser_bus_holo_block");
+    private void registerBasicPerformanceChemicalReactorBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_chemical_reactor_bus_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_holo_block"));
-        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_holo_block"));
-        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_holo_block"));
-        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_holo_block"));
-        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_holo_block"));
-        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_holo_block"));
-        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_holo_block"));
-        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/bus/basic_performance_chemical_reactor_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/bus/basic_performance_chemical_reactor_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/bus/basic_performance_chemical_reactor_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/bus/basic_performance_chemical_reactor_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/bus/basic_performance_chemical_reactor_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/bus/basic_performance_chemical_reactor_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/bus/basic_performance_chemical_reactor_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_HOLO_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicPerformanceElectrolyserPort() {
-        BlockModelBuilder model = models().getBuilder("block/basic_performance_electrolyser_port_block");
+    private void registerBasicPerformanceChemicalReactorPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_chemical_reactor_port_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_block"));
-        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_block"));
-        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_block"));
-        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_block"));
-        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_block"));
-        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_block"));
-        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_block"));
-        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get(),
+        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/port/basic_performance_chemical_reactor_port_block"));
+        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/port/basic_performance_chemical_reactor_port_block"));
+        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/port/basic_performance_chemical_reactor_port_block"));
+        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/port/basic_performance_chemical_reactor_port_block"));
+        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/port/basic_performance_chemical_reactor_port_block"));
+        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/port/basic_performance_chemical_reactor_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/port/basic_performance_chemical_reactor_port_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_PORT_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicPerformanceElectrolyserPortHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_performance_electrolyser_port_holo_block");
+    private void registerBasicPerformanceChemicalReactorPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_chemical_reactor_port_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_holo_block"));
-        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_holo_block"));
-        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_holo_block"));
-        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_holo_block"));
-        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_holo_block"));
-        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_holo_block"));
-        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_holo_block"));
-        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/port/basic_performance_chemical_reactor_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/port/basic_performance_chemical_reactor_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/port/basic_performance_chemical_reactor_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/port/basic_performance_chemical_reactor_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/port/basic_performance_chemical_reactor_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/port/basic_performance_chemical_reactor_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_chemical_reactor/port/basic_performance_chemical_reactor_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
     
@@ -2038,6 +2043,106 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
     
+    
+
+    private void registerBasicPerformanceElectrolyser() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_electrolyser_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_down"));
+        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_up"));
+        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_front"));
+        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_side"));
+        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_side"));
+        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_side"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/basic_performance_electrolyser_front"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicDurableExpandedElectrolyticCell() {
+        BlockModelBuilder model = models().getBuilder("block/basic_durable_expanded_electrolytic_cell_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"));
+        model.texture("up", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"));
+        model.texture("north", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"));
+        model.texture("south", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"));
+        model.texture("east", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"));
+        model.texture("west", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_block"));
+        orientedBlock(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicDurableExpandedElectrolyticCellHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_durable_expanded_electrolytic_cell_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/abilityblock/basic_durable_expanded_electrolytic_cell/basic_durable_expanded_electrolytic_cell_holo_block"));
+        orientedBlock(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceElectrolyserBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_electrolyser_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceElectrolyserBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_electrolyser_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/bus/basic_performance_electrolyser_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceElectrolyserPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_electrolyser_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_block"));
+        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_block"));
+        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_block"));
+        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_block"));
+        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_block"));
+        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceElectrolyserPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_electrolyser_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/chemistry/basic_performance_electrolyser/port/basic_performance_electrolyser_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+       
     
     
 

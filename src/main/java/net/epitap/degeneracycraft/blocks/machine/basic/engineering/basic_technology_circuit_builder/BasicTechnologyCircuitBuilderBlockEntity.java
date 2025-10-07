@@ -383,7 +383,7 @@ public class BasicTechnologyCircuitBuilderBlockEntity extends BlockEntity implem
         Optional<BasicTechnologyCircuitBuilderRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyCircuitBuilderRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
+        return (blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize());
     }
 
     public void insertRecipeInputsFromPlayer(ServerPlayer player, Recipe<?> recipe, boolean shift) {

@@ -42,8 +42,8 @@ public class BasicPerformanceCompoundPurifierMenu extends AbstractContainerMenu 
             this.addSlot(new SlotItemHandler(handler, 0, 26, 7));
             this.addSlot(new SlotItemHandler(handler, 1, 26, 25));
             this.addSlot(new SlotItemHandler(handler, 2, 26, 43));
-            this.addSlot(new SlotItemHandler(handler, 3, 116, 25));
-            this.addSlot(new SlotItemHandler(handler, 4, 116, 43));
+            this.addSlot(new SlotItemHandler(handler, 3, 44, 43));
+            this.addSlot(new SlotItemHandler(handler, 4, 116, 25));
             this.addSlot(new SlotItemHandler(handler, 5, 71, 59));
             this.addSlot(new SlotItemHandler(handler, 6, 98, 62));
         });

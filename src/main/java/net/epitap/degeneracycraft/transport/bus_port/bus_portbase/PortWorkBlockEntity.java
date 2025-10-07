@@ -3,6 +3,12 @@ package net.epitap.degeneracycraft.transport.bus_port.bus_portbase;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus.BasicPerformanceAstronomicalTelescopeBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus.BasicPerformanceAstronomicalTelescopeBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.port.BasicPerformanceAstronomicalTelescopePortType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.bus.BasicPerformanceChemicalReactorBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.bus.BasicPerformanceChemicalReactorBusType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.port.BasicPerformanceChemicalReactorPortType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_compound_purifier.bus.BasicPerformanceCompoundPurifierBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_compound_purifier.bus.BasicPerformanceCompoundPurifierBusType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_compound_purifier.port.BasicPerformanceCompoundPurifierPortType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.bus.BasicPerformanceElectrolyserBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.bus.BasicPerformanceElectrolyserBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.port.BasicPerformanceElectrolyserPortType;
@@ -66,6 +72,9 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
     protected PortSetLazyOptional<BasicPerformanceAstronomicalTelescopeBusEnergyStorage> basicPerformanceAstronomicalTelescopeBusEnergyStorageStored;
 
+
+    protected PortSetLazyOptional<BasicPerformanceChemicalReactorBusEnergyStorage> basicPerformanceChemicalReactorBusEnergyStorageStored;
+    protected PortSetLazyOptional<BasicPerformanceCompoundPurifierBusEnergyStorage> basicPerformanceCompoundPurifierBusEnergyStorageStored;
     protected PortSetLazyOptional<BasicPerformanceElectrolyserBusEnergyStorage> basicPerformanceElectrolyserBusEnergyStorageStored;
 
 
@@ -99,6 +108,8 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
         basicPerformanceAstronomicalTelescopeBusEnergyStorageStored = new PortSetLazyOptional<>();
 
+        basicPerformanceChemicalReactorBusEnergyStorageStored = new PortSetLazyOptional<>();
+        basicPerformanceCompoundPurifierBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicPerformanceElectrolyserBusEnergyStorageStored = new PortSetLazyOptional<>();
 
         basicPowerSteamGeneratorBusEnergyStorageStored = new PortSetLazyOptional<>();
@@ -137,6 +148,27 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         }
 
 
+
+        if (cap == CapabilityEnergy.ENERGY && hasType(BasicPerformanceChemicalReactorBusType.INSTANCE)) {
+            if (side != null) {
+                return basicPerformanceChemicalReactorBusEnergyStorageStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPerformanceChemicalReactorPortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityEnergy.ENERGY && hasType(BasicPerformanceCompoundPurifierBusType.INSTANCE)) {
+            if (side != null) {
+                return basicPerformanceCompoundPurifierBusEnergyStorageStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPerformanceCompoundPurifierPortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        }
         if (cap == CapabilityEnergy.ENERGY && hasType(BasicPerformanceElectrolyserBusType.INSTANCE)) {
             if (side != null) {
                 return basicPerformanceElectrolyserBusEnergyStorageStored.get(side).cast();
@@ -338,6 +370,20 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
 
+        if (hasType(BasicPerformanceChemicalReactorBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    basicPerformanceChemicalReactorBusEnergyStorageStored.get(side).ifPresent(BasicPerformanceChemicalReactorBusEnergyStorage::tick);
+                }
+            }
+        }
+        if (hasType(BasicPerformanceCompoundPurifierBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    basicPerformanceCompoundPurifierBusEnergyStorageStored.get(side).ifPresent(BasicPerformanceCompoundPurifierBusEnergyStorage::tick);
+                }
+            }
+        }
         if (hasType(BasicPerformanceElectrolyserBusType.INSTANCE)) {
             for (Direction side : Direction.values()) {
                 if (portExtracting(side)) {
@@ -448,6 +494,18 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
 
+        if (hasType(BasicPerformanceChemicalReactorBusType.INSTANCE)) {
+            basicPerformanceChemicalReactorBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicPerformanceChemicalReactorBusEnergyStorage(this, storage));
+        }
+        if (hasType(BasicPerformanceChemicalReactorPortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
+        }
+        if (hasType(BasicPerformanceCompoundPurifierBusType.INSTANCE)) {
+            basicPerformanceCompoundPurifierBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicPerformanceCompoundPurifierBusEnergyStorage(this, storage));
+        }
+        if (hasType(BasicPerformanceCompoundPurifierPortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
+        }
         if (hasType(BasicPerformanceElectrolyserBusType.INSTANCE)) {
             basicPerformanceElectrolyserBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicPerformanceElectrolyserBusEnergyStorage(this, storage));
         }
@@ -549,6 +607,18 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
 
+        if (hasType(BasicPerformanceChemicalReactorBusType.INSTANCE)) {
+            basicPerformanceChemicalReactorBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicPerformanceChemicalReactorBusEnergyStorage(this, side));
+        }
+        if (hasType(BasicPerformanceChemicalReactorPortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
+        }
+        if (hasType(BasicPerformanceCompoundPurifierBusType.INSTANCE)) {
+            basicPerformanceCompoundPurifierBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicPerformanceCompoundPurifierBusEnergyStorage(this, side));
+        }
+        if (hasType(BasicPerformanceCompoundPurifierPortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
+        }
         if (hasType(BasicPerformanceElectrolyserBusType.INSTANCE)) {
             basicPerformanceElectrolyserBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicPerformanceElectrolyserBusEnergyStorage(this, side));
         }
@@ -653,6 +723,8 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
 
+        basicPerformanceChemicalReactorBusEnergyStorageStored.invalidate();
+        basicPerformanceCompoundPurifierBusEnergyStorageStored.invalidate();
         basicPerformanceElectrolyserBusEnergyStorageStored.invalidate();
 
 

@@ -433,7 +433,6 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
         this.level.sendBlockUpdated(this.worldPosition, this.getBlockState(), this.getBlockState(), 3);
     }
 
-
     private void insertItemFromPlayer(IItemHandler playerInv, IItemHandler machineInv, ItemStack required, int slotIndex, boolean shift) {
         if (required.isEmpty()) return;
 

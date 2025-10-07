@@ -904,18 +904,33 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK.get(), "Basic Performance Astronomical Telescope Port");
         add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.get(), "Basic Performance Astronomical Telescope Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT.get(), "Basic Performance Astronomical Telescope Circuit");
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+        add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BLOCK.get(), "Basic Performance Chemical Reactor");
+        add("tooltip." + "degeneracycraft." + "basic_performance_chemical_reactor_block",
+                "Basic Chemical Reactor. Create new substances through chemical reactions.");
+        add(DCBlocks.BASIC_RATE_COMPOUND_AGITATION_SYSTEM_BLOCK.get(), "Basic Rate Compound Agitation System");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_chemical_reactor_block",
+                "For Basic Performance Chemical Reactor");
+        add(DCBlocks.BASIC_RATE_COMPOUND_AGITATION_SYSTEM_HOLO_BLOCK.get(), "Basic Rate Compound Agitation System (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_BLOCK.get(), "Basic Performance Chemical Reactor Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_HOLO_BLOCK.get(), "Basic Performance Chemical Reactor Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_PORT_BLOCK.get(), "Basic Performance Chemical Reactor Port");
+        add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_PORT_HOLO_BLOCK.get(), "Basic Performance Chemical Reactor Port (Hologram)");
+        add(DCItems.BASIC_PERFORMANCE_CHEMICAL_REACTOR_CIRCUIT.get(), "Basic Performance Chemical Reactor Circuit");
+
+        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.get(), "Basic Performance Compound Purifier");
+        add("tooltip." + "degeneracycraft." + "basic_performance_compound_purifier_block",
+                "Basic Compound Purifier. Refining ore ingots for chemical reaction.");
+        add(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_BLOCK.get(), "Basic Durable High Speed Chemical Reactor");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_compound_purifier_block",
+                "For Basic Performance Compound Purifier");
+        add(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_HOLO_BLOCK.get(), "Basic Durable High Speed Chemical Reactor (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.get(), "Basic Performance Compound Purifier Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_HOLO_BLOCK.get(), "Basic Performance Compound Purifier Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.get(), "Basic Performance Compound Purifier Port");
+        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_HOLO_BLOCK.get(), "Basic Performance Compound Purifier Port (Hologram)");
+        add(DCItems.BASIC_PERFORMANCE_COMPOUND_PURIFIER_CIRCUIT.get(), "Basic Performance Compound Purifier Circuit");
+
         add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get(), "Basic Performance Electrolyser");
         add("tooltip." + "degeneracycraft." + "basic_performance_electrolyser_block",
                 "Basic Electrolyser. Reacting substances by electrolysis.");
@@ -929,19 +944,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(), "Basic Performance Electrolyser Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_ELECTROLYSER_CIRCUIT.get(), "Basic Performance Electrolyser Circuit");
 
-        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.get(), "Basic Performance Compound Purifier");
-        add("tooltip." + "degeneracycraft." + "basic_performance_compound_purifier_block",
-                "基本的な化合物精製機. 鉱石のインゴットを化学反応用に精製する.");
-        add(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_BLOCK.get(), "Basic Durable High Speed Chemical Reactor");
-        add("tooltip." + "degeneracycraft.ability" + "basic_performance_compound_purifier_block",
-                "For Basic Performance Compound Purifier");
-        add(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_HOLO_BLOCK.get(), "Basic Durable High Speed Chemical Reactor (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.get(), "Basic Performance Compound Purifier Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_HOLO_BLOCK.get(), "Basic Performance Compound Purifier Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.get(), "Basic Performance Compound Purifier Port");
-        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_HOLO_BLOCK.get(), "Basic Performance Compound Purifier Port (Hologram)");
-        add(DCItems.BASIC_PERFORMANCE_COMPOUND_PURIFIER_CIRCUIT.get(), "Basic Performance Compound Purifier Circuit");
-        
         
 
         add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get(), "Basic Power Steam Generator");
@@ -1141,11 +1143,15 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("jei." + "degeneracycraft_redstone_powered_machine_element_manufacture_machine", "Redstone Powered Machine Element Manufacture Machine Recipe");
         add("jei." + "degeneracycraft_redstone_powered_machine_part_manufacture_machine", "Redstone Powered Machine Part Manufacture Machine Recipe");
 
+
+
         add("jei." + "basic_performance_astronomical_telescope", "Basic Performance Astronomical Telescope Recipe");
 
 
-
+        add("jei." + "degeneracycraft_basic_performance_compound_purifier", "Basic Performance Compound Purifier Recipe");
         add("jei." + "degeneracycraft_basic_performance_electrolyser", "Basic Performance Electrolyser Recipe");
+
+
 
         add("jei." + "degeneracycraft_basic_technology_machine_manufacturer", "Basic Technology Machine Manufacturer Recipe");
         add("jei." + "degeneracycraft_basic_technology_machine_element_processor", "Basic Technology Machine Element Processor Recipe");

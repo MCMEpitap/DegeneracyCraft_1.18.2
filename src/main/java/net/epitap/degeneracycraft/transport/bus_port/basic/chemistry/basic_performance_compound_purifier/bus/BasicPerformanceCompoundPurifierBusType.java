@@ -36,7 +36,7 @@ public class BasicPerformanceCompoundPurifierBusType extends PortTypeBase<Void> 
     }
 
     public ItemStack getIcon() {
-        return new ItemStack(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.get());
+        return new ItemStack(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.get());
     }
 
     public void tick(PortWorkBlockEntity blockEntity) {

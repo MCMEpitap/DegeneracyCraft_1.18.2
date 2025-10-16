@@ -74,7 +74,6 @@ public class BasicPerformanceElectrolyserRecipe implements Recipe<SimpleContaine
         return input2;
     }
 
-
     public ItemStack getOutput0Item() {
         return output0;
     }

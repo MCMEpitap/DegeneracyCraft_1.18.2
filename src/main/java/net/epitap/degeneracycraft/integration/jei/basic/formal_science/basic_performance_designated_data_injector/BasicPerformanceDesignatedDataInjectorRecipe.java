@@ -77,13 +77,14 @@ public class BasicPerformanceDesignatedDataInjectorRecipe implements Recipe<Simp
     public ItemStack getInput2Item() {
         return input2;
     }
+
     public ItemStack getInput3Item() {
         return input3;
     }
+
     public ItemStack getInput4Item() {
         return input4;
     }
-
 
     public ItemStack getOutput0Item() {
         return output0;

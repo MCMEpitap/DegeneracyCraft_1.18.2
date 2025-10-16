@@ -72,7 +72,6 @@ public class BasicPerformanceCompoundPurifierRecipe implements Recipe<SimpleCont
         return input2;
     }
 
-
     public ItemStack getOutput0Item() {
         return output0;
     }

@@ -15,8 +15,6 @@ import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
-
 public class BasicTechnologyCircuitBuilderRecipe implements Recipe<SimpleContainer> {
     private final ResourceLocation id;
     final float energy;
@@ -118,10 +116,6 @@ public class BasicTechnologyCircuitBuilderRecipe implements Recipe<SimpleContain
 
     public ItemStack getOutput0Item() {
         return output0;
-    }
-
-    public List<ItemStack> getInputs() {
-        return List.of(input0, input1, input2, input3, input4, input5, input6, input7, input8);
     }
 
     @Override

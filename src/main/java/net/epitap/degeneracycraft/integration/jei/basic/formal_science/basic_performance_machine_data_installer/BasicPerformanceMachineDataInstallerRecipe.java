@@ -71,7 +71,6 @@ public class BasicPerformanceMachineDataInstallerRecipe implements Recipe<Simple
         return input2;
     }
 
-
     public ItemStack getOutput0Item() {
         return output0;
     }

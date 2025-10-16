@@ -13,7 +13,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -21,6 +20,7 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.Level;
@@ -36,6 +36,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
@@ -250,7 +252,6 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
             blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
             if (craftCheck(blockEntity)) {
                 craftItem(blockEntity);
-                consumeItem(blockEntity);
             }
             setChanged(level, pos, state);
         } else {
@@ -317,11 +318,7 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
         return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
     }
 
-    public static boolean checkConsumeCount(BasicPerformanceElectrolyserBlockEntity blockEntity) {
-        return blockEntity.consumeCounter == 0;
-    }
-
-    private static void consumeItem(BasicPerformanceElectrolyserBlockEntity blockEntity) {
+    private static void craftItem(BasicPerformanceElectrolyserBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -337,20 +334,6 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
             blockEntity.itemHandler.extractItem(3, match.get().getInput2Item().getCount(), false);
             blockEntity.itemHandler.setStackInSlot(1, new ItemStack(DCItems.EMPTY_CONTAINER.get(),
                     blockEntity.itemHandler.getStackInSlot(1).getCount() + 1));
-        }
-    }
-
-    private static void craftItem(BasicPerformanceElectrolyserBlockEntity blockEntity) {
-        Level level = blockEntity.level;
-        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
-        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
-        }
-
-        Optional<BasicPerformanceElectrolyserRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectrolyserRecipe.Type.INSTANCE, inventory, level);
-
-        if (match.isPresent()) {
             blockEntity.itemHandler.setStackInSlot(4, new ItemStack(match.get().getOutput0Item().getItem(),
                     blockEntity.itemHandler.getStackInSlot(4).getCount() + match.get().getOutput0Item().getCount()));
             blockEntity.itemHandler.setStackInSlot(5, new ItemStack(match.get().getOutput1Item().getItem(),
@@ -371,6 +354,7 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
     public void resetConsumeCount() {
         this.consumeCounter = 0;
     }
+
     private static boolean hasNotReachedStackLimit(BasicPerformanceElectrolyserBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
@@ -399,26 +383,63 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
                 && (blockEntity.itemHandler.getStackInSlot(5).getItem() == match.get().getOutput1Item().getItem() || blockEntity.itemHandler.getStackInSlot(5).isEmpty());
     }
 
-    public void insertRecipeInputsFromPlayer(ServerPlayer player, Recipe<?> recipe, boolean shift) {
+    public void insertRecipeInputsFromPlayer(Player player, Recipe<?> recipe, boolean shift) {
         if (!(recipe instanceof BasicPerformanceElectrolyserRecipe recipeData)) return;
 
         player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(playerInv -> {
             this.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(machineInv -> {
-                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput0Item(), 0, shift);
-                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput1Item(), 2, shift);
-                insertItemFromPlayer(playerInv, machineInv, recipeData.getInput2Item(), 3, shift);
+
+                ItemStack[] recipeInputs = new ItemStack[]{
+                        recipeData.getInput0Item(), recipeData.getInput1Item(), recipeData.getInput2Item()
+                };
+
+                Map<Item, Integer> totalCounts = new HashMap<>();
+                if (shift) {
+                    for (ItemStack input : recipeInputs) {
+                        if (!input.isEmpty()) {
+                            int count = countItemInInventory(playerInv, input.getItem());
+                            totalCounts.put(input.getItem(), count);
+                        }
+                    }
+                }
+
+                for (int slot = 0; slot < recipeInputs.length; slot++) {
+                    ItemStack required = recipeInputs[slot];
+                    if (required.isEmpty()) continue;
+
+                    if (shift) {
+                        long sameCount = Arrays.stream(recipeInputs)
+                                .filter(s -> !s.isEmpty() && s.getItem() == required.getItem())
+                                .count();
+
+                        int total = totalCounts.getOrDefault(required.getItem(), 0);
+                        int perSlot = sameCount > 0 ? total / (int) sameCount : total;
+                        perSlot = Math.max(1, perSlot);
+
+                        insertItemFromPlayer(playerInv, machineInv, new ItemStack(required.getItem(), perSlot), slot);
+                    } else {
+                        insertItemFromPlayer(playerInv, machineInv, required.copy(), slot);
+                    }
+                }
             });
         });
-
-        this.setChanged();
-        this.level.sendBlockUpdated(this.worldPosition, this.getBlockState(), this.getBlockState(), 3);
     }
 
+    private static int countItemInInventory(IItemHandler inventory, Item target) {
+        int count = 0;
+        for (int i = 0; i < inventory.getSlots(); i++) {
+            ItemStack stack = inventory.getStackInSlot(i);
+            if (!stack.isEmpty() && stack.getItem() == target) {
+                count += stack.getCount();
+            }
+        }
+        return count;
+    }
 
-    private void insertItemFromPlayer(IItemHandler playerInv, IItemHandler machineInv, ItemStack required, int slotIndex, boolean shift) {
+    private void insertItemFromPlayer(IItemHandler playerInv, IItemHandler machineInv, ItemStack required, int slotIndex) {
         if (required.isEmpty()) return;
 
-        int needed = shift ? Integer.MAX_VALUE : required.getCount();
+        int needed = required.getCount();
 
         for (int i = 0; i < playerInv.getSlots() && needed > 0; i++) {
             ItemStack fromSlot = playerInv.getStackInSlot(i);

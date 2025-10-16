@@ -114,6 +114,7 @@ public class BasicTechnologyMachinePartProcessorRecipe implements Recipe<SimpleC
         return input8;
     }
 
+
     public ItemStack getOutput0Item() {
         return output0;
     }

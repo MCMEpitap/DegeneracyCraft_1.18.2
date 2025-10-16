@@ -15,8 +15,6 @@ import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
-
 public class BasicPerformanceAstronomicalTelescopeRecipe implements Recipe<SimpleContainer> {
     private final ResourceLocation id;
     final float energy;
@@ -66,8 +64,6 @@ public class BasicPerformanceAstronomicalTelescopeRecipe implements Recipe<Simpl
     public ItemStack getInput1Item() {
         return input1;
     }
-
-
 
     public ItemStack getOutput0Item() {
         return output0;

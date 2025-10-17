@@ -8,6 +8,8 @@ import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserMenu;
@@ -36,10 +38,14 @@ import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_perf
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineScreen;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineScreen;
+import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineScreen;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeRecipeTransferHandler;
+import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierRecipeTransferHandler;
@@ -86,6 +92,7 @@ import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machi
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineRecipeTransferHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -112,6 +119,8 @@ public class JEIDCPlugin implements IModPlugin {
                 BasicPerformanceAstronomicalTelescopeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
 
+        registration.addRecipeCategories(new
+                BasicPerformanceChemicalReactorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
                 BasicPerformanceCompoundPurifierRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
@@ -182,14 +191,6 @@ public class JEIDCPlugin implements IModPlugin {
         List<Pulverization> recipes = rm.getAllRecipesFor(Pulverization.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(PulverizationRecipeCategory.UID, Pulverization.class), recipes);
 
-        List<RedstonePoweredMachineElementManufactureMachineRecipe> redstonePoweredMachineComponentManufactureMachineRecipes =
-                rm.getAllRecipesFor(RedstonePoweredMachineElementManufactureMachineRecipe.Type.INSTANCE);
-        registration.addRecipes(new RecipeType<>(RedstonePoweredMachineElementManufactureMachineRecipeCategory.UID, RedstonePoweredMachineElementManufactureMachineRecipe.class), redstonePoweredMachineComponentManufactureMachineRecipes);
-        List<RedstonePoweredMachinePartManufactureMachineRecipe> redstonePoweredMachinePartManufactureMachineRecipes =
-                rm.getAllRecipesFor(RedstonePoweredMachinePartManufactureMachineRecipe.Type.INSTANCE);
-        registration.addRecipes(new RecipeType<>(RedstonePoweredMachinePartManufactureMachineRecipeCategory.UID, RedstonePoweredMachinePartManufactureMachineRecipe.class), redstonePoweredMachinePartManufactureMachineRecipes);
-
-
 
 
         List<BasicPerformanceAstronomicalTelescopeRecipe> basicPerformanceAstronomicalTelescopeRecipe =
@@ -197,6 +198,10 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipes(new RecipeType<>(BasicPerformanceAstronomicalTelescopeRecipeCategory.UID, BasicPerformanceAstronomicalTelescopeRecipe.class), basicPerformanceAstronomicalTelescopeRecipe);
 
 
+
+        List<BasicPerformanceChemicalReactorRecipe> basicPerformanceChemicalReactorRecipe =
+                rm.getAllRecipesFor(BasicPerformanceChemicalReactorRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicPerformanceChemicalReactorRecipeCategory.UID, BasicPerformanceChemicalReactorRecipe.class), basicPerformanceChemicalReactorRecipe);
         List<BasicPerformanceCompoundPurifierRecipe> basicPerformanceCompoundPurifierRecipe =
                 rm.getAllRecipesFor(BasicPerformanceCompoundPurifierRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicPerformanceCompoundPurifierRecipeCategory.UID, BasicPerformanceCompoundPurifierRecipe.class), basicPerformanceCompoundPurifierRecipe);
@@ -206,10 +211,16 @@ public class JEIDCPlugin implements IModPlugin {
 
 
 
+        List<RedstonePoweredMachineElementManufactureMachineRecipe> redstonePoweredMachineComponentManufactureMachineRecipes =
+                rm.getAllRecipesFor(RedstonePoweredMachineElementManufactureMachineRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(RedstonePoweredMachineElementManufactureMachineRecipeCategory.UID, RedstonePoweredMachineElementManufactureMachineRecipe.class), redstonePoweredMachineComponentManufactureMachineRecipes);
+        List<RedstonePoweredMachinePartManufactureMachineRecipe> redstonePoweredMachinePartManufactureMachineRecipes =
+                rm.getAllRecipesFor(RedstonePoweredMachinePartManufactureMachineRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(RedstonePoweredMachinePartManufactureMachineRecipeCategory.UID, RedstonePoweredMachinePartManufactureMachineRecipe.class), redstonePoweredMachinePartManufactureMachineRecipes);
+
         List<BasicPowerSteamGeneratorRecipe> basicPowerSteamGeneratorRecipes =
                 rm.getAllRecipesFor(BasicPowerSteamGeneratorRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicPowerSteamGeneratorRecipeCategory.UID, BasicPowerSteamGeneratorRecipe.class), basicPowerSteamGeneratorRecipes);
-
 
         List<BasicTechnologyMachineManufacturerRecipe> basicTechnologyMachineManufacturerRecipes =
                 rm.getAllRecipesFor(BasicTechnologyMachineManufacturerRecipe.Type.INSTANCE);
@@ -275,7 +286,7 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeClickArea(BasicPerformanceAstronomicalTelescopeScreen.class, 64, 20, 29, 8, BasicPerformanceAstronomicalTelescopeRecipeCategory.UID);
 
 
-
+        registration.addRecipeClickArea(BasicPerformanceChemicalReactorScreen.class, 64, 20, 29, 8, BasicPerformanceChemicalReactorRecipeCategory.UID);
         registration.addRecipeClickArea(BasicPerformanceCompoundPurifierScreen.class, 64, 20, 29, 8, BasicPerformanceCompoundPurifierRecipeCategory.UID);
         registration.addRecipeClickArea(BasicPerformanceElectrolyserScreen.class, 64, 20, 29, 8, BasicPerformanceElectrolyserRecipeCategory.UID);
 
@@ -321,6 +332,8 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get()), BasicPerformanceAstronomicalTelescopeRecipeCategory.UID);
 
 
+
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BLOCK.get()), BasicPerformanceChemicalReactorRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.get()), BasicPerformanceCompoundPurifierRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get()), BasicPerformanceElectrolyserRecipeCategory.UID);
 
@@ -345,18 +358,6 @@ public class JEIDCPlugin implements IModPlugin {
     @Override
     public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
         registration.addRecipeTransferHandler(
-                new RedstonePoweredMachineElementManufactureMachineRecipeTransferHandler<>(
-                        RedstonePoweredMachineElementManufactureMachineMenu.class,
-                        0, 9,
-                        10, 36
-                ),
-                RedstonePoweredMachineElementManufactureMachineRecipeCategory.TYPE
-        );
-
-
-
-
-        registration.addRecipeTransferHandler(
                 new BasicPerformanceAstronomicalTelescopeRecipeTransferHandler<>(
                         BasicPerformanceAstronomicalTelescopeMenu.class,
                         0, 2,
@@ -366,6 +367,15 @@ public class JEIDCPlugin implements IModPlugin {
         );
 
 
+
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceChemicalReactorRecipeTransferHandler<>(
+                        BasicPerformanceChemicalReactorMenu.class,
+                        0, 5,
+                        10, 36
+                ),
+                BasicPerformanceChemicalReactorRecipeCategory.TYPE
+        );
 
         registration.addRecipeTransferHandler(
                 new BasicPerformanceCompoundPurifierRecipeTransferHandler<>(
@@ -388,6 +398,22 @@ public class JEIDCPlugin implements IModPlugin {
 
 
 
+        registration.addRecipeTransferHandler(
+                new RedstonePoweredMachineElementManufactureMachineRecipeTransferHandler<>(
+                        RedstonePoweredMachineElementManufactureMachineMenu.class,
+                        0, 9,
+                        10, 36
+                ),
+                RedstonePoweredMachineElementManufactureMachineRecipeCategory.TYPE
+        );
+        registration.addRecipeTransferHandler(
+                new RedstonePoweredMachinePartManufactureMachineRecipeTransferHandler<>(
+                        RedstonePoweredMachinePartManufactureMachineMenu.class,
+                        0, 9,
+                        10, 36
+                ),
+                RedstonePoweredMachinePartManufactureMachineRecipeCategory.TYPE
+        );
 
         registration.addRecipeTransferHandler(
                 new BasicTechnologyCircuitBuilderRecipeTransferHandler<>(

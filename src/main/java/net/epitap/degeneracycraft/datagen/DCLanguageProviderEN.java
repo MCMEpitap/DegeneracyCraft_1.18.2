@@ -719,6 +719,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add(DCItems.SIMPLE_CHEMICAL_CONTAINER.get(), "Simple Chemical Container");
         add(DCItems.SIMPLE_ORE_SORTING_FILTER.get(), "Simple Ore Sorting Filter");
+        add(DCItems.SIMPLE_TEMPERED_GLASS.get(), "Simple Tempered Glass");
 
 
 

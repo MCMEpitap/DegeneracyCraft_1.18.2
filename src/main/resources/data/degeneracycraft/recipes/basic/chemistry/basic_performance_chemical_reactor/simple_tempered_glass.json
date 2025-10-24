@@ -1,0 +1,31 @@
+{
+  "type": "degeneracycraft:basic_performance_chemical_reactor_recipe",
+  "energy": 5000.0,
+  "time": 30.0,
+  "input0": {
+    "item": "degeneracycraft:potassium_nitrate_dust",
+    "count": 8
+  },
+  "input1": {
+    "item": "degeneracycraft:potassium_nitrate_dust",
+    "count": 8
+  },
+  "input2": {
+    "item": "minecraft:air"
+  },
+  "input3": {
+    "item": "minecraft:air"
+  },
+  "input4": {
+    "item": "minecraft:air"
+  },
+  "output0": {
+    "item": "degeneracycraft:simple_tempered_glass"
+  },
+  "output1": {
+    "item": "minecraft:air"
+  },
+  "output2": {
+    "item": "minecraft:air"
+  }
+}

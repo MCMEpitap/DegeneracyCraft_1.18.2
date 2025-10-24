@@ -810,6 +810,7 @@ public class DCItems extends CreativeModeTab {
 
     public static final RegistryObject<Item> SIMPLE_CHEMICAL_CONTAINER = ITEMS.register("simple_chemical_container", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> SIMPLE_ORE_SORTING_FILTER = ITEMS.register("simple_ore_sorting_filter", () -> new FilterItem(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_TEMPERED_GLASS = ITEMS.register("simple_tempered_glass", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
 
 

@@ -707,6 +707,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
         add(DCItems.SIMPLE_CHEMICAL_CONTAINER.get(), "簡易化学コンテナ");
         add(DCItems.SIMPLE_ORE_SORTING_FILTER.get(), "簡易選鉱フィルター");
+        add(DCItems.SIMPLE_TEMPERED_GLASS.get(), "簡易強化ガラス");
 
 
         add(DCItems.BASIC_CIRCUIT.get(), "基本回路");

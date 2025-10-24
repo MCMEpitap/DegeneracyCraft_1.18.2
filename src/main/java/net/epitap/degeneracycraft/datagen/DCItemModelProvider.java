@@ -736,7 +736,7 @@ public class DCItemModelProvider extends ItemModelProvider {
 
         basicPartChemistryItem(DCItems.SIMPLE_CHEMICAL_CONTAINER.get());
         basicPartChemistryItem(DCItems.SIMPLE_ORE_SORTING_FILTER.get());
-
+        basicPartChemistryItem(DCItems.SIMPLE_TEMPERED_GLASS.get());
 
 
         basicPartEngineeringItem(DCItems.BASIC_CIRCUIT.get());

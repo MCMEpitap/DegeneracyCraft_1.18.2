@@ -93,7 +93,7 @@ public class BasicStrengthChemistryMultiblockMaterialStorageMenu extends Abstrac
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get());
+                player, DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

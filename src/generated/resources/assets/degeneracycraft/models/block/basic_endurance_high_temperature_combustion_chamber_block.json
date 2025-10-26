@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block",
-    "up": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block",
-    "north": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block",
-    "south": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block",
-    "east": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block",
-    "west": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block",
-    "particle": "degeneracycraft:block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"
+    "down": "degeneracycraft:block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block",
+    "up": "degeneracycraft:block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block",
+    "north": "degeneracycraft:block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block",
+    "south": "degeneracycraft:block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block",
+    "east": "degeneracycraft:block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block",
+    "west": "degeneracycraft:block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block",
+    "particle": "degeneracycraft:block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"
   }
 }

@@ -71,6 +71,19 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthChemistryMultiblockMaterialStorage();
         registerBasicStrengthChemistryMultiblockMaterialStorageHolo();
 
+        registerBasicStrengthDynamicEnergeticsMultiblockBaseFrame();
+        registerBasicStrengthDynamicEnergeticsMultiblockBaseFrameHolo();
+        registerBasicStrengthDynamicEnergeticsMultiblockMachineFrame();
+        registerBasicStrengthDynamicEnergeticsMultiblockMachineFrameHolo();
+        registerBasicStrengthDynamicEnergeticsMultiblockStructureFrame();
+        registerBasicStrengthDynamicEnergeticsMultiblockStructureFrameHolo();
+        registerBasicStrengthDynamicEnergeticsMultiblockStructureGlass();
+        registerBasicStrengthDynamicEnergeticsMultiblockStructureGlassHolo();
+        registerBasicStrengthDynamicEnergeticsMultiblockEnergyStorage();
+        registerBasicStrengthDynamicEnergeticsMultiblockEnergyStorageHolo();
+        registerBasicStrengthDynamicEnergeticsMultiblockMaterialStorage();
+        registerBasicStrengthDynamicEnergeticsMultiblockMaterialStorageHolo();
+
         registerBasicStrengthEngineeringMultiblockBaseFrame();
         registerBasicStrengthEngineeringMultiblockBaseFrameHolo();
         registerBasicStrengthEngineeringMultiblockMachineFrame();
@@ -173,9 +186,10 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicPerformanceElectrolyserPortHolo();
         
         
+
         
-        registerRedstonePoweredMachineElementManufactureMachine();
-        registerRedstonePoweredMachinePartManufactureMachine();
+        
+        
         
         registerBasicPowerSteamGenerator();
         registerBasicEnduranceHighTemperatureCombustionChamber();
@@ -185,6 +199,14 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicPowerSteamGeneratorPort();
         registerBasicPowerSteamGeneratorPortHolo();
 
+
+
+
+
+
+        registerRedstonePoweredMachineElementManufactureMachine();
+        registerRedstonePoweredMachinePartManufactureMachine();
+        
         registerBasicTechnologyMachineManufacturer();
         registerBasicEfficiencyMachineProcessingChamber();
         registerBasicEfficiencyMachineProcessingChamberHolo();
@@ -901,6 +923,174 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("west", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_holo_block"));
         model.texture("particle", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthDynamicEnergeticsMultiblockBaseFrame() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_dynamic_energetics_multiblock_base_frame_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_base_frame/basic_strength_dynamic_energetics_multiblock_base_frame_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_base_frame/basic_strength_dynamic_energetics_multiblock_base_frame_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_base_frame/basic_strength_dynamic_energetics_multiblock_base_frame_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_base_frame/basic_strength_dynamic_energetics_multiblock_base_frame_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_base_frame/basic_strength_dynamic_energetics_multiblock_base_frame_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_base_frame/basic_strength_dynamic_energetics_multiblock_base_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_base_frame/basic_strength_dynamic_energetics_multiblock_base_frame_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_BASE_FRAME_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthDynamicEnergeticsMultiblockBaseFrameHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_dynamic_energetics_multiblock_base_frame_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_base_frame/basic_strength_dynamic_energetics_multiblock_base_frame_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_base_frame/basic_strength_dynamic_energetics_multiblock_base_frame_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_base_frame/basic_strength_dynamic_energetics_multiblock_base_frame_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_base_frame/basic_strength_dynamic_energetics_multiblock_base_frame_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_base_frame/basic_strength_dynamic_energetics_multiblock_base_frame_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_base_frame/basic_strength_dynamic_energetics_multiblock_base_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_base_frame/basic_strength_dynamic_energetics_multiblock_base_frame_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthDynamicEnergeticsMultiblockMachineFrame() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_dynamic_energetics_multiblock_machine_frame_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_machine_frame/basic_strength_dynamic_energetics_multiblock_machine_frame_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_machine_frame/basic_strength_dynamic_energetics_multiblock_machine_frame_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_machine_frame/basic_strength_dynamic_energetics_multiblock_machine_frame_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_machine_frame/basic_strength_dynamic_energetics_multiblock_machine_frame_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_machine_frame/basic_strength_dynamic_energetics_multiblock_machine_frame_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_machine_frame/basic_strength_dynamic_energetics_multiblock_machine_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_machine_frame/basic_strength_dynamic_energetics_multiblock_machine_frame_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthDynamicEnergeticsMultiblockMachineFrameHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_dynamic_energetics_multiblock_machine_frame_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_machine_frame/basic_strength_dynamic_energetics_multiblock_machine_frame_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_machine_frame/basic_strength_dynamic_energetics_multiblock_machine_frame_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_machine_frame/basic_strength_dynamic_energetics_multiblock_machine_frame_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_machine_frame/basic_strength_dynamic_energetics_multiblock_machine_frame_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_machine_frame/basic_strength_dynamic_energetics_multiblock_machine_frame_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_machine_frame/basic_strength_dynamic_energetics_multiblock_machine_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_machine_frame/basic_strength_dynamic_energetics_multiblock_machine_frame_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthDynamicEnergeticsMultiblockStructureFrame() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_dynamic_energetics_multiblock_structure_frame_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_frame/basic_strength_dynamic_energetics_multiblock_structure_frame_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_frame/basic_strength_dynamic_energetics_multiblock_structure_frame_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_frame/basic_strength_dynamic_energetics_multiblock_structure_frame_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_frame/basic_strength_dynamic_energetics_multiblock_structure_frame_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_frame/basic_strength_dynamic_energetics_multiblock_structure_frame_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_frame/basic_strength_dynamic_energetics_multiblock_structure_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_frame/basic_strength_dynamic_energetics_multiblock_structure_frame_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthDynamicEnergeticsMultiblockStructureFrameHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_dynamic_energetics_multiblock_structure_frame_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_frame/basic_strength_dynamic_energetics_multiblock_structure_frame_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_frame/basic_strength_dynamic_energetics_multiblock_structure_frame_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_frame/basic_strength_dynamic_energetics_multiblock_structure_frame_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_frame/basic_strength_dynamic_energetics_multiblock_structure_frame_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_frame/basic_strength_dynamic_energetics_multiblock_structure_frame_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_frame/basic_strength_dynamic_energetics_multiblock_structure_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_frame/basic_strength_dynamic_energetics_multiblock_structure_frame_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthDynamicEnergeticsMultiblockStructureGlass() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_dynamic_energetics_multiblock_structure_glass_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_glass/basic_strength_dynamic_energetics_multiblock_structure_glass_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_glass/basic_strength_dynamic_energetics_multiblock_structure_glass_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_glass/basic_strength_dynamic_energetics_multiblock_structure_glass_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_glass/basic_strength_dynamic_energetics_multiblock_structure_glass_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_glass/basic_strength_dynamic_energetics_multiblock_structure_glass_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_glass/basic_strength_dynamic_energetics_multiblock_structure_glass_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_glass/basic_strength_dynamic_energetics_multiblock_structure_glass_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthDynamicEnergeticsMultiblockStructureGlassHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_dynamic_energetics_multiblock_structure_glass_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_glass/basic_strength_dynamic_energetics_multiblock_structure_glass_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_glass/basic_strength_dynamic_energetics_multiblock_structure_glass_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_glass/basic_strength_dynamic_energetics_multiblock_structure_glass_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_glass/basic_strength_dynamic_energetics_multiblock_structure_glass_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_glass/basic_strength_dynamic_energetics_multiblock_structure_glass_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_glass/basic_strength_dynamic_energetics_multiblock_structure_glass_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_structure_glass/basic_strength_dynamic_energetics_multiblock_structure_glass_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthDynamicEnergeticsMultiblockEnergyStorage() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_dynamic_energetics_multiblock_energy_storage_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthDynamicEnergeticsMultiblockEnergyStorageHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_dynamic_energetics_multiblock_energy_storage_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthDynamicEnergeticsMultiblockMaterialStorage() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_dynamic_energetics_multiblock_material_storage_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthDynamicEnergeticsMultiblockMaterialStorageHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_dynamic_energetics_multiblock_material_storage_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
 
@@ -2142,7 +2332,109 @@ public class DCBlockStateProvider extends BlockStateProvider {
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
-       
+
+
+
+
+    private void registerBasicPowerSteamGenerator() {
+        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/basic_power_steam_generator_down"));
+        model.texture("up", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/basic_power_steam_generator_up"));
+        model.texture("north", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/basic_power_steam_generator_front"));
+        model.texture("south", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/basic_power_steam_generator_side"));
+        model.texture("east", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/basic_power_steam_generator_side"));
+        model.texture("west", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/basic_power_steam_generator_side"));
+        model.texture("particle", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/basic_power_steam_generator_front"));
+        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicEnduranceHighTemperatureCombustionChamber() {
+        BlockModelBuilder model = models().getBuilder("block/basic_endurance_high_temperature_combustion_chamber_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
+        orientedBlock(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicEnduranceHighTemperatureCombustionChamberHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_endurance_high_temperature_combustion_chamber_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
+        orientedBlock(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPowerSteamGeneratorBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
+        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPowerSteamGeneratorBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPowerSteamGeneratorPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        model.texture("up", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        model.texture("north", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        model.texture("south", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        model.texture("east", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        model.texture("west", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
+        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPowerSteamGeneratorPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/dynamic_energetics/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+    
+    
     
     
 
@@ -2174,103 +2466,7 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicPowerSteamGenerator() {
-        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_block");
-        model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_down"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_up"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_front"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_side"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_side"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_side"));
-        model.texture("particle", modLoc("block/machine/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_front"));
-        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BLOCK.get(),
-                state -> model);
-    }
 
-    private void registerBasicEnduranceHighTemperatureCombustionChamber() {
-        BlockModelBuilder model = models().getBuilder("block/basic_endurance_high_temperature_combustion_chamber_block");
-        model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
-        model.texture("up", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
-        model.texture("north", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
-        model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
-        model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
-        model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_block"));
-        orientedBlock(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(),
-                state -> model);
-    }
-
-    private void registerBasicEnduranceHighTemperatureCombustionChamberHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_endurance_high_temperature_combustion_chamber_holo_block");
-        model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
-        model.texture("up", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
-        model.texture("north", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
-        model.texture("south", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
-        model.texture("east", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
-        model.texture("west", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/engineering/abilityblock/basic_endurance_high_temperature_combustion_chamber/basic_endurance_high_temperature_combustion_chamber_holo_block"));
-        orientedBlock(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(),
-                state -> model);
-    }
-
-    private void registerBasicPowerSteamGeneratorBus() {
-        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_bus_block");
-        model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
-        model.texture("particle", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_block"));
-        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.get(),
-                state -> model);
-    }
-
-    private void registerBasicPowerSteamGeneratorBusHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_bus_holo_block");
-        model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
-        model.texture("particle", modLoc("block/machine/basic/engineering/basic_power_steam_generator/bus/basic_power_steam_generator_bus_holo_block"));
-        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_HOLO_BLOCK.get(),
-                state -> model);
-    }
-
-    private void registerBasicPowerSteamGeneratorPort() {
-        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_port_block");
-        model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
-        model.texture("particle", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_block"));
-        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.get(),
-                state -> model);
-    }
-
-    private void registerBasicPowerSteamGeneratorPortHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_power_steam_generator_port_holo_block");
-        model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
-        model.texture("up", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
-        model.texture("north", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
-        model.texture("south", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
-        model.texture("east", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
-        model.texture("west", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
-        model.texture("particle", modLoc("block/machine/basic/engineering/basic_power_steam_generator/port/basic_power_steam_generator_port_holo_block"));
-        orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.get(),
-                state -> model);
-    }
 
     private void registerBasicTechnologyMachineManufacturer() {
         BlockModelBuilder model = models().getBuilder("block/basic_technology_machine_manufacturer_block");

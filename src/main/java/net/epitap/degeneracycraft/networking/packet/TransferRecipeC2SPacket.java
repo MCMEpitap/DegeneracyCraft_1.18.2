@@ -41,7 +41,6 @@ public class TransferRecipeC2SPacket {
         this.shift = buf.readBoolean();
     }
 
-    // --- エンコード ---
     public void toBytes(FriendlyByteBuf buf) {
         buf.writeResourceLocation(recipeId);
         buf.writeBlockPos(pos);

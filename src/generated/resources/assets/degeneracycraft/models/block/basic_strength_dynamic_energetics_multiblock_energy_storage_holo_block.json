@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_holo_block",
+    "up": "degeneracycraft:block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_holo_block",
+    "north": "degeneracycraft:block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_holo_block",
+    "south": "degeneracycraft:block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_holo_block",
+    "east": "degeneracycraft:block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_holo_block",
+    "west": "degeneracycraft:block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_holo_block",
+    "particle": "degeneracycraft:block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_energy_storage/basic_strength_dynamic_energetics_multiblock_energy_storage_holo_block"
+  }
+}

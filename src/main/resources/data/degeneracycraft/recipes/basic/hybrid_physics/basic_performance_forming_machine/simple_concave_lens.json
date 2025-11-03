@@ -1,0 +1,15 @@
+{
+  "type": "degeneracycraft:basic_performance_forming_machine_recipe",
+  "energy": 1000.0,
+  "time": 30.0,
+  "input0": {
+    "item": "minecraft:glass_pane",
+    "count": 7
+  },
+  "input1": {
+    "item": "degeneracycraft:gold_wire"
+  },
+  "output0": {
+    "item": "degeneracycraft:simple_concave_lens"
+  }
+}

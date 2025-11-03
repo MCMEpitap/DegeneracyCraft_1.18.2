@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_block",
+    "up": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_block",
+    "north": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_block",
+    "south": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_block",
+    "east": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_block",
+    "west": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_block",
+    "particle": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_block"
+  }
+}

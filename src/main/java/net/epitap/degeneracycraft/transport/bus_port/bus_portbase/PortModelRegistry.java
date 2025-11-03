@@ -15,6 +15,8 @@ public class PortModelRegistry {
         BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK_EXTRACT("block/basic_performance_astronomical_telescope_bus_block_extract"),
         BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK_EXTRACT("block/basic_performance_astronomical_telescope_port_block_extract"),
 
+        BASIC_PERFORMANCE_BIO_REACTOR_BUS_BLOCK_EXTRACT("block/basic_performance_bio_reactor_bus_block_extract"),
+        BASIC_PERFORMANCE_BIO_REACTOR_PORT_BLOCK_EXTRACT("block/basic_performance_bio_reactor_port_block_extract"),
 
 
         BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_BLOCK_EXTRACT("block/basic_performance_chemical_reactor_bus_block_extract"),
@@ -28,6 +30,9 @@ public class PortModelRegistry {
 
         BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK_EXTRACT("block/basic_power_steam_generator_bus_block_extract"),
         BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK_EXTRACT("block/basic_power_steam_generator_port_block_extract"),
+
+
+
         BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK_EXTRACT("block/basic_technology_machine_manufacturer_bus_block_extract"),
         BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK_EXTRACT("block/basic_technology_machine_manufacturer_port_block_extract"),
         BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_BLOCK_EXTRACT("block/basic_technology_universal_assembler_bus_block_extract"),

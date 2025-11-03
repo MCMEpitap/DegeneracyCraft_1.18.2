@@ -17,7 +17,7 @@
     "item": "minecraft:air"
   },
   "input4": {
-    "item": "minecraft:air"
+    "item": "minecraft:glass_pane"
   },
   "output0": {
     "item": "degeneracycraft:simple_tempered_glass"

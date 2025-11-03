@@ -161,6 +161,16 @@ public class DCBlockStateProvider extends BlockStateProvider {
 
 
 
+        registerBasicPerformanceBioReactor();
+        registerBasicSpeedCultivationGreenhouse();
+        registerBasicSpeedCultivationGreenhouseHolo();
+        registerBasicPerformanceBioReactorBus();
+        registerBasicPerformanceBioReactorBusHolo();
+        registerBasicPerformanceBioReactorPort();
+        registerBasicPerformanceBioReactorPortHolo();
+
+
+
         registerBasicPerformanceChemicalReactor();
         registerBasicRateCompoundAgitationSystem();
         registerBasicRateCompoundAgitationSystemHolo();
@@ -2032,6 +2042,105 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("west", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/port/basic_performance_astronomical_telescope_port_holo_block"));
         model.texture("particle", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/port/basic_performance_astronomical_telescope_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+
+    private void registerBasicPerformanceBioReactor() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_bio_reactor_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/basic_performance_bio_reactor_down"));
+        model.texture("up", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/basic_performance_bio_reactor_up"));
+        model.texture("north", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/basic_performance_bio_reactor_front"));
+        model.texture("south", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/basic_performance_bio_reactor_side"));
+        model.texture("east", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/basic_performance_bio_reactor_side"));
+        model.texture("west", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/basic_performance_bio_reactor_side"));
+        model.texture("particle", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/basic_performance_bio_reactor_front"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicSpeedCultivationGreenhouse() {
+        BlockModelBuilder model = models().getBuilder("block/basic_speed_cultivation_greenhouse_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_block"));
+        model.texture("up", modLoc("block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_block"));
+        model.texture("north", modLoc("block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_block"));
+        model.texture("south", modLoc("block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_block"));
+        model.texture("east", modLoc("block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_block"));
+        model.texture("west", modLoc("block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_block"));
+        orientedBlock(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicSpeedCultivationGreenhouseHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_speed_cultivation_greenhouse_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/biology/abilityblock/basic_speed_cultivation_greenhouse/basic_speed_cultivation_greenhouse_holo_block"));
+        orientedBlock(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceBioReactorBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_bio_reactor_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/bus/basic_performance_bio_reactor_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/bus/basic_performance_bio_reactor_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/bus/basic_performance_bio_reactor_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/bus/basic_performance_bio_reactor_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/bus/basic_performance_bio_reactor_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/bus/basic_performance_bio_reactor_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/bus/basic_performance_bio_reactor_bus_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceBioReactorBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_bio_reactor_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/bus/basic_performance_bio_reactor_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/bus/basic_performance_bio_reactor_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/bus/basic_performance_bio_reactor_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/bus/basic_performance_bio_reactor_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/bus/basic_performance_bio_reactor_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/bus/basic_performance_bio_reactor_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/bus/basic_performance_bio_reactor_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceBioReactorPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_bio_reactor_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/port/basic_performance_bio_reactor_port_block"));
+        model.texture("up", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/port/basic_performance_bio_reactor_port_block"));
+        model.texture("north", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/port/basic_performance_bio_reactor_port_block"));
+        model.texture("south", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/port/basic_performance_bio_reactor_port_block"));
+        model.texture("east", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/port/basic_performance_bio_reactor_port_block"));
+        model.texture("west", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/port/basic_performance_bio_reactor_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/port/basic_performance_bio_reactor_port_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceBioReactorPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_bio_reactor_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/port/basic_performance_bio_reactor_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/port/basic_performance_bio_reactor_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/port/basic_performance_bio_reactor_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/port/basic_performance_bio_reactor_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/port/basic_performance_bio_reactor_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/port/basic_performance_bio_reactor_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/biology/basic_performance_bio_reactor/port/basic_performance_bio_reactor_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
 

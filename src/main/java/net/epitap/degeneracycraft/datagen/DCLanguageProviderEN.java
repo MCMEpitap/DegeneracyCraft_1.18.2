@@ -438,6 +438,27 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.COPPER_SPRING.get(), "Copper Spring");
         add(DCItems.COPPER_WIRE.get(), "Copper Wire");
 
+
+        add(DCItems.GOLD_BEARING.get(), "Gold Bearing");
+        add(DCItems.GOLD_BOLT.get(), "Gold Bolt");
+        add(DCItems.GOLD_CAM.get(), "Gold Cam");
+        add(DCItems.GOLD_CHAIN.get(), "Gold Chain");
+        add(DCItems.GOLD_GEAR.get(), "Gold Gear");
+        add(DCItems.GOLD_JOINT.get(), "Gold Joint");
+        add(DCItems.GOLD_KEY.get(),"Gold Key");
+        add(DCItems.GOLD_NUT.get(),"Gold Nut");
+        add(DCItems.GOLD_PIPE.get(), "Gold Pipe");
+        add(DCItems.GOLD_PIPEJOINT.get(), "Gold PipeJoint");
+        add(DCItems.GOLD_PLATE.get(), "Gold Plate");
+        add(DCItems.GOLD_RIVET.get(), "Gold Rivet");
+        add(DCItems.GOLD_ROD.get(), "Gold Rod");
+        add(DCItems.GOLD_SHAFT.get(), "Gold Shaft");
+        add(DCItems.GOLD_SHAFTCOUPLING.get(), "Gold ShaftCoupling");
+        add(DCItems.GOLD_SHAPESTEEL.get(), "Gold ShapeSteel");
+        add(DCItems.GOLD_SPRING.get(), "Gold Spring");
+        add(DCItems.GOLD_WIRE.get(), "Gold Wire");
+        
+        
         //Iron Machine Component
         add(DCItems.IRON_BEARING.get(), "Iron Bearing");
         add(DCItems.IRON_BOLT.get(), "Iron Bolt");
@@ -919,6 +940,22 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.get(), "Basic Performance Astronomical Telescope Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT.get(), "Basic Performance Astronomical Telescope Circuit");
 
+
+        add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BLOCK.get(), "Basic Performance Bio Reactor");
+        add("tooltip." + "degeneracycraft." + "basic_performance_bio_reactor_block",
+                "Basic Bio Reactor. Using biological processes to produce materials.");
+        add(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_BLOCK.get(), "Basic Speed Cultivation Greenhouse");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_bio_reactor_block",
+                "For Basic Performance Bio Reactor");
+        add(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_HOLO_BLOCK.get(), "Basic Speed Cultivation Greenhouse (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_BLOCK.get(), "Basic Performance Bio Reactor Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_HOLO_BLOCK.get(), "Basic Performance Bio Reactor Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_BLOCK.get(), "Basic Performance Bio Reactor Port");
+        add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_HOLO_BLOCK.get(), "Basic Performance Bio Reactor Port (Hologram)");
+        add(DCItems.BASIC_PERFORMANCE_BIO_REACTOR_CIRCUIT.get(), "Basic Performance Bio Reactor Circuit");
+        
+        
+        
         add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BLOCK.get(), "Basic Performance Chemical Reactor");
         add("tooltip." + "degeneracycraft." + "basic_performance_chemical_reactor_block",
                 "Basic Chemical Reactor. Create new substances through chemical reactions.");
@@ -1161,7 +1198,13 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add("jei." + "basic_performance_astronomical_telescope", "Basic Performance Astronomical Telescope Recipe");
 
+        
+        
+        add("jei." + "degeneracycraft_basic_performance_bio_reactor", "Basic Performance Bio Reactor Recipe");
 
+
+
+        add("jei." + "degeneracycraft_basic_performance_chemical_reactor", "Basic Performance Chemical Reactor Recipe");
         add("jei." + "degeneracycraft_basic_performance_compound_purifier", "Basic Performance Compound Purifier Recipe");
         add("jei." + "degeneracycraft_basic_performance_electrolyser", "Basic Performance Electrolyser Recipe");
 
@@ -1281,6 +1324,13 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "hydrogen" + ".boiling", "Boiling Point:20.28 K");
         add("tooltip." + "degeneracycraft." + "hydrogen" + ".formula", "Chemical Formula:H");
 
+        add("tooltip." + "degeneracycraft." + "gold" + ".name", "Element Name:金");
+        add("tooltip." + "degeneracycraft." + "gold" + ".number", "Atomic Number:79");
+        add("tooltip." + "degeneracycraft." + "gold" + ".weight", "Atomic Weight:199.97 g/mol");
+        add("tooltip." + "degeneracycraft." + "gold" + ".melting", "Melting Point:1337 K");
+        add("tooltip." + "degeneracycraft." + "gold" + ".boiling", "Boiling Point:3129 K");
+        add("tooltip." + "degeneracycraft." + "gold" + ".formula", "Chemical Formula:Au");        
+        
         add("tooltip." + "degeneracycraft." + "iron" + ".name", "Element Name:Iron");
         add("tooltip." + "degeneracycraft." + "iron" + ".number", "Atomic Number:26");
         add("tooltip." + "degeneracycraft." + "iron" + ".weight", "Atomic Weight:55.85 g/mol");

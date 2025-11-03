@@ -51,9 +51,9 @@ public class BasicPerformanceFormingMachineBlockEntity extends BlockEntity imple
     public final ContainerData data;
     public int counter;
     public int getProgressPercent;
-    private int consumeCounter;
     public boolean isFormed;
     public boolean isPowered0;
+
     public final ItemStackHandler itemHandler = new ItemStackHandler(5) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -409,7 +409,7 @@ public class BasicPerformanceFormingMachineBlockEntity extends BlockEntity imple
 
                     if (shift) {
                         long sameCount = Arrays.stream(recipeInputs)
-                                .filter(s -> !s.isEmpty() && s.getItem() == required.getItem())
+                                .filter(itemStack -> !itemStack.isEmpty() && itemStack.getItem() == required.getItem())
                                 .count();
 
                         int total = totalCounts.getOrDefault(required.getItem(), 0);

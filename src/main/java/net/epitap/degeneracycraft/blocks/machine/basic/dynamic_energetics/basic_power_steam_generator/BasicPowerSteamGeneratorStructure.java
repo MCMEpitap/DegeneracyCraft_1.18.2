@@ -50,13 +50,13 @@ public class BasicPowerSteamGeneratorStructure {
         };
 
         Map<String, Predicate<BlockState>> blockConditions = new HashMap<>();
-        blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
-        blockConditions.put("G", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get()));
+        blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
+        blockConditions.put("G", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get()));
         blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.get()));
-        blockConditions.put("H", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_BLOCK.get()));
-        blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
+        blockConditions.put("H", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get()));
+        blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
         blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.get()));
-        blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
+        blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
 
         for (int y = minY; y <= maxY; y++) {
             for (int z = minZ; z <= maxZ; z++) {
@@ -105,13 +105,13 @@ public class BasicPowerSteamGeneratorStructure {
         };
 
         Map<String, Predicate<BlockState>> blockConditions = new HashMap<>();
-        blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
-        blockConditions.put("G", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get()));
+        blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
+        blockConditions.put("G", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get()));
         blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.get()));
-        blockConditions.put("H", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_BLOCK.get()));
-        blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
+        blockConditions.put("H", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get()));
+        blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
         blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.get()));
-        blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
+        blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
         blockConditions.put("C", blockState -> blockState.is(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get()));
 
 
@@ -183,13 +183,13 @@ public class BasicPowerSteamGeneratorStructure {
         };
 
         Map<String, Supplier<Block>> blockMapping = new HashMap<>();
-        blockMapping.put("F", DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK);
-        blockMapping.put("G", DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK);
+        blockMapping.put("F", DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK);
+        blockMapping.put("G", DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK);
         blockMapping.put("P", DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK);
-        blockMapping.put("H", DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK);
-        blockMapping.put("S", DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK);
+        blockMapping.put("H", DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK);
+        blockMapping.put("S", DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK);
         blockMapping.put("B", DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_HOLO_BLOCK);
-        blockMapping.put("E", DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK);
+        blockMapping.put("E", DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK);
         blockMapping.put("C", DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK);
 
         boolean displayHologram = blockEntity.itemHandler.getStackInSlot(3).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()) ||
@@ -272,13 +272,13 @@ public class BasicPowerSteamGeneratorStructure {
 
     private static boolean isExpectedBlock(BlockState blockState, String blockKey) {
         return switch (blockKey) {
-            case "F" -> blockState.is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-            case "G" -> blockState.is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get());
+            case "F" -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
+            case "G" -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get());
             case "P" -> blockState.is(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.get());
-            case "H" -> blockState.is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
-            case "S" -> blockState.is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get());
+            case "H" -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
+            case "S" -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get());
             case "B" -> blockState.is(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.get());
-            case "E" -> blockState.is(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get());
+            case "E" -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get());
             case "C" -> blockState.is(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get());
             default -> false;
         };

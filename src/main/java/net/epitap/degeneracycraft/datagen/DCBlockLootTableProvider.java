@@ -158,7 +158,17 @@ public class DCBlockLootTableProvider extends BlockLoot {
 
         
         
-        
+        this.add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BLOCK.get()));
+        this.add(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_BLOCK.get()));
+        this.add(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_HOLO_BLOCK.get(), block -> noDrop());
+
+
+
+
         this.add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BLOCK.get()));
         this.add(DCBlocks.BASIC_RATE_COMPOUND_AGITATION_SYSTEM_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_RATE_COMPOUND_AGITATION_SYSTEM_BLOCK.get()));
         this.add(DCBlocks.BASIC_RATE_COMPOUND_AGITATION_SYSTEM_HOLO_BLOCK.get(), block -> noDrop());

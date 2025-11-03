@@ -3,6 +3,9 @@ package net.epitap.degeneracycraft.transport.bus_port.bus_portbase;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus.BasicPerformanceAstronomicalTelescopeBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus.BasicPerformanceAstronomicalTelescopeBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.port.BasicPerformanceAstronomicalTelescopePortType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.bus.BasicPerformanceBioReactorBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.bus.BasicPerformanceBioReactorBusType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.port.BasicPerformanceBioReactorPortType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.bus.BasicPerformanceChemicalReactorBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.bus.BasicPerformanceChemicalReactorBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.port.BasicPerformanceChemicalReactorPortType;
@@ -72,6 +75,8 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
     protected PortSetLazyOptional<BasicPerformanceAstronomicalTelescopeBusEnergyStorage> basicPerformanceAstronomicalTelescopeBusEnergyStorageStored;
 
+    protected PortSetLazyOptional<BasicPerformanceBioReactorBusEnergyStorage> basicPerformanceBioReactorBusEnergyStorageStored;
+
 
     protected PortSetLazyOptional<BasicPerformanceChemicalReactorBusEnergyStorage> basicPerformanceChemicalReactorBusEnergyStorageStored;
     protected PortSetLazyOptional<BasicPerformanceCompoundPurifierBusEnergyStorage> basicPerformanceCompoundPurifierBusEnergyStorageStored;
@@ -108,6 +113,8 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
         basicPerformanceAstronomicalTelescopeBusEnergyStorageStored = new PortSetLazyOptional<>();
 
+        basicPerformanceBioReactorBusEnergyStorageStored = new PortSetLazyOptional<>();
+
         basicPerformanceChemicalReactorBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicPerformanceCompoundPurifierBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicPerformanceElectrolyserBusEnergyStorageStored = new PortSetLazyOptional<>();
@@ -135,13 +142,25 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (remove) {
             return super.getCapability(cap, side);
         }
-
         if (cap == CapabilityEnergy.ENERGY && hasType(BasicPerformanceAstronomicalTelescopeBusType.INSTANCE)) {
             if (side != null) {
                 return basicPerformanceAstronomicalTelescopeBusEnergyStorageStored.get(side).cast();
             }
         }
         if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPerformanceAstronomicalTelescopePortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        }
+
+
+
+        if (cap == CapabilityEnergy.ENERGY && hasType(BasicPerformanceBioReactorBusType.INSTANCE)) {
+            if (side != null) {
+                return basicPerformanceAstronomicalTelescopeBusEnergyStorageStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPerformanceBioReactorPortType.INSTANCE)) {
             if (side != null) {
                 return itemStored.get(side).cast();
             }
@@ -370,6 +389,17 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
 
+        if (hasType(BasicPerformanceBioReactorBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    basicPerformanceBioReactorBusEnergyStorageStored.get(side).ifPresent(BasicPerformanceBioReactorBusEnergyStorage::tick);
+                }
+            }
+        }
+
+
+
+
         if (hasType(BasicPerformanceChemicalReactorBusType.INSTANCE)) {
             for (Direction side : Direction.values()) {
                 if (portExtracting(side)) {
@@ -493,6 +523,14 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         }
 
 
+        if (hasType(BasicPerformanceBioReactorBusType.INSTANCE)) {
+            basicPerformanceBioReactorBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicPerformanceBioReactorBusEnergyStorage(this, storage));
+        }
+        if (hasType(BasicPerformanceBioReactorPortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
+        }
+
+
 
         if (hasType(BasicPerformanceChemicalReactorBusType.INSTANCE)) {
             basicPerformanceChemicalReactorBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicPerformanceChemicalReactorBusEnergyStorage(this, storage));
@@ -602,6 +640,15 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
             basicPerformanceAstronomicalTelescopeBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicPerformanceAstronomicalTelescopeBusEnergyStorage(this, side));
         }
         if (hasType(BasicPerformanceAstronomicalTelescopePortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
+        }
+
+
+
+        if (hasType(BasicPerformanceBioReactorBusType.INSTANCE)) {
+            basicPerformanceBioReactorBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicPerformanceBioReactorBusEnergyStorage(this, side));
+        }
+        if (hasType(BasicPerformanceBioReactorPortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
         }
 
@@ -720,6 +767,10 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         itemStored.invalidate();
 
         basicPerformanceAstronomicalTelescopeBusEnergyStorageStored.invalidate();
+
+
+
+        basicPerformanceBioReactorBusEnergyStorageStored.invalidate();
 
 
 

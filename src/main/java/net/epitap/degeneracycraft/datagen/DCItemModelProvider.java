@@ -1047,6 +1047,24 @@ public class DCItemModelProvider extends ItemModelProvider {
 
 
 
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_bio_reactor_block"));
+        withExistingParent(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_BLOCK.getId().getPath(),
+                modLoc("block/basic_speed_cultivation_greenhouse_block"));
+        withExistingParent(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_speed_cultivation_greenhouse_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_bio_reactor_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_bio_reactor_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_bio_reactor_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_bio_reactor_port_holo_block"));
+        basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_BIO_REACTOR_CIRCUIT.get());
+        
+        
+
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_chemical_reactor_block"));
         withExistingParent(DCBlocks.BASIC_RATE_COMPOUND_AGITATION_SYSTEM_BLOCK.getId().getPath(),
@@ -1533,6 +1551,12 @@ public class DCItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/element/copper/" + item.getRegistryName().getPath()));
+    }
+
+    private ItemModelBuilder elementGoldItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/element/gold/" + item.getRegistryName().getPath()));
     }
 
     private ItemModelBuilder elementIronItem(Item item) {

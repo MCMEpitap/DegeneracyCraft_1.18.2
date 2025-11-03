@@ -38,6 +38,7 @@ public class RedstonePoweredMachineElementManufactureMachineBlockEntity extends 
     public final ContainerData data;
     public int progress = 0;
     public int maxProgress = 100;
+
     public final ItemStackHandler itemHandler = new ItemStackHandler(10) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -294,7 +295,7 @@ public class RedstonePoweredMachineElementManufactureMachineBlockEntity extends 
 
                     if (shift) {
                         long sameCount = Arrays.stream(recipeInputs)
-                                .filter(s -> !s.isEmpty() && s.getItem() == required.getItem())
+                                .filter(itemStack -> !itemStack.isEmpty() && itemStack.getItem() == required.getItem())
                                 .count();
 
                         int total = totalCounts.getOrDefault(required.getItem(), 0);

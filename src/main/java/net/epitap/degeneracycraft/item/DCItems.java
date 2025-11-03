@@ -554,8 +554,28 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> COPPER_SHAPESTEEL = registerAtomicItem("copper_shapesteel", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
     public static final RegistryObject<Item> COPPER_WIRE = registerAtomicItem("copper_wire", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "copper", "initial");
 
+    
+    public static final RegistryObject<Item> GOLD_BEARING = registerAtomicItem("gold_bearing", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "gold", "initial");
+    public static final RegistryObject<Item> GOLD_BOLT = registerAtomicItem("gold_bolt", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "gold", "initial");
+    public static final RegistryObject<Item> GOLD_CAM = registerAtomicItem("gold_cam", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "gold", "initial");
+    public static final RegistryObject<Item> GOLD_CHAIN = registerAtomicItem("gold_chain", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "gold", "initial");
+    public static final RegistryObject<Item> GOLD_GEAR = registerAtomicItem("gold_gear", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "gold", "initial");
+    public static final RegistryObject<Item> GOLD_JOINT = registerAtomicItem("gold_joint", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "gold", "initial");
+    public static final RegistryObject<Item> GOLD_KEY = registerAtomicItem("gold_key", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "gold", "initial");
+    public static final RegistryObject<Item> GOLD_NUT = registerAtomicItem("gold_nut", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "gold", "initial");
+    public static final RegistryObject<Item> GOLD_PIPE = registerAtomicItem("gold_pipe", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "gold", "initial");
+    public static final RegistryObject<Item> GOLD_PIPEJOINT = registerAtomicItem("gold_pipejoint", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "gold", "initial");
+    public static final RegistryObject<Item> GOLD_PLATE = registerAtomicItem("gold_plate", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "gold", "initial");
+    public static final RegistryObject<Item> GOLD_RIVET = registerAtomicItem("gold_rivet", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "gold", "initial");
+    public static final RegistryObject<Item> GOLD_ROD = registerAtomicItem("gold_rod", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "gold", "initial");
+    public static final RegistryObject<Item> GOLD_SHAFT = registerAtomicItem("gold_shaft", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "gold", "initial");
+    public static final RegistryObject<Item> GOLD_SHAFTCOUPLING = registerAtomicItem("gold_shaftcoupling", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "gold", "initial");
+    public static final RegistryObject<Item> GOLD_SHAPESTEEL = registerAtomicItem("gold_shapesteel", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "gold", "initial");
+    public static final RegistryObject<Item> GOLD_SPRING = registerAtomicItem("gold_spring", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "gold", "initial");
+    public static final RegistryObject<Item> GOLD_WIRE = registerAtomicItem("gold_wire", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "gold", "initial");
 
-    //Basic Class Iron Machine Component
+
+    //Iron Machine Component
     public static final RegistryObject<Item> IRON_BEARING = registerAtomicItem("iron_bearing", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "iron", "initial");
     public static final RegistryObject<Item> IRON_BOLT = registerAtomicItem("iron_bolt", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "iron", "initial");
     public static final RegistryObject<Item> IRON_CAM = registerAtomicItem("iron_cam", DCCreativeTab.DEGENERACYCRAFT_MACHINE_ELEMENT_TAB, "iron", "initial");
@@ -856,6 +876,12 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> BASIC_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT = ITEMS.register("basic_imitation_magic_engineering_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
     public static final RegistryObject<Item> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT = ITEMS.register("basic_performance_astronomical_telescope_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+
+
+
+    public static final RegistryObject<Item> BASIC_PERFORMANCE_BIO_REACTOR_CIRCUIT = ITEMS.register("basic_performance_bio_reactor_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+
+
 
 
     public static final RegistryObject<Item> BASIC_PERFORMANCE_CHEMICAL_REACTOR_CIRCUIT = ITEMS.register("basic_performance_chemical_reactor_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));

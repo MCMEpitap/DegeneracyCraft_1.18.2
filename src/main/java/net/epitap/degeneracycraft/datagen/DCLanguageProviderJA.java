@@ -438,6 +438,25 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.COPPER_SPRING.get(), "銅のバネ");
         add(DCItems.COPPER_WIRE.get(), "銅のワイヤー");
 
+        add(DCItems.GOLD_BEARING.get(), "金の軸受");
+        add(DCItems.GOLD_BOLT.get(), "金のボルト");
+        add(DCItems.GOLD_CAM.get(), "金のカム");
+        add(DCItems.GOLD_CHAIN.get(), "金のチェーン");
+        add(DCItems.GOLD_GEAR.get(), "金の歯車");
+        add(DCItems.GOLD_JOINT.get(), "金の継手");
+        add(DCItems.GOLD_KEY.get(), "金のキー");
+        add(DCItems.GOLD_NUT.get(), "金のナット");
+        add(DCItems.GOLD_PIPE.get(), "金の管");
+        add(DCItems.GOLD_PIPEJOINT.get(), "金の管継手");
+        add(DCItems.GOLD_PLATE.get(), "金の板");
+        add(DCItems.GOLD_RIVET.get(), "金のリベット");
+        add(DCItems.GOLD_ROD.get(), "金の棒");
+        add(DCItems.GOLD_SHAFT.get(), "金の軸");
+        add(DCItems.GOLD_SHAFTCOUPLING.get(), "金の軸継手");
+        add(DCItems.GOLD_SHAPESTEEL.get(), "金の型鋼");
+        add(DCItems.GOLD_SPRING.get(), "金のバネ");
+        add(DCItems.GOLD_WIRE.get(), "金のワイヤー");
+        
         //Basic Class Iron Machine Component
         add(DCItems.IRON_BEARING.get(), "鉄の軸受");
         add(DCItems.IRON_BOLT.get(), "鉄のボルト");
@@ -917,6 +936,21 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
 
+        add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BLOCK.get(), "基本性能生体反応機");
+        add("tooltip." + "degeneracycraft." + "basic_performance_bio_reactor_block",
+                "基本的な生体反応機. 生物の力で物質を産み出す.");
+        add(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_BLOCK.get(), "基本速度栽培温室");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_bio_reactor_block",
+                "基本性能生体反応機用");
+        add(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_HOLO_BLOCK.get(), "基本速度栽培温室 (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_BLOCK.get(), "基本性能生体反応機バス");
+        add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_HOLO_BLOCK.get(), "基本性能生体反応機バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_BLOCK.get(), "基本性能生体反応機ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_HOLO_BLOCK.get(), "基本性能生体反応機ポート (ホログラム)");
+        add(DCItems.BASIC_PERFORMANCE_BIO_REACTOR_CIRCUIT.get(), "基本性能生体反応機回路");
+        
+
+
         add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BLOCK.get(), "基本性能化学反応機");
         add("tooltip." + "degeneracycraft." + "basic_performance_chemical_reactor_block",
                 "基本的な化学反応機. 化学反応を起こし新たな物質を作り出す.");
@@ -1148,8 +1182,13 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
         add("jei." + "basic_performance_astronomical_telescope", "基本性能天体望遠鏡 レシピ");
 
+        
+        
+        add("jei." + "degeneracycraft_basic_performance_bio_reactor", "基本性能生体反応機 レシピ");
 
 
+        
+        add("jei." + "degeneracycraft_basic_performance_chemical_reactor", "基本性能化学反応機 レシピ");
         add("jei." + "degeneracycraft_basic_performance_electrolyser", "基本性能電解槽 レシピ");
         add("jei." + "degeneracycraft_basic_performance_compound_purifier", "基本性能化合物精製機 レシピ");
 
@@ -1284,6 +1323,13 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "silicon" + ".melting", "融点:1414 K");
         add("tooltip." + "degeneracycraft." + "silicon" + ".boiling", "沸点:3265 K");
         add("tooltip." + "degeneracycraft." + "silicon" + ".formula", "化学式:Si");
+
+        add("tooltip." + "degeneracycraft." + "gold" + ".name", "物質名:金");
+        add("tooltip." + "degeneracycraft." + "gold" + ".number", "原子番号:79");
+        add("tooltip." + "degeneracycraft." + "gold" + ".weight", "原子量:199.97 g/mol");
+        add("tooltip." + "degeneracycraft." + "gold" + ".melting", "融点:1337 K");
+        add("tooltip." + "degeneracycraft." + "gold" + ".boiling", "沸点:3129 K");
+        add("tooltip." + "degeneracycraft." + "gold" + ".formula", "化学式:Au");
 
         add("tooltip." + "degeneracycraft." + "iron" + ".name", "物質名:鉄");
         add("tooltip." + "degeneracycraft." + "iron" + ".number", "原子番号:26");

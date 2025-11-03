@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/biology/basic_performance_bio_reactor/basic_performance_bio_reactor_down",
+    "up": "degeneracycraft:block/machine/basic/biology/basic_performance_bio_reactor/basic_performance_bio_reactor_up",
+    "north": "degeneracycraft:block/machine/basic/biology/basic_performance_bio_reactor/basic_performance_bio_reactor_front",
+    "south": "degeneracycraft:block/machine/basic/biology/basic_performance_bio_reactor/basic_performance_bio_reactor_side",
+    "east": "degeneracycraft:block/machine/basic/biology/basic_performance_bio_reactor/basic_performance_bio_reactor_side",
+    "west": "degeneracycraft:block/machine/basic/biology/basic_performance_bio_reactor/basic_performance_bio_reactor_side",
+    "particle": "degeneracycraft:block/machine/basic/biology/basic_performance_bio_reactor/basic_performance_bio_reactor_front"
+  }
+}

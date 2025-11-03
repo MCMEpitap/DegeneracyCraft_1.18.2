@@ -409,7 +409,7 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
 
                     if (shift) {
                         long sameCount = Arrays.stream(recipeInputs)
-                                .filter(s -> !s.isEmpty() && s.getItem() == required.getItem())
+                                .filter(itemStack -> !itemStack.isEmpty() && itemStack.getItem() == required.getItem())
                                 .count();
 
                         int total = totalCounts.getOrDefault(required.getItem(), 0);

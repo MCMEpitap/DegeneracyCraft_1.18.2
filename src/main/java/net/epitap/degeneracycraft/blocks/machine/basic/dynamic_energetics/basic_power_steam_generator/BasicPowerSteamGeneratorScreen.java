@@ -18,7 +18,7 @@ import java.util.Optional;
 
 public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<BasicPowerSteamGeneratorMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/engineering/basic_power_steam_generator/basic_power_steam_generator_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/dynamic_energetics/basic_power_steam_generator/basic_power_steam_generator_gui.png");
 
     private EnergyInfoArea energyInfoArea;
 

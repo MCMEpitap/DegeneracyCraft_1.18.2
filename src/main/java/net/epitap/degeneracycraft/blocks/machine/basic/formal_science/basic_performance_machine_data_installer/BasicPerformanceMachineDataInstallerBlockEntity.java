@@ -51,9 +51,9 @@ public class BasicPerformanceMachineDataInstallerBlockEntity extends BlockEntity
     public final ContainerData data;
     public int counter;
     public int getProgressPercent;
-    private int consumeCounter;
     public boolean isFormed;
     public boolean isPowered0;
+
     public final ItemStackHandler itemHandler = new ItemStackHandler(6) {
         @Override
         protected void onContentsChanged(int slot) {

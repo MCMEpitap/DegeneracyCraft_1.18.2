@@ -6,7 +6,7 @@
     "item": "degeneracycraft:basic_machine_screen"
   },
   "input1": {
-    "item": "degeneracycraft:simple_concave_lens"
+    "item": "minecraft:glass"
   },
   "input2": {
     "item": "degeneracycraft:basic_machine_screen"
@@ -24,7 +24,7 @@
     "item": "degeneracycraft:basic_redstone_battery"
   },
   "input7": {
-    "item": "degeneracycraft:simple_convex_lens"
+    "item": "minecraft:glass"
   },
   "input8": {
     "item": "degeneracycraft:basic_redstone_battery"

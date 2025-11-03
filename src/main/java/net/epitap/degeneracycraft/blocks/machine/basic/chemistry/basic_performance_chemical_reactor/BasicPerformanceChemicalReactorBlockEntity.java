@@ -346,7 +346,7 @@ public class BasicPerformanceChemicalReactorBlockEntity extends BlockEntity impl
     }
 
     public static boolean isHaltDevice(BasicPerformanceChemicalReactorBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(6).is(DCItems.MACHINE_HALT_DEVICE.get());
+        return blockEntity.itemHandler.getStackInSlot(9).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
     public void resetProgress() {
@@ -366,9 +366,9 @@ public class BasicPerformanceChemicalReactorBlockEntity extends BlockEntity impl
         Optional<BasicPerformanceChemicalReactorRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceChemicalReactorRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(4).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(5).getMaxStackSize()
-                && blockEntity.itemHandler.getStackInSlot(5).getCount() + match.get().getOutput1Item().getCount() <= blockEntity.itemHandler.getStackInSlot(5).getMaxStackSize()
-                && blockEntity.itemHandler.getStackInSlot(6).getCount() + match.get().getOutput2Item().getCount() <= blockEntity.itemHandler.getStackInSlot(6).getMaxStackSize();
+        return blockEntity.itemHandler.getStackInSlot(5).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(5).getMaxStackSize()
+                && blockEntity.itemHandler.getStackInSlot(6).getCount() + match.get().getOutput1Item().getCount() <= blockEntity.itemHandler.getStackInSlot(6).getMaxStackSize()
+                && blockEntity.itemHandler.getStackInSlot(7).getCount() + match.get().getOutput2Item().getCount() <= blockEntity.itemHandler.getStackInSlot(7).getMaxStackSize();
 
     }
 
@@ -382,9 +382,9 @@ public class BasicPerformanceChemicalReactorBlockEntity extends BlockEntity impl
         Optional<BasicPerformanceChemicalReactorRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceChemicalReactorRecipe.Type.INSTANCE, inventory, level);
 
-        return (blockEntity.itemHandler.getStackInSlot(4).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(4).isEmpty())
-                && (blockEntity.itemHandler.getStackInSlot(5).getItem() == match.get().getOutput1Item().getItem() || blockEntity.itemHandler.getStackInSlot(5).isEmpty())
-                && (blockEntity.itemHandler.getStackInSlot(6).getItem() == match.get().getOutput2Item().getItem() || blockEntity.itemHandler.getStackInSlot(2).isEmpty());
+        return (blockEntity.itemHandler.getStackInSlot(5).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(5).isEmpty())
+                && (blockEntity.itemHandler.getStackInSlot(6).getItem() == match.get().getOutput1Item().getItem() || blockEntity.itemHandler.getStackInSlot(6).isEmpty())
+                && (blockEntity.itemHandler.getStackInSlot(7).getItem() == match.get().getOutput2Item().getItem() || blockEntity.itemHandler.getStackInSlot(7).isEmpty());
     }
 
     public void insertRecipeInputsFromPlayer(Player player, Recipe<?> recipe, boolean shift) {
@@ -414,7 +414,7 @@ public class BasicPerformanceChemicalReactorBlockEntity extends BlockEntity impl
 
                     if (shift) {
                         long sameCount = Arrays.stream(recipeInputs)
-                                .filter(s -> !s.isEmpty() && s.getItem() == required.getItem())
+                                .filter(itemStack -> !itemStack.isEmpty() && itemStack.getItem() == required.getItem())
                                 .count();
 
                         int total = totalCounts.getOrDefault(required.getItem(), 0);

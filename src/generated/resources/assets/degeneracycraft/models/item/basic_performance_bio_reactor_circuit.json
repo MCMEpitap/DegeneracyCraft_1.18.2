@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "degeneracycraft:item/part/basic/engineering/machine_circuit/basic_performance_bio_reactor_circuit"
+  }
+}

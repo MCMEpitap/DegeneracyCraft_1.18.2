@@ -2,12 +2,13 @@ package net.epitap.degeneracycraft.blocks.base;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.entity.machine.PulverizerBlockEntity;
-import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_precision_telescope.BasicPerformanceAstronomicalTelescopeBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bioreactor.BasicPerformanceBioReactorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserBlockEntity;
-import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_power_steam_generator.BasicPowerSteamGeneratorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlockEntity;
@@ -42,6 +43,8 @@ import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineeri
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.material_storage.basic_strength_imitation_magic_engineering_multiblock_material_storage.BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus.BasicPerformanceAstronomicalTelescopeBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.port.BasicPerformanceAstronomicalTelescopePortBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.bus.BasicPerformanceBioReactorBusBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.port.BasicPerformanceBioReactorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.bus.BasicPerformanceChemicalReactorBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.port.BasicPerformanceChemicalReactorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_compound_purifier.bus.BasicPerformanceCompoundPurifierBusBlockEntity;
@@ -170,10 +173,22 @@ public class DCBlockEntities {
                     BlockEntityType.Builder.of(BasicPerformanceAstronomicalTelescopeBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicPerformanceAstronomicalTelescopeBusBlockEntity>> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_astronomical_telescope_bus_block_entity", () ->
-                    BlockEntityType.Builder.of(net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus.BasicPerformanceAstronomicalTelescopeBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK.get()).build(null));
+                    BlockEntityType.Builder.of(BasicPerformanceAstronomicalTelescopeBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicPerformanceAstronomicalTelescopePortBlockEntity>> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_astronomical_telescope_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceAstronomicalTelescopePortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK.get()).build(null));
+
+
+
+    public static final RegistryObject<BlockEntityType<BasicPerformanceBioReactorBlockEntity>> BASIC_PERFORMANCE_BIO_REACTOR_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_bio_reactor_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceBioReactorBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceBioReactorBusBlockEntity>> BASIC_PERFORMANCE_BIO_REACTOR_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_bio_reactor_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceBioReactorBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceBioReactorPortBlockEntity>> BASIC_PERFORMANCE_BIO_REACTOR_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_bio_reactor_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceBioReactorPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_BLOCK.get()).build(null));
 
 
 

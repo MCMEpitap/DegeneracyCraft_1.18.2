@@ -51,8 +51,6 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
     public final ContainerData data;
     public int counter;
     public int getProgressPercent;
-    public int getProgressRandom;
-    private int consumeCounter;
 
     public boolean isFormed;
     public boolean isPowered0;
@@ -448,7 +446,7 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
 
                     if (shift) {
                         long sameCount = Arrays.stream(recipeInputs)
-                                .filter(s -> !s.isEmpty() && s.getItem() == required.getItem())
+                                .filter(itemStack -> !itemStack.isEmpty() && itemStack.getItem() == required.getItem())
                                 .count();
 
                         int total = totalCounts.getOrDefault(required.getItem(), 0);

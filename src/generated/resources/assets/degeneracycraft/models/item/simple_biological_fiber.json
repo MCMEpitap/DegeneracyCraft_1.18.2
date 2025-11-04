@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "degeneracycraft:item/part/basic/biology/simple_biological_fiber"
+  }
+}

@@ -4,12 +4,13 @@
   "time": 60.0,
   "input0": {
     "item": "minecraft:glass_pane",
-    "count": 7
+    "count": 5
   },
   "input1": {
-    "item": "degeneracycraft:gold_wire"
+    "item": "degeneracycraft:simple_biological_fiber",
+    "count": 8
   },
   "output0": {
-    "item": "degeneracycraft:simple_concave_lens"
+    "item": "degeneracycraft:simple_ore_sorting_filter"
   }
 }

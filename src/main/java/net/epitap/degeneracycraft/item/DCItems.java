@@ -826,6 +826,7 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> SIMPLE_CONCAVE_LENS = ITEMS.register("simple_concave_lens", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> SIMPLE_CONVEX_LENS = ITEMS.register("simple_convex_lens", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
+    public static final RegistryObject<Item> SIMPLE_BIOLOGICAL_FIBER = ITEMS.register("simple_biological_fiber", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
 
     public static final RegistryObject<Item> SIMPLE_CHEMICAL_CONTAINER = ITEMS.register("simple_chemical_container", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));

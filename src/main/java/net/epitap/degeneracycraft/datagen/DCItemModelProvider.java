@@ -454,6 +454,27 @@ public class DCItemModelProvider extends ItemModelProvider {
         elementCopperItem(DCItems.COPPER_WIRE.get());
 
 
+        elementGoldItem(DCItems.GOLD_BEARING.get());
+        elementGoldItem(DCItems.GOLD_BOLT.get());
+        elementGoldItem(DCItems.GOLD_CAM.get());
+        elementGoldItem(DCItems.GOLD_CHAIN.get());
+        elementGoldItem(DCItems.GOLD_GEAR.get());
+        elementGoldItem(DCItems.GOLD_JOINT.get());
+        elementGoldItem(DCItems.GOLD_KEY.get());
+        elementGoldItem(DCItems.GOLD_NUT.get());
+        elementGoldItem(DCItems.GOLD_PIPE.get());
+        elementGoldItem(DCItems.GOLD_PIPEJOINT.get());
+        elementGoldItem(DCItems.GOLD_PLATE.get());
+        elementGoldItem(DCItems.GOLD_RIVET.get());
+        elementGoldItem(DCItems.GOLD_ROD.get());
+        elementGoldItem(DCItems.GOLD_SHAFT.get());
+        elementGoldItem(DCItems.GOLD_SHAFTCOUPLING.get());
+        elementGoldItem(DCItems.GOLD_SHAPESTEEL.get());
+        elementGoldItem(DCItems.GOLD_SPRING.get());
+        elementGoldItem(DCItems.GOLD_WIRE.get());
+
+
+
         elementIronItem(DCItems.IRON_BEARING.get());
         elementIronItem(DCItems.IRON_BOLT.get());
         elementIronItem(DCItems.IRON_CAM.get());
@@ -731,6 +752,10 @@ public class DCItemModelProvider extends ItemModelProvider {
 
         basicPartAstronomyItem(DCItems.SIMPLE_CONVEX_LENS.get());
         basicPartAstronomyItem(DCItems.SIMPLE_CONCAVE_LENS.get());
+
+
+
+        basicPartBiologyItem(DCItems.SIMPLE_BIOLOGICAL_FIBER.get());
 
 
 
@@ -1583,6 +1608,13 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/astronomy/" + item.getRegistryName().getPath()));
     }
+
+    private ItemModelBuilder basicPartBiologyItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/biology/" + item.getRegistryName().getPath()));
+    }
+
 
     private ItemModelBuilder basicPartChemistryItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),

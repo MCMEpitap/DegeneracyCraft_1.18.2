@@ -737,6 +737,9 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.SIMPLE_CONCAVE_LENS.get(), "Simple Concave Lens");
 
 
+        add(DCItems.SIMPLE_BIOLOGICAL_FIBER.get(), "Simple Biological Fiber");
+
+
 
         add(DCItems.SIMPLE_CHEMICAL_CONTAINER.get(), "Simple Chemical Container");
         add(DCItems.SIMPLE_ORE_SORTING_FILTER.get(), "Simple Ore Sorting Filter");

@@ -1,0 +1,30 @@
+{
+  "type": "degeneracycraft:basic_performance_bio_reactor_recipe",
+  "energy": 2000.0,
+  "time": 100.0,
+  "input0": {
+    "item": "minecraft:short_grass",
+    "count": 4
+  },
+  "input1": {
+    "item": "minecraft:wheat",
+    "count": 4
+  },
+  "input2": {
+    "item": "minecraft:short_grass",
+    "count": 4
+  },
+  "input3": {
+    "item": "minecraft:rooted_dirt"
+  },
+  "output0": {
+    "item": "degeneracycraft:simple_biological_fiber",
+    "count": 4
+  },
+  "output1": {
+    "item": "minecraft:air"
+  },
+  "output2": {
+    "item": "minecraft:air"
+  }
+}

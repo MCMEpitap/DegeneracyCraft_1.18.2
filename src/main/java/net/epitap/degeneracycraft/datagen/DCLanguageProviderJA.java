@@ -724,6 +724,10 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
 
+        add(DCItems.SIMPLE_BIOLOGICAL_FIBER.get(), "簡易生体繊維");
+
+
+
         add(DCItems.SIMPLE_CHEMICAL_CONTAINER.get(), "簡易化学コンテナ");
         add(DCItems.SIMPLE_ORE_SORTING_FILTER.get(), "簡易選鉱フィルター");
         add(DCItems.SIMPLE_TEMPERED_GLASS.get(), "簡易強化ガラス");

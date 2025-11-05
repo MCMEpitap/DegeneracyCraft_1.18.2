@@ -3,8 +3,7 @@
   "energy": 5000.0,
   "time": 60.0,
   "input0": {
-    "item": "minecraft:glass_pane",
-    "count": 5
+    "item": "degeneracycraft:basic_fixed_frame"
   },
   "input1": {
     "item": "degeneracycraft:simple_biological_fiber",

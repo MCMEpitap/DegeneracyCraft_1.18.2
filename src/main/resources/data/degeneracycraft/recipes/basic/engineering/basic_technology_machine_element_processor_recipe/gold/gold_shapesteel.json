@@ -1,0 +1,35 @@
+{
+  "type": "degeneracycraft:basic_technology_machine_element_processor_recipe",
+  "energy": 500.0,
+  "time": 10.0,
+  "input0": {
+    "item": "minecraft:gold_ingot"
+  },
+  "input1": {
+    "item": "minecraft:gold_ingot"
+  },
+  "input2": {
+    "item": "minecraft:gold_ingot"
+  },
+  "input3": {
+    "item": "minecraft:air"
+  },
+  "input4": {
+    "item": "minecraft:gold_ingot"
+  },
+  "input5": {
+    "item": "minecraft:air"
+  },
+  "input6": {
+    "item": "minecraft:gold_ingot"
+  },
+  "input7": {
+    "item": "minecraft:gold_ingot"
+  },
+  "input8": {
+    "item": "minecraft:gold_ingot"
+  },
+  "output0": {
+    "item": "degeneracycraft:gold_shapesteel"
+  }
+}

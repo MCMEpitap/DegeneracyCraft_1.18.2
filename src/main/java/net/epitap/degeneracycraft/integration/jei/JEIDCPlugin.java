@@ -8,6 +8,7 @@ import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bioreactor.BasicPerformanceBioReactorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bioreactor.BasicPerformanceBioReactorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorScreen;
@@ -46,6 +47,7 @@ import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_astronom
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_astronomical_telescope.BasicPerformanceAstronomicalTelescopeRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorRecipeTransferHandler;
@@ -395,12 +397,12 @@ public class JEIDCPlugin implements IModPlugin {
 
 
         registration.addRecipeTransferHandler(
-                new BasicPerformanceAstronomicalTelescopeRecipeTransferHandler<>(
-                        BasicPerformanceAstronomicalTelescopeMenu.class,
+                new BasicPerformanceBioReactorRecipeTransferHandler<>(
+                        BasicPerformanceBioReactorMenu.class,
                         0, 4,
                         9, 36
                 ),
-                BasicPerformanceAstronomicalTelescopeRecipeCategory.TYPE
+                BasicPerformanceBioReactorRecipeCategory.TYPE
         );
 
 

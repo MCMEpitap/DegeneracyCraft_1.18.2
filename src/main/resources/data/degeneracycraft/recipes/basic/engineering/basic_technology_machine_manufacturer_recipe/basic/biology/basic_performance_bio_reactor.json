@@ -1,0 +1,35 @@
+{
+  "type": "degeneracycraft:basic_technology_machine_manufacturer_recipe",
+  "energy": 10000.0,
+  "time": 60.0,
+  "input0": {
+    "item": "degeneracycraft:basic_machine_screen"
+  },
+  "input1": {
+    "item": "degeneracycraft:basic_machine_screen"
+  },
+  "input2": {
+    "item": "degeneracycraft:basic_machine_screen"
+  },
+  "input3": {
+    "item": "degeneracycraft:basic_reinforced_plate"
+  },
+  "input4": {
+    "item": "degeneracycraft:basic_equipment_container"
+  },
+  "input5": {
+    "item": "degeneracycraft:basic_equipment_container"
+  },
+  "input6": {
+    "item": "degeneracycraft:basic_redstone_battery"
+  },
+  "input7": {
+    "item": "degeneracycraft:basic_redstone_battery"
+  },
+  "input8": {
+    "item": "degeneracycraft:basic_redstone_battery"
+  },
+  "output0": {
+    "item": "degeneracycraft:basic_performance_bio_reactor_block"
+  }
+}

@@ -46,8 +46,8 @@ public class BasicPerformanceBioReactorMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(handler, 4, 98, 25));
             this.addSlot(new SlotItemHandler(handler, 5, 116, 25));
             this.addSlot(new SlotItemHandler(handler, 6, 134, 25));
-            this.addSlot(new SlotItemHandler(handler, 8, 71, 59));
-            this.addSlot(new SlotItemHandler(handler, 9, 98, 62));
+            this.addSlot(new SlotItemHandler(handler, 7, 71, 59));
+            this.addSlot(new SlotItemHandler(handler, 8, 98, 62));
         });
         addDataSlots(data);
     }

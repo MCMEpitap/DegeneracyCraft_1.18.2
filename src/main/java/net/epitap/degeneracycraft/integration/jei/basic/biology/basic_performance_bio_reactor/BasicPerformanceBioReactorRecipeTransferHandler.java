@@ -3,14 +3,14 @@ package net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performan
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.recipe.transfer.IRecipeTransferError;
 import mezz.jei.api.recipe.transfer.IRecipeTransferHandler;
-import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bioreactor.BasicPerformanceBioReactorMenu;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.TransferRecipeC2SPacket;
 import net.minecraft.world.entity.player.Player;
 
 import javax.annotation.Nullable;
 
-public class BasicPerformanceBioReactorRecipeTransferHandler<T extends BasicPerformanceAstronomicalTelescopeMenu, R extends BasicPerformanceBioReactorRecipe>
+public class BasicPerformanceBioReactorRecipeTransferHandler<T extends BasicPerformanceBioReactorMenu, R extends BasicPerformanceBioReactorRecipe>
         implements IRecipeTransferHandler<T, BasicPerformanceBioReactorRecipe> {
 
     private final Class<T> containerClass;
@@ -42,7 +42,7 @@ public class BasicPerformanceBioReactorRecipeTransferHandler<T extends BasicPerf
 
     @Override
     public @Nullable IRecipeTransferError transferRecipe(
-            BasicPerformanceAstronomicalTelescopeMenu container,
+            BasicPerformanceBioReactorMenu container,
             BasicPerformanceBioReactorRecipe recipe,
             IRecipeSlotsView recipeSlots,
             Player player,

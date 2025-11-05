@@ -773,11 +773,13 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicPartEngineeringItem(DCItems.BASIC_DIODE.get());
         basicPartEngineeringItem(DCItems.BASIC_DRIVECHAIN.get());
         basicPartEngineeringItem(DCItems.BASIC_EQUIPMENT_CONTAINER.get());
+        basicPartEngineeringItem(DCItems.BASIC_FIXED_FRAME.get());
         basicPartEngineeringItem(DCItems.BASIC_INSCRIBE_NEEDLE.get());
         basicPartEngineeringItem(DCItems.BASIC_INSCRIBED_CIRCUIT.get());
         basicPartEngineeringItem(DCItems.BASIC_LINKAGE.get());
         basicPartEngineeringItem(DCItems.BASIC_MACHINE_SCREEN.get());
         basicPartEngineeringItem(DCItems.BASIC_MOTOR.get());
+        basicPartEngineeringItem(DCItems.BASIC_PIPE_BUNDLE.get());
         basicPartEngineeringItem(DCItems.BASIC_PROCESSING_BASE.get());
         basicPartEngineeringItem(DCItems.BASIC_PROCESSING_CIRCUIT.get());
         basicPartEngineeringItem(DCItems.BASIC_REDSTONE_BATTERY.get());

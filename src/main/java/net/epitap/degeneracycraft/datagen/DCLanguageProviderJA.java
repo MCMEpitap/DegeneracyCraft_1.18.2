@@ -742,11 +742,13 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_DIODE.get(), "基本ダイオード");
         add(DCItems.BASIC_DRIVECHAIN.get(), "基本ドライブチェーン");
         add(DCItems.BASIC_EQUIPMENT_CONTAINER.get(), "基本装置コンテナ");
+        add(DCItems.BASIC_FIXED_FRAME.get(), "基本固定フレーム");
         add(DCItems.BASIC_INSCRIBE_NEEDLE.get(), "基本刻印針");
         add(DCItems.BASIC_INSCRIBED_CIRCUIT.get(), "基本刻印回路");
         add(DCItems.BASIC_LINKAGE.get(), "基本リンゲージ");
         add(DCItems.BASIC_MACHINE_SCREEN.get(), "基本機械スクリーン");
         add(DCItems.BASIC_MOTOR.get(), "基本モーター");
+        add(DCItems.BASIC_PIPE_BUNDLE.get(), "基本パイプ管束");
         add(DCItems.BASIC_PROCESSING_BASE.get(), "基本加工台");
         add(DCItems.BASIC_PROCESSING_CIRCUIT.get(), "基本処理回路");
         add(DCItems.BASIC_REDSTONE_BATTERY.get(), "基本レッドストーン電池");

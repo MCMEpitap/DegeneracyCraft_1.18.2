@@ -6,14 +6,14 @@ import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserMenu;
-import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_power_steam_generator.BasicPowerSteamGeneratorMenu;
-import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherMenu;
@@ -152,8 +152,6 @@ public class DCMenuTypes {
             registerMenuType(BasicTechnologyUniversalAssemblerMenu::new, "basic_technology_universal_assembler_menu");
     public static final RegistryObject<MenuType<BasicTechnologyMachineManufacturerMenu>> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_MENU =
             registerMenuType(BasicTechnologyMachineManufacturerMenu::new, "basic_technology_machine_manufacturer_menu");
-    public static final RegistryObject<MenuType<BasicTechnologyCircuitBuilderMenu>> BASIC_TECHNOLOGY_CIRCUIT_BUILDER_MENU =
-            registerMenuType(BasicTechnologyCircuitBuilderMenu::new, "basic_technology_circuit_builder_menu");
     public static final RegistryObject<MenuType<BasicTechnologyMachineElementProcessorMenu>> BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_MACHINE_MENU =
             registerMenuType(BasicTechnologyMachineElementProcessorMenu::new, "basic_technology_machine_element_processor_menu");
     public static final RegistryObject<MenuType<BasicTechnologyMachinePartProcessorMenu>> BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_MACHINE_MENU =
@@ -167,8 +165,8 @@ public class DCMenuTypes {
 
 
 
-
-
+    public static final RegistryObject<MenuType<BasicPerformanceCircuitBuilderMenu>> BASIC_PERFORMANCE_CIRCUIT_BUILDER_MENU =
+            registerMenuType(BasicPerformanceCircuitBuilderMenu::new, "basic_performance_circuit_builder_menu");
     public static final RegistryObject<MenuType<BasicPerformanceMachineDataInstallerMenu>> BASIC_PERFORMANCE_MACHINE_DARA_INSTALLER_MENU =
             registerMenuType(BasicPerformanceMachineDataInstallerMenu::new, "basic_performance_machine_data_installer_menu");
     public static final RegistryObject<MenuType<BasicPerformanceDesignatedDataInjectorMenu>> BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_MENU =

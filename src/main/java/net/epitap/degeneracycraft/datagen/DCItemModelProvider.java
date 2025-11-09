@@ -927,7 +927,7 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_strength_dynamic_energetics_multiblock_material_storage_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_dynamic_energetics_multiblock_material_storage_holo_block"));
-        
+
         withExistingParent(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_engineering_multiblock_base_frame_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.getId().getPath(),
@@ -1070,7 +1070,7 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_astronomical_telescope_port_block"));
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_astronomical_telescope_port_holo_block"));
-        basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT.get());
+        basicMachineCircuitAstronomyItem(DCItems.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT.get());
 
 
 
@@ -1088,9 +1088,9 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_bio_reactor_port_block"));
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_bio_reactor_port_holo_block"));
-        basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_BIO_REACTOR_CIRCUIT.get());
-        
-        
+        basicMachineCircuitBiologyItem(DCItems.BASIC_PERFORMANCE_BIO_REACTOR_CIRCUIT.get());
+
+
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_chemical_reactor_block"));
@@ -1106,8 +1106,8 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_chemical_reactor_port_block"));
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_chemical_reactor_port_holo_block"));
-        basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_CHEMICAL_REACTOR_CIRCUIT.get());
-        
+        basicMachineCircuitChemistryItem(DCItems.BASIC_PERFORMANCE_CHEMICAL_REACTOR_CIRCUIT.get());
+
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_compound_purifier_block"));
         withExistingParent(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_BLOCK.getId().getPath(),
@@ -1122,7 +1122,7 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_compound_purifier_port_block"));
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_compound_purifier_port_holo_block"));
-        basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_COMPOUND_PURIFIER_CIRCUIT.get());
+        basicMachineCircuitChemistryItem(DCItems.BASIC_PERFORMANCE_COMPOUND_PURIFIER_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_electrolyser_block"));
@@ -1138,8 +1138,8 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_electrolyser_port_block"));
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_electrolyser_port_holo_block"));
-        basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_ELECTROLYSER_CIRCUIT.get());
-        
+        basicMachineCircuitChemistryItem(DCItems.BASIC_PERFORMANCE_ELECTROLYSER_CIRCUIT.get());
+
 
 
 
@@ -1173,12 +1173,12 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_power_steam_generator_port_block"));
         withExistingParent(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_power_steam_generator_port_holo_block"));
-        basicMachineCircuitItem(DCItems.BASIC_POWER_STEAM_GENERATOR_CIRCUIT.get());
+        basicMachineCircuitDynamicEnergeticsItem(DCItems.BASIC_POWER_STEAM_GENERATOR_CIRCUIT.get());
 
 
-        
-        
-        
+
+
+
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_machine_manufacturer_block"));
         withExistingParent(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_BLOCK.getId().getPath(),
@@ -1193,7 +1193,7 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_technology_machine_manufacturer_port_block"));
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_machine_manufacturer_port_holo_block"));
-        basicMachineCircuitItem(DCItems.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_CIRCUIT.get());
+        basicMachineCircuitEngineeringItem(DCItems.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_universal_assembler_block"));
@@ -1209,25 +1209,8 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_technology_universal_assembler_port_block"));
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_universal_assembler_port_holo_block"));
-        basicMachineCircuitItem(DCItems.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_CIRCUIT.get());
-
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_circuit_builder_block"));
-        withExistingParent(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_BLOCK.getId().getPath(),
-                modLoc("block/basic_purity_circuit_clean_room_block"));
-        withExistingParent(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_purity_circuit_clean_room_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_circuit_builder_bus_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_circuit_builder_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_circuit_builder_port_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_circuit_builder_port_holo_block"));
-        basicMachineCircuitItem(DCItems.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_CIRCUIT.get());
-
-
+        basicMachineCircuitEngineeringItem(DCItems.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_CIRCUIT.get());
+        
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_machine_element_processor_block"));
         withExistingParent(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSING_CHAMBER_BLOCK.getId().getPath(),
@@ -1242,7 +1225,7 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_technology_machine_element_processor_port_block"));
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_machine_element_processor_port_holo_block"));
-        basicMachineCircuitItem(DCItems.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_CIRCUIT.get());
+        basicMachineCircuitEngineeringItem(DCItems.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_machine_part_processor_block"));
@@ -1258,7 +1241,7 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_technology_machine_part_processor_port_block"));
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_machine_part_processor_port_holo_block"));
-        basicMachineCircuitItem(DCItems.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_CIRCUIT.get());
+        basicMachineCircuitEngineeringItem(DCItems.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_multiblock_equipment_fabricator_block"));
@@ -1274,11 +1257,26 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_technology_multiblock_equipment_fabricator_port_block"));
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_multiblock_equipment_fabricator_port_holo_block"));
-        basicMachineCircuitItem(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_CIRCUIT.get());
+        basicMachineCircuitEngineeringItem(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_CIRCUIT.get());
 
 
-        
-        
+
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_circuit_builder_block"));
+        withExistingParent(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_BLOCK.getId().getPath(),
+                modLoc("block/basic_purity_circuit_clean_room_block"));
+        withExistingParent(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_purity_circuit_clean_room_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_circuit_builder_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_circuit_builder_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_circuit_builder_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_circuit_builder_port_holo_block"));
+        basicMachineCircuitFormalScienceItem(DCItems.BASIC_PERFORMANCE_CIRCUIT_BUILDER_CIRCUIT.get());
+
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_machine_data_installer_block"));
         withExistingParent(DCBlocks.BASIC_SPEED_DATA_READER_BLOCK.getId().getPath(),
@@ -1293,8 +1291,8 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_machine_data_installer_port_block"));
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_machine_data_installer_port_holo_block"));
-        basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_CIRCUIT.get());
-        
+        basicMachineCircuitFormalScienceItem(DCItems.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_CIRCUIT.get());
+
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_designated_data_injector_block"));
         withExistingParent(DCBlocks.BASIC_SPEED_CALCULATION_AUXILIARY_WRITE_DEVICE_BLOCK.getId().getPath(),
@@ -1309,9 +1307,9 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_designated_data_injector_port_block"));
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_designated_data_injector_port_holo_block"));
-        basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_CIRCUIT.get());
-        
-        
+        basicMachineCircuitFormalScienceItem(DCItems.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_CIRCUIT.get());
+
+
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_rock_crasher_block"));
@@ -1327,10 +1325,10 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_rock_crasher_port_block"));
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_rock_crasher_port_holo_block"));
-        basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_ROCK_CRASHER_CIRCUIT.get());
+        basicMachineCircuitGeoScienceItem(DCItems.BASIC_PERFORMANCE_ROCK_CRASHER_CIRCUIT.get());
 
-        
-        
+
+
 
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.getId().getPath(),
@@ -1347,7 +1345,7 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_electric_arc_furnace_port_block"));
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_electric_arc_furnace_port_holo_block"));
-        basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_CIRCUIT.get());
+        basicMachineCircuitHybridPhysicsItem(DCItems.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_forming_machine_block"));
@@ -1363,7 +1361,7 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_forming_machine_port_block"));
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_forming_machine_port_holo_block"));
-        basicMachineCircuitItem(DCItems.BASIC_PERFORMANCE_FORMING_MACHINE_CIRCUIT.get());
+        basicMachineCircuitHybridPhysicsItem(DCItems.BASIC_PERFORMANCE_FORMING_MACHINE_CIRCUIT.get());
 
 //        withExistingParent(DCBlocks.OVERWORLD_CASSITERITE_ORE.getId().getPath(),
 //                modLoc("block/overworld_cassiterite_ore"));
@@ -1660,10 +1658,52 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/material/basic/hybrid_physics/" + item.getRegistryName().getPath()));
     }
 
-    private ItemModelBuilder basicMachineCircuitItem(Item item) {
+    private ItemModelBuilder basicMachineCircuitAstronomyItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/engineering/machine_circuit/" + item.getRegistryName().getPath()));
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/formal_science/machine_circuit/astronomy/" + item.getRegistryName().getPath()));
+    }
+
+    private ItemModelBuilder basicMachineCircuitBiologyItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/formal_science/machine_circuit/biology/" + item.getRegistryName().getPath()));
+    }
+    private ItemModelBuilder basicMachineCircuitChemistryItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/formal_science/machine_circuit/chemistry/" + item.getRegistryName().getPath()));
+    }
+    private ItemModelBuilder basicMachineCircuitDynamicEnergeticsItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/formal_science/machine_circuit/dynamic_energetics/" + item.getRegistryName().getPath()));
+    }
+    private ItemModelBuilder basicMachineCircuitEngineeringItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/formal_science/machine_circuit/engineering/" + item.getRegistryName().getPath()));
+    }
+    private ItemModelBuilder basicMachineCircuitFormalScienceItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/formal_science/machine_circuit/formal_science/" + item.getRegistryName().getPath()));
+    }
+
+    private ItemModelBuilder basicMachineCircuitGeoScienceItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/formal_science/machine_circuit/geo_science/" + item.getRegistryName().getPath()));
+    }
+    private ItemModelBuilder basicMachineCircuitHybridPhysicsItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/formal_science/machine_circuit/hybrid_physics/" + item.getRegistryName().getPath()));
+    }
+    private ItemModelBuilder basicMachineCircuitImitationEngineeringItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/formal_science/machine_circuit/" + item.getRegistryName().getPath()));
     }
 
     private ItemModelBuilder recipe_tooltip_item(Item item) {

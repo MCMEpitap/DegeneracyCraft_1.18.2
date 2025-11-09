@@ -18,9 +18,9 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_perfo
 import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_power_steam_generator.port.BasicPowerSteamGeneratorPortType;
-import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_circuit_builder.bus.BasicTechnologyCircuitBuilderBusEnergyStorage;
-import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_circuit_builder.bus.BasicTechnologyCircuitBuilderBusType;
-import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_circuit_builder.port.BasicTechnologyCircuitBuilderPortType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_circuit_builder.bus.BasicPerformanceCircuitBuilderBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_circuit_builder.bus.BasicPerformanceCircuitBuilderBusType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_circuit_builder.port.BasicPerformanceCircuitBuilderPortType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_element_processor.bus.BasicTechnologyMachineElementProcessorBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_element_processor.bus.BasicTechnologyMachineElementProcessorBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_element_processor.port.BasicTechnologyMachineElementProcessorPortType;
@@ -85,11 +85,13 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
     protected PortSetLazyOptional<BasicPowerSteamGeneratorBusEnergyStorage> basicPowerSteamGeneratorBusEnergyStorageStored;
     protected PortSetLazyOptional<BasicTechnologyMachineManufacturerBusEnergyStorage> basicTechnologyMachineManufacturerBusEnergyStorageStored;
-    protected PortSetLazyOptional<BasicTechnologyCircuitBuilderBusEnergyStorage> basicTechnologyCircuitBuilderBusEnergyStorageStored;
     protected PortSetLazyOptional<BasicTechnologyMachineElementProcessorBusEnergyStorage> basicTechnologyMachineElementProcessorBusEnergyStorageStored;
     protected PortSetLazyOptional<BasicTechnologyMachinePartProcessorBusEnergyStorage> basicTechnologyMachinePartProcessorBusEnergyStorageStored;
     protected PortSetLazyOptional<BasicTechnologyMultiblockEquipmentFabricatorBusEnergyStorage> basicTechnologyMultiblockEquipmentFabricatorBusEnergyStorageStored;
 
+
+
+    protected PortSetLazyOptional<BasicPerformanceCircuitBuilderBusEnergyStorage> basicPerformanceCircuitBuilderBusEnergyStorageStored;
     protected PortSetLazyOptional<BasicPerformanceDesignatedDataInjectorBusEnergyStorage> basicPerformanceDesignatedDataInjectorBusEnergyStorageStored;
     protected PortSetLazyOptional<BasicPerformanceMachineDataInstallerBusEnergyStorage> basicPerformanceMachineDataInstallerBusEnergyStorageStored;
 
@@ -113,19 +115,30 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
         basicPerformanceAstronomicalTelescopeBusEnergyStorageStored = new PortSetLazyOptional<>();
 
+
+
         basicPerformanceBioReactorBusEnergyStorageStored = new PortSetLazyOptional<>();
+
+
 
         basicPerformanceChemicalReactorBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicPerformanceCompoundPurifierBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicPerformanceElectrolyserBusEnergyStorageStored = new PortSetLazyOptional<>();
 
+
+
         basicPowerSteamGeneratorBusEnergyStorageStored = new PortSetLazyOptional<>();
+
+
+
         basicTechnologyMachineManufacturerBusEnergyStorageStored = new PortSetLazyOptional<>();
-        basicTechnologyCircuitBuilderBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicTechnologyMachineElementProcessorBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicTechnologyMachinePartProcessorBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicTechnologyMultiblockEquipmentFabricatorBusEnergyStorageStored = new PortSetLazyOptional<>();
 
+
+
+        basicPerformanceCircuitBuilderBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicPerformanceDesignatedDataInjectorBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicPerformanceMachineDataInstallerBusEnergyStorageStored = new PortSetLazyOptional<>();
 
@@ -220,16 +233,6 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 return itemStored.get(side).cast();
             }
         }
-        if (cap == CapabilityEnergy.ENERGY && hasType(BasicTechnologyCircuitBuilderBusType.INSTANCE)) {
-            if (side != null) {
-                return basicTechnologyCircuitBuilderBusEnergyStorageStored.get(side).cast();
-            }
-        }
-        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicTechnologyCircuitBuilderPortType.INSTANCE)) {
-            if (side != null) {
-                return itemStored.get(side).cast();
-            }
-        }
         if (cap == CapabilityEnergy.ENERGY && hasType(BasicTechnologyMachineElementProcessorBusType.INSTANCE)) {
             if (side != null) {
                 return basicTechnologyMachineElementProcessorBusEnergyStorageStored.get(side).cast();
@@ -272,7 +275,16 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         }
 
 
-
+        if (cap == CapabilityEnergy.ENERGY && hasType(BasicPerformanceCircuitBuilderBusType.INSTANCE)) {
+            if (side != null) {
+                return basicPerformanceCircuitBuilderBusEnergyStorageStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPerformanceCircuitBuilderPortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        }
         if (cap == CapabilityEnergy.ENERGY && hasType(BasicPerformanceDesignatedDataInjectorBusType.INSTANCE)) {
             if (side != null) {
                 return basicPerformanceDesignatedDataInjectorBusEnergyStorageStored.get(side).cast();
@@ -438,13 +450,6 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 }
             }
         }
-        if (hasType(BasicTechnologyCircuitBuilderBusType.INSTANCE)) {
-            for (Direction side : Direction.values()) {
-                if (portExtracting(side)) {
-                    basicTechnologyCircuitBuilderBusEnergyStorageStored.get(side).ifPresent(BasicTechnologyCircuitBuilderBusEnergyStorage::tick);
-                }
-            }
-        }
         if (hasType(BasicTechnologyMachineElementProcessorBusType.INSTANCE)) {
             for (Direction side : Direction.values()) {
                 if (portExtracting(side)) {
@@ -468,7 +473,13 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         }
 
 
-
+        if (hasType(BasicPerformanceCircuitBuilderBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    basicPerformanceCircuitBuilderBusEnergyStorageStored.get(side).ifPresent(BasicPerformanceCircuitBuilderBusEnergyStorage::tick);
+                }
+            }
+        }
         if (hasType(BasicPerformanceDesignatedDataInjectorBusType.INSTANCE)) {
             for (Direction side : Direction.values()) {
                 if (portExtracting(side)) {
@@ -565,12 +576,6 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicTechnologyMachineManufacturerPortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
         }
-        if (hasType(BasicTechnologyCircuitBuilderBusType.INSTANCE)) {
-            basicTechnologyCircuitBuilderBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicTechnologyCircuitBuilderBusEnergyStorage(this, storage));
-        }
-        if (hasType(BasicTechnologyCircuitBuilderPortType.INSTANCE)) {
-            itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
-        }
         if (hasType(BasicTechnologyMachineElementProcessorBusType.INSTANCE)) {
             basicTechnologyMachineElementProcessorBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicTechnologyMachineElementProcessorBusEnergyStorage(this, storage));
         }
@@ -591,7 +596,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         }
 
 
-
+        if (hasType(BasicPerformanceCircuitBuilderBusType.INSTANCE)) {
+            basicPerformanceCircuitBuilderBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicPerformanceCircuitBuilderBusEnergyStorage(this, storage));
+        }
+        if (hasType(BasicPerformanceCircuitBuilderPortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
+        }
         if (hasType(BasicPerformanceDesignatedDataInjectorBusType.INSTANCE)) {
             basicPerformanceDesignatedDataInjectorBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicPerformanceDesignatedDataInjectorBusEnergyStorage(this, storage));
         }
@@ -687,12 +697,6 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicTechnologyMachineManufacturerPortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
         }
-        if (hasType(BasicTechnologyCircuitBuilderBusType.INSTANCE)) {
-            basicTechnologyCircuitBuilderBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicTechnologyCircuitBuilderBusEnergyStorage(this, side));
-        }
-        if (hasType(BasicTechnologyCircuitBuilderPortType.INSTANCE)) {
-            itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
-        }
         if (hasType(BasicTechnologyMachineElementProcessorBusType.INSTANCE)) {
             basicTechnologyMachineElementProcessorBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicTechnologyMachineElementProcessorBusEnergyStorage(this, side));
         }
@@ -713,7 +717,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         }
 
 
-
+        if (hasType(BasicPerformanceCircuitBuilderBusType.INSTANCE)) {
+            basicPerformanceCircuitBuilderBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicPerformanceCircuitBuilderBusEnergyStorage(this, side));
+        }
+        if (hasType(BasicPerformanceCircuitBuilderPortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
+        }
         if (hasType(BasicPerformanceDesignatedDataInjectorBusType.INSTANCE)) {
             basicPerformanceDesignatedDataInjectorBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicPerformanceDesignatedDataInjectorBusEnergyStorage(this, side));
         }
@@ -781,14 +790,16 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
         basicPowerSteamGeneratorBusEnergyStorageStored.invalidate();
+
+
+
         basicTechnologyMachineManufacturerBusEnergyStorageStored.invalidate();
-        basicTechnologyCircuitBuilderBusEnergyStorageStored.invalidate();
         basicTechnologyMachineElementProcessorBusEnergyStorageStored.invalidate();
         basicTechnologyMachinePartProcessorBusEnergyStorageStored.invalidate();
         basicTechnologyMultiblockEquipmentFabricatorBusEnergyStorageStored.invalidate();
 
 
-
+        basicPerformanceCircuitBuilderBusEnergyStorageStored.invalidate();
         basicPerformanceDesignatedDataInjectorBusEnergyStorageStored.invalidate();
         basicPerformanceMachineDataInstallerBusEnergyStorageStored.invalidate();
 

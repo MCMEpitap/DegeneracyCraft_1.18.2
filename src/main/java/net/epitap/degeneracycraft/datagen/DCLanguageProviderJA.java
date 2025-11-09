@@ -1039,20 +1039,6 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_HOLO_BLOCK.get(), "基本技術万能組立機ポート (ホログラム)");
         add(DCItems.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_CIRCUIT.get(), "基本技術万能組立機回路");
 
-
-        add(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BLOCK.get(), "基本技術回路構築機");
-        add("tooltip." + "degeneracycraft." + "basic_technology_circuit_builder_block",
-                "基本的な回路構築機. 回路やその部品を製作する機械.");
-        add(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_BLOCK.get(), "基本清浄度回路防塵室");
-        add("tooltip." + "degeneracycraft.ability" + "basic_technology_circuit_builder_block",
-                "基本操作組立加工室用");
-        add(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_HOLO_BLOCK.get(), "基本清浄度回路防塵室 (ホログラム)");
-        add(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_BLOCK.get(), "基本技術回路構築機バス");
-        add(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.get(), "基本技術回路構築機バス (ホログラム)");
-        add(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_BLOCK.get(), "基本技術回路構築機ポート");
-        add(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get(), "基本技術回路構築機ポート (ホログラム)");
-        add(DCItems.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_CIRCUIT.get(), "基本技術回路構築機回路");
-
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(), "基本技術機械要素加工機");
         add("tooltip." + "degeneracycraft." + "basic_technology_machine_element_processor_block",
                 "基本的な機械要素加工機. より加工難度の高い金属を加工する.");
@@ -1095,8 +1081,19 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
 
-
-
+        add(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_BLOCK.get(), "基本性能回路構築機");
+        add("tooltip." + "degeneracycraft." + "basic_performance_circuit_builder_block",
+                "基本的な回路構築機. 回路やその部品を製作する機械.");
+        add(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_BLOCK.get(), "基本清浄度回路防塵室");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_circuit_builder_block",
+                "基本性能回路構築機");
+        add(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_HOLO_BLOCK.get(), "基本清浄度回路防塵室 (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_BUS_BLOCK.get(), "基本性能回路構築機バス");
+        add(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.get(), "基本性能回路構築機バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_PORT_BLOCK.get(), "基本性能回路構築機ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get(), "基本性能回路構築機ポート (ホログラム)");
+        add(DCItems.BASIC_PERFORMANCE_CIRCUIT_BUILDER_CIRCUIT.get(), "基本性能回路構築機回路");
+        
         add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK.get(), "基本性能機械データインストーラー");
         add("tooltip." + "degeneracycraft." + "basic_performance_machine_data_installer_block",
                 "基本的な機械データインストーラー. 機械のデータを記憶回路にインストールする機械.");
@@ -1202,13 +1199,12 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("jei." + "degeneracycraft_basic_technology_machine_manufacturer", "基本技術機械製造機 レシピ");
         add("jei." + "degeneracycraft_basic_technology_machine_element_processor", "基本技術機械要素加工機 レシピ");
         add("jei." + "degeneracycraft_basic_technology_universal_assembler", "基本技術万能加工機 レシピ");
-        add("jei." + "degeneracycraft_basic_technology_circuit_builder", "基本技術回路構築機 レシピ");
         add("jei." + "degeneracycraft_basic_technology_machine_part_processor", "基本技術機械部品加工機 レシピ");
         add("jei." + "degeneracycraft_basic_technology_multiblock_equipment_fabricator", "基本技術マルチブロック設備製作機 レシピ");
 
 
 
-
+        add("jei." + "degeneracycraft_basic_performance_circuit_builder", "基本性能回路構築機 レシピ");
         add("jei." + "degeneracycraft_basic_performance_machine_data_installer", "基本性能機械データインストーラー レシピ");
         add("jei." + "degeneracycraft_basic_performance_designated_data_injector", "基本性能指定データ注入機 レシピ");
 

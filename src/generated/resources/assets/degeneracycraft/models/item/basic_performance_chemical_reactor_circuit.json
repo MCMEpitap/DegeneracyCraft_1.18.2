@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/part/basic/engineering/machine_circuit/basic_performance_chemical_reactor_circuit"
+    "layer0": "degeneracycraft:item/part/basic/formal_science/machine_circuit/chemistry/basic_performance_chemical_reactor_circuit"
   }
 }

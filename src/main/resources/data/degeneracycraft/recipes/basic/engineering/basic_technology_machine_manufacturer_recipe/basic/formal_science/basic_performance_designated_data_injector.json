@@ -1,0 +1,35 @@
+{
+  "type": "degeneracycraft:basic_technology_machine_manufacturer_recipe",
+  "energy": 20000.0,
+  "time": 60.0,
+  "input0": {
+    "item": "degeneracycraft:basic_machine_screen"
+  },
+  "input1": {
+    "item": "degeneracycraft:basic_inscribe_needle"
+  },
+  "input2": {
+    "item": "degeneracycraft:basic_machine_screen"
+  },
+  "input3": {
+    "item": "degeneracycraft:basic_recording_medium"
+  },
+  "input4": {
+    "item": "degeneracycraft:basic_processing_base"
+  },
+  "input5": {
+    "item": "degeneracycraft:basic_recording_medium"
+  },
+  "input6": {
+    "item": "degeneracycraft:basic_processing_circuit"
+  },
+  "input7": {
+    "item": "degeneracycraft:basic_redstone_battery"
+  },
+  "input8": {
+    "item": "degeneracycraft:basic_processing_circuit"
+  },
+  "output0": {
+    "item": "degeneracycraft:basic_technology_circuit_builder_block"
+  }
+}

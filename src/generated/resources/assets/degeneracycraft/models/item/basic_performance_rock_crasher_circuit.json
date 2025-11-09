@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/part/basic/engineering/machine_circuit/basic_performance_rock_crasher_circuit"
+    "layer0": "degeneracycraft:item/part/basic/formal_science/machine_circuit/geo_science/basic_performance_rock_crasher_circuit"
   }
 }

@@ -9,12 +9,12 @@ import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performan
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_power_steam_generator.BasicPowerSteamGeneratorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineBlockEntity;
-import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherBlockEntity;
@@ -53,7 +53,6 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_perfo
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.port.BasicPerformanceElectrolyserPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_power_steam_generator.port.BasicPowerSteamGeneratorPortBlockEntity;
-import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_circuit_builder.port.BasicTechnologyCircuitBuilderPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_element_processor.bus.BasicTechnologyMachineElementProcessorBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_element_processor.port.BasicTechnologyMachineElementProcessorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_manufacturer.bus.BasicTechnologyMachineManufacturerBusBlockEntity;
@@ -64,6 +63,8 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_tec
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_multiblock_equipment_fabricator.port.BasicTechnologyMultiblockEquipmentFabricatorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_universal_assembler.bus.BasicTechnologyUniversalAssemblerBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_universal_assembler.port.BasicTechnologyUniversalAssemblerPortBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_circuit_builder.bus.BasicPerformanceCircuitBuilderBusBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_circuit_builder.port.BasicPerformanceCircuitBuilderPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_designated_data_injector.bus.BasicPerformanceDesignatedDataInjectorBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_designated_data_injector.port.BasicPerformanceDesignatedDataInjectorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_machine_data_installer.bus.BasicPerformanceMachineDataInstallerBusBlockEntity;
@@ -264,15 +265,6 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicTechnologyUniversalAssemblerPortBlockEntity>> BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_technology_universal_assembler_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicTechnologyUniversalAssemblerPortBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_BLOCK.get()).build(null));
-    public static final RegistryObject<BlockEntityType<BasicTechnologyCircuitBuilderBlockEntity>> BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_technology_circuit_builder_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicTechnologyCircuitBuilderBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BLOCK.get()).build(null));
-    public static final RegistryObject<BlockEntityType<BasicTechnologyUniversalAssemblerBusBlockEntity>> BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_technology_circuit_builder_bus_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicTechnologyUniversalAssemblerBusBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_BLOCK.get()).build(null));
-    public static final RegistryObject<BlockEntityType<BasicTechnologyCircuitBuilderPortBlockEntity>> BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("basic_technology_circuit_builder_port_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicTechnologyCircuitBuilderPortBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicTechnologyMachineElementProcessorBlockEntity>> BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_ENTITY =
             BLOCK_ENTITIES.register("basic_technology_machine_element_processor_block_entity", () ->
                     BlockEntityType.Builder.of(BasicTechnologyMachineElementProcessorBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get()).build(null));
@@ -311,7 +303,15 @@ public class DCBlockEntities {
 
 
 
-
+    public static final RegistryObject<BlockEntityType<BasicPerformanceCircuitBuilderBlockEntity>> BASIC_PERFORMANCE_CIRCUIT_BUILDER_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_circuit_builder_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceCircuitBuilderBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceCircuitBuilderBusBlockEntity>> BASIC_PERFORMANCE_CIRCUIT_BUILDER_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_circuit_builder_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceCircuitBuilderBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceCircuitBuilderPortBlockEntity>> BASIC_PERFORMANCE_CIRCUIT_BUILDER_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_circuit_builder_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceCircuitBuilderPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_PORT_BLOCK.get()).build(null));
 
     public static final RegistryObject<BlockEntityType<BasicPerformanceMachineDataInstallerBlockEntity>> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_machine_data_installer_block_entity", () ->

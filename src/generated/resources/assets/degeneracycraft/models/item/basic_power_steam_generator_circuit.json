@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "degeneracycraft:item/part/basic/engineering/machine_circuit/basic_power_steam_generator_circuit"
+    "layer0": "degeneracycraft:item/part/basic/formal_science/machine_circuit/dynamic_energetics/basic_power_steam_generator_circuit"
   }
 }

@@ -7,12 +7,12 @@ import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performa
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorRecipe;
-import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_universal_assembler.BasicTechnologyUniversalAssemblerRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherRecipe;
@@ -62,12 +62,12 @@ public class DCRecipeTypes {
 
     public static final RegistryObject<RecipeSerializer<BasicPowerSteamGeneratorRecipe>> BASIC_POWER_STEAM_GENERATOR_SERIALIZER =
             SERIALIZERS.register("basic_power_steam_generator_recipe", () -> BasicPowerSteamGeneratorRecipe.Serializer.INSTANCE);
+
+
     public static final RegistryObject<RecipeSerializer<BasicTechnologyMachineManufacturerRecipe>> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_SERIALIZER =
             SERIALIZERS.register("basic_technology_machine_manufacturer_recipe", () -> BasicTechnologyMachineManufacturerRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<BasicTechnologyUniversalAssemblerRecipe>> BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_SERIALIZER =
             SERIALIZERS.register("basic_technology_universal_assembler_recipe", () -> BasicTechnologyUniversalAssemblerRecipe.Serializer.INSTANCE);
-    public static final RegistryObject<RecipeSerializer<BasicTechnologyCircuitBuilderRecipe>> BASIC_PRECISION_CIRCUIT_BUILDER_SERIALIZER =
-            SERIALIZERS.register("basic_technology_circuit_builder_recipe", () -> BasicTechnologyCircuitBuilderRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<BasicTechnologyMachineElementProcessorRecipe>> BASIC_MACHINE_ELEMENT_PROCESSOR_SERIALIZER =
             SERIALIZERS.register("basic_technology_machine_element_processor_recipe", () -> BasicTechnologyMachineElementProcessorRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<BasicTechnologyMachinePartProcessorRecipe>> BASIC_MACHINE_PART_PROCESSOR_SERIALIZER =
@@ -78,7 +78,8 @@ public class DCRecipeTypes {
 
 
 
-
+    public static final RegistryObject<RecipeSerializer<BasicPerformanceCircuitBuilderRecipe>> BASIC_PERFORMANCE_CIRCUIT_BUILDER_SERIALIZER =
+            SERIALIZERS.register("basic_performance_circuit_builder_recipe", () -> BasicPerformanceCircuitBuilderRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<BasicPerformanceMachineDataInstallerRecipe>> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_SERIALIZER =
             SERIALIZERS.register("basic_performance_machine_data_installer_recipe", () -> BasicPerformanceMachineDataInstallerRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<BasicPerformanceDesignatedDataInjectorRecipe>> BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_SERIALIZER =

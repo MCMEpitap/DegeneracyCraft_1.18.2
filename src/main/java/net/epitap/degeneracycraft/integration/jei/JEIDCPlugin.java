@@ -16,8 +16,8 @@ import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performan
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserScreen;
-import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderMenu;
-import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerMenu;
@@ -59,9 +59,9 @@ import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performa
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorRecipeCategory;
-import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderRecipe;
-import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderRecipeCategory;
-import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_circuit_builder.BasicTechnologyCircuitBuilderRecipeTransferHandler;
+import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorRecipeTransferHandler;
@@ -154,8 +154,6 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeCategories(new
                 BasicTechnologyUniversalAssemblerRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
-                BasicTechnologyCircuitBuilderRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
-        registration.addRecipeCategories(new
                 BasicTechnologyMachineElementProcessorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
                 BasicTechnologyMachinePartProcessorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
@@ -164,7 +162,8 @@ public class JEIDCPlugin implements IModPlugin {
 
 
 
-
+        registration.addRecipeCategories(new
+                BasicPerformanceCircuitBuilderRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
                 BasicPerformanceMachineDataInstallerRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
@@ -245,9 +244,6 @@ public class JEIDCPlugin implements IModPlugin {
         List<BasicTechnologyUniversalAssemblerRecipe> basicTechnologyUniversalAssemblerRecipes =
                 rm.getAllRecipesFor(BasicTechnologyUniversalAssemblerRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicTechnologyUniversalAssemblerRecipeCategory.UID, BasicTechnologyUniversalAssemblerRecipe.class), basicTechnologyUniversalAssemblerRecipes);
-        List<BasicTechnologyCircuitBuilderRecipe> basicPrecisionCircuitBuilderRecipes =
-                rm.getAllRecipesFor(BasicTechnologyCircuitBuilderRecipe.Type.INSTANCE);
-        registration.addRecipes(new RecipeType<>(BasicTechnologyCircuitBuilderRecipeCategory.UID, BasicTechnologyCircuitBuilderRecipe.class), basicPrecisionCircuitBuilderRecipes);
         List<BasicTechnologyMachineElementProcessorRecipe> basicMachineElementProcessorRecipes =
                 rm.getAllRecipesFor(BasicTechnologyMachineElementProcessorRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicTechnologyMachineElementProcessorRecipeCategory.UID, BasicTechnologyMachineElementProcessorRecipe.class), basicMachineElementProcessorRecipes);
@@ -261,7 +257,9 @@ public class JEIDCPlugin implements IModPlugin {
 
 
 
-
+        List<BasicPerformanceCircuitBuilderRecipe> basicPerformanceCircuitBuilderRecipes =
+                rm.getAllRecipesFor(BasicPerformanceCircuitBuilderRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicPerformanceCircuitBuilderRecipeCategory.UID, BasicPerformanceCircuitBuilderRecipe.class), basicPerformanceCircuitBuilderRecipes);
         List<BasicPerformanceMachineDataInstallerRecipe> basicPerformanceMachineDataInstallerRecipes =
                 rm.getAllRecipesFor(BasicPerformanceMachineDataInstallerRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicPerformanceMachineDataInstallerRecipeCategory.UID, BasicPerformanceMachineDataInstallerRecipe.class), basicPerformanceMachineDataInstallerRecipes);
@@ -317,14 +315,13 @@ public class JEIDCPlugin implements IModPlugin {
 
         registration.addRecipeClickArea(BasicTechnologyMachineManufacturerScreen.class, 64, 20, 29, 8, BasicTechnologyMachineManufacturerRecipeCategory.UID);
         registration.addRecipeClickArea(BasicTechnologyUniversalAssemblerScreen.class, 64, 20, 29, 8, BasicTechnologyUniversalAssemblerRecipeCategory.UID);
-        registration.addRecipeClickArea(BasicTechnologyCircuitBuilderScreen.class, 64, 20, 29, 8, BasicTechnologyCircuitBuilderRecipeCategory.UID);
         registration.addRecipeClickArea(BasicTechnologyMachineElementProcessorScreen.class, 64, 20, 29, 8, BasicTechnologyMachineElementProcessorRecipeCategory.UID);
         registration.addRecipeClickArea(BasicTechnologyMachinePartProcessorScreen.class, 64, 20, 29, 8, BasicTechnologyMachinePartProcessorRecipeCategory.UID);
         registration.addRecipeClickArea(BasicTechnologyMultiblockEquipmentFabricatorScreen.class, 64, 20, 29, 8, BasicTechnologyMultiblockEquipmentFabricatorRecipeCategory.UID);
 
 
 
-
+        registration.addRecipeClickArea(BasicPerformanceCircuitBuilderScreen.class, 64, 20, 29, 8, BasicPerformanceCircuitBuilderRecipeCategory.UID);
         registration.addRecipeClickArea(BasicPerformanceMachineDataInstallerScreen.class, 64, 20, 29, 8, BasicPerformanceMachineDataInstallerRecipeCategory.UID);
         registration.addRecipeClickArea(BasicPerformanceDesignatedDataInjectorScreen.class, 64, 20, 29, 8, BasicPerformanceDesignatedDataInjectorRecipeCategory.UID);
 
@@ -368,12 +365,13 @@ public class JEIDCPlugin implements IModPlugin {
 
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get()), BasicTechnologyMachineManufacturerRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get()), BasicTechnologyUniversalAssemblerRecipeCategory.UID);
-        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BLOCK.get()), BasicTechnologyCircuitBuilderRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get()), BasicTechnologyMachineElementProcessorRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BLOCK.get()), BasicTechnologyMachinePartProcessorRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BLOCK.get()), BasicTechnologyMultiblockEquipmentFabricatorRecipeCategory.UID);
 
 
+
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_BLOCK.get()), BasicPerformanceCircuitBuilderRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK.get()), BasicPerformanceMachineDataInstallerRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BLOCK.get()), BasicPerformanceDesignatedDataInjectorRecipeCategory.UID);
 
@@ -455,14 +453,7 @@ public class JEIDCPlugin implements IModPlugin {
                 RedstonePoweredMachinePartManufactureMachineRecipeCategory.TYPE
         );
 
-        registration.addRecipeTransferHandler(
-                new BasicTechnologyCircuitBuilderRecipeTransferHandler<>(
-                        BasicTechnologyCircuitBuilderMenu.class,
-                        0, 9,
-                        12, 36
-                ),
-                BasicTechnologyCircuitBuilderRecipeCategory.TYPE
-        );
+      ;
         registration.addRecipeTransferHandler(
                 new BasicTechnologyMachineElementProcessorRecipeTransferHandler<>(
                         BasicTechnologyMachineElementProcessorMenu.class,
@@ -497,7 +488,14 @@ public class JEIDCPlugin implements IModPlugin {
         );
 
 
-
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceCircuitBuilderRecipeTransferHandler<>(
+                        BasicPerformanceCircuitBuilderMenu.class,
+                        0, 9,
+                        12, 36
+                ),
+                BasicPerformanceCircuitBuilderRecipeCategory.TYPE
+        );
         registration.addRecipeTransferHandler(
                 new BasicTechnologyUniversalAssemblerRecipeTransferHandler<>(
                         BasicTechnologyUniversalAssemblerMenu.class,

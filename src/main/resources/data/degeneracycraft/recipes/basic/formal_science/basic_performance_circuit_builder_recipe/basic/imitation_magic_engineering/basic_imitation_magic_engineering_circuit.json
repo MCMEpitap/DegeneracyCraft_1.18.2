@@ -1,0 +1,35 @@
+{
+  "type": "degeneracycraft:basic_performance_circuit_builder_recipe",
+  "energy": 5000.0,
+  "time": 10.0,
+  "input0": {
+    "item": "degeneracycraft:iron_wire"
+  },
+  "input1": {
+    "item": "degeneracycraft:basic_circuit"
+  },
+  "input2": {
+    "item": "degeneracycraft:iron_wire"
+  },
+  "input3": {
+    "item": "degeneracycraft:basic_diode"
+  },
+  "input4": {
+    "item": "degeneracycraft:iron_plate"
+  },
+  "input5": {
+    "item": "degeneracycraft:basic_diode"
+  },
+  "input6": {
+    "item": "degeneracycraft:iron_wire"
+  },
+  "input7": {
+    "item": "degeneracycraft:basic_circuit"
+  },
+  "input8": {
+    "item": "degeneracycraft:iron_wire"
+  },
+  "output0": {
+    "item": "degeneracycraft:basic_imitation_magic_engineering_circuit"
+  }
+}

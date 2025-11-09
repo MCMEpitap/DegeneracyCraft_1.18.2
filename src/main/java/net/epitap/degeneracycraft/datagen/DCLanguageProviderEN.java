@@ -1041,21 +1041,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_BLOCK.get(), "Basic Technology Universal Assembler Port");
         add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_HOLO_BLOCK.get(), "Basic Technology Universal Assembler Port (Hologram)");
         add(DCItems.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_CIRCUIT.get(), "Basic Technology Universal Assembler Circuit");
-
-        add(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BLOCK.get(), "Basic Technology Circuit Builder");
-        add("tooltip." + "degeneracycraft." + "basic_technology_circuit_builder_block",
-                "Basic Circuit Builder. Machine to fabricate circuits and their components.");
-        add(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_BLOCK.get(), "Basic Purity Circuit Clean Room");
-        add("tooltip." + "degeneracycraft.ability" + "basic_technology_circuit_builder_block",
-                "For Basic Precision Circuit Builder");
-        add(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_HOLO_BLOCK.get(), "Basic Technology Circuit Builder (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_BLOCK.get(), "Basic Technology Circuit Builder Bus");
-        add(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.get(), "Basic Technology Circuit Builder Bus (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_BLOCK.get(), "Basic Technology Circuit Builder Port");
-        add(DCBlocks.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get(), "Basic Technology Circuit Builder Port (Hologram)");
-        add(DCItems.BASIC_TECHNOLOGY_CIRCUIT_BUILDER_CIRCUIT.get(), "Basic Technology Circuit Builder Circuit");
-
-
+        
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(), "Basic Technology Machine Element Processor");
         add("tooltip." + "degeneracycraft." + "basic_technology_machine_element_processor_block",
                 "Basic Machine Element Processor. Processing more difficult parts.");
@@ -1095,11 +1081,20 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_HOLO_BLOCK.get(), "Basic Technology Multiblock Equipment Fabricator Port (Hologram)");
         add(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_CIRCUIT.get(), "Basic Technology Multiblock Equipment Fabricator Circuit");
 
+
         
-        
-        
-        
-        
+        add(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_BLOCK.get(), "Basic Performance Circuit Builder");
+        add("tooltip." + "degeneracycraft." + "basic_performance_circuit_builder_block",
+                "Basic Circuit Builder. Machine to fabricate circuits and their components.");
+        add(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_BLOCK.get(), "Basic Purity Circuit Clean Room");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_circuit_builder_block",
+                "For Basic Performance Circuit Builder");
+        add(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_HOLO_BLOCK.get(), "Basic Performance Circuit Builder (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_BUS_BLOCK.get(), "Basic Performance Circuit Builder Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.get(), "Basic Performance Circuit Builder Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_PORT_BLOCK.get(), "Basic Performance Circuit Builder Port");
+        add(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get(), "Basic Performance Circuit Builder Port (Hologram)");
+        add(DCItems.BASIC_PERFORMANCE_CIRCUIT_BUILDER_CIRCUIT.get(), "Basic Performance Circuit Builder Circuit");
 
         add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK.get(), "Basic Performance Machine Data Installer");
         add("tooltip." + "degeneracycraft." + "basic_performance_machine_data_installer_block",
@@ -1218,11 +1213,11 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("jei." + "degeneracycraft_basic_technology_machine_manufacturer", "Basic Technology Machine Manufacturer Recipe");
         add("jei." + "degeneracycraft_basic_technology_machine_element_processor", "Basic Technology Machine Element Processor Recipe");
         add("jei." + "degeneracycraft_basic_technology_universal_assembler", "Basic Technology Universal Assembler Recipe");
-        add("jei." + "degeneracycraft_basic_technology_circuit_builder", "Basic Technology Circuit Builder Recipe");
         add("jei." + "degeneracycraft_basic_technology_machine_part_processor", "Basic Technology Machine Part Processor Recipe");
         add("jei." + "degeneracycraft_basic_technology_multiblock_equipment_fabricator", "Basic Technology Multiblock Equipment Fabricator Recipe");
 
 
+        add("jei." + "degeneracycraft_basic_performance_circuit_builder", "Basic Performance Circuit Builder Recipe");
         add("jei." + "degeneracycraft_basic_performance_machine_data_installer", "Basic Performance Machine Data Installer Recipe");
         add("jei." + "degeneracycraft_basic_performance_designated_data_injector", "Basic Performance Designated Data Injector Recipe");
 

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "degeneracycraft:item/part/basic/formal_science/machine_circuit/formal_science/basic_performance_circuit_builder_circuit"
+  }
+}

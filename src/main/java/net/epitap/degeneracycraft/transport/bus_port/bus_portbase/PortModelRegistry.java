@@ -37,8 +37,6 @@ public class PortModelRegistry {
         BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK_EXTRACT("block/basic_technology_machine_manufacturer_port_block_extract"),
         BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_BLOCK_EXTRACT("block/basic_technology_universal_assembler_bus_block_extract"),
         BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_BLOCK_EXTRACT("block/basic_technology_universal_assembler_port_block_extract"),
-        BASIC_PRECISION_CIRCUIT_BUILDER_BUS_BLOCK_EXTRACT("block/basic_technology_circuit_builder_bus_block_extract"),
-        BASIC_PRECISION_CIRCUIT_BUILDER_PORT_BLOCK_EXTRACT("block/basic_technology_circuit_builder_port_block_extract"),
         BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK_EXTRACT("block/basic_technology_machine_element_processor_bus_block_extract"),
         BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK_EXTRACT("block/basic_technology_machine_element_processor_port_block_extract"),
         BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BUS_BLOCK_EXTRACT("block/basic_technology_machine_part_processor_bus_block_extract"),
@@ -47,7 +45,8 @@ public class PortModelRegistry {
         BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_BLOCK_EXTRACT("block/basic_technology_multiblock_equipment_fabricator_port_block_extract"),
 
 
-
+        BASIC_PERFORMANCE_CIRCUIT_BUILDER_BUS_BLOCK_EXTRACT("block/basic_performance_circuit_builder_bus_block_extract"),
+        BASIC_PERFORMANCE_CIRCUIT_BUILDER_PORT_BLOCK_EXTRACT("block/basic_performance_circuit_builder_port_block_extract"),
         BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_BLOCK_EXTRACT("block/basic_performance_machine_data_installer_bus_block_extract"),
         BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_BLOCK_EXTRACT("block/basic_performance_machine_data_installer_port_block_extract"),
         BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BUS_BLOCK_EXTRACT("block/basic_performance_designated_data_injector_bus_block_extract"),

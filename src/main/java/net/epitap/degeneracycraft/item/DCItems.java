@@ -896,7 +896,6 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> BASIC_POWER_STEAM_GENERATOR_CIRCUIT = ITEMS.register("basic_power_steam_generator_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_CIRCUIT = ITEMS.register("basic_technology_machine_manufacturer_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_CIRCUIT = ITEMS.register("basic_technology_universal_assembler_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
-    public static final RegistryObject<Item> BASIC_TECHNOLOGY_CIRCUIT_BUILDER_CIRCUIT = ITEMS.register("basic_technology_circuit_builder_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_CIRCUIT = ITEMS.register("basic_technology_machine_element_processor_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_CIRCUIT = ITEMS.register("basic_technology_machine_part_processor_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_CIRCUIT = ITEMS.register("basic_technology_multiblock_equipment_fabricator_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
@@ -908,7 +907,7 @@ public class DCItems extends CreativeModeTab {
 
 
 
-
+    public static final RegistryObject<Item> BASIC_PERFORMANCE_CIRCUIT_BUILDER_CIRCUIT = ITEMS.register("basic_performance_circuit_builder_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_CIRCUIT = ITEMS.register("basic_performance_machine_data_installer_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_CIRCUIT = ITEMS.register("basic_performance_designated_data_injector_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 

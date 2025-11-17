@@ -764,7 +764,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_MOTOR.get(), "Basic Motor");
         add(DCItems.BASIC_PIPE_BUNDLE.get(), "Basic Pipe Bundle");
         add(DCItems.BASIC_PROCESSING_BASE.get(), "Basic Processing Base");
-        add(DCItems.BASIC_PROCESSING_CIRCUIT.get(), "Basic Processing Circuit");
         add(DCItems.BASIC_REDSTONE_BATTERY.get(), "Basic Redstone Battery");
         add(DCItems.BASIC_REINFORCED_PLATE.get(), "Basic Reinforced Plate");
         add(DCItems.BASIC_ROBOT_ARM.get(), "Basic Robot Arm");
@@ -774,20 +773,23 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_ASTRONOMY_CIRCUIT.get(), "Basic Astronomy Circuit");
         add(DCItems.BASIC_BIOLOGY_CIRCUIT.get(), "Basic Biology Circuit");
         add(DCItems.BASIC_CHEMISTRY_CIRCUIT.get(), "Basic Chemistry Circuit");
+        add(DCItems.BASIC_DYNAMIC_ENERGETICS_CIRCUIT.get(), "Basic Dynamic Energetics Circuit");
         add(DCItems.BASIC_ENGINEERING_CIRCUIT.get(), "Basic Engineering Circuit");
         add(DCItems.BASIC_FORMAL_SCIENCE_CIRCUIT.get(), "Basic Formal Science Circuit");
         add(DCItems.BASIC_GEO_SCIENCE_CIRCUIT.get(), "Basic Geo Science Circuit");
         add(DCItems.BASIC_HYBRID_PHYSICS_CIRCUIT.get(), "Basic Hybrid Physics Circuit");
         add(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_CIRCUIT.get(), "Basic Imitation Magic Engineering Circuit");
 
-        add(DCItems.BASIC_ASTRONOMY_MEMORY_CIRCUIT.get(), "Basic Astronomy Memory Circuit");
-        add(DCItems.BASIC_BIOLOGY_MEMORY_CIRCUIT.get(), "Basic Biology Memory Circuit");
-        add(DCItems.BASIC_CHEMISTRY_MEMORY_CIRCUIT.get(), "Basic Chemistry Memory Circuit");
-        add(DCItems.BASIC_ENGINEERING_MEMORY_CIRCUIT.get(), "Basic Engineering Memory Circuit");
-        add(DCItems.BASIC_FORMAL_SCIENCE_MEMORY_CIRCUIT.get(), "Basic Formal Science Memory Circuit");
-        add(DCItems.BASIC_GEO_SCIENCE_MEMORY_CIRCUIT.get(), "Basic Geo Science Memory Circuit");
-        add(DCItems.BASIC_HYBRID_PHYSICS_MEMORY_CIRCUIT.get(), "Basic Hybrid Physics Memory Circuit");
-        add(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT.get(), "Basic Imitation Magic Engineering Memory Circuit");
+        add(DCItems.SIMPLE_ASTRONOMY_MEMORY_CIRCUIT.get(), "Simple Astronomy Memory Circuit");
+        add(DCItems.SIMPLE_BIOLOGY_MEMORY_CIRCUIT.get(), "Simple Biology Memory Circuit");
+        add(DCItems.SIMPLE_CHEMISTRY_MEMORY_CIRCUIT.get(), "Simple Chemistry Memory Circuit");
+        add(DCItems.SIMPLE_DYNAMIC_ENERGETICS_MEMORY_CIRCUIT.get(), "Simple Dynamic Energetics Circuit");
+        add(DCItems.SIMPLE_ENGINEERING_MEMORY_CIRCUIT.get(), "Simple Engineering Memory Circuit");
+        add(DCItems.SIMPLE_FORMAL_SCIENCE_MEMORY_CIRCUIT.get(), "Simple Formal Science Memory Circuit");
+        add(DCItems.SIMPLE_GEO_SCIENCE_MEMORY_CIRCUIT.get(), "Simple Geo Science Memory Circuit");
+        add(DCItems.SIMPLE_HYBRID_PHYSICS_MEMORY_CIRCUIT.get(), "Simple Hybrid Physics Memory Circuit");
+        add(DCItems.SIMPLE_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT.get(), "Simple Imitation Magic Engineering Memory Circuit");
+        add(DCItems.SIMPLE_PROCESSING_CIRCUIT.get(), "Simple Processing Circuit");
 
 
         add(DCBlocks.OVERWORLD_GRAVITATION_ORE.get(),"Gravitation Ore");
@@ -1015,6 +1017,20 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.get(), "Basic Power Steam Generator Port (Hologram)");
         add(DCItems.BASIC_POWER_STEAM_GENERATOR_CIRCUIT.get(), "Basic Power Steam Generator Circuit");
 
+        add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BLOCK.get(), "Basic TechnologyCompression Condenser");
+        add("tooltip." + "degeneracycraft." + "basic_technology_compression_condenser_block",
+                "Basic Compression Condenser. Machinery that uses energy for compression.");
+        add(DCBlocks.BASIC_PRESSURE_COMPRESSION_ASSIST_SYSTEM_BLOCK.get(), "Basic Technology Compression Condenser");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_compression_condenser_block",
+                "For Basic Technology Compression Condenser");
+        add(DCBlocks.BASIC_PRESSURE_COMPRESSION_ASSIST_SYSTEM_HOLO_BLOCK.get(), "Basic Technology Compression Condenser (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_BLOCK.get(), "Basic TechnologyCompression Condenser Bus");
+        add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_HOLO_BLOCK.get(), "Basic TechnologyCompression Condenser Bus (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_BLOCK.get(), "Basic TechnologyCompression Condenser Port");
+        add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_HOLO_BLOCK.get(), "Basic TechnologyCompression Condenser Port (Hologram)");
+        add(DCItems.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_CIRCUIT.get(), "Basic TechnologyCompression Condenser Circuit");
+        
+        
 
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get(), "Basic Technology Machine Manufacturer");
         add("tooltip." + "degeneracycraft." + "basic_technology_machine_manufacturer_block",

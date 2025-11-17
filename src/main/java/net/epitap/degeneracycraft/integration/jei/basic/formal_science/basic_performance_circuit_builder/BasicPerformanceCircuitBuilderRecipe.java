@@ -24,13 +24,9 @@ public class BasicPerformanceCircuitBuilderRecipe implements Recipe<SimpleContai
     final ItemStack input2;
     final ItemStack input3;
     final ItemStack input4;
-    final ItemStack input5;
-    final ItemStack input6;
-    final ItemStack input7;
-    final ItemStack input8;
     final ItemStack output0;
 
-    public BasicPerformanceCircuitBuilderRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack input1, ItemStack input2, ItemStack input3, ItemStack input4, ItemStack input5, ItemStack input6, ItemStack input7, ItemStack input8, ItemStack output0) {
+    public BasicPerformanceCircuitBuilderRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack input1, ItemStack input2, ItemStack input3, ItemStack input4, ItemStack output0) {
         this.id = id;
         this.energy = energy;
         this.time = time;
@@ -39,10 +35,6 @@ public class BasicPerformanceCircuitBuilderRecipe implements Recipe<SimpleContai
         this.input2 = input2;
         this.input3 = input3;
         this.input4 = input4;
-        this.input5 = input5;
-        this.input6 = input6;
-        this.input7 = input7;
-        this.input8 = input8;
         this.output0 = output0;
     }
 
@@ -53,11 +45,7 @@ public class BasicPerformanceCircuitBuilderRecipe implements Recipe<SimpleContai
                 && input1.is(pContainer.getItem(1).getItem())
                 && input2.is(pContainer.getItem(2).getItem())
                 && input3.is(pContainer.getItem(3).getItem())
-                && input4.is(pContainer.getItem(4).getItem())
-                && input5.is(pContainer.getItem(5).getItem())
-                && input6.is(pContainer.getItem(6).getItem())
-                && input7.is(pContainer.getItem(7).getItem())
-                && input8.is(pContainer.getItem(8).getItem());
+                && input4.is(pContainer.getItem(4).getItem());
     }
 
     @Override
@@ -96,22 +84,6 @@ public class BasicPerformanceCircuitBuilderRecipe implements Recipe<SimpleContai
 
     public ItemStack getInput4Item() {
         return input4;
-    }
-
-    public ItemStack getInput5Item() {
-        return input5;
-    }
-
-    public ItemStack getInput6Item() {
-        return input6;
-    }
-
-    public ItemStack getInput7Item() {
-        return input7;
-    }
-
-    public ItemStack getInput8Item() {
-        return input8;
     }
 
     public ItemStack getOutput0Item() {
@@ -167,13 +139,9 @@ public class BasicPerformanceCircuitBuilderRecipe implements Recipe<SimpleContai
             ItemStack input2 = BasicPerformanceCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input2"));
             ItemStack input3 = BasicPerformanceCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input3"));
             ItemStack input4 = BasicPerformanceCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input4"));
-            ItemStack input5 = BasicPerformanceCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input5"));
-            ItemStack input6 = BasicPerformanceCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input6"));
-            ItemStack input7 = BasicPerformanceCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input7"));
-            ItemStack input8 = BasicPerformanceCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input8"));
             ItemStack output0 = BasicPerformanceCircuitBuilderRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output0"));
 
-            return new BasicPerformanceCircuitBuilderRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, input5, input6, input7, input8, output0);
+            return new BasicPerformanceCircuitBuilderRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, output0);
         }
 
         @Override
@@ -185,13 +153,9 @@ public class BasicPerformanceCircuitBuilderRecipe implements Recipe<SimpleContai
             ItemStack input2 = pBuffer.readItem();
             ItemStack input3 = pBuffer.readItem();
             ItemStack input4 = pBuffer.readItem();
-            ItemStack input5 = pBuffer.readItem();
-            ItemStack input6 = pBuffer.readItem();
-            ItemStack input7 = pBuffer.readItem();
-            ItemStack input8 = pBuffer.readItem();
             ItemStack output0 = pBuffer.readItem();
 
-            return new BasicPerformanceCircuitBuilderRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, input5, input6, input7, input8, output0);
+            return new BasicPerformanceCircuitBuilderRecipe(pRecipeId, energy, time, input0, input1, input2, input3, input4, output0);
         }
 
         @Override
@@ -204,10 +168,6 @@ public class BasicPerformanceCircuitBuilderRecipe implements Recipe<SimpleContai
             pBuffer.writeItem(pRecipe.input2.getContainerItem());
             pBuffer.writeItem(pRecipe.input3.getContainerItem());
             pBuffer.writeItem(pRecipe.input4.getContainerItem());
-            pBuffer.writeItem(pRecipe.input5.getContainerItem());
-            pBuffer.writeItem(pRecipe.input6.getContainerItem());
-            pBuffer.writeItem(pRecipe.input7.getContainerItem());
-            pBuffer.writeItem(pRecipe.input8.getContainerItem());
             pBuffer.writeItem(pRecipe.output0.getContainerItem());
         }
     }

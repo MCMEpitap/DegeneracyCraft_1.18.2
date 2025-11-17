@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "degeneracycraft:item/part/basic/formal_science/machine_circuit/dynamic_energetics/basic_technology_compression_condenser_circuit"
+  }
+}

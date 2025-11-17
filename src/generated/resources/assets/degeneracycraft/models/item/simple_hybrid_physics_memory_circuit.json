@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "degeneracycraft:item/part/basic/formal_science/simple_hybrid_physics_memory_circuit"
+  }
+}

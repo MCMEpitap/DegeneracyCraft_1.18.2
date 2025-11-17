@@ -6,10 +6,10 @@
     "item": "degeneracycraft:basic_performance_electrolyser_block"
   },
   "input1": {
-    "item": "degeneracycraft:basic_chemistry_memory_circuit"
+    "item": "degeneracycraft:simple_chemistry_memory_circuit"
   },
   "input2": {
-    "item": "degeneracycraft:basic_processing_circuit"
+    "item": "degeneracycraft:simple_processing_circuit"
   },
   "output0": {
     "item": "degeneracycraft:basic_performance_electrolyser_circuit"

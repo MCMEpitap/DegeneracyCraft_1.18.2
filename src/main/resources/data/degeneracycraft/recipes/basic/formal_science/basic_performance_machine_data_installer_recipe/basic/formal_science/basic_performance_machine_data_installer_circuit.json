@@ -6,12 +6,12 @@
     "item": "degeneracycraft:basic_performance_machine_data_installer_block"
   },
   "input1": {
-    "item": "degeneracycraft:basic_formal_science_memory_circuit"
+    "item": "degeneracycraft:simple_formal_science_memory_circuit"
   },
   "input2": {
-    "item": "degeneracycraft:basic_processing_circuit"
+    "item": "degeneracycraft:simple_processing_circuit"
   },
   "output0": {
-    "item": "degeneracycraft:basic_performance_machine_data_installer_circuit"
+    "item": "degeneracycraft:basic_performance_rock_crasher_circuit"
   }
 }

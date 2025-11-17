@@ -22,7 +22,7 @@ public class BasicPerformanceCircuitBuilderMenu extends AbstractContainerMenu {
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 12;
+    private static final int TE_INVENTORY_SLOT_COUNT = 8;
     public final BasicPerformanceCircuitBuilderBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
@@ -42,14 +42,14 @@ public class BasicPerformanceCircuitBuilderMenu extends AbstractContainerMenu {
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
 
-            for (int i = 0; i < 3; ++i) {
-                for (int l = 0; l < 3; ++l) {
-                    this.addSlot(new SlotItemHandler(handler, (l + i * 3), 8 + l * 18, 7 + i * 18));
-                }
-            }
-            this.addSlot(new SlotItemHandler(handler, 9, 116, 25));
-            this.addSlot(new SlotItemHandler(handler, 10, 71, 59));
-            this.addSlot(new SlotItemHandler(handler, 11, 98, 62));
+            this.addSlot(new SlotItemHandler(handler, 0, 26, 7));
+            this.addSlot(new SlotItemHandler(handler, 1, 8, 25));
+            this.addSlot(new SlotItemHandler(handler, 2, 26, 25));
+            this.addSlot(new SlotItemHandler(handler, 3, 44, 25));
+            this.addSlot(new SlotItemHandler(handler, 4, 26, 43));
+            this.addSlot(new SlotItemHandler(handler, 5, 116, 25));
+            this.addSlot(new SlotItemHandler(handler, 6, 71, 59));
+            this.addSlot(new SlotItemHandler(handler, 7, 98, 62));
         });
 
         addDataSlots(data);

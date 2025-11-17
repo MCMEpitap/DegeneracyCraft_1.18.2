@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_block",
+    "up": "degeneracycraft:block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_block",
+    "north": "degeneracycraft:block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_block",
+    "south": "degeneracycraft:block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_block",
+    "east": "degeneracycraft:block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_block",
+    "west": "degeneracycraft:block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_block",
+    "particle": "degeneracycraft:block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_block"
+  }
+}

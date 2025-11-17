@@ -54,7 +54,7 @@ public class BasicPerformanceCircuitBuilderBlockEntity extends BlockEntity imple
 
     public boolean isFormed;
     public boolean isPowered0;
-    public final ItemStackHandler itemHandler = new ItemStackHandler(12) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(8) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -63,10 +63,10 @@ public class BasicPerformanceCircuitBuilderBlockEntity extends BlockEntity imple
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 9 -> false;
-                case 10 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
+                case 5 -> false;
+                case 6 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
                         || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
-                case 11 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
+                case 7 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -262,7 +262,7 @@ public class BasicPerformanceCircuitBuilderBlockEntity extends BlockEntity imple
     }
 
     public static boolean isHaltDevice(BasicPerformanceCircuitBuilderBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(11).is(DCItems.MACHINE_HALT_DEVICE.get());
+        return blockEntity.itemHandler.getStackInSlot(7).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
     public static boolean craftCheck(BasicPerformanceCircuitBuilderBlockEntity blockEntity) {
@@ -308,11 +308,7 @@ public class BasicPerformanceCircuitBuilderBlockEntity extends BlockEntity imple
                 && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
                 && blockEntity.itemHandler.getStackInSlot(2).getCount() >= match.get().getInput2Item().getCount()
                 && blockEntity.itemHandler.getStackInSlot(3).getCount() >= match.get().getInput3Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(4).getCount() >= match.get().getInput4Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(5).getCount() >= match.get().getInput5Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(6).getCount() >= match.get().getInput6Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(7).getCount() >= match.get().getInput7Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
+                && blockEntity.itemHandler.getStackInSlot(4).getCount() >= match.get().getInput4Item().getCount();
     }
 
     private static boolean hasAmountEnergy(BasicPerformanceCircuitBuilderBlockEntity blockEntity) {
@@ -344,12 +340,8 @@ public class BasicPerformanceCircuitBuilderBlockEntity extends BlockEntity imple
             blockEntity.itemHandler.extractItem(2, match.get().getInput2Item().getCount(), false);
             blockEntity.itemHandler.extractItem(3, match.get().getInput3Item().getCount(), false);
             blockEntity.itemHandler.extractItem(4, match.get().getInput4Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(5, match.get().getInput5Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(6, match.get().getInput6Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(7, match.get().getInput7Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(8, match.get().getInput8Item().getCount(), false);
-            blockEntity.itemHandler.setStackInSlot(9, new ItemStack(match.get().getOutput0Item().getItem(),
-                    blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
+            blockEntity.itemHandler.setStackInSlot(5, new ItemStack(match.get().getOutput0Item().getItem(),
+                    blockEntity.itemHandler.getStackInSlot(5).getCount() + match.get().getOutput0Item().getCount()));
 
             blockEntity.resetProgress();
         }
@@ -380,9 +372,7 @@ public class BasicPerformanceCircuitBuilderBlockEntity extends BlockEntity imple
 
                 ItemStack[] recipeInputs = new ItemStack[]{
                         recipeData.getInput0Item(), recipeData.getInput1Item(), recipeData.getInput2Item(),
-                        recipeData.getInput3Item(), recipeData.getInput4Item(), recipeData.getInput5Item(),
-                        recipeData.getInput6Item(), recipeData.getInput7Item(), recipeData.getInput8Item()
-                };
+                        recipeData.getInput3Item(), recipeData.getInput4Item()};
 
                 Map<Item, Integer> totalCounts = new HashMap<>();
                 if (shift) {

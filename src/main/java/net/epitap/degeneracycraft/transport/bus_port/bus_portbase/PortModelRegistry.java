@@ -30,7 +30,8 @@ public class PortModelRegistry {
 
         BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK_EXTRACT("block/basic_power_steam_generator_bus_block_extract"),
         BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK_EXTRACT("block/basic_power_steam_generator_port_block_extract"),
-
+        BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_BLOCK_EXTRACT("block/basic_technology_compression_condenser_bus_block_extract"),
+        BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_BLOCK_EXTRACT("block/basic_technology_compression_condenser_port_block_extract"),
 
 
         BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK_EXTRACT("block/basic_technology_machine_manufacturer_bus_block_extract"),

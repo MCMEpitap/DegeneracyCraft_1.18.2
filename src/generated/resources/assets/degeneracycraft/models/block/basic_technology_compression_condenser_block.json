@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/basic_technology_compression_condenser_down",
+    "up": "degeneracycraft:block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/basic_technology_compression_condenser_up",
+    "north": "degeneracycraft:block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/basic_technology_compression_condenser_front",
+    "south": "degeneracycraft:block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/basic_technology_compression_condenser_side",
+    "east": "degeneracycraft:block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/basic_technology_compression_condenser_side",
+    "west": "degeneracycraft:block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/basic_technology_compression_condenser_side",
+    "particle": "degeneracycraft:block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/basic_technology_compression_condenser_front"
+  }
+}

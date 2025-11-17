@@ -209,7 +209,13 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicPowerSteamGeneratorPort();
         registerBasicPowerSteamGeneratorPortHolo();
 
-
+        registerBasicTechnologyCompressionCondenser();
+        registerBasicPressureCompressionAssistSystem();
+        registerBasicPressureCompressionAssistSystemHolo();
+        registerBasicTechnologyCompressionCondenserBus();
+        registerBasicTechnologyCompressionCondenserBusHolo();
+        registerBasicTechnologyCompressionCondenserPort();
+        registerBasicTechnologyCompressionCondenserPortHolo();
 
 
 
@@ -2542,7 +2548,104 @@ public class DCBlockStateProvider extends BlockStateProvider {
         orientedBlock(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
+
+    private void registerBasicTechnologyCompressionCondenser() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_compression_condenser_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/basic_technology_compression_condenser_down"));
+        model.texture("up", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/basic_technology_compression_condenser_up"));
+        model.texture("north", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/basic_technology_compression_condenser_front"));
+        model.texture("south", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/basic_technology_compression_condenser_side"));
+        model.texture("east", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/basic_technology_compression_condenser_side"));
+        model.texture("west", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/basic_technology_compression_condenser_side"));
+        model.texture("particle", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/basic_technology_compression_condenser_front"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPressureCompressionAssistSystem() {
+        BlockModelBuilder model = models().getBuilder("block/basic_pressure_compression_assist_system_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_block"));
+        orientedBlock(DCBlocks.BASIC_PRESSURE_COMPRESSION_ASSIST_SYSTEM_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPressureCompressionAssistSystemHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_pressure_compression_assist_system_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_pressure_compression_assist_system/basic_pressure_compression_assist_system_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PRESSURE_COMPRESSION_ASSIST_SYSTEM_HOLO_BLOCK.get(),
+                state -> model);
+    }
     
+    private void registerBasicTechnologyCompressionCondenserBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_compression_condenser_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/bus/basic_technology_compression_condenser_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/bus/basic_technology_compression_condenser_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/bus/basic_technology_compression_condenser_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/bus/basic_technology_compression_condenser_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/bus/basic_technology_compression_condenser_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/bus/basic_technology_compression_condenser_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/bus/basic_technology_compression_condenser_bus_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyCompressionCondenserBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_compression_condenser_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/bus/basic_technology_compression_condenser_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/bus/basic_technology_compression_condenser_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/bus/basic_technology_compression_condenser_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/bus/basic_technology_compression_condenser_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/bus/basic_technology_compression_condenser_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/bus/basic_technology_compression_condenser_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/bus/basic_technology_compression_condenser_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyCompressionCondenserPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_compression_condenser_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/port/basic_technology_compression_condenser_port_block"));
+        model.texture("up", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/port/basic_technology_compression_condenser_port_block"));
+        model.texture("north", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/port/basic_technology_compression_condenser_port_block"));
+        model.texture("south", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/port/basic_technology_compression_condenser_port_block"));
+        model.texture("east", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/port/basic_technology_compression_condenser_port_block"));
+        model.texture("west", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/port/basic_technology_compression_condenser_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/port/basic_technology_compression_condenser_port_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyCompressionCondenserPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_compression_condenser_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/port/basic_technology_compression_condenser_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/port/basic_technology_compression_condenser_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/port/basic_technology_compression_condenser_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/port/basic_technology_compression_condenser_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/port/basic_technology_compression_condenser_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/port/basic_technology_compression_condenser_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/port/basic_technology_compression_condenser_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
     
     
     

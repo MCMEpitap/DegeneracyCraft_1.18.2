@@ -453,7 +453,7 @@ public class JEIDCPlugin implements IModPlugin {
                 RedstonePoweredMachinePartManufactureMachineRecipeCategory.TYPE
         );
 
-      ;
+
         registration.addRecipeTransferHandler(
                 new BasicTechnologyMachineElementProcessorRecipeTransferHandler<>(
                         BasicTechnologyMachineElementProcessorMenu.class,
@@ -488,14 +488,7 @@ public class JEIDCPlugin implements IModPlugin {
         );
 
 
-        registration.addRecipeTransferHandler(
-                new BasicPerformanceCircuitBuilderRecipeTransferHandler<>(
-                        BasicPerformanceCircuitBuilderMenu.class,
-                        0, 9,
-                        12, 36
-                ),
-                BasicPerformanceCircuitBuilderRecipeCategory.TYPE
-        );
+
         registration.addRecipeTransferHandler(
                 new BasicTechnologyUniversalAssemblerRecipeTransferHandler<>(
                         BasicTechnologyUniversalAssemblerMenu.class,
@@ -505,7 +498,14 @@ public class JEIDCPlugin implements IModPlugin {
                 BasicTechnologyUniversalAssemblerRecipeCategory.TYPE
         );
 
-
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceCircuitBuilderRecipeTransferHandler<>(
+                        BasicPerformanceCircuitBuilderMenu.class,
+                        0, 5,
+                        8, 36
+                ),
+                BasicPerformanceCircuitBuilderRecipeCategory.TYPE
+        );
         registration.addRecipeTransferHandler(
                 new BasicPerformanceDesignatedDataInjectorRecipeTransferHandler<>(
                         BasicPerformanceDesignatedDataInjectorMenu.class,

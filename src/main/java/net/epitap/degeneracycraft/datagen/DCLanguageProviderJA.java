@@ -750,7 +750,6 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_MOTOR.get(), "基本モーター");
         add(DCItems.BASIC_PIPE_BUNDLE.get(), "基本パイプ管束");
         add(DCItems.BASIC_PROCESSING_BASE.get(), "基本加工台");
-        add(DCItems.BASIC_PROCESSING_CIRCUIT.get(), "基本処理回路");
         add(DCItems.BASIC_REDSTONE_BATTERY.get(), "基本レッドストーン電池");
         add(DCItems.BASIC_REINFORCED_PLATE.get(), "基本強化プレート");
         add(DCItems.BASIC_ROBOT_ARM.get(), "基本ロボットアーム");
@@ -760,21 +759,23 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_ASTRONOMY_CIRCUIT.get(), "基本天文学回路");
         add(DCItems.BASIC_BIOLOGY_CIRCUIT.get(), "基本生物学回路");
         add(DCItems.BASIC_CHEMISTRY_CIRCUIT.get(), "基本化学回路");
+        add(DCItems.BASIC_DYNAMIC_ENERGETICS_CIRCUIT.get(), "基本動力変換学回路");
         add(DCItems.BASIC_ENGINEERING_CIRCUIT.get(), "基本工学回路");
         add(DCItems.BASIC_FORMAL_SCIENCE_CIRCUIT.get(), "基本形式科学回路");
         add(DCItems.BASIC_GEO_SCIENCE_CIRCUIT.get(), "基本地学回路");
         add(DCItems.BASIC_HYBRID_PHYSICS_CIRCUIT.get(), "基本複合物理学回路");
         add(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_CIRCUIT.get(), "基本模造魔導工学回路");
 
-        add(DCItems.BASIC_ASTRONOMY_MEMORY_CIRCUIT.get(), "基本天文学記憶回路");
-        add(DCItems.BASIC_BIOLOGY_MEMORY_CIRCUIT.get(), "基本生物学記憶回路");
-        add(DCItems.BASIC_CHEMISTRY_MEMORY_CIRCUIT.get(), "基本化学記憶回路");
-        add(DCItems.BASIC_ENGINEERING_MEMORY_CIRCUIT.get(), "基本工学記憶回路");
-        add(DCItems.BASIC_FORMAL_SCIENCE_MEMORY_CIRCUIT.get(), "基本形式科学記憶回路");
-        add(DCItems.BASIC_GEO_SCIENCE_MEMORY_CIRCUIT.get(), "基本地学記憶回路");
-        add(DCItems.BASIC_HYBRID_PHYSICS_MEMORY_CIRCUIT.get(), "基本複合物理学記憶回路");
-        add(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT.get(), "基本模造魔導工学記憶回路");
-
+        add(DCItems.SIMPLE_ASTRONOMY_MEMORY_CIRCUIT.get(), "簡易天文学記憶回路");
+        add(DCItems.SIMPLE_BIOLOGY_MEMORY_CIRCUIT.get(), "簡易生物学記憶回路");
+        add(DCItems.SIMPLE_CHEMISTRY_MEMORY_CIRCUIT.get(), "簡易化学記憶回路");
+        add(DCItems.SIMPLE_DYNAMIC_ENERGETICS_MEMORY_CIRCUIT.get(), "簡易動力変換学記憶回路");
+        add(DCItems.SIMPLE_ENGINEERING_MEMORY_CIRCUIT.get(), "簡易工学記憶回路");
+        add(DCItems.SIMPLE_FORMAL_SCIENCE_MEMORY_CIRCUIT.get(), "簡易形式科学記憶回路");
+        add(DCItems.SIMPLE_GEO_SCIENCE_MEMORY_CIRCUIT.get(), "簡易地学記憶回路");
+        add(DCItems.SIMPLE_HYBRID_PHYSICS_MEMORY_CIRCUIT.get(), "簡易複合物理学記憶回路");
+        add(DCItems.SIMPLE_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT.get(), "簡易模造魔導工学記憶回路");
+        add(DCItems.SIMPLE_PROCESSING_CIRCUIT.get(), "簡易処理回路");
 
 
 
@@ -1011,6 +1012,22 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.get(), "基本出力蒸気発電機ポート (ホログラム)");
         add(DCItems.BASIC_POWER_STEAM_GENERATOR_CIRCUIT.get(), "基本出力蒸気発電機回路");
 
+        add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BLOCK.get(), "基本技術圧縮凝縮機");
+        add("tooltip." + "degeneracycraft." + "basic_technology_compression_condenser_block",
+                "基本的な圧縮凝縮機. エネルギーを圧縮に用いる機械.");
+        add(DCBlocks.BASIC_PRESSURE_COMPRESSION_ASSIST_SYSTEM_BLOCK.get(), "基本圧力圧縮補助装置");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_compression_condenser_block",
+                "基本技術圧縮凝縮機用");
+        add(DCBlocks.BASIC_PRESSURE_COMPRESSION_ASSIST_SYSTEM_HOLO_BLOCK.get(), "基本圧力圧縮補助装置 (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_BLOCK.get(), "基本技術圧縮凝縮機バス");
+        add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_HOLO_BLOCK.get(), "基本技術圧縮凝縮機バス (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_BLOCK.get(), "基本技術圧縮凝縮機ポート");
+        add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_HOLO_BLOCK.get(), "基本技術圧縮凝縮機ポート (ホログラム)");
+        add(DCItems.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_CIRCUIT.get(), "基本技術圧縮凝縮機回路");
+
+        
+        
+        
 
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK.get(), "基本技術機械製造機");
         add("tooltip." + "degeneracycraft." + "basic_technology_machine_manufacturer_block",

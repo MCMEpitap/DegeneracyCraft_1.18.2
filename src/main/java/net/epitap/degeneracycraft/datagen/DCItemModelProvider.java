@@ -781,7 +781,6 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicPartEngineeringItem(DCItems.BASIC_MOTOR.get());
         basicPartEngineeringItem(DCItems.BASIC_PIPE_BUNDLE.get());
         basicPartEngineeringItem(DCItems.BASIC_PROCESSING_BASE.get());
-        basicPartEngineeringItem(DCItems.BASIC_PROCESSING_CIRCUIT.get());
         basicPartEngineeringItem(DCItems.BASIC_REDSTONE_BATTERY.get());
         basicPartEngineeringItem(DCItems.BASIC_REINFORCED_PLATE.get());
         basicPartEngineeringItem(DCItems.BASIC_ROBOT_ARM.get());
@@ -791,21 +790,23 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicPartEngineeringItem(DCItems.BASIC_ASTRONOMY_CIRCUIT.get());
         basicPartEngineeringItem(DCItems.BASIC_BIOLOGY_CIRCUIT.get());
         basicPartEngineeringItem(DCItems.BASIC_CHEMISTRY_CIRCUIT.get());
+        basicPartEngineeringItem(DCItems.BASIC_DYNAMIC_ENERGETICS_CIRCUIT.get());
         basicPartEngineeringItem(DCItems.BASIC_ENGINEERING_CIRCUIT.get());
         basicPartEngineeringItem(DCItems.BASIC_FORMAL_SCIENCE_CIRCUIT.get());
         basicPartEngineeringItem(DCItems.BASIC_GEO_SCIENCE_CIRCUIT.get());
         basicPartEngineeringItem(DCItems.BASIC_HYBRID_PHYSICS_CIRCUIT.get());
         basicPartEngineeringItem(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_CIRCUIT.get());
 
-        basicPartEngineeringItem(DCItems.BASIC_ASTRONOMY_MEMORY_CIRCUIT.get());
-        basicPartEngineeringItem(DCItems.BASIC_BIOLOGY_MEMORY_CIRCUIT.get());
-        basicPartEngineeringItem(DCItems.BASIC_CHEMISTRY_MEMORY_CIRCUIT.get());
-        basicPartEngineeringItem(DCItems.BASIC_ENGINEERING_MEMORY_CIRCUIT.get());
-        basicPartEngineeringItem(DCItems.BASIC_FORMAL_SCIENCE_MEMORY_CIRCUIT.get());
-        basicPartEngineeringItem(DCItems.BASIC_GEO_SCIENCE_MEMORY_CIRCUIT.get());
-        basicPartEngineeringItem(DCItems.BASIC_HYBRID_PHYSICS_MEMORY_CIRCUIT.get());
-        basicPartEngineeringItem(DCItems.BASIC_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT.get());
-
+        basicPartFormalScienceItem(DCItems.SIMPLE_ASTRONOMY_MEMORY_CIRCUIT.get());
+        basicPartFormalScienceItem(DCItems.SIMPLE_BIOLOGY_MEMORY_CIRCUIT.get());
+        basicPartFormalScienceItem(DCItems.SIMPLE_CHEMISTRY_MEMORY_CIRCUIT.get());
+        basicPartFormalScienceItem(DCItems.SIMPLE_DYNAMIC_ENERGETICS_MEMORY_CIRCUIT.get());
+        basicPartFormalScienceItem(DCItems.SIMPLE_ENGINEERING_MEMORY_CIRCUIT.get());
+        basicPartFormalScienceItem(DCItems.SIMPLE_FORMAL_SCIENCE_MEMORY_CIRCUIT.get());
+        basicPartFormalScienceItem(DCItems.SIMPLE_GEO_SCIENCE_MEMORY_CIRCUIT.get());
+        basicPartFormalScienceItem(DCItems.SIMPLE_HYBRID_PHYSICS_MEMORY_CIRCUIT.get());
+        basicPartFormalScienceItem(DCItems.SIMPLE_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT.get());
+        basicPartFormalScienceItem(DCItems.SIMPLE_PROCESSING_CIRCUIT.get());
 
         simpleItem(DCItems.RAW_GRAVITATION_ORE.get());
 
@@ -1174,6 +1175,22 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_power_steam_generator_port_holo_block"));
         basicMachineCircuitDynamicEnergeticsItem(DCItems.BASIC_POWER_STEAM_GENERATOR_CIRCUIT.get());
+        
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_compression_condenser_block"));
+        withExistingParent(DCBlocks.BASIC_PRESSURE_COMPRESSION_ASSIST_SYSTEM_BLOCK.getId().getPath(),
+                modLoc("block/basic_pressure_compression_assist_system_block"));
+        withExistingParent(DCBlocks.BASIC_PRESSURE_COMPRESSION_ASSIST_SYSTEM_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_pressure_compression_assist_system_holo_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_compression_condenser_bus_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_compression_condenser_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_compression_condenser_port_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_compression_condenser_port_holo_block"));
+        basicMachineCircuitDynamicEnergeticsItem(DCItems.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_CIRCUIT.get());
 
 
 
@@ -1626,6 +1643,12 @@ public class DCItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/engineering/" + item.getRegistryName().getPath()));
+    }
+    
+    private ItemModelBuilder basicPartFormalScienceItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/formal_science/" + item.getRegistryName().getPath()));
     }
 
     private ItemModelBuilder basicInscribedCircuitItem(Item item) {

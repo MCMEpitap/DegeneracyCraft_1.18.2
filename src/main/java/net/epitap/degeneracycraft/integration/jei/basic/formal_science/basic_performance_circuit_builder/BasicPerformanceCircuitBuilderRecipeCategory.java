@@ -113,15 +113,11 @@ public class BasicPerformanceCircuitBuilderRecipeCategory implements IRecipeCate
 
     @Override
     public void setRecipe(@Nonnull IRecipeLayoutBuilder builder, @Nonnull BasicPerformanceCircuitBuilderRecipe recipe, @Nonnull IFocusGroup focusGroup) {
-        builder.addSlot(RecipeIngredientRole.INPUT, 8, 7).addItemStack(recipe.getInput0Item());
-        builder.addSlot(RecipeIngredientRole.INPUT, 26, 7).addItemStack(recipe.getInput1Item());
-        builder.addSlot(RecipeIngredientRole.INPUT, 44, 7).addItemStack(recipe.getInput2Item());
-        builder.addSlot(RecipeIngredientRole.INPUT, 8, 25).addItemStack(recipe.getInput3Item());
-        builder.addSlot(RecipeIngredientRole.INPUT, 26, 25).addItemStack(recipe.getInput4Item());
-        builder.addSlot(RecipeIngredientRole.INPUT, 44, 25).addItemStack(recipe.getInput5Item());
-        builder.addSlot(RecipeIngredientRole.INPUT, 8, 43).addItemStack(recipe.getInput6Item());
-        builder.addSlot(RecipeIngredientRole.INPUT, 26, 43).addItemStack(recipe.getInput7Item());
-        builder.addSlot(RecipeIngredientRole.INPUT, 44, 43).addItemStack(recipe.getInput8Item());
+        builder.addSlot(RecipeIngredientRole.INPUT, 26, 7).addItemStack(recipe.getInput0Item());
+        builder.addSlot(RecipeIngredientRole.INPUT, 8, 25).addItemStack(recipe.getInput1Item());
+        builder.addSlot(RecipeIngredientRole.INPUT, 26, 25).addItemStack(recipe.getInput2Item());
+        builder.addSlot(RecipeIngredientRole.INPUT, 44, 25).addItemStack(recipe.getInput3Item());
+        builder.addSlot(RecipeIngredientRole.INPUT, 26, 43).addItemStack(recipe.getInput4Item());
         builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 25).addItemStack(recipe.getOutput0Item());
     }
 }

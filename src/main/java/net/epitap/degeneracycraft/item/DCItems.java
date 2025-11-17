@@ -853,7 +853,6 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> BASIC_MOTOR = ITEMS.register("basic_motor", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_PIPE_BUNDLE = ITEMS.register("basic_pipe_bundle", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_PROCESSING_BASE = ITEMS.register("basic_processing_base", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
-    public static final RegistryObject<Item> BASIC_PROCESSING_CIRCUIT = ITEMS.register("basic_processing_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_REDSTONE_BATTERY = ITEMS.register("basic_redstone_battery", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_REINFORCED_PLATE = ITEMS.register("basic_reinforced_plate", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_ROBOT_ARM = ITEMS.register("basic_robot_arm", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
@@ -863,20 +862,23 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> BASIC_ASTRONOMY_CIRCUIT = ITEMS.register("basic_astronomy_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_BIOLOGY_CIRCUIT = ITEMS.register("basic_biology_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_CHEMISTRY_CIRCUIT = ITEMS.register("basic_chemistry_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_DYNAMIC_ENERGETICS_CIRCUIT = ITEMS.register("basic_dynamic_energetics_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_ENGINEERING_CIRCUIT = ITEMS.register("basic_engineering_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_FORMAL_SCIENCE_CIRCUIT = ITEMS.register("basic_formal_science_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_GEO_SCIENCE_CIRCUIT = ITEMS.register("basic_geo_science_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_HYBRID_PHYSICS_CIRCUIT = ITEMS.register("basic_hybrid_physics_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_IMITATION_MAGIC_ENGINEERING_CIRCUIT = ITEMS.register("basic_imitation_magic_engineering_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
-    public static final RegistryObject<Item> BASIC_ASTRONOMY_MEMORY_CIRCUIT = ITEMS.register("basic_astronomy_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
-    public static final RegistryObject<Item> BASIC_BIOLOGY_MEMORY_CIRCUIT = ITEMS.register("basic_biology_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
-    public static final RegistryObject<Item> BASIC_CHEMISTRY_MEMORY_CIRCUIT = ITEMS.register("basic_chemistry_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
-    public static final RegistryObject<Item> BASIC_ENGINEERING_MEMORY_CIRCUIT = ITEMS.register("basic_engineering_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
-    public static final RegistryObject<Item> BASIC_FORMAL_SCIENCE_MEMORY_CIRCUIT = ITEMS.register("basic_formal_science_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
-    public static final RegistryObject<Item> BASIC_GEO_SCIENCE_MEMORY_CIRCUIT = ITEMS.register("basic_geo_science_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
-    public static final RegistryObject<Item> BASIC_HYBRID_PHYSICS_MEMORY_CIRCUIT = ITEMS.register("basic_hybrid_physics_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
-    public static final RegistryObject<Item> BASIC_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT = ITEMS.register("basic_imitation_magic_engineering_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_ASTRONOMY_MEMORY_CIRCUIT = ITEMS.register("simple_astronomy_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_BIOLOGY_MEMORY_CIRCUIT = ITEMS.register("simple_biology_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_CHEMISTRY_MEMORY_CIRCUIT = ITEMS.register("simple_chemistry_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_DYNAMIC_ENERGETICS_MEMORY_CIRCUIT = ITEMS.register("simple_dynamic_energetics_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_ENGINEERING_MEMORY_CIRCUIT = ITEMS.register("simple_engineering_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_FORMAL_SCIENCE_MEMORY_CIRCUIT = ITEMS.register("simple_formal_science_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_GEO_SCIENCE_MEMORY_CIRCUIT = ITEMS.register("simple_geo_science_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_HYBRID_PHYSICS_MEMORY_CIRCUIT = ITEMS.register("simple_hybrid_physics_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT = ITEMS.register("simple_imitation_magic_engineering_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_PROCESSING_CIRCUIT = ITEMS.register("simple_processing_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
     public static final RegistryObject<Item> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT = ITEMS.register("basic_performance_astronomical_telescope_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
@@ -894,6 +896,10 @@ public class DCItems extends CreativeModeTab {
 
 
     public static final RegistryObject<Item> BASIC_POWER_STEAM_GENERATOR_CIRCUIT = ITEMS.register("basic_power_steam_generator_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_CIRCUIT = ITEMS.register("basic_technology_compression_condenser_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+
+
+
     public static final RegistryObject<Item> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_CIRCUIT = ITEMS.register("basic_technology_machine_manufacturer_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_CIRCUIT = ITEMS.register("basic_technology_universal_assembler_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_CIRCUIT = ITEMS.register("basic_technology_machine_element_processor_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));

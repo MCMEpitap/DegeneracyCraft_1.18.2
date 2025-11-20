@@ -8,6 +8,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performan
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_power_steam_generator.BasicPowerSteamGeneratorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.BasicTechnologyElectromagneticInductorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerMenu;
@@ -140,6 +141,8 @@ public class DCMenuTypes {
             registerMenuType(BasicPowerSteamGeneratorMenu::new, "basic_power_steam_generator_menu");
     public static final RegistryObject<MenuType<BasicTechnologyCompressionCondenserMenu>> BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_MENU =
             registerMenuType(BasicTechnologyCompressionCondenserMenu::new, "basic_technology_compression_condenser_menu");
+    public static final RegistryObject<MenuType<BasicTechnologyElectromagneticInductorMenu>> BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_MENU =
+            registerMenuType(BasicTechnologyElectromagneticInductorMenu::new, "basic_technology_electromagnetic_inductor_menu");
 
 
 

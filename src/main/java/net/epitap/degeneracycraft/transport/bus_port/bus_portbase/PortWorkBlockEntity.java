@@ -18,9 +18,9 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_perfo
 import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_power_steam_generator.port.BasicPowerSteamGeneratorPortType;
-import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_circuit_builder.bus.BasicPerformanceCircuitBuilderBusEnergyStorage;
-import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_circuit_builder.bus.BasicPerformanceCircuitBuilderBusType;
-import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_circuit_builder.port.BasicPerformanceCircuitBuilderPortType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_technology_compression_condenser.bus.BasicTechnologyCompressionCondenserBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_technology_compression_condenser.bus.BasicTechnologyCompressionCondenserBusType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_technology_compression_condenser.port.BasicTechnologyCompressionCondenserPortType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_element_processor.bus.BasicTechnologyMachineElementProcessorBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_element_processor.bus.BasicTechnologyMachineElementProcessorBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_element_processor.port.BasicTechnologyMachineElementProcessorPortType;
@@ -33,6 +33,9 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_tec
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_multiblock_equipment_fabricator.bus.BasicTechnologyMultiblockEquipmentFabricatorBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_multiblock_equipment_fabricator.bus.BasicTechnologyMultiblockEquipmentFabricatorBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_multiblock_equipment_fabricator.port.BasicTechnologyMultiblockEquipmentFabricatorPortType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_circuit_builder.bus.BasicPerformanceCircuitBuilderBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_circuit_builder.bus.BasicPerformanceCircuitBuilderBusType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_circuit_builder.port.BasicPerformanceCircuitBuilderPortType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_designated_data_injector.bus.BasicPerformanceDesignatedDataInjectorBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_designated_data_injector.bus.BasicPerformanceDesignatedDataInjectorBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_designated_data_injector.port.BasicPerformanceDesignatedDataInjectorPortType;
@@ -84,6 +87,10 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
     protected PortSetLazyOptional<BasicPowerSteamGeneratorBusEnergyStorage> basicPowerSteamGeneratorBusEnergyStorageStored;
+    protected PortSetLazyOptional<BasicTechnologyCompressionCondenserBusEnergyStorage> basicTechnologyCompressionCondenserBusEnergyStorageStored;
+
+
+
     protected PortSetLazyOptional<BasicTechnologyMachineManufacturerBusEnergyStorage> basicTechnologyMachineManufacturerBusEnergyStorageStored;
     protected PortSetLazyOptional<BasicTechnologyMachineElementProcessorBusEnergyStorage> basicTechnologyMachineElementProcessorBusEnergyStorageStored;
     protected PortSetLazyOptional<BasicTechnologyMachinePartProcessorBusEnergyStorage> basicTechnologyMachinePartProcessorBusEnergyStorageStored;
@@ -128,6 +135,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
         basicPowerSteamGeneratorBusEnergyStorageStored = new PortSetLazyOptional<>();
+        basicTechnologyCompressionCondenserBusEnergyStorageStored = new PortSetLazyOptional<>();
 
 
 
@@ -170,7 +178,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
         if (cap == CapabilityEnergy.ENERGY && hasType(BasicPerformanceBioReactorBusType.INSTANCE)) {
             if (side != null) {
-                return basicPerformanceAstronomicalTelescopeBusEnergyStorageStored.get(side).cast();
+                return basicPerformanceBioReactorBusEnergyStorageStored.get(side).cast();
             }
         }
         if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPerformanceBioReactorPortType.INSTANCE)) {
@@ -223,6 +231,23 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 return itemStored.get(side).cast();
             }
         }
+        if (cap == CapabilityEnergy.ENERGY && hasType(BasicTechnologyCompressionCondenserBusType.INSTANCE)) {
+            if (side != null) {
+                return basicTechnologyCompressionCondenserBusEnergyStorageStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicTechnologyCompressionCondenserPortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        }
+
+
+
+
+
+
+
         if (cap == CapabilityEnergy.ENERGY && hasType(BasicTechnologyMachineManufacturerBusType.INSTANCE)) {
             if (side != null) {
                 return basicTechnologyMachineManufacturerBusEnergyStorageStored.get(side).cast();
@@ -263,16 +288,8 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 return itemStored.get(side).cast();
             }
         }
-        if (cap == CapabilityEnergy.ENERGY && hasType(BasicTechnologyMultiblockEquipmentFabricatorBusType.INSTANCE)) {
-            if (side != null) {
-                return basicTechnologyMultiblockEquipmentFabricatorBusEnergyStorageStored.get(side).cast();
-            }
-        }
-        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicTechnologyMultiblockEquipmentFabricatorPortType.INSTANCE)) {
-            if (side != null) {
-                return itemStored.get(side).cast();
-            }
-        }
+
+
 
 
         if (cap == CapabilityEnergy.ENERGY && hasType(BasicPerformanceCircuitBuilderBusType.INSTANCE)) {
@@ -443,6 +460,16 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 }
             }
         }
+        if (hasType(BasicPowerSteamGeneratorBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    basicTechnologyCompressionCondenserBusEnergyStorageStored.get(side).ifPresent(BasicTechnologyCompressionCondenserBusEnergyStorage::tick);
+                }
+            }
+        }
+
+
+
         if (hasType(BasicTechnologyMachineManufacturerBusType.INSTANCE)) {
             for (Direction side : Direction.values()) {
                 if (portExtracting(side)) {
@@ -570,6 +597,16 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicPowerSteamGeneratorPortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
         }
+        if (hasType(BasicTechnologyCompressionCondenserBusType.INSTANCE)) {
+            basicTechnologyCompressionCondenserBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicTechnologyCompressionCondenserBusEnergyStorage(this, storage));
+        }
+        if (hasType(BasicTechnologyCompressionCondenserPortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
+        }
+
+
+
+
         if (hasType(BasicTechnologyMachineManufacturerBusType.INSTANCE)) {
             basicTechnologyMachineManufacturerBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicTechnologyMachineManufacturerBusEnergyStorage(this, storage));
         }
@@ -691,6 +728,17 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicPowerSteamGeneratorPortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
         }
+        if (hasType(BasicTechnologyCompressionCondenserBusType.INSTANCE)) {
+            basicTechnologyCompressionCondenserBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicTechnologyCompressionCondenserBusEnergyStorage(this, side));
+        }
+        if (hasType(BasicTechnologyCompressionCondenserPortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
+        }
+
+
+
+
+
         if (hasType(BasicTechnologyMachineManufacturerBusType.INSTANCE)) {
             basicTechnologyMachineManufacturerBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicTechnologyMachineManufacturerBusEnergyStorage(this, side));
         }
@@ -790,6 +838,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
         basicPowerSteamGeneratorBusEnergyStorageStored.invalidate();
+        basicTechnologyCompressionCondenserBusEnergyStorageStored.invalidate();
 
 
 

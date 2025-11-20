@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_compression_condenser;
+package net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_electromagnetic_inductor;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
@@ -41,7 +41,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity implements MenuProvider {
+public class BasicTechnologyElectromagneticInductorBlockEntity extends BlockEntity implements MenuProvider {
     public float MACHINE_CAPACITY = 30000F;
     public float MACHINE_TRANSFER = 32F;
     public float MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
@@ -102,14 +102,14 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
                             (in, stack) -> itemHandler.isItemValid(0, stack) || itemHandler.isItemValid(2, stack) || itemHandler.isItemValid(3, stack)))
             );
 
-    public BasicTechnologyCompressionCondenserBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
+    public BasicTechnologyElectromagneticInductorBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(DCBlockEntities.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> BasicTechnologyCompressionCondenserBlockEntity.this.counter;
-                    case 1 -> BasicTechnologyCompressionCondenserBlockEntity.this.getProgressPercent;
+                    case 0 -> BasicTechnologyElectromagneticInductorBlockEntity.this.counter;
+                    case 1 -> BasicTechnologyElectromagneticInductorBlockEntity.this.getProgressPercent;
                     default -> 0;
                 };
             }
@@ -117,9 +117,9 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
             @Override
             public void set(int index, int value) {
                 if (index == 0) {
-                    BasicTechnologyCompressionCondenserBlockEntity.this.counter = value;
+                    BasicTechnologyElectromagneticInductorBlockEntity.this.counter = value;
                 } else if (index == 1) {
-                    BasicTechnologyCompressionCondenserBlockEntity.this.getProgressPercent = value;
+                    BasicTechnologyElectromagneticInductorBlockEntity.this.getProgressPercent = value;
                 }
             }
 
@@ -134,7 +134,7 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return new BasicTechnologyCompressionCondenserMenu(pContainerId, pInventory, this, this.data);
+        return new BasicTechnologyElectromagneticInductorMenu(pContainerId, pInventory, this, this.data);
     }
 
     public Component getDisplayName() {
@@ -150,7 +150,7 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
                 return lazyItemHandler.cast();
             }
             if (directionWrappedHandlerMap.containsKey(side)) {
-                Direction localDir = this.getBlockState().getValue(BasicTechnologyCompressionCondenserBlock.FACING);
+                Direction localDir = this.getBlockState().getValue(BasicTechnologyElectromagneticInductorBlock.FACING);
 
                 if (side == Direction.UP || side == Direction.DOWN) {
                     return directionWrappedHandlerMap.get(side).cast();
@@ -213,11 +213,11 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
         Containers.dropContents(this.level, this.worldPosition, inventory);
     }
 
-    public static void tick(Level level, BlockPos pos, BlockState state, BasicTechnologyCompressionCondenserBlockEntity blockEntity) {
-        blockEntity.isFormed = BasicTechnologyCompressionCondenserStructure.isFormed(level, pos, state, blockEntity);
-        blockEntity.isPowered0 = BasicTechnologyCompressionCondenserStructure.isPowered0(level, pos, state, blockEntity);
+    public static void tick(Level level, BlockPos pos, BlockState state, BasicTechnologyElectromagneticInductorBlockEntity blockEntity) {
+        blockEntity.isFormed = BasicTechnologyElectromagneticInductorStructure.isFormed(level, pos, state, blockEntity);
+        blockEntity.isPowered0 = BasicTechnologyElectromagneticInductorStructure.isPowered0(level, pos, state, blockEntity);
 
-        BasicTechnologyCompressionCondenserStructure.hologram(level, pos, state, blockEntity);
+        BasicTechnologyElectromagneticInductorStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
 
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
@@ -260,7 +260,7 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
         setChanged(level, pos, state);
     }
 
-    public static boolean craftCheck(BasicTechnologyCompressionCondenserBlockEntity blockEntity) {
+    public static boolean craftCheck(BasicTechnologyElectromagneticInductorBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -276,7 +276,7 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
         return false;
     }
 
-    private static boolean hasRecipe(BasicTechnologyCompressionCondenserBlockEntity blockEntity) {
+    private static boolean hasRecipe(BasicTechnologyElectromagneticInductorBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -289,7 +289,7 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
         return match.isPresent();
     }
 
-    private static boolean hasAmountRecipe(BasicTechnologyCompressionCondenserBlockEntity blockEntity) {
+    private static boolean hasAmountRecipe(BasicTechnologyElectromagneticInductorBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -304,7 +304,7 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
                 && blockEntity.itemHandler.getStackInSlot(2).getCount() >= match.get().getInput2Item().getCount();
     }
 
-    private static boolean hasEnergyRecipe(BasicTechnologyCompressionCondenserBlockEntity blockEntity) {
+    private static boolean hasEnergyRecipe(BasicTechnologyElectromagneticInductorBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -317,7 +317,7 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
         return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
     }
 
-    private static void craftItem(BasicTechnologyCompressionCondenserBlockEntity blockEntity) {
+    private static void craftItem(BasicTechnologyElectromagneticInductorBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -338,7 +338,7 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
         }
     }
 
-    public static boolean isHaltDevice(BasicTechnologyCompressionCondenserBlockEntity blockEntity) {
+    public static boolean isHaltDevice(BasicTechnologyElectromagneticInductorBlockEntity blockEntity) {
         return blockEntity.itemHandler.getStackInSlot(5).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
@@ -349,7 +349,7 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
     public void resetConsumeCount() {
         this.consumeCounter = 0;
     }
-    private static boolean hasNotReachedStackLimit(BasicTechnologyCompressionCondenserBlockEntity blockEntity) {
+    private static boolean hasNotReachedStackLimit(BasicTechnologyElectromagneticInductorBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -363,7 +363,7 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
 
     }
 
-    private static boolean canInsertItemIntoOutputSlot(BasicTechnologyCompressionCondenserBlockEntity blockEntity) {
+    private static boolean canInsertItemIntoOutputSlot(BasicTechnologyElectromagneticInductorBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {

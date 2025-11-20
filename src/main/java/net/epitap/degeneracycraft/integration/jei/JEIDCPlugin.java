@@ -16,6 +16,8 @@ import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performan
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorMenu;
@@ -57,6 +59,9 @@ import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performa
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserRecipeTransferHandler;
+import net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderRecipe;
@@ -136,6 +141,13 @@ public class JEIDCPlugin implements IModPlugin {
                 BasicPerformanceCompoundPurifierRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
                 BasicPerformanceElectrolyserRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+
+
+
+
+        registration.addRecipeCategories(new
+                BasicTechnologyCompressionCondenserRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+
 
 
 
@@ -227,6 +239,15 @@ public class JEIDCPlugin implements IModPlugin {
 
 
 
+
+        List<BasicTechnologyCompressionCondenserRecipe> basicTechnologyCompressionCondenserRecipe =
+                rm.getAllRecipesFor(BasicTechnologyCompressionCondenserRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicTechnologyCompressionCondenserRecipeCategory.UID, BasicTechnologyCompressionCondenserRecipe.class), basicTechnologyCompressionCondenserRecipe);
+
+
+
+
+
         List<RedstonePoweredMachineElementManufactureMachineRecipe> redstonePoweredMachineComponentManufactureMachineRecipes =
                 rm.getAllRecipesFor(RedstonePoweredMachineElementManufactureMachineRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(RedstonePoweredMachineElementManufactureMachineRecipeCategory.UID, RedstonePoweredMachineElementManufactureMachineRecipe.class), redstonePoweredMachineComponentManufactureMachineRecipes);
@@ -313,6 +334,10 @@ public class JEIDCPlugin implements IModPlugin {
 
 
 
+        registration.addRecipeClickArea(BasicTechnologyCompressionCondenserScreen.class, 64, 20, 29, 8, BasicTechnologyCompressionCondenserRecipeCategory.UID);
+
+
+
         registration.addRecipeClickArea(BasicTechnologyMachineManufacturerScreen.class, 64, 20, 29, 8, BasicTechnologyMachineManufacturerRecipeCategory.UID);
         registration.addRecipeClickArea(BasicTechnologyUniversalAssemblerScreen.class, 64, 20, 29, 8, BasicTechnologyUniversalAssemblerRecipeCategory.UID);
         registration.addRecipeClickArea(BasicTechnologyMachineElementProcessorScreen.class, 64, 20, 29, 8, BasicTechnologyMachineElementProcessorRecipeCategory.UID);
@@ -360,6 +385,11 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BLOCK.get()), BasicPerformanceChemicalReactorRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.get()), BasicPerformanceCompoundPurifierRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get()), BasicPerformanceElectrolyserRecipeCategory.UID);
+
+
+
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BLOCK.get()), BasicTechnologyCompressionCondenserRecipeCategory.UID);
+
 
 
 
@@ -423,7 +453,6 @@ public class JEIDCPlugin implements IModPlugin {
                 ),
                 BasicPerformanceCompoundPurifierRecipeCategory.TYPE
         );
-
         registration.addRecipeTransferHandler(
                 new BasicPerformanceElectrolyserRecipeTransferHandler<>(
                         BasicPerformanceElectrolyserMenu.class,
@@ -432,6 +461,20 @@ public class JEIDCPlugin implements IModPlugin {
                 ),
                 BasicPerformanceElectrolyserRecipeCategory.TYPE
         );
+
+
+
+
+        registration.addRecipeTransferHandler(
+                new BasicTechnologyCompressionCondenserRecipeTransferHandler<>(
+                        BasicTechnologyCompressionCondenserMenu.class,
+                        0, 3,
+                        6, 36
+                ),
+                BasicTechnologyCompressionCondenserRecipeCategory.TYPE
+        );
+
+
 
 
 

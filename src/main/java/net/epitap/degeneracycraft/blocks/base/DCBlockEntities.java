@@ -9,6 +9,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performan
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_power_steam_generator.BasicPowerSteamGeneratorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.BasicTechnologyElectromagneticInductorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_phase_bolt_manufacture_machine.BasicPhaseBoltManufactureMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlockEntity;
@@ -56,6 +57,8 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.ba
 import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_power_steam_generator.port.BasicPowerSteamGeneratorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_technology_compression_condenser.bus.BasicTechnologyCompressionCondenserBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_technology_compression_condenser.port.BasicTechnologyCompressionCondenserPortBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.bus.BasicTechnologyElectromagneticInductorBusBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.port.BasicTechnologyElectromagneticInductorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_element_processor.bus.BasicTechnologyMachineElementProcessorBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_element_processor.port.BasicTechnologyMachineElementProcessorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_manufacturer.bus.BasicTechnologyMachineManufacturerBusBlockEntity;
@@ -250,6 +253,16 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicTechnologyCompressionCondenserPortBlockEntity>> BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_technology_compression_condenser_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicTechnologyCompressionCondenserPortBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_BLOCK.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<BasicTechnologyElectromagneticInductorBlockEntity>> BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_electromagnetic_inductor_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologyElectromagneticInductorBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicTechnologyElectromagneticInductorBusBlockEntity>> BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_electromagnetic_inductor_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologyElectromagneticInductorBusBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicTechnologyElectromagneticInductorPortBlockEntity>> BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_electromagnetic_inductor_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologyElectromagneticInductorPortBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_BLOCK.get()).build(null));
 
 
 

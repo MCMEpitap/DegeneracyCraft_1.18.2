@@ -6,6 +6,7 @@ import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performanc
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerRecipe;
@@ -51,7 +52,7 @@ public class DCRecipeTypes {
 
 
 
-    public static final RegistryObject<RecipeSerializer<BasicPerformanceChemicalReactorRecipe>> BASIC_PERFORMANCE_CHEMICAL_sREACTOR_SERIALIZER =
+    public static final RegistryObject<RecipeSerializer<BasicPerformanceChemicalReactorRecipe>> BASIC_PERFORMANCE_CHEMICAL_REACTOR_SERIALIZER =
             SERIALIZERS.register("basic_performance_chemical_reactor_recipe", () -> BasicPerformanceChemicalReactorRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<BasicPerformanceCompoundPurifierRecipe>> BASIC_PERFORMANCE_COMPOUND_PURIFIER_SERIALIZER =
             SERIALIZERS.register("basic_performance_compound_purifier_recipe", () -> BasicPerformanceCompoundPurifierRecipe.Serializer.INSTANCE);
@@ -62,6 +63,8 @@ public class DCRecipeTypes {
 
     public static final RegistryObject<RecipeSerializer<BasicPowerSteamGeneratorRecipe>> BASIC_POWER_STEAM_GENERATOR_SERIALIZER =
             SERIALIZERS.register("basic_power_steam_generator_recipe", () -> BasicPowerSteamGeneratorRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<BasicTechnologyCompressionCondenserRecipe>> BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_SERIALIZER =
+            SERIALIZERS.register("basic_technology_compression_condenser_recipe", () -> BasicTechnologyCompressionCondenserRecipe.Serializer.INSTANCE);
 
 
     public static final RegistryObject<RecipeSerializer<BasicTechnologyMachineManufacturerRecipe>> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_SERIALIZER =

@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_compression_condenser;
+package net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_electromagnetic_inductor;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.item.DCItems;
@@ -14,7 +14,7 @@ import java.util.Map;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-public class BasicTechnologyCompressionCondenserStructure {
+public class BasicTechnologyElectromagneticInductorStructure {
     static int minX = -1, maxX = 1;
     static int minY = -1, maxY = 1;
     static int minZ = -2, maxZ = 0;
@@ -23,12 +23,12 @@ public class BasicTechnologyCompressionCondenserStructure {
     public static String[][][] structureH0;
     public static String[][][] structureH1;
 
-    public BasicTechnologyCompressionCondenserStructure() {
+    public BasicTechnologyElectromagneticInductorStructure() {
     }
 
 
-    public static boolean isFormed(Level level, BlockPos pos, BlockState state, BasicTechnologyCompressionCondenserBlockEntity blockEntity) {
-        Direction facing = state.getValue(BasicTechnologyCompressionCondenserBlock.FACING);
+    public static boolean isFormed(Level level, BlockPos pos, BlockState state, BasicTechnologyElectromagneticInductorBlockEntity blockEntity) {
+        Direction facing = state.getValue(BasicTechnologyElectromagneticInductorBlock.FACING);
         BlockPos basePos = blockEntity.getBlockPos();
 
         structure0 = new String[][][]{
@@ -83,8 +83,8 @@ public class BasicTechnologyCompressionCondenserStructure {
         return true;
     }
 
-    public static boolean isPowered0(Level level, BlockPos pos, BlockState state, BasicTechnologyCompressionCondenserBlockEntity blockEntity) {
-        Direction facing = state.getValue(BasicTechnologyCompressionCondenserBlock.FACING);
+    public static boolean isPowered0(Level level, BlockPos pos, BlockState state, BasicTechnologyElectromagneticInductorBlockEntity blockEntity) {
+        Direction facing = state.getValue(BasicTechnologyElectromagneticInductorBlock.FACING);
         BlockPos basePos = blockEntity.getBlockPos();
 
         structure1 = new String[][][]{
@@ -143,8 +143,8 @@ public class BasicTechnologyCompressionCondenserStructure {
     }
 
 
-    public static void hologram(Level level, BlockPos pos, BlockState state, BasicTechnologyCompressionCondenserBlockEntity blockEntity) {
-        Direction facing = state.getValue(BasicTechnologyCompressionCondenserBlock.FACING);
+    public static void hologram(Level level, BlockPos pos, BlockState state, BasicTechnologyElectromagneticInductorBlockEntity blockEntity) {
+        Direction facing = state.getValue(BasicTechnologyElectromagneticInductorBlock.FACING);
         BlockPos basePos = blockEntity.getBlockPos();
 
         structureH0 = new String[][][]{

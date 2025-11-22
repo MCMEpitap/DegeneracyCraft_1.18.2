@@ -18,7 +18,7 @@ import java.util.Optional;
 
 public class BasicTechnologyElectromagneticInductorScreen extends AbstractContainerScreen<BasicTechnologyElectromagneticInductorMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/dynamic_energetics/basic_technology_compression_condenser/basic_technology_compression_condenser_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/basic_technology_electromagnetic_inductor_gui.png");
     private EnergyInfoArea energyInfoArea;
 
 

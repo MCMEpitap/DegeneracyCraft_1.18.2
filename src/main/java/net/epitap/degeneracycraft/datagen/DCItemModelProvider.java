@@ -1191,6 +1191,22 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_compression_condenser_port_holo_block"));
         basicMachineCircuitDynamicEnergeticsItem(DCItems.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_CIRCUIT.get());
+       
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_electromagnetic_inductor_block"));
+        withExistingParent(DCBlocks.BASIC_DURABLE_INSULATED_CHAMBER_BLOCK.getId().getPath(),
+                modLoc("block/basic_durable_insulated_chamber_block"));
+        withExistingParent(DCBlocks.BASIC_DURABLE_INSULATED_CHAMBER_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_durable_insulated_chamber_holo_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_electromagnetic_inductor_bus_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_electromagnetic_inductor_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_electromagnetic_inductor_port_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_electromagnetic_inductor_port_holo_block"));
+        basicMachineCircuitDynamicEnergeticsItem(DCItems.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_CIRCUIT.get());
 
 
 

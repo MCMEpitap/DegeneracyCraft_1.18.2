@@ -564,9 +564,9 @@ public class DCBlocks {
                     new BasicTechnologyCompressionCondenserBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "Lv0:3×3×3",
             "Lv1:3×3×3",
-            "Base:Power 16 FE/t",
-            "Lv0:Power 32 FE/t",
-            "Lv1:Power 48 FE/t",
+            "Base:Speed ×1.00,Energy Usage ×1.00",
+            "Lv0:Speed ×2.00,Energy Usage ×1.50",
+            "Lv1:Speed ×3.00,Energy Usage ×2.00",
             "basic_technology_compression_condenser_block", "dynamic_energetics", "basic");
     public static final RegistryObject<Block> BASIC_PRESSURE_COMPRESSION_ASSIST_SYSTEM_BLOCK = registerTooltipMultiblockAbilityBlock(
             "basic_pressure_compression_assist_system_block", () ->
@@ -589,9 +589,9 @@ public class DCBlocks {
                     new BasicTechnologyElectromagneticInductorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "Lv0:3×3×3",
             "Lv1:3×3×3",
-            "Base:Power 16 FE/t",
-            "Lv0:Power 32 FE/t",
-            "Lv1:Power 48 FE/t",
+            "Base:Speed ×1.00,Energy Usage ×1.00",
+            "Lv0:Speed ×2.00,Energy Usage ×1.50",
+            "Lv1:Speed ×3.00,Energy Usage ×2.00",
             "basic_technology_electromagnetic_inductor_block", "dynamic_energetics", "basic");
     public static final RegistryObject<Block> BASIC_DURABLE_INSULATED_CHAMBER_BLOCK = registerTooltipMultiblockAbilityBlock(
             "basic_durable_insulated_chamber_block", () ->

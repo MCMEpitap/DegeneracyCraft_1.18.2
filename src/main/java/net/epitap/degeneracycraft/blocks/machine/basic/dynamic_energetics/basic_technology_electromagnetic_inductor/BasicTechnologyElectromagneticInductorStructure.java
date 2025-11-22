@@ -51,10 +51,10 @@ public class BasicTechnologyElectromagneticInductorStructure {
 
         Map<String, Predicate<BlockState>> blockConditions = new HashMap<>();
         blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
-        blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_BLOCK.get()));
+        blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_BLOCK.get()));
         blockConditions.put("H", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get()));
         blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
-        blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_BLOCK.get()));
+        blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_BLOCK.get()));
         blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
         blockConditions.put("G", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get()));
 
@@ -95,7 +95,7 @@ public class BasicTechnologyElectromagneticInductorStructure {
                 },
                 {
                         {"F", "F", "F"},
-                        {"G", "C", "G"},
+                        {"G", "D", "G"},
                         {"P", " ", "P"}
                 },
                 {
@@ -107,13 +107,13 @@ public class BasicTechnologyElectromagneticInductorStructure {
 
         Map<String, Predicate<BlockState>> blockConditions = new HashMap<>();
         blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
-        blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_BLOCK.get()));
+        blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_BLOCK.get()));
         blockConditions.put("H", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get()));
         blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
-        blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_BLOCK.get()));
+        blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_BLOCK.get()));
         blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
         blockConditions.put("G", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get()));
-        blockConditions.put("C", blockState -> blockState.is(DCBlocks.BASIC_PRESSURE_COMPRESSION_ASSIST_SYSTEM_BLOCK.get()));
+        blockConditions.put("D", blockState -> blockState.is(DCBlocks.BASIC_DURABLE_INSULATED_CHAMBER_BLOCK.get()));
 
 
         for (int y = minY; y <= maxY; y++) {
@@ -173,7 +173,7 @@ public class BasicTechnologyElectromagneticInductorStructure {
                 },
                 {
                         {"F", "F", "F"},
-                        {"G", "C", "G"},
+                        {"G", "D", "G"},
                         {"P", " ", "P"}
                 },
                 {
@@ -185,22 +185,22 @@ public class BasicTechnologyElectromagneticInductorStructure {
 
         Map<String, Supplier<Block>> blockMapping = new HashMap<>();
         blockMapping.put("F", DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK);
-        blockMapping.put("P", DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_HOLO_BLOCK);
+        blockMapping.put("P", DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_HOLO_BLOCK);
         blockMapping.put("H", DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK);
         blockMapping.put("S", DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK);
-        blockMapping.put("B", DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_HOLO_BLOCK);
+        blockMapping.put("B", DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_HOLO_BLOCK);
         blockMapping.put("E", DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK);
-        blockMapping.put("C", DCBlocks.BASIC_PRESSURE_COMPRESSION_ASSIST_SYSTEM_HOLO_BLOCK);
+        blockMapping.put("D", DCBlocks.BASIC_DURABLE_INSULATED_CHAMBER_HOLO_BLOCK);
 
-        boolean displayHologram = blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()) ||
-                blockEntity.itemHandler.getStackInSlot(4).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+        boolean displayHologram = blockEntity.itemHandler.getStackInSlot(7).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()) ||
+                blockEntity.itemHandler.getStackInSlot(7).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
 
         if (!displayHologram) {
             removeHolograms(level, basePos, facing, blockMapping);
             return;
         }
-        boolean visualizer0 = blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
-        boolean visualizer1 = blockEntity.itemHandler.getStackInSlot(4).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+        boolean visualizer0 = blockEntity.itemHandler.getStackInSlot(7).is(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+        boolean visualizer1 = blockEntity.itemHandler.getStackInSlot(7).is(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
 
 
         for (int y = minY; y <= maxY; y++) {
@@ -273,12 +273,12 @@ public class BasicTechnologyElectromagneticInductorStructure {
     private static boolean isExpectedBlock(BlockState blockState, String blockKey) {
         return switch (blockKey) {
             case "F" -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-            case "P" -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_BLOCK.get());
+            case "P" -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_BLOCK.get());
             case "H" -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get());
             case "S" -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get());
-            case "B" -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_BLOCK.get());
+            case "B" -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_BLOCK.get());
             case "E" -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get());
-            case "R" -> blockState.is(DCBlocks.BASIC_PRESSURE_COMPRESSION_ASSIST_SYSTEM_BLOCK.get());
+            case "R" -> blockState.is(DCBlocks.BASIC_DURABLE_INSULATED_CHAMBER_BLOCK.get());
             default -> false;
         };
     }

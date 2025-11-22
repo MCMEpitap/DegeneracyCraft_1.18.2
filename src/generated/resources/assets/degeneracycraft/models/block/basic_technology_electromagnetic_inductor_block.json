@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/basic_technology_electromagnetic_inductor_down",
+    "up": "degeneracycraft:block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/basic_technology_electromagnetic_inductor_up",
+    "north": "degeneracycraft:block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/basic_technology_electromagnetic_inductor_front",
+    "south": "degeneracycraft:block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/basic_technology_electromagnetic_inductor_side",
+    "east": "degeneracycraft:block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/basic_technology_electromagnetic_inductor_side",
+    "west": "degeneracycraft:block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/basic_technology_electromagnetic_inductor_side",
+    "particle": "degeneracycraft:block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/basic_technology_electromagnetic_inductor_front"
+  }
+}

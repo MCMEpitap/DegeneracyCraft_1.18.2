@@ -3,7 +3,7 @@ package net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserRecipe;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -189,7 +189,7 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         nbt.put("inventory", itemHandler.serializeNBT());
-        nbt.putFloat("bt_e_furnace.energy", ENERGY_STORAGE.getEnergyStoredFloat());
+        nbt.putFloat("energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
         nbt.putInt("getProgressPercent", getProgressPercent);
         super.saveAdditional(nbt);
@@ -199,7 +199,7 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
     public void load(CompoundTag nbt) {
         super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("bt_e_furnace.energy"));
+        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("energy"));
         counter = nbt.getInt("counter");
         getProgressPercent = nbt.getInt("getProgressPercent");
     }
@@ -230,8 +230,8 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<BasicPerformanceChemicalReactorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceChemicalReactorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyCompressionCondenserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyCompressionCondenserRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
@@ -267,8 +267,8 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceChemicalReactorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceChemicalReactorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyCompressionCondenserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyCompressionCondenserRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return blockEntity.data.get(0) >= match.get().getRequiredTime() * 20;
@@ -283,8 +283,8 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceChemicalReactorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceChemicalReactorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyCompressionCondenserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyCompressionCondenserRecipe.Type.INSTANCE, inventory, level);
 
         return match.isPresent();
     }
@@ -296,8 +296,8 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceChemicalReactorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceChemicalReactorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyCompressionCondenserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyCompressionCondenserRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
                 && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
@@ -311,8 +311,8 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceChemicalReactorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceChemicalReactorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyCompressionCondenserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyCompressionCondenserRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
     }
@@ -324,8 +324,8 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceChemicalReactorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceChemicalReactorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyCompressionCondenserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyCompressionCondenserRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
@@ -356,8 +356,8 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceChemicalReactorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceChemicalReactorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyCompressionCondenserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyCompressionCondenserRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(3).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(3).getMaxStackSize();
 
@@ -370,14 +370,14 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceChemicalReactorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceChemicalReactorRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologyCompressionCondenserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyCompressionCondenserRecipe.Type.INSTANCE, inventory, level);
 
         return (blockEntity.itemHandler.getStackInSlot(3).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(3).isEmpty());
     }
 
     public void insertRecipeInputsFromPlayer(Player player, Recipe<?> recipe, boolean shift) {
-        if (!(recipe instanceof BasicPerformanceChemicalReactorRecipe recipeData)) return;
+        if (!(recipe instanceof BasicTechnologyCompressionCondenserRecipe recipeData)) return;
 
         player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(playerInv -> {
             this.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(machineInv -> {

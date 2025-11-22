@@ -21,7 +21,7 @@ public class BasicTechnologyElectromagneticInductorMenu extends AbstractContaine
     private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 10;
+    private static final int TE_INVENTORY_SLOT_COUNT = 9;
     public final BasicTechnologyElectromagneticInductorBlockEntity blockEntity;
     public final Level level;
     public final ContainerData data;
@@ -31,7 +31,7 @@ public class BasicTechnologyElectromagneticInductorMenu extends AbstractContaine
     }
 
     public BasicTechnologyElectromagneticInductorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_MENU.get(), id);
+        super(DCMenuTypes.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_MENU.get(), id);
         blockEntity = (BasicTechnologyElectromagneticInductorBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
@@ -39,12 +39,15 @@ public class BasicTechnologyElectromagneticInductorMenu extends AbstractContaine
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler, 0, 26, 7));
-            this.addSlot(new SlotItemHandler(handler, 1, 26, 25));
-            this.addSlot(new SlotItemHandler(handler, 2, 26, 43));
-            this.addSlot(new SlotItemHandler(handler, 3, 116, 25));
-            this.addSlot(new SlotItemHandler(handler, 4, 71, 59));
-            this.addSlot(new SlotItemHandler(handler, 5, 98, 62));
+            this.addSlot(new SlotItemHandler(handler, 0, 8, 7));
+            this.addSlot(new SlotItemHandler(handler, 1, 44, 7));
+            this.addSlot(new SlotItemHandler(handler, 2, 8, 25));
+            this.addSlot(new SlotItemHandler(handler, 3, 44, 25));
+            this.addSlot(new SlotItemHandler(handler, 4, 8, 43));
+            this.addSlot(new SlotItemHandler(handler, 5, 44, 43));
+            this.addSlot(new SlotItemHandler(handler, 6, 116, 25));
+            this.addSlot(new SlotItemHandler(handler, 7, 71, 59));
+            this.addSlot(new SlotItemHandler(handler, 8, 98, 62));
         });
         addDataSlots(data);
     }
@@ -101,7 +104,7 @@ public class BasicTechnologyElectromagneticInductorMenu extends AbstractContaine
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BLOCK.get());
+                player, DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

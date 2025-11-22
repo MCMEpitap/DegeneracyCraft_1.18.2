@@ -1029,6 +1029,19 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_BLOCK.get(), "Basic TechnologyCompression Condenser Port");
         add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_HOLO_BLOCK.get(), "Basic TechnologyCompression Condenser Port (Hologram)");
         add(DCItems.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_CIRCUIT.get(), "Basic TechnologyCompression Condenser Circuit");
+
+        add(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BLOCK.get(), "Basic Technology Electromagnetic Inductor");
+        add("tooltip." + "degeneracycraft." + "basic_technology_electromagnetic_inductor_block",
+                "Basic electromagnetic inductor. Converting electrical power into magnetic force for use in processing.");
+        add(DCBlocks.BASIC_DURABLE_INSULATED_CHAMBER_BLOCK.get(), "Basic Durable Insulated Chamber");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_electromagnetic_inductor_block",
+                "For Basic Technology Electromagnetic Inductor");
+        add(DCBlocks.BASIC_DURABLE_INSULATED_CHAMBER_HOLO_BLOCK.get(), "Basic Durable Insulated Chamber (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_BLOCK.get(), "Basic Technology Electromagnetic Inductor Bus");
+        add(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_HOLO_BLOCK.get(), "Basic Technology Electromagnetic Inductor Bus (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_BLOCK.get(), "Basic Technology Electromagnetic Inductor Port");
+        add(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_HOLO_BLOCK.get(), "Basic Technology Electromagnetic Inductor Port (Hologram)");
+        add(DCItems.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_CIRCUIT.get(), "Basic Technology Electromagnetic Inductor Circuit");
         
         
 
@@ -1223,6 +1236,11 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("jei." + "degeneracycraft_basic_performance_chemical_reactor", "Basic Performance Chemical Reactor Recipe");
         add("jei." + "degeneracycraft_basic_performance_compound_purifier", "Basic Performance Compound Purifier Recipe");
         add("jei." + "degeneracycraft_basic_performance_electrolyser", "Basic Performance Electrolyser Recipe");
+
+
+
+        add("jei." + "degeneracycraft_basic_technology_compression_condenser", "Basic Technology Compression Condenser Recipe");
+        add("jei." + "degeneracycraft_basic_technology_electromagnetic_inductor", "Basic Technology Electromagnetic Inductor Recipe");
 
 
 

@@ -278,7 +278,7 @@ public class BasicTechnologyCompressionCondenserStructure {
             case "S" -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get());
             case "B" -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_BLOCK.get());
             case "E" -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get());
-            case "R" -> blockState.is(DCBlocks.BASIC_PRESSURE_COMPRESSION_ASSIST_SYSTEM_BLOCK.get());
+            case "C" -> blockState.is(DCBlocks.BASIC_PRESSURE_COMPRESSION_ASSIST_SYSTEM_BLOCK.get());
             default -> false;
         };
     }

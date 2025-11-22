@@ -217,6 +217,14 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicTechnologyCompressionCondenserPort();
         registerBasicTechnologyCompressionCondenserPortHolo();
 
+        registerBasicTechnologyElectromagneticInductor();
+        registerBasicDurableInsulatedChamber();
+        registerBasicDurableInsulatedChamberHolo();
+        registerBasicTechnologyElectromagneticInductorBus();
+        registerBasicTechnologyElectromagneticInductorBusHolo();
+        registerBasicTechnologyElectromagneticInductorPort();
+        registerBasicTechnologyElectromagneticInductorPortHolo();
+
 
 
 
@@ -2644,6 +2652,104 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("west", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/port/basic_technology_compression_condenser_port_holo_block"));
         model.texture("particle", modLoc("block/machine/basic/dynamic_energetics/basic_technology_compression_condenser/port/basic_technology_compression_condenser_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyElectromagneticInductor() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_electromagnetic_inductor_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/basic_technology_electromagnetic_inductor_down"));
+        model.texture("up", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/basic_technology_electromagnetic_inductor_up"));
+        model.texture("north", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/basic_technology_electromagnetic_inductor_front"));
+        model.texture("south", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/basic_technology_electromagnetic_inductor_side"));
+        model.texture("east", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/basic_technology_electromagnetic_inductor_side"));
+        model.texture("west", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/basic_technology_electromagnetic_inductor_side"));
+        model.texture("particle", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/basic_technology_electromagnetic_inductor_front"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicDurableInsulatedChamber() {
+        BlockModelBuilder model = models().getBuilder("block/basic_durable_insulated_chamber_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_durable_insulated_chamber/basic_durable_insulated_chamber_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_durable_insulated_chamber/basic_durable_insulated_chamber_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_durable_insulated_chamber/basic_durable_insulated_chamber_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_durable_insulated_chamber/basic_durable_insulated_chamber_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_durable_insulated_chamber/basic_durable_insulated_chamber_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_durable_insulated_chamber/basic_durable_insulated_chamber_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_durable_insulated_chamber/basic_durable_insulated_chamber_block"));
+        orientedBlock(DCBlocks.BASIC_DURABLE_INSULATED_CHAMBER_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicDurableInsulatedChamberHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_durable_insulated_chamber_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_durable_insulated_chamber/basic_durable_insulated_chamber_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_durable_insulated_chamber/basic_durable_insulated_chamber_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_durable_insulated_chamber/basic_durable_insulated_chamber_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_durable_insulated_chamber/basic_durable_insulated_chamber_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_durable_insulated_chamber/basic_durable_insulated_chamber_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_durable_insulated_chamber/basic_durable_insulated_chamber_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/abilityblock/basic_durable_insulated_chamber/basic_durable_insulated_chamber_holo_block"));
+        orientedBlock(DCBlocks.BASIC_DURABLE_INSULATED_CHAMBER_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyElectromagneticInductorBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_electromagnetic_inductor_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/bus/basic_technology_electromagnetic_inductor_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/bus/basic_technology_electromagnetic_inductor_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/bus/basic_technology_electromagnetic_inductor_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/bus/basic_technology_electromagnetic_inductor_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/bus/basic_technology_electromagnetic_inductor_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/bus/basic_technology_electromagnetic_inductor_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/bus/basic_technology_electromagnetic_inductor_bus_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyElectromagneticInductorBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_electromagnetic_inductor_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/bus/basic_technology_electromagnetic_inductor_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/bus/basic_technology_electromagnetic_inductor_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/bus/basic_technology_electromagnetic_inductor_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/bus/basic_technology_electromagnetic_inductor_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/bus/basic_technology_electromagnetic_inductor_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/bus/basic_technology_electromagnetic_inductor_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/bus/basic_technology_electromagnetic_inductor_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyElectromagneticInductorPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_electromagnetic_inductor_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/port/basic_technology_electromagnetic_inductor_port_block"));
+        model.texture("up", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/port/basic_technology_electromagnetic_inductor_port_block"));
+        model.texture("north", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/port/basic_technology_electromagnetic_inductor_port_block"));
+        model.texture("south", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/port/basic_technology_electromagnetic_inductor_port_block"));
+        model.texture("east", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/port/basic_technology_electromagnetic_inductor_port_block"));
+        model.texture("west", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/port/basic_technology_electromagnetic_inductor_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/port/basic_technology_electromagnetic_inductor_port_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyElectromagneticInductorPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_electromagnetic_inductor_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/port/basic_technology_electromagnetic_inductor_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/port/basic_technology_electromagnetic_inductor_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/port/basic_technology_electromagnetic_inductor_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/port/basic_technology_electromagnetic_inductor_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/port/basic_technology_electromagnetic_inductor_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/port/basic_technology_electromagnetic_inductor_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/dynamic_energetics/basic_technology_electromagnetic_inductor/port/basic_technology_electromagnetic_inductor_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
     

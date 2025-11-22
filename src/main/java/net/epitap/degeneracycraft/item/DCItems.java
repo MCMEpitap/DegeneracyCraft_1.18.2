@@ -897,6 +897,7 @@ public class DCItems extends CreativeModeTab {
 
     public static final RegistryObject<Item> BASIC_POWER_STEAM_GENERATOR_CIRCUIT = ITEMS.register("basic_power_steam_generator_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_CIRCUIT = ITEMS.register("basic_technology_compression_condenser_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_CIRCUIT = ITEMS.register("basic_technology_electromagnetic_inductor_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
 
 

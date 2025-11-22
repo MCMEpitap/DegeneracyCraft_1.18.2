@@ -21,6 +21,9 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.ba
 import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_technology_compression_condenser.bus.BasicTechnologyCompressionCondenserBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_technology_compression_condenser.bus.BasicTechnologyCompressionCondenserBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_technology_compression_condenser.port.BasicTechnologyCompressionCondenserPortType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.bus.BasicTechnologyElectromagneticInductorBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.bus.BasicTechnologyElectromagneticInductorBusType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.port.BasicTechnologyElectromagneticInductorPortType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_element_processor.bus.BasicTechnologyMachineElementProcessorBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_element_processor.bus.BasicTechnologyMachineElementProcessorBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_element_processor.port.BasicTechnologyMachineElementProcessorPortType;
@@ -88,6 +91,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
     protected PortSetLazyOptional<BasicPowerSteamGeneratorBusEnergyStorage> basicPowerSteamGeneratorBusEnergyStorageStored;
     protected PortSetLazyOptional<BasicTechnologyCompressionCondenserBusEnergyStorage> basicTechnologyCompressionCondenserBusEnergyStorageStored;
+    protected PortSetLazyOptional<BasicTechnologyElectromagneticInductorBusEnergyStorage> basicTechnologyElectromagneticInductorBusEnergyStorageStored;
 
 
 
@@ -136,6 +140,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
         basicPowerSteamGeneratorBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicTechnologyCompressionCondenserBusEnergyStorageStored = new PortSetLazyOptional<>();
+        basicTechnologyElectromagneticInductorBusEnergyStorageStored = new PortSetLazyOptional<>();
 
 
 
@@ -237,6 +242,16 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
             }
         }
         if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicTechnologyCompressionCondenserPortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityEnergy.ENERGY && hasType(BasicTechnologyElectromagneticInductorBusType.INSTANCE)) {
+            if (side != null) {
+                return basicTechnologyElectromagneticInductorBusEnergyStorageStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicTechnologyElectromagneticInductorPortType.INSTANCE)) {
             if (side != null) {
                 return itemStored.get(side).cast();
             }
@@ -460,10 +475,17 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 }
             }
         }
-        if (hasType(BasicPowerSteamGeneratorBusType.INSTANCE)) {
+        if (hasType(BasicTechnologyCompressionCondenserBusType.INSTANCE)) {
             for (Direction side : Direction.values()) {
                 if (portExtracting(side)) {
                     basicTechnologyCompressionCondenserBusEnergyStorageStored.get(side).ifPresent(BasicTechnologyCompressionCondenserBusEnergyStorage::tick);
+                }
+            }
+        }
+        if (hasType(BasicTechnologyElectromagneticInductorBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    basicTechnologyElectromagneticInductorBusEnergyStorageStored.get(side).ifPresent(BasicTechnologyElectromagneticInductorBusEnergyStorage::tick);
                 }
             }
         }
@@ -603,6 +625,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicTechnologyCompressionCondenserPortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
         }
+        if (hasType(BasicTechnologyElectromagneticInductorBusType.INSTANCE)) {
+            basicTechnologyElectromagneticInductorBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicTechnologyElectromagneticInductorBusEnergyStorage(this, storage));
+        }
+        if (hasType(BasicTechnologyElectromagneticInductorPortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
+        }
 
 
 
@@ -734,6 +762,13 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicTechnologyCompressionCondenserPortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
         }
+        if (hasType(BasicTechnologyElectromagneticInductorBusType.INSTANCE)) {
+            basicTechnologyElectromagneticInductorBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicTechnologyElectromagneticInductorBusEnergyStorage(this, side));
+        }
+        if (hasType(BasicTechnologyElectromagneticInductorPortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
+        }
+
 
 
 
@@ -839,6 +874,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
         basicPowerSteamGeneratorBusEnergyStorageStored.invalidate();
         basicTechnologyCompressionCondenserBusEnergyStorageStored.invalidate();
+        basicTechnologyElectromagneticInductorBusEnergyStorageStored.invalidate();
 
 
 

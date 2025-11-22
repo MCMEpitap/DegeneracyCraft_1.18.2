@@ -1024,7 +1024,19 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_BLOCK.get(), "基本技術圧縮凝縮機ポート");
         add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_HOLO_BLOCK.get(), "基本技術圧縮凝縮機ポート (ホログラム)");
         add(DCItems.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_CIRCUIT.get(), "基本技術圧縮凝縮機回路");
-
+        
+        add(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BLOCK.get(), "基本技術電磁誘導機");
+        add("tooltip." + "degeneracycraft." + "basic_technology_electromagnetic_inductor_block",
+                "基本的な電磁誘導機. 電力を磁力に変換し、加工に用いる.");
+        add(DCBlocks.BASIC_DURABLE_INSULATED_CHAMBER_BLOCK.get(), "基本耐用断熱室");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_electromagnetic_inductor_block",
+                "基本技術電磁誘導機用");
+        add(DCBlocks.BASIC_DURABLE_INSULATED_CHAMBER_HOLO_BLOCK.get(), "基本耐用断熱室 (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_BLOCK.get(), "基本技術電磁誘導機バス");
+        add(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_HOLO_BLOCK.get(), "基本技術電磁誘導機バス (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_BLOCK.get(), "基本技術電磁誘導機ポート");
+        add(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_HOLO_BLOCK.get(), "基本技術電磁誘導機ポート (ホログラム)");
+        add(DCItems.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_CIRCUIT.get(), "基本技術電磁誘導機回路");
         
         
         
@@ -1211,6 +1223,11 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("jei." + "degeneracycraft_basic_performance_chemical_reactor", "基本性能化学反応機 レシピ");
         add("jei." + "degeneracycraft_basic_performance_electrolyser", "基本性能電解槽 レシピ");
         add("jei." + "degeneracycraft_basic_performance_compound_purifier", "基本性能化合物精製機 レシピ");
+
+
+
+        add("jei." + "degeneracycraft_basic_technology_compression_condenser", "基本技術圧縮凝縮機 レシピ");
+        add("jei." + "degeneracycraft_basic_technology_electromagnetic_inductor", "基本技術電磁誘導機 レシピ");
 
 
         add("jei." + "degeneracycraft_basic_technology_machine_manufacturer", "基本技術機械製造機 レシピ");

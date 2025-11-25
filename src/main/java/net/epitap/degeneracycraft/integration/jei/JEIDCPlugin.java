@@ -40,6 +40,8 @@ import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_perf
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserScreen;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineScreen;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineMenu;
@@ -97,6 +99,9 @@ import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_per
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipeTransferHandler;
+import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipeTransferHandler;
@@ -199,6 +204,13 @@ public class JEIDCPlugin implements IModPlugin {
                 BasicPerformanceElectricArcFurnaceRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
                 BasicPerformanceFormingMachineRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+
+
+
+
+
+        registration.addRecipeCategories(new
+                BasicTechnologySuspectedMagicCondenserRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
 //        registration.addRecipeCategories(new
 //                BasicPowerSteamGeneratorMultiblockStructureCategory(registration.getJeiHelpers().getGuiHelper()));
@@ -306,6 +318,12 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipes(new RecipeType<>(BasicPerformanceFormingMachineRecipeCategory.UID, BasicPerformanceFormingMachineRecipe.class), basicPerformanceFormingMachineRecipe);
 
 
+
+
+        List<BasicTechnologySuspectedMagicCondenserRecipe> basicTechnologySuspectedMagicCondenserRecipe =
+                rm.getAllRecipesFor(BasicTechnologySuspectedMagicCondenserRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicTechnologySuspectedMagicCondenserRecipeCategory.UID, BasicTechnologySuspectedMagicCondenserRecipe.class), basicTechnologySuspectedMagicCondenserRecipe);
+
 //        List<BasicPowerSteamGeneratorMultiblockStructure> basicPowerCompositeStructureTypeThermalGeneratorMultiblockStructures =
 //                rm.getAllRecipesFor(BasicPowerSteamGeneratorMultiblockStructure.Type.INSTANCE);
 //        registration.addRecipes(new RecipeType<>(BasicPowerSteamGeneratorMultiblockStructureCategory.UID, BasicPowerSteamGeneratorMultiblockStructure.class), basicPowerCompositeStructureTypeThermalGeneratorMultiblockStructures);
@@ -364,6 +382,9 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeClickArea(BasicPerformanceFormingMachineScreen.class, 64, 20, 29, 8, BasicPerformanceFormingMachineRecipeCategory.UID);
 
 
+
+        registration.addRecipeClickArea(BasicTechnologySuspectedMagicCondenserScreen.class, 64, 20, 29, 8, BasicTechnologySuspectedMagicCondenserRecipeCategory.UID);
+
     }
 
     @SuppressWarnings("removal")
@@ -408,6 +429,10 @@ public class JEIDCPlugin implements IModPlugin {
 
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get()), BasicPerformanceElectricArcFurnaceRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK.get()), BasicPerformanceFormingMachineRecipeCategory.UID);
+
+
+
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BLOCK.get()), BasicTechnologySuspectedMagicCondenserRecipeCategory.UID);
     }
 
     @Override
@@ -594,6 +619,18 @@ public class JEIDCPlugin implements IModPlugin {
                         6, 36
                 ),
                 BasicPerformanceFormingMachineRecipeCategory.TYPE
+        );
+
+
+
+
+        registration.addRecipeTransferHandler(
+                new BasicTechnologySuspectedMagicCondenserRecipeTransferHandler<>(
+                        BasicTechnologySuspectedMagicCondenserMenu.class,
+                        0, 2,
+                        4, 36
+                ),
+                BasicTechnologySuspectedMagicCondenserRecipeCategory.TYPE
         );
 
 

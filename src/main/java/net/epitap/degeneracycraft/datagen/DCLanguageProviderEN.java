@@ -1161,7 +1161,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get(), "Basic Performance Rock Crasher");
         add("tooltip." + "degeneracycraft." + "basic_performance_rock_crasher_block",
-                "Basic Performance Rock Crasher. Effective use of stones.");
+                "Basic Rock Crasher. Effective use of stones.");
         add(DCBlocks.BASIC_CRASHING_BASE_BLOCK.get(), "Basic Crashing Base");
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_rock_crasher_block",
                 "For Basic Performance Rock Crasher");
@@ -1200,7 +1200,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK.get(), "Basic Performance Forming Machine");
         add("tooltip." + "degeneracycraft." + "basic_performance_forming_machine_block",
-                "Basic Performance Forming Machine. Pressure induced shape change of matter.");
+                "Basic Forming Machine. Pressure induced shape change of matter.");
         add(DCBlocks.BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_BLOCK.get(), "Basic Precision Extrusion Assist System");
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_forming_machine_block",
                 "Basic Performance Forming Machine");
@@ -1210,6 +1210,22 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK.get(), "Basic Performance Forming Machine Port");
         add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_HOLO_BLOCK.get(), "Basic Performance Forming Machine Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_FORMING_MACHINE_CIRCUIT.get(), "Basic Performance Forming Machine Circuit");
+
+
+
+        add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BLOCK.get(), "Basic Technology Suspected Magic Condenser");
+        add("tooltip." + "degeneracycraft." + "basic_technology_suspected_magic_condenser_block",
+                "Basic Suspected Magic Condenser. Extract suspected magical power from the item.");
+        add(DCBlocks.BASIC_EFFICIENCY_SEALED_EXTRACTION_CASE_BLOCK.get(), "Basic Efficiency Sealed Extraction Case");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_suspected_magic_condenser_block",
+                "For Basic Technology Suspected Magic Condenser");
+        add(DCBlocks.BASIC_EFFICIENCY_SEALED_EXTRACTION_CASE_HOLO_BLOCK.get(), "Basic Efficiency Sealed Extraction Case (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_BLOCK.get(), "Basic Technology Suspected Magic Condenser Bus");
+        add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_HOLO_BLOCK.get(), "Basic Technology Suspected Magic Condenser Bus (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_BLOCK.get(), "Basic Technology Suspected Magic Condenser Port");
+        add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_HOLO_BLOCK.get(), "Basic Technology Suspected Magic Condenser Port (Hologram)");
+        add(DCItems.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_CIRCUIT.get(), "Basic Technology Suspected Magic Condenser回路");
+
 
 
         add(DCUniqueBlocks.SIMPLE_TELESCOPE_RIGHT_PILLAR.get(), "Simple Telescope Right Pillar");
@@ -1266,6 +1282,13 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add("jei." + "degeneracycraft_basic_performance_electric_arc_furnace", "Basic Performance Electric Arc Furnace Recipe");
         add("jei." + "degeneracycraft_basic_performance_forming_machine", "Basic Performance Forming Machine Recipe");
+
+
+
+
+        add("jei." + "basic_technology_suspected_magic_condenser", "Basic Technology Suspected Magic Condenser Recipe");
+
+
 
 
         add("itemGroup." + "degeneracycraft_material", "Degeneracy Craft Material");

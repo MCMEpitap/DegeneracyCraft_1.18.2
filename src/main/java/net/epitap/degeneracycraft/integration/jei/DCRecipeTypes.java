@@ -19,6 +19,7 @@ import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_per
 import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -100,7 +101,18 @@ public class DCRecipeTypes {
             SERIALIZERS.register("basic_performance_electric_arc_furnace_recipe", () -> BasicPerformanceElectricArcFurnaceRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<BasicPerformanceFormingMachineRecipe>> BASIC_PERFORMANCE_FORMING_MACHINE_SERIALIZER =
             SERIALIZERS.register("basic_performance_forming_machine_recipe", () -> BasicPerformanceFormingMachineRecipe.Serializer.INSTANCE);
+
+
+
+
+
+
+    public static final RegistryObject<RecipeSerializer<BasicTechnologySuspectedMagicCondenserRecipe>> BASIC_TECHNOLOGY_SUSPECTRD_MAGIC_CONDENSER =
+            SERIALIZERS.register("basic_technology_suspected_magic_condenser_recipe", () -> BasicTechnologySuspectedMagicCondenserRecipe.Serializer.INSTANCE);
 //
+
+
+
 //    public static final RegistryObject<RecipeSerializer<BasicPowerSteamGeneratorMultiblockStructure>> BASIC_POWER_COMPOSITE_STRUCTURE_TYPE_THERMAL_GENERATOR_MULTIBLOCK_STRUCTURE_SERIALIZER =
 //            SERIALIZERS.register("basic_power_thermal_generator_multiblock_structure", () -> BasicPowerSteamGeneratorMultiblockStructure.Serializer.INSTANCE);
 

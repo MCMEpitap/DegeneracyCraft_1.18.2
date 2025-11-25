@@ -22,6 +22,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_perf
 import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineBlockEntity;
@@ -81,6 +82,8 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_electric_arc_furnace.port.BasicPerformanceElectricArcFurnacePortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.bus.BasicPerformanceFormingMachineBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.port.BasicPerformanceFormingMachinePortBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.bus.BasicTechnologySuspectedMagicCondenserBusBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.port.BasicTechnologySuspectedMagicCondenserPortBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -404,6 +407,30 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicPerformanceFormingMachinePortBlockEntity>> BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_forming_machine_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceFormingMachinePortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK.get()).build(null));
+
+
+
+    public static final RegistryObject<BlockEntityType<BasicTechnologySuspectedMagicCondenserBlockEntity>> BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_suspected_magic_condenser_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologySuspectedMagicCondenserBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicTechnologySuspectedMagicCondenserBusBlockEntity>> BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_suspected_magic_condenser_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologySuspectedMagicCondenserBusBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicTechnologySuspectedMagicCondenserPortBlockEntity>> BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_suspected_magic_condenser_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologySuspectedMagicCondenserPortBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_BLOCK.get()).build(null));
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static final RegistryObject<BlockEntityType<InfinityPoweredAllInOneCompressorMachineBlockEntity>> INFINITY_POWERED_ALL_IN_ONE_COMPRESSOR_MACHINE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("infinity_powered_all_in_one_compressor_machine_block_entity", () ->

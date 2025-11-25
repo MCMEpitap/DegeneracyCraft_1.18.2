@@ -329,6 +329,16 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicPerformanceFormingMachinePortHolo();
 
 
+
+        registerBasicTechnologySuspectedMagicCondenser();
+        registerBasicEfficiencySealedExtractionCase();
+        registerBasicEfficiencySealedExtractionCaseHolo();
+        registerBasicTechnologySuspectedMagicCondenserBus();
+        registerBasicTechnologySuspectedMagicCondenserBusHolo();
+        registerBasicTechnologySuspectedMagicCondenserPort();
+        registerBasicTechnologySuspectedMagicCondenserPortHolo();
+
+
 //        registerTestBus();
     }
 
@@ -3893,6 +3903,109 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_holo_block"));
         model.texture("particle", modLoc("block/machine/basic/hybrid_physics/basic_performance_forming_machine/port/basic_performance_forming_machine_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+
+
+
+
+    private void registerBasicTechnologySuspectedMagicCondenser() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_suspected_magic_condenser_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/basic_technology_suspected_magic_condenser_down"));
+        model.texture("up", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/basic_technology_suspected_magic_condenser_up"));
+        model.texture("north", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/basic_technology_suspected_magic_condenser_front"));
+        model.texture("south", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/basic_technology_suspected_magic_condenser_side"));
+        model.texture("east", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/basic_technology_suspected_magic_condenser_side"));
+        model.texture("west", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/basic_technology_suspected_magic_condenser_side"));
+        model.texture("particle", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/basic_technology_suspected_magic_condenser_front"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicEfficiencySealedExtractionCase() {
+        BlockModelBuilder model = models().getBuilder("block/basic_efficiency_sealed_extraction_case_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_efficiency_sealed_extraction_case/basic_efficiency_sealed_extraction_case_block"));
+        model.texture("up", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_efficiency_sealed_extraction_case/basic_efficiency_sealed_extraction_case_block"));
+        model.texture("north", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_efficiency_sealed_extraction_case/basic_efficiency_sealed_extraction_case_block"));
+        model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_efficiency_sealed_extraction_case/basic_efficiency_sealed_extraction_case_block"));
+        model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_efficiency_sealed_extraction_case/basic_efficiency_sealed_extraction_case_block"));
+        model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_efficiency_sealed_extraction_case/basic_efficiency_sealed_extraction_case_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_efficiency_sealed_extraction_case/basic_efficiency_sealed_extraction_case_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_SEALED_EXTRACTION_CASE_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicEfficiencySealedExtractionCaseHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_efficiency_sealed_extraction_case_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_efficiency_sealed_extraction_case/basic_efficiency_sealed_extraction_case_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_efficiency_sealed_extraction_case/basic_efficiency_sealed_extraction_case_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_efficiency_sealed_extraction_case/basic_efficiency_sealed_extraction_case_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_efficiency_sealed_extraction_case/basic_efficiency_sealed_extraction_case_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_efficiency_sealed_extraction_case/basic_efficiency_sealed_extraction_case_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_efficiency_sealed_extraction_case/basic_efficiency_sealed_extraction_case_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_efficiency_sealed_extraction_case/basic_efficiency_sealed_extraction_case_holo_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_SEALED_EXTRACTION_CASE_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologySuspectedMagicCondenserBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_suspected_magic_condenser_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/bus/basic_technology_suspected_magic_condenser_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/bus/basic_technology_suspected_magic_condenser_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/bus/basic_technology_suspected_magic_condenser_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/bus/basic_technology_suspected_magic_condenser_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/bus/basic_technology_suspected_magic_condenser_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/bus/basic_technology_suspected_magic_condenser_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/bus/basic_technology_suspected_magic_condenser_bus_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologySuspectedMagicCondenserBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_suspected_magic_condenser_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/bus/basic_technology_suspected_magic_condenser_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/bus/basic_technology_suspected_magic_condenser_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/bus/basic_technology_suspected_magic_condenser_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/bus/basic_technology_suspected_magic_condenser_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/bus/basic_technology_suspected_magic_condenser_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/bus/basic_technology_suspected_magic_condenser_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/bus/basic_technology_suspected_magic_condenser_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+
+    private void registerBasicTechnologySuspectedMagicCondenserPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_suspected_magic_condenser_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/port/basic_technology_suspected_magic_condenser_port_block"));
+        model.texture("up", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/port/basic_technology_suspected_magic_condenser_port_block"));
+        model.texture("north", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/port/basic_technology_suspected_magic_condenser_port_block"));
+        model.texture("south", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/port/basic_technology_suspected_magic_condenser_port_block"));
+        model.texture("east", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/port/basic_technology_suspected_magic_condenser_port_block"));
+        model.texture("west", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/port/basic_technology_suspected_magic_condenser_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/port/basic_technology_suspected_magic_condenser_port_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologySuspectedMagicCondenserPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_suspected_magic_condenser_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/port/basic_technology_suspected_magic_condenser_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/port/basic_technology_suspected_magic_condenser_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/port/basic_technology_suspected_magic_condenser_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/port/basic_technology_suspected_magic_condenser_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/port/basic_technology_suspected_magic_condenser_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/port/basic_technology_suspected_magic_condenser_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/port/basic_technology_suspected_magic_condenser_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
 

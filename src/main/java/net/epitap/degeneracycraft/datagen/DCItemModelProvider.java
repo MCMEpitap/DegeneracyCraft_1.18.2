@@ -1396,6 +1396,24 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_forming_machine_port_holo_block"));
         basicMachineCircuitHybridPhysicsItem(DCItems.BASIC_PERFORMANCE_FORMING_MACHINE_CIRCUIT.get());
 
+
+
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_suspected_magic_condenser_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_SEALED_EXTRACTION_CASE_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_sealed_extraction_case_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_SEALED_EXTRACTION_CASE_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_sealed_extraction_case_holo_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_suspected_magic_condenser_bus_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_suspected_magic_condenser_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_suspected_magic_condenser_port_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_suspected_magic_condenser_port_holo_block"));
+        basicMachineCircuitImitationEngineeringItem(DCItems.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_CIRCUIT.get());
+
 //        withExistingParent(DCBlocks.OVERWORLD_CASSITERITE_ORE.getId().getPath(),
 //                modLoc("block/overworld_cassiterite_ore"));
 //        withExistingParent(DCBlocks.DEEPSLATE_CASSITERITE_ORE.getId().getPath(),
@@ -1742,7 +1760,7 @@ public class DCItemModelProvider extends ItemModelProvider {
     private ItemModelBuilder basicMachineCircuitImitationEngineeringItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
-                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/formal_science/machine_circuit/" + item.getRegistryName().getPath()));
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/formal_science/machine_circuit/imitation_magic_engineering/" + item.getRegistryName().getPath()));
     }
 
     private ItemModelBuilder recipe_tooltip_item(Item item) {

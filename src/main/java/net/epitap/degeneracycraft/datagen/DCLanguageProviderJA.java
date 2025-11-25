@@ -1197,6 +1197,21 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_PERFORMANCE_FORMING_MACHINE_CIRCUIT.get(), "基本性能形成機回路");
 
 
+
+        add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BLOCK.get(), "基本技術疑似魔力凝集機");
+        add("tooltip." + "degeneracycraft." + "basic_technology_suspected_magic_condenser_block",
+                "基本的な疑似魔力凝集機. アイテムから疑似的な魔力を抽出する.");
+        add(DCBlocks.BASIC_EFFICIENCY_SEALED_EXTRACTION_CASE_BLOCK.get(), "基本効率封印抽出ケース");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_suspected_magic_condenser_block",
+                "基本技術疑似魔力凝集機用");
+        add(DCBlocks.BASIC_EFFICIENCY_SEALED_EXTRACTION_CASE_HOLO_BLOCK.get(), "基本効率封印抽出ケース (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_BLOCK.get(), "基本技術疑似魔力凝集機バス");
+        add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_HOLO_BLOCK.get(), "基本技術疑似魔力凝集機バス (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_BLOCK.get(), "基本技術疑似魔力凝集機ポート");
+        add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_HOLO_BLOCK.get(), "基本技術疑似魔力凝集機ポート (ホログラム)");
+        add(DCItems.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_CIRCUIT.get(), "基本技術疑似魔力凝集機回路");
+
+
 //        add(DCBlocks.LOW_STERNGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),"低強度機械用フレーム");
         add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get(), "低強度多構造機械用フレーム");
         add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get(), "低強度多構造機械用ガラス");
@@ -1252,6 +1267,13 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
         add("jei." + "degeneracycraft_basic_performance_electric_arc_furnace", "基本性能電気アーク炉 レシピ");
         add("jei." + "degeneracycraft_basic_performance_forming_machine", "基本性能形成機 レシピ");
+
+
+
+        add("jei." + "basic_technology_suspected_magic_condenser", "基本性能疑似魔力凝集機 レシピ");
+
+
+
 
         add("itemGroup." + "degeneracycraft_material", "Degeneracy Craft 材料");
         add("itemGroup." + "degeneracycraft_machine_elements", "Degeneracy Craft 機械要素");

@@ -23,6 +23,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_perf
 import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineBlock;
+import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserBlock;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlock;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineBlock;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineBlock;
@@ -83,6 +84,8 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_electric_arc_furnace.port.BasicPerformanceElectricArcFurnacePortBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.bus.BasicPerformanceFormingMachineBusBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.port.BasicPerformanceFormingMachinePortBlock;
+import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.bus.BasicTechnologySuspectedMagicCondenserBusBlock;
+import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.port.BasicTechnologySuspectedMagicCondenserPortBlock;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.Registry;
@@ -428,8 +431,8 @@ public class DCBlocks {
     // BasicBiology
     public static final RegistryObject<Block> BASIC_PERFORMANCE_BIO_REACTOR_BLOCK = registerTooltipBasicMachineBlock("basic_performance_bio_reactor_block", () ->
                     new BasicPerformanceBioReactorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
-            "Lv0:3×3×3",
-            "Lv1:3×3×3",
+            "Lv0:5×3×3",
+            "Lv1:5×3×3",
             "Base:Speed ×1.00,Energy Usage ×1.00",
             "Lv0:Speed ×2.00,Energy Usage ×1.50",
             "Lv1:Speed ×3.00,Energy Usage ×2.00",
@@ -456,8 +459,8 @@ public class DCBlocks {
     // BasicChemistry
     public static final RegistryObject<Block> BASIC_PERFORMANCE_CHEMICAL_REACTOR_BLOCK = registerTooltipBasicMachineBlock("basic_performance_chemical_reactor_block", () ->
                     new BasicPerformanceChemicalReactorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
-            "Lv0:3×3×3",
-            "Lv1:3×3×3",
+            "Lv0:5×3×3",
+            "Lv1:5×3×3",
             "Base:Speed ×1.00,Energy Usage ×1.00",
             "Lv0:Speed ×2.00,Energy Usage ×1.50",
             "Lv1:Speed ×3.00,Energy Usage ×2.00",
@@ -837,8 +840,8 @@ public class DCBlocks {
     // BasicGeoScience
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK = registerTooltipBasicMachineBlock("basic_performance_rock_crasher_block", () ->
                     new BasicPerformanceRockCrasherBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
-            "Lv0:3×4×3",
-            "Lv1:3×4×3",
+            "Lv0:3×3×3",
+            "Lv1:3×3×3",
             "Base:Speed ×1.00,Energy Usage ×1.00",
             "Lv0:Speed ×2.00,Energy Usage ×1.50",
             "Lv1:Speed ×3.00,Energy Usage ×2.00",
@@ -926,6 +929,34 @@ public class DCBlocks {
 
     public static final RegistryObject<Block> INFINITY_POWERED_ALL_IN_ONE_COMPRESSOR_MACHINE_BLOCK = registerBlock("infinity_powered_all_in_one_compressor_machine_block", () ->
             new InfinityPoweredAllInOneCompressorMachineBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+
+
+    // Basic Imitation Magic Engineering
+    public static final RegistryObject<Block> BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BLOCK = registerTooltipBasicMachineBlock("basic_technology_suspected_magic_condenser_block", () ->
+                    new BasicTechnologySuspectedMagicCondenserBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "Lv0:3×3×3",
+            "Lv1:3×3×3",
+            "Base:Speed ×1.00,Energy Usage ×1.00",
+            "Lv0:Speed ×2.00,Energy Usage ×1.50",
+            "Lv1:Speed ×3.00,Energy Usage ×2.00",
+            "basic_technology_suspected_magic_condenser_block", "imitation_magic_engineering", "basic");
+    public static final RegistryObject<Block> BASIC_EFFICIENCY_SEALED_EXTRACTION_CASE_BLOCK = registerTooltipMultiblockAbilityBlock("basic_efficiency_sealed_extraction_case_block", () ->
+                    new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "basic_technology_suspected_magic_condenser_block",
+            "imitation_magic_engineering",
+            "basic");
+    public static final RegistryObject<Block> BASIC_EFFICIENCY_SEALED_EXTRACTION_CASE_HOLO_BLOCK = registerHoloBlock("basic_efficiency_sealed_extraction_case_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_BLOCK = registerBlock("basic_technology_suspected_magic_condenser_bus_block", () ->
+            new BasicTechnologySuspectedMagicCondenserBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_HOLO_BLOCK = registerHoloBlock("basic_technology_suspected_magic_condenser_bus_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_BLOCK = registerBlock("basic_technology_suspected_magic_condenser_port_block", () ->
+            new BasicTechnologySuspectedMagicCondenserPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_HOLO_BLOCK = registerHoloBlock("basic_technology_suspected_magic_condenser_port_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+
+
 
 //    public static final RegistryObject<Block> TEST_BLOCK = registerBlock("test_pipe", () ->
 //            new BasicPowerSteamGeneratorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);

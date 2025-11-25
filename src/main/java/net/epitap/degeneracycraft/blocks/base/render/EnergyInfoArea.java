@@ -32,7 +32,7 @@ public class EnergyInfoArea extends InfoArea {
             if (stored >= 1E3F) {
                 return List.of(Component.nullToEmpty(stored / 1E3F + " KFE" + "/" + maxStored / 1E3F + " KFE"));
             }
-            if (stored <= 0.00000001F && stored >= 0F) {
+            if (stored < 1F) {
                 return List.of(Component.nullToEmpty(0 + " FE" + "/" + maxStored / 1E3F + " KFE"));
             }
 
@@ -46,7 +46,7 @@ public class EnergyInfoArea extends InfoArea {
             if (stored < 1E6F && stored >= 1E3F) {
                 return List.of(Component.nullToEmpty(stored / 1E3F + " KFE" + "/" + maxStored / 1E6F + " MFE"));
             }
-            if (stored <= 0.00000001F && stored >= 0F) {
+            if (stored < 1F) {
                 return List.of(Component.nullToEmpty(0 + " FE" + "/" + maxStored / 1E6F + " MFE"));
             }
             return List.of(Component.nullToEmpty(stored + "/" + maxStored / 1E6F + " MFE"));
@@ -62,23 +62,7 @@ public class EnergyInfoArea extends InfoArea {
             if (stored < 1E6F && stored >= 1E3F) {
                 return List.of(Component.nullToEmpty(stored / 1E3F + " KFE" + "/" + maxStored / 1E9F + " GFE"));
             }
-            if (stored <= 0.00000001F && stored >= 0F) {
-                return List.of(Component.nullToEmpty(0 + " FE" + "/" + maxStored + " GFE"));
-            }
-            return List.of(Component.nullToEmpty(stored + "/" + maxStored / 1E9F + " GFE"));
-        }
-
-        if (maxStored < 1E12F && maxStored >= 1E9F) {
-            if (stored < 1E12F && stored >= 1E9F) {
-                return List.of(Component.nullToEmpty(stored / 1E9F + " GFE" + "/" + maxStored / 1E9F + " GFE"));
-            }
-            if (stored < 1E9F && stored >= 1E6F) {
-                return List.of(Component.nullToEmpty(stored / 1E6F + " MFE" + "/" + maxStored / 1E9F + " GFE"));
-            }
-            if (stored < 1E6F && stored >= 1E3F) {
-                return List.of(Component.nullToEmpty(stored / 1E3F + " KFE" + "/" + maxStored / 1E9F + " GFE"));
-            }
-            if (stored <= 0.00000001F && stored >= 0F) {
+            if (stored < 1F) {
                 return List.of(Component.nullToEmpty(0 + " FE" + "/" + maxStored + " GFE"));
             }
             return List.of(Component.nullToEmpty(stored + "/" + maxStored / 1E9F + " GFE"));
@@ -97,7 +81,7 @@ public class EnergyInfoArea extends InfoArea {
             if (stored < 1E6F && stored >= 1E3F) {
                 return List.of(Component.nullToEmpty(stored / 1E3F + " KFE" + "/" + maxStored / 1E12F + " TFE"));
             }
-            if (stored <= 0.00000001F && stored >= 0F) {
+            if (stored < 1F) {
                 return List.of(Component.nullToEmpty(0 + " FE" + "/" + maxStored + " TFE"));
             }
             return List.of(Component.nullToEmpty(stored + "/" + maxStored / 1E12F + " TFE"));
@@ -119,7 +103,7 @@ public class EnergyInfoArea extends InfoArea {
             if (stored < 1E6F && stored >= 1E3F) {
                 return List.of(Component.nullToEmpty(stored / 1E3F + " KFE" + "/" + maxStored / 1E15F + " PFE"));
             }
-            if (stored <= 0.00000001F && stored >= 0F) {
+            if (stored < 1F) {
                 return List.of(Component.nullToEmpty(0 + " FE" + "/" + maxStored + " PFE"));
             }
             return List.of(Component.nullToEmpty(stored + "/" + maxStored / 1E15F + " PFE"));

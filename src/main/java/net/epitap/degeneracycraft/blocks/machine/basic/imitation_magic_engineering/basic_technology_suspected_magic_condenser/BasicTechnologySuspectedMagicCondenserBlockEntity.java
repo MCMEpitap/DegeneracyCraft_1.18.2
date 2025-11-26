@@ -3,7 +3,7 @@ package net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineer
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserRecipe;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -101,7 +101,7 @@ public class BasicTechnologySuspectedMagicCondenserBlockEntity extends BlockEnti
                             itemHandler.isItemValid(0, stack))));
 
     public BasicTechnologySuspectedMagicCondenserBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+        super(DCBlockEntities.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {
@@ -229,8 +229,8 @@ public class BasicTechnologySuspectedMagicCondenserBlockEntity extends BlockEnti
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologySuspectedMagicCondenserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologySuspectedMagicCondenserRecipe.Type.INSTANCE, inventory, level);
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
@@ -266,8 +266,8 @@ public class BasicTechnologySuspectedMagicCondenserBlockEntity extends BlockEnti
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologySuspectedMagicCondenserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologySuspectedMagicCondenserRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return blockEntity.data.get(0) >= match.get().getRequiredTime() * 20;
@@ -282,8 +282,8 @@ public class BasicTechnologySuspectedMagicCondenserBlockEntity extends BlockEnti
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologySuspectedMagicCondenserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologySuspectedMagicCondenserRecipe.Type.INSTANCE, inventory, level);
 
         return match.isPresent();
     }
@@ -295,8 +295,8 @@ public class BasicTechnologySuspectedMagicCondenserBlockEntity extends BlockEnti
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologySuspectedMagicCondenserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologySuspectedMagicCondenserRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount();
     }
@@ -308,8 +308,8 @@ public class BasicTechnologySuspectedMagicCondenserBlockEntity extends BlockEnti
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologySuspectedMagicCondenserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologySuspectedMagicCondenserRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
     }
@@ -321,8 +321,8 @@ public class BasicTechnologySuspectedMagicCondenserBlockEntity extends BlockEnti
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologySuspectedMagicCondenserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologySuspectedMagicCondenserRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
@@ -347,8 +347,8 @@ public class BasicTechnologySuspectedMagicCondenserBlockEntity extends BlockEnti
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologySuspectedMagicCondenserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologySuspectedMagicCondenserRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(1).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(1).getMaxStackSize();
     }
@@ -360,14 +360,14 @@ public class BasicTechnologySuspectedMagicCondenserBlockEntity extends BlockEnti
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicTechnologySuspectedMagicCondenserRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologySuspectedMagicCondenserRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(1).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(1).isEmpty();
     }
 
     public void insertRecipeInputsFromPlayer(Player player, Recipe<?> recipe, boolean shift) {
-        if (!(recipe instanceof BasicPerformanceElectricArcFurnaceRecipe recipeData)) return;
+        if (!(recipe instanceof BasicTechnologySuspectedMagicCondenserRecipe recipeData)) return;
 
         player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(playerInv -> {
             this.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(machineInv -> {

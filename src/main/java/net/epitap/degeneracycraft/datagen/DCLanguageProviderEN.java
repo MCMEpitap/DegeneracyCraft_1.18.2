@@ -792,6 +792,18 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.SIMPLE_PROCESSING_CIRCUIT.get(), "Simple Processing Circuit");
 
 
+
+
+        add(DCItems.SIMPLE_PSEUDO_MAGIC_THUNDER_CRYSTAL.get(), "Simple Pseudo Magic Thunder Crystal");
+        add(DCItems.SIMPLE_PSEUDO_MAGIC_WIND_CRYSTAL.get(), "Simple Pseudo Magic Wind Crystal");
+        add(DCItems.SIMPLE_PSEUDO_MAGIC_WATER_CRYSTAL.get(), "Simple Pseudo Magic Water Crystal");
+        add(DCItems.SIMPLE_PSEUDO_MAGIC_NIL_CRYSTAL.get(), "Simple Pseudo Magic Nil Crystal");
+        add(DCItems.SIMPLE_PSEUDO_MAGIC_DARK_CRYSTAL.get(), "Simple Pseudo Magic Dark Crystal");
+        add(DCItems.SIMPLE_PSEUDO_MAGIC_ICE_CRYSTAL.get(), "Simple Pseudo Magic Ice Crystal");
+        add(DCItems.SIMPLE_PSEUDO_MAGIC_EARTH_CRYSTAL.get(), "Simple Pseudo Magic Earth Crystal");
+        add(DCItems.SIMPLE_PSEUDO_MAGIC_FIRE_CRYSTAL.get(), "Simple Pseudo Magic Fire Crystal");
+        add(DCItems.SIMPLE_PSEUDO_MAGIC_LIGHT_CRYSTAL.get(), "Simple Pseudo Magic Light Crystal");
+
         add(DCBlocks.OVERWORLD_GRAVITATION_ORE.get(),"Gravitation Ore");
         add(DCBlocks.OVERWORLD_CASSITERITE_ORE.get(), "Cassiterite Ore");
         add(DCBlocks.DEEPSLATE_CASSITERITE_ORE.get(), "DeepSlate Cassiterite Ore");
@@ -1213,6 +1225,20 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
 
 
+
+        add(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BLOCK.get(), "Basic Technology Imitation Magic Engraver");
+        add("tooltip." + "degeneracycraft." + "basic_technology_imitation_magic_engraver_block",
+                "Basic Imitation Magic Engraver. Engrave the metaphysical magical circuitry.");
+        add(DCBlocks.BASIC_OUTPUT_MYSTIC_OPTICAL_PROJECTION_DEVICE_BLOCK.get(), "Basic Output Mystic Optical Projection Device");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_imitation_magic_engraver_block",
+                "For Basic Technology Imitation Magic Engraver");
+        add(DCBlocks.BASIC_OUTPUT_MYSTIC_OPTICAL_PROJECTION_DEVICE_HOLO_BLOCK.get(), "Basic Output Mystic Optical Projection Device (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BUS_BLOCK.get(), "Basic Technology Imitation Magic Engraver Bus");
+        add(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BUS_HOLO_BLOCK.get(), "Basic Technology Imitation Magic Engraver Bus (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_PORT_BLOCK.get(), "Basic Technology Imitation Magic Engraver Port");
+        add(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_PORT_HOLO_BLOCK.get(), "Basic Technology Imitation Magic Engraver Port (Hologram)");
+        add(DCItems.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_CIRCUIT.get(), "Basic Technology Imitation Magic Engraver Circuit");
+        
         add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BLOCK.get(), "Basic Technology Suspected Magic Condenser");
         add("tooltip." + "degeneracycraft." + "basic_technology_suspected_magic_condenser_block",
                 "Basic Suspected Magic Condenser. Extract suspected magical power from the item.");

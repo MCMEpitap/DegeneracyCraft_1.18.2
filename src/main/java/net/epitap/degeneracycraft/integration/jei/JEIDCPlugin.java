@@ -40,6 +40,8 @@ import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_perf
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserScreen;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineMenu;
@@ -99,6 +101,9 @@ import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_per
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipeTransferHandler;
+import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserRecipeTransferHandler;
@@ -208,7 +213,8 @@ public class JEIDCPlugin implements IModPlugin {
 
 
 
-
+        registration.addRecipeCategories(new
+                BasicTechnologyImitationMagicEngraverRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
                 BasicTechnologySuspectedMagicCondenserRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
@@ -319,7 +325,9 @@ public class JEIDCPlugin implements IModPlugin {
 
 
 
-
+        List<BasicTechnologyImitationMagicEngraverRecipe> basicTechnologyImitationMagicEngraverRecipe =
+                rm.getAllRecipesFor(BasicTechnologyImitationMagicEngraverRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicTechnologyImitationMagicEngraverRecipeCategory.UID, BasicTechnologyImitationMagicEngraverRecipe.class), basicTechnologyImitationMagicEngraverRecipe);
         List<BasicTechnologySuspectedMagicCondenserRecipe> basicTechnologySuspectedMagicCondenserRecipe =
                 rm.getAllRecipesFor(BasicTechnologySuspectedMagicCondenserRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicTechnologySuspectedMagicCondenserRecipeCategory.UID, BasicTechnologySuspectedMagicCondenserRecipe.class), basicTechnologySuspectedMagicCondenserRecipe);
@@ -382,7 +390,7 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeClickArea(BasicPerformanceFormingMachineScreen.class, 64, 20, 29, 8, BasicPerformanceFormingMachineRecipeCategory.UID);
 
 
-
+        registration.addRecipeClickArea(BasicTechnologyImitationMagicEngraverScreen.class, 64, 20, 29, 8, BasicTechnologyImitationMagicEngraverRecipeCategory.UID);
         registration.addRecipeClickArea(BasicTechnologySuspectedMagicCondenserScreen.class, 64, 20, 29, 8, BasicTechnologySuspectedMagicCondenserRecipeCategory.UID);
 
     }
@@ -431,7 +439,7 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK.get()), BasicPerformanceFormingMachineRecipeCategory.UID);
 
 
-
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BLOCK.get()), BasicTechnologyImitationMagicEngraverRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BLOCK.get()), BasicTechnologySuspectedMagicCondenserRecipeCategory.UID);
     }
 
@@ -623,7 +631,14 @@ public class JEIDCPlugin implements IModPlugin {
 
 
 
-
+        registration.addRecipeTransferHandler(
+                new BasicTechnologyImitationMagicEngraverRecipeTransferHandler<>(
+                        BasicTechnologyImitationMagicEngraverMenu.class,
+                        0, 5,
+                        8, 36
+                ),
+                BasicTechnologyImitationMagicEngraverRecipeCategory.TYPE
+        );
         registration.addRecipeTransferHandler(
                 new BasicTechnologySuspectedMagicCondenserRecipeTransferHandler<>(
                         BasicTechnologySuspectedMagicCondenserMenu.class,

@@ -779,6 +779,19 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
 
+        add(DCItems.SIMPLE_PSEUDO_MAGIC_THUNDER_CRYSTAL.get(), "簡易模造魔導雷結晶");
+        add(DCItems.SIMPLE_PSEUDO_MAGIC_WIND_CRYSTAL.get(), "簡易模造魔導風結晶");
+        add(DCItems.SIMPLE_PSEUDO_MAGIC_WATER_CRYSTAL.get(), "簡易模造魔導水結晶");
+        add(DCItems.SIMPLE_PSEUDO_MAGIC_NIL_CRYSTAL.get(), "簡易模造魔導無結晶");
+        add(DCItems.SIMPLE_PSEUDO_MAGIC_DARK_CRYSTAL.get(), "簡易模造魔導闇結晶");
+        add(DCItems.SIMPLE_PSEUDO_MAGIC_ICE_CRYSTAL.get(), "簡易模造魔導氷結晶");
+        add(DCItems.SIMPLE_PSEUDO_MAGIC_EARTH_CRYSTAL.get(), "簡易模造魔導土結晶");
+        add(DCItems.SIMPLE_PSEUDO_MAGIC_FIRE_CRYSTAL.get(), "簡易模造魔導火結晶");
+        add(DCItems.SIMPLE_PSEUDO_MAGIC_LIGHT_CRYSTAL.get(), "簡易模造魔導光結晶");
+
+
+
+
         add(DCItems.EMPTY_CONTAINER.get(), "空の容器");
         add(DCItems.WATER_CONTAINER.get(), "水容器");
 
@@ -1198,6 +1211,21 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
 
+
+        add(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BLOCK.get(), "基本技術模造魔導刻印機");
+        add("tooltip." + "degeneracycraft." + "basic_technology_imitation_magic_engraver_block",
+                "基本的な模造魔導刻印機. 形而的な魔導回路を刻印する.");
+        add(DCBlocks.BASIC_OUTPUT_MYSTIC_OPTICAL_PROJECTION_DEVICE_BLOCK.get(), "基本出力神秘光学投影装置");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_imitation_magic_engraver_block",
+                "基本技術模造魔導刻印機用");
+        add(DCBlocks.BASIC_OUTPUT_MYSTIC_OPTICAL_PROJECTION_DEVICE_HOLO_BLOCK.get(), "基本出力神秘光学投影装置 (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BUS_BLOCK.get(), "基本技術模造魔導刻印機バス");
+        add(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BUS_HOLO_BLOCK.get(), "基本技術模造魔導刻印機バス (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_PORT_BLOCK.get(), "基本技術模造魔導刻印機ポート");
+        add(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_PORT_HOLO_BLOCK.get(), "基本技術模造魔導刻印機ポート (ホログラム)");
+        add(DCItems.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_CIRCUIT.get(), "基本技術模造魔導刻印機回路");
+
+
         add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BLOCK.get(), "基本技術疑似魔力凝集機");
         add("tooltip." + "degeneracycraft." + "basic_technology_suspected_magic_condenser_block",
                 "基本的な疑似魔力凝集機. アイテムから疑似的な魔力を抽出する.");
@@ -1270,7 +1298,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
 
-        add("jei." + "basic_technology_suspected_magic_condenser", "基本性能疑似魔力凝集機 レシピ");
+        add("jei." + "basic_technology_imitation_magic_engraver", "基本技術模造魔導刻印機 レシピ");
+        add("jei." + "basic_technology_suspected_magic_condenser", "基本技術疑似魔力凝集機 レシピ");
 
 
 

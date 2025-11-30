@@ -880,6 +880,23 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> SIMPLE_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT = ITEMS.register("simple_imitation_magic_engineering_memory_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> SIMPLE_PROCESSING_CIRCUIT = ITEMS.register("simple_processing_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
+
+
+
+
+
+    public static final RegistryObject<Item> SIMPLE_PSEUDO_MAGIC_THUNDER_CRYSTAL = ITEMS.register("simple_pseudo_magic_thunder_crystal", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_PSEUDO_MAGIC_WIND_CRYSTAL = ITEMS.register("simple_pseudo_magic_wind_crystal", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_PSEUDO_MAGIC_WATER_CRYSTAL = ITEMS.register("simple_pseudo_magic_water_crystal", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_PSEUDO_MAGIC_NIL_CRYSTAL = ITEMS.register("simple_pseudo_magic_nil_crystal", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_PSEUDO_MAGIC_DARK_CRYSTAL = ITEMS.register("simple_pseudo_magic_dark_crystal", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_PSEUDO_MAGIC_ICE_CRYSTAL = ITEMS.register("simple_pseudo_magic_ice_crystal", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_PSEUDO_MAGIC_EARTH_CRYSTAL = ITEMS.register("simple_pseudo_magic_earth_crystal", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_PSEUDO_MAGIC_FIRE_CRYSTAL = ITEMS.register("simple_pseudo_magic_fire_crystal", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_PSEUDO_MAGIC_LIGHT_CRYSTAL = ITEMS.register("simple_pseudo_magic_light_crystal", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+
+
+
     public static final RegistryObject<Item> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT = ITEMS.register("basic_performance_astronomical_telescope_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
 
@@ -933,6 +950,7 @@ public class DCItems extends CreativeModeTab {
 
 
 
+    public static final RegistryObject<Item> BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_CIRCUIT = ITEMS.register("basic_technology_imitation_magic_engraver_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_CIRCUIT = ITEMS.register("basic_technology_suspected_magic_condenser_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
 

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_block",
+    "up": "degeneracycraft:block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_block",
+    "north": "degeneracycraft:block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_block",
+    "south": "degeneracycraft:block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_block",
+    "east": "degeneracycraft:block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_block",
+    "west": "degeneracycraft:block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_block",
+    "particle": "degeneracycraft:block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_block"
+  }
+}

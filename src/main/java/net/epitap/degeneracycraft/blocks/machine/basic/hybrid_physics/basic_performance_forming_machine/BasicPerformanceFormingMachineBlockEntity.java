@@ -250,7 +250,6 @@ public class BasicPerformanceFormingMachineBlockEntity extends BlockEntity imple
             blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
             if (craftCheck(blockEntity)) {
                 craftItem(blockEntity);
-                consumeItem(blockEntity);
             }
             setChanged(level, pos, state);
         } else {
@@ -316,7 +315,7 @@ public class BasicPerformanceFormingMachineBlockEntity extends BlockEntity imple
         return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
     }
 
-    private static void consumeItem(BasicPerformanceFormingMachineBlockEntity blockEntity) {
+    private static void craftItem(BasicPerformanceFormingMachineBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -329,20 +328,6 @@ public class BasicPerformanceFormingMachineBlockEntity extends BlockEntity imple
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
             blockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
-        }
-    }
-
-    private static void craftItem(BasicPerformanceFormingMachineBlockEntity blockEntity) {
-        Level level = blockEntity.level;
-        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
-        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
-        }
-
-        Optional<BasicPerformanceFormingMachineRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceFormingMachineRecipe.Type.INSTANCE, inventory, level);
-
-        if (match.isPresent()) {
             blockEntity.itemHandler.setStackInSlot(2, new ItemStack(match.get().getOutput0Item().getItem(),
                     blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount()));
             blockEntity.resetProgress();

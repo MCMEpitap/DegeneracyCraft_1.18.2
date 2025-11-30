@@ -48,9 +48,7 @@ public class BasicTechnologyElectromagneticInductorRecipe implements Recipe<Simp
                 && input2.is(pContainer.getItem(2).getItem())
                 && input3.is(pContainer.getItem(3).getItem())
                 && input4.is(pContainer.getItem(4).getItem())
-                && input5.is(pContainer.getItem(5).getItem())               
-                
-                ;
+                && input5.is(pContainer.getItem(5).getItem());
     }
     @Override
     public ItemStack assemble(SimpleContainer pContainer) {

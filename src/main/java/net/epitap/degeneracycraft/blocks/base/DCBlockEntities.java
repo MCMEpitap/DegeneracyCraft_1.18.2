@@ -22,6 +22,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_perf
 import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineBlockEntity;
@@ -82,6 +83,8 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_electric_arc_furnace.port.BasicPerformanceElectricArcFurnacePortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.bus.BasicPerformanceFormingMachineBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.port.BasicPerformanceFormingMachinePortBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.bus.BasicTechnologyImitationMagicEngraverBusBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.port.BasicTechnologyImitationMagicEngraverPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.bus.BasicTechnologySuspectedMagicCondenserBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.port.BasicTechnologySuspectedMagicCondenserPortBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -408,6 +411,18 @@ public class DCBlockEntities {
             BLOCK_ENTITIES.register("basic_performance_forming_machine_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceFormingMachinePortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK.get()).build(null));
 
+
+
+
+    public static final RegistryObject<BlockEntityType<BasicTechnologyImitationMagicEngraverBlockEntity>> BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_imitation_magic_engraver_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologyImitationMagicEngraverBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicTechnologyImitationMagicEngraverBusBlockEntity>> BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_imitation_magic_engraver_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologyImitationMagicEngraverBusBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicTechnologyImitationMagicEngraverPortBlockEntity>> BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_imitation_magic_engraver_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologyImitationMagicEngraverPortBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_PORT_BLOCK.get()).build(null));
 
 
     public static final RegistryObject<BlockEntityType<BasicTechnologySuspectedMagicCondenserBlockEntity>> BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BLOCK_ENTITY =

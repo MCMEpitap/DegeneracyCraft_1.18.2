@@ -808,6 +808,22 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicPartFormalScienceItem(DCItems.SIMPLE_IMITATION_MAGIC_ENGINEERING_MEMORY_CIRCUIT.get());
         basicPartFormalScienceItem(DCItems.SIMPLE_PROCESSING_CIRCUIT.get());
 
+
+
+
+        basicPartImitationMagicEngineeringItem(DCItems.SIMPLE_PSEUDO_MAGIC_THUNDER_CRYSTAL.get());
+        basicPartImitationMagicEngineeringItem(DCItems.SIMPLE_PSEUDO_MAGIC_WIND_CRYSTAL.get());
+        basicPartImitationMagicEngineeringItem(DCItems.SIMPLE_PSEUDO_MAGIC_WATER_CRYSTAL.get());
+        basicPartImitationMagicEngineeringItem(DCItems.SIMPLE_PSEUDO_MAGIC_NIL_CRYSTAL.get());
+        basicPartImitationMagicEngineeringItem(DCItems.SIMPLE_PSEUDO_MAGIC_DARK_CRYSTAL.get());
+        basicPartImitationMagicEngineeringItem(DCItems.SIMPLE_PSEUDO_MAGIC_ICE_CRYSTAL.get());
+        basicPartImitationMagicEngineeringItem(DCItems.SIMPLE_PSEUDO_MAGIC_EARTH_CRYSTAL.get());
+        basicPartImitationMagicEngineeringItem(DCItems.SIMPLE_PSEUDO_MAGIC_FIRE_CRYSTAL.get());
+        basicPartImitationMagicEngineeringItem(DCItems.SIMPLE_PSEUDO_MAGIC_LIGHT_CRYSTAL.get());
+
+
+
+
         simpleItem(DCItems.RAW_GRAVITATION_ORE.get());
 
 
@@ -1398,6 +1414,23 @@ public class DCItemModelProvider extends ItemModelProvider {
 
 
 
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_imitation_magic_engraver_block"));
+        withExistingParent(DCBlocks.BASIC_OUTPUT_MYSTIC_OPTICAL_PROJECTION_DEVICE_BLOCK.getId().getPath(),
+                modLoc("block/basic_output_mystic_optical_projection_device_block"));
+        withExistingParent(DCBlocks.BASIC_OUTPUT_MYSTIC_OPTICAL_PROJECTION_DEVICE_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_output_mystic_optical_projection_device_holo_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_imitation_magic_engraver_bus_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_imitation_magic_engraver_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_imitation_magic_engraver_port_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_imitation_magic_engraver_port_holo_block"));
+        basicMachineCircuitImitationEngineeringItem(DCItems.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_CIRCUIT.get());
+
+
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_suspected_magic_condenser_block"));
         withExistingParent(DCBlocks.BASIC_EFFICIENCY_SEALED_EXTRACTION_CASE_BLOCK.getId().getPath(),
@@ -1683,6 +1716,15 @@ public class DCItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/formal_science/" + item.getRegistryName().getPath()));
+    }
+
+
+
+
+    private ItemModelBuilder basicPartImitationMagicEngineeringItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/imitation_magic_engineering/" + item.getRegistryName().getPath()));
     }
 
     private ItemModelBuilder basicInscribedCircuitItem(Item item) {

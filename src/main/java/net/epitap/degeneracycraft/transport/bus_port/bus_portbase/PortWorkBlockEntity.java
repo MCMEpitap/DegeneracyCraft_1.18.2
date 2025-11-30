@@ -54,6 +54,12 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.bus.BasicPerformanceFormingMachineBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.bus.BasicPerformanceFormingMachineBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.port.BasicPerformanceFormingMachinePortType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.bus.BasicTechnologyImitationMagicEngraverBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.bus.BasicTechnologyImitationMagicEngraverBusType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.port.BasicTechnologyImitationMagicEngraverPortType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.bus.BasicTechnologySuspectedMagicCondenserBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.bus.BasicTechnologySuspectedMagicCondenserBusType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.port.BasicTechnologySuspectedMagicCondenserPortType;
 import net.epitap.degeneracycraft.transport.bus_port.parametor.PortItemHandler;
 import net.epitap.degeneracycraft.transport.bus_port.parametor.PortSetLazyOptional;
 import net.minecraft.core.BlockPos;
@@ -114,6 +120,11 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
     protected PortSetLazyOptional<BasicPerformanceFormingMachineBusEnergyStorage> basicPerformanceFormingMachineBusEnergyStorageStored;
 
 
+
+    protected PortSetLazyOptional<BasicTechnologyImitationMagicEngraverBusEnergyStorage> basicTechnologyImitationMagicEngraverBusEnergyStorageStored;
+    protected PortSetLazyOptional<BasicTechnologySuspectedMagicCondenserBusEnergyStorage> basicTechnologySuspectedMagicCondenserBusEnergyStorageStored;
+
+
     private int recursionDepth;
 
 
@@ -158,8 +169,16 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
         basicPerformanceRockCrasherBusEnergyStorageStored = new PortSetLazyOptional<>();
 
+
+
         basicPerformanceElectricArcFurnaceBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicPerformanceFormingMachineBusEnergyStorageStored = new PortSetLazyOptional<>();
+
+
+
+        basicTechnologyImitationMagicEngraverBusEnergyStorageStored = new PortSetLazyOptional<>();
+        basicTechnologySuspectedMagicCondenserBusEnergyStorageStored = new PortSetLazyOptional<>();
+
     }
 
     @Nonnull
@@ -376,6 +395,30 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
 
+
+        if (cap == CapabilityEnergy.ENERGY && hasType(BasicTechnologyImitationMagicEngraverBusType.INSTANCE)) {
+            if (side != null) {
+                return basicTechnologySuspectedMagicCondenserBusEnergyStorageStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicTechnologyImitationMagicEngraverPortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityEnergy.ENERGY && hasType(BasicTechnologySuspectedMagicCondenserBusType.INSTANCE)) {
+            if (side != null) {
+                return basicTechnologySuspectedMagicCondenserBusEnergyStorageStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicTechnologySuspectedMagicCondenserPortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        }
+
+
+
         return super.getCapability(cap, side);
     }
 
@@ -569,6 +612,26 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 }
             }
         }
+
+
+
+        if (hasType(BasicTechnologyImitationMagicEngraverBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    basicTechnologyImitationMagicEngraverBusEnergyStorageStored.get(side).ifPresent(BasicTechnologyImitationMagicEngraverBusEnergyStorage::tick);
+                }
+            }
+        }
+        if (hasType(BasicTechnologySuspectedMagicCondenserBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    basicTechnologySuspectedMagicCondenserBusEnergyStorageStored.get(side).ifPresent(BasicTechnologySuspectedMagicCondenserBusEnergyStorage::tick);
+                }
+            }
+        }
+
+
+
     }
 
     @Override
@@ -701,6 +764,21 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
             basicPerformanceFormingMachineBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicPerformanceFormingMachineBusEnergyStorage(this, storage));
         }
         if (hasType(BasicPerformanceFormingMachinePortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
+        }
+
+
+
+        if (hasType(BasicTechnologyImitationMagicEngraverBusType.INSTANCE)) {
+            basicTechnologyImitationMagicEngraverBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicTechnologyImitationMagicEngraverBusEnergyStorage(this, storage));
+        }
+        if (hasType(BasicTechnologyImitationMagicEngraverPortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
+        }
+        if (hasType(BasicTechnologySuspectedMagicCondenserBusType.INSTANCE)) {
+            basicTechnologySuspectedMagicCondenserBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicTechnologySuspectedMagicCondenserBusEnergyStorage(this, storage));
+        }
+        if (hasType(BasicTechnologySuspectedMagicCondenserPortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
         }
 
@@ -843,6 +921,21 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
             itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
         }
 
+
+
+
+        if (hasType(BasicTechnologyImitationMagicEngraverBusType.INSTANCE)) {
+            basicTechnologyImitationMagicEngraverBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicTechnologyImitationMagicEngraverBusEnergyStorage(this, side));
+        }
+        if (hasType(BasicTechnologyImitationMagicEngraverPortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
+        }
+        if (hasType(BasicTechnologySuspectedMagicCondenserBusType.INSTANCE)) {
+            basicTechnologySuspectedMagicCondenserBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicTechnologySuspectedMagicCondenserBusEnergyStorage(this, side));
+        }
+        if (hasType(BasicTechnologySuspectedMagicCondenserPortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
+        }
     }
 
     @Override
@@ -896,6 +989,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
         basicPerformanceElectricArcFurnaceBusEnergyStorageStored.invalidate();
         basicPerformanceFormingMachineBusEnergyStorageStored.invalidate();
+
+
+
+        basicTechnologyImitationMagicEngraverBusEnergyStorageStored.invalidate();
+        basicTechnologySuspectedMagicCondenserBusEnergyStorageStored.invalidate();
+
 
         super.setRemoved();
     }

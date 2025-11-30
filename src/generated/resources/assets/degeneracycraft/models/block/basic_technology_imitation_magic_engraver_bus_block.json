@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_block",
+    "up": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_block",
+    "north": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_block",
+    "south": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_block",
+    "east": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_block",
+    "west": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_block",
+    "particle": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_block"
+  }
+}

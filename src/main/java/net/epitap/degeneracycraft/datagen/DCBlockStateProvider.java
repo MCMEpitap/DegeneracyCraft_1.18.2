@@ -330,6 +330,14 @@ public class DCBlockStateProvider extends BlockStateProvider {
 
 
 
+        registerBasicTechnologyImitationMagicEngraver();
+        registerBasicOutputMysticOpticalProjectionDevice();
+        registerBasicOutputMysticOpticalProjectionDeviceHolo();
+        registerBasicTechnologyImitationMagicEngraverBus();
+        registerBasicTechnologyImitationMagicEngraverBusHolo();
+        registerBasicTechnologyImitationMagicEngraverPort();
+        registerBasicTechnologyImitationMagicEngraverPortHolo();
+
         registerBasicTechnologySuspectedMagicCondenser();
         registerBasicEfficiencySealedExtractionCase();
         registerBasicEfficiencySealedExtractionCaseHolo();
@@ -3908,7 +3916,104 @@ public class DCBlockStateProvider extends BlockStateProvider {
 
 
 
+    private void registerBasicTechnologyImitationMagicEngraver() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_imitation_magic_engraver_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/basic_technology_imitation_magic_engraver_down"));
+        model.texture("up", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/basic_technology_imitation_magic_engraver_up"));
+        model.texture("north", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/basic_technology_imitation_magic_engraver_front"));
+        model.texture("south", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/basic_technology_imitation_magic_engraver_side"));
+        model.texture("east", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/basic_technology_imitation_magic_engraver_side"));
+        model.texture("west", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/basic_technology_imitation_magic_engraver_side"));
+        model.texture("particle", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/basic_technology_imitation_magic_engraver_front"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BLOCK.get(),
+                state -> model);
+    }
 
+    private void registerBasicOutputMysticOpticalProjectionDevice() {
+        BlockModelBuilder model = models().getBuilder("block/basic_output_mystic_optical_projection_device_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_block"));
+        model.texture("up", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_block"));
+        model.texture("north", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_block"));
+        model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_block"));
+        model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_block"));
+        model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_block"));
+        orientedBlock(DCBlocks.BASIC_OUTPUT_MYSTIC_OPTICAL_PROJECTION_DEVICE_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicOutputMysticOpticalProjectionDeviceHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_output_mystic_optical_projection_device_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_output_mystic_optical_projection_device/basic_output_mystic_optical_projection_device_holo_block"));
+        orientedBlock(DCBlocks.BASIC_OUTPUT_MYSTIC_OPTICAL_PROJECTION_DEVICE_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyImitationMagicEngraverBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_imitation_magic_engraver_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyImitationMagicEngraverBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_imitation_magic_engraver_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/bus/basic_technology_imitation_magic_engraver_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+
+    private void registerBasicTechnologyImitationMagicEngraverPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_imitation_magic_engraver_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/port/basic_technology_imitation_magic_engraver_port_block"));
+        model.texture("up", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/port/basic_technology_imitation_magic_engraver_port_block"));
+        model.texture("north", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/port/basic_technology_imitation_magic_engraver_port_block"));
+        model.texture("south", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/port/basic_technology_imitation_magic_engraver_port_block"));
+        model.texture("east", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/port/basic_technology_imitation_magic_engraver_port_block"));
+        model.texture("west", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/port/basic_technology_imitation_magic_engraver_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/port/basic_technology_imitation_magic_engraver_port_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyImitationMagicEngraverPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_imitation_magic_engraver_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/port/basic_technology_imitation_magic_engraver_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/port/basic_technology_imitation_magic_engraver_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/port/basic_technology_imitation_magic_engraver_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/port/basic_technology_imitation_magic_engraver_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/port/basic_technology_imitation_magic_engraver_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/port/basic_technology_imitation_magic_engraver_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_imitation_magic_engraver/port/basic_technology_imitation_magic_engraver_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
 
     private void registerBasicTechnologySuspectedMagicCondenser() {
         BlockModelBuilder model = models().getBuilder("block/basic_technology_suspected_magic_condenser_block");

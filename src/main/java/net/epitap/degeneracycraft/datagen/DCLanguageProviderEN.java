@@ -742,6 +742,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
 
         add(DCItems.SIMPLE_CHEMICAL_CONTAINER.get(), "Simple Chemical Container");
+        add(DCItems.SIMPLE_CRYSTALLIZATION_SUBSTRATE_PLATE.get(), "Simple Crystallization Substrate Plate");
+        add(DCItems.SIMPLE_LIQUID_NEUTRALIZATION_PROCESSOR.get(), "Simple Liquid Neutralization Processor");
         add(DCItems.SIMPLE_ORE_SORTING_FILTER.get(), "Simple Ore Sorting Filter");
         add(DCItems.SIMPLE_TEMPERED_GLASS.get(), "Simple Tempered Glass");
 
@@ -1252,7 +1254,18 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_HOLO_BLOCK.get(), "Basic Technology Suspected Magic Condenser Port (Hologram)");
         add(DCItems.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_CIRCUIT.get(), "Basic Technology Suspected Magic Condenser回路");
 
-
+        add(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BLOCK.get(), "Basic Technology Virtual Sigil Processor");
+        add("tooltip." + "degeneracycraft." + "basic_technology_virtual_sigil_processor_block",
+                "Basic . Imprinting a virtual seal onto a material.");
+        add(DCBlocks.BASIC_SPEED_PATTERN_TRANSFER_SYSTEM_BLOCK.get(), "Basic Speed Pattern Transfer System");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_virtual_sigil_processor_block",
+                "For Basic Technology Virtual Sigil Processor");
+        add(DCBlocks.BASIC_SPEED_PATTERN_TRANSFER_SYSTEM_HOLO_BLOCK.get(), "Basic Speed Pattern Transfer System (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BUS_BLOCK.get(), "Basic Technology Virtual Sigil Processor Bus");
+        add(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BUS_HOLO_BLOCK.get(), "Basic Technology Virtual Sigil Processor Bus (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_BLOCK.get(), "Basic Technology Virtual Sigil Processor Port");
+        add(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_HOLO_BLOCK.get(), "Basic Technology Virtual Sigil Processor Port (Hologram)");
+        add(DCItems.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_CIRCUIT.get(), "Basic Technology Virtual Sigil Processor Circuit");
 
         add(DCUniqueBlocks.SIMPLE_TELESCOPE_RIGHT_PILLAR.get(), "Simple Telescope Right Pillar");
         add(DCUniqueBlocks.SIMPLE_TELESCOPE_LEFT_PILLAR.get(), "Simple Telescope Left Pillar");

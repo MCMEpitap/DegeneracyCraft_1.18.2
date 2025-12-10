@@ -830,6 +830,10 @@ public class DCItems extends CreativeModeTab {
 
 
     public static final RegistryObject<Item> SIMPLE_CHEMICAL_CONTAINER = ITEMS.register("simple_chemical_container", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_CRYSTALLIZATION_SUBSTRATE_PLATE = ITEMS.register("simple_crystallization_substrate_plate", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_LIQUID_NEUTRALIZATION_PROCESSOR = ITEMS.register("simple_liquid_neutralization_processor", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+
+
     public static final RegistryObject<Item> SIMPLE_ORE_SORTING_FILTER = ITEMS.register("simple_ore_sorting_filter", () -> new FilterItem(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> SIMPLE_TEMPERED_GLASS = ITEMS.register("simple_tempered_glass", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
@@ -952,6 +956,8 @@ public class DCItems extends CreativeModeTab {
 
     public static final RegistryObject<Item> BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_CIRCUIT = ITEMS.register("basic_technology_imitation_magic_engraver_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_CIRCUIT = ITEMS.register("basic_technology_suspected_magic_condenser_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_CIRCUIT = ITEMS.register("basic_technology_virtual_sigil_processor_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+
 
 
 

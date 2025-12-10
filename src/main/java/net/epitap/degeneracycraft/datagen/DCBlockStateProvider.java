@@ -346,6 +346,18 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicTechnologySuspectedMagicCondenserPort();
         registerBasicTechnologySuspectedMagicCondenserPortHolo();
 
+        registerBasicTechnologyVirtualSigilProcessor();
+        registerBasicSpeedPatternTransferSystem();
+        registerBasicSpeedPatternTransferSystemHolo();
+        registerBasicTechnologyVirtualSigilProcessorBus();
+        registerBasicTechnologyVirtualSigilProcessorBusHolo();
+        registerBasicTechnologyVirtualSigilProcessorPort();
+        registerBasicTechnologyVirtualSigilProcessorPortHolo();
+
+
+
+
+
 
 //        registerTestBus();
     }
@@ -4111,6 +4123,104 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("west", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/port/basic_technology_suspected_magic_condenser_port_holo_block"));
         model.texture("particle", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_suspected_magic_condenser/port/basic_technology_suspected_magic_condenser_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+    private void registerBasicTechnologyVirtualSigilProcessor() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_virtual_sigil_processor_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/basic_technology_virtual_sigil_processor_down"));
+        model.texture("up", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/basic_technology_virtual_sigil_processor_up"));
+        model.texture("north", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/basic_technology_virtual_sigil_processor_front"));
+        model.texture("south", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/basic_technology_virtual_sigil_processor_side"));
+        model.texture("east", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/basic_technology_virtual_sigil_processor_side"));
+        model.texture("west", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/basic_technology_virtual_sigil_processor_side"));
+        model.texture("particle", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/basic_technology_virtual_sigil_processor_front"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicSpeedPatternTransferSystem() {
+        BlockModelBuilder model = models().getBuilder("block/basic_speed_pattern_transfer_system_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_speed_pattern_transfer_system/basic_speed_pattern_transfer_system_block"));
+        model.texture("up", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_speed_pattern_transfer_system/basic_speed_pattern_transfer_system_block"));
+        model.texture("north", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_speed_pattern_transfer_system/basic_speed_pattern_transfer_system_block"));
+        model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_speed_pattern_transfer_system/basic_speed_pattern_transfer_system_block"));
+        model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_speed_pattern_transfer_system/basic_speed_pattern_transfer_system_block"));
+        model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_speed_pattern_transfer_system/basic_speed_pattern_transfer_system_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_speed_pattern_transfer_system/basic_speed_pattern_transfer_system_block"));
+        orientedBlock(DCBlocks.BASIC_SPEED_PATTERN_TRANSFER_SYSTEM_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicSpeedPatternTransferSystemHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_speed_pattern_transfer_system_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_speed_pattern_transfer_system/basic_speed_pattern_transfer_system_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_speed_pattern_transfer_system/basic_speed_pattern_transfer_system_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_speed_pattern_transfer_system/basic_speed_pattern_transfer_system_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_speed_pattern_transfer_system/basic_speed_pattern_transfer_system_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_speed_pattern_transfer_system/basic_speed_pattern_transfer_system_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_speed_pattern_transfer_system/basic_speed_pattern_transfer_system_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/abilityblock/basic_speed_pattern_transfer_system/basic_speed_pattern_transfer_system_holo_block"));
+        orientedBlock(DCBlocks.BASIC_SPEED_PATTERN_TRANSFER_SYSTEM_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyVirtualSigilProcessorBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_virtual_sigil_processor_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/bus/basic_technology_virtual_sigil_processor_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/bus/basic_technology_virtual_sigil_processor_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/bus/basic_technology_virtual_sigil_processor_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/bus/basic_technology_virtual_sigil_processor_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/bus/basic_technology_virtual_sigil_processor_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/bus/basic_technology_virtual_sigil_processor_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/bus/basic_technology_virtual_sigil_processor_bus_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyVirtualSigilProcessorBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_virtual_sigil_processor_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/bus/basic_technology_virtual_sigil_processor_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/bus/basic_technology_virtual_sigil_processor_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/bus/basic_technology_virtual_sigil_processor_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/bus/basic_technology_virtual_sigil_processor_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/bus/basic_technology_virtual_sigil_processor_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/bus/basic_technology_virtual_sigil_processor_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/bus/basic_technology_virtual_sigil_processor_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+
+    private void registerBasicTechnologyVirtualSigilProcessorPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_virtual_sigil_processor_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_block"));
+        model.texture("up", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_block"));
+        model.texture("north", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_block"));
+        model.texture("south", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_block"));
+        model.texture("east", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_block"));
+        model.texture("west", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyVirtualSigilProcessorPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_virtual_sigil_processor_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
 

@@ -73,6 +73,8 @@ public class PortModelRegistry {
         BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_PORT_BLOCK_EXTRACT("block/basic_technology_imitation_magic_engraver_port_block_extract"),
         BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_BLOCK_EXTRACT("block/basic_technology_suspected_magic_condenser_bus_block_extract"),
         BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_BLOCK_EXTRACT("block/basic_technology_suspected_magic_condenser_port_block_extract"),
+        BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BUS_BLOCK_EXTRACT("block/basic_technology_virtual_sigil_processor_bus_block_extract"),
+        BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_BLOCK_EXTRACT("block/basic_technology_virtual_sigil_processor_port_block_extract"),
         TEST_EXTRACT("block/test_extract");
 
         private final ResourceLocation resource;

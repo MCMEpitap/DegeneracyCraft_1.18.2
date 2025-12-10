@@ -21,6 +21,7 @@ import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_per
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -109,9 +110,12 @@ public class DCRecipeTypes {
 
     public static final RegistryObject<RecipeSerializer<BasicTechnologyImitationMagicEngraverRecipe>> BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_SERIALISER =
             SERIALIZERS.register("basic_technology_imitation_magic_engraver_recipe", () -> BasicTechnologyImitationMagicEngraverRecipe.Serializer.INSTANCE);
-    //
+
     public static final RegistryObject<RecipeSerializer<BasicTechnologySuspectedMagicCondenserRecipe>> BASIC_TECHNOLOGY_SUSPECTRD_MAGIC_CONDENSER_SERIALISER =
             SERIALIZERS.register("basic_technology_suspected_magic_condenser_recipe", () -> BasicTechnologySuspectedMagicCondenserRecipe.Serializer.INSTANCE);
+
+    public static final RegistryObject<RecipeSerializer<BasicTechnologyVirtualSigilProcessorRecipe>> BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PRPCESSOR_SERIALISER =
+            SERIALIZERS.register("basic_technology_virtual_sigil_processor_recipe", () -> BasicTechnologyVirtualSigilProcessorRecipe.Serializer.INSTANCE);
 //
 
 

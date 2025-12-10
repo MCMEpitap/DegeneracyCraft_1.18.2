@@ -729,6 +729,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
         add(DCItems.SIMPLE_CHEMICAL_CONTAINER.get(), "簡易化学コンテナ");
+        add(DCItems.SIMPLE_CRYSTALLIZATION_SUBSTRATE_PLATE.get(), "簡易結晶化基盤プレート");
+        add(DCItems.SIMPLE_LIQUID_NEUTRALIZATION_PROCESSOR.get(), "簡易液体中和プロセッサ");
         add(DCItems.SIMPLE_ORE_SORTING_FILTER.get(), "簡易選鉱フィルター");
         add(DCItems.SIMPLE_TEMPERED_GLASS.get(), "簡易強化ガラス");
 
@@ -1239,6 +1241,19 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_HOLO_BLOCK.get(), "基本技術疑似魔力凝集機ポート (ホログラム)");
         add(DCItems.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_CIRCUIT.get(), "基本技術疑似魔力凝集機回路");
 
+        add(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BLOCK.get(), "基本技術仮想印章加工機");
+        add("tooltip." + "degeneracycraft." + "basic_technology_virtual_sigil_processor_block",
+                "基本的な仮想印章加工機. 仮想的な印章を物質に刻む.");
+        add(DCBlocks.BASIC_SPEED_PATTERN_TRANSFER_SYSTEM_BLOCK.get(), "基本速度紋様転写システム");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_virtual_sigil_processor_block",
+                "基本技術仮想印章加工機用");
+        add(DCBlocks.BASIC_SPEED_PATTERN_TRANSFER_SYSTEM_HOLO_BLOCK.get(), "基本速度紋様転写システム (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BUS_BLOCK.get(), "基本技術仮想印章加工機バス");
+        add(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BUS_HOLO_BLOCK.get(), "基本技術仮想印章加工機バス (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_BLOCK.get(), "基本技術仮想印章加工機ポート");
+        add(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_HOLO_BLOCK.get(), "基本技術仮想印章加工機ポート (ホログラム)");
+        add(DCItems.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_CIRCUIT.get(), "基本技術仮想印章加工機回路");
+
 
 //        add(DCBlocks.LOW_STERNGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),"低強度機械用フレーム");
         add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get(), "低強度多構造機械用フレーム");
@@ -1300,6 +1315,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
         add("jei." + "basic_technology_imitation_magic_engraver", "基本技術模造魔導刻印機 レシピ");
         add("jei." + "basic_technology_suspected_magic_condenser", "基本技術疑似魔力凝集機 レシピ");
+        add("jei." + "basic_technology_virtual_sigil_processor", "基本技術仮想印章加工機 レシピ");
 
 
 

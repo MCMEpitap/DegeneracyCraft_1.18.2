@@ -23,6 +23,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_perf
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorMenu;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineMenu;
@@ -196,6 +197,8 @@ public class DCMenuTypes {
             registerMenuType(BasicTechnologyImitationMagicEngraverMenu::new, "basic_technology_imitation_magic_engraver_menu");
     public static final RegistryObject<MenuType<BasicTechnologySuspectedMagicCondenserMenu>> BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_MENU =
             registerMenuType(BasicTechnologySuspectedMagicCondenserMenu::new, "basic_technology_suspected_magic_condenser_menu");
+    public static final RegistryObject<MenuType<BasicTechnologyVirtualSigilProcessorMenu>> BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_MENU =
+            registerMenuType(BasicTechnologyVirtualSigilProcessorMenu::new, "basic_technology_virtual_sigil_processor_menu");
 
 
 

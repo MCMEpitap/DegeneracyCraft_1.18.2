@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/basic_technology_virtual_sigil_processor_down",
+    "up": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/basic_technology_virtual_sigil_processor_up",
+    "north": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/basic_technology_virtual_sigil_processor_front",
+    "south": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/basic_technology_virtual_sigil_processor_side",
+    "east": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/basic_technology_virtual_sigil_processor_side",
+    "west": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/basic_technology_virtual_sigil_processor_side",
+    "particle": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/basic_technology_virtual_sigil_processor_front"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_holo_block",
+    "up": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_holo_block",
+    "north": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_holo_block",
+    "south": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_holo_block",
+    "east": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_holo_block",
+    "west": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_holo_block",
+    "particle": "degeneracycraft:block/machine/basic/imitation_magic_engineering/basic_technology_virtual_sigil_processor/port/basic_technology_virtual_sigil_processor_port_holo_block"
+  }
+}

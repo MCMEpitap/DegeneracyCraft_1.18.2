@@ -760,6 +760,8 @@ public class DCItemModelProvider extends ItemModelProvider {
 
 
         basicPartChemistryItem(DCItems.SIMPLE_CHEMICAL_CONTAINER.get());
+        basicPartChemistryItem(DCItems.SIMPLE_CRYSTALLIZATION_SUBSTRATE_PLATE.get());
+        basicPartChemistryItem(DCItems.SIMPLE_LIQUID_NEUTRALIZATION_PROCESSOR.get());
         basicPartChemistryItem(DCItems.SIMPLE_ORE_SORTING_FILTER.get());
         basicPartChemistryItem(DCItems.SIMPLE_TEMPERED_GLASS.get());
 
@@ -1446,6 +1448,22 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_suspected_magic_condenser_port_holo_block"));
         basicMachineCircuitImitationEngineeringItem(DCItems.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_CIRCUIT.get());
+
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_virtual_sigil_processor_block"));
+        withExistingParent(DCBlocks.BASIC_SPEED_PATTERN_TRANSFER_SYSTEM_BLOCK.getId().getPath(),
+                modLoc("block/basic_speed_pattern_transfer_system_block"));
+        withExistingParent(DCBlocks.BASIC_SPEED_PATTERN_TRANSFER_SYSTEM_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_speed_pattern_transfer_system_holo_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_virtual_sigil_processor_bus_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_virtual_sigil_processor_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_virtual_sigil_processor_port_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_virtual_sigil_processor_port_holo_block"));
+        basicMachineCircuitImitationEngineeringItem(DCItems.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_CIRCUIT.get());
 
 //        withExistingParent(DCBlocks.OVERWORLD_CASSITERITE_ORE.getId().getPath(),
 //                modLoc("block/overworld_cassiterite_ore"));

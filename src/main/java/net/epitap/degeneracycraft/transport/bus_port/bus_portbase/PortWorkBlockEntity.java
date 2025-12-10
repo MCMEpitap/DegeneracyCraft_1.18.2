@@ -60,6 +60,9 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engin
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.bus.BasicTechnologySuspectedMagicCondenserBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.bus.BasicTechnologySuspectedMagicCondenserBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.port.BasicTechnologySuspectedMagicCondenserPortType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.bus.BasicTechnologyVirtualSigilProcessorBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.bus.BasicTechnologyVirtualSigilProcessorBusType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.port.BasicTechnologyVirtualSigilProcessorPortType;
 import net.epitap.degeneracycraft.transport.bus_port.parametor.PortItemHandler;
 import net.epitap.degeneracycraft.transport.bus_port.parametor.PortSetLazyOptional;
 import net.minecraft.core.BlockPos;
@@ -123,6 +126,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
     protected PortSetLazyOptional<BasicTechnologyImitationMagicEngraverBusEnergyStorage> basicTechnologyImitationMagicEngraverBusEnergyStorageStored;
     protected PortSetLazyOptional<BasicTechnologySuspectedMagicCondenserBusEnergyStorage> basicTechnologySuspectedMagicCondenserBusEnergyStorageStored;
+    protected PortSetLazyOptional<BasicTechnologyVirtualSigilProcessorBusEnergyStorage> basicTechnologyVirtualSigilProcessorBusEnergyStorageStored;
 
 
     private int recursionDepth;
@@ -178,6 +182,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
         basicTechnologyImitationMagicEngraverBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicTechnologySuspectedMagicCondenserBusEnergyStorageStored = new PortSetLazyOptional<>();
+        basicTechnologyVirtualSigilProcessorBusEnergyStorageStored = new PortSetLazyOptional<>();
 
     }
 
@@ -398,7 +403,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
         if (cap == CapabilityEnergy.ENERGY && hasType(BasicTechnologyImitationMagicEngraverBusType.INSTANCE)) {
             if (side != null) {
-                return basicTechnologySuspectedMagicCondenserBusEnergyStorageStored.get(side).cast();
+                return basicTechnologyImitationMagicEngraverBusEnergyStorageStored.get(side).cast();
             }
         }
         if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicTechnologyImitationMagicEngraverPortType.INSTANCE)) {
@@ -412,6 +417,16 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
             }
         }
         if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicTechnologySuspectedMagicCondenserPortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityEnergy.ENERGY && hasType(BasicTechnologyVirtualSigilProcessorBusType.INSTANCE)) {
+            if (side != null) {
+                return basicTechnologyVirtualSigilProcessorBusEnergyStorageStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicTechnologyVirtualSigilProcessorPortType.INSTANCE)) {
             if (side != null) {
                 return itemStored.get(side).cast();
             }
@@ -629,7 +644,13 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 }
             }
         }
-
+        if (hasType(BasicTechnologyVirtualSigilProcessorBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    basicTechnologyVirtualSigilProcessorBusEnergyStorageStored.get(side).ifPresent(BasicTechnologyVirtualSigilProcessorBusEnergyStorage::tick);
+                }
+            }
+        }
 
 
     }
@@ -781,7 +802,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicTechnologySuspectedMagicCondenserPortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
         }
-
+        if (hasType(BasicTechnologyVirtualSigilProcessorBusType.INSTANCE)) {
+            basicTechnologyVirtualSigilProcessorBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicTechnologyVirtualSigilProcessorBusEnergyStorage(this, storage));
+        }
+        if (hasType(BasicTechnologyVirtualSigilProcessorPortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
+        }
 
 
     }
@@ -936,6 +962,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicTechnologySuspectedMagicCondenserPortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
         }
+        if (hasType(BasicTechnologyVirtualSigilProcessorBusType.INSTANCE)) {
+            basicTechnologyVirtualSigilProcessorBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicTechnologyVirtualSigilProcessorBusEnergyStorage(this, side));
+        }
+        if (hasType(BasicTechnologySuspectedMagicCondenserPortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
+        }
     }
 
     @Override
@@ -994,6 +1026,8 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
         basicTechnologyImitationMagicEngraverBusEnergyStorageStored.invalidate();
         basicTechnologySuspectedMagicCondenserBusEnergyStorageStored.invalidate();
+        basicTechnologyVirtualSigilProcessorBusEnergyStorageStored.invalidate();
+
 
 
         super.setRemoved();

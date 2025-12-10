@@ -24,6 +24,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_perf
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineBlockEntity;
@@ -87,6 +88,8 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engin
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.port.BasicTechnologyImitationMagicEngraverPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.bus.BasicTechnologySuspectedMagicCondenserBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.port.BasicTechnologySuspectedMagicCondenserPortBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.bus.BasicTechnologyVirtualSigilProcessorBusBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.port.BasicTechnologyVirtualSigilProcessorPortBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -434,7 +437,16 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicTechnologySuspectedMagicCondenserPortBlockEntity>> BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_technology_suspected_magic_condenser_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicTechnologySuspectedMagicCondenserPortBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_BLOCK.get()).build(null));
-
+    
+    public static final RegistryObject<BlockEntityType<BasicTechnologyVirtualSigilProcessorBlockEntity>> BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_virtual_sigil_processor_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologyVirtualSigilProcessorBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicTechnologyVirtualSigilProcessorBusBlockEntity>> BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_virtual_sigil_processor_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologyVirtualSigilProcessorBusBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicTechnologyVirtualSigilProcessorPortBlockEntity>> BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_virtual_sigil_processor_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologyVirtualSigilProcessorPortBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_BLOCK.get()).build(null));
 
 
 

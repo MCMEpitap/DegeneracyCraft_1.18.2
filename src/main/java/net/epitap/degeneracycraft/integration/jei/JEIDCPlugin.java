@@ -40,6 +40,8 @@ import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_perf
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_material_separator.BasicPerformanceMaterialSeparatorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_material_separator.BasicPerformanceMaterialSeparatorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserMenu;
@@ -103,6 +105,9 @@ import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_per
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipeTransferHandler;
+import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_material_separator.BasicPerformanceMaterialSeparatorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_material_separator.BasicPerformanceMaterialSeparatorRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_material_separator.BasicPerformanceMaterialSeparatorRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverRecipeTransferHandler;
@@ -214,6 +219,8 @@ public class JEIDCPlugin implements IModPlugin {
                 BasicPerformanceElectricArcFurnaceRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
                 BasicPerformanceFormingMachineRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new
+                BasicPerformanceMaterialSeparatorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
 
 
@@ -329,6 +336,9 @@ public class JEIDCPlugin implements IModPlugin {
         List<BasicPerformanceFormingMachineRecipe> basicPerformanceFormingMachineRecipe =
                 rm.getAllRecipesFor(BasicPerformanceFormingMachineRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicPerformanceFormingMachineRecipeCategory.UID, BasicPerformanceFormingMachineRecipe.class), basicPerformanceFormingMachineRecipe);
+        List<BasicPerformanceMaterialSeparatorRecipe> basicPerformanceMaterialSeparatorRecipe =
+                rm.getAllRecipesFor(BasicPerformanceMaterialSeparatorRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicPerformanceMaterialSeparatorRecipeCategory.UID, BasicPerformanceMaterialSeparatorRecipe.class), basicPerformanceMaterialSeparatorRecipe);
 
 
 
@@ -398,6 +408,7 @@ public class JEIDCPlugin implements IModPlugin {
 
         registration.addRecipeClickArea(BasicPerformanceElectricArcFurnaceScreen.class, 64, 20, 29, 8, BasicPerformanceElectricArcFurnaceRecipeCategory.UID);
         registration.addRecipeClickArea(BasicPerformanceFormingMachineScreen.class, 64, 20, 29, 8, BasicPerformanceFormingMachineRecipeCategory.UID);
+        registration.addRecipeClickArea(BasicPerformanceMaterialSeparatorScreen.class, 64, 20, 29, 8, BasicPerformanceMaterialSeparatorRecipeCategory.UID);
 
 
         registration.addRecipeClickArea(BasicTechnologyImitationMagicEngraverScreen.class, 64, 20, 29, 8, BasicTechnologyImitationMagicEngraverRecipeCategory.UID);
@@ -448,6 +459,7 @@ public class JEIDCPlugin implements IModPlugin {
 
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get()), BasicPerformanceElectricArcFurnaceRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK.get()), BasicPerformanceFormingMachineRecipeCategory.UID);
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BLOCK.get()), BasicPerformanceMaterialSeparatorRecipeCategory.UID);
 
 
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BLOCK.get()), BasicTechnologyImitationMagicEngraverRecipeCategory.UID);
@@ -641,6 +653,15 @@ public class JEIDCPlugin implements IModPlugin {
                 ),
                 BasicPerformanceFormingMachineRecipeCategory.TYPE
         );
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceMaterialSeparatorRecipeTransferHandler<>(
+                        BasicPerformanceMaterialSeparatorMenu.class,
+                        0, 1,
+                        6, 36
+                ),
+                BasicPerformanceMaterialSeparatorRecipeCategory.TYPE
+        );
+
 
 
 

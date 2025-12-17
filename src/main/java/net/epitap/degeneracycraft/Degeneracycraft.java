@@ -21,6 +21,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_perf
 import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_material_separator.BasicPerformanceMaterialSeparatorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorScreen;
@@ -333,7 +334,8 @@ public class Degeneracycraft {
 
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_ARC_ELECTRIC_FURNACE_MENU.get(), BasicPerformanceElectricArcFurnaceScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_FORMING_MACHINE_MENU.get(), BasicPerformanceFormingMachineScreen::new);
-//
+        MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_MENU.get(), BasicPerformanceMaterialSeparatorScreen::new);
+
 
         MenuScreens.register(DCMenuTypes.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_MENU.get(), BasicTechnologyImitationMagicEngraverScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_MENU.get(), BasicTechnologySuspectedMagicCondenserScreen::new);
@@ -523,6 +525,10 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_DURABILITY_VIBRATION_CONTROL_BASE_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_HOLO_BLOCK.get(), RenderType.translucent());
 
 
 

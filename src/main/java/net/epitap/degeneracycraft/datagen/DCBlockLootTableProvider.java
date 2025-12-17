@@ -325,6 +325,14 @@ public class DCBlockLootTableProvider extends BlockLoot {
         this.add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK.get()));
         this.add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_HOLO_BLOCK.get(), block -> noDrop());
 
+        this.add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BLOCK.get()));
+        this.add(DCBlocks.BASIC_DURABILITY_VIBRATION_CONTROL_BASE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_DURABILITY_VIBRATION_CONTROL_BASE_BLOCK.get()));
+        this.add(DCBlocks.BASIC_DURABILITY_VIBRATION_CONTROL_BASE_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_HOLO_BLOCK.get(), block -> noDrop());
+
 
 
         this.add(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BLOCK.get()));

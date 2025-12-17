@@ -54,6 +54,9 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.bus.BasicPerformanceFormingMachineBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.bus.BasicPerformanceFormingMachineBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.port.BasicPerformanceFormingMachinePortType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_material_separator.bus.BasicPerformanceMaterialSeparatorBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_material_separator.bus.BasicPerformanceMaterialSeparatorBusType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_material_separator.port.BasicPerformanceMaterialSeparatorPortType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.bus.BasicTechnologyImitationMagicEngraverBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.bus.BasicTechnologyImitationMagicEngraverBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.port.BasicTechnologyImitationMagicEngraverPortType;
@@ -121,6 +124,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
     protected PortSetLazyOptional<BasicPerformanceElectricArcFurnaceBusEnergyStorage> basicPerformanceElectricArcFurnaceBusEnergyStorageStored;
     protected PortSetLazyOptional<BasicPerformanceFormingMachineBusEnergyStorage> basicPerformanceFormingMachineBusEnergyStorageStored;
+    protected PortSetLazyOptional<BasicPerformanceMaterialSeparatorBusEnergyStorage> basicPerformanceMaterialSeparatorBusEnergyStorageStored;
 
 
 
@@ -177,7 +181,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
         basicPerformanceElectricArcFurnaceBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicPerformanceFormingMachineBusEnergyStorageStored = new PortSetLazyOptional<>();
-
+        basicPerformanceMaterialSeparatorBusEnergyStorageStored = new PortSetLazyOptional<>();
 
 
         basicTechnologyImitationMagicEngraverBusEnergyStorageStored = new PortSetLazyOptional<>();
@@ -397,7 +401,16 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 return itemStored.get(side).cast();
             }
         }
-
+        if (cap == CapabilityEnergy.ENERGY && hasType(BasicPerformanceMaterialSeparatorBusType.INSTANCE)) {
+            if (side != null) {
+                return basicPerformanceMaterialSeparatorBusEnergyStorageStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPerformanceMaterialSeparatorPortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        }
 
 
 
@@ -627,7 +640,13 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 }
             }
         }
-
+        if (hasType(BasicPerformanceMaterialSeparatorBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    basicPerformanceMaterialSeparatorBusEnergyStorageStored.get(side).ifPresent(BasicPerformanceMaterialSeparatorBusEnergyStorage::tick);
+                }
+            }
+        }
 
 
         if (hasType(BasicTechnologyImitationMagicEngraverBusType.INSTANCE)) {
@@ -785,6 +804,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
             basicPerformanceFormingMachineBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicPerformanceFormingMachineBusEnergyStorage(this, storage));
         }
         if (hasType(BasicPerformanceFormingMachinePortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
+        }
+        if (hasType(BasicPerformanceMaterialSeparatorBusType.INSTANCE)) {
+            basicPerformanceMaterialSeparatorBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicPerformanceMaterialSeparatorBusEnergyStorage(this, storage));
+        }
+        if (hasType(BasicPerformanceMaterialSeparatorPortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
         }
 
@@ -946,6 +971,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicPerformanceFormingMachinePortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
         }
+        if (hasType(BasicPerformanceMaterialSeparatorBusType.INSTANCE)) {
+            basicPerformanceMaterialSeparatorBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicPerformanceMaterialSeparatorBusEnergyStorage(this, side));
+        }
+        if (hasType(BasicPerformanceMaterialSeparatorPortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
+        }
 
 
 
@@ -1021,7 +1052,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
         basicPerformanceElectricArcFurnaceBusEnergyStorageStored.invalidate();
         basicPerformanceFormingMachineBusEnergyStorageStored.invalidate();
-
+        basicPerformanceMaterialSeparatorBusEnergyStorageStored.invalidate();
 
 
         basicTechnologyImitationMagicEngraverBusEnergyStorageStored.invalidate();

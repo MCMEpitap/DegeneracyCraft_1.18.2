@@ -18,6 +18,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_perf
 import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_material_separator.BasicPerformanceMaterialSeparatorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineBlockEntity;
@@ -140,6 +141,9 @@ public class TransferRecipeC2SPacket {
                     blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
                 }
                 if (player.level.getBlockEntity(pos) instanceof BasicPerformanceFormingMachineBlockEntity blockEntity) {
+                    blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
+                }
+                if (player.level.getBlockEntity(pos) instanceof BasicPerformanceMaterialSeparatorBlockEntity blockEntity) {
                     blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
                 }
 

@@ -1211,6 +1211,19 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_HOLO_BLOCK.get(), "基本性能形成機ポート (ホログラム)");
         add(DCItems.BASIC_PERFORMANCE_FORMING_MACHINE_CIRCUIT.get(), "基本性能形成機回路");
 
+        add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BLOCK.get(), "基本性能物質分離機");
+        add("tooltip." + "degeneracycraft." + "basic_performance_material_separator_block",
+                "基本的な物質分離機. 混合物を分離しアイテムを得る.");
+        add(DCBlocks.BASIC_DURABILITY_VIBRATION_CONTROL_BASE_BLOCK.get(), "基本耐久振動制御ベース");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_material_separator_block",
+                "基本性能物質分離機用");
+        add(DCBlocks.BASIC_DURABILITY_VIBRATION_CONTROL_BASE_HOLO_BLOCK.get(), "基本耐久振動制御ベース (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_BLOCK.get(), "基本性能物質分離機バス");
+        add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_HOLO_BLOCK.get(), "基本性能物質分離機バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_BLOCK.get(), "基本性能物質分離機ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_HOLO_BLOCK.get(), "基本性能物質分離機ポート (ホログラム)");
+        add(DCItems.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_CIRCUIT.get(), "基本性能物質分離機回路");
+
 
 
 

@@ -1414,6 +1414,21 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_forming_machine_port_holo_block"));
         basicMachineCircuitHybridPhysicsItem(DCItems.BASIC_PERFORMANCE_FORMING_MACHINE_CIRCUIT.get());
 
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_material_separator_block"));
+        withExistingParent(DCBlocks.BASIC_DURABILITY_VIBRATION_CONTROL_BASE_BLOCK.getId().getPath(),
+                modLoc("block/basic_durability_vibration_control_base_block"));
+        withExistingParent(DCBlocks.BASIC_DURABILITY_VIBRATION_CONTROL_BASE_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_durability_vibration_control_base_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_material_separator_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_material_separator_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_material_separator_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_material_separator_port_holo_block"));
+        basicMachineCircuitHybridPhysicsItem(DCItems.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_CIRCUIT.get());
 
 
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BLOCK.getId().getPath(),

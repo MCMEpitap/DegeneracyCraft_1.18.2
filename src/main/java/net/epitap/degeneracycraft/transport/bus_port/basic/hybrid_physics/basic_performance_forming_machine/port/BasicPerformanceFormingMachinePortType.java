@@ -1,6 +1,6 @@
 package net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.port;
 
-import net.epitap.degeneracycraft.item.DCItems;
+import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortBlockEntityBase;
 import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortTypeBase;
 import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortWorkBlockEntity;
@@ -36,7 +36,7 @@ public class BasicPerformanceFormingMachinePortType extends PortTypeBase<Item> {
 
     @Override
     public ItemStack getIcon() {
-        return new ItemStack(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get());
+        return new ItemStack(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK.get());
     }
 
     @Override

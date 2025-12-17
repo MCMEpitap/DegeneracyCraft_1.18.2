@@ -22,6 +22,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_perf
 import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_material_separator.BasicPerformanceMaterialSeparatorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorBlockEntity;
@@ -84,6 +85,8 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_electric_arc_furnace.port.BasicPerformanceElectricArcFurnacePortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.bus.BasicPerformanceFormingMachineBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.port.BasicPerformanceFormingMachinePortBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_material_separator.bus.BasicPerformanceMaterialSeparatorBusBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_material_separator.port.BasicPerformanceMaterialSeparatorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.bus.BasicTechnologyImitationMagicEngraverBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.port.BasicTechnologyImitationMagicEngraverPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.bus.BasicTechnologySuspectedMagicCondenserBusBlockEntity;
@@ -404,6 +407,7 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicPerformanceElectricArcFurnacePortBlockEntity>> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_electric_arc_furnace_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceElectricArcFurnacePortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK.get()).build(null));
+   
     public static final RegistryObject<BlockEntityType<BasicPerformanceFormingMachineBlockEntity>> BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_forming_machine_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceFormingMachineBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK.get()).build(null));
@@ -413,6 +417,16 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicPerformanceFormingMachinePortBlockEntity>> BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_forming_machine_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceFormingMachinePortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<BasicPerformanceMaterialSeparatorBlockEntity>> BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_material_separator_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceMaterialSeparatorBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceMaterialSeparatorBusBlockEntity>> BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_material_separator_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceMaterialSeparatorBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceMaterialSeparatorPortBlockEntity>> BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_material_separator_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceMaterialSeparatorPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_BLOCK.get()).build(null));
 
 
 

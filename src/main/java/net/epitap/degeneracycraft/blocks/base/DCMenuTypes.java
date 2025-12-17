@@ -21,6 +21,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_perf
 import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_material_separator.BasicPerformanceMaterialSeparatorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorMenu;
@@ -191,6 +192,8 @@ public class DCMenuTypes {
             registerMenuType(BasicPerformanceElectricArcFurnaceMenu::new, "basic_performance_electric_arc_furnace_menu");
     public static final RegistryObject<MenuType<BasicPerformanceFormingMachineMenu>> BASIC_PERFORMANCE_FORMING_MACHINE_MENU =
             registerMenuType(BasicPerformanceFormingMachineMenu::new, "basic_performance_forming_machine_menu");
+    public static final RegistryObject<MenuType<BasicPerformanceMaterialSeparatorMenu>> BASIC_PERFORMANCE_MATERIAL_SEPARATOR_MENU =
+            registerMenuType(BasicPerformanceMaterialSeparatorMenu::new, "basic_performance_material_separator_menu");
 
 
     public static final RegistryObject<MenuType<BasicTechnologyImitationMagicEngraverMenu>> BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_MENU =

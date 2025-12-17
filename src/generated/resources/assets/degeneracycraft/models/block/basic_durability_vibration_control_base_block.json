@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_block",
+    "up": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_block",
+    "north": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_block",
+    "south": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_block",
+    "east": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_block",
+    "west": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_block",
+    "particle": "degeneracycraft:block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_block"
+  }
+}

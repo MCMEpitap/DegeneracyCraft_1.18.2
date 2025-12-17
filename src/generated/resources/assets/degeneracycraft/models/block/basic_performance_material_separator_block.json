@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/hybrid_physics/basic_performance_material_separator/basic_performance_material_separator_down",
+    "up": "degeneracycraft:block/machine/basic/hybrid_physics/basic_performance_material_separator/basic_performance_material_separator_up",
+    "north": "degeneracycraft:block/machine/basic/hybrid_physics/basic_performance_material_separator/basic_performance_material_separator_front",
+    "south": "degeneracycraft:block/machine/basic/hybrid_physics/basic_performance_material_separator/basic_performance_material_separator_side",
+    "east": "degeneracycraft:block/machine/basic/hybrid_physics/basic_performance_material_separator/basic_performance_material_separator_side",
+    "west": "degeneracycraft:block/machine/basic/hybrid_physics/basic_performance_material_separator/basic_performance_material_separator_side",
+    "particle": "degeneracycraft:block/machine/basic/hybrid_physics/basic_performance_material_separator/basic_performance_material_separator_front"
+  }
+}

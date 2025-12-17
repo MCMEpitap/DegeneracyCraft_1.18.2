@@ -328,6 +328,14 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicPerformanceFormingMachinePort();
         registerBasicPerformanceFormingMachinePortHolo();
 
+        registerBasicPerformanceMaterialSeparator();
+        registerBasicDurabilityVibrationControlBaseBlock();
+        registerBasicDurabilityVibrationControlBaseBlockHolo();
+        registerBasicPerformanceMaterialSeparatorBus();
+        registerBasicPerformanceMaterialSeparatorBusHolo();
+        registerBasicPerformanceMaterialSeparatorPort();
+        registerBasicPerformanceMaterialSeparatorPortHolo();
+
 
 
         registerBasicTechnologyImitationMagicEngraver();
@@ -3925,6 +3933,107 @@ public class DCBlockStateProvider extends BlockStateProvider {
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
+
+    private void registerBasicPerformanceMaterialSeparator() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_material_separator_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/basic_performance_material_separator_down"));
+        model.texture("up", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/basic_performance_material_separator_up"));
+        model.texture("north", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/basic_performance_material_separator_front"));
+        model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/basic_performance_material_separator_side"));
+        model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/basic_performance_material_separator_side"));
+        model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/basic_performance_material_separator_side"));
+        model.texture("particle", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/basic_performance_material_separator_front"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicDurabilityVibrationControlBaseBlock() {
+        BlockModelBuilder model = models().getBuilder("block/basic_durability_vibration_control_base_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_block"));
+        model.texture("up", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_block"));
+        model.texture("north", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_block"));
+        model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_block"));
+        model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_block"));
+        model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_block"));
+        orientedBlock(DCBlocks.BASIC_DURABILITY_VIBRATION_CONTROL_BASE_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicDurabilityVibrationControlBaseBlockHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_durability_vibration_control_base_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/abilityblock/basic_durability_vibration_control_base/basic_durability_vibration_control_base_holo_block"));
+        orientedBlock(DCBlocks.BASIC_DURABILITY_VIBRATION_CONTROL_BASE_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceMaterialSeparatorBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_material_separator_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/bus/basic_performance_material_separator_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/bus/basic_performance_material_separator_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/bus/basic_performance_material_separator_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/bus/basic_performance_material_separator_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/bus/basic_performance_material_separator_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/bus/basic_performance_material_separator_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/bus/basic_performance_material_separator_bus_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceMaterialSeparatorBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_material_separator_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/bus/basic_performance_material_separator_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/bus/basic_performance_material_separator_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/bus/basic_performance_material_separator_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/bus/basic_performance_material_separator_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/bus/basic_performance_material_separator_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/bus/basic_performance_material_separator_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/bus/basic_performance_material_separator_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+
+    private void registerBasicPerformanceMaterialSeparatorPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_material_separator_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/port/basic_performance_material_separator_port_block"));
+        model.texture("up", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/port/basic_performance_material_separator_port_block"));
+        model.texture("north", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/port/basic_performance_material_separator_port_block"));
+        model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/port/basic_performance_material_separator_port_block"));
+        model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/port/basic_performance_material_separator_port_block"));
+        model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/port/basic_performance_material_separator_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/port/basic_performance_material_separator_port_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceMaterialSeparatorPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_material_separator_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/port/basic_performance_material_separator_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/port/basic_performance_material_separator_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/port/basic_performance_material_separator_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/port/basic_performance_material_separator_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/port/basic_performance_material_separator_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/port/basic_performance_material_separator_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/hybrid_physics/basic_performance_material_separator/port/basic_performance_material_separator_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+    
+    
 
 
 

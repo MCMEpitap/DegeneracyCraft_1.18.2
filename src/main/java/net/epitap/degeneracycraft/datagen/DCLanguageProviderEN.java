@@ -1226,6 +1226,19 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.BASIC_PERFORMANCE_FORMING_MACHINE_CIRCUIT.get(), "Basic Performance Forming Machine Circuit");
 
 
+        add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BLOCK.get(), "Basic Performance Material Separator");
+        add("tooltip." + "degeneracycraft." + "basic_performance_material_separator_block",
+                "Basic Material Separator. Separates mixtures to obtain items.");
+        add(DCBlocks.BASIC_DURABILITY_VIBRATION_CONTROL_BASE_BLOCK.get(), "Basic Durability Vibration Control Base");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_material_separator_block",
+                "For Basic Performance Material Separator");
+        add(DCBlocks.BASIC_DURABILITY_VIBRATION_CONTROL_BASE_HOLO_BLOCK.get(), "Basic Durability Vibration Control Base (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_BLOCK.get(), "Basic Performance Material Separator Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_HOLO_BLOCK.get(), "Basic Performance Material Separator Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_BLOCK.get(), "Basic Performance Material Separator Port");
+        add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_HOLO_BLOCK.get(), "Basic Performance Material Separator Port (Hologram)");
+        add(DCItems.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_CIRCUIT.get(), "Basic Performance Material Separator Circuit");
+
 
 
         add(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BLOCK.get(), "Basic Technology Imitation Magic Engraver");

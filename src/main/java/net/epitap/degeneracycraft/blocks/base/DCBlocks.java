@@ -23,6 +23,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_perf
 import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineBlock;
+import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_material_separator.BasicPerformanceMaterialSeparatorBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorBlock;
@@ -86,6 +87,8 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_electric_arc_furnace.port.BasicPerformanceElectricArcFurnacePortBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.bus.BasicPerformanceFormingMachineBusBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.port.BasicPerformanceFormingMachinePortBlock;
+import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_material_separator.bus.BasicPerformanceMaterialSeparatorBusBlock;
+import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_material_separator.port.BasicPerformanceMaterialSeparatorPortBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.bus.BasicTechnologyImitationMagicEngraverBusBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.port.BasicTechnologyImitationMagicEngraverPortBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.bus.BasicTechnologySuspectedMagicCondenserBusBlock;
@@ -933,8 +936,30 @@ public class DCBlocks {
     public static final RegistryObject<Block> BASIC_PERFORMANCE_FORMING_MACHINE_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_forming_machine_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
-    public static final RegistryObject<Block> INFINITY_POWERED_ALL_IN_ONE_COMPRESSOR_MACHINE_BLOCK = registerBlock("infinity_powered_all_in_one_compressor_machine_block", () ->
-            new InfinityPoweredAllInOneCompressorMachineBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BLOCK = registerTooltipBasicMachineBlock("basic_performance_material_separator_block", () ->
+                    new BasicPerformanceMaterialSeparatorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "Lv0:3×3×3",
+            "Lv1:3×3×3",
+            "Base:Speed ×1.00,Energy Usage ×1.00",
+            "Lv0:Speed ×2.00,Energy Usage ×1.50",
+            "Lv1:Speed ×3.00,Energy Usage ×2.00",
+            "basic_performance_material_separator_block", "hybrid_physics", "basic");
+    public static final RegistryObject<Block> BASIC_DURABILITY_VIBRATION_CONTROL_BASE_BLOCK = registerTooltipMultiblockAbilityBlock("basic_durability_vibration_control_base_block", () ->
+                    new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "basic_performance_material_separator_block",
+            "hybrid_physics",
+            "basic");
+    public static final RegistryObject<Block> BASIC_DURABILITY_VIBRATION_CONTROL_BASE_HOLO_BLOCK = registerHoloBlock("basic_durability_vibration_control_base_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_BLOCK = registerBlock("basic_performance_material_separator_bus_block", () ->
+            new BasicPerformanceMaterialSeparatorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_material_separator_bus_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_BLOCK = registerBlock("basic_performance_material_separator_port_block", () ->
+            new BasicPerformanceMaterialSeparatorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_material_separator_port_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+
 
 
 
@@ -1038,6 +1063,10 @@ public class DCBlocks {
 //            }
 //        });
 //    }
+
+    public static final RegistryObject<Block> INFINITY_POWERED_ALL_IN_ONE_COMPRESSOR_MACHINE_BLOCK = registerBlock("infinity_powered_all_in_one_compressor_machine_block", () ->
+            new InfinityPoweredAllInOneCompressorMachineBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {

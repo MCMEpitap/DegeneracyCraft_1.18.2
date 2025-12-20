@@ -18,6 +18,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technol
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_ore_sorter.BasicPerformanceOreSorterScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineScreen;
@@ -53,6 +54,7 @@ import net.epitap.degeneracycraft.item.DCAdvancementIcon;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.item.DCTextItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
+import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_ore_sorter.bus.BasicPerformanceOreSorterBusRenderer;
 import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortBlockClickEvent;
 import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortBlockEntities;
 import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortBlocks;
@@ -327,7 +329,7 @@ public class Degeneracycraft {
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_MENU.get(), BasicPerformanceDesignatedDataInjectorScreen::new);
 
 
-
+        MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_ORE_SORTER_MENU.get(), BasicPerformanceOreSorterScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_ROCK_CRASHER_MENU.get(), BasicPerformanceRockCrasherScreen::new);
 
 
@@ -506,11 +508,9 @@ public class Degeneracycraft {
 
 
 
-
-
-
-
-
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_HOLO_BLOCK.get(), RenderType.translucent());
 
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_CRASHING_BASE_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_HOLO_BLOCK.get(), RenderType.translucent());

@@ -45,6 +45,9 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_
 import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_machine_data_installer.bus.BasicPerformanceMachineDataInstallerBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_machine_data_installer.bus.BasicPerformanceMachineDataInstallerBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_machine_data_installer.port.BasicPerformanceMachineDataInstallerPortType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_ore_sorter.bus.BasicPerformanceOreSorterBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_ore_sorter.bus.BasicPerformanceOreSorterBusType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_ore_sorter.port.BasicPerformanceOreSorterPortType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_rock_crasher.bus.BasicPerformanceRockCrasherBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_rock_crasher.bus.BasicPerformanceRockCrasherBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_rock_crasher.port.BasicPerformanceRockCrasherPortType;
@@ -119,6 +122,8 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
     protected PortSetLazyOptional<BasicPerformanceMachineDataInstallerBusEnergyStorage> basicPerformanceMachineDataInstallerBusEnergyStorageStored;
 
 
+
+    protected PortSetLazyOptional<BasicPerformanceOreSorterBusEnergyStorage> basicPerformanceOreSorterBusEnergyStorageStored;
     protected PortSetLazyOptional<BasicPerformanceRockCrasherBusEnergyStorage> basicPerformanceRockCrasherBusEnergyStorageStored;
 
 
@@ -174,7 +179,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         basicPerformanceDesignatedDataInjectorBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicPerformanceMachineDataInstallerBusEnergyStorageStored = new PortSetLazyOptional<>();
 
-
+        basicPerformanceOreSorterBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicPerformanceRockCrasherBusEnergyStorageStored = new PortSetLazyOptional<>();
 
 
@@ -367,7 +372,16 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         }
 
 
-
+        if (cap == CapabilityEnergy.ENERGY && hasType(BasicPerformanceOreSorterBusType.INSTANCE)) {
+            if (side != null) {
+                return basicPerformanceOreSorterBusEnergyStorageStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPerformanceOreSorterPortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        }
         if (cap == CapabilityEnergy.ENERGY && hasType(BasicPerformanceRockCrasherBusType.INSTANCE)) {
             if (side != null) {
                 return basicPerformanceRockCrasherBusEnergyStorageStored.get(side).cast();
@@ -616,7 +630,13 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         }
 
 
-
+        if (hasType(BasicPerformanceOreSorterBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    basicPerformanceOreSorterBusEnergyStorageStored.get(side).ifPresent(BasicPerformanceOreSorterBusEnergyStorage::tick);
+                }
+            }
+        }
         if (hasType(BasicPerformanceRockCrasherBusType.INSTANCE)) {
             for (Direction side : Direction.values()) {
                 if (portExtracting(side)) {
@@ -785,6 +805,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
 
+        if (hasType(BasicPerformanceOreSorterBusType.INSTANCE)) {
+            basicPerformanceOreSorterBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicPerformanceOreSorterBusEnergyStorage(this, storage));
+        }
+        if (hasType(BasicPerformanceOreSorterPortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
+        }
         if (hasType(BasicPerformanceRockCrasherBusType.INSTANCE)) {
             basicPerformanceRockCrasherBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicPerformanceRockCrasherBusEnergyStorage(this, storage));
         }
@@ -949,7 +975,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         }
 
 
-
+        if (hasType(BasicPerformanceOreSorterBusType.INSTANCE)) {
+            basicPerformanceOreSorterBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicPerformanceOreSorterBusEnergyStorage(this, side));
+        }
+        if (hasType(BasicPerformanceOreSorterPortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
+        }
         if (hasType(BasicPerformanceRockCrasherBusType.INSTANCE)) {
             basicPerformanceRockCrasherBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicPerformanceRockCrasherBusEnergyStorage(this, side));
         }
@@ -1045,7 +1076,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         basicPerformanceMachineDataInstallerBusEnergyStorageStored.invalidate();
 
 
-
+        basicPerformanceOreSorterBusEnergyStorageStored.invalidate();
         basicPerformanceRockCrasherBusEnergyStorageStored.invalidate();
 
 

@@ -295,6 +295,13 @@ public class DCBlockLootTableProvider extends BlockLoot {
 
 
 
+        this.add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BLOCK.get()));
+        this.add(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_BLOCK.get()));
+        this.add(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_HOLO_BLOCK.get(), block -> noDrop());
 
 
         this.add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get()));

@@ -19,6 +19,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technol
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_ore_sorter.BasicPerformanceOreSorterBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineBlockEntity;
@@ -79,6 +80,8 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_
 import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_designated_data_injector.port.BasicPerformanceDesignatedDataInjectorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_machine_data_installer.bus.BasicPerformanceMachineDataInstallerBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_machine_data_installer.port.BasicPerformanceMachineDataInstallerPortBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_ore_sorter.bus.BasicPerformanceOreSorterBusBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_ore_sorter.port.BasicPerformanceOreSorterPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_rock_crasher.bus.BasicPerformanceRockCrasherBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_rock_crasher.port.BasicPerformanceRockCrasherPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_electric_arc_furnace.bus.BasicPerformanceElectricArcFurnaceBusBlockEntity;
@@ -376,10 +379,16 @@ public class DCBlockEntities {
 
 
 
-
-
-
-
+    public static final RegistryObject<BlockEntityType<BasicPerformanceOreSorterBlockEntity>> BASIC_PERFORMANCE_ORE_SORTER_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_ore_sorter_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceOreSorterBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceOreSorterBusBlockEntity>> BASIC_PERFORMANCE_ORE_SORTER_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_ore_sorter_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceOreSorterBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceOreSorterPortBlockEntity>> BASIC_PERFORMANCE_ORE_SORTER_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_ore_sorter_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceOreSorterPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_BLOCK.get()).build(null));
+    
     public static final RegistryObject<BlockEntityType<BasicPerformanceRockCrasherBlockEntity>> BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_rock_crasher_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceRockCrasherBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get()).build(null));

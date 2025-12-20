@@ -941,10 +941,7 @@ public class DCItems extends CreativeModeTab {
 
 
 
-
-
-
-
+    public static final RegistryObject<Item> BASIC_PERFORMANCE_ORE_SORTER_CIRCUIT = ITEMS.register("basic_performance_ore_sorter_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_PERFORMANCE_ROCK_CRASHER_CIRCUIT = ITEMS.register("basic_performance_rock_crasher_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
 

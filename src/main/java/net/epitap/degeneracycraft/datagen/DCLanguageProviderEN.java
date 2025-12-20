@@ -1164,14 +1164,21 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_BLOCK.get(), "Basic Performance Designated Data Injector Port");
         add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_HOLO_BLOCK.get(), "Basic Performance Designated Data Injector Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_CIRCUIT.get(), "Basic Performance Designated Data Injector Circuit");
+
+
         
-        
-        
-
-
-
-
-
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BLOCK.get(), "Basic Performance Ore Sorter");
+        add("tooltip." + "degeneracycraft." + "basic_performance_ore_sorter_block",
+                "基本的な鉱石選別機. 鉱石を選別し複数の産出物を得る.");
+        add(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_BLOCK.get(), "Basic Efficiency Ore Sorting Filter");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_ore_sorter_block",
+                "For Basic Performance Ore Sorter");
+        add(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_HOLO_BLOCK.get(), "Basic Efficiency Ore Sorting Filter (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_BLOCK.get(), "Basic Performance Ore Sorter Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_HOLO_BLOCK.get(), "Basic Performance Ore Sorter Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_BLOCK.get(), "Basic Performance Ore Sorter Port");
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_HOLO_BLOCK.get(), "Basic Performance Ore Sorter Port (Hologram)");
+        add(DCItems.BASIC_PERFORMANCE_ORE_SORTER_CIRCUIT.get(), "Basic Performance Ore Sorter Circuit");
 
         add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get(), "Basic Performance Rock Crasher");
         add("tooltip." + "degeneracycraft." + "basic_performance_rock_crasher_block",
@@ -1186,17 +1193,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_HOLO_BLOCK.get(), "Basic Performance Rock Crasher Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_ROCK_CRASHER_CIRCUIT.get(), "Basic Performance Rock Crasher Circuit");
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+                
         
 
         add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get(), "Basic Performance Electric Arc Furnace");

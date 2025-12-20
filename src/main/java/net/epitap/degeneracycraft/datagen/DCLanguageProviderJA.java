@@ -1166,9 +1166,19 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
 
-
-
-
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BLOCK.get(), "基本性能鉱石選別機");
+        add("tooltip." + "degeneracycraft." + "basic_performance_ore_sorter_block",
+                "基本的な鉱石選別機. 鉱石を選別し複数の産出物を得る.");
+        add(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_BLOCK.get(), "基本効率鉱石選別フィルター");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_ore_sorter_block",
+                "基本性能鉱石選別機用");
+        add(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_HOLO_BLOCK.get(), "基本効率鉱石選別フィルター (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_BLOCK.get(), "基本性能鉱石選別機バス");
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_HOLO_BLOCK.get(), "基本性能鉱石選別機バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_BLOCK.get(), "基本性能鉱石選別機ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_HOLO_BLOCK.get(), "基本性能鉱石選別機ポート (ホログラム)");
+        add(DCItems.BASIC_PERFORMANCE_ORE_SORTER_CIRCUIT.get(), "基本性能鉱石選別機回路");
+        
         add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get(), "基本性能岩石破砕機");
         add("tooltip." + "degeneracycraft." + "basic_performance_rock_crasher_block",
                 "基本的な岩石破砕機. 石の有効活用を.");
@@ -1181,7 +1191,6 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK.get(), "基本性能岩石破砕機ポート");
         add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_HOLO_BLOCK.get(), "基本性能岩石破砕機ポート (ホログラム)");
         add(DCItems.BASIC_PERFORMANCE_ROCK_CRASHER_CIRCUIT.get(), "基本性能岩石破砕機回路");
-
 
 
 
@@ -1315,7 +1324,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
 
-
+        add("jei." + "degeneracycraft_basic_performance_ore_sorter", "基本性能鉱石選別機 レシピ");
         add("jei." + "degeneracycraft_basic_performance_rock_crasher", "基本性能岩石破砕機 レシピ");
 
 

@@ -297,11 +297,16 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicPerformanceDesignatedDataInjectorBusHolo();
         registerBasicPerformanceDesignatedDataInjectorPort();
         registerBasicPerformanceDesignatedDataInjectorPortHolo();
-        
-        
-        
 
 
+
+        registerBasicPerformanceOreSorter();
+        registerBasicEfficiencyOreSortingFilter();
+        registerBasicEfficiencyOreSortingFilterHolo();
+        registerBasicPerformanceOreSorterBus();
+        registerBasicPerformanceOreSorterBusHolo();
+        registerBasicPerformanceOreSorterPort();
+        registerBasicPerformanceOreSorterPortHolo();
 
         registerBasicPerformanceRockCrasher();
         registerBasicCrashingBase();
@@ -3614,17 +3619,106 @@ public class DCBlockStateProvider extends BlockStateProvider {
     }
 
 
+    
+
+    private void registerBasicPerformanceOreSorter() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_ore_sorter_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/basic_performance_ore_sorter_down"));
+        model.texture("up", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/basic_performance_ore_sorter_up"));
+        model.texture("north", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/basic_performance_ore_sorter_front"));
+        model.texture("south", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/basic_performance_ore_sorter_side"));
+        model.texture("east", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/basic_performance_ore_sorter_side"));
+        model.texture("west", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/basic_performance_ore_sorter_side"));
+        model.texture("particle", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/basic_performance_ore_sorter_front"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicEfficiencyOreSortingFilter() {
+        BlockModelBuilder model = models().getBuilder("block/basic_efficiency_ore_sorting_filter_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_efficiency_ore_sorting_filter/basic_efficiency_ore_sorting_filter_block"));
+        model.texture("up", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_efficiency_ore_sorting_filter/basic_efficiency_ore_sorting_filter_block"));
+        model.texture("north", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_efficiency_ore_sorting_filter/basic_efficiency_ore_sorting_filter_block"));
+        model.texture("south", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_efficiency_ore_sorting_filter/basic_efficiency_ore_sorting_filter_block"));
+        model.texture("east", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_efficiency_ore_sorting_filter/basic_efficiency_ore_sorting_filter_block"));
+        model.texture("west", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_efficiency_ore_sorting_filter/basic_efficiency_ore_sorting_filter_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_efficiency_ore_sorting_filter/basic_efficiency_ore_sorting_filter_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicEfficiencyOreSortingFilterHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_efficiency_ore_sorting_filter_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_efficiency_ore_sorting_filter/basic_efficiency_ore_sorting_filter_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_efficiency_ore_sorting_filter/basic_efficiency_ore_sorting_filter_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_efficiency_ore_sorting_filter/basic_efficiency_ore_sorting_filter_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_efficiency_ore_sorting_filter/basic_efficiency_ore_sorting_filter_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_efficiency_ore_sorting_filter/basic_efficiency_ore_sorting_filter_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_efficiency_ore_sorting_filter/basic_efficiency_ore_sorting_filter_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/geo_science/abilityblock/basic_efficiency_ore_sorting_filter/basic_efficiency_ore_sorting_filter_holo_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceOreSorterBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_ore_sorter_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceOreSorterBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_ore_sorter_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
 
 
+    private void registerBasicPerformanceOreSorterPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_ore_sorter_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/port/basic_performance_ore_sorter_port_block"));
+        model.texture("up", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/port/basic_performance_ore_sorter_port_block"));
+        model.texture("north", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/port/basic_performance_ore_sorter_port_block"));
+        model.texture("south", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/port/basic_performance_ore_sorter_port_block"));
+        model.texture("east", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/port/basic_performance_ore_sorter_port_block"));
+        model.texture("west", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/port/basic_performance_ore_sorter_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/port/basic_performance_ore_sorter_port_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_BLOCK.get(),
+                state -> model);
+    }
 
-
-
-
-
-
-
-
-
+    private void registerBasicPerformanceOreSorterPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_ore_sorter_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/port/basic_performance_ore_sorter_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/port/basic_performance_ore_sorter_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/port/basic_performance_ore_sorter_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/port/basic_performance_ore_sorter_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/port/basic_performance_ore_sorter_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/port/basic_performance_ore_sorter_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/geo_science/basic_performance_ore_sorter/port/basic_performance_ore_sorter_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
 
     private void registerBasicPerformanceRockCrasher() {
         BlockModelBuilder model = models().getBuilder("block/basic_performance_rock_crasher_block");

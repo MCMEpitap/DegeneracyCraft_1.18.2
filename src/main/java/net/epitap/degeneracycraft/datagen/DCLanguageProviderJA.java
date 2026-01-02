@@ -957,19 +957,31 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT.get(), "基本性能天体望遠鏡回路");
 
 
-
         add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BLOCK.get(), "基本性能生体反応機");
         add("tooltip." + "degeneracycraft." + "basic_performance_bio_reactor_block",
-                "基本的な生体反応機. 生物の力で物質を産み出す.");
+                "基本的な生体反応機. 生物の力で物質を生成する.");
         add(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_BLOCK.get(), "基本速度栽培温室");
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_bio_reactor_block",
-                "基本性能生体反応機用");
+                "基本性能生体反応機");
         add(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_HOLO_BLOCK.get(), "基本速度栽培温室 (ホログラム)");
         add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_BLOCK.get(), "基本性能生体反応機バス");
         add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_HOLO_BLOCK.get(), "基本性能生体反応機バス (ホログラム)");
         add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_BLOCK.get(), "基本性能生体反応機ポート");
         add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_HOLO_BLOCK.get(), "基本性能生体反応機ポート (ホログラム)");
         add(DCItems.BASIC_PERFORMANCE_BIO_REACTOR_CIRCUIT.get(), "基本性能生体反応機回路");
+
+        add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BLOCK.get(), "基本性能細胞培養機");
+        add("tooltip." + "degeneracycraft." + "basic_performance_cell_incubator_block",
+                "基本的な細胞培養機. 細胞を活性化させ活用する.");
+        add(DCBlocks.BASIC_DURABILITY_INCUBATION_CONTAINER_BLOCK.get(), "基本耐久培養コンテナ");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_cell_incubator_block",
+                "基本性能細胞培養機用");
+        add(DCBlocks.BASIC_DURABILITY_INCUBATION_CONTAINER_HOLO_BLOCK.get(), "基本耐久培養コンテナ (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_BLOCK.get(), "基本性能細胞培養機バス");
+        add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_HOLO_BLOCK.get(), "基本性能細胞培養機バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_BLOCK.get(), "基本性能細胞培養機ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_HOLO_BLOCK.get(), "基本性能細胞培養機ポート (ホログラム)");
+        add(DCItems.BASIC_PERFORMANCE_CELL_INCUBATOR_CIRCUIT.get(), "基本性能細胞培養機回路");
         
 
 
@@ -1166,9 +1178,19 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
 
-
-
-
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BLOCK.get(), "基本性能鉱石選別機");
+        add("tooltip." + "degeneracycraft." + "basic_performance_ore_sorter_block",
+                "基本的な鉱石選別機. 鉱石を選別し複数の産出物を得る.");
+        add(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_BLOCK.get(), "基本効率鉱石選別フィルター");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_ore_sorter_block",
+                "基本性能鉱石選別機用");
+        add(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_HOLO_BLOCK.get(), "基本効率鉱石選別フィルター (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_BLOCK.get(), "基本性能鉱石選別機バス");
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_HOLO_BLOCK.get(), "基本性能鉱石選別機バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_BLOCK.get(), "基本性能鉱石選別機ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_HOLO_BLOCK.get(), "基本性能鉱石選別機ポート (ホログラム)");
+        add(DCItems.BASIC_PERFORMANCE_ORE_SORTER_CIRCUIT.get(), "基本性能鉱石選別機回路");
+        
         add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get(), "基本性能岩石破砕機");
         add("tooltip." + "degeneracycraft." + "basic_performance_rock_crasher_block",
                 "基本的な岩石破砕機. 石の有効活用を.");
@@ -1182,6 +1204,18 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_HOLO_BLOCK.get(), "基本性能岩石破砕機ポート (ホログラム)");
         add(DCItems.BASIC_PERFORMANCE_ROCK_CRASHER_CIRCUIT.get(), "基本性能岩石破砕機回路");
 
+        add(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_BLOCK.get(), "基本性能土壌精製機");
+        add("tooltip." + "degeneracycraft." + "basic_performance_soil_purifier_block",
+                "基本的な土壌精製機. 土壌以外にも利用することも可能.");
+        add(DCBlocks.BASIC_EFFICIENCY_PARTICLE_MIXING_CHAMBER_BLOCK.get(), "基本効率粒子混合室");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_soil_purifier_block",
+                "基本性能土壌精製機用");
+        add(DCBlocks.BASIC_EFFICIENCY_PARTICLE_MIXING_CHAMBER_HOLO_BLOCK.get(), "基本効率粒子混合室 (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_BUS_BLOCK.get(), "基本性能土壌精製機バス");
+        add(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_BUS_HOLO_BLOCK.get(), "基本性能土壌精製機バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_PORT_BLOCK.get(), "基本性能土壌精製機ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_PORT_HOLO_BLOCK.get(), "基本性能土壌精製機ポート (ホログラム)");
+        add(DCItems.BASIC_PERFORMANCE_SOIL_PURIFIER_CIRCUIT.get(), "基本性能土壌精製機回路");
 
 
 
@@ -1288,6 +1322,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         
         
         add("jei." + "degeneracycraft_basic_performance_bio_reactor", "基本性能生体反応機 レシピ");
+        add("jei." + "degeneracycraft_basic_performance_cell_incubator", "基本性能細胞培養機 レシピ");
 
 
         
@@ -1315,8 +1350,9 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
 
-
+        add("jei." + "degeneracycraft_basic_performance_ore_sorter", "基本性能鉱石選別機 レシピ");
         add("jei." + "degeneracycraft_basic_performance_rock_crasher", "基本性能岩石破砕機 レシピ");
+        add("jei." + "degeneracycraft_basic_performance_soil_purifier", "基本性能土壌精製機 レシピ");
 
 
 

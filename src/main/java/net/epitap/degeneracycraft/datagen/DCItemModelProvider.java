@@ -1109,6 +1109,21 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_bio_reactor_port_holo_block"));
         basicMachineCircuitBiologyItem(DCItems.BASIC_PERFORMANCE_BIO_REACTOR_CIRCUIT.get());
 
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_cell_incubator_block"));
+        withExistingParent(DCBlocks.BASIC_DURABILITY_INCUBATION_CONTAINER_BLOCK.getId().getPath(),
+                modLoc("block/basic_durability_incubation_container_block"));
+        withExistingParent(DCBlocks.BASIC_DURABILITY_INCUBATION_CONTAINER_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_durability_incubation_container_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_cell_incubator_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_cell_incubator_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_cell_incubator_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_cell_incubator_port_holo_block"));
+        basicMachineCircuitBiologyItem(DCItems.BASIC_PERFORMANCE_CELL_INCUBATOR_CIRCUIT.get());
 
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BLOCK.getId().getPath(),
@@ -1361,6 +1376,21 @@ public class DCItemModelProvider extends ItemModelProvider {
         basicMachineCircuitFormalScienceItem(DCItems.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_CIRCUIT.get());
 
 
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_ore_sorter_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_ore_sorting_filter_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_ore_sorting_filter_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_ore_sorter_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_ore_sorter_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_ore_sorter_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_ore_sorter_port_holo_block"));
+        basicMachineCircuitGeoScienceItem(DCItems.BASIC_PERFORMANCE_ORE_SORTER_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_rock_crasher_block"));
@@ -1378,7 +1408,21 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_rock_crasher_port_holo_block"));
         basicMachineCircuitGeoScienceItem(DCItems.BASIC_PERFORMANCE_ROCK_CRASHER_CIRCUIT.get());
 
-
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_soil_purifier_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_PARTICLE_MIXING_CHAMBER_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_particle_mixing_chamber_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_PARTICLE_MIXING_CHAMBER_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_particle_mixing_chamber_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_soil_purifier_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_soil_purifier_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_soil_purifier_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_soil_purifier_port_holo_block"));
+        basicMachineCircuitGeoScienceItem(DCItems.BASIC_PERFORMANCE_SOIL_PURIFIER_CIRCUIT.get());
 
 
 

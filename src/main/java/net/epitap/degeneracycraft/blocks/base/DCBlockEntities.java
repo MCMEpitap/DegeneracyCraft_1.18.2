@@ -3,7 +3,8 @@ package net.epitap.degeneracycraft.blocks.base;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.entity.machine.PulverizerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeBlockEntity;
-import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bioreactor.BasicPerformanceBioReactorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserBlockEntity;
@@ -19,7 +20,9 @@ import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technol
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_ore_sorter.BasicPerformanceOreSorterBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_soil_purifier.BasicPerformanceSoilPurifierBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_material_separator.BasicPerformanceMaterialSeparatorBlockEntity;
@@ -51,6 +54,8 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_perfo
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.port.BasicPerformanceAstronomicalTelescopePortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.bus.BasicPerformanceBioReactorBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.port.BasicPerformanceBioReactorPortBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_cell_incubator.bus.BasicPerformanceCellIncubatorBusBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_cell_incubator.port.BasicPerformanceCellIncubatorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.bus.BasicPerformanceChemicalReactorBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.port.BasicPerformanceChemicalReactorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_compound_purifier.bus.BasicPerformanceCompoundPurifierBusBlockEntity;
@@ -79,8 +84,12 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_
 import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_designated_data_injector.port.BasicPerformanceDesignatedDataInjectorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_machine_data_installer.bus.BasicPerformanceMachineDataInstallerBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_machine_data_installer.port.BasicPerformanceMachineDataInstallerPortBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_ore_sorter.bus.BasicPerformanceOreSorterBusBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_ore_sorter.port.BasicPerformanceOreSorterPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_rock_crasher.bus.BasicPerformanceRockCrasherBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_rock_crasher.port.BasicPerformanceRockCrasherPortBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_soil_purifier_block.bus.BasicPerformanceSoilPurifierBusBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_soil_purifier_block.port.BasicPerformanceSoilPurifierPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_electric_arc_furnace.bus.BasicPerformanceElectricArcFurnaceBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_electric_arc_furnace.port.BasicPerformanceElectricArcFurnacePortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.bus.BasicPerformanceFormingMachineBusBlockEntity;
@@ -208,6 +217,16 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicPerformanceBioReactorPortBlockEntity>> BASIC_PERFORMANCE_BIO_REACTOR_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_bio_reactor_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceBioReactorPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_BLOCK.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<BasicPerformanceCellIncubatorBlockEntity>> BASIC_PERFORMANCE_CELL_INCUBATOR_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_cell_incubator_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceCellIncubatorBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceCellIncubatorBusBlockEntity>> BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_cell_incubator_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceCellIncubatorBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceCellIncubatorPortBlockEntity>> BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_cell_incubator_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceCellIncubatorPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_BLOCK.get()).build(null));
 
 
 
@@ -376,10 +395,16 @@ public class DCBlockEntities {
 
 
 
-
-
-
-
+    public static final RegistryObject<BlockEntityType<BasicPerformanceOreSorterBlockEntity>> BASIC_PERFORMANCE_ORE_SORTER_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_ore_sorter_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceOreSorterBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceOreSorterBusBlockEntity>> BASIC_PERFORMANCE_ORE_SORTER_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_ore_sorter_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceOreSorterBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceOreSorterPortBlockEntity>> BASIC_PERFORMANCE_ORE_SORTER_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_ore_sorter_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceOreSorterPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_BLOCK.get()).build(null));
+    
     public static final RegistryObject<BlockEntityType<BasicPerformanceRockCrasherBlockEntity>> BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_rock_crasher_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceRockCrasherBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get()).build(null));
@@ -390,6 +415,15 @@ public class DCBlockEntities {
             BLOCK_ENTITIES.register("basic_performance_rock_crasher_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceRockCrasherPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<BasicPerformanceSoilPurifierBlockEntity>> BASIC_PERFORMANCE_SOIL_PURIFIER_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_soil_purifier_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceSoilPurifierBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceSoilPurifierBusBlockEntity>> BASIC_PERFORMANCE_SOIL_PURIFIER_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_soil_purifier_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceSoilPurifierBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceSoilPurifierPortBlockEntity>> BASIC_PERFORMANCE_SOIL_PURIFIER_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_soil_purifier_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceSoilPurifierPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_PORT_BLOCK.get()).build(null));
 
 
 
@@ -427,8 +461,7 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicPerformanceMaterialSeparatorPortBlockEntity>> BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_material_separator_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceMaterialSeparatorPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_BLOCK.get()).build(null));
-
-
+    
 
 
     public static final RegistryObject<BlockEntityType<BasicTechnologyImitationMagicEngraverBlockEntity>> BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BLOCK_ENTITY =

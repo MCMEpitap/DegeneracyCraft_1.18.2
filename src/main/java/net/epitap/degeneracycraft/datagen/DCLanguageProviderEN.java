@@ -974,9 +974,21 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_BLOCK.get(), "Basic Performance Bio Reactor Port");
         add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_HOLO_BLOCK.get(), "Basic Performance Bio Reactor Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_BIO_REACTOR_CIRCUIT.get(), "Basic Performance Bio Reactor Circuit");
-        
-        
-        
+
+        add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BLOCK.get(), "Basic Performance Cell Incubator");
+        add("tooltip." + "degeneracycraft." + "basic_performance_cell_incubator_block",
+                "Basic Cell Incubator. Activate and utilize cells.");
+        add(DCBlocks.BASIC_DURABILITY_INCUBATION_CONTAINER_BLOCK.get(), "Basic Durability Incubation Container");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_cell_incubator_block",
+                "For Basic Performance Cell Incubator");
+        add(DCBlocks.BASIC_DURABILITY_INCUBATION_CONTAINER_HOLO_BLOCK.get(), "Basic Durability Incubation Container (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_BLOCK.get(), "Basic Performance Cell Incubator Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_HOLO_BLOCK.get(), "Basic Performance Cell Incubator Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_BLOCK.get(), "Basic Performance Cell Incubator Port");
+        add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_HOLO_BLOCK.get(), "Basic Performance Cell Incubator Port (Hologram)");
+        add(DCItems.BASIC_PERFORMANCE_CELL_INCUBATOR_CIRCUIT.get(), "Basic Performance Cell Incubator Circuit");
+
+
         add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BLOCK.get(), "Basic Performance Chemical Reactor");
         add("tooltip." + "degeneracycraft." + "basic_performance_chemical_reactor_block",
                 "Basic Chemical Reactor. Create new substances through chemical reactions.");
@@ -1164,14 +1176,21 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_BLOCK.get(), "Basic Performance Designated Data Injector Port");
         add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_HOLO_BLOCK.get(), "Basic Performance Designated Data Injector Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_CIRCUIT.get(), "Basic Performance Designated Data Injector Circuit");
+
+
         
-        
-        
-
-
-
-
-
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BLOCK.get(), "Basic Performance Ore Sorter");
+        add("tooltip." + "degeneracycraft." + "basic_performance_ore_sorter_block",
+                "基本的な鉱石選別機. 鉱石を選別し複数の産出物を得る.");
+        add(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_BLOCK.get(), "Basic Efficiency Ore Sorting Filter");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_ore_sorter_block",
+                "For Basic Performance Ore Sorter");
+        add(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_HOLO_BLOCK.get(), "Basic Efficiency Ore Sorting Filter (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_BLOCK.get(), "Basic Performance Ore Sorter Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_HOLO_BLOCK.get(), "Basic Performance Ore Sorter Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_BLOCK.get(), "Basic Performance Ore Sorter Port");
+        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_HOLO_BLOCK.get(), "Basic Performance Ore Sorter Port (Hologram)");
+        add(DCItems.BASIC_PERFORMANCE_ORE_SORTER_CIRCUIT.get(), "Basic Performance Ore Sorter Circuit");
 
         add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get(), "Basic Performance Rock Crasher");
         add("tooltip." + "degeneracycraft." + "basic_performance_rock_crasher_block",
@@ -1185,18 +1204,19 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK.get(), "Basic Performance Rock Crasher Port");
         add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_HOLO_BLOCK.get(), "Basic Performance Rock Crasher Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_ROCK_CRASHER_CIRCUIT.get(), "Basic Performance Rock Crasher Circuit");
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+        add(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_BLOCK.get(), "Basic Performance Soil Purifier");
+        add("tooltip." + "degeneracycraft." + "basic_performance_soil_purifier_block",
+                "Basic Soil Purifier. It can also be used for purposes other than soil.");
+        add(DCBlocks.BASIC_EFFICIENCY_PARTICLE_MIXING_CHAMBER_BLOCK.get(), "Basic Efficiency Particle Mixing Chamber");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_soil_purifier_block",
+                "For Basic Performance Soil Purifier");
+        add(DCBlocks.BASIC_EFFICIENCY_PARTICLE_MIXING_CHAMBER_HOLO_BLOCK.get(), "Basic Efficiency Particle Mixing Chamber (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_BUS_BLOCK.get(), "Basic Performance Soil Purifier Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_BUS_HOLO_BLOCK.get(), "Basic Performance Soil Purifier Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_PORT_BLOCK.get(), "Basic Performance Soil Purifier Port");
+        add(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_PORT_HOLO_BLOCK.get(), "Basic Performance Soil Purifier Port (Hologram)");
+        add(DCItems.BASIC_PERFORMANCE_SOIL_PURIFIER_CIRCUIT.get(), "Basic Performance Soil Purifier Circuit");
         
 
         add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get(), "Basic Performance Electric Arc Furnace");
@@ -1293,11 +1313,12 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
 
 
-        add("jei." + "basic_performance_astronomical_telescope", "Basic Performance Astronomical Telescope Recipe");
+        add("jei." + "degeneracycraft_basic_performance_astronomical_telescope", "Basic Performance Astronomical Telescope Recipe");
 
         
         
         add("jei." + "degeneracycraft_basic_performance_bio_reactor", "Basic Performance Bio Reactor Recipe");
+        add("jei." + "degeneracycraft_basic_performance_cell_incubator", "Basic Performance Bio Reactor Recipe");
 
 
 
@@ -1325,10 +1346,9 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
 
 
-
+        add("jei." + "degeneracycraft_basic_performance_ore_sorter", "Basic Performance Ore Sorter Recipe");
         add("jei." + "degeneracycraft_basic_performance_rock_crasher", "Basic Performance Rock Crasher Recipe");
-
-
+        add("jei." + "degeneracycraft_basic_performance_soil_purifier", "Basic Performance Soil Purifier Recipe");
 
 
 

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/biology/basic_performance_cell_incubator/port/basic_performance_cell_incubator_port_block",
+    "up": "degeneracycraft:block/machine/basic/biology/basic_performance_cell_incubator/port/basic_performance_cell_incubator_port_block",
+    "north": "degeneracycraft:block/machine/basic/biology/basic_performance_cell_incubator/port/basic_performance_cell_incubator_port_block",
+    "south": "degeneracycraft:block/machine/basic/biology/basic_performance_cell_incubator/port/basic_performance_cell_incubator_port_block",
+    "east": "degeneracycraft:block/machine/basic/biology/basic_performance_cell_incubator/port/basic_performance_cell_incubator_port_block",
+    "west": "degeneracycraft:block/machine/basic/biology/basic_performance_cell_incubator/port/basic_performance_cell_incubator_port_block",
+    "particle": "degeneracycraft:block/machine/basic/biology/basic_performance_cell_incubator/port/basic_performance_cell_incubator_port_block"
+  }
+}

@@ -17,6 +17,8 @@ public class PortModelRegistry {
 
         BASIC_PERFORMANCE_BIO_REACTOR_BUS_BLOCK_EXTRACT("block/basic_performance_bio_reactor_bus_block_extract"),
         BASIC_PERFORMANCE_BIO_REACTOR_PORT_BLOCK_EXTRACT("block/basic_performance_bio_reactor_port_block_extract"),
+        BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_BLOCK_EXTRACT("block/basic_performance_cell_incubator_bus_block_extract"),
+        BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_BLOCK_EXTRACT("block/basic_performance_cell_incubator_port_block_extract"),
 
 
         BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_BLOCK_EXTRACT("block/basic_performance_chemical_reactor_bus_block_extract"),
@@ -56,9 +58,12 @@ public class PortModelRegistry {
         BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_BLOCK_EXTRACT("block/basic_performance_designated_data_injector_port_block_extract"),
 
 
-
+        BASIC_PERFORMANCE_ORE_SORTER_BUS_BLOCK_EXTRACT("block/basic_performance_ore_sorter_bus_block_extract"),
+        BASIC_PERFORMANCE_ORE_SORTER_PORT_BLOCK_EXTRACT("block/basic_performance_ore_sorter_port_block_extract"),
         BASIC_PERFORMANCE_ROCK_CRASHER_BUS_BLOCK_EXTRACT("block/basic_performance_rock_crasher_bus_block_extract"),
         BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK_EXTRACT("block/basic_performance_rock_crasher_port_block_extract"),
+        BASIC_PERFORMANCE_SOIL_PURIFIER_BUS_BLOCK_EXTRACT("block/basic_performance_soil_purifier_bus_block_extract"),
+        BASIC_PERFORMANCE_SOIL_PURIFIER_PORT_BLOCK_EXTRACT("block/basic_performance_soil_purifier_port_block_extract"),
 
 
 

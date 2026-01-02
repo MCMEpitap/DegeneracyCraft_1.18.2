@@ -2,7 +2,8 @@ package net.epitap.degeneracycraft.blocks.base;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeMenu;
-import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bioreactor.BasicPerformanceBioReactorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserMenu;
@@ -18,7 +19,9 @@ import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technol
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_ore_sorter.BasicPerformanceOreSorterMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_soil_purifier.BasicPerformanceSoilPurifierMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_material_separator.BasicPerformanceMaterialSeparatorMenu;
@@ -47,6 +50,7 @@ import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_sto
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.material_storage.basic_strength_hybrid_physics_multiblock_material_storage.BasicStrengthHybridPhysicsMultiblockMaterialStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.energy_storage.basic_strength_imitation_magic_engineering_multiblock_energy_storage.BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.material_storage.basic_strength_imitation_magic_engineering_multiblock_material_storage.BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageMenu;
+import net.epitap.degeneracycraft.item.sefirah_core.SefirahCoreMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
@@ -126,6 +130,8 @@ public class DCMenuTypes {
 
     public static final RegistryObject<MenuType<BasicPerformanceBioReactorMenu>> BASIC_PERFORMANCE_BIO_REACTOR_MENU =
             registerMenuType(BasicPerformanceBioReactorMenu::new, "basic_performance_bio_reactor_menu");
+    public static final RegistryObject<MenuType<BasicPerformanceCellIncubatorMenu>> BASIC_PERFORMANCE_CELL_INCUBATOR_MENU =
+            registerMenuType(BasicPerformanceCellIncubatorMenu::new, "basic_performance_cell_incubator_menu");
 
 
 
@@ -183,8 +189,12 @@ public class DCMenuTypes {
 
 
 
+    public static final RegistryObject<MenuType<BasicPerformanceOreSorterMenu>> BASIC_PERFORMANCE_ORE_SORTER_MENU =
+            registerMenuType(BasicPerformanceOreSorterMenu::new, "basic_performance_ore_sorter_menu");
     public static final RegistryObject<MenuType<BasicPerformanceRockCrasherMenu>> BASIC_PERFORMANCE_ROCK_CRASHER_MENU =
             registerMenuType(BasicPerformanceRockCrasherMenu::new, "basic_performance_rock_crasher_menu");
+    public static final RegistryObject<MenuType<BasicPerformanceSoilPurifierMenu>> BASIC_PERFORMANCE_SOIL_PURIFIER_MENU =
+            registerMenuType(BasicPerformanceSoilPurifierMenu::new, "basic_performance_soil_purifier_menu");
 
 
 
@@ -207,6 +217,10 @@ public class DCMenuTypes {
 
     public static final RegistryObject<MenuType<InfinityPoweredAllInOneCompressorMachineMenu>> INFINITY_POWERED_ALL_IN_ONE_COMPRESSOR_MACHINE_BLOCK_MENU =
             registerMenuType(InfinityPoweredAllInOneCompressorMachineMenu::new, "infinity_powered_all_in_one_compressor_machine_menu");
+
+
+    public static final RegistryObject<MenuType<SefirahCoreMenu>> SEFIRAH_CORE_MENU =
+            registerMenuType(SefirahCoreMenu::new, "sefirah_core_menu");
 
 
 //    public static final RegistryObject<MenuType<TestBlockMenu>> TEST_MENU=

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_holo_block",
+    "up": "degeneracycraft:block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_holo_block",
+    "north": "degeneracycraft:block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_holo_block",
+    "south": "degeneracycraft:block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_holo_block",
+    "east": "degeneracycraft:block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_holo_block",
+    "west": "degeneracycraft:block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_holo_block",
+    "particle": "degeneracycraft:block/machine/basic/geo_science/basic_performance_ore_sorter/bus/basic_performance_ore_sorter_bus_holo_block"
+  }
+}

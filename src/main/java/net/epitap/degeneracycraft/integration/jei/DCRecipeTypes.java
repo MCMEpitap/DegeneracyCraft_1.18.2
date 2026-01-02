@@ -7,6 +7,7 @@ import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performa
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.BasicTechnologyElectromagneticInductorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerRecipe;
@@ -16,9 +17,12 @@ import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_techno
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_ore_sorter.BasicPerformanceOreSorterRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_soil_purifier.BasicPerformanceSoilPurifierRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_material_separator.BasicPerformanceMaterialSeparatorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorRecipe;
@@ -68,6 +72,8 @@ public class DCRecipeTypes {
             SERIALIZERS.register("basic_power_steam_generator_recipe", () -> BasicPowerSteamGeneratorRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<BasicTechnologyCompressionCondenserRecipe>> BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_SERIALIZER =
             SERIALIZERS.register("basic_technology_compression_condenser_recipe", () -> BasicTechnologyCompressionCondenserRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<BasicTechnologyElectromagneticInductorRecipe>> BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_SERIALIZER =
+            SERIALIZERS.register("basic_technology_electromagnetic_inductor_recipe", () -> BasicTechnologyElectromagneticInductorRecipe.Serializer.INSTANCE);
 
 
     public static final RegistryObject<RecipeSerializer<BasicTechnologyMachineManufacturerRecipe>> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_SERIALIZER =
@@ -92,8 +98,14 @@ public class DCRecipeTypes {
             SERIALIZERS.register("basic_performance_designated_data_injector_recipe", () -> BasicPerformanceDesignatedDataInjectorRecipe.Serializer.INSTANCE);
 
 
+
+
+    public static final RegistryObject<RecipeSerializer<BasicPerformanceOreSorterRecipe>> BASIC_PERFORMANCE_BASIC_PERFORMANCE_ORE_SORTER_SERIALIZER =
+            SERIALIZERS.register("basic_performance_ore_sorter_recipe", () -> BasicPerformanceOreSorterRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<BasicPerformanceRockCrasherRecipe>> BASIC_PERFORMANCE_BASIC_PERFORMANCE_ROCK_CRASHER_SERIALIZER =
             SERIALIZERS.register("basic_performance_rock_crasher_recipe", () -> BasicPerformanceRockCrasherRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<BasicPerformanceSoilPurifierRecipe>> BASIC_PERFORMANCE_BASIC_PERFORMANCE_SOIL_PURIFIER_SERIALIZER =
+            SERIALIZERS.register("basic_performance_soil_purifier_recipe", () -> BasicPerformanceSoilPurifierRecipe.Serializer.INSTANCE);
 
 
 
@@ -103,6 +115,8 @@ public class DCRecipeTypes {
             SERIALIZERS.register("basic_performance_electric_arc_furnace_recipe", () -> BasicPerformanceElectricArcFurnaceRecipe.Serializer.INSTANCE);
     public static final RegistryObject<RecipeSerializer<BasicPerformanceFormingMachineRecipe>> BASIC_PERFORMANCE_FORMING_MACHINE_SERIALIZER =
             SERIALIZERS.register("basic_performance_forming_machine_recipe", () -> BasicPerformanceFormingMachineRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<BasicPerformanceMaterialSeparatorRecipe>> BASIC_PERFORMANCE_MATERIAL_SEPARATOR_SERIALIZER =
+            SERIALIZERS.register("basic_performance_material_separator_recipe", () -> BasicPerformanceMaterialSeparatorRecipe.Serializer.INSTANCE);
 
 
 

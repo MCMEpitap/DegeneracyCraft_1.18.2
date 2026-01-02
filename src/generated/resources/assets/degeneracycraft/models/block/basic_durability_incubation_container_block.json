@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_durability_incubation_container/basic_durability_incubation_container_block",
+    "up": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_durability_incubation_container/basic_durability_incubation_container_block",
+    "north": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_durability_incubation_container/basic_durability_incubation_container_block",
+    "south": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_durability_incubation_container/basic_durability_incubation_container_block",
+    "east": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_durability_incubation_container/basic_durability_incubation_container_block",
+    "west": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_durability_incubation_container/basic_durability_incubation_container_block",
+    "particle": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_durability_incubation_container/basic_durability_incubation_container_block"
+  }
+}

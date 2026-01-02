@@ -1,0 +1,78 @@
+[33mabb4e835[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{0}: reset: moving to HEAD~2
+[33mdb9a8c24[m HEAD@{1}: commit: add BasicPerformanceCellIncubator
+[33m9320b579[m HEAD@{2}: commit: add BasicPerformanceSoilPurifierBlock and some point fixed
+[33mabb4e835[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{3}: commit: add BasicPerformanceOreSorter
+[33mcd26c36e[m HEAD@{4}: commit: add BasicPerformanceMaterialSeparator
+[33m65158678[m HEAD@{5}: commit: add BasicPerformanceMaterialSeparator
+[33mae06acc6[m HEAD@{6}: commit: add BasicTechnologyVirtualSigilProcessor
+[33mb67732ba[m HEAD@{7}: commit: add BasicTechnologyImitationMagicEngraver
+[33m81614ba7[m HEAD@{8}: commit: add BasicTechnologyImitationMagicEngraver
+[33m62d133ed[m HEAD@{9}: commit: add BasicTechnologySuspectedMagicCondenserBlock
+[33m7c79d549[m HEAD@{10}: commit: add BasicTechnologySuspectedMagicCondenserBlock
+[33m36f13d6f[m HEAD@{11}: commit: add BasicTechnologyElectromagneticInductor
+[33mcdd4e13a[m HEAD@{12}: commit: add BasicTechnologyElectromagneticInductor
+[33m3ed1c16f[m HEAD@{13}: commit: add BasicTechnologyCompressionCondenser
+[33me4b1c6da[m HEAD@{14}: commit: add some items
+[33mf339052d[m HEAD@{15}: commit: add some items
+[33m34e1dee0[m HEAD@{16}: commit: add some items
+[33m5cc7b06a[m HEAD@{17}: commit: add basic bio reactor
+[33mcb19e2c0[m HEAD@{18}: commit: add basic bio reactor
+[33m15630e0d[m HEAD@{19}: commit: change textures
+[33md4f853e1[m HEAD@{20}: commit: change textures
+[33m8c3383a5[m HEAD@{21}: commit: change textures
+[33mb5472b6d[m HEAD@{22}: commit: add dynamic energetics
+[33m68d78d20[m HEAD@{23}: commit: add dynamic energetics
+[33md9a2c9a3[m HEAD@{24}: commit: change texture
+[33mc02466a7[m HEAD@{25}: commit: change texture
+[33m6c7feaca[m HEAD@{26}: commit: change texture
+[33m026ea1a5[m HEAD@{27}: commit: add some substances
+[33m2eba3436[m HEAD@{28}: commit: add some substances
+[33m13a6687d[m HEAD@{29}: commit: add some substances
+[33m93e99d0b[m HEAD@{30}: commit: add some substances
+[33m1d9f3f36[m HEAD@{31}: commit: add some substances
+[33m6873d702[m HEAD@{32}: commit: add basic_performance_compound_purifier_block
+[33mf8c51278[m HEAD@{33}: commit: add basic_performance_compound_purifier_block
+[33m1a46a5fc[m HEAD@{34}: commit: add basic_performance_compound_purifier_block
+[33medba2c1f[m HEAD@{35}: commit: fix bus port
+[33m9075e22d[m HEAD@{36}: commit: add NITRATINE Texture
+[33mdbbaa7a0[m HEAD@{37}: commit: Change Texture about Parts
+[33m8ec0707a[m HEAD@{38}: commit: Change Texture about Parts
+[33mef238d5f[m HEAD@{39}: commit: Change Texture about Parts
+[33me386888c[m HEAD@{40}: commit: Change Texture about Parts
+[33m50bdea43[m HEAD@{41}: commit: Gui Jei TEST
+[33mdf57282b[m HEAD@{42}: commit: Gui Jei TEST
+[33m134732cc[m HEAD@{43}: reset: moving to 134732ccd3d37bd568ccb0b44cbef8885aed3286
+[33m134732cc[m HEAD@{44}: reset: moving to 134732ccd3d37bd568ccb0b44cbef8885aed3286
+[33m134732cc[m HEAD@{45}: commit: Gui Jei TEST
+[33mfc96016d[m HEAD@{46}: commit: change BasicPerformanceAstronomicalTelescopeStructure.java
+[33m1eaee569[m HEAD@{47}: commit: change BasicPerformanceAstronomicalTelescopeStructure.java
+[33mb45760cf[m HEAD@{48}: commit: change Texture machine circuit
+[33m1216f439[m HEAD@{49}: commit: change Texture machine circuit
+[33m9779c288[m HEAD@{50}: commit: change Texture machine circuit
+[33m64f9dcb4[m HEAD@{51}: commit: change BasicPerformanceAstronomicalTelescope
+[33ma2d0496b[m HEAD@{52}: commit: change BasicPerformanceAstronomicalTelescope
+[33m681568a3[m HEAD@{53}: commit: change BasicPerformanceAstronomicalTelescope
+[33maf94bfb0[m HEAD@{54}: commit: change BasicPerformanceAstronomicalTelescope
+[33m747c7a90[m HEAD@{55}: commit: change BasicPerformanceRockCrasherScreen
+[33m6f458018[m HEAD@{56}: commit: add particle datagen
+[33m5e3efcc2[m HEAD@{57}: commit: add particle datagen
+[33m88a745d7[m HEAD@{58}: commit: add particle datagen
+[33mcca98944[m HEAD@{59}: commit: add particle datagen
+[33mad098576[m HEAD@{60}: commit: add particle datagen
+[33m74e85d82[m HEAD@{61}: commit: add particle datagen
+[33md4956b83[m HEAD@{62}: commit: add particle datagen
+[33m7864ad7b[m HEAD@{63}: commit: add particle datagen
+[33m2a5a1bda[m HEAD@{64}: commit: add crasher data
+[33ma3c705fb[m HEAD@{65}: commit: add crasher data
+[33ma09873e3[m HEAD@{66}: commit: add ore generation
+[33m9c679ed0[m HEAD@{67}: commit: check DCBlocks
+[33m007d74b3[m HEAD@{68}: commit: check DCBlocks
+[33m1c6b2a04[m HEAD@{69}: commit: check DCBlocks
+[33mc1431cb6[m HEAD@{70}: merge origin/master: Merge made by the 'ort' strategy.
+[33mfacaa72d[m HEAD@{71}: commit (amend): check DCBlocks
+[33m1d15fdc7[m HEAD@{72}: commit (amend): check DCBlocks
+[33m67e53f47[m HEAD@{73}: commit: add part
+[33m3ba12b7a[m HEAD@{74}: commit: add part
+[33m4a703312[m HEAD@{75}: commit: add part
+[33mb5cd5c5d[m HEAD@{76}: commit: add part
+[33m40fdb995[m HEAD@{77}: commit: add part

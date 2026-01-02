@@ -8,8 +8,10 @@ import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeScreen;
-import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bioreactor.BasicPerformanceBioReactorMenu;
-import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bioreactor.BasicPerformanceBioReactorScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierMenu;
@@ -18,6 +20,8 @@ import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performan
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.BasicTechnologyElectromagneticInductorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.BasicTechnologyElectromagneticInductorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerMenu;
@@ -34,12 +38,18 @@ import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_perf
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_ore_sorter.BasicPerformanceOreSorterMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_ore_sorter.BasicPerformanceOreSorterScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_soil_purifier.BasicPerformanceSoilPurifierMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_soil_purifier.BasicPerformanceSoilPurifierScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_material_separator.BasicPerformanceMaterialSeparatorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_performance_material_separator.BasicPerformanceMaterialSeparatorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserMenu;
@@ -56,6 +66,9 @@ import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_astronom
 import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorRecipeTransferHandler;
+import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorRecipeTransferHandler;
@@ -68,6 +81,9 @@ import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performa
 import net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserRecipeTransferHandler;
+import net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.BasicTechnologyElectromagneticInductorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.BasicTechnologyElectromagneticInductorRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.BasicTechnologyElectromagneticInductorRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_power_steam_generator.BasicPowerSteamGeneratorRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorRecipe;
@@ -94,15 +110,24 @@ import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_per
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerRecipeTransferHandler;
+import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_ore_sorter.BasicPerformanceOreSorterRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_ore_sorter.BasicPerformanceOreSorterRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_ore_sorter.BasicPerformanceOreSorterTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherTransferHandler;
+import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_soil_purifier.BasicPerformanceSoilPurifierRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_soil_purifier.BasicPerformanceSoilPurifierRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_soil_purifier.BasicPerformanceSoilPurifierRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_electric_arc_furnace.BasicPerformanceElectricArcFurnaceTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_forming_machine.BasicPerformanceFormingMachineRecipeTransferHandler;
+import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_material_separator.BasicPerformanceMaterialSeparatorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_material_separator.BasicPerformanceMaterialSeparatorRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_performance_material_separator.BasicPerformanceMaterialSeparatorRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverRecipeTransferHandler;
@@ -147,6 +172,8 @@ public class JEIDCPlugin implements IModPlugin {
 
         registration.addRecipeCategories(new
                 BasicPerformanceBioReactorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new
+                BasicPerformanceCellIncubatorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
 
 
@@ -162,6 +189,8 @@ public class JEIDCPlugin implements IModPlugin {
 
         registration.addRecipeCategories(new
                 BasicTechnologyCompressionCondenserRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new
+                BasicTechnologyElectromagneticInductorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
 
 
@@ -197,16 +226,12 @@ public class JEIDCPlugin implements IModPlugin {
                 BasicPerformanceDesignatedDataInjectorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
 
-
-
-
-
-
-
-
-
+        registration.addRecipeCategories(new
+                BasicPerformanceOreSorterRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
                 BasicPerformanceRockCrasherRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new
+                BasicPerformanceSoilPurifierRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
 
 
@@ -214,6 +239,8 @@ public class JEIDCPlugin implements IModPlugin {
                 BasicPerformanceElectricArcFurnaceRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
                 BasicPerformanceFormingMachineRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new
+                BasicPerformanceMaterialSeparatorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
 
 
@@ -249,6 +276,9 @@ public class JEIDCPlugin implements IModPlugin {
         List<BasicPerformanceBioReactorRecipe> basicPerformanceBioReactorRecipe =
                 rm.getAllRecipesFor(BasicPerformanceBioReactorRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicPerformanceBioReactorRecipeCategory.UID, BasicPerformanceBioReactorRecipe.class), basicPerformanceBioReactorRecipe);
+        List<BasicPerformanceCellIncubatorRecipe> basicPerformanceCellIncubatorRecipe =
+                rm.getAllRecipesFor(BasicPerformanceCellIncubatorRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicPerformanceCellIncubatorRecipeCategory.UID, BasicPerformanceCellIncubatorRecipe.class), basicPerformanceCellIncubatorRecipe);
 
 
 
@@ -268,6 +298,9 @@ public class JEIDCPlugin implements IModPlugin {
         List<BasicTechnologyCompressionCondenserRecipe> basicTechnologyCompressionCondenserRecipe =
                 rm.getAllRecipesFor(BasicTechnologyCompressionCondenserRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicTechnologyCompressionCondenserRecipeCategory.UID, BasicTechnologyCompressionCondenserRecipe.class), basicTechnologyCompressionCondenserRecipe);
+        List<BasicTechnologyElectromagneticInductorRecipe> basicTechnologyElectromagneticInductorRecipe =
+                rm.getAllRecipesFor(BasicTechnologyElectromagneticInductorRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicTechnologyElectromagneticInductorRecipeCategory.UID, BasicTechnologyElectromagneticInductorRecipe.class), basicTechnologyElectromagneticInductorRecipe);
 
 
 
@@ -315,10 +348,15 @@ public class JEIDCPlugin implements IModPlugin {
 
 
 
-
+        List<BasicPerformanceOreSorterRecipe> basicPerformanceOreSorterRecipe =
+                rm.getAllRecipesFor(BasicPerformanceOreSorterRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicPerformanceOreSorterRecipeCategory.UID, BasicPerformanceOreSorterRecipe.class), basicPerformanceOreSorterRecipe);
         List<BasicPerformanceRockCrasherRecipe> basicPerformanceRockCrasherRecipes =
                 rm.getAllRecipesFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicPerformanceRockCrasherRecipeCategory.UID, BasicPerformanceRockCrasherRecipe.class), basicPerformanceRockCrasherRecipes);
+        List<BasicPerformanceSoilPurifierRecipe> basicPerformanceSoilPurifierRecipe =
+                rm.getAllRecipesFor(BasicPerformanceSoilPurifierRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicPerformanceSoilPurifierRecipeCategory.UID, BasicPerformanceSoilPurifierRecipe.class), basicPerformanceSoilPurifierRecipe);
 
 
 
@@ -329,6 +367,9 @@ public class JEIDCPlugin implements IModPlugin {
         List<BasicPerformanceFormingMachineRecipe> basicPerformanceFormingMachineRecipe =
                 rm.getAllRecipesFor(BasicPerformanceFormingMachineRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicPerformanceFormingMachineRecipeCategory.UID, BasicPerformanceFormingMachineRecipe.class), basicPerformanceFormingMachineRecipe);
+        List<BasicPerformanceMaterialSeparatorRecipe> basicPerformanceMaterialSeparatorRecipe =
+                rm.getAllRecipesFor(BasicPerformanceMaterialSeparatorRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicPerformanceMaterialSeparatorRecipeCategory.UID, BasicPerformanceMaterialSeparatorRecipe.class), basicPerformanceMaterialSeparatorRecipe);
 
 
 
@@ -360,6 +401,7 @@ public class JEIDCPlugin implements IModPlugin {
 
 
         registration.addRecipeClickArea(BasicPerformanceBioReactorScreen.class, 64, 20, 29, 8, BasicPerformanceBioReactorRecipeCategory.UID);
+        registration.addRecipeClickArea(BasicPerformanceCellIncubatorScreen.class, 64, 20, 29, 8, BasicPerformanceCellIncubatorRecipeCategory.UID);
 
 
 
@@ -371,6 +413,7 @@ public class JEIDCPlugin implements IModPlugin {
 
 
         registration.addRecipeClickArea(BasicTechnologyCompressionCondenserScreen.class, 64, 20, 29, 8, BasicTechnologyCompressionCondenserRecipeCategory.UID);
+        registration.addRecipeClickArea(BasicTechnologyElectromagneticInductorScreen.class, 64, 20, 29, 8, BasicTechnologyElectromagneticInductorRecipeCategory.UID);
 
 
 
@@ -388,16 +431,15 @@ public class JEIDCPlugin implements IModPlugin {
 
 
 
-
-
-
+        registration.addRecipeClickArea(BasicPerformanceOreSorterScreen.class, 64, 20, 29, 8, BasicPerformanceOreSorterRecipeCategory.UID);
         registration.addRecipeClickArea(BasicPerformanceRockCrasherScreen.class, 64, 20, 29, 8, BasicPerformanceRockCrasherRecipeCategory.UID);
-
+        registration.addRecipeClickArea(BasicPerformanceSoilPurifierScreen.class, 64, 20, 29, 8, BasicPerformanceSoilPurifierRecipeCategory.UID);
 
 
 
         registration.addRecipeClickArea(BasicPerformanceElectricArcFurnaceScreen.class, 64, 20, 29, 8, BasicPerformanceElectricArcFurnaceRecipeCategory.UID);
         registration.addRecipeClickArea(BasicPerformanceFormingMachineScreen.class, 64, 20, 29, 8, BasicPerformanceFormingMachineRecipeCategory.UID);
+        registration.addRecipeClickArea(BasicPerformanceMaterialSeparatorScreen.class, 64, 20, 29, 8, BasicPerformanceMaterialSeparatorRecipeCategory.UID);
 
 
         registration.addRecipeClickArea(BasicTechnologyImitationMagicEngraverScreen.class, 64, 20, 29, 8, BasicTechnologyImitationMagicEngraverRecipeCategory.UID);
@@ -419,6 +461,7 @@ public class JEIDCPlugin implements IModPlugin {
 
 
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BLOCK.get()), BasicPerformanceBioReactorRecipeCategory.UID);
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BLOCK.get()), BasicPerformanceCellIncubatorRecipeCategory.UID);
 
 
 
@@ -429,7 +472,7 @@ public class JEIDCPlugin implements IModPlugin {
 
 
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BLOCK.get()), BasicTechnologyCompressionCondenserRecipeCategory.UID);
-
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BLOCK.get()), BasicTechnologyElectromagneticInductorRecipeCategory.UID);
 
 
 
@@ -446,8 +489,16 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BLOCK.get()), BasicPerformanceDesignatedDataInjectorRecipeCategory.UID);
 
 
+
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BLOCK.get()), BasicPerformanceOreSorterRecipeCategory.UID);
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get()), BasicPerformanceRockCrasherRecipeCategory.UID);
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_BLOCK.get()), BasicPerformanceSoilPurifierRecipeCategory.UID);
+
+
+
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK.get()), BasicPerformanceElectricArcFurnaceRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK.get()), BasicPerformanceFormingMachineRecipeCategory.UID);
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BLOCK.get()), BasicPerformanceMaterialSeparatorRecipeCategory.UID);
 
 
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BLOCK.get()), BasicTechnologyImitationMagicEngraverRecipeCategory.UID);
@@ -478,7 +529,14 @@ public class JEIDCPlugin implements IModPlugin {
                 ),
                 BasicPerformanceBioReactorRecipeCategory.TYPE
         );
-
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceCellIncubatorRecipeTransferHandler<>(
+                        BasicPerformanceCellIncubatorMenu.class,
+                        0, 4,
+                        7, 36
+                ),
+                BasicPerformanceCellIncubatorRecipeCategory.TYPE
+        );
 
 
 
@@ -518,6 +576,14 @@ public class JEIDCPlugin implements IModPlugin {
                         6, 36
                 ),
                 BasicTechnologyCompressionCondenserRecipeCategory.TYPE
+        );
+        registration.addRecipeTransferHandler(
+                new BasicTechnologyElectromagneticInductorRecipeTransferHandler<>(
+                        BasicTechnologyElectromagneticInductorMenu.class,
+                        0, 6,
+                        9, 36
+                ),
+                BasicTechnologyElectromagneticInductorRecipeCategory.TYPE
         );
 
 
@@ -587,6 +653,9 @@ public class JEIDCPlugin implements IModPlugin {
                 BasicTechnologyUniversalAssemblerRecipeCategory.TYPE
         );
 
+
+
+
         registration.addRecipeTransferHandler(
                 new BasicPerformanceCircuitBuilderRecipeTransferHandler<>(
                         BasicPerformanceCircuitBuilderMenu.class,
@@ -613,7 +682,14 @@ public class JEIDCPlugin implements IModPlugin {
         );
 
 
-
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceOreSorterTransferHandler<>(
+                        BasicPerformanceOreSorterMenu.class,
+                        0, 1,
+                        6, 36
+                ),
+                BasicPerformanceOreSorterRecipeCategory.TYPE
+        );
         registration.addRecipeTransferHandler(
                 new BasicPerformanceRockCrasherTransferHandler<>(
                         BasicPerformanceRockCrasherMenu.class,
@@ -622,7 +698,14 @@ public class JEIDCPlugin implements IModPlugin {
                 ),
                 BasicPerformanceRockCrasherRecipeCategory.TYPE
         );
-
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceSoilPurifierRecipeTransferHandler<>(
+                        BasicPerformanceSoilPurifierMenu.class,
+                        0, 3,
+                        6, 36
+                ),
+                BasicPerformanceSoilPurifierRecipeCategory.TYPE
+        );
 
 
         registration.addRecipeTransferHandler(
@@ -641,6 +724,15 @@ public class JEIDCPlugin implements IModPlugin {
                 ),
                 BasicPerformanceFormingMachineRecipeCategory.TYPE
         );
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceMaterialSeparatorRecipeTransferHandler<>(
+                        BasicPerformanceMaterialSeparatorMenu.class,
+                        0, 1,
+                        6, 36
+                ),
+                BasicPerformanceMaterialSeparatorRecipeCategory.TYPE
+        );
+
 
 
 

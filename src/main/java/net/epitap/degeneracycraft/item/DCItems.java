@@ -1,6 +1,7 @@
 package net.epitap.degeneracycraft.item;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
+import net.epitap.degeneracycraft.item.sefirah_core.SefirahCoreItem;
 import net.epitap.degeneracycraft.item.tool.CAMMDA_Tier1;
 import net.epitap.degeneracycraft.item.tool.FilterItem;
 import net.epitap.degeneracycraft.item.tool.WrenchItem;
@@ -906,7 +907,7 @@ public class DCItems extends CreativeModeTab {
 
 
     public static final RegistryObject<Item> BASIC_PERFORMANCE_BIO_REACTOR_CIRCUIT = ITEMS.register("basic_performance_bio_reactor_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
-
+    public static final RegistryObject<Item> BASIC_PERFORMANCE_CELL_INCUBATOR_CIRCUIT = ITEMS.register("basic_performance_cell_incubator_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
 
 
@@ -941,11 +942,9 @@ public class DCItems extends CreativeModeTab {
 
 
 
-
-
-
-
+    public static final RegistryObject<Item> BASIC_PERFORMANCE_ORE_SORTER_CIRCUIT = ITEMS.register("basic_performance_ore_sorter_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_PERFORMANCE_ROCK_CRASHER_CIRCUIT = ITEMS.register("basic_performance_rock_crasher_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_PERFORMANCE_SOIL_PURIFIER_CIRCUIT = ITEMS.register("basic_performance_soil_purifier_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
 
 
@@ -971,6 +970,12 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> CAMMDA_TIER1 = ITEMS.register("cammda_tier1", () -> new CAMMDA_Tier1(DCTier.CAMMDA_TIER1, 0, 0, new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB).stacksTo(1)));
 
     public static final RegistryObject<Item> GUN_ITEM = ITEMS.register("gun_item", () -> new GunItem(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB).stacksTo(1)));
+
+    public static final RegistryObject<Item> SEFIRAH_CORE = ITEMS.register("sefirah_core", () -> new SefirahCoreItem(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_TAB).stacksTo(1)));
+
+
+
+
 
     public DCItems(String label) {
         super(label);

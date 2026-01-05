@@ -982,6 +982,19 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_BLOCK.get(), "基本性能細胞培養機ポート");
         add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_HOLO_BLOCK.get(), "基本性能細胞培養機ポート (ホログラム)");
         add(DCItems.BASIC_PERFORMANCE_CELL_INCUBATOR_CIRCUIT.get(), "基本性能細胞培養機回路");
+
+        add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BLOCK.get(), "基本性能作物育成機");
+        add("tooltip." + "degeneracycraft." + "basic_performance_crop_incubator_block",
+                "基本的な作物育成機. 作物を育成し収穫や生産を行う.");
+        add(DCBlocks.BASIC_EFFICIENCY_GROWTH_STABILIZER_BLOCK.get(), "基本性能生育安定器");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_crop_incubator_block",
+                "基本性能作物育成機用");
+        add(DCBlocks.BASIC_EFFICIENCY_GROWTH_STABILIZER_HOLO_BLOCK.get(), "基本性能生育安定器 (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_BLOCK.get(), "基本性能作物育成機バス");
+        add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_HOLO_BLOCK.get(), "基本性能作物育成機バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_BLOCK.get(), "基本性能作物育成機ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_HOLO_BLOCK.get(), "基本性能作物育成機ポート (ホログラム)");
+        add(DCItems.BASIC_PERFORMANCE_CROP_CULTIVATOR_CIRCUIT.get(), "基本性能作物育成機回路");
         
 
 
@@ -1323,6 +1336,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         
         add("jei." + "degeneracycraft_basic_performance_bio_reactor", "基本性能生体反応機 レシピ");
         add("jei." + "degeneracycraft_basic_performance_cell_incubator", "基本性能細胞培養機 レシピ");
+        add("jei." + "degeneracycraft_basic_performance_crop_cultivator", "基本性能作物育成機 レシピ");
 
 
         

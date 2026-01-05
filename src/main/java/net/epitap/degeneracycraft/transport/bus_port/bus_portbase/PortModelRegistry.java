@@ -19,6 +19,10 @@ public class PortModelRegistry {
         BASIC_PERFORMANCE_BIO_REACTOR_PORT_BLOCK_EXTRACT("block/basic_performance_bio_reactor_port_block_extract"),
         BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_BLOCK_EXTRACT("block/basic_performance_cell_incubator_bus_block_extract"),
         BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_BLOCK_EXTRACT("block/basic_performance_cell_incubator_port_block_extract"),
+        BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_BLOCK_EXTRACT("block/basic_performance_crop_cultivator_bus_block_extract"),
+        BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_BLOCK_EXTRACT("block/basic_performance_crop_cultivator_port_block_extract"),
+
+
 
 
         BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_BLOCK_EXTRACT("block/basic_performance_chemical_reactor_bus_block_extract"),

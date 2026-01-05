@@ -3,6 +3,8 @@ package net.epitap.degeneracycraft.integration.jei;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_astronomical_telescope.BasicPerformanceAstronomicalTelescopeRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_crop_cultivator.BasicPerformanceCropCultivatorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserRecipe;
@@ -56,6 +58,10 @@ public class DCRecipeTypes {
 
     public static final RegistryObject<RecipeSerializer<BasicPerformanceBioReactorRecipe>> BASIC_PERFORMANCE_BIO_REACTOR_SERIALIZER =
             SERIALIZERS.register("basic_performance_bio_reactor_recipe", () -> BasicPerformanceBioReactorRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<BasicPerformanceCellIncubatorRecipe>> BASIC_PERFORMANCE_CELL_INCUBATOR_SERIALIZER =
+            SERIALIZERS.register("basic_performance_cell_incubator_recipe", () -> BasicPerformanceCellIncubatorRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<BasicPerformanceCropCultivatorRecipe>> BASIC_PERFORMANCE_CROP_CULTIVATOR_SERIALIZER =
+            SERIALIZERS.register("basic_performance_crop_cultivator_recipe", () -> BasicPerformanceCropCultivatorRecipe.Serializer.INSTANCE);
 
 
 

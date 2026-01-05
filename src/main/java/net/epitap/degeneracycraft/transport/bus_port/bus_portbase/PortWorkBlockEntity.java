@@ -9,6 +9,9 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_perform
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_cell_incubator.bus.BasicPerformanceCellIncubatorBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_cell_incubator.bus.BasicPerformanceCellIncubatorBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_cell_incubator.port.BasicPerformanceCellIncubatorPortType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_crop_cultivator.bus.BasicPerformanceCropCultivatorBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_crop_cultivator.bus.BasicPerformanceCropCultivatorBusType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_crop_cultivator.port.BasicPerformanceCropCultivatorPortType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.bus.BasicPerformanceChemicalReactorBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.bus.BasicPerformanceChemicalReactorBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.port.BasicPerformanceChemicalReactorPortType;
@@ -104,6 +107,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
     protected PortSetLazyOptional<BasicPerformanceBioReactorBusEnergyStorage> basicPerformanceBioReactorBusEnergyStorageStored;
     protected PortSetLazyOptional<BasicPerformanceCellIncubatorBusEnergyStorage> basicPerformanceCellIncubatorBusEnergyStorageStored;
+    protected PortSetLazyOptional<BasicPerformanceCropCultivatorBusEnergyStorage> basicPerformanceCropCultivatorBusEnergyStorageStored;
 
 
     protected PortSetLazyOptional<BasicPerformanceChemicalReactorBusEnergyStorage> basicPerformanceChemicalReactorBusEnergyStorageStored;
@@ -162,6 +166,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
         basicPerformanceBioReactorBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicPerformanceCellIncubatorBusEnergyStorageStored = new PortSetLazyOptional<>();
+        basicPerformanceCropCultivatorBusEnergyStorageStored = new PortSetLazyOptional<>();
 
 
 
@@ -240,6 +245,16 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
             }
         }
         if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPerformanceCellIncubatorPortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityEnergy.ENERGY && hasType(BasicPerformanceCropCultivatorBusType.INSTANCE)) {
+            if (side != null) {
+                return basicPerformanceCropCultivatorBusEnergyStorageStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPerformanceCropCultivatorPortType.INSTANCE)) {
             if (side != null) {
                 return itemStored.get(side).cast();
             }
@@ -562,6 +577,13 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 }
             }
         }
+        if (hasType(BasicPerformanceCropCultivatorBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    basicPerformanceCropCultivatorBusEnergyStorageStored.get(side).ifPresent(BasicPerformanceCropCultivatorBusEnergyStorage::tick);
+                }
+            }
+        }
 
 
 
@@ -763,6 +785,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicPerformanceCellIncubatorPortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
         }
+        if (hasType(BasicPerformanceCropCultivatorBusType.INSTANCE)) {
+            basicPerformanceCropCultivatorBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicPerformanceCropCultivatorBusEnergyStorage(this, storage));
+        }
+        if (hasType(BasicPerformanceCropCultivatorPortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
+        }
 
 
 
@@ -944,6 +972,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicPerformanceCellIncubatorPortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
         }
+        if (hasType(BasicPerformanceCropCultivatorBusType.INSTANCE)) {
+            basicPerformanceCropCultivatorBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicPerformanceCropCultivatorBusEnergyStorage(this, side));
+        }
+        if (hasType(BasicPerformanceCropCultivatorPortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
+        }
 
 
 
@@ -1121,6 +1155,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
         basicPerformanceBioReactorBusEnergyStorageStored.invalidate();
         basicPerformanceCellIncubatorBusEnergyStorageStored.invalidate();
+        basicPerformanceCropCultivatorBusEnergyStorageStored.invalidate();
 
 
 

@@ -1125,6 +1125,23 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_cell_incubator_port_holo_block"));
         basicMachineCircuitBiologyItem(DCItems.BASIC_PERFORMANCE_CELL_INCUBATOR_CIRCUIT.get());
 
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_crop_cultivator_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_GROWTH_STABILIZER_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_growth_stabilizer_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_GROWTH_STABILIZER_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_growth_stabilizer_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_crop_cultivator_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_crop_cultivator_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_crop_cultivator_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_crop_cultivator_port_holo_block"));
+        basicMachineCircuitBiologyItem(DCItems.BASIC_PERFORMANCE_CROP_CULTIVATOR_CIRCUIT.get());
+        
+        
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_chemical_reactor_block"));

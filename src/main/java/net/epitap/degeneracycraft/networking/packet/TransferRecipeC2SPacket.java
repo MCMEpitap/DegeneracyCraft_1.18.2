@@ -3,6 +3,7 @@ package net.epitap.degeneracycraft.networking.packet;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_crop_cultivator.BasicPerformanceCropCultivatorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserBlockEntity;
@@ -82,6 +83,10 @@ public class TransferRecipeC2SPacket {
                 if (player.level.getBlockEntity(pos) instanceof BasicPerformanceCellIncubatorBlockEntity blockEntity) {
                     blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
                 }
+                if (player.level.getBlockEntity(pos) instanceof BasicPerformanceCropCultivatorBlockEntity blockEntity) {
+                    blockEntity.insertRecipeInputsFromPlayer(player, recipe, shift);
+                }
+
 
 
 

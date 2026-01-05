@@ -55,7 +55,7 @@ public class BasicPerformanceCellIncubatorBlockEntity extends BlockEntity implem
 
     public boolean isFormed;
     public boolean isPowered0;
-    public final ItemStackHandler itemHandler = new ItemStackHandler(9) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(7) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();

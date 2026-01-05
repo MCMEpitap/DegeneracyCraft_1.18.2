@@ -1,6 +1,7 @@
 package net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_cell_incubator.bus;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
+import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_crop_cultivator.bus.BasicPerformanceCropCultivatorBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.bus_portbase.PortBlockBase;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -31,12 +32,12 @@ public class BasicPerformanceCellIncubatorBusBlock extends PortBlockBase {
     }
 
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new BasicPerformanceCellIncubatorBusBlockEntity(pos, state);
+        return new BasicPerformanceCropCultivatorBusBlockEntity(pos, state);
     }
 
     public InteractionResult portSideLaunch(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, Direction facing) {
         BlockEntity blockentity = world.getBlockEntity(pos);
-        if (blockentity instanceof BasicPerformanceCellIncubatorBusBlockEntity && this.portExtracting(world, pos, facing)) {
+        if (blockentity instanceof BasicPerformanceCropCultivatorBusBlockEntity && this.portExtracting(world, pos, facing)) {
             if (world.isClientSide) {
                 return InteractionResult.SUCCESS;
             }

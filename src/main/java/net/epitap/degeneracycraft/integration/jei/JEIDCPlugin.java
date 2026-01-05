@@ -12,6 +12,8 @@ import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_crop_cultivator.BasicPerformanceCropCultivatorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_crop_cultivator.BasicPerformanceCropCultivatorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierMenu;
@@ -69,6 +71,9 @@ import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performanc
 import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorRecipeTransferHandler;
+import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_crop_cultivator.BasicPerformanceCropCultivatorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_crop_cultivator.BasicPerformanceCropCultivatorRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_crop_cultivator.BasicPerformanceCropCultivatorRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorRecipeTransferHandler;
@@ -174,6 +179,8 @@ public class JEIDCPlugin implements IModPlugin {
                 BasicPerformanceBioReactorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
                 BasicPerformanceCellIncubatorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new
+                BasicPerformanceCropCultivatorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
 
 
@@ -279,6 +286,9 @@ public class JEIDCPlugin implements IModPlugin {
         List<BasicPerformanceCellIncubatorRecipe> basicPerformanceCellIncubatorRecipe =
                 rm.getAllRecipesFor(BasicPerformanceCellIncubatorRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicPerformanceCellIncubatorRecipeCategory.UID, BasicPerformanceCellIncubatorRecipe.class), basicPerformanceCellIncubatorRecipe);
+        List<BasicPerformanceCropCultivatorRecipe> basicPerformanceCropCultivatorRecipe =
+                rm.getAllRecipesFor(BasicPerformanceCropCultivatorRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicPerformanceCropCultivatorRecipeCategory.UID, BasicPerformanceCropCultivatorRecipe.class), basicPerformanceCropCultivatorRecipe);
 
 
 
@@ -402,6 +412,7 @@ public class JEIDCPlugin implements IModPlugin {
 
         registration.addRecipeClickArea(BasicPerformanceBioReactorScreen.class, 64, 20, 29, 8, BasicPerformanceBioReactorRecipeCategory.UID);
         registration.addRecipeClickArea(BasicPerformanceCellIncubatorScreen.class, 64, 20, 29, 8, BasicPerformanceCellIncubatorRecipeCategory.UID);
+        registration.addRecipeClickArea(BasicPerformanceCropCultivatorScreen.class, 64, 20, 29, 8, BasicPerformanceCropCultivatorRecipeCategory.UID);
 
 
 
@@ -462,6 +473,7 @@ public class JEIDCPlugin implements IModPlugin {
 
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BLOCK.get()), BasicPerformanceBioReactorRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BLOCK.get()), BasicPerformanceCellIncubatorRecipeCategory.UID);
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BLOCK.get()), BasicPerformanceCropCultivatorRecipeCategory.UID);
 
 
 
@@ -536,6 +548,14 @@ public class JEIDCPlugin implements IModPlugin {
                         7, 36
                 ),
                 BasicPerformanceCellIncubatorRecipeCategory.TYPE
+        );
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceCropCultivatorRecipeTransferHandler<>(
+                        BasicPerformanceCropCultivatorMenu.class,
+                        0, 3,
+                        7, 36
+                ),
+                BasicPerformanceCropCultivatorRecipeCategory.TYPE
         );
 
 

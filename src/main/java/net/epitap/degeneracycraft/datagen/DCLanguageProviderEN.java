@@ -988,6 +988,20 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_HOLO_BLOCK.get(), "Basic Performance Cell Incubator Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_CELL_INCUBATOR_CIRCUIT.get(), "Basic Performance Cell Incubator Circuit");
 
+        add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BLOCK.get(), "Basic Performance Crop Incubator");
+        add("tooltip." + "degeneracycraft." + "basic_performance_crop_incubator_block",
+                "Basic Crop Incubator. Cultivate crops and harvest or produce them.");
+        add(DCBlocks.BASIC_EFFICIENCY_GROWTH_STABILIZER_BLOCK.get(), "Basic Efficiency Growth Stabilizer");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_crop_incubator_block",
+                "For Basic Performance Crop Incubator");
+        add(DCBlocks.BASIC_EFFICIENCY_GROWTH_STABILIZER_HOLO_BLOCK.get(), "Basic Efficiency Growth Stabilizer (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_BLOCK.get(), "Basic Performance Crop Incubator Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_HOLO_BLOCK.get(), "Basic Performance Crop Incubator Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_BLOCK.get(), "Basic Performance Crop Incubator Port");
+        add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_HOLO_BLOCK.get(), "Basic Performance Crop Incubator Port (Hologram)");
+        add(DCItems.BASIC_PERFORMANCE_CROP_CULTIVATOR_CIRCUIT.get(), "Basic Performance Crop Incubator Circuit");
+        
+        
 
         add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BLOCK.get(), "Basic Performance Chemical Reactor");
         add("tooltip." + "degeneracycraft." + "basic_performance_chemical_reactor_block",
@@ -1319,6 +1333,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         
         add("jei." + "degeneracycraft_basic_performance_bio_reactor", "Basic Performance Bio Reactor Recipe");
         add("jei." + "degeneracycraft_basic_performance_cell_incubator", "Basic Performance Bio Reactor Recipe");
+        add("jei." + "degeneracycraft_basic_performance_crop_cultivator", "Basic Performance Crop Cultivator Recipe");
 
 
 

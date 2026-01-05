@@ -6,6 +6,7 @@ import net.epitap.degeneracycraft.blocks.block.machine.PulverizerBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorBlock;
+import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_crop_cultivator.BasicPerformanceCropCultivatorBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserBlock;
@@ -56,8 +57,9 @@ import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus.BasicPerformanceAstronomicalTelescopeBusBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.bus.BasicPerformanceBioReactorBusBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.port.BasicPerformanceBioReactorPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_cell_incubator.bus.BasicPerformanceCellIncubatorBusBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_cell_incubator.port.BasicPerformanceCellIncubatorPortBlock;
+import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_crop_cultivator.bus.BasicPerformanceCropCultivatorBusBlock;
+import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_crop_cultivator.port.BasicPerformanceCropCultivatorPortBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.bus.BasicPerformanceChemicalReactorBusBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.port.BasicPerformanceChemicalReactorPortBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_compound_purifier.bus.BasicPerformanceCompoundPurifierBusBlock;
@@ -487,7 +489,7 @@ public class DCBlocks {
     public static final RegistryObject<Block> BASIC_DURABILITY_INCUBATION_CONTAINER_HOLO_BLOCK = registerHoloBlock("basic_durability_incubation_container_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
     public static final RegistryObject<Block> BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_BLOCK = registerBlock("basic_performance_cell_incubator_bus_block", () ->
-            new BasicPerformanceCellIncubatorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+            new BasicPerformanceCropCultivatorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_cell_incubator_bus_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
     public static final RegistryObject<Block> BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_BLOCK = registerBlock("basic_performance_cell_incubator_port_block", () ->
@@ -495,7 +497,31 @@ public class DCBlocks {
     public static final RegistryObject<Block> BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_cell_incubator_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_CROP_CULTIVATOR_BLOCK = registerTooltipBasicMachineBlock("basic_performance_crop_cultivator_block", () ->
+                    new BasicPerformanceCropCultivatorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "Lv0:3×3×3",
+            "Lv1:3×3×3",
+            "Base:Speed ×1.00,Energy Usage ×1.00",
+            "Lv0:Speed ×2.00,Energy Usage ×1.50",
+            "Lv1:Speed ×3.00,Energy Usage ×2.00",
+            "basic_performance_crop_cultivator_block", "biology", "basic");
+    public static final RegistryObject<Block> BASIC_EFFICIENCY_GROWTH_STABILIZER_BLOCK = registerTooltipMultiblockAbilityBlock("basic_efficiency_growth_stabilizer_block", () ->
+                    new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "basic_performance_crop_cultivator_block",
+            "biology",
+            "basic");
+    public static final RegistryObject<Block> BASIC_EFFICIENCY_GROWTH_STABILIZER_HOLO_BLOCK = registerHoloBlock("basic_efficiency_growth_stabilizer_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_BLOCK = registerBlock("basic_performance_crop_cultivator_bus_block", () ->
+            new BasicPerformanceCropCultivatorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_crop_cultivator_bus_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_BLOCK = registerBlock("basic_performance_crop_cultivator_port_block", () ->
+            new BasicPerformanceCropCultivatorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_crop_cultivator_port_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
+    
 
 
     // BasicChemistry

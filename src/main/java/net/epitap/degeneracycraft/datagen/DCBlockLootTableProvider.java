@@ -174,6 +174,14 @@ public class DCBlockLootTableProvider extends BlockLoot {
         this.add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_BLOCK.get()));
         this.add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_HOLO_BLOCK.get(), block -> noDrop());
 
+        this.add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BLOCK.get()));
+        this.add(DCBlocks.BASIC_EFFICIENCY_GROWTH_STABILIZER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_EFFICIENCY_GROWTH_STABILIZER_BLOCK.get()));
+        this.add(DCBlocks.BASIC_EFFICIENCY_GROWTH_STABILIZER_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_HOLO_BLOCK.get(), block -> noDrop());
+
 
 
 

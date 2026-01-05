@@ -4,6 +4,7 @@ import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_crop_cultivator.BasicPerformanceCropCultivatorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserMenu;
@@ -132,6 +133,8 @@ public class DCMenuTypes {
             registerMenuType(BasicPerformanceBioReactorMenu::new, "basic_performance_bio_reactor_menu");
     public static final RegistryObject<MenuType<BasicPerformanceCellIncubatorMenu>> BASIC_PERFORMANCE_CELL_INCUBATOR_MENU =
             registerMenuType(BasicPerformanceCellIncubatorMenu::new, "basic_performance_cell_incubator_menu");
+    public static final RegistryObject<MenuType<BasicPerformanceCropCultivatorMenu>> BASIC_PERFORMANCE_CROP_CULTIVATOR_MENU =
+            registerMenuType(BasicPerformanceCropCultivatorMenu::new, "basic_performance_crop_cultivator_menu");
 
 
 

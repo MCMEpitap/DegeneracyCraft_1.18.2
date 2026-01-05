@@ -5,6 +5,7 @@ import net.epitap.degeneracycraft.blocks.entity.machine.PulverizerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_crop_cultivator.BasicPerformanceCropCultivatorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserBlockEntity;
@@ -54,8 +55,8 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_perfo
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.port.BasicPerformanceAstronomicalTelescopePortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.bus.BasicPerformanceBioReactorBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.port.BasicPerformanceBioReactorPortBlockEntity;
-import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_cell_incubator.bus.BasicPerformanceCellIncubatorBusBlockEntity;
-import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_cell_incubator.port.BasicPerformanceCellIncubatorPortBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_crop_cultivator.bus.BasicPerformanceCropCultivatorBusBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_crop_cultivator.port.BasicPerformanceCropCultivatorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.bus.BasicPerformanceChemicalReactorBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.port.BasicPerformanceChemicalReactorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_compound_purifier.bus.BasicPerformanceCompoundPurifierBusBlockEntity;
@@ -221,12 +222,22 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicPerformanceCellIncubatorBlockEntity>> BASIC_PERFORMANCE_CELL_INCUBATOR_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_cell_incubator_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceCellIncubatorBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BLOCK.get()).build(null));
-    public static final RegistryObject<BlockEntityType<BasicPerformanceCellIncubatorBusBlockEntity>> BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_BLOCK_ENTITY =
+    public static final RegistryObject<BlockEntityType<BasicPerformanceCropCultivatorBusBlockEntity>> BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_cell_incubator_bus_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicPerformanceCellIncubatorBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_BLOCK.get()).build(null));
-    public static final RegistryObject<BlockEntityType<BasicPerformanceCellIncubatorPortBlockEntity>> BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_BLOCK_ENTITY =
+                    BlockEntityType.Builder.of(BasicPerformanceCropCultivatorBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceCropCultivatorPortBlockEntity>> BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_cell_incubator_port_block_entity", () ->
-                    BlockEntityType.Builder.of(BasicPerformanceCellIncubatorPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_BLOCK.get()).build(null));
+                    BlockEntityType.Builder.of(BasicPerformanceCropCultivatorPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_BLOCK.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<BasicPerformanceCropCultivatorBlockEntity>> BASIC_PERFORMANCE_CROP_CULTIVATOR_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_crop_cultivator_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceCropCultivatorBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceCropCultivatorBusBlockEntity>> BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_crop_cultivator_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceCropCultivatorBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceCropCultivatorPortBlockEntity>> BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_crop_cultivator_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceCropCultivatorPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_BLOCK.get()).build(null));
 
 
 

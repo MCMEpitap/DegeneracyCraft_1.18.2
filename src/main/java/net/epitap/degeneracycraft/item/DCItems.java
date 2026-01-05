@@ -908,6 +908,7 @@ public class DCItems extends CreativeModeTab {
 
     public static final RegistryObject<Item> BASIC_PERFORMANCE_BIO_REACTOR_CIRCUIT = ITEMS.register("basic_performance_bio_reactor_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_PERFORMANCE_CELL_INCUBATOR_CIRCUIT = ITEMS.register("basic_performance_cell_incubator_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_PERFORMANCE_CROP_CULTIVATOR_CIRCUIT = ITEMS.register("basic_performance_crop_cultivator_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
 
 

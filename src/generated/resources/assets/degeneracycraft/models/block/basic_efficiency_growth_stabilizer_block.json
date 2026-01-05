@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_block",
+    "up": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_block",
+    "north": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_block",
+    "south": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_block",
+    "east": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_block",
+    "west": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_block",
+    "particle": "degeneracycraft:block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_block"
+  }
+}

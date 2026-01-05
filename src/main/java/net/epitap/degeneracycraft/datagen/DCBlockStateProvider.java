@@ -177,6 +177,14 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicPerformanceCellIncubatorPort();
         registerBasicPerformanceCellIncubatorPortHolo();
 
+        registerBasicPerformanceCropCultivator();
+        registerBasicEfficiencyGrowthStabilizer();
+        registerBasicEfficiencyGrowthStabilizerHolo();
+        registerBasicPerformanceCropCultivatorBus();
+        registerBasicPerformanceCropCultivatorBusHolo();
+        registerBasicPerformanceCropCultivatorPort();
+        registerBasicPerformanceCropCultivatorPortHolo();
+
 
 
         registerBasicPerformanceChemicalReactor();
@@ -2312,6 +2320,104 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("west", modLoc("block/machine/basic/biology/basic_performance_cell_incubator/port/basic_performance_cell_incubator_port_holo_block"));
         model.texture("particle", modLoc("block/machine/basic/biology/basic_performance_cell_incubator/port/basic_performance_cell_incubator_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceCropCultivator() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_crop_cultivator_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/basic_performance_crop_cultivator_down"));
+        model.texture("up", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/basic_performance_crop_cultivator_up"));
+        model.texture("north", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/basic_performance_crop_cultivator_front"));
+        model.texture("south", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/basic_performance_crop_cultivator_side"));
+        model.texture("east", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/basic_performance_crop_cultivator_side"));
+        model.texture("west", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/basic_performance_crop_cultivator_side"));
+        model.texture("particle", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/basic_performance_crop_cultivator_front"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicEfficiencyGrowthStabilizer() {
+        BlockModelBuilder model = models().getBuilder("block/basic_efficiency_growth_stabilizer_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_block"));
+        model.texture("up", modLoc("block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_block"));
+        model.texture("north", modLoc("block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_block"));
+        model.texture("south", modLoc("block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_block"));
+        model.texture("east", modLoc("block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_block"));
+        model.texture("west", modLoc("block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_GROWTH_STABILIZER_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicEfficiencyGrowthStabilizerHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_efficiency_growth_stabilizer_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/biology/abilityblock/basic_efficiency_growth_stabilizer/basic_efficiency_growth_stabilizer_holo_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_GROWTH_STABILIZER_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceCropCultivatorBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_crop_cultivator_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/bus/basic_performance_crop_cultivator_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/bus/basic_performance_crop_cultivator_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/bus/basic_performance_crop_cultivator_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/bus/basic_performance_crop_cultivator_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/bus/basic_performance_crop_cultivator_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/bus/basic_performance_crop_cultivator_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/bus/basic_performance_crop_cultivator_bus_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceCropCultivatorBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_crop_cultivator_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/bus/basic_performance_crop_cultivator_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/bus/basic_performance_crop_cultivator_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/bus/basic_performance_crop_cultivator_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/bus/basic_performance_crop_cultivator_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/bus/basic_performance_crop_cultivator_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/bus/basic_performance_crop_cultivator_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/bus/basic_performance_crop_cultivator_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceCropCultivatorPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_crop_cultivator_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/port/basic_performance_crop_cultivator_port_block"));
+        model.texture("up", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/port/basic_performance_crop_cultivator_port_block"));
+        model.texture("north", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/port/basic_performance_crop_cultivator_port_block"));
+        model.texture("south", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/port/basic_performance_crop_cultivator_port_block"));
+        model.texture("east", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/port/basic_performance_crop_cultivator_port_block"));
+        model.texture("west", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/port/basic_performance_crop_cultivator_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/port/basic_performance_crop_cultivator_port_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceCropCultivatorPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_crop_cultivator_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/port/basic_performance_crop_cultivator_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/port/basic_performance_crop_cultivator_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/port/basic_performance_crop_cultivator_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/port/basic_performance_crop_cultivator_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/port/basic_performance_crop_cultivator_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/port/basic_performance_crop_cultivator_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/biology/basic_performance_crop_cultivator/port/basic_performance_crop_cultivator_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
 

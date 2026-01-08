@@ -2,6 +2,7 @@ package net.epitap.degeneracycraft.integration.jei;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_astronomical_telescope.BasicPerformanceAstronomicalTelescopeRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_crop_cultivator.BasicPerformanceCropCultivatorRecipe;
@@ -53,6 +54,8 @@ public class DCRecipeTypes {
 
     public static final RegistryObject<RecipeSerializer<BasicPerformanceAstronomicalTelescopeRecipe>> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_SERIALIZER =
             SERIALIZERS.register("basic_performance_astronomical_telescope_recipe", () -> BasicPerformanceAstronomicalTelescopeRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<BasicPerformanceStarlightCollectorRecipe>> BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_SERIALIZER =
+            SERIALIZERS.register("basic_performance_starlight_collector_recipe", () -> BasicPerformanceStarlightCollectorRecipe.Serializer.INSTANCE);
 
 
 

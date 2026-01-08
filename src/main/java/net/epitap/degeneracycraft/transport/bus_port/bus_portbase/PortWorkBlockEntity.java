@@ -3,6 +3,9 @@ package net.epitap.degeneracycraft.transport.bus_port.bus_portbase;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus.BasicPerformanceAstronomicalTelescopeBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus.BasicPerformanceAstronomicalTelescopeBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.port.BasicPerformanceAstronomicalTelescopePortType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_starlight_collector.bus.BasicPerformanceStarlightCollectorBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_starlight_collector.bus.BasicPerformanceStarlightCollectorBusType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_starlight_collector.port.BasicPerformanceStarlightCollectorPortType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.bus.BasicPerformanceBioReactorBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.bus.BasicPerformanceBioReactorBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.port.BasicPerformanceBioReactorPortType;
@@ -104,6 +107,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
     protected PortSetLazyOptional<PortItemHandler> itemStored;
 
     protected PortSetLazyOptional<BasicPerformanceAstronomicalTelescopeBusEnergyStorage> basicPerformanceAstronomicalTelescopeBusEnergyStorageStored;
+    protected PortSetLazyOptional<BasicPerformanceStarlightCollectorBusEnergyStorage> basicPerformanceStarlightCollectorBusEnergyStorageStored;
 
     protected PortSetLazyOptional<BasicPerformanceBioReactorBusEnergyStorage> basicPerformanceBioReactorBusEnergyStorageStored;
     protected PortSetLazyOptional<BasicPerformanceCellIncubatorBusEnergyStorage> basicPerformanceCellIncubatorBusEnergyStorageStored;
@@ -161,6 +165,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
         basicPerformanceAstronomicalTelescopeBusEnergyStorageStored = new PortSetLazyOptional<>();
+        basicPerformanceStarlightCollectorBusEnergyStorageStored = new PortSetLazyOptional<>();
 
 
 
@@ -222,6 +227,16 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
             }
         }
         if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPerformanceAstronomicalTelescopePortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityEnergy.ENERGY && hasType(BasicPerformanceStarlightCollectorBusType.INSTANCE)) {
+            if (side != null) {
+                return basicPerformanceStarlightCollectorBusEnergyStorageStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPerformanceStarlightCollectorPortType.INSTANCE)) {
             if (side != null) {
                 return itemStored.get(side).cast();
             }
@@ -560,6 +575,13 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 }
             }
         }
+        if (hasType(BasicPerformanceStarlightCollectorBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    basicPerformanceStarlightCollectorBusEnergyStorageStored.get(side).ifPresent(BasicPerformanceStarlightCollectorBusEnergyStorage::tick);
+                }
+            }
+        }
 
 
 
@@ -770,6 +792,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicPerformanceAstronomicalTelescopePortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
         }
+        if (hasType(BasicPerformanceStarlightCollectorBusType.INSTANCE)) {
+            basicPerformanceStarlightCollectorBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicPerformanceStarlightCollectorBusEnergyStorage(this, storage));
+        }
+        if (hasType(BasicPerformanceStarlightCollectorPortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
+        }
 
 
 
@@ -955,6 +983,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
             basicPerformanceAstronomicalTelescopeBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicPerformanceAstronomicalTelescopeBusEnergyStorage(this, side));
         }
         if (hasType(BasicPerformanceAstronomicalTelescopePortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
+        }
+        if (hasType(BasicPerformanceStarlightCollectorBusType.INSTANCE)) {
+            basicPerformanceStarlightCollectorBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicPerformanceStarlightCollectorBusEnergyStorage(this, side));
+        }
+        if (hasType(BasicPerformanceStarlightCollectorPortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
         }
 
@@ -1150,6 +1184,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         itemStored.invalidate();
 
         basicPerformanceAstronomicalTelescopeBusEnergyStorageStored.invalidate();
+        basicPerformanceStarlightCollectorBusEnergyStorageStored.invalidate();
 
 
 

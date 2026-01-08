@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_efficiency_faint_light_receiver/basic_efficiency_faint_light_receiver_block",
+    "up": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_efficiency_faint_light_receiver/basic_efficiency_faint_light_receiver_block",
+    "north": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_efficiency_faint_light_receiver/basic_efficiency_faint_light_receiver_block",
+    "south": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_efficiency_faint_light_receiver/basic_efficiency_faint_light_receiver_block",
+    "east": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_efficiency_faint_light_receiver/basic_efficiency_faint_light_receiver_block",
+    "west": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_efficiency_faint_light_receiver/basic_efficiency_faint_light_receiver_block",
+    "particle": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_efficiency_faint_light_receiver/basic_efficiency_faint_light_receiver_block"
+  }
+}

@@ -156,8 +156,16 @@ public class DCBlockLootTableProvider extends BlockLoot {
         this.add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK.get()));
         this.add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.get(), block -> noDrop());
 
-        
-        
+        this.add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BLOCK.get()));
+        this.add(DCBlocks.BASIC_EFFICIENCY_FAINT_LIGHT_RESERVER_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_EFFICIENCY_FAINT_LIGHT_RESERVER_BLOCK.get()));
+        this.add(DCBlocks.BASIC_EFFICIENCY_FAINT_LIGHT_RESERVER_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_HOLO_BLOCK.get(), block -> noDrop());
+        this.add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_BLOCK.get()));
+        this.add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_HOLO_BLOCK.get(), block -> noDrop());
+
+
+
         this.add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BLOCK.get()));
         this.add(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_BLOCK.get()));
         this.add(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_HOLO_BLOCK.get(), block -> noDrop());

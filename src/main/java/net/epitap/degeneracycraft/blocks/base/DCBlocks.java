@@ -4,6 +4,7 @@ package net.epitap.degeneracycraft.blocks.base;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.block.machine.PulverizerBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeBlock;
+import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_crop_cultivator.BasicPerformanceCropCultivatorBlock;
@@ -55,6 +56,9 @@ import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineeri
 import net.epitap.degeneracycraft.item.DCCreativeTab;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus.BasicPerformanceAstronomicalTelescopeBusBlock;
+import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.port.BasicPerformanceAstronomicalTelescopePortBlock;
+import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_starlight_collector.bus.BasicPerformanceStarlightCollectorBusBlock;
+import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_starlight_collector.port.BasicPerformanceStarlightCollectorPortBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.bus.BasicPerformanceBioReactorBusBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.port.BasicPerformanceBioReactorPortBlock;
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_cell_incubator.port.BasicPerformanceCellIncubatorPortBlock;
@@ -436,15 +440,38 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_PRECISION_OBJECTIVE_LENS_HOLO_BLOCK = registerHoloBlock("basic_precision_objective_lens_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK = registerBlock("basic_performance_telescope_bus_block", () ->
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK = registerBlock("basic_performance_astronomical_telescope_bus_block", () ->
             new BasicPerformanceAstronomicalTelescopeBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_telescope_bus_holo_block", () ->
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_astronomical_telescope_bus_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK = registerBlock("basic_performance_telescope_port_block", () ->
-            new BasicPerformanceBioReactorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_telescope_port_holo_block", () ->
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK = registerBlock("basic_performance_astronomical_telescope_port_block", () ->
+            new BasicPerformanceAstronomicalTelescopePortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_astronomical_telescope_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BLOCK = registerTooltipBasicMachineBlock("basic_performance_starlight_collector_block", () ->
+                    new BasicPerformanceStarlightCollectorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "Lv0:3×3×3",
+            "Lv1:3×3×3",
+            "Base:Speed ×1.00,Energy Usage ×1.00",
+            "Lv0:Speed ×2.00,Energy Usage ×1.50",
+            "Lv1:Speed ×3.00,Energy Usage ×2.00",
+            "basic_performance_starlight_collector_block", "astronomy", "basic");
+    public static final RegistryObject<Block> BASIC_EFFICIENCY_FAINT_LIGHT_RESERVER_BLOCK = registerTooltipMultiblockAbilityBlock("basic_efficiency_faint_light_receiver_block", () ->
+                    new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
+            "basic_performance_starlight_collector_block",
+            "astronomy",
+            "basic");
+    public static final RegistryObject<Block> BASIC_EFFICIENCY_FAINT_LIGHT_RESERVER_HOLO_BLOCK = registerHoloBlock("basic_efficiency_faint_light_receiver_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_BLOCK = registerBlock("basic_performance_starlight_collector_bus_block", () ->
+            new BasicPerformanceStarlightCollectorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_starlight_collector_bus_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_BLOCK = registerBlock("basic_performance_starlight_collector_port_block", () ->
+            new BasicPerformanceStarlightCollectorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_starlight_collector_port_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
 
 

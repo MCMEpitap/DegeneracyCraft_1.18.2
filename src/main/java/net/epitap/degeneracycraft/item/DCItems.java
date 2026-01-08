@@ -903,6 +903,7 @@ public class DCItems extends CreativeModeTab {
 
 
     public static final RegistryObject<Item> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT = ITEMS.register("basic_performance_astronomical_telescope_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_CIRCUIT = ITEMS.register("basic_performance_starlight_collector_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
 
 

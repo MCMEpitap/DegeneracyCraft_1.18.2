@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "degeneracycraft:basic_performance_telescope_port_block"
+          "name": "degeneracycraft:basic_performance_starlight_collector_port_block"
         }
       ],
       "conditions": [

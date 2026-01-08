@@ -3,6 +3,7 @@ package net.epitap.degeneracycraft.blocks.base;
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.entity.machine.PulverizerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_crop_cultivator.BasicPerformanceCropCultivatorBlockEntity;
@@ -53,6 +54,8 @@ import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineeri
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.material_storage.basic_strength_imitation_magic_engineering_multiblock_material_storage.BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus.BasicPerformanceAstronomicalTelescopeBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.port.BasicPerformanceAstronomicalTelescopePortBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_starlight_collector.bus.BasicPerformanceStarlightCollectorBusBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_starlight_collector.port.BasicPerformanceStarlightCollectorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.bus.BasicPerformanceBioReactorBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.port.BasicPerformanceBioReactorPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_crop_cultivator.bus.BasicPerformanceCropCultivatorBusBlockEntity;
@@ -206,6 +209,16 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicPerformanceAstronomicalTelescopePortBlockEntity>> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_performance_astronomical_telescope_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicPerformanceAstronomicalTelescopePortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<BasicPerformanceStarlightCollectorBlockEntity>> BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_starlight_collector_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceStarlightCollectorBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceStarlightCollectorBusBlockEntity>> BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_starlight_collector_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceStarlightCollectorBusBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicPerformanceStarlightCollectorPortBlockEntity>> BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_performance_starlight_collector_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicPerformanceStarlightCollectorPortBlockEntity::new, DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_BLOCK.get()).build(null));
 
 
 

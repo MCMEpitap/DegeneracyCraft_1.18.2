@@ -8,6 +8,8 @@ import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorMenu;
@@ -65,6 +67,9 @@ import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machin
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_astronomical_telescope.BasicPerformanceAstronomicalTelescopeRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_astronomical_telescope.BasicPerformanceAstronomicalTelescopeRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_astronomical_telescope.BasicPerformanceAstronomicalTelescopeRecipeTransferHandler;
+import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorRecipeTransferHandler;
@@ -172,6 +177,8 @@ public class JEIDCPlugin implements IModPlugin {
 
         registration.addRecipeCategories(new
                 BasicPerformanceAstronomicalTelescopeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new
+                BasicPerformanceStarlightCollectorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
 
 
@@ -277,6 +284,9 @@ public class JEIDCPlugin implements IModPlugin {
         List<BasicPerformanceAstronomicalTelescopeRecipe> basicPerformanceAstronomicalTelescopeRecipe =
                 rm.getAllRecipesFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicPerformanceAstronomicalTelescopeRecipeCategory.UID, BasicPerformanceAstronomicalTelescopeRecipe.class), basicPerformanceAstronomicalTelescopeRecipe);
+        List<BasicPerformanceStarlightCollectorRecipe> basicPerformanceStarlightCollectorRecipe =
+                rm.getAllRecipesFor(BasicPerformanceStarlightCollectorRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicPerformanceStarlightCollectorRecipeCategory.UID, BasicPerformanceStarlightCollectorRecipe.class), basicPerformanceStarlightCollectorRecipe);
 
 
 
@@ -407,6 +417,7 @@ public class JEIDCPlugin implements IModPlugin {
 
 
         registration.addRecipeClickArea(BasicPerformanceAstronomicalTelescopeScreen.class, 64, 20, 29, 8, BasicPerformanceAstronomicalTelescopeRecipeCategory.UID);
+        registration.addRecipeClickArea(BasicPerformanceStarlightCollectorScreen.class, 64, 20, 29, 8, BasicPerformanceStarlightCollectorRecipeCategory.UID);
 
 
 
@@ -468,6 +479,7 @@ public class JEIDCPlugin implements IModPlugin {
 
 
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get()), BasicPerformanceAstronomicalTelescopeRecipeCategory.UID);
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BLOCK.get()), BasicPerformanceStarlightCollectorRecipeCategory.UID);
 
 
 
@@ -529,6 +541,15 @@ public class JEIDCPlugin implements IModPlugin {
                 ),
                 BasicPerformanceAstronomicalTelescopeRecipeCategory.TYPE
         );
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceStarlightCollectorRecipeTransferHandler<>(
+                        BasicPerformanceStarlightCollectorMenu.class,
+                        0, 2,
+                        5, 36
+                ),
+                BasicPerformanceStarlightCollectorRecipeCategory.TYPE
+        );
+
 
 
 

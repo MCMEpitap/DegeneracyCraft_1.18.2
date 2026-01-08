@@ -956,6 +956,20 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.get(), "基本性能天体望遠鏡ポート (ホログラム)");
         add(DCItems.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT.get(), "基本性能天体望遠鏡回路");
 
+        add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BLOCK.get(), "基本性能星光収集機");
+        add("tooltip." + "degeneracycraft." + "basic_performance_starlight_collector_block",
+                "基本的な星光収集機. 恒星の光を集め、素材加工に利用する.");
+        add(DCBlocks.BASIC_EFFICIENCY_FAINT_LIGHT_RESERVER_BLOCK.get(), "基本効率微光受光台");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_starlight_collector_block",
+                "基本性能星光収集機用");
+        add(DCBlocks.BASIC_EFFICIENCY_FAINT_LIGHT_RESERVER_HOLO_BLOCK.get(), "基本効率微光受光台 (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_BLOCK.get(), "基本性能星光収集機バス");
+        add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_HOLO_BLOCK.get(), "基本性能星光収集機バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_BLOCK.get(), "基本性能星光収集機ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_HOLO_BLOCK.get(), "基本性能星光収集機ポート (ホログラム)");
+        add(DCItems.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_CIRCUIT.get(), "基本性能星光収集機回路");
+        
+        
 
         add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BLOCK.get(), "基本性能生体反応機");
         add("tooltip." + "degeneracycraft." + "basic_performance_bio_reactor_block",
@@ -1331,8 +1345,9 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
         add("jei." + "basic_performance_astronomical_telescope", "基本性能天体望遠鏡 レシピ");
+        add("jei." + "basic_performance_starlight_collector", "基本性能星光収集機 レシピ");
 
-        
+
         
         add("jei." + "degeneracycraft_basic_performance_bio_reactor", "基本性能生体反応機 レシピ");
         add("jei." + "degeneracycraft_basic_performance_cell_incubator", "基本性能細胞培養機 レシピ");

@@ -1091,6 +1091,22 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_astronomical_telescope_port_holo_block"));
         basicMachineCircuitAstronomyItem(DCItems.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT.get());
 
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_starlight_collector_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_FAINT_LIGHT_RESERVER_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_faint_light_receiver_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_FAINT_LIGHT_RESERVER_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_faint_light_receiver_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_starlight_collector_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_starlight_collector_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_starlight_collector_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_starlight_collector_port_holo_block"));
+        basicMachineCircuitAstronomyItem(DCItems.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_CIRCUIT.get());
+
 
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BLOCK.getId().getPath(),

@@ -961,7 +961,21 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.get(), "Basic Performance Astronomical Telescope Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT.get(), "Basic Performance Astronomical Telescope Circuit");
 
+        add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BLOCK.get(), "Basic Performance Starlight Collector");
+        add("tooltip." + "degeneracycraft." + "basic_performance_starlight_collector_block",
+                "Basic Starlight Collector. Collect starlight and utilize it for material processing.");
+        add(DCBlocks.BASIC_EFFICIENCY_FAINT_LIGHT_RESERVER_BLOCK.get(), "Basic Efficiency Faint Light Receiver");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_starlight_collector_block",
+                "For Basic Performance Starlight Collector");
+        add(DCBlocks.BASIC_EFFICIENCY_FAINT_LIGHT_RESERVER_HOLO_BLOCK.get(), "Basic Efficiency Faint Light Receiver (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_BLOCK.get(), "Basic Performance Starlight Collector Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_HOLO_BLOCK.get(), "Basic Performance Starlight Collector Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_BLOCK.get(), "Basic Performance Starlight Collector Port");
+        add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_HOLO_BLOCK.get(), "Basic Performance Starlight Collector Port (Hologram)");
+        add(DCItems.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_CIRCUIT.get(), "Basic Performance Starlight Collector Circuit");
+        
 
+        
         add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BLOCK.get(), "Basic Performance Bio Reactor");
         add("tooltip." + "degeneracycraft." + "basic_performance_bio_reactor_block",
                 "Basic Bio Reactor. Using biological processes to produce materials.");

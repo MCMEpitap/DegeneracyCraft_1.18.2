@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/astronomy/basic_performance_starlight_collector/basic_performance_starlight_collector_down",
+    "up": "degeneracycraft:block/machine/basic/astronomy/basic_performance_starlight_collector/basic_performance_starlight_collector_up",
+    "north": "degeneracycraft:block/machine/basic/astronomy/basic_performance_starlight_collector/basic_performance_starlight_collector_front",
+    "south": "degeneracycraft:block/machine/basic/astronomy/basic_performance_starlight_collector/basic_performance_starlight_collector_side",
+    "east": "degeneracycraft:block/machine/basic/astronomy/basic_performance_starlight_collector/basic_performance_starlight_collector_side",
+    "west": "degeneracycraft:block/machine/basic/astronomy/basic_performance_starlight_collector/basic_performance_starlight_collector_side",
+    "particle": "degeneracycraft:block/machine/basic/astronomy/basic_performance_starlight_collector/basic_performance_starlight_collector_front"
+  }
+}

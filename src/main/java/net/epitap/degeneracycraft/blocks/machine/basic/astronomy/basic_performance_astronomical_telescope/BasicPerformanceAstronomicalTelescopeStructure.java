@@ -281,13 +281,12 @@ public class BasicPerformanceAstronomicalTelescopeStructure {
     private static boolean isExpectedBlock(BlockState blockState, String blockKey) {
         return switch (blockKey) {
             case "F" -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-//            case "G" -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get());
             case "P" -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK.get());
             case "S" -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get());
             case "B" -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK.get());
             case "E" -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get());
             case "A" -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_BLOCK.get());
-            case "L" -> blockState.is(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_HOLO_BLOCK.get());
+            case "L" -> blockState.is(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_BLOCK.get());
             default -> false;
         };
     }

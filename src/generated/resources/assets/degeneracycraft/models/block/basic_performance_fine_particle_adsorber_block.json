@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/basic_performance_fine_particle_adsorber_down",
+    "up": "degeneracycraft:block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/basic_performance_fine_particle_adsorber_up",
+    "north": "degeneracycraft:block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/basic_performance_fine_particle_adsorber_front",
+    "south": "degeneracycraft:block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/basic_performance_fine_particle_adsorber_side",
+    "east": "degeneracycraft:block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/basic_performance_fine_particle_adsorber_side",
+    "west": "degeneracycraft:block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/basic_performance_fine_particle_adsorber_side",
+    "particle": "degeneracycraft:block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/basic_performance_fine_particle_adsorber_front"
+  }
+}

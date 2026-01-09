@@ -1091,6 +1091,22 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_performance_astronomical_telescope_port_holo_block"));
         basicMachineCircuitAstronomyItem(DCItems.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT.get());
 
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_fine_particle_adsorber_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_FINE_PARTICLE_STORAGE_TANK_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_particle_storage_tank_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_FINE_PARTICLE_STORAGE_TANK_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_particle_storage_tank_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_fine_particle_adsorber_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_fine_particle_adsorber_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_fine_particle_adsorber_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_fine_particle_adsorber_port_holo_block"));
+        basicMachineCircuitAstronomyItem(DCItems.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_CIRCUIT.get());
+
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_starlight_collector_block"));
         withExistingParent(DCBlocks.BASIC_EFFICIENCY_FAINT_LIGHT_RESERVER_BLOCK.getId().getPath(),

@@ -14,6 +14,8 @@ public class PortModelRegistry {
     public enum DCPortModel {
         BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK_EXTRACT("block/basic_performance_astronomical_telescope_bus_block_extract"),
         BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK_EXTRACT("block/basic_performance_astronomical_telescope_port_block_extract"),
+        BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BUS_BLOCK_EXTRACT("block/basic_performance_fine_particle_adsorber_bus_block_extract"),
+        BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_PORT_BLOCK_EXTRACT("block/basic_performance_fine_particle_adsorber_port_block_extract"),
         BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_BLOCK_EXTRACT("block/basic_performance_starlight_collector_bus_block_extract"),
         BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_BLOCK_EXTRACT("block/basic_performance_starlight_collector_port_block_extract"),
 

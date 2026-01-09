@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_block",
+    "up": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_block",
+    "north": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_block",
+    "south": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_block",
+    "east": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_block",
+    "west": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_block",
+    "particle": "degeneracycraft:block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_block"
+  }
+}

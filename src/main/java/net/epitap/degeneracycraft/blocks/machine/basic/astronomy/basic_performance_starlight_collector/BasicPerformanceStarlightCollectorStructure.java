@@ -88,12 +88,12 @@ public class BasicPerformanceStarlightCollectorStructure {
         structure1 = new String[][][]{
                 {
                         {" ", "A", " "},
-                        {"A", "L", "A"},
+                        {"A", " ", "A"},
                         {" ", "A", " "}
                 },
                 {
                         {"F", "F", "F"},
-                        {"F", " ", "F"},
+                        {"F", "L", "F"},
                         {"F", " ", "F"}
                 },
                 {
@@ -105,7 +105,6 @@ public class BasicPerformanceStarlightCollectorStructure {
 
         Map<String, Predicate<BlockState>> blockConditions = new HashMap<>();
         blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
-//        blockConditions.put("G", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get()));
         blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_BLOCK.get()));
         blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
         blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_BLOCK.get()));
@@ -166,12 +165,12 @@ public class BasicPerformanceStarlightCollectorStructure {
         structureH1 = new String[][][]{
                 {
                         {" ", "A", " "},
-                        {"A", "L", "A"},
+                        {"A", " ", "A"},
                         {" ", "A", " "}
                 },
                 {
                         {"F", "F", "F"},
-                        {"F", " ", "F"},
+                        {"F", "L", "F"},
                         {"F", " ", "F"}
                 },
                 {
@@ -271,13 +270,12 @@ public class BasicPerformanceStarlightCollectorStructure {
     private static boolean isExpectedBlock(BlockState blockState, String blockKey) {
         return switch (blockKey) {
             case "F" -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get());
-//            case "G" -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get());
             case "P" -> blockState.is(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_BLOCK.get());
             case "S" -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get());
             case "B" -> blockState.is(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_BLOCK.get());
             case "E" -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get());
             case "A" -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_BLOCK.get());
-            case "L" -> blockState.is(DCBlocks.BASIC_EFFICIENCY_FAINT_LIGHT_RESERVER_HOLO_BLOCK.get());
+            case "L" -> blockState.is(DCBlocks.BASIC_EFFICIENCY_FAINT_LIGHT_RESERVER_BLOCK.get());
             default -> false;
         };
     }

@@ -3,6 +3,9 @@ package net.epitap.degeneracycraft.transport.bus_port.bus_portbase;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus.BasicPerformanceAstronomicalTelescopeBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus.BasicPerformanceAstronomicalTelescopeBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.port.BasicPerformanceAstronomicalTelescopePortType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_fine_particle_adsorber.bus.BasicPerformanceFineParticleAdsorberBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_fine_particle_adsorber.bus.BasicPerformanceFineParticleAdsorberBusType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_fine_particle_adsorber.port.BasicPerformanceFineParticleAdsorberPortType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_starlight_collector.bus.BasicPerformanceStarlightCollectorBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_starlight_collector.bus.BasicPerformanceStarlightCollectorBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_starlight_collector.port.BasicPerformanceStarlightCollectorPortType;
@@ -107,6 +110,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
     protected PortSetLazyOptional<PortItemHandler> itemStored;
 
     protected PortSetLazyOptional<BasicPerformanceAstronomicalTelescopeBusEnergyStorage> basicPerformanceAstronomicalTelescopeBusEnergyStorageStored;
+    protected PortSetLazyOptional<BasicPerformanceFineParticleAdsorberBusEnergyStorage> basicPerformanceFineParticleAdsorberBusEnergyStorageStored;
     protected PortSetLazyOptional<BasicPerformanceStarlightCollectorBusEnergyStorage> basicPerformanceStarlightCollectorBusEnergyStorageStored;
 
     protected PortSetLazyOptional<BasicPerformanceBioReactorBusEnergyStorage> basicPerformanceBioReactorBusEnergyStorageStored;
@@ -165,6 +169,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
         basicPerformanceAstronomicalTelescopeBusEnergyStorageStored = new PortSetLazyOptional<>();
+        basicPerformanceFineParticleAdsorberBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicPerformanceStarlightCollectorBusEnergyStorageStored = new PortSetLazyOptional<>();
 
 
@@ -227,6 +232,16 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
             }
         }
         if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPerformanceAstronomicalTelescopePortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityEnergy.ENERGY && hasType(BasicPerformanceFineParticleAdsorberBusType.INSTANCE)) {
+            if (side != null) {
+                return basicPerformanceFineParticleAdsorberBusEnergyStorageStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPerformanceFineParticleAdsorberPortType.INSTANCE)) {
             if (side != null) {
                 return itemStored.get(side).cast();
             }
@@ -575,6 +590,13 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
                 }
             }
         }
+        if (hasType(BasicPerformanceFineParticleAdsorberBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    basicPerformanceFineParticleAdsorberBusEnergyStorageStored.get(side).ifPresent(BasicPerformanceFineParticleAdsorberBusEnergyStorage::tick);
+                }
+            }
+        }
         if (hasType(BasicPerformanceStarlightCollectorBusType.INSTANCE)) {
             for (Direction side : Direction.values()) {
                 if (portExtracting(side)) {
@@ -792,6 +814,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicPerformanceAstronomicalTelescopePortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
         }
+        if (hasType(BasicPerformanceFineParticleAdsorberBusType.INSTANCE)) {
+            basicPerformanceFineParticleAdsorberBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicPerformanceFineParticleAdsorberBusEnergyStorage(this, storage));
+        }
+        if (hasType(BasicPerformanceFineParticleAdsorberPortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
+        }
         if (hasType(BasicPerformanceStarlightCollectorBusType.INSTANCE)) {
             basicPerformanceStarlightCollectorBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicPerformanceStarlightCollectorBusEnergyStorage(this, storage));
         }
@@ -983,6 +1011,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
             basicPerformanceAstronomicalTelescopeBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicPerformanceAstronomicalTelescopeBusEnergyStorage(this, side));
         }
         if (hasType(BasicPerformanceAstronomicalTelescopePortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
+        }
+        if (hasType(BasicPerformanceFineParticleAdsorberBusType.INSTANCE)) {
+            basicPerformanceFineParticleAdsorberBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicPerformanceFineParticleAdsorberBusEnergyStorage(this, side));
+        }
+        if (hasType(BasicPerformanceFineParticleAdsorberPortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
         }
         if (hasType(BasicPerformanceStarlightCollectorBusType.INSTANCE)) {
@@ -1184,6 +1218,7 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         itemStored.invalidate();
 
         basicPerformanceAstronomicalTelescopeBusEnergyStorageStored.invalidate();
+        basicPerformanceFineParticleAdsorberBusEnergyStorageStored.invalidate();
         basicPerformanceStarlightCollectorBusEnergyStorageStored.invalidate();
 
 

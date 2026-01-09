@@ -2,6 +2,7 @@ package net.epitap.degeneracycraft.blocks.base;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_fine_particle_adsorber.BasicPerformanceFineParticleAdsorberMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorMenu;
@@ -127,6 +128,8 @@ public class DCMenuTypes {
 
     public static final RegistryObject<MenuType<BasicPerformanceAstronomicalTelescopeMenu>> BASIC_PERFORMANCE_ASTROMICAL_TELESCOPE_MENU =
             registerMenuType(BasicPerformanceAstronomicalTelescopeMenu::new, "basic_performance_astronomical_telescope_menu");
+    public static final RegistryObject<MenuType<BasicPerformanceFineParticleAdsorberMenu>> BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_MENU =
+            registerMenuType(BasicPerformanceFineParticleAdsorberMenu::new, "basic_performance_fine_particle_adsorber_menu");
     public static final RegistryObject<MenuType<BasicPerformanceStarlightCollectorMenu>> BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_MENU =
             registerMenuType(BasicPerformanceStarlightCollectorMenu::new, "basic_performance_starlight_collector_menu");
 

@@ -8,6 +8,8 @@ import net.epitap.degeneracycraft.Degeneracycraft;
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_fine_particle_adsorber.BasicPerformanceFineParticleAdsorberMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_fine_particle_adsorber.BasicPerformanceFineParticleAdsorberScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorMenu;
@@ -67,6 +69,9 @@ import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machin
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_astronomical_telescope.BasicPerformanceAstronomicalTelescopeRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_astronomical_telescope.BasicPerformanceAstronomicalTelescopeRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_astronomical_telescope.BasicPerformanceAstronomicalTelescopeRecipeTransferHandler;
+import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_performance_fine_particle_adsorber.BasicPerformanceFineParticleAdsorberRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_performance_fine_particle_adsorber.BasicPerformanceFineParticleAdsorberRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_performance_fine_particle_adsorber.BasicPerformanceFineParticleAdsorberTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorRecipeTransferHandler;
@@ -178,6 +183,8 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeCategories(new
                 BasicPerformanceAstronomicalTelescopeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
+                BasicPerformanceFineParticleAdsorberRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+        registration.addRecipeCategories(new
                 BasicPerformanceStarlightCollectorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
 
@@ -284,6 +291,9 @@ public class JEIDCPlugin implements IModPlugin {
         List<BasicPerformanceAstronomicalTelescopeRecipe> basicPerformanceAstronomicalTelescopeRecipe =
                 rm.getAllRecipesFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicPerformanceAstronomicalTelescopeRecipeCategory.UID, BasicPerformanceAstronomicalTelescopeRecipe.class), basicPerformanceAstronomicalTelescopeRecipe);
+        List<BasicPerformanceFineParticleAdsorberRecipe> basicPerformanceFineParticleAdsorberRecipe =
+                rm.getAllRecipesFor(BasicPerformanceFineParticleAdsorberRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicPerformanceFineParticleAdsorberRecipeCategory.UID, BasicPerformanceFineParticleAdsorberRecipe.class), basicPerformanceFineParticleAdsorberRecipe);
         List<BasicPerformanceStarlightCollectorRecipe> basicPerformanceStarlightCollectorRecipe =
                 rm.getAllRecipesFor(BasicPerformanceStarlightCollectorRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicPerformanceStarlightCollectorRecipeCategory.UID, BasicPerformanceStarlightCollectorRecipe.class), basicPerformanceStarlightCollectorRecipe);
@@ -417,6 +427,7 @@ public class JEIDCPlugin implements IModPlugin {
 
 
         registration.addRecipeClickArea(BasicPerformanceAstronomicalTelescopeScreen.class, 64, 20, 29, 8, BasicPerformanceAstronomicalTelescopeRecipeCategory.UID);
+        registration.addRecipeClickArea(BasicPerformanceFineParticleAdsorberScreen.class, 64, 20, 29, 8, BasicPerformanceFineParticleAdsorberRecipeCategory.UID);
         registration.addRecipeClickArea(BasicPerformanceStarlightCollectorScreen.class, 64, 20, 29, 8, BasicPerformanceStarlightCollectorRecipeCategory.UID);
 
 
@@ -479,6 +490,7 @@ public class JEIDCPlugin implements IModPlugin {
 
 
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get()), BasicPerformanceAstronomicalTelescopeRecipeCategory.UID);
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BLOCK.get()), BasicPerformanceFineParticleAdsorberRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BLOCK.get()), BasicPerformanceStarlightCollectorRecipeCategory.UID);
 
 
@@ -540,6 +552,14 @@ public class JEIDCPlugin implements IModPlugin {
                         5, 36
                 ),
                 BasicPerformanceAstronomicalTelescopeRecipeCategory.TYPE
+        );
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceFineParticleAdsorberTransferHandler<>(
+                        BasicPerformanceFineParticleAdsorberMenu.class,
+                        0, 1,
+                        6, 36
+                ),
+                BasicPerformanceFineParticleAdsorberRecipeCategory.TYPE
         );
         registration.addRecipeTransferHandler(
                 new BasicPerformanceStarlightCollectorRecipeTransferHandler<>(

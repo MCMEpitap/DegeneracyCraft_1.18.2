@@ -956,6 +956,19 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.get(), "基本性能天体望遠鏡ポート (ホログラム)");
         add(DCItems.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT.get(), "基本性能天体望遠鏡回路");
 
+        add(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BLOCK.get(), "基本性能微粒子吸着機");
+        add("tooltip." + "degeneracycraft." + "basic_performance_fine_particle_adsorber_block",
+                "基本的な微粒子吸着機. 飛来する微粒子などを集め、材料として使用する.");
+        add(DCBlocks.BASIC_EFFICIENCY_FINE_PARTICLE_STORAGE_TANK_BLOCK.get(), "基本効率微粒子蓄積槽");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_fine_particle_adsorber_block",
+                "基本性能微粒子吸着機用");
+        add(DCBlocks.BASIC_EFFICIENCY_FINE_PARTICLE_STORAGE_TANK_HOLO_BLOCK.get(), "基本効率微粒子蓄積槽 (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BUS_BLOCK.get(), "基本性能微粒子吸着機バス");
+        add(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BUS_HOLO_BLOCK.get(), "基本性能微粒子吸着機バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_PORT_BLOCK.get(), "基本性能微粒子吸着機ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_PORT_HOLO_BLOCK.get(), "基本性能微粒子吸着機ポート (ホログラム)");
+        add(DCItems.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_CIRCUIT.get(), "基本性能微粒子吸着機回路");
+        
         add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BLOCK.get(), "基本性能星光収集機");
         add("tooltip." + "degeneracycraft." + "basic_performance_starlight_collector_block",
                 "基本的な星光収集機. 恒星の光を集め、素材加工に利用する.");
@@ -1345,6 +1358,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
         add("jei." + "basic_performance_astronomical_telescope", "基本性能天体望遠鏡 レシピ");
+        add("jei." + "basic_performance_fine_particle_adsorber", "基本性能微粒子吸着機 レシピ");
         add("jei." + "basic_performance_starlight_collector", "基本性能星光収集機 レシピ");
 
 

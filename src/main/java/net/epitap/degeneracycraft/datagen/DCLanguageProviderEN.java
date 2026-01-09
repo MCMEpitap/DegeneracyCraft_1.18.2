@@ -961,6 +961,19 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.get(), "Basic Performance Astronomical Telescope Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT.get(), "Basic Performance Astronomical Telescope Circuit");
 
+        add(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BLOCK.get(), "Basic Performance Fine Particle Adsorber");
+        add("tooltip." + "degeneracycraft." + "basic_performance_fine_particle_adsorber_block",
+                "Basic Fine Particle Adsorber. Collect airborne particles and other materials for use as raw materials.");
+        add(DCBlocks.BASIC_EFFICIENCY_FINE_PARTICLE_STORAGE_TANK_BLOCK.get(), "Basic Efficiency Particle Storage Tank");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_fine_particle_adsorber_block",
+                "For Basic Performance Fine Particle Adsorber");
+        add(DCBlocks.BASIC_EFFICIENCY_FINE_PARTICLE_STORAGE_TANK_HOLO_BLOCK.get(), "Basic Efficiency Particle Storage Tank (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BUS_BLOCK.get(), "Basic Performance Fine Particle Adsorber Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BUS_HOLO_BLOCK.get(), "Basic Performance Fine Particle Adsorber Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_PORT_BLOCK.get(), "Basic Performance Fine Particle Adsorber Port");
+        add(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_PORT_HOLO_BLOCK.get(), "Basic Performance Fine Particle Adsorber Port (Hologram)");
+        add(DCItems.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_CIRCUIT.get(), "Basic Performance Fine Particle Adsorber Circuit");
+        
         add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BLOCK.get(), "Basic Performance Starlight Collector");
         add("tooltip." + "degeneracycraft." + "basic_performance_starlight_collector_block",
                 "Basic Starlight Collector. Collect starlight and utilize it for material processing.");

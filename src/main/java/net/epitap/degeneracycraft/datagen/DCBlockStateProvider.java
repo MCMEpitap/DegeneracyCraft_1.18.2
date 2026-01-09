@@ -159,6 +159,14 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicPerformanceAstronomicalTelescopePort();
         registerBasicPerformanceAstronomicalTelescopePortHolo();
 
+        registerBasicPerformanceFineParticleAdsorber();
+        registerBasicEfficiencyParticleStorageTank();
+        registerBasicEfficiencyParticleStorageTankHolo();
+        registerBasicPerformanceFineParticleAdsorberBus();
+        registerBasicPerformanceFineParticleAdsorberBusHolo();
+        registerBasicPerformanceFineParticleAdsorberPort();
+        registerBasicPerformanceFineParticleAdsorberPortHolo();
+
         registerBasicPerformanceStarlightCollector();
         registerBasicEfficiencyFaintLightReceiver();
         registerBasicEfficiencyFaintLightReceiverHolo();
@@ -2131,6 +2139,104 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("west", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/port/basic_performance_astronomical_telescope_port_holo_block"));
         model.texture("particle", modLoc("block/machine/basic/astronomy/basic_performance_astronomical_telescope/port/basic_performance_astronomical_telescope_port_holo_block"));
         orientedBlock(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceFineParticleAdsorber() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_fine_particle_adsorber_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/basic_performance_fine_particle_adsorber_down"));
+        model.texture("up", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/basic_performance_fine_particle_adsorber_up"));
+        model.texture("north", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/basic_performance_fine_particle_adsorber_front"));
+        model.texture("south", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/basic_performance_fine_particle_adsorber_side"));
+        model.texture("east", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/basic_performance_fine_particle_adsorber_side"));
+        model.texture("west", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/basic_performance_fine_particle_adsorber_side"));
+        model.texture("particle", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/basic_performance_fine_particle_adsorber_front"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicEfficiencyParticleStorageTank() {
+        BlockModelBuilder model = models().getBuilder("block/basic_efficiency_particle_storage_tank_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_block"));
+        model.texture("up", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_block"));
+        model.texture("north", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_block"));
+        model.texture("south", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_block"));
+        model.texture("east", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_block"));
+        model.texture("west", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_FINE_PARTICLE_STORAGE_TANK_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicEfficiencyParticleStorageTankHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_efficiency_particle_storage_tank_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/abilityblock/basic_efficiency_particle_storage_tank/basic_efficiency_particle_storage_tank_holo_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_FINE_PARTICLE_STORAGE_TANK_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceFineParticleAdsorberBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_fine_particle_adsorber_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/bus/basic_performance_fine_particle_adsorber_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/bus/basic_performance_fine_particle_adsorber_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/bus/basic_performance_fine_particle_adsorber_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/bus/basic_performance_fine_particle_adsorber_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/bus/basic_performance_fine_particle_adsorber_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/bus/basic_performance_fine_particle_adsorber_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/bus/basic_performance_fine_particle_adsorber_bus_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceFineParticleAdsorberBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_fine_particle_adsorber_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/bus/basic_performance_fine_particle_adsorber_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/bus/basic_performance_fine_particle_adsorber_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/bus/basic_performance_fine_particle_adsorber_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/bus/basic_performance_fine_particle_adsorber_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/bus/basic_performance_fine_particle_adsorber_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/bus/basic_performance_fine_particle_adsorber_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/bus/basic_performance_fine_particle_adsorber_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceFineParticleAdsorberPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_fine_particle_adsorber_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/port/basic_performance_fine_particle_adsorber_port_block"));
+        model.texture("up", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/port/basic_performance_fine_particle_adsorber_port_block"));
+        model.texture("north", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/port/basic_performance_fine_particle_adsorber_port_block"));
+        model.texture("south", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/port/basic_performance_fine_particle_adsorber_port_block"));
+        model.texture("east", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/port/basic_performance_fine_particle_adsorber_port_block"));
+        model.texture("west", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/port/basic_performance_fine_particle_adsorber_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/port/basic_performance_fine_particle_adsorber_port_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicPerformanceFineParticleAdsorberPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_performance_fine_particle_adsorber_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/port/basic_performance_fine_particle_adsorber_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/port/basic_performance_fine_particle_adsorber_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/port/basic_performance_fine_particle_adsorber_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/port/basic_performance_fine_particle_adsorber_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/port/basic_performance_fine_particle_adsorber_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/port/basic_performance_fine_particle_adsorber_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/astronomy/basic_performance_fine_particle_adsorber/port/basic_performance_fine_particle_adsorber_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
 

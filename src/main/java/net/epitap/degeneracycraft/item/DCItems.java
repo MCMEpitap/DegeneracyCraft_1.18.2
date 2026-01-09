@@ -904,6 +904,7 @@ public class DCItems extends CreativeModeTab {
 
     public static final RegistryObject<Item> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT = ITEMS.register("basic_performance_astronomical_telescope_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_CIRCUIT = ITEMS.register("basic_performance_starlight_collector_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_CIRCUIT = ITEMS.register("basic_performance_fine_particle_adsorber_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
 
 
@@ -930,11 +931,6 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_CIRCUIT = ITEMS.register("basic_technology_machine_element_processor_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_CIRCUIT = ITEMS.register("basic_technology_machine_part_processor_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_CIRCUIT = ITEMS.register("basic_technology_multiblock_equipment_fabricator_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
-
-
-
-
-
 
 
 

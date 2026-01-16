@@ -930,6 +930,22 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "Basic Strength Imitation Magic Engineering Multiblock Material Storage Block (Hologram)");
 
 
+
+
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Kaleidoscopic Reality Science Multiblock Base Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Kaleidoscopic Reality Science Multiblock Base Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Kaleidoscopic Reality Science Multiblock Machine Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), "Basic Strength Kaleidoscopic Reality Science Multiblock Machine Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "Basic Strength Kaleidoscopic Reality Science Multiblock Structure Frame Block");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "Basic Strength Kaleidoscopic Reality Science Multiblock Structure Frame Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), "Basic Strength Kaleidoscopic Reality Science Multiblock Structure Glass Block");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "Basic Strength Kaleidoscopic Reality Science Multiblock Structure Glass Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(), "Basic Strength Kaleidoscopic Reality Science Multiblock Energy Storage Block");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "Basic Strength Kaleidoscopic Reality Science Multiblock Energy Storage Block (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "Basic Strength Kaleidoscopic Reality Science Multiblock Material Storage Block");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "Basic Strength Kaleidoscopic Reality Science Multiblock Material Storage Block (Hologram)");
+
+
         add(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Component Manufacture Machine");
         add(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(), "Redstone Powered Machine Part Manufacture Machine");
 
@@ -1341,6 +1357,25 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_HOLO_BLOCK.get(), "Basic Technology Virtual Sigil Processor Port (Hologram)");
         add(DCItems.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_CIRCUIT.get(), "Basic Technology Virtual Sigil Processor Circuit");
 
+
+
+
+
+
+        add(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BLOCK.get(), "Basic Performance Reality Phase Adjustment Machine");
+        add("tooltip." + "degeneracycraft." + "basic_performance_reality_phase_adjustment_machine_block",
+                "Basic Reality Phase Adjustment Machine. Embed parallel processing into the material and perform modifications.");
+        add(DCBlocks.BASIC_EFFICIENCY_PHASE_STABLE_FLAME_BLOCK.get(), "Basic Efficiency Phase Stable Frame");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_reality_phase_adjustment_machine_block",
+                "For Basic Performance Reality Phase Adjustment Machine");
+        add(DCBlocks.BASIC_EFFICIENCY_PHASE_STABLE_FLAME_HOLO_BLOCK.get(), "Basic Efficiency Phase Stable Frame (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BUS_BLOCK.get(), "Basic Performance Reality Phase Adjustment Machine Bus");
+        add(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BUS_HOLO_BLOCK.get(), "Basic Performance Reality Phase Adjustment Machine Bus (Hologram)");
+        add(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_PORT_BLOCK.get(), "Basic Performance Reality Phase Adjustment Machine Port");
+        add(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_PORT_HOLO_BLOCK.get(), "Basic Performance Reality Phase Adjustment Machine Port (Hologram)");
+        add(DCItems.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_CIRCUIT.get(), "Basic Performance Reality Phase Adjustment Machine Circuit");
+
+
         add(DCUniqueBlocks.SIMPLE_TELESCOPE_RIGHT_PILLAR.get(), "Simple Telescope Right Pillar");
         add(DCUniqueBlocks.SIMPLE_TELESCOPE_LEFT_PILLAR.get(), "Simple Telescope Left Pillar");
 
@@ -1472,14 +1507,19 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("Lv0:Speed ×2.00,Energy Usage ×1.50", "Lv0 MultiBlock:Processing Speed ×2.00 Energy Usage ×1.50");
         add("Lv1:Speed ×3.00,Energy Usage ×2.00", "Lv1 MultiBlock:Processing Speed ×3.00 Energy Usage ×2.00");
 
-
         add("tooltip." + "degeneracycraft." + "science." + "astronomy", "Science:Astronomy");
         add("tooltip." + "degeneracycraft." + "science." + "biology", "Science:Biology");
         add("tooltip." + "degeneracycraft." + "science." + "chemistry", "Science:Chemistry");
+        add("tooltip." + "degeneracycraft." + "science." + "dynamic_energetics", "Science:Dynamic Energetics");
         add("tooltip." + "degeneracycraft." + "science." + "engineering", "Science:Engineering");
+        add("tooltip." + "degeneracycraft." + "science." + "formal_science", "Science:Formal Science");
         add("tooltip." + "degeneracycraft." + "science." + "geo_science", "Science:Geo Science");
         add("tooltip." + "degeneracycraft." + "science." + "hybrid_physics", "Science:Hybrid Physics");
-        add("tooltip." + "degeneracycraft." + "science." + "imitation_magic_engineering", "Science:Imitation Magic Engineering");
+        add("tooltip." + "degeneracycraft." + "science." + "imitation_magic_engineering", "Science:Imitation Magic Engineering");        add("tooltip." + "degeneracycraft." + "science." + "zenith_void_science", "Science:Zenith Void Science");
+        add("tooltip." + "degeneracycraft." + "science." + "jenith_void_science", "Science:Jenith Void Science");
+        add("tooltip." + "degeneracycraft." + "science." + "kaleidoscopic_reality_science", "Science:Kaleidoscopic Reality Science");
+
+
 
         add("tooltip." + "degeneracycraft." + "chlorine" + ".name", "Element Name:Chlorine");
         add("tooltip." + "degeneracycraft." + "chlorine" + ".number", "Atomic Number:17");

@@ -1573,6 +1573,26 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_technology_virtual_sigil_processor_port_holo_block"));
         basicMachineCircuitImitationEngineeringItem(DCItems.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_CIRCUIT.get());
 
+
+
+
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_reality_phase_adjustment_machine_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_PHASE_STABLE_FLAME_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_phase_stable_frame_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_PHASE_STABLE_FLAME_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_phase_stable_frame_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_reality_phase_adjustment_machine_bus_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_reality_phase_adjustment_machine_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_reality_phase_adjustment_machine_port_block"));
+        withExistingParent(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_performance_reality_phase_adjustment_machine_port_holo_block"));
+        basicMachineCircuitKaleidoscopicRealityScienceItem(DCItems.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_CIRCUIT.get());
+
+
 //        withExistingParent(DCBlocks.OVERWORLD_CASSITERITE_ORE.getId().getPath(),
 //                modLoc("block/overworld_cassiterite_ore"));
 //        withExistingParent(DCBlocks.DEEPSLATE_CASSITERITE_ORE.getId().getPath(),
@@ -1914,7 +1934,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/formal_science/machine_circuit/formal_science/" + item.getRegistryName().getPath()));
     }
-
     private ItemModelBuilder basicMachineCircuitGeoScienceItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
@@ -1930,6 +1949,15 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/formal_science/machine_circuit/imitation_magic_engineering/" + item.getRegistryName().getPath()));
     }
+
+
+
+    private ItemModelBuilder basicMachineCircuitKaleidoscopicRealityScienceItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/formal_science/machine_circuit/kaleidoscopic_reality_science/" + item.getRegistryName().getPath()));
+    }
+
 
     private ItemModelBuilder recipe_tooltip_item(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),

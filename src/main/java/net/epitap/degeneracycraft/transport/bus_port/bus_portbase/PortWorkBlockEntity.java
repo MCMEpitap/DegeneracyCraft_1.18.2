@@ -84,6 +84,9 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engin
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.bus.BasicTechnologyVirtualSigilProcessorBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.bus.BasicTechnologyVirtualSigilProcessorBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.port.BasicTechnologyVirtualSigilProcessorPortType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.bus.BasicPerformanceRealityPhaseAdjustmentMachineBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.bus.BasicPerformanceRealityPhaseAdjustmentMachineBusType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.port.BasicPerformanceRealityPhaseAdjustmentMachinePortType;
 import net.epitap.degeneracycraft.transport.bus_port.parametor.PortItemHandler;
 import net.epitap.degeneracycraft.transport.bus_port.parametor.PortSetLazyOptional;
 import net.minecraft.core.BlockPos;
@@ -158,6 +161,10 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
     protected PortSetLazyOptional<BasicTechnologyVirtualSigilProcessorBusEnergyStorage> basicTechnologyVirtualSigilProcessorBusEnergyStorageStored;
 
 
+
+
+    protected PortSetLazyOptional<BasicPerformanceRealityPhaseAdjustmentMachineBusEnergyStorage> basicPerformanceRealityPhaseAdjustmentMachineBusEnergyStorageStored;
+
     private int recursionDepth;
 
 
@@ -217,6 +224,13 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         basicTechnologyImitationMagicEngraverBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicTechnologySuspectedMagicCondenserBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicTechnologyVirtualSigilProcessorBusEnergyStorageStored = new PortSetLazyOptional<>();
+
+
+
+
+
+
+        basicPerformanceRealityPhaseAdjustmentMachineBusEnergyStorageStored = new PortSetLazyOptional<>();
 
     }
 
@@ -536,6 +550,18 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
 
+
+
+        if (cap == CapabilityEnergy.ENERGY && hasType(BasicPerformanceRealityPhaseAdjustmentMachineBusType.INSTANCE)) {
+            if (side != null) {
+                return basicPerformanceRealityPhaseAdjustmentMachineBusEnergyStorageStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicPerformanceRealityPhaseAdjustmentMachinePortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        }
         return super.getCapability(cap, side);
     }
 
@@ -802,6 +828,20 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         }
 
 
+
+
+
+
+
+        if (hasType(BasicPerformanceRealityPhaseAdjustmentMachineBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    basicPerformanceRealityPhaseAdjustmentMachineBusEnergyStorageStored.get(side).ifPresent(BasicPerformanceRealityPhaseAdjustmentMachineBusEnergyStorage::tick);
+                }
+            }
+        }
+
+
     }
 
     @Override
@@ -998,6 +1038,18 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
             basicTechnologyVirtualSigilProcessorBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicTechnologyVirtualSigilProcessorBusEnergyStorage(this, storage));
         }
         if (hasType(BasicTechnologyVirtualSigilProcessorPortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
+        }
+
+
+
+
+
+
+        if (hasType(BasicPerformanceRealityPhaseAdjustmentMachineBusType.INSTANCE)) {
+            basicPerformanceRealityPhaseAdjustmentMachineBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicPerformanceRealityPhaseAdjustmentMachineBusEnergyStorage(this, storage));
+        }
+        if (hasType(BasicPerformanceRealityPhaseAdjustmentMachinePortType.INSTANCE)) {
             itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
         }
 
@@ -1202,6 +1254,18 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         if (hasType(BasicTechnologySuspectedMagicCondenserPortType.INSTANCE)) {
             itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
         }
+
+
+
+
+
+
+        if (hasType(BasicPerformanceRealityPhaseAdjustmentMachineBusType.INSTANCE)) {
+            basicPerformanceRealityPhaseAdjustmentMachineBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicPerformanceRealityPhaseAdjustmentMachineBusEnergyStorage(this, side));
+        }
+        if (hasType(BasicPerformanceRealityPhaseAdjustmentMachinePortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
+        }
     }
 
     @Override
@@ -1268,6 +1332,9 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
 
+
+
+        basicPerformanceRealityPhaseAdjustmentMachineBusEnergyStorageStored.invalidate();
         super.setRemoved();
     }
 

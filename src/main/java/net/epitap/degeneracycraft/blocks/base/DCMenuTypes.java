@@ -31,6 +31,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_perf
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.BasicPerformanceRealityPhaseAdjustmentMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineMenu;
@@ -53,6 +54,8 @@ import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_sto
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.material_storage.basic_strength_hybrid_physics_multiblock_material_storage.BasicStrengthHybridPhysicsMultiblockMaterialStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.energy_storage.basic_strength_imitation_magic_engineering_multiblock_energy_storage.BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.material_storage.basic_strength_imitation_magic_engineering_multiblock_material_storage.BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.energy_storage.basic_strength_kaleidoscopic_reality_science_multiblock_energy_storage.BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyStorageMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.material_storage.basic_strength_kaleidoscopic_reality_science_multiblock_material_storage.BasicStrengthKaleidoscopicRealityScienceMultiblockMaterialStorageMenu;
 import net.epitap.degeneracycraft.item.sefirah_core.SefirahCoreMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
@@ -115,6 +118,15 @@ public class DCMenuTypes {
             registerMenuType(BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageMenu::new, "basic_strength_imitation_magic_engineering_multiblock_energy_storage_menu");
     public static final RegistryObject<MenuType<BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageMenu>> BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_MENU =
             registerMenuType(BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageMenu::new, "basic_strength_imitation_magic_engineering_multiblock_material_storage_menu");
+
+
+
+
+
+    public static final RegistryObject<MenuType<BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyStorageMenu>> BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_MENU =
+            registerMenuType(BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyStorageMenu::new, "basic_strength_kaleidoscopic_reality_science_multiblock_energy_storage_menu");
+    public static final RegistryObject<MenuType<BasicStrengthKaleidoscopicRealityScienceMultiblockMaterialStorageMenu>> BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_MENU =
+            registerMenuType(BasicStrengthKaleidoscopicRealityScienceMultiblockMaterialStorageMenu::new, "basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_menu");
 
 
 
@@ -220,6 +232,12 @@ public class DCMenuTypes {
             registerMenuType(BasicTechnologySuspectedMagicCondenserMenu::new, "basic_technology_suspected_magic_condenser_menu");
     public static final RegistryObject<MenuType<BasicTechnologyVirtualSigilProcessorMenu>> BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_MENU =
             registerMenuType(BasicTechnologyVirtualSigilProcessorMenu::new, "basic_technology_virtual_sigil_processor_menu");
+
+
+
+
+    public static final RegistryObject<MenuType<BasicPerformanceRealityPhaseAdjustmentMachineMenu>> BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_MENU =
+            registerMenuType(BasicPerformanceRealityPhaseAdjustmentMachineMenu::new, "basic_performance_reality_phase_adjustment_machine_menu");
 
 
 

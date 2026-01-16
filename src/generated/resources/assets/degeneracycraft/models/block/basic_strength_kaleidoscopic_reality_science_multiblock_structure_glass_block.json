@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/kaleidoscopic_reality_science/basic_strength_kaleidoscopic_reality_science_multiblock_structure_glass/basic_strength_kaleidoscopic_reality_science_multiblock_structure_glass_block",
+    "up": "degeneracycraft:block/multiblock/basic/kaleidoscopic_reality_science/basic_strength_kaleidoscopic_reality_science_multiblock_structure_glass/basic_strength_kaleidoscopic_reality_science_multiblock_structure_glass_block",
+    "north": "degeneracycraft:block/multiblock/basic/kaleidoscopic_reality_science/basic_strength_kaleidoscopic_reality_science_multiblock_structure_glass/basic_strength_kaleidoscopic_reality_science_multiblock_structure_glass_block",
+    "south": "degeneracycraft:block/multiblock/basic/kaleidoscopic_reality_science/basic_strength_kaleidoscopic_reality_science_multiblock_structure_glass/basic_strength_kaleidoscopic_reality_science_multiblock_structure_glass_block",
+    "east": "degeneracycraft:block/multiblock/basic/kaleidoscopic_reality_science/basic_strength_kaleidoscopic_reality_science_multiblock_structure_glass/basic_strength_kaleidoscopic_reality_science_multiblock_structure_glass_block",
+    "west": "degeneracycraft:block/multiblock/basic/kaleidoscopic_reality_science/basic_strength_kaleidoscopic_reality_science_multiblock_structure_glass/basic_strength_kaleidoscopic_reality_science_multiblock_structure_glass_block",
+    "particle": "degeneracycraft:block/multiblock/basic/kaleidoscopic_reality_science/basic_strength_kaleidoscopic_reality_science_multiblock_structure_glass/basic_strength_kaleidoscopic_reality_science_multiblock_structure_glass_block"
+  }
+}

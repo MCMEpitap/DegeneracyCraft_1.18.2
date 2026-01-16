@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/kaleidoscopic_reality_science/basic_performance_reality_phase_adjustment_machine/bus/basic_performance_reality_phase_adjustment_machine_bus_block",
+    "up": "degeneracycraft:block/machine/basic/kaleidoscopic_reality_science/basic_performance_reality_phase_adjustment_machine/bus/basic_performance_reality_phase_adjustment_machine_bus_block",
+    "north": "degeneracycraft:block/machine/basic/kaleidoscopic_reality_science/basic_performance_reality_phase_adjustment_machine/bus/basic_performance_reality_phase_adjustment_machine_bus_block",
+    "south": "degeneracycraft:block/machine/basic/kaleidoscopic_reality_science/basic_performance_reality_phase_adjustment_machine/bus/basic_performance_reality_phase_adjustment_machine_bus_block",
+    "east": "degeneracycraft:block/machine/basic/kaleidoscopic_reality_science/basic_performance_reality_phase_adjustment_machine/bus/basic_performance_reality_phase_adjustment_machine_bus_block",
+    "west": "degeneracycraft:block/machine/basic/kaleidoscopic_reality_science/basic_performance_reality_phase_adjustment_machine/bus/basic_performance_reality_phase_adjustment_machine_bus_block",
+    "particle": "degeneracycraft:block/machine/basic/kaleidoscopic_reality_science/basic_performance_reality_phase_adjustment_machine/bus/basic_performance_reality_phase_adjustment_machine_bus_block"
+  }
+}

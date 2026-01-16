@@ -90,6 +90,16 @@ public class PortModelRegistry {
         BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_BLOCK_EXTRACT("block/basic_technology_suspected_magic_condenser_port_block_extract"),
         BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BUS_BLOCK_EXTRACT("block/basic_technology_virtual_sigil_processor_bus_block_extract"),
         BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_BLOCK_EXTRACT("block/basic_technology_virtual_sigil_processor_port_block_extract"),
+
+
+
+
+
+        BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BUS_BLOCK_EXTRACT("block/basic_performance_reality_phase_adjustment_machine_bus_block_extract"),
+        BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_PORT_BLOCK_EXTRACT("block/basic_performance_reality_phase_adjustment_machine_port_block_extract"),
+
+
+
         TEST_EXTRACT("block/test_extract");
 
         private final ResourceLocation resource;

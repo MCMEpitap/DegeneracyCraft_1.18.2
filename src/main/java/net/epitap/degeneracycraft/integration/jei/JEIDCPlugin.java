@@ -62,6 +62,8 @@ import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineeri
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.BasicPerformanceRealityPhaseAdjustmentMachineMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.BasicPerformanceRealityPhaseAdjustmentMachineScreen;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineScreen;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineMenu;
@@ -152,6 +154,9 @@ import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineer
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorRecipeTransferHandler;
+import net.epitap.degeneracycraft.integration.jei.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.BasicPerformanceRealityPhaseAdjustmentMachineRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.BasicPerformanceRealityPhaseAdjustmentMachineRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.BasicPerformanceRealityPhaseAdjustmentMachineRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipeTransferHandler;
@@ -272,6 +277,15 @@ public class JEIDCPlugin implements IModPlugin {
                 BasicTechnologySuspectedMagicCondenserRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
                 BasicTechnologyVirtualSigilProcessorRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+
+
+
+
+
+
+
+        registration.addRecipeCategories(new
+                BasicPerformanceRealityPhaseAdjustmentMachineRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
 //        registration.addRecipeCategories(new
 //                BasicPowerSteamGeneratorMultiblockStructureCategory(registration.getJeiHelpers().getGuiHelper()));
@@ -413,6 +427,16 @@ public class JEIDCPlugin implements IModPlugin {
                 rm.getAllRecipesFor(BasicTechnologyVirtualSigilProcessorRecipe.Type.INSTANCE);
         registration.addRecipes(new RecipeType<>(BasicTechnologyVirtualSigilProcessorRecipeCategory.UID, BasicTechnologyVirtualSigilProcessorRecipe.class), basicTechnologyVirtualSigilProcessorRecipe);
 
+
+
+
+
+
+
+        List<BasicPerformanceRealityPhaseAdjustmentMachineRecipe> basicPerformanceRealityPhaseAdjustmentMachineRecipe =
+                rm.getAllRecipesFor(BasicPerformanceRealityPhaseAdjustmentMachineRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicPerformanceRealityPhaseAdjustmentMachineRecipeCategory.UID, BasicPerformanceRealityPhaseAdjustmentMachineRecipe.class), basicPerformanceRealityPhaseAdjustmentMachineRecipe);
+
 //        List<BasicPowerSteamGeneratorMultiblockStructure> basicPowerCompositeStructureTypeThermalGeneratorMultiblockStructures =
 //                rm.getAllRecipesFor(BasicPowerSteamGeneratorMultiblockStructure.Type.INSTANCE);
 //        registration.addRecipes(new RecipeType<>(BasicPowerSteamGeneratorMultiblockStructureCategory.UID, BasicPowerSteamGeneratorMultiblockStructure.class), basicPowerCompositeStructureTypeThermalGeneratorMultiblockStructures);
@@ -479,6 +503,13 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeClickArea(BasicTechnologySuspectedMagicCondenserScreen.class, 64, 20, 29, 8, BasicTechnologySuspectedMagicCondenserRecipeCategory.UID);
         registration.addRecipeClickArea(BasicTechnologyVirtualSigilProcessorScreen.class, 64, 20, 29, 8, BasicTechnologyVirtualSigilProcessorRecipeCategory.UID);
 
+
+
+
+
+
+        registration.addRecipeClickArea(BasicPerformanceRealityPhaseAdjustmentMachineScreen.class, 64, 20, 29, 8, BasicPerformanceRealityPhaseAdjustmentMachineRecipeCategory.UID);
+
     }
 
     @SuppressWarnings("removal")
@@ -540,6 +571,12 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BLOCK.get()), BasicTechnologyImitationMagicEngraverRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BLOCK.get()), BasicTechnologySuspectedMagicCondenserRecipeCategory.UID);
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BLOCK.get()), BasicTechnologyVirtualSigilProcessorRecipeCategory.UID);
+
+
+
+
+
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BLOCK.get()), BasicPerformanceRealityPhaseAdjustmentMachineRecipeCategory.UID);
 
     }
 
@@ -823,6 +860,20 @@ public class JEIDCPlugin implements IModPlugin {
         );
 
 
+
+
+
+
+
+
+        registration.addRecipeTransferHandler(
+                new BasicPerformanceRealityPhaseAdjustmentMachineRecipeTransferHandler<>(
+                        BasicPerformanceRealityPhaseAdjustmentMachineMenu.class,
+                        0, 9,
+                        12, 36
+                ),
+                BasicPerformanceRealityPhaseAdjustmentMachineRecipeCategory.TYPE
+        );
     }
 
 

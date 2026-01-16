@@ -933,6 +933,21 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "基本強度模造魔導工学多重構造機械用材料ストレージ (ホログラム)");
 
 
+
+
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "基本強度多相現実学多重構造機械用基礎フレーム");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "基本強度多相現実学多重構造機械用基礎フレーム (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "基本強度多相現実学多重構造用機械フレーム");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), "基本強度多相現実学多重構造用機械フレーム (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get(), "基本強度多相現実学多重構造機械用構造フレーム");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), "基本強度多相現実学多重構造機械用構造フレーム (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), "基本強度多相現実学多重構造機械用ガラス");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), "基本強度多相現実学多重構造機械用ガラス (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get(), "基本強度多相現実学多重構造機械用エネルギーストレージ");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "基本強度多相現実学多重構造機械用エネルギーストレージ (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(), "基本強度多相現実学多重構造機械用材料ストレージ");
+        add(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), "基本強度多相現実学多重構造機械用材料ストレージ (ホログラム)");
+
         add(DCBlocks.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_BLOCK.get(), "レッドストーン動力機械要素製作機");
         add(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(), "レッドストーン動力機械部品製作機");
 
@@ -1342,6 +1357,26 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_CIRCUIT.get(), "基本技術仮想印章加工機回路");
 
 
+
+
+
+
+        add(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BLOCK.get(), "基本性能現実位相調整機");
+        add("tooltip." + "degeneracycraft." + "basic_performance_reality_phase_adjustment_machine_block",
+                "基本的な現実位相調整機. 並列的な処理を材料に組み込み、改変を行う.");
+        add(DCBlocks.BASIC_EFFICIENCY_PHASE_STABLE_FLAME_BLOCK.get(), "基本効率位相安定フレーム");
+        add("tooltip." + "degeneracycraft.ability" + "basic_performance_reality_phase_adjustment_machine_block",
+                "基本性能現実位相調整機用");
+        add(DCBlocks.BASIC_EFFICIENCY_PHASE_STABLE_FLAME_HOLO_BLOCK.get(), "基本効率位相安定フレーム (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BUS_BLOCK.get(), "基本性能現実位相調整機バス");
+        add(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BUS_HOLO_BLOCK.get(), "基本性能現実位相調整機バス (ホログラム)");
+        add(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_PORT_BLOCK.get(), "基本性能現実位相調整機ポート");
+        add(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_PORT_HOLO_BLOCK.get(), "基本性能現実位相調整機ポート (ホログラム)");
+        add(DCItems.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_CIRCUIT.get(), "基本性能現実位相調整機回路");
+
+
+
+
 //        add(DCBlocks.LOW_STERNGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),"低強度機械用フレーム");
         add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get(), "低強度多構造機械用フレーム");
         add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get(), "低強度多構造機械用ガラス");
@@ -1409,6 +1444,11 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("jei." + "basic_technology_suspected_magic_condenser", "基本技術疑似魔力凝集機 レシピ");
         add("jei." + "basic_technology_virtual_sigil_processor", "基本技術仮想印章加工機 レシピ");
 
+
+
+
+
+        add("jei." + "basic_performance_reality_phase_adjustment_machine", "基本性能現実位相調整機 レシピ");
 
 
 
@@ -1490,11 +1530,14 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "science." + "astronomy", "科学分野:天文学");
         add("tooltip." + "degeneracycraft." + "science." + "biology", "科学分野:生物");
         add("tooltip." + "degeneracycraft." + "science." + "chemistry", "科学分野:化学");
+        add("tooltip." + "degeneracycraft." + "science." + "dynamic_energetics", "科学分野:動力変換学");
         add("tooltip." + "degeneracycraft." + "science." + "engineering", "科学分野:工学");
         add("tooltip." + "degeneracycraft." + "science." + "formal_science", "科学分野:形式科学");
         add("tooltip." + "degeneracycraft." + "science." + "geo_science", "科学分野:地学");
         add("tooltip." + "degeneracycraft." + "science." + "hybrid_physics", "科学分野:複合物理学");
         add("tooltip." + "degeneracycraft." + "science." + "imitation_magic_engineering", "科学分野:模造魔導工学");
+        add("tooltip." + "degeneracycraft." + "science." + "jenith_void_science", "科学分野:極点虚界学");
+        add("tooltip." + "degeneracycraft." + "science." + "kaleidoscopic_reality_science", "科学分野:多相現実学");
 
 
         add("tooltip." + "degeneracycraft." + "chlorine" + ".name", "元素名:塩素");

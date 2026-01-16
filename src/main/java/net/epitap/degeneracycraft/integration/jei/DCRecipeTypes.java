@@ -30,6 +30,7 @@ import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_per
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.BasicPerformanceRealityPhaseAdjustmentMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -142,7 +143,14 @@ public class DCRecipeTypes {
 
     public static final RegistryObject<RecipeSerializer<BasicTechnologyVirtualSigilProcessorRecipe>> BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PRPCESSOR_SERIALISER =
             SERIALIZERS.register("basic_technology_virtual_sigil_processor_recipe", () -> BasicTechnologyVirtualSigilProcessorRecipe.Serializer.INSTANCE);
-//
+
+
+
+
+
+
+    public static final RegistryObject<RecipeSerializer<BasicPerformanceRealityPhaseAdjustmentMachineRecipe>> BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_SERIALISER =
+            SERIALIZERS.register("basic_performance_reality_phase_adjustment_machine_recipe", () -> BasicPerformanceRealityPhaseAdjustmentMachineRecipe.Serializer.INSTANCE);
 
 
 

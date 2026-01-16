@@ -959,6 +959,10 @@ public class DCItems extends CreativeModeTab {
 
 
 
+    public static final RegistryObject<Item> BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_CIRCUIT = ITEMS.register("basic_performance_reality_phase_adjustment_machine_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+
+
+
     public static final RegistryObject<Item> DESIGNATED_DATA_CHIP_MOON = ITEMS.register("designated_data_chip_moon", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
 //    public static final RegistryObject<Item> BASIC_ASTRONOMY_DATA_STORAGE = ITEMS.register("astronomy_data_storage", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));

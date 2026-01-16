@@ -55,6 +55,8 @@ import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_sto
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.material_storage.basic_strength_hybrid_physics_multiblock_material_storage.BasicStrengthHybridPhysicsMultiblockMaterialStorageBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.energy_storage.basic_strength_imitation_magic_engineering_multiblock_energy_storage.BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.material_storage.basic_strength_imitation_magic_engineering_multiblock_material_storage.BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageBlock;
+import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.energy_storage.basic_strength_jenith_void_science_multiblock_energy_storage.BasicStrengthJenithVoidScienceMultiblockEnergyStorageBlock;
+import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.material_storage.basic_strength_jenith_void_science_multiblock_material_storage.BasicStrengthJenithVoidScienceMultiblockMaterialStorageBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.energy_storage.basic_strength_kaleidoscopic_reality_science_multiblock_energy_storage.BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyStorageBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.material_storage.basic_strength_kaleidoscopic_reality_science_multiblock_material_storage.BasicStrengthKaleidoscopicRealityScienceMultiblockMaterialStorageBlock;
 import net.epitap.degeneracycraft.item.DCCreativeTab;
@@ -405,6 +407,35 @@ public class DCBlocks {
             new BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK = registerHoloBlock("basic_strength_imitation_magic_engineering_multiblock_material_storage_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+
+
+
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK = registerBlock("basic_strength_jenith_void_science_multiblock_base_frame_block", () ->
+            new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK = registerHoloBlock("basic_strength_jenith_void_science_multiblock_base_frame_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_MACHINE_FRAME_BLOCK = registerBlock("basic_strength_jenith_void_science_multiblock_machine_frame_block", () ->
+            new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK = registerHoloBlock("basic_strength_jenith_void_science_multiblock_machine_frame_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_BLOCK = registerBlock("basic_strength_jenith_void_science_multiblock_structure_frame_block", () ->
+            new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK = registerHoloBlock("basic_strength_jenith_void_science_multiblock_structure_frame_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_BLOCK = registerBlock("basic_strength_jenith_void_science_multiblock_structure_glass_block", () ->
+            new GlassBlockBase(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(4.0f)), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK = registerHoloBlock("basic_strength_jenith_void_science_multiblock_structure_glass_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_BLOCK = registerBlock("basic_strength_jenith_void_science_multiblock_energy_storage_block", () ->
+            new BasicStrengthJenithVoidScienceMultiblockEnergyStorageBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK = registerHoloBlock("basic_strength_jenith_void_science_multiblock_energy_storage_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_BLOCK = registerBlock("basic_strength_jenith_void_science_multiblock_material_storage_block", () ->
+            new BasicStrengthJenithVoidScienceMultiblockMaterialStorageBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK = registerHoloBlock("basic_strength_jenith_void_science_multiblock_material_storage_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+
+
 
     public static final RegistryObject<Block> BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK = registerBlock("basic_strength_kaleidoscopic_reality_science_multiblock_base_frame_block", () ->
             new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);

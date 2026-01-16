@@ -1072,6 +1072,55 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_imitation_magic_engineering_multiblock_material_storage_holo_block"));
 
+        withExistingParent(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_jenith_void_science_multiblock_base_frame_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_jenith_void_science_multiblock_base_frame_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_MACHINE_FRAME_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_jenith_void_science_multiblock_machine_frame_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_jenith_void_science_multiblock_machine_frame_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_jenith_void_science_multiblock_structure_frame_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_jenith_void_science_multiblock_structure_frame_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_jenith_void_science_multiblock_structure_glass_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_jenith_void_science_multiblock_structure_glass_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_jenith_void_science_multiblock_energy_storage_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_jenith_void_science_multiblock_energy_storage_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_jenith_void_science_multiblock_material_storage_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_jenith_void_science_multiblock_material_storage_holo_block"));
+
+        withExistingParent(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_kaleidoscopic_reality_science_multiblock_base_frame_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_kaleidoscopic_reality_science_multiblock_base_frame_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_MACHINE_FRAME_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_kaleidoscopic_reality_science_multiblock_machine_frame_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_kaleidoscopic_reality_science_multiblock_machine_frame_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_kaleidoscopic_reality_science_multiblock_structure_frame_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_kaleidoscopic_reality_science_multiblock_structure_frame_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_kaleidoscopic_reality_science_multiblock_structure_glass_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_kaleidoscopic_reality_science_multiblock_structure_glass_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_kaleidoscopic_reality_science_multiblock_energy_storage_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_kaleidoscopic_reality_science_multiblock_energy_storage_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_holo_block"));
 
 
 

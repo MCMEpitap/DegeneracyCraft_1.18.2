@@ -54,6 +54,8 @@ import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_sto
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.material_storage.basic_strength_hybrid_physics_multiblock_material_storage.BasicStrengthHybridPhysicsMultiblockMaterialStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.energy_storage.basic_strength_imitation_magic_engineering_multiblock_energy_storage.BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.material_storage.basic_strength_imitation_magic_engineering_multiblock_material_storage.BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.energy_storage.basic_strength_jenith_void_science_multiblock_energy_storage.BasicStrengthJenithVoidScienceMultiblockEnergyStorageBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.material_storage.basic_strength_jenith_void_science_multiblock_material_storage.BasicStrengthJenithVoidScienceMultiblockMaterialStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.energy_storage.basic_strength_kaleidoscopic_reality_science_multiblock_energy_storage.BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.material_storage.basic_strength_kaleidoscopic_reality_science_multiblock_material_storage.BasicStrengthKaleidoscopicRealityScienceMultiblockMaterialStorageBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus.BasicPerformanceAstronomicalTelescopeBusBlockEntity;
@@ -206,6 +208,14 @@ public class DCBlockEntities {
             BLOCK_ENTITIES.register("basic_strength_imitation_magic_engineering_multiblock_material_storage_block_entity", () ->
                     BlockEntityType.Builder.of(BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()).build(null));
 
+
+
+    public static final RegistryObject<BlockEntityType<BasicStrengthJenithVoidScienceMultiblockEnergyStorageBlockEntity>> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_jenith_void_science_multiblock_energy_storage_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthJenithVoidScienceMultiblockEnergyStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthJenithVoidScienceMultiblockMaterialStorageBlockEntity>> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_jenith_void_science_multiblock_material_storage_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthJenithVoidScienceMultiblockMaterialStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()).build(null));
 
 
 

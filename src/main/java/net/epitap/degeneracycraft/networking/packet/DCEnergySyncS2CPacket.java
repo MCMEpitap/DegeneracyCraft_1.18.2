@@ -76,6 +76,8 @@ import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_sto
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_storage.basic_strength_hybrid_physics_multiblock_energy_storage.BasicStrengthHybridPhysicsMultiblockEnergyStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.energy_storage.basic_strength_imitation_magic_engineering_multiblock_energy_storage.BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.energy_storage.basic_strength_imitation_magic_engineering_multiblock_energy_storage.BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.energy_storage.basic_strength_jenith_void_science_multiblock_energy_storage.BasicStrengthJenithVoidScienceMultiblockEnergyStorageBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.energy_storage.basic_strength_jenith_void_science_multiblock_energy_storage.BasicStrengthJenithVoidScienceMultiblockEnergyStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.energy_storage.basic_strength_kaleidoscopic_reality_science_multiblock_energy_storage.BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.energy_storage.basic_strength_kaleidoscopic_reality_science_multiblock_energy_storage.BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyStorageMenu;
 import net.minecraft.client.Minecraft;
@@ -167,6 +169,15 @@ public class DCEnergySyncS2CPacket {
             if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageBlockEntity blockEntity) {
                 blockEntity.setEnergyLevel(energy);
                 if (Minecraft.getInstance().player.containerMenu instanceof BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageMenu menu &&
+                        menu.getBlockEntity().getBlockPos().equals(pos)) {
+                    blockEntity.setEnergyLevel(energy);
+                }
+            }
+
+
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthJenithVoidScienceMultiblockEnergyStorageBlockEntity blockEntity) {
+                blockEntity.setEnergyLevel(energy);
+                if (Minecraft.getInstance().player.containerMenu instanceof BasicStrengthJenithVoidScienceMultiblockEnergyStorageMenu menu &&
                         menu.getBlockEntity().getBlockPos().equals(pos)) {
                     blockEntity.setEnergyLevel(energy);
                 }

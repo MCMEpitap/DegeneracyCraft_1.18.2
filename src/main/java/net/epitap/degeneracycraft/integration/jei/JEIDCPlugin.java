@@ -62,6 +62,8 @@ import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineeri
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.jenith_void_science.basic_technology_void_world_coordinate_recording_machine.BasicTechnologyVoidWorldCoordinateRecordingMachineMenu;
+import net.epitap.degeneracycraft.blocks.machine.basic.jenith_void_science.basic_technology_void_world_coordinate_recording_machine.BasicTechnologyVoidWorldCoordinateRecordingMachineScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.BasicPerformanceRealityPhaseAdjustmentMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.BasicPerformanceRealityPhaseAdjustmentMachineScreen;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineMenu;
@@ -154,6 +156,9 @@ import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineer
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorRecipeTransferHandler;
+import net.epitap.degeneracycraft.integration.jei.basic.jenith_void_science.basic_technology_void_world_coordinate_recording_machine.BasicTechnologyVoidWorldCoordinateRecordingMachineRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.jenith_void_science.basic_technology_void_world_coordinate_recording_machine.BasicTechnologyVoidWorldCoordinateRecordingMachineRecipeCategory;
+import net.epitap.degeneracycraft.integration.jei.basic.jenith_void_science.basic_technology_void_world_coordinate_recording_machine.BasicTechnologyVoidWorldCoordinateRecordingMachineRecipeTransferHandler;
 import net.epitap.degeneracycraft.integration.jei.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.BasicPerformanceRealityPhaseAdjustmentMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.BasicPerformanceRealityPhaseAdjustmentMachineRecipeCategory;
 import net.epitap.degeneracycraft.integration.jei.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.BasicPerformanceRealityPhaseAdjustmentMachineRecipeTransferHandler;
@@ -280,6 +285,8 @@ public class JEIDCPlugin implements IModPlugin {
 
 
 
+        registration.addRecipeCategories(new
+                BasicTechnologyVoidWorldCoordinateRecordingMachineRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
 
 
 
@@ -429,7 +436,9 @@ public class JEIDCPlugin implements IModPlugin {
 
 
 
-
+        List<BasicTechnologyVoidWorldCoordinateRecordingMachineRecipe> basicTechnologyVoidWorldCoordinateRecordingMachineRecipe =
+                rm.getAllRecipesFor(BasicTechnologyVoidWorldCoordinateRecordingMachineRecipe.Type.INSTANCE);
+        registration.addRecipes(new RecipeType<>(BasicTechnologyVoidWorldCoordinateRecordingMachineRecipeCategory.UID, BasicTechnologyVoidWorldCoordinateRecordingMachineRecipe.class), basicTechnologyVoidWorldCoordinateRecordingMachineRecipe);
 
 
 
@@ -505,6 +514,7 @@ public class JEIDCPlugin implements IModPlugin {
 
 
 
+        registration.addRecipeClickArea(BasicTechnologyVoidWorldCoordinateRecordingMachineScreen.class, 64, 20, 29, 8, BasicTechnologyVoidWorldCoordinateRecordingMachineRecipeCategory.UID);
 
 
 
@@ -573,6 +583,8 @@ public class JEIDCPlugin implements IModPlugin {
         registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BLOCK.get()), BasicTechnologyVirtualSigilProcessorRecipeCategory.UID);
 
 
+
+        registration.addRecipeCatalyst(new ItemStack(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BLOCK.get()), BasicTechnologyVoidWorldCoordinateRecordingMachineRecipeCategory.UID);
 
 
 
@@ -862,7 +874,14 @@ public class JEIDCPlugin implements IModPlugin {
 
 
 
-
+        registration.addRecipeTransferHandler(
+                new BasicTechnologyVoidWorldCoordinateRecordingMachineRecipeTransferHandler<>(
+                        BasicTechnologyVoidWorldCoordinateRecordingMachineMenu.class,
+                        0, 9,
+                        12, 36
+                ),
+                BasicTechnologyVoidWorldCoordinateRecordingMachineRecipeCategory.TYPE
+        );
 
 
 

@@ -93,6 +93,8 @@ public class PortModelRegistry {
 
 
 
+        BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_BLOCK_EXTRACT("block/basic_technology_void_world_coordinate_recording_machine_bus_block_extract"),
+        BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_BLOCK_EXTRACT("block/basic_technology_void_world_coordinate_recording_machine_port_block_extract"),
 
 
         BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BUS_BLOCK_EXTRACT("block/basic_performance_reality_phase_adjustment_machine_bus_block_extract"),

@@ -1367,7 +1367,20 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_HOLO_BLOCK.get(), "Basic Technology Virtual Sigil Processor Port (Hologram)");
         add(DCItems.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_CIRCUIT.get(), "Basic Technology Virtual Sigil Processor Circuit");
 
+        
 
+        add(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BLOCK.get(), "Basic Technology Void World Coordinate Recording Machine");
+        add("tooltip." + "degeneracycraft." + "basic_technology_void_world_coordinate_recording_machine_block",
+                "Basic Void World Coordinate Recording Machine. Machines that engrave coordinates on different axes and utilize them.");
+        add(DCBlocks.BASIC_EFFICIENCY_VOID_INTERFERENCE_FLAME_BLOCK.get(), "Basic Efficiency Void Interference Frame");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_void_world_coordinate_recording_machine_block",
+                "Basic Technology Void World Coordinate Recording Machine");
+        add(DCBlocks.BASIC_EFFICIENCY_VOID_INTERFERENCE_FLAME_HOLO_BLOCK.get(), "Basic Efficiency Void Interference Frame (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_BLOCK.get(), "Basic Technology Void World Coordinate Recording Machine Bus");
+        add(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_HOLO_BLOCK.get(), "Basic Technology Void World Coordinate Recording Machine Bus (Hologram)");
+        add(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_BLOCK.get(), "Basic Technology Void World Coordinate Recording Machine Port");
+        add(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_HOLO_BLOCK.get(), "Basic Technology Void World Coordinate Recording Machine Port (Hologram)");
+        add(DCItems.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_CIRCUIT.get(), "Basic Technology Void World Coordinate Recording Machine Circuit");
 
 
 
@@ -1443,6 +1456,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("jei." + "degeneracycraft_basic_performance_forming_machine", "Basic Performance Forming Machine Recipe");
 
 
+        add("jei." + "basic_technology_void_world_coordinate_recording_machine", "Basic Technology Void World Coordinate Recording Machine Recipe");
 
 
         add("jei." + "basic_technology_suspected_magic_condenser", "Basic Technology Suspected Magic Condenser Recipe");

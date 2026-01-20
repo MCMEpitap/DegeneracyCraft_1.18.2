@@ -1371,6 +1371,19 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
 
 
+        add(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BLOCK.get(), "基本技術虚界座標記録機");
+        add("tooltip." + "degeneracycraft." + "basic_technology_void_world_coordinate_recording_machine_block",
+                "基本的な虚界座標記録機. 異なる軸に座標を刻み込み、利用する機械.");
+        add(DCBlocks.BASIC_EFFICIENCY_VOID_INTERFERENCE_FLAME_BLOCK.get(), "基本効率虚空干渉フレーム");
+        add("tooltip." + "degeneracycraft.ability" + "basic_technology_void_world_coordinate_recording_machine_block",
+                "基本技術虚界座標記録機用");
+        add(DCBlocks.BASIC_EFFICIENCY_VOID_INTERFERENCE_FLAME_HOLO_BLOCK.get(), "基本効率虚空干渉フレーム (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_BLOCK.get(), "基本技術虚界座標記録機バス");
+        add(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_HOLO_BLOCK.get(), "基本技術虚界座標記録機バス (ホログラム)");
+        add(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_BLOCK.get(), "基本技術虚界座標記録機ポート");
+        add(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_HOLO_BLOCK.get(), "基本技術虚界座標記録機ポート (ホログラム)");
+        add(DCItems.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_CIRCUIT.get(), "基本技術虚界座標記録機回路");
+
 
 
 
@@ -1458,6 +1471,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("jei." + "basic_technology_virtual_sigil_processor", "基本技術仮想印章加工機 レシピ");
 
 
+
+        add("jei." + "basic_technology_void_world_coordinate_recording_machine", "基本性能虚界座標記録機 レシピ");
 
 
 

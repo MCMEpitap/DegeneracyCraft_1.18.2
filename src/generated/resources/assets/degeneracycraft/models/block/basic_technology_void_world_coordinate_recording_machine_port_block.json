@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_block",
+    "up": "degeneracycraft:block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_block",
+    "north": "degeneracycraft:block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_block",
+    "south": "degeneracycraft:block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_block",
+    "east": "degeneracycraft:block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_block",
+    "west": "degeneracycraft:block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_block",
+    "particle": "degeneracycraft:block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_block"
+  }
+}

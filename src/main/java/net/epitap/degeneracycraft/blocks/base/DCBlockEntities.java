@@ -32,6 +32,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.hybrid_physics.basic_perf
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.jenith_void_science.basic_technology_void_world_coordinate_recording_machine.BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.BasicPerformanceRealityPhaseAdjustmentMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineBlockEntity;
@@ -114,6 +115,8 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engin
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.port.BasicTechnologySuspectedMagicCondenserPortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.bus.BasicTechnologyVirtualSigilProcessorBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.port.BasicTechnologyVirtualSigilProcessorPortBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.jenith_void_science.basic_technology_void_world_coordinate_recording_machine.bus.BasicTechnologyVoidWorldCoordinateRecordingMachineBusBlockEntity;
+import net.epitap.degeneracycraft.transport.bus_port.basic.jenith_void_science.basic_technology_void_world_coordinate_recording_machine.port.BasicTechnologyVoidWorldCoordinateRecordingMachinePortBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.bus.BasicPerformanceRealityPhaseAdjustmentMachineBusBlockEntity;
 import net.epitap.degeneracycraft.transport.bus_port.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.port.BasicPerformanceRealityPhaseAdjustmentMachinePortBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -558,6 +561,18 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicTechnologyVirtualSigilProcessorPortBlockEntity>> BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_technology_virtual_sigil_processor_port_block_entity", () ->
                     BlockEntityType.Builder.of(BasicTechnologyVirtualSigilProcessorPortBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_BLOCK.get()).build(null));
+
+
+
+    public static final RegistryObject<BlockEntityType<BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity>> BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_void_world_coordinate_recording_machine_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicTechnologyVoidWorldCoordinateRecordingMachineBusBlockEntity>> BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_void_world_coordinate_recording_machine_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologyVoidWorldCoordinateRecordingMachineBusBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicTechnologyVoidWorldCoordinateRecordingMachinePortBlockEntity>> BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_technology_void_world_coordinate_recording_machine_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicTechnologyVoidWorldCoordinateRecordingMachinePortBlockEntity::new, DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_BLOCK.get()).build(null));
 
 
 

@@ -1624,6 +1624,23 @@ public class DCItemModelProvider extends ItemModelProvider {
 
 
 
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_void_world_coordinate_recording_machine_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_VOID_INTERFERENCE_FLAME_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_void_interference_frame_block"));
+        withExistingParent(DCBlocks.BASIC_EFFICIENCY_VOID_INTERFERENCE_FLAME_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_efficiency_void_interference_frame_holo_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_void_world_coordinate_recording_machine_bus_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_void_world_coordinate_recording_machine_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_void_world_coordinate_recording_machine_port_block"));
+        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_technology_void_world_coordinate_recording_machine_port_holo_block"));
+        basicMachineCircuitJenithVoidScienceItem(DCItems.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_CIRCUIT.get());
+
+
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_reality_phase_adjustment_machine_block"));
@@ -1998,9 +2015,11 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/formal_science/machine_circuit/imitation_magic_engineering/" + item.getRegistryName().getPath()));
     }
-
-
-
+    private ItemModelBuilder basicMachineCircuitJenithVoidScienceItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/part/basic/formal_science/machine_circuit/jenith_void_science/" + item.getRegistryName().getPath()));
+    }
     private ItemModelBuilder basicMachineCircuitKaleidoscopicRealityScienceItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",

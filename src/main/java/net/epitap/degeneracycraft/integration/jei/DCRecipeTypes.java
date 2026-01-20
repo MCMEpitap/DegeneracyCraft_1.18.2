@@ -30,6 +30,7 @@ import net.epitap.degeneracycraft.integration.jei.basic.hybrid_physics.basic_per
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.BasicTechnologyImitationMagicEngraverRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.BasicTechnologySuspectedMagicCondenserRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.jenith_void_science.basic_technology_void_world_coordinate_recording_machine.BasicTechnologyVoidWorldCoordinateRecordingMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.BasicPerformanceRealityPhaseAdjustmentMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineRecipe;
 import net.epitap.degeneracycraft.integration.jei.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineRecipe;
@@ -146,6 +147,8 @@ public class DCRecipeTypes {
 
 
 
+    public static final RegistryObject<RecipeSerializer<BasicTechnologyVoidWorldCoordinateRecordingMachineRecipe>> BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_SERIALISER =
+            SERIALIZERS.register("basic_technology_void_world_coordinate_recording_machine_recipe", () -> BasicTechnologyVoidWorldCoordinateRecordingMachineRecipe.Serializer.INSTANCE);
 
 
 

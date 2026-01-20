@@ -440,7 +440,13 @@ public class DCBlockStateProvider extends BlockStateProvider {
 
 
 
-
+        registerBasicTechnologyVoidWorldCoordinateRecordingMachine();
+        registerBasicEfficiencyVoidInterferenceFrame();
+        registerBasicEfficiencyVoidInterferenceFrameHolo();
+        registerBasicTechnologyVoidWorldCoordinateRecordingMachineBus();
+        registerBasicTechnologyVoidWorldCoordinateRecordingMachineBusHolo();
+        registerBasicTechnologyVoidWorldCoordinateRecordingMachinePort();
+        registerBasicTechnologyVoidWorldCoordinateRecordingMachinePortHolo();
 
 
 
@@ -5338,7 +5344,104 @@ public class DCBlockStateProvider extends BlockStateProvider {
 
 
 
+    private void registerBasicTechnologyVoidWorldCoordinateRecordingMachine() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_void_world_coordinate_recording_machine_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/basic_technology_void_world_coordinate_recording_machine_down"));
+        model.texture("up", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/basic_technology_void_world_coordinate_recording_machine_up"));
+        model.texture("north", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/basic_technology_void_world_coordinate_recording_machine_front"));
+        model.texture("south", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/basic_technology_void_world_coordinate_recording_machine_side"));
+        model.texture("east", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/basic_technology_void_world_coordinate_recording_machine_side"));
+        model.texture("west", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/basic_technology_void_world_coordinate_recording_machine_side"));
+        model.texture("particle", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/basic_technology_void_world_coordinate_recording_machine_front"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BLOCK.get(),
+                state -> model);
+    }
 
+    private void registerBasicEfficiencyVoidInterferenceFrame() {
+        BlockModelBuilder model = models().getBuilder("block/basic_efficiency_void_interference_frame_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_block"));
+        model.texture("up", modLoc("block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_block"));
+        model.texture("north", modLoc("block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_block"));
+        model.texture("south", modLoc("block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_block"));
+        model.texture("east", modLoc("block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_block"));
+        model.texture("west", modLoc("block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_VOID_INTERFERENCE_FLAME_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicEfficiencyVoidInterferenceFrameHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_efficiency_void_interference_frame_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_holo_block"));
+        orientedBlock(DCBlocks.BASIC_EFFICIENCY_VOID_INTERFERENCE_FLAME_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyVoidWorldCoordinateRecordingMachineBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_void_world_coordinate_recording_machine_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/bus/basic_technology_void_world_coordinate_recording_machine_bus_block"));
+        model.texture("up", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/bus/basic_technology_void_world_coordinate_recording_machine_bus_block"));
+        model.texture("north", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/bus/basic_technology_void_world_coordinate_recording_machine_bus_block"));
+        model.texture("south", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/bus/basic_technology_void_world_coordinate_recording_machine_bus_block"));
+        model.texture("east", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/bus/basic_technology_void_world_coordinate_recording_machine_bus_block"));
+        model.texture("west", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/bus/basic_technology_void_world_coordinate_recording_machine_bus_block"));
+        model.texture("particle", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/bus/basic_technology_void_world_coordinate_recording_machine_bus_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyVoidWorldCoordinateRecordingMachineBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_void_world_coordinate_recording_machine_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/bus/basic_technology_void_world_coordinate_recording_machine_bus_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/bus/basic_technology_void_world_coordinate_recording_machine_bus_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/bus/basic_technology_void_world_coordinate_recording_machine_bus_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/bus/basic_technology_void_world_coordinate_recording_machine_bus_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/bus/basic_technology_void_world_coordinate_recording_machine_bus_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/bus/basic_technology_void_world_coordinate_recording_machine_bus_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/bus/basic_technology_void_world_coordinate_recording_machine_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyVoidWorldCoordinateRecordingMachinePort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_void_world_coordinate_recording_machine_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_block"));
+        model.texture("up", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_block"));
+        model.texture("north", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_block"));
+        model.texture("south", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_block"));
+        model.texture("east", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_block"));
+        model.texture("west", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_block"));
+        model.texture("particle", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicTechnologyVoidWorldCoordinateRecordingMachinePortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_technology_void_world_coordinate_recording_machine_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_holo_block"));
+        model.texture("up", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_holo_block"));
+        model.texture("north", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_holo_block"));
+        model.texture("south", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_holo_block"));
+        model.texture("east", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_holo_block"));
+        model.texture("west", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_holo_block"));
+        model.texture("particle", modLoc("block/machine/basic/jenith_void_science/basic_technology_void_world_coordinate_recording_machine/port/basic_technology_void_world_coordinate_recording_machine_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+    
 
 
     private void registerBasicPerformanceRealityPhaseAdjustmentMachine() {

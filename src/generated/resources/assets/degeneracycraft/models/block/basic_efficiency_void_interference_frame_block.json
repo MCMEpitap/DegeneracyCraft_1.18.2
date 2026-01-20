@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_block",
+    "up": "degeneracycraft:block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_block",
+    "north": "degeneracycraft:block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_block",
+    "south": "degeneracycraft:block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_block",
+    "east": "degeneracycraft:block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_block",
+    "west": "degeneracycraft:block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_block",
+    "particle": "degeneracycraft:block/multiblock/basic/jenith_void_science/abilityblock/basic_efficiency_void_interference_frame/basic_efficiency_void_interference_frame_block"
+  }
+}

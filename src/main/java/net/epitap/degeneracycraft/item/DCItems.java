@@ -958,6 +958,9 @@ public class DCItems extends CreativeModeTab {
 
 
 
+    public static final RegistryObject<Item> BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_CIRCUIT = ITEMS.register("basic_technology_void_world_coordinate_recording_machine_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+
+
 
     public static final RegistryObject<Item> BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_CIRCUIT = ITEMS.register("basic_performance_reality_phase_adjustment_machine_circuit", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 

@@ -84,6 +84,9 @@ import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engin
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.bus.BasicTechnologyVirtualSigilProcessorBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.bus.BasicTechnologyVirtualSigilProcessorBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.port.BasicTechnologyVirtualSigilProcessorPortType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.jenith_void_science.basic_technology_void_world_coordinate_recording_machine.bus.BasicTechnologyVoidWorldCoordinateRecordingMachineBusEnergyStorage;
+import net.epitap.degeneracycraft.transport.bus_port.basic.jenith_void_science.basic_technology_void_world_coordinate_recording_machine.bus.BasicTechnologyVoidWorldCoordinateRecordingMachineBusType;
+import net.epitap.degeneracycraft.transport.bus_port.basic.jenith_void_science.basic_technology_void_world_coordinate_recording_machine.port.BasicTechnologyVoidWorldCoordinateRecordingMachinePortType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.bus.BasicPerformanceRealityPhaseAdjustmentMachineBusEnergyStorage;
 import net.epitap.degeneracycraft.transport.bus_port.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.bus.BasicPerformanceRealityPhaseAdjustmentMachineBusType;
 import net.epitap.degeneracycraft.transport.bus_port.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.port.BasicPerformanceRealityPhaseAdjustmentMachinePortType;
@@ -162,6 +165,9 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
 
+    protected PortSetLazyOptional<BasicTechnologyVoidWorldCoordinateRecordingMachineBusEnergyStorage> basicTechnologyVoidWorldCoordinateRecordingMachineBusEnergyStorageStored;
+
+
 
     protected PortSetLazyOptional<BasicPerformanceRealityPhaseAdjustmentMachineBusEnergyStorage> basicPerformanceRealityPhaseAdjustmentMachineBusEnergyStorageStored;
 
@@ -210,6 +216,8 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         basicPerformanceDesignatedDataInjectorBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicPerformanceMachineDataInstallerBusEnergyStorageStored = new PortSetLazyOptional<>();
 
+
+
         basicPerformanceOreSorterBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicPerformanceRockCrasherBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicPerformanceSoilPurifierBusEnergyStorageStored = new PortSetLazyOptional<>();
@@ -221,12 +229,14 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         basicPerformanceMaterialSeparatorBusEnergyStorageStored = new PortSetLazyOptional<>();
 
 
+
         basicTechnologyImitationMagicEngraverBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicTechnologySuspectedMagicCondenserBusEnergyStorageStored = new PortSetLazyOptional<>();
         basicTechnologyVirtualSigilProcessorBusEnergyStorageStored = new PortSetLazyOptional<>();
 
 
 
+        basicTechnologyVoidWorldCoordinateRecordingMachineBusEnergyStorageStored = new PortSetLazyOptional<>();
 
 
 
@@ -550,6 +560,17 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
 
+        if (cap == CapabilityEnergy.ENERGY && hasType(BasicTechnologyVoidWorldCoordinateRecordingMachineBusType.INSTANCE)) {
+            if (side != null) {
+                return basicTechnologyVoidWorldCoordinateRecordingMachineBusEnergyStorageStored.get(side).cast();
+            }
+        }
+        if (cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && hasType(BasicTechnologyVoidWorldCoordinateRecordingMachinePortType.INSTANCE)) {
+            if (side != null) {
+                return itemStored.get(side).cast();
+            }
+        }
+
 
 
         if (cap == CapabilityEnergy.ENERGY && hasType(BasicPerformanceRealityPhaseAdjustmentMachineBusType.INSTANCE)) {
@@ -829,7 +850,13 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
 
-
+        if (hasType(BasicTechnologyVoidWorldCoordinateRecordingMachineBusType.INSTANCE)) {
+            for (Direction side : Direction.values()) {
+                if (portExtracting(side)) {
+                    basicTechnologyVoidWorldCoordinateRecordingMachineBusEnergyStorageStored.get(side).ifPresent(BasicTechnologyVoidWorldCoordinateRecordingMachineBusEnergyStorage::tick);
+                }
+            }
+        }
 
 
 
@@ -1043,6 +1070,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
 
+        if (hasType(BasicTechnologyVoidWorldCoordinateRecordingMachineBusType.INSTANCE)) {
+            basicTechnologyVoidWorldCoordinateRecordingMachineBusEnergyStorageStored.revalidate(side, storage -> extracting, (storage) -> new BasicTechnologyVoidWorldCoordinateRecordingMachineBusEnergyStorage(this, storage));
+        }
+        if (hasType(BasicTechnologyVoidWorldCoordinateRecordingMachinePortType.INSTANCE)) {
+            itemStored.revalidate(side, storage -> extracting, (storage) -> PortItemHandler.INSTANCE);
+        }
 
 
 
@@ -1257,6 +1290,12 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
 
 
 
+        if (hasType(BasicTechnologyVoidWorldCoordinateRecordingMachineBusType.INSTANCE)) {
+            basicTechnologyVoidWorldCoordinateRecordingMachineBusEnergyStorageStored.revalidate(this::portExtracting, (side) -> new BasicTechnologyVoidWorldCoordinateRecordingMachineBusEnergyStorage(this, side));
+        }
+        if (hasType(BasicTechnologyVoidWorldCoordinateRecordingMachinePortType.INSTANCE)) {
+            itemStored.revalidate(this::portExtracting, (side) -> PortItemHandler.INSTANCE);
+        }
 
 
 
@@ -1331,6 +1370,8 @@ public class PortWorkBlockEntity extends PortBlockEntityBase {
         basicTechnologyVirtualSigilProcessorBusEnergyStorageStored.invalidate();
 
 
+
+        basicTechnologyVoidWorldCoordinateRecordingMachineBusEnergyStorageStored.invalidate();
 
 
 

@@ -31,7 +31,7 @@ public class BasicPerformanceCropCultivatorMenu extends AbstractContainerMenu {
     }
 
     public BasicPerformanceCropCultivatorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_PERFORMANCE_CELL_INCUBATOR_MENU.get(), id);
+        super(DCMenuTypes.BASIC_PERFORMANCE_CROP_CULTIVATOR_MENU.get(), id);
         blockEntity = (BasicPerformanceCropCultivatorBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
@@ -102,7 +102,7 @@ public class BasicPerformanceCropCultivatorMenu extends AbstractContainerMenu {
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BLOCK.get());
+                player, DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

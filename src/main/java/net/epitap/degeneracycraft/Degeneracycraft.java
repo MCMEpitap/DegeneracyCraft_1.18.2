@@ -3,10 +3,12 @@ package net.epitap.degeneracycraft;
 import com.electronwill.nightconfig.core.Config;
 import net.epitap.degeneracycraft.blocks.base.*;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_fine_particle_adsorber.BasicPerformanceFineParticleAdsorberScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_cell_incubator.BasicPerformanceCellIncubatorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_crop_cultivator.BasicPerformanceCropCultivatorScreen;
+import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserScreen;
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_power_steam_generator.BasicPowerSteamGeneratorScreen;
@@ -54,6 +56,8 @@ import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_sto
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.material_storage.basic_strength_hybrid_physics_multiblock_material_storage.BasicStrengthHybridPhysicsMultiblockMaterialStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.energy_storage.basic_strength_imitation_magic_engineering_multiblock_energy_storage.BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.material_storage.basic_strength_imitation_magic_engineering_multiblock_material_storage.BasicStrengthImitationMagicEngineeringMultiblockMaterialStorageScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.energy_storage.basic_strength_jenith_void_science_multiblock_energy_storage.BasicStrengthJenithVoidScienceMultiblockEnergyStorageScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.material_storage.basic_strength_jenith_void_science_multiblock_material_storage.BasicStrengthJenithVoidScienceMultiblockMaterialStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.energy_storage.basic_strength_kaleidoscopic_reality_science_multiblock_energy_storage.BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.material_storage.basic_strength_kaleidoscopic_reality_science_multiblock_material_storage.BasicStrengthKaleidoscopicRealityScienceMultiblockMaterialStorageScreen;
 import net.epitap.degeneracycraft.blocks.unique.basic.simple_telescope.simple_telescope_core.SimpleTelescopeCoreScreen;
@@ -304,6 +308,10 @@ public class Degeneracycraft {
 
 
 
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthJenithVoidScienceMultiblockEnergyStorageScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_MENU.get(), BasicStrengthJenithVoidScienceMultiblockMaterialStorageScreen::new);
+
+
 
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_MENU.get(), BasicStrengthKaleidoscopicRealityScienceMultiblockMaterialStorageScreen::new);
@@ -312,6 +320,7 @@ public class Degeneracycraft {
 
 
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_ASTROMICAL_TELESCOPE_MENU.get(), BasicPerformanceAstronomicalTelescopeScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_MENU.get(), BasicPerformanceFineParticleAdsorberScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_MENU.get(), BasicPerformanceStarlightCollectorScreen::new);
 
 
@@ -322,8 +331,10 @@ public class Degeneracycraft {
 
 
 
-        MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_ELECTROLYSER_MENU.get(), BasicPerformanceElectrolyserScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_CHEMICAL_REACTOR_MENU.get(), BasicPerformanceChemicalReactorScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_COMPOUND_PURIFIER_MENU.get(), BasicPerformanceCompoundPurifierScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_ELECTROLYSER_MENU.get(), BasicPerformanceElectrolyserScreen::new);
+
 
 
         MenuScreens.register(DCMenuTypes.BASIC_POWER_STEAM_GENERATOR_MENU.get(), BasicPowerSteamGeneratorScreen::new);
@@ -368,7 +379,6 @@ public class Degeneracycraft {
 
 
         MenuScreens.register(DCMenuTypes.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_MENU.get(), BasicTechnologyVoidWorldCoordinateRecordingMachineScreen::new);
-
 
 
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_MENU.get(), BasicPerformanceRealityPhaseAdjustmentMachineScreen::new);
@@ -457,6 +467,14 @@ public class Degeneracycraft {
 
 
 
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
 
 
 

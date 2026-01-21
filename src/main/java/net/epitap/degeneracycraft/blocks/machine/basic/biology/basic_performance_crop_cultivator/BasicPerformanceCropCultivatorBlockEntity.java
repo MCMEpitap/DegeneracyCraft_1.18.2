@@ -103,7 +103,7 @@ public class BasicPerformanceCropCultivatorBlockEntity extends BlockEntity imple
             );
 
     public BasicPerformanceCropCultivatorBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.BASIC_PERFORMANCE_CELL_INCUBATOR_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+        super(DCBlockEntities.BASIC_PERFORMANCE_CROP_CULTIVATOR_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {

@@ -1,0 +1,14 @@
+{
+  "type": "degeneracycraft:basic_performance_starlight_collector_recipe",
+  "energy": 10000.0,
+  "time": 100.0,
+  "input0": {
+    "item": "minecraft:glass_pane"
+  },
+  "input1": {
+    "item": "minecraft:quartz"
+  },
+  "output0": {
+    "item": "degeneracycraft:simple_starlight_splitter_prism"
+  }
+}

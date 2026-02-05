@@ -39,18 +39,18 @@ import net.minecraftforge.network.NetworkEvent;
 
 import java.util.function.Supplier;
 
-public class TransferRecipeC2SPacket {
+public class DCTransferRecipeC2SPacket {
     private final ResourceLocation recipeId;
     private final BlockPos pos;
     private final boolean shift;
 
-    public TransferRecipeC2SPacket(BlockPos pos, ResourceLocation recipeId, boolean shift) {
+    public DCTransferRecipeC2SPacket(BlockPos pos, ResourceLocation recipeId, boolean shift) {
         this.pos = pos;
         this.recipeId = recipeId;
         this.shift = shift;
     }
 
-    public TransferRecipeC2SPacket(FriendlyByteBuf buf) {
+    public DCTransferRecipeC2SPacket(FriendlyByteBuf buf) {
         this.recipeId = buf.readResourceLocation();
         this.pos = buf.readBlockPos();
         this.shift = buf.readBoolean();

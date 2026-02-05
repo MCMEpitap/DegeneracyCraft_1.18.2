@@ -5,7 +5,7 @@ import mezz.jei.api.recipe.transfer.IRecipeTransferError;
 import mezz.jei.api.recipe.transfer.IRecipeTransferHandler;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineMenu;
 import net.epitap.degeneracycraft.networking.DCMessages;
-import net.epitap.degeneracycraft.networking.packet.TransferRecipeC2SPacket;
+import net.epitap.degeneracycraft.networking.packet.DCTransferRecipeC2SPacket;
 import net.minecraft.world.entity.player.Player;
 
 import javax.annotation.Nullable;
@@ -52,7 +52,7 @@ public class RedstonePoweredMachinePartManufactureMachineRecipeTransferHandler<T
             return null;
         }
 
-        DCMessages.sendToServer(new TransferRecipeC2SPacket(container.blockEntity.getBlockPos(),recipe.getId(),maxTransfer)
+        DCMessages.sendToServer(new DCTransferRecipeC2SPacket(container.blockEntity.getBlockPos(),recipe.getId(),maxTransfer)
         );
 
         return null;

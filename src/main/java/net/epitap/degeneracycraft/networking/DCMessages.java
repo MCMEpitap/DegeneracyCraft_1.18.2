@@ -1,10 +1,7 @@
 package net.epitap.degeneracycraft.networking;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
-import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
-import net.epitap.degeneracycraft.networking.packet.DCExampleC2SPacket;
-import net.epitap.degeneracycraft.networking.packet.DCItemStackSyncS2CPacket;
-import net.epitap.degeneracycraft.networking.packet.TransferRecipeC2SPacket;
+import net.epitap.degeneracycraft.networking.packet.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkDirection;
@@ -61,11 +58,16 @@ public class DCMessages {
                 .consumer(DCItemStackSyncS2CPacket::handle)
                 .add();
 
+        net.messageBuilder(DCMachineToggleC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
+                .decoder(DCMachineToggleC2SPacket::new)
+                .encoder(DCMachineToggleC2SPacket::toBytes)
+                .consumer(DCMachineToggleC2SPacket::handle)
+                .add();
 
-        net.messageBuilder(TransferRecipeC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
-                .decoder(TransferRecipeC2SPacket::new)
-                .encoder(TransferRecipeC2SPacket::toBytes)
-                .consumer(TransferRecipeC2SPacket::handle)
+        net.messageBuilder(DCTransferRecipeC2SPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
+                .decoder(DCTransferRecipeC2SPacket::new)
+                .encoder(DCTransferRecipeC2SPacket::toBytes)
+                .consumer(DCTransferRecipeC2SPacket::handle)
                 .add();
 
     }

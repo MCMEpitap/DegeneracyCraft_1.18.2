@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "degeneracycraft:item/part/basic/astronomy/simple_starlight_splitter_prism"
+  }
+}

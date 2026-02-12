@@ -1602,8 +1602,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
 
         add("tooltip." + "degeneracycraft" + ".structure" + ".off", "No Multiblock Structure");
-        add("tooltip." + "degeneracycraft" + ".structure" + ".lv0", "Correct Multiblock Structure:Lv0 Detected");
-        add("tooltip." + "degeneracycraft" + ".structure" + ".lv1", "Correct Multiblock Structure:Lv1 Detected");
+        add("tooltip." + "degeneracycraft" + ".structure" + ".on", "Multiblock Structure:Detected");
+        add("tooltip." + "degeneracycraft" + ".structure" + ".lv1", "Multiblock Structure:Lv1 Detected");
         add("tooltip." + "degeneracycraft" + ".work", "Machine Working");
         add("tooltip." + "degeneracycraft" + ".stop", "Machine Stopping");
         add("tooltip." + "degeneracycraft" + ".power_modifier_1", "Power Modifier ×1.00");

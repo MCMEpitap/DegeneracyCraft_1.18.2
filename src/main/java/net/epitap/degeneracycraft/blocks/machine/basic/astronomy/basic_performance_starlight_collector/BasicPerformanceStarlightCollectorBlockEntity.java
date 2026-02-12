@@ -3,8 +3,7 @@ package net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performa
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_astronomical_telescope.BasicPerformanceAstronomicalTelescopeRecipe;
-import net.epitap.degeneracycraft.item.DCItems;
+import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorRecipe;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
 import net.epitap.degeneracycraft.util.WrappedHandler;
@@ -44,19 +43,31 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
     public float MACHINE_CAPACITY = 30000F;
     public float MACHINE_TRANSFER = 16F;
 
-    public float MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
-    public float MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
-    public float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
-    public float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
+    public static float MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
+    public static float MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
+    public static float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
+    public static float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
     protected final ContainerData data;
+
     public int counter;
     public int getProgressPercent;
     public int getProgressRandom;
     public long getTime;
 
-    public boolean isFormed;
-    public boolean isPowered0;
-    public final ItemStackHandler itemHandler = new ItemStackHandler(5) {
+
+    public int hologramLevel = -1;
+    public int multiblockLevel = -1;
+    public boolean forceHalt = false;
+    public boolean isWorking = false;
+
+    public static final int DATA_COUNTER      = 0;
+    public static final int DATA_PROGRESS     = 1;
+    public static final int DATA_HOLOGRAM     = 2;
+    public static final int DATA_FORCE_STOP   = 3;
+    public static final int DATA_MULTIBLOCK   = 4;
+
+
+    public final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -66,9 +77,6 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
                 case 2 -> false;
-                case 3 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
-                        || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
-                case 4 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -92,6 +100,7 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
         this.ENERGY_STORAGE.setEnergyFloat(energy);
     }
 
+
     private LazyOptional<IItemHandler> lazyItemHandler = LazyOptional.empty();
     private LazyOptional<DCIEnergyStorageFloat> lazyEnergyHandler = LazyOptional.empty();
 
@@ -102,29 +111,34 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 2, (out, stack) -> false)));
 
     public BasicPerformanceStarlightCollectorBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+        super(DCBlockEntities.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> BasicPerformanceStarlightCollectorBlockEntity.this.counter;
-                    case 1 -> BasicPerformanceStarlightCollectorBlockEntity.this.getProgressPercent;
+                    case DATA_COUNTER    -> counter;
+                    case DATA_PROGRESS   -> getProgressPercent;
+                    case DATA_HOLOGRAM   -> hologramLevel;
+                    case DATA_FORCE_STOP -> forceHalt ? 1 : 0;
+                    case DATA_MULTIBLOCK   -> multiblockLevel;
                     default -> 0;
                 };
             }
 
             @Override
             public void set(int index, int value) {
-                if (index == 0) {
-                    BasicPerformanceStarlightCollectorBlockEntity.this.counter = value;
-                } else if (index == 1) {
-                    BasicPerformanceStarlightCollectorBlockEntity.this.getProgressPercent = value;
+                switch (index) {
+                    case DATA_COUNTER -> counter = value;
+                    case DATA_PROGRESS -> getProgressPercent = value;
+                    case DATA_HOLOGRAM -> hologramLevel = value;
+                    case DATA_FORCE_STOP -> forceHalt = value != 0;
+                    case DATA_MULTIBLOCK -> multiblockLevel = value;
                 }
             }
 
             @Override
             public int getCount() {
-                return 2;
+                return 5;
             }
         };
     }
@@ -189,19 +203,25 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
     @Override
     protected void saveAdditional(@NotNull CompoundTag nbt) {
         nbt.put("inventory", itemHandler.serializeNBT());
-        nbt.putFloat("bp_telescope.energy", ENERGY_STORAGE.getEnergyStoredFloat());
+        nbt.putFloat("energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
         nbt.putInt("getProgressPercent", getProgressPercent);
+        nbt.putInt("hologramLevel", hologramLevel);
+        nbt.putBoolean("forceHalt", forceHalt);
+        nbt.putInt("multiblockLevel", multiblockLevel);
         super.saveAdditional(nbt);
     }
 
     @Override
     public void load(CompoundTag nbt) {
-        super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("bp_telescope.energy"));
+        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("energy"));
         counter = nbt.getInt("counter");
         getProgressPercent = nbt.getInt("getProgressPercent");
+        hologramLevel = nbt.getInt("hologramLevel");
+        forceHalt = nbt.getBoolean("forceHalt");
+        multiblockLevel = nbt.getInt("multiblockLevel");
+        super.load(nbt);
     }
 
     public void drops() {
@@ -214,55 +234,48 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicPerformanceStarlightCollectorBlockEntity blockEntity) {
-        blockEntity.isFormed = BasicPerformanceStarlightCollectorStructure.isFormed(level, pos, state, blockEntity);
-        blockEntity.isPowered0 = BasicPerformanceStarlightCollectorStructure.isPowered0(level, pos, state, blockEntity);
-
+        if(BasicPerformanceStarlightCollectorStructure.isPowered1(level, pos, state, blockEntity)){
+            blockEntity.multiblockLevel = 1;
+        } else if(BasicPerformanceStarlightCollectorStructure.isFormed(level, pos, state, blockEntity)){
+            blockEntity.multiblockLevel = 0;
+        } else {
+            blockEntity.multiblockLevel = -1;
+        }
 
         BasicPerformanceStarlightCollectorStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
 
-        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
-        blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
+        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(1e-19F, false);
+        blockEntity.ENERGY_STORAGE.extractEnergyFloat(1e-19F, false);
+
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+
         if (level.isClientSide()) {
+            setChanged(level, pos, state);
             return;
         }
-
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceStarlightCollectorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceStarlightCollectorRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
-                && isAboveAirBlock(blockEntity)
+        if (blockEntity.forceHalt) {
+            blockEntity.counter = 0;
+            blockEntity.isWorking = false;
+            setChanged(level, pos, state);
+            return;
+        }
+
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
-//            blockEntity.getProgressRandom = (int) (Math.random() * 100);
-
-//            if (blockEntity.isPowered0) {
-//                if (blockEntity.getProgressRandom <= 1) {
-//                    blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
-//                }
-//                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
-//                        * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-//            } else if (blockEntity.isFormed) {
-//                if (blockEntity.getProgressRandom <= 0) {
-//                    blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
-//                }
-//                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
-//                        * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-//            } else {
-//                if (blockEntity.getProgressRandom <= 0) {
-//                    blockEntity.counter++;
-//                }
-//                blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
-//            }
-            if(isTime(blockEntity)) {
-                if (blockEntity.isPowered0) {
+            if(isTime(blockEntity) && isAboveAirBlock(blockEntity)) {
+                blockEntity.isWorking = true;
+                if (blockEntity.multiblockLevel == 1) {
                     blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
                     blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
                             * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-                } else if (blockEntity.isFormed) {
+                } else if (blockEntity.multiblockLevel == 0) {
                     blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
                     blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                             * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
@@ -270,7 +283,7 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
                     blockEntity.counter++;
                     blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
                 }
-            blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
+                blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
             }
             if (craftCheck(blockEntity)) {
                 craftItem(blockEntity);
@@ -280,6 +293,7 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
 
         } else {
             blockEntity.resetProgress();
+            blockEntity.isWorking = false;
             setChanged(level, pos, state);
         }
         setChanged(level, pos, state);
@@ -292,15 +306,12 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceStarlightCollectorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceStarlightCollectorRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / (match.get().getRequiredTime() * 20F);
     }
 
-    public static boolean isHaltDevice(BasicPerformanceStarlightCollectorBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(4).is(DCItems.MACHINE_HALT_DEVICE.get());
-    }
 
     private static boolean isTime(BasicPerformanceStarlightCollectorBlockEntity blockEntity) {
         Level level = blockEntity.getLevel();
@@ -335,8 +346,8 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceStarlightCollectorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceStarlightCollectorRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return blockEntity.data.get(0) > match.get().getRequiredTime() * 20;
@@ -351,8 +362,8 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceStarlightCollectorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceStarlightCollectorRecipe.Type.INSTANCE, inventory, level);
 
         return match.isPresent();
     }
@@ -364,8 +375,8 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceStarlightCollectorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceStarlightCollectorRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
                 && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount();
@@ -379,8 +390,8 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceStarlightCollectorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceStarlightCollectorRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
@@ -403,8 +414,8 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceStarlightCollectorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceStarlightCollectorRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(2).getMaxStackSize();
     }
@@ -416,14 +427,14 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceStarlightCollectorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceStarlightCollectorRecipe.Type.INSTANCE, inventory, level);
 
         return (blockEntity.itemHandler.getStackInSlot(2).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(2).isEmpty());
     }
 
     public void insertRecipeInputsFromPlayer(Player player, Recipe<?> recipe, boolean shift) {
-        if (!(recipe instanceof BasicPerformanceAstronomicalTelescopeRecipe recipeData)) return;
+        if (!(recipe instanceof BasicPerformanceStarlightCollectorRecipe recipeData)) return;
 
         player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(playerInv -> {
             this.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(machineInv -> {
@@ -496,6 +507,5 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
             }
         }
     }
-
 }
 

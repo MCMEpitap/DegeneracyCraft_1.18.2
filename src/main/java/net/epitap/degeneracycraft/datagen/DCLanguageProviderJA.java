@@ -1704,10 +1704,9 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "requiredtime." + "iron_spring" + ".phase0", "要求時間:100 tick (5 秒)");
         add("tooltip." + "degeneracycraft." + "msmultiplication." + "iron_spring" + ".phase0", "設備生産倍率:×1 ~ ×1");
 
-
-        add("tooltip." + "degeneracycraft" + ".structure" + ".off", "マルチブロック構造非検知");
-        add("tooltip." + "degeneracycraft" + ".structure" + ".lv0", "正確なマルチブロック構造:Lv0を検知");
-        add("tooltip." + "degeneracycraft" + ".structure" + ".lv1", "正確なマルチブロック構造:Lv1を検知");
+        add("tooltip." + "degeneracycraft" + ".structure" + ".off", "マルチブロック構造:非検知");
+        add("tooltip." + "degeneracycraft" + ".structure" + ".on", "マルチブロック構造:検知");
+        add("tooltip." + "degeneracycraft" + ".structure" + ".lv1", "マルチブロック構造:Lv1検知");
 
         add("tooltip." + "degeneracycraft" + ".work", "機械稼働中");
         add("tooltip." + "degeneracycraft" + ".stop", "機械停止中");

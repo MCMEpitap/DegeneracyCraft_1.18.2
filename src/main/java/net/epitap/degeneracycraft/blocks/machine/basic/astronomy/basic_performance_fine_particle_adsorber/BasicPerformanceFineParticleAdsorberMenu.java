@@ -28,7 +28,7 @@ public class BasicPerformanceFineParticleAdsorberMenu extends AbstractContainerM
     private final ContainerData data;
 
     public BasicPerformanceFineParticleAdsorberMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
+        this(pContainerId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
     }
 
     public BasicPerformanceFineParticleAdsorberMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -46,8 +46,6 @@ public class BasicPerformanceFineParticleAdsorberMenu extends AbstractContainerM
             this.addSlot(new SlotItemHandler(handler, 1, 98, 25));
             this.addSlot(new SlotItemHandler(handler, 2, 116, 25));
             this.addSlot(new SlotItemHandler(handler, 3, 134, 25));
-            this.addSlot(new SlotItemHandler(handler, 4, 71, 59));
-            this.addSlot(new SlotItemHandler(handler, 5, 98, 62));
         });
 
         addDataSlots(data);
@@ -57,13 +55,26 @@ public class BasicPerformanceFineParticleAdsorberMenu extends AbstractContainerM
         return data.get(1);
     }
 
+    public int getHologramLevel() {
+        return data.get(2);
+    }
+
+    public boolean isForceHalt() {
+        return data.get(3) != 0;
+    }
+
+    public int getMultiblockLevel() {
+        return data.get(4);
+    }
+
+    public boolean isWorking() {
+        return blockEntity.isWorking;
+    }
+
     public DCIEnergyStorageFloat getEnergy() {
         return blockEntity.getEnergyStorage();
     }
 
-    public boolean isCrafting() {
-        return data.get(0) > 0;
-    }
 
     public BasicPerformanceFineParticleAdsorberBlockEntity getBlockEntity() {
         return this.blockEntity;

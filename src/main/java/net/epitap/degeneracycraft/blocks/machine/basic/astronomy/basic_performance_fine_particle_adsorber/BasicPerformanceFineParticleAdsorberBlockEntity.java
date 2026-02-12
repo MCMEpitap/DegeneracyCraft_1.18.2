@@ -4,7 +4,6 @@ import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_performance_fine_particle_adsorber.BasicPerformanceFineParticleAdsorberRecipe;
-import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
 import net.epitap.degeneracycraft.util.WrappedHandler;
@@ -56,6 +55,18 @@ public class BasicPerformanceFineParticleAdsorberBlockEntity extends BlockEntity
 
     public boolean isFormed;
     public boolean isPowered0;
+
+    public int hologramLevel = -1;
+    public int multiblockLevel = -1;
+    public boolean forceHalt = false;
+    public boolean isWorking = false;
+
+    public static final int DATA_COUNTER      = 0;
+    public static final int DATA_PROGRESS     = 1;
+    public static final int DATA_HOLOGRAM     = 2;
+    public static final int DATA_FORCE_STOP   = 3;
+    public static final int DATA_MULTIBLOCK   = 4;
+
     public final ItemStackHandler itemHandler = new ItemStackHandler(6) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -66,9 +77,6 @@ public class BasicPerformanceFineParticleAdsorberBlockEntity extends BlockEntity
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
                 case 1,2,3 -> false;
-                case 4 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
-                        || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
-                case 5 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -107,24 +115,29 @@ public class BasicPerformanceFineParticleAdsorberBlockEntity extends BlockEntity
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> BasicPerformanceFineParticleAdsorberBlockEntity.this.counter;
-                    case 1 -> BasicPerformanceFineParticleAdsorberBlockEntity.this.getProgressPercent;
+                    case DATA_COUNTER    -> counter;
+                    case DATA_PROGRESS   -> getProgressPercent;
+                    case DATA_HOLOGRAM   -> hologramLevel;
+                    case DATA_FORCE_STOP -> forceHalt ? 1 : 0;
+                    case DATA_MULTIBLOCK   -> multiblockLevel;
                     default -> 0;
                 };
             }
 
             @Override
             public void set(int index, int value) {
-                if (index == 0) {
-                    BasicPerformanceFineParticleAdsorberBlockEntity.this.counter = value;
-                } else if (index == 1) {
-                    BasicPerformanceFineParticleAdsorberBlockEntity.this.getProgressPercent = value;
+                switch (index) {
+                    case DATA_COUNTER -> counter = value;
+                    case DATA_PROGRESS -> getProgressPercent = value;
+                    case DATA_HOLOGRAM -> hologramLevel = value;
+                    case DATA_FORCE_STOP -> forceHalt = value != 0;
+                    case DATA_MULTIBLOCK -> multiblockLevel = value;
                 }
             }
 
             @Override
             public int getCount() {
-                return 2;
+                return 5;
             }
         };
     }
@@ -189,19 +202,25 @@ public class BasicPerformanceFineParticleAdsorberBlockEntity extends BlockEntity
     @Override
     protected void saveAdditional(@NotNull CompoundTag nbt) {
         nbt.put("inventory", itemHandler.serializeNBT());
-        nbt.putFloat("bp_telescope.energy", ENERGY_STORAGE.getEnergyStoredFloat());
+        nbt.putFloat("energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
         nbt.putInt("getProgressPercent", getProgressPercent);
+        nbt.putInt("hologramLevel", hologramLevel);
+        nbt.putBoolean("forceHalt", forceHalt);
+        nbt.putInt("multiblockLevel", multiblockLevel);
         super.saveAdditional(nbt);
     }
 
     @Override
     public void load(CompoundTag nbt) {
-        super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("bp_telescope.energy"));
+        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("energy"));
         counter = nbt.getInt("counter");
         getProgressPercent = nbt.getInt("getProgressPercent");
+        hologramLevel = nbt.getInt("hologramLevel");
+        forceHalt = nbt.getBoolean("forceHalt");
+        multiblockLevel = nbt.getInt("multiblockLevel");
+        super.load(nbt);
     }
 
     public void drops() {
@@ -214,9 +233,13 @@ public class BasicPerformanceFineParticleAdsorberBlockEntity extends BlockEntity
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicPerformanceFineParticleAdsorberBlockEntity blockEntity) {
-        blockEntity.isFormed = BasicPerformanceFineParticleAdsorberStructure.isFormed(level, pos, state, blockEntity);
-        blockEntity.isPowered0 = BasicPerformanceFineParticleAdsorberStructure.isPowered0(level, pos, state, blockEntity);
-
+        if(BasicPerformanceFineParticleAdsorberStructure.isPowered1(level, pos, state, blockEntity)){
+            blockEntity.multiblockLevel = 1;
+        } else if(BasicPerformanceFineParticleAdsorberStructure.isFormed(level, pos, state, blockEntity)){
+            blockEntity.multiblockLevel = 0;
+        } else {
+            blockEntity.multiblockLevel = -1;
+        }
 
         BasicPerformanceFineParticleAdsorberStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
@@ -234,35 +257,21 @@ public class BasicPerformanceFineParticleAdsorberBlockEntity extends BlockEntity
         Optional<BasicPerformanceFineParticleAdsorberRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceFineParticleAdsorberRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
-                && isAboveAirBlock(blockEntity)
+        if (blockEntity.forceHalt) {
+            blockEntity.counter = 0;
+            blockEntity.isWorking = false;
+            setChanged(level, pos, state);
+            return;
+        }
+
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
-//            blockEntity.getProgressRandom = (int) (Math.random() * 100);
-
-//            if (blockEntity.isPowered0) {
-//                if (blockEntity.getProgressRandom <= 1) {
-//                    blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
-//                }
-//                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
-//                        * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-//            } else if (blockEntity.isFormed) {
-//                if (blockEntity.getProgressRandom <= 0) {
-//                    blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
-//                }
-//                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
-//                        * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-//            } else {
-//                if (blockEntity.getProgressRandom <= 0) {
-//                    blockEntity.counter++;
-//                }
-//                blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
-//            }
-
-            if (blockEntity.isPowered0) {
+            blockEntity.isWorking = true;
+            if (blockEntity.multiblockLevel == 1) {
                 blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-            } else if (blockEntity.isFormed) {
+            } else if (blockEntity.multiblockLevel == 0) {
                 blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
@@ -270,15 +279,17 @@ public class BasicPerformanceFineParticleAdsorberBlockEntity extends BlockEntity
                 blockEntity.counter++;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
             }
-        blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
-        }
-        if (craftCheck(blockEntity)) {
-            craftItem(blockEntity);
-        }
+            blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
 
+            if (craftCheck(blockEntity)) {
+                craftItem(blockEntity);
+            }
+        } else {
+            blockEntity.resetProgress();
+            blockEntity.isWorking = false;
+            setChanged(level, pos, state);
+        }
         setChanged(level, pos, state);
-
-
     }
 
     private static boolean hasAmountEnergyRecipe(BasicPerformanceFineParticleAdsorberBlockEntity blockEntity) {
@@ -292,36 +303,6 @@ public class BasicPerformanceFineParticleAdsorberBlockEntity extends BlockEntity
                 .getRecipeFor(BasicPerformanceFineParticleAdsorberRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / (match.get().getRequiredTime() * 20F);
-    }
-
-    public static boolean isHaltDevice(BasicPerformanceFineParticleAdsorberBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(6).is(DCItems.MACHINE_HALT_DEVICE.get());
-    }
-
-    private static boolean isTime(BasicPerformanceFineParticleAdsorberBlockEntity blockEntity) {
-        Level level = blockEntity.getLevel();
-        if (level != null) {
-            blockEntity.getTime = level.getDayTime();
-        }
-        return 12000 <= blockEntity.getTime && blockEntity.getTime <= 23999;
-    }
-
-    private static boolean isAboveAirBlock(BasicPerformanceFineParticleAdsorberBlockEntity blockEntity) {
-        Level level = blockEntity.getLevel();
-        BlockPos basePos = blockEntity.getBlockPos();
-
-        int maxY = level.getMaxBuildHeight() - 1;
-
-        int startY = basePos.getY() + 1;
-
-        for (int y = startY; y <= maxY; y++) {
-            BlockPos checkPos = new BlockPos(basePos.getX(), y, basePos.getZ());
-            if (!level.getBlockState(checkPos).isAir()) {
-                return false;
-            }
-        }
-
-        return true;
     }
 
     public static boolean craftCheck(BasicPerformanceFineParticleAdsorberBlockEntity blockEntity) {

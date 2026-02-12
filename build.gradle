@@ -291,12 +291,12 @@ dependencies {
 
 //        implementation fg.deobf("curse.maven:pipez-1.18.2-1.1.5-443900:3819249")
         implementation fg.deobf("curse.maven:embeddium-908741:5322305")
-        implementation fg.deobf("curse.maven:better-fps-render-distance-551520:3750013")
-        implementation fg.deobf("curse.maven:fastfurnace-299540:3717883")
-        implementation fg.deobf("curse.maven:fastworkbench-288885:4030000")
-        implementation fg.deobf("curse.maven:radon-596879:3707321")
+//        implementation fg.deobf("curse.maven:better-fps-render-distance-551520:3750013")
+//        implementation fg.deobf("curse.maven:fastfurnace-299540:3717883")
+//        implementation fg.deobf("curse.maven:fastworkbench-288885:4030000")
+//        implementation fg.deobf("curse.maven:radon-596879:3707321")
         implementation fg.deobf("curse.maven:ferritecore-429235:4074294")
-        implementation fg.deobf("curse.maven:out-of-sight-428199:3929018")
+//        implementation fg.deobf("curse.maven:out-of-sight-428199:3929018")
         implementation fg.deobf("curse.maven:fastsuite-475117:3755834")
         implementation fg.deobf("curse.maven:placebo-283644:4500363")
 

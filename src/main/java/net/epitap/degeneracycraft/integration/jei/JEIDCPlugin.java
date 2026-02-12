@@ -598,7 +598,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceAstronomicalTelescopeRecipeTransferHandler<>(
                         BasicPerformanceAstronomicalTelescopeMenu.class,
                         0, 2,
-                        5, 36
+                        3, 36
                 ),
                 BasicPerformanceAstronomicalTelescopeRecipeCategory.TYPE
         );
@@ -606,7 +606,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceFineParticleAdsorberTransferHandler<>(
                         BasicPerformanceFineParticleAdsorberMenu.class,
                         0, 1,
-                        6, 36
+                        4, 36
                 ),
                 BasicPerformanceFineParticleAdsorberRecipeCategory.TYPE
         );
@@ -614,7 +614,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceStarlightCollectorRecipeTransferHandler<>(
                         BasicPerformanceStarlightCollectorMenu.class,
                         0, 2,
-                        5, 36
+                        3, 36
                 ),
                 BasicPerformanceStarlightCollectorRecipeCategory.TYPE
         );

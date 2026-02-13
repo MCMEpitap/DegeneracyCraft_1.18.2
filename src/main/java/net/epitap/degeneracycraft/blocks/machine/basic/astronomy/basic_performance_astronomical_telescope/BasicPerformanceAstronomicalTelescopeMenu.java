@@ -62,15 +62,12 @@ public class BasicPerformanceAstronomicalTelescopeMenu extends AbstractContainer
         return data.get(3) != 0;
     }
 
-    public boolean isWorking() {
-        return blockEntity.isWorking;
+    public int getMultiblockLevel() {
+        return data.get(4);
     }
 
-    public boolean isFormed() {
-        return blockEntity.isFormed;
-    }
-    public boolean isPowered1() {
-        return blockEntity.isPowered1;
+    public boolean isWorking() {
+        return blockEntity.isWorking;
     }
 
     public DCIEnergyStorageFloat getEnergy() {

@@ -80,7 +80,7 @@ public class BasicPerformanceAstronomicalTelescopeStructure {
         return true;
     }
 
-    public static boolean isPowered0(Level level, BlockPos pos, BlockState state, BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
+    public static boolean isPowered1(Level level, BlockPos pos, BlockState state, BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
         Direction facing = state.getValue(BasicPerformanceAstronomicalTelescopeBlock.FACING);
         BlockPos basePos = blockEntity.getBlockPos();
 

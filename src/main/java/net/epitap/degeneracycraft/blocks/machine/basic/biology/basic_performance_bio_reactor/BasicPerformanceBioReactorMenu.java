@@ -21,13 +21,13 @@ public class BasicPerformanceBioReactorMenu extends AbstractContainerMenu {
     private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 9;
+    private static final int TE_INVENTORY_SLOT_COUNT = 7;
     public final BasicPerformanceBioReactorBlockEntity blockEntity;
     public final Level level;
     public final ContainerData data;
 
     public BasicPerformanceBioReactorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
     }
 
     public BasicPerformanceBioReactorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -46,19 +46,31 @@ public class BasicPerformanceBioReactorMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(handler, 4, 98, 25));
             this.addSlot(new SlotItemHandler(handler, 5, 116, 25));
             this.addSlot(new SlotItemHandler(handler, 6, 134, 25));
-            this.addSlot(new SlotItemHandler(handler, 7, 71, 59));
-            this.addSlot(new SlotItemHandler(handler, 8, 98, 62));
+
         });
         addDataSlots(data);
-    }
-
-    public boolean isCrafting() {
-        return data.get(0) > 0;
     }
 
     public int getProgressPercent() {
         return data.get(1);
     }
+
+    public int getHologramLevel() {
+        return data.get(2);
+    }
+
+    public boolean isForceHalt() {
+        return data.get(3) != 0;
+    }
+
+    public int getMultiblockLevel() {
+        return data.get(4);
+    }
+
+    public boolean isWorking() {
+        return blockEntity.isWorking;
+    }
+
 
     public DCIEnergyStorageFloat getEnergy() {
         return blockEntity.getEnergyStorage();

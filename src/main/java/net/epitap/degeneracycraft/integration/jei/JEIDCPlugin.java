@@ -627,7 +627,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceBioReactorRecipeTransferHandler<>(
                         BasicPerformanceBioReactorMenu.class,
                         0, 4,
-                        9, 36
+                        7, 36
                 ),
                 BasicPerformanceBioReactorRecipeCategory.TYPE
         );

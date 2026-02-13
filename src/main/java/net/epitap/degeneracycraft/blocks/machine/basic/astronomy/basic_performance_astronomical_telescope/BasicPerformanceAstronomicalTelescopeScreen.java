@@ -97,11 +97,11 @@ public class BasicPerformanceAstronomicalTelescopeScreen extends AbstractContain
     }
 
     public List<Component> MultiblockInfoTooltips() {
-        if (menu.isPowered1()) {
+        if (menu.getMultiblockLevel() == 1) {
             return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".structure" + ".lv1"),
                     new TranslatableComponent("screen." + "degeneracycraft_machine" + ".process_modifier_3"),
                     new TranslatableComponent("screen." + "degeneracycraft_machine" + ".energy_usage_modifier_2"));
-        } else if (menu.isFormed()) {
+        } else if (menu.getMultiblockLevel() == 0) {
             return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".structure" + ".on"),
                     new TranslatableComponent("screen." + "degeneracycraft_machine" + ".process_modifier_2"),
                     new TranslatableComponent("screen." + "degeneracycraft_machine" + ".energy_usage_modifier_1.5"));

@@ -3,6 +3,7 @@ package net.epitap.degeneracycraft.networking.packet;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_fine_particle_adsorber.BasicPerformanceFineParticleAdsorberBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
@@ -71,6 +72,21 @@ public class DCMachineToggleC2SPacket {
             }
 
             if (blockEntity instanceof BasicPerformanceStarlightCollectorBlockEntity machine) {
+
+                if (type == TOGGLE_HOLOGRAM) {
+                    machine.hologramLevel++;
+                    if (machine.hologramLevel > 1) {
+                        machine.hologramLevel = -1;
+                    }
+                }
+
+                if (type == TOGGLE_HALT) {
+                    machine.forceHalt = !machine.forceHalt;
+                }
+                machine.setChanged();
+            }
+
+            if (blockEntity instanceof BasicPerformanceBioReactorBlockEntity machine) {
 
                 if (type == TOGGLE_HOLOGRAM) {
                     machine.hologramLevel++;

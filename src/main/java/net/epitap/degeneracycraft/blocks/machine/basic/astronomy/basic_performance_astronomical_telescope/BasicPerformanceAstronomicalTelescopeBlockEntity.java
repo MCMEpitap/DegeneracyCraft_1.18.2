@@ -53,10 +53,9 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     public int getProgressRandom;
     public long getTime;
 
-    public boolean isFormed;
-    public boolean isPowered1;
-
     public int hologramLevel = -1;
+    public int multiblockLevel = -1;
+
     public boolean forceHalt = false;
     public boolean isWorking = false;
 
@@ -64,6 +63,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     public static final int DATA_PROGRESS     = 1;
     public static final int DATA_HOLOGRAM     = 2;
     public static final int DATA_FORCE_STOP   = 3;
+    public static final int DATA_MULTIBLOCK   = 4;
 
     public final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
@@ -117,6 +117,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
                     case DATA_PROGRESS   -> getProgressPercent;
                     case DATA_HOLOGRAM   -> hologramLevel;
                     case DATA_FORCE_STOP -> forceHalt ? 1 : 0;
+                    case DATA_MULTIBLOCK   -> multiblockLevel;
                     default -> 0;
                 };
             }
@@ -128,12 +129,13 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
                     case DATA_PROGRESS -> getProgressPercent = value;
                     case DATA_HOLOGRAM -> hologramLevel = value;
                     case DATA_FORCE_STOP -> forceHalt = value != 0;
+                    case DATA_MULTIBLOCK -> multiblockLevel = value;
                 }
             }
 
             @Override
             public int getCount() {
-                return 4;
+                return 5;
             }
         };
     }
@@ -203,6 +205,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         nbt.putInt("getProgressPercent", getProgressPercent);
         nbt.putInt("hologramLevel", hologramLevel);
         nbt.putBoolean("forceHalt", forceHalt);
+        nbt.putInt("multiblockLevel", multiblockLevel);
         super.saveAdditional(nbt);
     }
 
@@ -214,6 +217,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         getProgressPercent = nbt.getInt("getProgressPercent");
         hologramLevel = nbt.getInt("hologramLevel");
         forceHalt = nbt.getBoolean("forceHalt");
+        multiblockLevel = nbt.getInt("multiblockLevel");
         super.load(nbt);
     }
 
@@ -227,9 +231,13 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
-        blockEntity.isFormed = BasicPerformanceAstronomicalTelescopeStructure.isFormed(level, pos, state, blockEntity);
-        blockEntity.isPowered1 = BasicPerformanceAstronomicalTelescopeStructure.isPowered0(level, pos, state, blockEntity);
-
+        if(BasicPerformanceAstronomicalTelescopeStructure.isPowered1(level, pos, state, blockEntity)){
+            blockEntity.multiblockLevel = 1;
+        } else if(BasicPerformanceAstronomicalTelescopeStructure.isFormed(level, pos, state, blockEntity)){
+            blockEntity.multiblockLevel = 0;
+        } else {
+            blockEntity.multiblockLevel = -1;
+        }
 
         BasicPerformanceAstronomicalTelescopeStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
@@ -278,11 +286,11 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
 //            }
             if(isTime(blockEntity) && isAboveAirBlock(blockEntity)) {
                 blockEntity.isWorking = true;
-                if (blockEntity.isPowered1) {
+                if (blockEntity.hologramLevel == 1) {
                     blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
                     blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
                             * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-                } else if (blockEntity.isFormed) {
+                } else if (blockEntity.hologramLevel == 0) {
                     blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
                     blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                             * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
@@ -295,9 +303,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
             if (craftCheck(blockEntity)) {
                 craftItem(blockEntity);
             }
-
             setChanged(level, pos, state);
-
         } else {
             blockEntity.resetProgress();
             blockEntity.isWorking = false;

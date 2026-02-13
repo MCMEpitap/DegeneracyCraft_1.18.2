@@ -1,6 +1,7 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
+import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeStructure;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorRecipe;
@@ -51,10 +52,19 @@ public class BasicPerformanceBioReactorBlockEntity extends BlockEntity implement
     public final ContainerData data;
     public int counter;
     public int getProgressPercent;
-    private int consumeCounter;
 
-    public boolean isFormed;
-    public boolean isPowered0;
+    public int hologramLevel = -1;
+    public int multiblockLevel = -1;
+
+    public boolean forceHalt = false;
+    public boolean isWorking = false;
+
+    public static final int DATA_COUNTER      = 0;
+    public static final int DATA_PROGRESS     = 1;
+    public static final int DATA_HOLOGRAM     = 2;
+    public static final int DATA_FORCE_STOP   = 3;
+    public static final int DATA_MULTIBLOCK   = 4;
+
     public final ItemStackHandler itemHandler = new ItemStackHandler(9) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -65,9 +75,6 @@ public class BasicPerformanceBioReactorBlockEntity extends BlockEntity implement
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
                 case 4,5,6 -> false;
-                case 7 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
-                        || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
-                case 8 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -108,24 +115,29 @@ public class BasicPerformanceBioReactorBlockEntity extends BlockEntity implement
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> BasicPerformanceBioReactorBlockEntity.this.counter;
-                    case 1 -> BasicPerformanceBioReactorBlockEntity.this.getProgressPercent;
+                    case DATA_COUNTER    -> counter;
+                    case DATA_PROGRESS   -> getProgressPercent;
+                    case DATA_HOLOGRAM   -> hologramLevel;
+                    case DATA_FORCE_STOP -> forceHalt ? 1 : 0;
+                    case DATA_MULTIBLOCK   -> multiblockLevel;
                     default -> 0;
                 };
             }
 
             @Override
             public void set(int index, int value) {
-                if (index == 0) {
-                    BasicPerformanceBioReactorBlockEntity.this.counter = value;
-                } else if (index == 1) {
-                    BasicPerformanceBioReactorBlockEntity.this.getProgressPercent = value;
+                switch (index) {
+                    case DATA_COUNTER -> counter = value;
+                    case DATA_PROGRESS -> getProgressPercent = value;
+                    case DATA_HOLOGRAM -> hologramLevel = value;
+                    case DATA_FORCE_STOP -> forceHalt = value != 0;
+                    case DATA_MULTIBLOCK -> multiblockLevel = value;
                 }
             }
 
             @Override
             public int getCount() {
-                return 2;
+                return 5;
             }
         };
     }
@@ -192,16 +204,22 @@ public class BasicPerformanceBioReactorBlockEntity extends BlockEntity implement
         nbt.putFloat("energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
         nbt.putInt("getProgressPercent", getProgressPercent);
+        nbt.putInt("hologramLevel", hologramLevel);
+        nbt.putBoolean("forceHalt", forceHalt);
+        nbt.putInt("multiblockLevel", multiblockLevel);
         super.saveAdditional(nbt);
     }
 
     @Override
     public void load(CompoundTag nbt) {
-        super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("energy"));
         counter = nbt.getInt("counter");
         getProgressPercent = nbt.getInt("getProgressPercent");
+        hologramLevel = nbt.getInt("hologramLevel");
+        forceHalt = nbt.getBoolean("forceHalt");
+        multiblockLevel = nbt.getInt("multiblockLevel");
+        super.load(nbt);
     }
 
     public void drops() {
@@ -214,14 +232,18 @@ public class BasicPerformanceBioReactorBlockEntity extends BlockEntity implement
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicPerformanceBioReactorBlockEntity blockEntity) {
-        blockEntity.isFormed = BasicPerformanceBioReactorStructure.isFormed(level, pos, state, blockEntity);
-        blockEntity.isPowered0 = BasicPerformanceBioReactorStructure.isPowered0(level, pos, state, blockEntity);
-
+        if(BasicPerformanceBioReactorStructure.isPowered1(level, pos, state, blockEntity)){
+            blockEntity.multiblockLevel = 1;
+        } else if(BasicPerformanceBioReactorStructure.isFormed(level, pos, state, blockEntity)){
+            blockEntity.multiblockLevel = 0;
+        } else {
+            blockEntity.multiblockLevel = -1;
+        }
         BasicPerformanceBioReactorStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
 
-        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
-        blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
+        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(1e-19F, false);
+        blockEntity.ENERGY_STORAGE.extractEnergyFloat(1e-19F, false);
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         if (level.isClientSide()) {
             return;
@@ -233,14 +255,21 @@ public class BasicPerformanceBioReactorBlockEntity extends BlockEntity implement
         Optional<BasicPerformanceBioReactorRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceBioReactorRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
-                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
+        if (blockEntity.forceHalt) {
+            blockEntity.counter = 0;
+            blockEntity.isWorking = false;
+            setChanged(level, pos, state);
+            return;
+        }
 
-            if (blockEntity.isPowered0) {
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity)
+                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
+            blockEntity.isWorking = true;
+            if (blockEntity.hologramLevel == 1) {
                 blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-            } else if (blockEntity.isFormed) {
+            } else if (blockEntity.hologramLevel == 0) {
                 blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
@@ -255,6 +284,7 @@ public class BasicPerformanceBioReactorBlockEntity extends BlockEntity implement
             setChanged(level, pos, state);
         } else {
             blockEntity.resetProgress();
+            blockEntity.isWorking = false;
             setChanged(level, pos, state);
         }
         setChanged(level, pos, state);
@@ -340,21 +370,13 @@ public class BasicPerformanceBioReactorBlockEntity extends BlockEntity implement
             blockEntity.itemHandler.setStackInSlot(6, new ItemStack(match.get().getOutput2Item().getItem(),
                     blockEntity.itemHandler.getStackInSlot(6).getCount() + match.get().getOutput2Item().getCount()));
             blockEntity.resetProgress();
-            blockEntity.resetConsumeCount();
         }
-    }
-
-    public static boolean isHaltDevice(BasicPerformanceBioReactorBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(8).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
     public void resetProgress() {
         this.counter = 0;
     }
 
-    public void resetConsumeCount() {
-        this.consumeCounter = 0;
-    }
     private static boolean hasNotReachedStackLimit(BasicPerformanceBioReactorBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());

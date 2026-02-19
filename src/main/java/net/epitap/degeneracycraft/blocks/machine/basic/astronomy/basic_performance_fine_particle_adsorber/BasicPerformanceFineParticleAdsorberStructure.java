@@ -77,7 +77,7 @@ public class BasicPerformanceFineParticleAdsorberStructure {
 
                     if (" ".equals(expectedBlock)) continue;
 
-                    BlockPos relativePos = getRelativePos(basePos, x, y, z, facing);
+                    BlockPos relativePos = getRelativePos(basePos,x + minX0, maxY0 - y, z + minZ0, facing);
                     BlockState targetState = level.getBlockState(relativePos);
 
                     Predicate<BlockState> condition = blockConditions.get(expectedBlock);
@@ -103,7 +103,7 @@ public class BasicPerformanceFineParticleAdsorberStructure {
 
                     if (" ".equals(expectedBlock)) continue;
 
-                    BlockPos relativePos = getRelativePos(basePos, x, y, z, facing);
+                    BlockPos relativePos = getRelativePos(basePos,x + minX1, maxY1 - y, z + minZ1, facing);
                     BlockState targetState = level.getBlockState(relativePos);
 
                     Predicate<BlockState> condition = blockConditions.get(expectedBlock);

@@ -1,11 +1,9 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_bio_reactor;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeStructure;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_bio_reactor.BasicPerformanceBioReactorRecipe;
-import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
 import net.epitap.degeneracycraft.util.WrappedHandler;
@@ -46,9 +44,9 @@ public class BasicPerformanceBioReactorBlockEntity extends BlockEntity implement
     public float MACHINE_CAPACITY = 30000F;
     public float MACHINE_TRANSFER = 32F;
     public float MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
-    public float MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
+    public float MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_1 = 3F;
     public float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
-    public float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
+    public float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_1 = 2.0F;
     public final ContainerData data;
     public int counter;
     public int getProgressPercent;
@@ -57,7 +55,6 @@ public class BasicPerformanceBioReactorBlockEntity extends BlockEntity implement
     public int multiblockLevel = -1;
 
     public boolean forceHalt = false;
-    public boolean isWorking = false;
 
     public static final int DATA_COUNTER      = 0;
     public static final int DATA_PROGRESS     = 1;
@@ -65,7 +62,7 @@ public class BasicPerformanceBioReactorBlockEntity extends BlockEntity implement
     public static final int DATA_FORCE_STOP   = 3;
     public static final int DATA_MULTIBLOCK   = 4;
 
-    public final ItemStackHandler itemHandler = new ItemStackHandler(9) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(7) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -256,18 +253,16 @@ public class BasicPerformanceBioReactorBlockEntity extends BlockEntity implement
                 .getRecipeFor(BasicPerformanceBioReactorRecipe.Type.INSTANCE, inventory, level);
 
         if (blockEntity.forceHalt) {
-            blockEntity.counter = 0;
-            blockEntity.isWorking = false;
+            blockEntity.resetProgress();
             setChanged(level, pos, state);
             return;
         }
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
-            blockEntity.isWorking = true;
             if (blockEntity.hologramLevel == 1) {
-                blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
+                blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_1;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_1
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else if (blockEntity.hologramLevel == 0) {
                 blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
@@ -284,7 +279,6 @@ public class BasicPerformanceBioReactorBlockEntity extends BlockEntity implement
             setChanged(level, pos, state);
         } else {
             blockEntity.resetProgress();
-            blockEntity.isWorking = false;
             setChanged(level, pos, state);
         }
         setChanged(level, pos, state);

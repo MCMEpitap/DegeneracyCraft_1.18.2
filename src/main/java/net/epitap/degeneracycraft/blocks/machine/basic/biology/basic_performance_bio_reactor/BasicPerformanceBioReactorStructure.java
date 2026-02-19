@@ -45,7 +45,7 @@ public class BasicPerformanceBioReactorStructure {
             },
             {
                     {"F", "F", "F", "F", "F"},
-                    {"F", "R", "H", "R", "F"},
+                    {"F", "C", "H", "C", "F"},
                     {"F", "P", " ", "P", "F",}
             },
             {
@@ -54,7 +54,6 @@ public class BasicPerformanceBioReactorStructure {
                     {"F", "S", "F", "S", "F"}
             }
     };
-
 
     public static boolean isFormed(Level level, BlockPos pos, BlockState state, BasicPerformanceBioReactorBlockEntity blockEntity) {
         Direction facing = state.getValue(BasicPerformanceBioReactorBlock.FACING);
@@ -68,7 +67,7 @@ public class BasicPerformanceBioReactorStructure {
 
                     if (" ".equals(expectedBlock)) continue;
 
-                    BlockPos relativePos = getRelativePos(basePos, x, y, z, facing);
+                    BlockPos relativePos = getRelativePos(basePos,x + minX0, maxY0 - y, z + minZ0, facing);
                     BlockState targetState = level.getBlockState(relativePos);
 
                     Predicate<BlockState> condition = blockConditions.get(expectedBlock);
@@ -94,7 +93,7 @@ public class BasicPerformanceBioReactorStructure {
 
                     if (" ".equals(expectedBlock)) continue;
 
-                    BlockPos relativePos = getRelativePos(basePos, x, y, z, facing);
+                    BlockPos relativePos = getRelativePos(basePos,x + minX1, maxY1 - y, z + minZ1, facing);
                     BlockState targetState = level.getBlockState(relativePos);
 
                     Predicate<BlockState> condition = blockConditions.get(expectedBlock);
@@ -115,7 +114,7 @@ public class BasicPerformanceBioReactorStructure {
         blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
         blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_BLOCK.get()));
         blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
-        blockConditions.put("R", blockState -> blockState.is(DCBlocks.BASIC_RATE_COMPOUND_AGITATION_SYSTEM_BLOCK.get()));
+        blockConditions.put("C", blockState -> blockState.is(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_BLOCK.get()));
         return blockConditions;
     }
 
@@ -157,12 +156,12 @@ public class BasicPerformanceBioReactorStructure {
     private static @NotNull Map<String, Supplier<BlockState>> getHoloBlockSuppliers() {
         Map<String, Supplier<BlockState>> blockSuppliers = new HashMap<>();
         blockSuppliers.put("F", () -> DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("P", () -> DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("P", () -> DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("H", () -> DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("S", () -> DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("B", () -> DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("B", () -> DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("E", () -> DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("R", () -> DCBlocks.BASIC_RATE_COMPOUND_AGITATION_SYSTEM_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("C", () -> DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_HOLO_BLOCK.get().defaultBlockState());
         return blockSuppliers;
     }
 

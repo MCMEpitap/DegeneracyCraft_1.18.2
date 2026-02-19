@@ -44,22 +44,18 @@ public class BasicPerformanceFineParticleAdsorberBlockEntity extends BlockEntity
     public float MACHINE_TRANSFER = 16F;
 
     public float MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
-    public float MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
+    public float MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_1 = 3F;
     public float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
-    public float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
+    public float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_1 = 2.0F;
     protected final ContainerData data;
     public int counter;
     public int getProgressPercent;
     public int getProgressRandom;
     public long getTime;
 
-    public boolean isFormed;
-    public boolean isPowered0;
-
     public int hologramLevel = -1;
     public int multiblockLevel = -1;
     public boolean forceHalt = false;
-    public boolean isWorking = false;
 
     public static final int DATA_COUNTER      = 0;
     public static final int DATA_PROGRESS     = 1;
@@ -258,18 +254,16 @@ public class BasicPerformanceFineParticleAdsorberBlockEntity extends BlockEntity
                 .getRecipeFor(BasicPerformanceFineParticleAdsorberRecipe.Type.INSTANCE, inventory, level);
 
         if (blockEntity.forceHalt) {
-            blockEntity.counter = 0;
-            blockEntity.isWorking = false;
+            blockEntity.resetProgress();
             setChanged(level, pos, state);
             return;
         }
 
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
-            blockEntity.isWorking = true;
             if (blockEntity.multiblockLevel == 1) {
-                blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
+                blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_1;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_1
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else if (blockEntity.multiblockLevel == 0) {
                 blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
@@ -286,7 +280,6 @@ public class BasicPerformanceFineParticleAdsorberBlockEntity extends BlockEntity
             }
         } else {
             blockEntity.resetProgress();
-            blockEntity.isWorking = false;
             setChanged(level, pos, state);
         }
         setChanged(level, pos, state);

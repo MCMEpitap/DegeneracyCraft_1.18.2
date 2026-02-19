@@ -51,6 +51,10 @@ public class BasicPerformanceBioReactorMenu extends AbstractContainerMenu {
         addDataSlots(data);
     }
 
+    public boolean isWorking() {
+        return data.get(0) > 0;
+    }
+
     public int getProgressPercent() {
         return data.get(1);
     }
@@ -66,11 +70,6 @@ public class BasicPerformanceBioReactorMenu extends AbstractContainerMenu {
     public int getMultiblockLevel() {
         return data.get(4);
     }
-
-    public boolean isWorking() {
-        return blockEntity.isWorking;
-    }
-
 
     public DCIEnergyStorageFloat getEnergy() {
         return blockEntity.getEnergyStorage();

@@ -50,6 +50,10 @@ public class BasicPerformanceAstronomicalTelescopeMenu extends AbstractContainer
         addDataSlots(data);
     }
 
+    public boolean isWorking() {
+        return data.get(0) > 0;
+    }
+
     public int getProgressPercent() {
         return data.get(1);
     }
@@ -64,10 +68,6 @@ public class BasicPerformanceAstronomicalTelescopeMenu extends AbstractContainer
 
     public int getMultiblockLevel() {
         return data.get(4);
-    }
-
-    public boolean isWorking() {
-        return blockEntity.isWorking;
     }
 
     public DCIEnergyStorageFloat getEnergy() {

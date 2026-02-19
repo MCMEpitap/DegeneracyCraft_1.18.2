@@ -44,9 +44,9 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     public float MACHINE_TRANSFER = 16F;
 
     public float MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
-    public float MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
+    public float MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_1 = 3F;
     public float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
-    public float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
+    public float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_1 = 2.0F;
     protected final ContainerData data;
     public int counter;
     public int getProgressPercent;
@@ -57,7 +57,6 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     public int multiblockLevel = -1;
 
     public boolean forceHalt = false;
-    public boolean isWorking = false;
 
     public static final int DATA_COUNTER      = 0;
     public static final int DATA_PROGRESS     = 1;
@@ -256,8 +255,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
                 .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         if (blockEntity.forceHalt) {
-            blockEntity.counter = 0;
-            blockEntity.isWorking = false;
+            blockEntity.resetProgress();
             setChanged(level, pos, state);
             return;
         }
@@ -268,9 +266,9 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
 
 //            if (blockEntity.isPowered1) {
 //                if (blockEntity.getProgressRandom <= 1) {
-//                    blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
+//                    blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_1;
 //                }
-//                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
+//                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_1
 //                        * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
 //            } else if (blockEntity.isFormed) {
 //                if (blockEntity.getProgressRandom <= 0) {
@@ -285,10 +283,9 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
 //                blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
 //            }
             if(isTime(blockEntity) && isAboveAirBlock(blockEntity)) {
-                blockEntity.isWorking = true;
                 if (blockEntity.hologramLevel == 1) {
-                    blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
-                    blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
+                    blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_1;
+                    blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_1
                             * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
                 } else if (blockEntity.hologramLevel == 0) {
                     blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
@@ -306,7 +303,6 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
             setChanged(level, pos, state);
         } else {
             blockEntity.resetProgress();
-            blockEntity.isWorking = false;
             setChanged(level, pos, state);
         }
         setChanged(level, pos, state);

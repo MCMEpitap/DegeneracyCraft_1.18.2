@@ -635,7 +635,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceCellIncubatorRecipeTransferHandler<>(
                         BasicPerformanceCellIncubatorMenu.class,
                         0, 4,
-                        7, 36
+                        5, 36
                 ),
                 BasicPerformanceCellIncubatorRecipeCategory.TYPE
         );
@@ -654,7 +654,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceChemicalReactorRecipeTransferHandler<>(
                         BasicPerformanceChemicalReactorMenu.class,
                         0, 5,
-                        10, 36
+                        8, 36
                 ),
                 BasicPerformanceChemicalReactorRecipeCategory.TYPE
         );
@@ -663,7 +663,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceCompoundPurifierRecipeTransferHandler<>(
                         BasicPerformanceCompoundPurifierMenu.class,
                         0, 3,
-                        7, 36
+                        5, 36
                 ),
                 BasicPerformanceCompoundPurifierRecipeCategory.TYPE
         );

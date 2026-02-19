@@ -117,6 +117,7 @@ public class BasicPerformanceCompoundPurifierRecipeCategory implements IRecipeCa
         builder.addSlot(RecipeIngredientRole.INPUT, 26, 25).addItemStack(recipe.getInput1Item());
         builder.addSlot(RecipeIngredientRole.INPUT, 26, 43).addItemStack(recipe.getInput2Item());
         builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 25).addItemStack(recipe.getOutput0Item());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 43).addItemStack(recipe.getOutput1Item());
 
     }
 }

@@ -85,6 +85,17 @@ public class BasicPerformanceBioReactorScreen extends AbstractContainerScreen<Ba
                     80, 47, 0xFF0000);
         }
 
+        if (menu.getMultiblockLevel() == 1) {
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, "Lv.1",
+                    30, 47, 0xFF0000);
+        } else if (menu.getMultiblockLevel() == 0) {
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, "ON",
+                    30, 47, 0x00FF00);
+        } else {
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, "OFF",
+                    30, 47, 0xFF0000);
+        }
+
         renderPowerModifierTooltips(pPoseStack, pMouseX, pMouseY, x, y);
         renderMultiblockInfoTooltips(pPoseStack, pMouseX, pMouseY, x, y);
     }

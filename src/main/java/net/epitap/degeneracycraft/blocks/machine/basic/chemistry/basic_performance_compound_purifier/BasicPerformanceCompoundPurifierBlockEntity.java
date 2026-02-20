@@ -253,6 +253,12 @@ public class BasicPerformanceCompoundPurifierBlockEntity extends BlockEntity imp
         Optional<BasicPerformanceCompoundPurifierRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceCompoundPurifierRecipe.Type.INSTANCE, inventory, level);
 
+        if (blockEntity.forceHalt) {
+            blockEntity.counter = 0;
+            setChanged(level, pos, state);
+            return;
+        }
+
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
 

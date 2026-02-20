@@ -1,7 +1,6 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlocks;
-import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorBlock;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;
@@ -57,7 +56,7 @@ public class BasicPerformanceElectrolyserStructure {
     };
 
     public static boolean isFormed(Level level, BlockPos pos, BlockState state, BasicPerformanceElectrolyserBlockEntity blockEntity) {
-        Direction facing = state.getValue(BasicPerformanceChemicalReactorBlock.FACING);
+        Direction facing = state.getValue(BasicPerformanceElectrolyserBlock.FACING);
         BlockPos basePos = blockEntity.getBlockPos();
         Map<String, Predicate<BlockState>> blockConditions = getBlockConditions();
 
@@ -82,7 +81,7 @@ public class BasicPerformanceElectrolyserStructure {
     }
 
     public static boolean isPowered1(Level level, BlockPos pos, BlockState state, BasicPerformanceElectrolyserBlockEntity blockEntity) {
-        Direction facing = state.getValue(BasicPerformanceChemicalReactorBlock.FACING);
+        Direction facing = state.getValue(BasicPerformanceElectrolyserBlock.FACING);
         BlockPos basePos = blockEntity.getBlockPos();
 
         Map<String, Predicate<BlockState>> blockConditions = getBlockConditions();
@@ -121,7 +120,7 @@ public class BasicPerformanceElectrolyserStructure {
 
     public static void hologram(Level level, BlockPos pos, BlockState state, BasicPerformanceElectrolyserBlockEntity blockEntity) {
         if (level.isClientSide()) return;
-        Direction facing = state.getValue(BasicPerformanceChemicalReactorBlock.FACING);
+        Direction facing = state.getValue(BasicPerformanceElectrolyserBlock.FACING);
         BlockPos basePos = blockEntity.getBlockPos();
         Map<String, Predicate<BlockState>> blockConditions = getBlockConditions();
 

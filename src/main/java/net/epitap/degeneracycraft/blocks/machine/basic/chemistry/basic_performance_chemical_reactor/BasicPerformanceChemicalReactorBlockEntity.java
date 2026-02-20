@@ -253,6 +253,12 @@ public class BasicPerformanceChemicalReactorBlockEntity extends BlockEntity impl
         Optional<BasicPerformanceChemicalReactorRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceChemicalReactorRecipe.Type.INSTANCE, inventory, level);
 
+        if (blockEntity.forceHalt) {
+            blockEntity.counter = 0;
+            setChanged(level, pos, state);
+            return;
+        }
+
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
 

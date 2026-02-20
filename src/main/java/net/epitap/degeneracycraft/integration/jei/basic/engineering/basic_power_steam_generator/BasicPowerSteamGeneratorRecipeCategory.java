@@ -75,14 +75,14 @@ public class BasicPowerSteamGeneratorRecipeCategory implements IRecipeCategory<B
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergy."), 17, 87, 0xFFFFFF);
-        fontRenderer.draw(poseStack, (blockEntity.BP_STEAM_GENERATOR_OUTPUT + " FE"), 17, 97, 0xFFFFFF);
+        fontRenderer.draw(poseStack, (blockEntity.MACHINE_OUTPUT + " FE"), 17, 97, 0xFFFFFF);
     }
 
     protected void drawRequiredEnergyUsage(BasicPowerSteamGeneratorRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergyusage."), 17, 107, 0xFFFFFF);
-        fontRenderer.draw(poseStack, (blockEntity.BP_STEAM_GENERATOR_OUTPUT + " FE/t"), 17, 117, 0xFFFFFF);
+        fontRenderer.draw(poseStack, (blockEntity.MACHINE_OUTPUT + " FE/t"), 17, 117, 0xFFFFFF);
 
     }
 
@@ -90,7 +90,7 @@ public class BasicPowerSteamGeneratorRecipeCategory implements IRecipeCategory<B
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredtime."), 17, 127, 0xFFFFFF);
-        fontRenderer.draw(poseStack, blockEntity.BP_STEAM_GENERATOR_OUTPUT + " Sec" + ")", 17, 137, 0xFFFFFF);
+        fontRenderer.draw(poseStack, blockEntity.MACHINE_OUTPUT + " Sec" + ")", 17, 137, 0xFFFFFF);
     }
 
 

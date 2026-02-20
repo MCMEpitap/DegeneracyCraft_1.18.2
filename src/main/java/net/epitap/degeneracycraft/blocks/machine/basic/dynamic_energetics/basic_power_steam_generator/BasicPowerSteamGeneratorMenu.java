@@ -21,13 +21,13 @@ public class BasicPowerSteamGeneratorMenu extends AbstractContainerMenu {
     private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 5;
+    private static final int TE_INVENTORY_SLOT_COUNT = 3;
     public final BasicPowerSteamGeneratorBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
     public BasicPowerSteamGeneratorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
     }
 
     public BasicPowerSteamGeneratorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -42,8 +42,6 @@ public class BasicPowerSteamGeneratorMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(handler, 0, 8, 43));
             this.addSlot(new SlotItemHandler(handler, 1, 26, 43));
             this.addSlot(new SlotItemHandler(handler, 2, 44, 43));
-            this.addSlot(new SlotItemHandler(handler, 3, 71, 59));
-            this.addSlot(new SlotItemHandler(handler, 4, 98, 62));
 
         });
         addDataSlots(data);
@@ -59,12 +57,24 @@ public class BasicPowerSteamGeneratorMenu extends AbstractContainerMenu {
         return getWaterTime;
     }
 
-    public boolean getWorking() {
+    public int getHologramLevel() {
+        return data.get(2);
+    }
+
+    public boolean isForceHalt() {
+        return data.get(3) != 0;
+    }
+
+    public int getMultiblockLevel() {
+        return data.get(4);
+    }
+
+    public boolean isWorking() {
         return this.data.get(0) > 0 && this.data.get(1) > 0;
     }
 
     public int getMaxWaterTime() {
-        return blockEntity.BP_STEAM_GENERATOR_WATER_CAPACITY;
+        return blockEntity.MACHINE_WATER_CAPACITY;
     }
 
     public DCIEnergyStorageFloat getEnergy() {

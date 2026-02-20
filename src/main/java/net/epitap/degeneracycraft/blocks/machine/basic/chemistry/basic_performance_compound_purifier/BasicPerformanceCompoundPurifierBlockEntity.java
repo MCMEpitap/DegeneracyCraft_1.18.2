@@ -50,7 +50,6 @@ public class BasicPerformanceCompoundPurifierBlockEntity extends BlockEntity imp
     public final ContainerData data;
     public int counter;
     public int getProgressPercent;
-    private int consumeCounter;
 
     public int hologramLevel = -1;
     public int multiblockLevel = -1;
@@ -374,7 +373,8 @@ public class BasicPerformanceCompoundPurifierBlockEntity extends BlockEntity imp
         Optional<BasicPerformanceCompoundPurifierRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceCompoundPurifierRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(4).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(4).getMaxStackSize();
+        return (blockEntity.itemHandler.getStackInSlot(3).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(3).getMaxStackSize())
+                && (blockEntity.itemHandler.getStackInSlot(4).getCount() + match.get().getOutput1Item().getCount() <= blockEntity.itemHandler.getStackInSlot(4).getMaxStackSize());
     }
 
     private static boolean canInsertItemIntoOutputSlot(BasicPerformanceCompoundPurifierBlockEntity blockEntity) {
@@ -387,7 +387,8 @@ public class BasicPerformanceCompoundPurifierBlockEntity extends BlockEntity imp
         Optional<BasicPerformanceCompoundPurifierRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceCompoundPurifierRecipe.Type.INSTANCE, inventory, level);
 
-        return (blockEntity.itemHandler.getStackInSlot(4).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(4).isEmpty());
+        return (blockEntity.itemHandler.getStackInSlot(3).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(3).isEmpty())
+                && (blockEntity.itemHandler.getStackInSlot(4).getItem() == match.get().getOutput1Item().getItem() || blockEntity.itemHandler.getStackInSlot(4).isEmpty());
     }
 
     public void insertRecipeInputsFromPlayer(Player player, Recipe<?> recipe, boolean shift) {

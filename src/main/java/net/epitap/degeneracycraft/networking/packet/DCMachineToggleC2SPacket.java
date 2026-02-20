@@ -8,6 +8,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance
 import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_crop_cultivator.BasicPerformanceCropCultivatorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_compound_purifier.BasicPerformanceCompoundPurifierBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
@@ -46,7 +47,6 @@ public class DCMachineToggleC2SPacket {
 
             BlockEntity blockEntity = player.level.getBlockEntity(pos);
             if (blockEntity instanceof BasicPerformanceAstronomicalTelescopeBlockEntity machine) {
-
                 if (type == TOGGLE_HOLOGRAM) {
                     machine.hologramLevel++;
                     if (machine.hologramLevel > 1) {
@@ -61,7 +61,6 @@ public class DCMachineToggleC2SPacket {
             }
 
             if (blockEntity instanceof BasicPerformanceFineParticleAdsorberBlockEntity machine) {
-
                 if (type == TOGGLE_HOLOGRAM) {
                     machine.hologramLevel++;
                     if (machine.hologramLevel > 1) {
@@ -76,7 +75,6 @@ public class DCMachineToggleC2SPacket {
             }
 
             if (blockEntity instanceof BasicPerformanceStarlightCollectorBlockEntity machine) {
-
                 if (type == TOGGLE_HOLOGRAM) {
                     machine.hologramLevel++;
                     if (machine.hologramLevel > 1) {
@@ -91,7 +89,6 @@ public class DCMachineToggleC2SPacket {
             }
 
             if (blockEntity instanceof BasicPerformanceBioReactorBlockEntity machine) {
-
                 if (type == TOGGLE_HOLOGRAM) {
                     machine.hologramLevel++;
                     if (machine.hologramLevel > 1) {
@@ -106,7 +103,6 @@ public class DCMachineToggleC2SPacket {
             }
 
             if (blockEntity instanceof BasicPerformanceCellIncubatorBlockEntity machine) {
-
                 if (type == TOGGLE_HOLOGRAM) {
                     machine.hologramLevel++;
                     if (machine.hologramLevel > 1) {
@@ -152,6 +148,21 @@ public class DCMachineToggleC2SPacket {
             }
 
             if (blockEntity instanceof BasicPerformanceCompoundPurifierBlockEntity machine) {
+
+                if (type == TOGGLE_HOLOGRAM) {
+                    machine.hologramLevel++;
+                    if (machine.hologramLevel > 1) {
+                        machine.hologramLevel = -1;
+                    }
+                }
+
+                if (type == TOGGLE_HALT) {
+                    machine.forceHalt = !machine.forceHalt;
+                }
+                machine.setChanged();
+            }
+
+            if (blockEntity instanceof BasicPerformanceElectrolyserBlockEntity machine) {
 
                 if (type == TOGGLE_HOLOGRAM) {
                     machine.hologramLevel++;

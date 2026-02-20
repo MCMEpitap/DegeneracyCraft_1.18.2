@@ -55,8 +55,6 @@ public class BasicPerformanceCompoundPurifierStructure {
                     {"S", "F", "S"}
             }
     };
-    public static String[][][] structureH0;
-    public static String[][][] structureH1;
 
     public static boolean isFormed(Level level, BlockPos pos, BlockState state, BasicPerformanceCompoundPurifierBlockEntity blockEntity) {
         Direction facing = state.getValue(BasicPerformanceChemicalReactorBlock.FACING);
@@ -167,7 +165,6 @@ public class BasicPerformanceCompoundPurifierStructure {
         blockSuppliers.put("R", () -> DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_HOLO_BLOCK.get().defaultBlockState());
         return blockSuppliers;
     }
-
 
     private static void displayLayer(Level level, BlockPos basePos, String[][] structureLayer, int minx, int yOffset, int minz, Direction facing, Map<String, Supplier<BlockState>> blockMapping) {
         for (int z = 0; z < structureLayer.length; z++) {

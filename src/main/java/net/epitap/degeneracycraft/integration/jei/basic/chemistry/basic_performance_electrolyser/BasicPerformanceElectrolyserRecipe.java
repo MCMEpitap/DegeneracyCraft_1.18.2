@@ -24,8 +24,9 @@ public class BasicPerformanceElectrolyserRecipe implements Recipe<SimpleContaine
     final ItemStack input2;
     final ItemStack output0;
     final ItemStack output1;
+    final ItemStack output2;
 
-    public BasicPerformanceElectrolyserRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack input1, ItemStack input2, ItemStack output0, ItemStack output1) {
+    public BasicPerformanceElectrolyserRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack input1, ItemStack input2, ItemStack output0, ItemStack output1, ItemStack output2) {
         this.id = id;
         this.energy = energy;
         this.time = time;
@@ -34,14 +35,15 @@ public class BasicPerformanceElectrolyserRecipe implements Recipe<SimpleContaine
         this.input2 = input2;
         this.output0 = output0;
         this.output1 = output1;
+        this.output2 = output2;
     }
 
     @Override
     public boolean matches(SimpleContainer pContainer, Level level) {
         return energy == getRequiredEnergy() && time == getRequiredTime()
                 && input0.is(pContainer.getItem(0).getItem())
-                && input1.is(pContainer.getItem(2).getItem())
-                && input2.is(pContainer.getItem(3).getItem());
+                && input1.is(pContainer.getItem(1).getItem())
+                && input2.is(pContainer.getItem(2).getItem());
     }
 
     @Override
@@ -81,6 +83,10 @@ public class BasicPerformanceElectrolyserRecipe implements Recipe<SimpleContaine
     public ItemStack getOutput1Item() {
         return output1;
     }
+    public ItemStack getOutput2Item() {
+        return output2;
+    }
+
 
     @Override
     public ItemStack getResultItem() {
@@ -131,8 +137,10 @@ public class BasicPerformanceElectrolyserRecipe implements Recipe<SimpleContaine
             ItemStack input2 = BasicPerformanceElectrolyserRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input2"));
             ItemStack output0 = BasicPerformanceElectrolyserRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output0"));
             ItemStack output1 = BasicPerformanceElectrolyserRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output1"));
+            ItemStack output2 = BasicPerformanceElectrolyserRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output2"));
 
-            return new BasicPerformanceElectrolyserRecipe(pRecipeId, energy, time, input0, input1, input2, output0, output1);
+
+            return new BasicPerformanceElectrolyserRecipe(pRecipeId, energy, time, input0, input1, input2, output0, output1, output2);
         }
 
         @Override
@@ -144,8 +152,9 @@ public class BasicPerformanceElectrolyserRecipe implements Recipe<SimpleContaine
             ItemStack input2 = pBuffer.readItem();
             ItemStack output0 = pBuffer.readItem();
             ItemStack output1 = pBuffer.readItem();
+            ItemStack output2 = pBuffer.readItem();
 
-            return new BasicPerformanceElectrolyserRecipe(pRecipeId, energy, time, input0, input1, input2, output0, output1);
+            return new BasicPerformanceElectrolyserRecipe(pRecipeId, energy, time, input0, input1, input2, output0, output1, output2);
         }
 
         @Override
@@ -157,6 +166,7 @@ public class BasicPerformanceElectrolyserRecipe implements Recipe<SimpleContaine
             pBuffer.writeItem(pRecipe.input2.getContainerItem());
             pBuffer.writeItem(pRecipe.output0.getContainerItem());
             pBuffer.writeItem(pRecipe.output1.getContainerItem());
+            pBuffer.writeItem(pRecipe.output2.getContainerItem());
         }
     }
 }

@@ -41,8 +41,8 @@ import java.util.Map;
 import java.util.Optional;
 
 public class BasicPerformanceChemicalReactorBlockEntity extends BlockEntity implements MenuProvider {
-    public float BP_ELECTROLYSER_CAPACITY = 30000F;
-    public float BP_ELECTROLYSER_TRANSFER = 32F;
+    public float MACHINE_CAPACITY = 30000F;
+    public float MACHINE_TRANSFER = 32F;
     public float MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_1 = 2F;
     public float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_1 = 3F;
     public float MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED = 1.5F;
@@ -77,7 +77,7 @@ public class BasicPerformanceChemicalReactorBlockEntity extends BlockEntity impl
         }
     };
 
-    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BP_ELECTROLYSER_CAPACITY, BP_ELECTROLYSER_TRANSFER) {
+    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(MACHINE_CAPACITY, MACHINE_TRANSFER) {
         @Override
         public void onEnergyChanged() {
             setChanged();

@@ -6,15 +6,19 @@
     "item": "degeneracycraft:water_container"
   },
   "input1": {
-    "item": "degeneracycraft:empty_container"
+    "item": "minecraft:air"
   },
   "input2": {
-    "item": "degeneracycraft:empty_container"
+    "item": "degeneracycraft:empty_container",
+    "count": 2
   },
   "output0": {
     "item": "degeneracycraft:chlorine_gas"
   },
   "output1": {
     "item": "degeneracycraft:hydrogen_gas"
+  },
+  "output2": {
+    "item": "degeneracycraft:empty_container"
   }
 }

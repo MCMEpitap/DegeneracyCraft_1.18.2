@@ -671,7 +671,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceElectrolyserRecipeTransferHandler<>(
                         BasicPerformanceElectrolyserMenu.class,
                         0, 3,
-                        8, 36
+                        6, 36
                 ),
                 BasicPerformanceElectrolyserRecipeCategory.TYPE
         );

@@ -13,5 +13,8 @@
   },
   "output0": {
     "item": "degeneracycraft:potassium_chloride_dust"
+  },
+  "output1": {
+    "item": "minecraft:air"
   }
 }

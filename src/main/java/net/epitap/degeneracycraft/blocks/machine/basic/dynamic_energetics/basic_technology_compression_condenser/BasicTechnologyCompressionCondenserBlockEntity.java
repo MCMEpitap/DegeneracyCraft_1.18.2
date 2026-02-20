@@ -1,6 +1,7 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_compression_condenser;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
+import net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_electrolyser.BasicPerformanceElectrolyserStructure;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserRecipe;
@@ -51,11 +52,19 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
     public final ContainerData data;
     public int counter;
     public int getProgressPercent;
-    private int consumeCounter;
 
-    public boolean isFormed;
-    public boolean isPowered0;
-    public final ItemStackHandler itemHandler = new ItemStackHandler(6) {
+    public int hologramLevel = -1;
+    public int multiblockLevel = -1;
+
+    public boolean forceHalt = false;
+
+    public static final int DATA_COUNTER      = 0;
+    public static final int DATA_PROGRESS     = 1;
+    public static final int DATA_HOLOGRAM     = 2;
+    public static final int DATA_FORCE_STOP   = 3;
+    public static final int DATA_MULTIBLOCK   = 4;
+
+    public final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -65,9 +74,6 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
                 case 3 -> false;
-                case 4 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
-                        || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
-                case 5 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -108,24 +114,29 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> BasicTechnologyCompressionCondenserBlockEntity.this.counter;
-                    case 1 -> BasicTechnologyCompressionCondenserBlockEntity.this.getProgressPercent;
+                    case DATA_COUNTER    -> counter;
+                    case DATA_PROGRESS   -> getProgressPercent;
+                    case DATA_HOLOGRAM   -> hologramLevel;
+                    case DATA_FORCE_STOP -> forceHalt ? 1 : 0;
+                    case DATA_MULTIBLOCK   -> multiblockLevel;
                     default -> 0;
                 };
             }
 
             @Override
             public void set(int index, int value) {
-                if (index == 0) {
-                    BasicTechnologyCompressionCondenserBlockEntity.this.counter = value;
-                } else if (index == 1) {
-                    BasicTechnologyCompressionCondenserBlockEntity.this.getProgressPercent = value;
+                switch (index) {
+                    case DATA_COUNTER -> counter = value;
+                    case DATA_PROGRESS -> getProgressPercent = value;
+                    case DATA_HOLOGRAM -> hologramLevel = value;
+                    case DATA_FORCE_STOP -> forceHalt = value != 0;
+                    case DATA_MULTIBLOCK -> multiblockLevel = value;
                 }
             }
 
             @Override
             public int getCount() {
-                return 2;
+                return 5;
             }
         };
     }
@@ -192,16 +203,22 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
         nbt.putFloat("energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
         nbt.putInt("getProgressPercent", getProgressPercent);
+        nbt.putInt("hologramLevel", hologramLevel);
+        nbt.putBoolean("forceHalt", forceHalt);
+        nbt.putInt("multiblockLevel", multiblockLevel);
         super.saveAdditional(nbt);
     }
 
     @Override
     public void load(CompoundTag nbt) {
-        super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("energy"));
         counter = nbt.getInt("counter");
         getProgressPercent = nbt.getInt("getProgressPercent");
+        hologramLevel = nbt.getInt("hologramLevel");
+        forceHalt = nbt.getBoolean("forceHalt");
+        multiblockLevel = nbt.getInt("multiblockLevel");
+        super.load(nbt);
     }
 
     public void drops() {
@@ -214,14 +231,18 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicTechnologyCompressionCondenserBlockEntity blockEntity) {
-        blockEntity.isFormed = BasicTechnologyCompressionCondenserStructure.isFormed(level, pos, state, blockEntity);
-        blockEntity.isPowered0 = BasicTechnologyCompressionCondenserStructure.isPowered0(level, pos, state, blockEntity);
-
+        if(BasicTechnologyCompressionCondenserStructure.isPowered1(level, pos, state, blockEntity)){
+            blockEntity.multiblockLevel = 1;
+        } else if(BasicTechnologyCompressionCondenserStructure.isFormed(level, pos, state, blockEntity)){
+            blockEntity.multiblockLevel = 0;
+        } else {
+            blockEntity.multiblockLevel = -1;
+        }
         BasicTechnologyCompressionCondenserStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
 
-        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
-        blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
+        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(1e-19F, false);
+        blockEntity.ENERGY_STORAGE.extractEnergyFloat(1e-19F, false);
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         if (level.isClientSide()) {
             return;
@@ -233,14 +254,20 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
         Optional<BasicTechnologyCompressionCondenserRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyCompressionCondenserRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
+        if (blockEntity.forceHalt) {
+            blockEntity.counter = 0;
+            setChanged(level, pos, state);
+            return;
+        }
+
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
 
-            if (blockEntity.isPowered0) {
+            if (blockEntity.hologramLevel == 1) {
                 blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_1;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_1
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-            } else if (blockEntity.isFormed) {
+            } else if (blockEntity.hologramLevel == 0) {
                 blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
@@ -334,21 +361,14 @@ public class BasicTechnologyCompressionCondenserBlockEntity extends BlockEntity 
             blockEntity.itemHandler.setStackInSlot(3, new ItemStack(match.get().getOutput0Item().getItem(),
                     blockEntity.itemHandler.getStackInSlot(3).getCount() + match.get().getOutput0Item().getCount()));
             blockEntity.resetProgress();
-            blockEntity.resetConsumeCount();
         }
     }
 
-    public static boolean isHaltDevice(BasicTechnologyCompressionCondenserBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(5).is(DCItems.MACHINE_HALT_DEVICE.get());
-    }
 
     public void resetProgress() {
         this.counter = 0;
     }
 
-    public void resetConsumeCount() {
-        this.consumeCounter = 0;
-    }
     private static boolean hasNotReachedStackLimit(BasicTechnologyCompressionCondenserBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());

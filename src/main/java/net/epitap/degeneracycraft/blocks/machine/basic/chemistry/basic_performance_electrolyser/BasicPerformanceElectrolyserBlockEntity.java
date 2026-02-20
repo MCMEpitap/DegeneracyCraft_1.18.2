@@ -71,7 +71,7 @@ public class BasicPerformanceElectrolyserBlockEntity extends BlockEntity impleme
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 4, 5 -> false;
+                case 3, 4, 5 -> false;
                 default -> super.isItemValid(slot, stack);
             };
         }

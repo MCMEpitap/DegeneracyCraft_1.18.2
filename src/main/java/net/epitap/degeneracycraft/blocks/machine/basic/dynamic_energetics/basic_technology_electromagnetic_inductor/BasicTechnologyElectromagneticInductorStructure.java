@@ -165,6 +165,7 @@ public class BasicTechnologyElectromagneticInductorStructure {
         blockSuppliers.put("D", () -> DCBlocks.BASIC_DURABLE_INSULATED_CHAMBER_HOLO_BLOCK.get().defaultBlockState());
         return blockSuppliers;
     }
+
     private static void displayLayer(Level level, BlockPos basePos, String[][] structureLayer, int minx, int yOffset, int minz, Direction facing, Map<String, Supplier<BlockState>> blockMapping) {
         for (int z = 0; z < structureLayer.length; z++) {
             for (int x = 0; x < structureLayer[z].length; x++) {

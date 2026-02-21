@@ -21,13 +21,13 @@ public class BasicTechnologyMachineElementProcessorMenu extends AbstractContaine
     private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 12;
+    private static final int TE_INVENTORY_SLOT_COUNT = 10;
     public final BasicTechnologyMachineElementProcessorBlockEntity blockEntity;
     public final Level level;
     public final ContainerData data;
 
     public BasicTechnologyMachineElementProcessorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
     }
 
     public BasicTechnologyMachineElementProcessorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -45,18 +45,28 @@ public class BasicTechnologyMachineElementProcessorMenu extends AbstractContaine
                 }
             }
             this.addSlot(new SlotItemHandler(handler, 9, 116, 25));
-            this.addSlot(new SlotItemHandler(handler, 10, 134, 25));
-            this.addSlot(new SlotItemHandler(handler, 11, 71, 59));
         });
         addDataSlots(data);
     }
 
-    public boolean isCrafting() {
+    public boolean isWorking() {
         return data.get(0) > 0;
     }
 
     public int getProgressPercent() {
         return data.get(1);
+    }
+
+    public int getHologramLevel() {
+        return data.get(2);
+    }
+
+    public boolean isForceHalt() {
+        return data.get(3) != 0;
+    }
+
+    public int getMultiblockLevel() {
+        return data.get(4);
     }
 
     public DCIEnergyStorageFloat getEnergy() {

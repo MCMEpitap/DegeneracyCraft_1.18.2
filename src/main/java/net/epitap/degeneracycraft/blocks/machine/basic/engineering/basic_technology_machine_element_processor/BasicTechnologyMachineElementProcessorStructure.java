@@ -37,7 +37,23 @@ public class BasicTechnologyMachineElementProcessorStructure {
                     {"S", "F", "S"}
             }
     };
-    public static String[][][] structure1;
+    public static String[][][] structure1 = new String[][][]{
+            {
+                    {"F", "F", "F"},
+                    {"F", "F", "F"},
+                    {"E", "B", "E"}
+            },
+            {
+                    {"F", "G", "F"},
+                    {"G", "C", "G"},
+                    {"P", " ", "P"}
+            },
+            {
+                    {"F", "F", "F"},
+                    {"F", "F", "F"},
+                    {"S", "F", "S"}
+            }
+    };;
 
     public static boolean isFormed(Level level, BlockPos pos, BlockState state, BasicTechnologyMachineElementProcessorBlockEntity blockEntity) {
         Direction facing = state.getValue(BasicTechnologyMachineElementProcessorBlock.FACING);

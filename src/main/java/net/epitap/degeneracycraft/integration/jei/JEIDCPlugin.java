@@ -683,7 +683,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicTechnologyCompressionCondenserRecipeTransferHandler<>(
                         BasicTechnologyCompressionCondenserMenu.class,
                         0, 3,
-                        6, 36
+                        4, 36
                 ),
                 BasicTechnologyCompressionCondenserRecipeCategory.TYPE
         );
@@ -691,7 +691,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicTechnologyElectromagneticInductorRecipeTransferHandler<>(
                         BasicTechnologyElectromagneticInductorMenu.class,
                         0, 6,
-                        9, 36
+                        7, 36
                 ),
                 BasicTechnologyElectromagneticInductorRecipeCategory.TYPE
         );
@@ -723,7 +723,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicTechnologyMachineElementProcessorRecipeTransferHandler<>(
                         BasicTechnologyMachineElementProcessorMenu.class,
                         0, 9,
-                        12, 36
+                        10, 36
                 ),
                 BasicTechnologyMachineElementProcessorRecipeCategory.TYPE
         );
@@ -731,7 +731,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicTechnologyMachineManufacturerRecipeTransferHandler<>(
                         BasicTechnologyMachineManufacturerMenu.class,
                         0, 9,
-                        12, 36
+                        10, 36
                 ),
                 BasicTechnologyMachineManufacturerRecipeCategory.TYPE
         );
@@ -739,7 +739,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicTechnologyMachinePartProcessorRecipeTransferHandler<>(
                         BasicTechnologyMachinePartProcessorMenu.class,
                         0, 9,
-                        12, 36
+                        10, 36
                 ),
                 BasicTechnologyMachinePartProcessorRecipeCategory.TYPE
         );
@@ -747,7 +747,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicTechnologyMultiblockEquipmentFabricatorRecipeTransferHandler<>(
                         BasicTechnologyMultiblockEquipmentFabricatorMenu.class,
                         0, 9,
-                        12, 36
+                        10, 36
                 ),
                 BasicTechnologyMultiblockEquipmentFabricatorRecipeCategory.TYPE
         );

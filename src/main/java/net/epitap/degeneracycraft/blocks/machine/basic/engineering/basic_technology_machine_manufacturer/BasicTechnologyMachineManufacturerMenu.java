@@ -22,13 +22,13 @@ public class BasicTechnologyMachineManufacturerMenu extends AbstractContainerMen
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int VANILLA_FIRST_SLOT_INDEX = 0;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 12;
+    private static final int TE_INVENTORY_SLOT_COUNT = 10;
     public final BasicTechnologyMachineManufacturerBlockEntity blockEntity;
     private final Level level;
     private final ContainerData data;
 
     public BasicTechnologyMachineManufacturerMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
+        this(pContainerId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
     }
 
     public BasicTechnologyMachineManufacturerMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -48,23 +48,33 @@ public class BasicTechnologyMachineManufacturerMenu extends AbstractContainerMen
                 }
             }
             this.addSlot(new SlotItemHandler(handler, 9, 116, 25));
-            this.addSlot(new SlotItemHandler(handler, 10, 71, 59));
-            this.addSlot(new SlotItemHandler(handler, 11, 98, 62));
         });
 
         addDataSlots(data);
+    }
+
+    public boolean isWorking() {
+        return data.get(0) > 0;
     }
 
     public int getProgressPercent() {
         return data.get(1);
     }
 
-    public DCIEnergyStorageFloat getEnergy() {
-        return blockEntity.getEnergyStorage();
+    public int getHologramLevel() {
+        return data.get(2);
     }
 
-    public boolean isCrafting() {
-        return data.get(0) > 0;
+    public boolean isForceHalt() {
+        return data.get(3) != 0;
+    }
+
+    public int getMultiblockLevel() {
+        return data.get(4);
+    }
+
+    public DCIEnergyStorageFloat getEnergy() {
+        return blockEntity.getEnergyStorage();
     }
 
     public BasicTechnologyMachineManufacturerBlockEntity getBlockEntity() {

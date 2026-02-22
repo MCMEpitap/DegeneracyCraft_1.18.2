@@ -1,6 +1,7 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_multiblock_equipment_fabricator;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorStructure;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorRecipe;
@@ -52,9 +53,18 @@ public class BasicTechnologyMultiblockEquipmentFabricatorBlockEntity extends Blo
     public int counter;
     public int getProgressPercent;
 
-    public boolean isFormed;
-    public boolean isPowered0;
-    public final ItemStackHandler itemHandler = new ItemStackHandler(12) {
+    public int hologramLevel = -1;
+    public int multiblockLevel = -1;
+
+    public boolean forceHalt = false;
+
+    public static final int DATA_COUNTER      = 0;
+    public static final int DATA_PROGRESS     = 1;
+    public static final int DATA_HOLOGRAM     = 2;
+    public static final int DATA_FORCE_STOP   = 3;
+    public static final int DATA_MULTIBLOCK   = 4;
+
+    public final ItemStackHandler itemHandler = new ItemStackHandler(10) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -64,9 +74,6 @@ public class BasicTechnologyMultiblockEquipmentFabricatorBlockEntity extends Blo
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
                 case 9 -> false;
-                case 10 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
-                        || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
-                case 11 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -105,24 +112,29 @@ public class BasicTechnologyMultiblockEquipmentFabricatorBlockEntity extends Blo
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> BasicTechnologyMultiblockEquipmentFabricatorBlockEntity.this.counter;
-                    case 1 -> BasicTechnologyMultiblockEquipmentFabricatorBlockEntity.this.getProgressPercent;
+                    case DATA_COUNTER    -> counter;
+                    case DATA_PROGRESS   -> getProgressPercent;
+                    case DATA_HOLOGRAM   -> hologramLevel;
+                    case DATA_FORCE_STOP -> forceHalt ? 1 : 0;
+                    case DATA_MULTIBLOCK   -> multiblockLevel;
                     default -> 0;
                 };
             }
 
             @Override
             public void set(int index, int value) {
-                if (index == 0) {
-                    BasicTechnologyMultiblockEquipmentFabricatorBlockEntity.this.counter = value;
-                } else if (index == 1) {
-                    BasicTechnologyMultiblockEquipmentFabricatorBlockEntity.this.getProgressPercent = value;
+                switch (index) {
+                    case DATA_COUNTER -> counter = value;
+                    case DATA_PROGRESS -> getProgressPercent = value;
+                    case DATA_HOLOGRAM -> hologramLevel = value;
+                    case DATA_FORCE_STOP -> forceHalt = value != 0;
+                    case DATA_MULTIBLOCK -> multiblockLevel = value;
                 }
             }
 
             @Override
             public int getCount() {
-                return 2;
+                return 5;
             }
         };
     }
@@ -186,19 +198,25 @@ public class BasicTechnologyMultiblockEquipmentFabricatorBlockEntity extends Blo
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         nbt.put("inventory", itemHandler.serializeNBT());
-        nbt.putFloat("MACHINE.energy", ENERGY_STORAGE.getEnergyStoredFloat());
+        nbt.putFloat("energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
         nbt.putInt("getProgressPercent", getProgressPercent);
+        nbt.putInt("hologramLevel", hologramLevel);
+        nbt.putBoolean("forceHalt", forceHalt);
+        nbt.putInt("multiblockLevel", multiblockLevel);
         super.saveAdditional(nbt);
     }
 
     @Override
     public void load(CompoundTag nbt) {
-        super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("MACHINE.energy"));
+        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("energy"));
         counter = nbt.getInt("counter");
         getProgressPercent = nbt.getInt("getProgressPercent");
+        hologramLevel = nbt.getInt("hologramLevel");
+        forceHalt = nbt.getBoolean("forceHalt");
+        multiblockLevel = nbt.getInt("multiblockLevel");
+        super.load(nbt);
     }
 
     public void drops() {
@@ -211,14 +229,18 @@ public class BasicTechnologyMultiblockEquipmentFabricatorBlockEntity extends Blo
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicTechnologyMultiblockEquipmentFabricatorBlockEntity blockEntity) {
-        blockEntity.isFormed = BasicTechnologyMultiblockEquipmentFabricatorStructure.isFormed(level, pos, state, blockEntity);
-        blockEntity.isPowered0 = BasicTechnologyMultiblockEquipmentFabricatorStructure.isPowered0(level, pos, state, blockEntity);
-
+        if(BasicTechnologyMultiblockEquipmentFabricatorStructure.isPowered1(level, pos, state, blockEntity)){
+            blockEntity.multiblockLevel = 1;
+        } else if(BasicTechnologyMultiblockEquipmentFabricatorStructure.isFormed(level, pos, state, blockEntity)){
+            blockEntity.multiblockLevel = 0;
+        } else {
+            blockEntity.multiblockLevel = -1;
+        }
         BasicTechnologyMultiblockEquipmentFabricatorStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
 
-        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
-        blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
+        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(1e-19F, false);
+        blockEntity.ENERGY_STORAGE.extractEnergyFloat(1e-19F, false);
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         if (level.isClientSide()) {
             return;
@@ -230,14 +252,20 @@ public class BasicTechnologyMultiblockEquipmentFabricatorBlockEntity extends Blo
         Optional<BasicTechnologyMultiblockEquipmentFabricatorRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyMultiblockEquipmentFabricatorRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
+        if (blockEntity.forceHalt) {
+            blockEntity.counter = 0;
+            setChanged(level, pos, state);
+            return;
+        }
+
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
 
-            if (blockEntity.isPowered0) {
+            if (blockEntity.hologramLevel == 1) {
                 blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_1;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_1
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-            } else if (blockEntity.isFormed) {
+            } else if (blockEntity.hologramLevel == 0) {
                 blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
@@ -318,11 +346,6 @@ public class BasicTechnologyMultiblockEquipmentFabricatorBlockEntity extends Blo
                 .getRecipeFor(BasicTechnologyMultiblockEquipmentFabricatorRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
-    }
-
-
-    public static boolean isHaltDevice(BasicTechnologyMultiblockEquipmentFabricatorBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(11).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
     private static void craftItem(BasicTechnologyMultiblockEquipmentFabricatorBlockEntity blockEntity) {

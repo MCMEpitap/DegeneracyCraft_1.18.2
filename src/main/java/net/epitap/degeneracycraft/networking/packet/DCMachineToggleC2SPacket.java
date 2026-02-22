@@ -13,6 +13,9 @@ import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.BasicTechnologyElectromagneticInductorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
@@ -227,6 +230,49 @@ public class DCMachineToggleC2SPacket {
             }
 
             if (blockEntity instanceof BasicTechnologyMachineElementProcessorBlockEntity machine) {
+
+                if (type == TOGGLE_HOLOGRAM) {
+                    machine.hologramLevel++;
+                    if (machine.hologramLevel > 1) {
+                        machine.hologramLevel = -1;
+                    }
+                }
+
+                if (type == TOGGLE_HALT) {
+                    machine.forceHalt = !machine.forceHalt;
+                }
+                machine.setChanged();
+            }
+
+            if (blockEntity instanceof BasicTechnologyMachineManufacturerBlockEntity machine) {
+
+                if (type == TOGGLE_HOLOGRAM) {
+                    machine.hologramLevel++;
+                    if (machine.hologramLevel > 1) {
+                        machine.hologramLevel = -1;
+                    }
+                }
+
+                if (type == TOGGLE_HALT) {
+                    machine.forceHalt = !machine.forceHalt;
+                }
+                machine.setChanged();
+            }
+            if (blockEntity instanceof BasicTechnologyMachinePartProcessorBlockEntity machine) {
+
+                if (type == TOGGLE_HOLOGRAM) {
+                    machine.hologramLevel++;
+                    if (machine.hologramLevel > 1) {
+                        machine.hologramLevel = -1;
+                    }
+                }
+
+                if (type == TOGGLE_HALT) {
+                    machine.forceHalt = !machine.forceHalt;
+                }
+                machine.setChanged();
+            }
+            if (blockEntity instanceof BasicTechnologyMultiblockEquipmentFabricatorBlockEntity machine) {
 
                 if (type == TOGGLE_HOLOGRAM) {
                     machine.hologramLevel++;

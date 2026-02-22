@@ -4,7 +4,6 @@ import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorRecipe;
-import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
 import net.epitap.degeneracycraft.util.WrappedHandler;
@@ -36,22 +35,33 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
 
 public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity implements MenuProvider {
-    public float BT_MP_PROCESSOR_CAPACITY = 20000F;
-    public float BT_MP_PROCESSOR_TRANSFER = 16F;
-    public float BT_MP_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
-    public float BT_MP_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_POWERED_0 = 3F;
-    public float BT_MP_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
-    public float BT_MP_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0 = 2.0F;
+    public float MACHINE_CAPACITY = 20000F;
+    public float MACHINE_TRANSFER = 16F;
+    public float MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED = 2F;
+    public float MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_1 = 3F;
+    public float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED = 1.5F;
+    public float MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_1 = 2.0F;
     public final ContainerData data;
     public int counter;
     public int getProgressPercent;
 
-    public boolean isFormed;
-    public boolean isPowered0;
-    public final ItemStackHandler itemHandler = new ItemStackHandler(12) {
+    public int hologramLevel = -1;
+    public int multiblockLevel = -1;
+
+    public boolean forceHalt = false;
+
+    public static final int DATA_COUNTER      = 0;
+    public static final int DATA_PROGRESS     = 1;
+    public static final int DATA_HOLOGRAM     = 2;
+    public static final int DATA_FORCE_STOP   = 3;
+    public static final int DATA_MULTIBLOCK   = 4;
+    public final ItemStackHandler itemHandler = new ItemStackHandler(10) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -61,15 +71,12 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
                 case 9 -> false;
-                case 10 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
-                        || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
-                case 11 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
                 default -> super.isItemValid(slot, stack);
             };
         }
     };
 
-    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(BT_MP_PROCESSOR_CAPACITY, BT_MP_PROCESSOR_TRANSFER) {
+    private final DCEnergyStorageFloatBase ENERGY_STORAGE = new DCEnergyStorageFloatBase(MACHINE_CAPACITY, MACHINE_TRANSFER) {
         @Override
         public void onEnergyChanged() {
             setChanged();
@@ -102,24 +109,29 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> BasicTechnologyMachinePartProcessorBlockEntity.this.counter;
-                    case 1 -> BasicTechnologyMachinePartProcessorBlockEntity.this.getProgressPercent;
+                    case DATA_COUNTER    -> counter;
+                    case DATA_PROGRESS   -> getProgressPercent;
+                    case DATA_HOLOGRAM   -> hologramLevel;
+                    case DATA_FORCE_STOP -> forceHalt ? 1 : 0;
+                    case DATA_MULTIBLOCK   -> multiblockLevel;
                     default -> 0;
                 };
             }
 
             @Override
             public void set(int index, int value) {
-                if (index == 0) {
-                    BasicTechnologyMachinePartProcessorBlockEntity.this.counter = value;
-                } else if (index == 1) {
-                    BasicTechnologyMachinePartProcessorBlockEntity.this.getProgressPercent = value;
+                switch (index) {
+                    case DATA_COUNTER -> counter = value;
+                    case DATA_PROGRESS -> getProgressPercent = value;
+                    case DATA_HOLOGRAM -> hologramLevel = value;
+                    case DATA_FORCE_STOP -> forceHalt = value != 0;
+                    case DATA_MULTIBLOCK -> multiblockLevel = value;
                 }
             }
 
             @Override
             public int getCount() {
-                return 2;
+                return 5;
             }
         };
     }
@@ -183,19 +195,25 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         nbt.put("inventory", itemHandler.serializeNBT());
-        nbt.putFloat("bt_mp_processor.energy", ENERGY_STORAGE.getEnergyStoredFloat());
+        nbt.putFloat("energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
         nbt.putInt("getProgressPercent", getProgressPercent);
+        nbt.putInt("hologramLevel", hologramLevel);
+        nbt.putBoolean("forceHalt", forceHalt);
+        nbt.putInt("multiblockLevel", multiblockLevel);
         super.saveAdditional(nbt);
     }
 
     @Override
     public void load(CompoundTag nbt) {
-        super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("bt_mp_processor.energy"));
+        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("energy"));
         counter = nbt.getInt("counter");
         getProgressPercent = nbt.getInt("getProgressPercent");
+        hologramLevel = nbt.getInt("hologramLevel");
+        forceHalt = nbt.getBoolean("forceHalt");
+        multiblockLevel = nbt.getInt("multiblockLevel");
+        super.load(nbt);
     }
 
     public void drops() {
@@ -208,14 +226,18 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicTechnologyMachinePartProcessorBlockEntity blockEntity) {
-        blockEntity.isFormed = BasicTechnologyMachinePartProcessorStructure.isFormed(level, pos, state, blockEntity);
-        blockEntity.isPowered0 = BasicTechnologyMachinePartProcessorStructure.isPowered0(level, pos, state, blockEntity);
-
+        if(BasicTechnologyMachinePartProcessorStructure.isPowered1(level, pos, state, blockEntity)){
+            blockEntity.multiblockLevel = 1;
+        } else if(BasicTechnologyMachinePartProcessorStructure.isFormed(level, pos, state, blockEntity)){
+            blockEntity.multiblockLevel = 0;
+        } else {
+            blockEntity.multiblockLevel = -1;
+        }
         BasicTechnologyMachinePartProcessorStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
 
-        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
-        blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
+        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(1e-19F, false);
+        blockEntity.ENERGY_STORAGE.extractEnergyFloat(1e-19F, false);
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         if (level.isClientSide()) {
             return;
@@ -227,16 +249,22 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
         Optional<BasicTechnologyMachinePartProcessorRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyMachinePartProcessorRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
+        if (blockEntity.forceHalt) {
+            blockEntity.counter = 0;
+            setChanged(level, pos, state);
+            return;
+        }
+
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
 
-            if (blockEntity.isPowered0) {
-                blockEntity.counter += blockEntity.BT_MP_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_POWERED_0;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_MP_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_0
+            if (blockEntity.hologramLevel == 1) {
+                blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_1;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_1
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-            } else if (blockEntity.isFormed) {
-                blockEntity.counter += blockEntity.BT_MP_PROCESSOR_MANUFACTURING_SPEED_MODIFIER_FORMED;
-                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.BT_MP_PROCESSOR_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
+            } else if (blockEntity.hologramLevel == 0) {
+                blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
+                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
             } else {
                 blockEntity.counter++;
@@ -315,10 +343,6 @@ public class BasicTechnologyMachinePartProcessorBlockEntity extends BlockEntity 
                 .getRecipeFor(BasicTechnologyMachinePartProcessorRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
-    }
-
-    public static boolean isHaltDevice(BasicTechnologyMachinePartProcessorBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(11).is(DCItems.MACHINE_HALT_DEVICE.get());
     }
 
     private static void craftItem(BasicTechnologyMachinePartProcessorBlockEntity blockEntity) {

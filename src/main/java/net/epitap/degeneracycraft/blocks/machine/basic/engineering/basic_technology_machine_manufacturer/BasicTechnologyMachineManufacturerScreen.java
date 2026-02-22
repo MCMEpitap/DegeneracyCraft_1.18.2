@@ -33,7 +33,6 @@ public class BasicTechnologyMachineManufacturerScreen extends AbstractContainerS
 
     private static final int BUTTON_SIZE = 16;
 
-
     public BasicTechnologyMachineManufacturerScreen(BasicTechnologyMachineManufacturerMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
         this.imageWidth = 176;

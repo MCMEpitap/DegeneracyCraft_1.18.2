@@ -1,11 +1,9 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorStructure;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerRecipe;
-import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
 import net.epitap.degeneracycraft.util.WrappedHandler;
@@ -52,7 +50,6 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
     protected final ContainerData data;
     public int counter;
     public int getProgressPercent;
-    public int consumeCounter;
 
     public int hologramLevel = -1;
     public int multiblockLevel = -1;
@@ -221,7 +218,6 @@ public class BasicTechnologyMachineManufacturerBlockEntity extends BlockEntity i
         multiblockLevel = nbt.getInt("multiblockLevel");
         super.load(nbt);
     }
-
 
     public void drops() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());

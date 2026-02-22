@@ -16,6 +16,8 @@ import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technol
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_manufacturer.BasicTechnologyMachineManufacturerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_part_processor.BasicTechnologyMachinePartProcessorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
@@ -273,6 +275,36 @@ public class DCMachineToggleC2SPacket {
                 machine.setChanged();
             }
             if (blockEntity instanceof BasicTechnologyMultiblockEquipmentFabricatorBlockEntity machine) {
+
+                if (type == TOGGLE_HOLOGRAM) {
+                    machine.hologramLevel++;
+                    if (machine.hologramLevel > 1) {
+                        machine.hologramLevel = -1;
+                    }
+                }
+
+                if (type == TOGGLE_HALT) {
+                    machine.forceHalt = !machine.forceHalt;
+                }
+                machine.setChanged();
+            }
+
+            if (blockEntity instanceof BasicPerformanceCircuitBuilderBlockEntity machine) {
+
+                if (type == TOGGLE_HOLOGRAM) {
+                    machine.hologramLevel++;
+                    if (machine.hologramLevel > 1) {
+                        machine.hologramLevel = -1;
+                    }
+                }
+
+                if (type == TOGGLE_HALT) {
+                    machine.forceHalt = !machine.forceHalt;
+                }
+                machine.setChanged();
+            }
+
+            if (blockEntity instanceof BasicPerformanceDesignatedDataInjectorBlockEntity machine) {
 
                 if (type == TOGGLE_HOLOGRAM) {
                     machine.hologramLevel++;

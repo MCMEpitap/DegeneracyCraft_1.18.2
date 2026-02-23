@@ -770,7 +770,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceCircuitBuilderRecipeTransferHandler<>(
                         BasicPerformanceCircuitBuilderMenu.class,
                         0, 5,
-                        8, 36
+                        6, 36
                 ),
                 BasicPerformanceCircuitBuilderRecipeCategory.TYPE
         );
@@ -778,7 +778,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceDesignatedDataInjectorRecipeTransferHandler<>(
                         BasicPerformanceDesignatedDataInjectorMenu.class,
                         0, 5,
-                        8, 36
+                        6, 36
                 ),
                 BasicPerformanceDesignatedDataInjectorRecipeCategory.TYPE
         );
@@ -786,7 +786,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceMachineDataInstallerRecipeTransferHandler<>(
                         BasicPerformanceMachineDataInstallerMenu.class,
                         0, 3,
-                        6, 36
+                        4, 36
                 ),
                 BasicPerformanceMachineDataInstallerRecipeCategory.TYPE
         );
@@ -796,7 +796,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceOreSorterTransferHandler<>(
                         BasicPerformanceOreSorterMenu.class,
                         0, 1,
-                        6, 36
+                        4, 36
                 ),
                 BasicPerformanceOreSorterRecipeCategory.TYPE
         );

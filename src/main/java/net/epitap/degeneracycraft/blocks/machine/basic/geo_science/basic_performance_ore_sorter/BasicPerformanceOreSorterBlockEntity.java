@@ -3,7 +3,7 @@ package net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_perfor
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherRecipe;
+import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_ore_sorter.BasicPerformanceOreSorterRecipe;
 import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -51,10 +51,19 @@ public class BasicPerformanceOreSorterBlockEntity extends BlockEntity implements
     public final ContainerData data;
     public int counter;
     public int getProgressPercent;
-    public boolean isFormed;
-    public boolean isPowered0;
+    
+    public int hologramLevel = -1;
+    public int multiblockLevel = -1;
 
-    public final ItemStackHandler itemHandler = new ItemStackHandler(6) {
+    public boolean forceHalt = false;
+
+    public static final int DATA_COUNTER      = 0;
+    public static final int DATA_PROGRESS     = 1;
+    public static final int DATA_HOLOGRAM     = 2;
+    public static final int DATA_FORCE_STOP   = 3;
+    public static final int DATA_MULTIBLOCK   = 4;
+
+    public final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -64,9 +73,6 @@ public class BasicPerformanceOreSorterBlockEntity extends BlockEntity implements
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
                 case 1,2,3 -> false;
-                case 4 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
-                        || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
-                case 5 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -106,24 +112,29 @@ public class BasicPerformanceOreSorterBlockEntity extends BlockEntity implements
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> BasicPerformanceOreSorterBlockEntity.this.counter;
-                    case 1 -> BasicPerformanceOreSorterBlockEntity.this.getProgressPercent;
+                    case DATA_COUNTER    -> counter;
+                    case DATA_PROGRESS   -> getProgressPercent;
+                    case DATA_HOLOGRAM   -> hologramLevel;
+                    case DATA_FORCE_STOP -> forceHalt ? 1 : 0;
+                    case DATA_MULTIBLOCK   -> multiblockLevel;
                     default -> 0;
                 };
             }
 
             @Override
             public void set(int index, int value) {
-                if (index == 0) {
-                    BasicPerformanceOreSorterBlockEntity.this.counter = value;
-                } else if (index == 1) {
-                    BasicPerformanceOreSorterBlockEntity.this.getProgressPercent = value;
+                switch (index) {
+                    case DATA_COUNTER -> counter = value;
+                    case DATA_PROGRESS -> getProgressPercent = value;
+                    case DATA_HOLOGRAM -> hologramLevel = value;
+                    case DATA_FORCE_STOP -> forceHalt = value != 0;
+                    case DATA_MULTIBLOCK -> multiblockLevel = value;
                 }
             }
 
             @Override
             public int getCount() {
-                return 2;
+                return 5;
             }
         };
     }
@@ -190,16 +201,22 @@ public class BasicPerformanceOreSorterBlockEntity extends BlockEntity implements
         nbt.putFloat("energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
         nbt.putInt("getProgressPercent", getProgressPercent);
+        nbt.putInt("hologramLevel", hologramLevel);
+        nbt.putBoolean("forceHalt", forceHalt);
+        nbt.putInt("multiblockLevel", multiblockLevel);
         super.saveAdditional(nbt);
     }
 
     @Override
     public void load(CompoundTag nbt) {
-        super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("energy"));
         counter = nbt.getInt("counter");
         getProgressPercent = nbt.getInt("getProgressPercent");
+        hologramLevel = nbt.getInt("hologramLevel");
+        forceHalt = nbt.getBoolean("forceHalt");
+        multiblockLevel = nbt.getInt("multiblockLevel");
+        super.load(nbt);
     }
 
     public void drops() {
@@ -212,15 +229,19 @@ public class BasicPerformanceOreSorterBlockEntity extends BlockEntity implements
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicPerformanceOreSorterBlockEntity blockEntity) {
-        blockEntity.isFormed = BasicPerformanceOreSorterStructure.isFormed(level, pos, state, blockEntity);
-        blockEntity.isPowered0 = BasicPerformanceOreSorterStructure.isPowered0(level, pos, state, blockEntity);
-
+        if(BasicPerformanceOreSorterStructure.isPowered1(level, pos, state, blockEntity)){
+            blockEntity.multiblockLevel = 1;
+        } else if(BasicPerformanceOreSorterStructure.isFormed(level, pos, state, blockEntity)){
+            blockEntity.multiblockLevel = 0;
+        } else {
+            blockEntity.multiblockLevel = -1;
+        }
         BasicPerformanceOreSorterStructure.hologram(level, pos, state, blockEntity);
 
         blockEntity.getProgressPercent = 0;
 
-        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
-        blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
+        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(1e-19F, false);
+        blockEntity.ENERGY_STORAGE.extractEnergyFloat(1e-19F, false);
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         if (level.isClientSide()) {
             return;
@@ -229,17 +250,24 @@ public class BasicPerformanceOreSorterBlockEntity extends BlockEntity implements
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<BasicPerformanceRockCrasherRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceOreSorterRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceOreSorterRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity) && !isHaltDevice(blockEntity)
+
+        if (blockEntity.forceHalt) {
+            blockEntity.counter = 0;
+            setChanged(level, pos, state);
+            return;
+        }
+
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
 
-            if (blockEntity.isPowered0) {
+            if (blockEntity.hologramLevel == 1) {
                 blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_1;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_1
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-            } else if (blockEntity.isFormed) {
+            } else if (blockEntity.hologramLevel == 0) {
                 blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
@@ -266,8 +294,8 @@ public class BasicPerformanceOreSorterBlockEntity extends BlockEntity implements
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceRockCrasherRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceOreSorterRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceOreSorterRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             return blockEntity.data.get(0) >= match.get().getRequiredTime() * 20;
@@ -282,8 +310,8 @@ public class BasicPerformanceOreSorterBlockEntity extends BlockEntity implements
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceRockCrasherRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceOreSorterRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceOreSorterRecipe.Type.INSTANCE, inventory, level);
 
         return match.isPresent();
     }
@@ -295,8 +323,8 @@ public class BasicPerformanceOreSorterBlockEntity extends BlockEntity implements
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceRockCrasherRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceOreSorterRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceOreSorterRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount();
     }
@@ -308,8 +336,8 @@ public class BasicPerformanceOreSorterBlockEntity extends BlockEntity implements
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceRockCrasherRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceOreSorterRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceOreSorterRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
     }
@@ -321,8 +349,8 @@ public class BasicPerformanceOreSorterBlockEntity extends BlockEntity implements
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceRockCrasherRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceOreSorterRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceOreSorterRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
@@ -337,10 +365,6 @@ public class BasicPerformanceOreSorterBlockEntity extends BlockEntity implements
         }
     }
 
-    public static boolean isHaltDevice(BasicPerformanceOreSorterBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(5).is(DCItems.MACHINE_HALT_DEVICE.get());
-    }
-
     public void resetProgress() {
         this.counter = 0;
     }
@@ -352,8 +376,8 @@ public class BasicPerformanceOreSorterBlockEntity extends BlockEntity implements
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceRockCrasherRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceOreSorterRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceOreSorterRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(1).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(1).getMaxStackSize()
                 && blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput1Item().getCount() <= blockEntity.itemHandler.getStackInSlot(2).getMaxStackSize()
@@ -367,8 +391,8 @@ public class BasicPerformanceOreSorterBlockEntity extends BlockEntity implements
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<BasicPerformanceRockCrasherRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceOreSorterRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceOreSorterRecipe.Type.INSTANCE, inventory, level);
 
         return blockEntity.itemHandler.getStackInSlot(1).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(1).isEmpty()
                 && blockEntity.itemHandler.getStackInSlot(2).getItem() == match.get().getOutput1Item().getItem() || blockEntity.itemHandler.getStackInSlot(2).isEmpty()
@@ -376,7 +400,7 @@ public class BasicPerformanceOreSorterBlockEntity extends BlockEntity implements
     }
 
     public void insertRecipeInputsFromPlayer(Player player, Recipe<?> recipe, boolean shift) {
-        if (!(recipe instanceof BasicPerformanceRockCrasherRecipe recipeData)) return;
+        if (!(recipe instanceof BasicPerformanceOreSorterRecipe recipeData)) return;
 
         player.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(playerInv -> {
             this.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(machineInv -> {

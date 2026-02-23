@@ -18,6 +18,8 @@ import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technol
 import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_machine_data_installer.BasicPerformanceMachineDataInstallerBlockEntity;
+import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_ore_sorter.BasicPerformanceOreSorterBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
@@ -305,6 +307,36 @@ public class DCMachineToggleC2SPacket {
             }
 
             if (blockEntity instanceof BasicPerformanceDesignatedDataInjectorBlockEntity machine) {
+
+                if (type == TOGGLE_HOLOGRAM) {
+                    machine.hologramLevel++;
+                    if (machine.hologramLevel > 1) {
+                        machine.hologramLevel = -1;
+                    }
+                }
+
+                if (type == TOGGLE_HALT) {
+                    machine.forceHalt = !machine.forceHalt;
+                }
+                machine.setChanged();
+            }
+
+            if (blockEntity instanceof BasicPerformanceMachineDataInstallerBlockEntity machine) {
+
+                if (type == TOGGLE_HOLOGRAM) {
+                    machine.hologramLevel++;
+                    if (machine.hologramLevel > 1) {
+                        machine.hologramLevel = -1;
+                    }
+                }
+
+                if (type == TOGGLE_HALT) {
+                    machine.forceHalt = !machine.forceHalt;
+                }
+                machine.setChanged();
+            }
+
+            if (blockEntity instanceof BasicPerformanceOreSorterBlockEntity machine) {
 
                 if (type == TOGGLE_HOLOGRAM) {
                     machine.hologramLevel++;

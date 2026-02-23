@@ -4,7 +4,6 @@ import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_ore_sorter.BasicPerformanceOreSorterRecipe;
-import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
 import net.epitap.degeneracycraft.util.WrappedHandler;
@@ -252,7 +251,6 @@ public class BasicPerformanceOreSorterBlockEntity extends BlockEntity implements
         }
         Optional<BasicPerformanceOreSorterRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceOreSorterRecipe.Type.INSTANCE, inventory, level);
-
 
         if (blockEntity.forceHalt) {
             blockEntity.counter = 0;

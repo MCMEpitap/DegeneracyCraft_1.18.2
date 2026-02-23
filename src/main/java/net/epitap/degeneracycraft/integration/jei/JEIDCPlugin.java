@@ -804,7 +804,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceRockCrasherTransferHandler<>(
                         BasicPerformanceRockCrasherMenu.class,
                         0, 1,
-                        6, 36
+                        4, 36
                 ),
                 BasicPerformanceRockCrasherRecipeCategory.TYPE
         );
@@ -812,7 +812,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceSoilPurifierRecipeTransferHandler<>(
                         BasicPerformanceSoilPurifierMenu.class,
                         0, 3,
-                        6, 36
+                        4, 36
                 ),
                 BasicPerformanceSoilPurifierRecipeCategory.TYPE
         );

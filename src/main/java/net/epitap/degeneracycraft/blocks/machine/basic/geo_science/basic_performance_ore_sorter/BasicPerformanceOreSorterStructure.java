@@ -161,7 +161,7 @@ public class BasicPerformanceOreSorterStructure {
         blockSuppliers.put("S", () -> DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("B", () -> DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("E", () -> DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("O", () -> DCBlocks.BASIC_CRASHING_BASE_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("O", () -> DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_BLOCK.get().defaultBlockState());
         return blockSuppliers;
     }
 

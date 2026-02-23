@@ -21,17 +21,17 @@ public class BasicPerformanceElectricArcFurnaceMenu extends AbstractContainerMen
     private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 5;
+    private static final int TE_INVENTORY_SLOT_COUNT = 3;
     public final BasicPerformanceElectricArcFurnaceBlockEntity blockEntity;
     public final Level level;
     public final ContainerData data;
 
     public BasicPerformanceElectricArcFurnaceMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
     }
 
     public BasicPerformanceElectricArcFurnaceMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_PERFORMANCE_ARC_ELECTRIC_FURNACE_MENU.get(), id);
+        super(DCMenuTypes.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_MENU.get(), id);
         blockEntity = (BasicPerformanceElectricArcFurnaceBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
@@ -42,18 +42,28 @@ public class BasicPerformanceElectricArcFurnaceMenu extends AbstractContainerMen
             this.addSlot(new SlotItemHandler(handler, 0, 26, 7));
             this.addSlot(new SlotItemHandler(handler, 1, 26, 25));
             this.addSlot(new SlotItemHandler(handler, 2, 116, 25));
-            this.addSlot(new SlotItemHandler(handler, 3, 71, 59));
-            this.addSlot(new SlotItemHandler(handler, 4, 98, 62));
         });
         addDataSlots(data);
     }
 
-    public boolean isCrafting() {
+    public boolean isWorking() {
         return data.get(0) > 0;
     }
 
     public int getProgressPercent() {
         return data.get(1);
+    }
+
+    public int getHologramLevel() {
+        return data.get(2);
+    }
+
+    public boolean isForceHalt() {
+        return data.get(3) != 0;
+    }
+
+    public int getMultiblockLevel() {
+        return data.get(4);
     }
 
     public DCIEnergyStorageFloat getEnergy() {

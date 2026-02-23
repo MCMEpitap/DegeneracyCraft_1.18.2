@@ -366,7 +366,7 @@ public class Degeneracycraft {
 
 
 
-        MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_ARC_ELECTRIC_FURNACE_MENU.get(), BasicPerformanceElectricArcFurnaceScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_MENU.get(), BasicPerformanceElectricArcFurnaceScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_FORMING_MACHINE_MENU.get(), BasicPerformanceFormingMachineScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_MENU.get(), BasicPerformanceMaterialSeparatorScreen::new);
 

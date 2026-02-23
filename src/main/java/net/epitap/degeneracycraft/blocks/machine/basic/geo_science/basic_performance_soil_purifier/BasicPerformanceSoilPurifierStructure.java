@@ -54,6 +54,7 @@ public class BasicPerformanceSoilPurifierStructure {
                     {"S", "F", "S"}
             }
     };
+
     public static boolean isFormed(Level level, BlockPos pos, BlockState state, BasicPerformanceSoilPurifierBlockEntity blockEntity) {
         Direction facing = state.getValue(BasicPerformanceSoilPurifierBlock.FACING);
         BlockPos basePos = blockEntity.getBlockPos();

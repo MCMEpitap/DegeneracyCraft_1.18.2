@@ -225,7 +225,7 @@ public class DCMenuTypes {
 
 
 
-    public static final RegistryObject<MenuType<BasicPerformanceElectricArcFurnaceMenu>> BASIC_PERFORMANCE_ARC_ELECTRIC_FURNACE_MENU =
+    public static final RegistryObject<MenuType<BasicPerformanceElectricArcFurnaceMenu>> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_MENU =
             registerMenuType(BasicPerformanceElectricArcFurnaceMenu::new, "basic_performance_electric_arc_furnace_menu");
     public static final RegistryObject<MenuType<BasicPerformanceFormingMachineMenu>> BASIC_PERFORMANCE_FORMING_MACHINE_MENU =
             registerMenuType(BasicPerformanceFormingMachineMenu::new, "basic_performance_forming_machine_menu");

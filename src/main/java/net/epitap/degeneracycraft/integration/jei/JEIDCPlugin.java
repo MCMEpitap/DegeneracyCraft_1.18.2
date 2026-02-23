@@ -822,7 +822,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceElectricArcFurnaceTransferHandler<>(
                         BasicPerformanceElectricArcFurnaceMenu.class,
                         0, 2,
-                        6, 36
+                        3, 36
                 ),
                 BasicPerformanceElectricArcFurnaceRecipeCategory.TYPE
         );
@@ -830,7 +830,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceFormingMachineRecipeTransferHandler<>(
                         BasicPerformanceFormingMachineMenu.class,
                         0, 2,
-                        6, 36
+                        3, 36
                 ),
                 BasicPerformanceFormingMachineRecipeCategory.TYPE
         );
@@ -838,7 +838,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceMaterialSeparatorRecipeTransferHandler<>(
                         BasicPerformanceMaterialSeparatorMenu.class,
                         0, 1,
-                        6, 36
+                        4, 36
                 ),
                 BasicPerformanceMaterialSeparatorRecipeCategory.TYPE
         );

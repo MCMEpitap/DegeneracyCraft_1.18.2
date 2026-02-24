@@ -21,13 +21,13 @@ public class BasicTechnologyVirtualSigilProcessorMenu extends AbstractContainerM
     private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 8;
+    private static final int TE_INVENTORY_SLOT_COUNT = 6;
     public final BasicTechnologyVirtualSigilProcessorBlockEntity blockEntity;
     public final Level level;
     public final ContainerData data;
 
     public BasicTechnologyVirtualSigilProcessorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
     }
 
     public BasicTechnologyVirtualSigilProcessorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -45,18 +45,28 @@ public class BasicTechnologyVirtualSigilProcessorMenu extends AbstractContainerM
             this.addSlot(new SlotItemHandler(handler, 3, 8, 43));
             this.addSlot(new SlotItemHandler(handler, 4, 44, 43));
             this.addSlot(new SlotItemHandler(handler, 5, 116, 25));
-            this.addSlot(new SlotItemHandler(handler, 6, 71, 59));
-            this.addSlot(new SlotItemHandler(handler, 7, 98, 62));
         });
         addDataSlots(data);
     }
 
-    public boolean isCrafting() {
+    public boolean isWorking() {
         return data.get(0) > 0;
     }
 
     public int getProgressPercent() {
         return data.get(1);
+    }
+
+    public int getHologramLevel() {
+        return data.get(2);
+    }
+
+    public boolean isForceHalt() {
+        return data.get(3) != 0;
+    }
+
+    public int getMultiblockLevel() {
+        return data.get(4);
     }
 
     public DCIEnergyStorageFloat getEnergy() {

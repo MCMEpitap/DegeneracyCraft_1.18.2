@@ -52,8 +52,17 @@ public class BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity exten
     public int counter;
     public int getProgressPercent;
 
-    public boolean isFormed;
-    public boolean isPowered0;
+    public int hologramLevel = -1;
+    public int multiblockLevel = -1;
+
+    public boolean forceHalt = false;
+
+    public static final int DATA_COUNTER      = 0;
+    public static final int DATA_PROGRESS     = 1;
+    public static final int DATA_HOLOGRAM     = 2;
+    public static final int DATA_FORCE_STOP   = 3;
+    public static final int DATA_MULTIBLOCK   = 4;
+
     public final ItemStackHandler itemHandler = new ItemStackHandler(12) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -63,9 +72,7 @@ public class BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity exten
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 10 -> stack.getItem() == DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get()
-                        || stack.getItem() == DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get();
-                case 11 -> stack.getItem() == DCItems.MACHINE_HALT_DEVICE.get();
+                case 9 -> false;
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -106,24 +113,29 @@ public class BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity exten
             @Override
             public int get(int index) {
                 return switch (index) {
-                    case 0 -> BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity.this.counter;
-                    case 1 -> BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity.this.getProgressPercent;
+                    case DATA_COUNTER    -> counter;
+                    case DATA_PROGRESS   -> getProgressPercent;
+                    case DATA_HOLOGRAM   -> hologramLevel;
+                    case DATA_FORCE_STOP -> forceHalt ? 1 : 0;
+                    case DATA_MULTIBLOCK   -> multiblockLevel;
                     default -> 0;
                 };
             }
 
             @Override
             public void set(int index, int value) {
-                if (index == 0) {
-                    BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity.this.counter = value;
-                } else if (index == 1) {
-                    BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity.this.getProgressPercent = value;
+                switch (index) {
+                    case DATA_COUNTER -> counter = value;
+                    case DATA_PROGRESS -> getProgressPercent = value;
+                    case DATA_HOLOGRAM -> hologramLevel = value;
+                    case DATA_FORCE_STOP -> forceHalt = value != 0;
+                    case DATA_MULTIBLOCK -> multiblockLevel = value;
                 }
             }
 
             @Override
             public int getCount() {
-                return 2;
+                return 5;
             }
         };
     }
@@ -187,19 +199,25 @@ public class BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity exten
     @Override
     protected void saveAdditional(CompoundTag nbt) {
         nbt.put("inventory", itemHandler.serializeNBT());
-        nbt.putFloat("bt_me_processor.energy", ENERGY_STORAGE.getEnergyStoredFloat());
+        nbt.putFloat("energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
         nbt.putInt("getProgressPercent", getProgressPercent);
+        nbt.putInt("hologramLevel", hologramLevel);
+        nbt.putBoolean("forceHalt", forceHalt);
+        nbt.putInt("multiblockLevel", multiblockLevel);
         super.saveAdditional(nbt);
     }
 
     @Override
     public void load(CompoundTag nbt) {
-        super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
-        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("bt_me_processor.energy"));
+        ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("energy"));
         counter = nbt.getInt("counter");
         getProgressPercent = nbt.getInt("getProgressPercent");
+        hologramLevel = nbt.getInt("hologramLevel");
+        forceHalt = nbt.getBoolean("forceHalt");
+        multiblockLevel = nbt.getInt("multiblockLevel");
+        super.load(nbt);
     }
 
     public void drops() {
@@ -212,15 +230,18 @@ public class BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity exten
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity blockEntity) {
-        blockEntity.isFormed = BasicTechnologyVoidWorldCoordinateRecordingMachineStructure.isFormed(level, pos, state, blockEntity);
-        blockEntity.isPowered0 = BasicTechnologyVoidWorldCoordinateRecordingMachineStructure.isPowered0(level, pos, state, blockEntity);
-
+        if(BasicTechnologyVoidWorldCoordinateRecordingMachineStructure.isPowered1(level, pos, state, blockEntity)){
+            blockEntity.multiblockLevel = 1;
+        } else if(BasicTechnologyVoidWorldCoordinateRecordingMachineStructure.isFormed(level, pos, state, blockEntity)){
+            blockEntity.multiblockLevel = 0;
+        } else {
+            blockEntity.multiblockLevel = -1;
+        }
         BasicTechnologyVoidWorldCoordinateRecordingMachineStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
-//        blockEntity.getProgressRandom = (int) (Math.random() * 100);
 
-        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(0.0000000000000000001F, false);
-        blockEntity.ENERGY_STORAGE.extractEnergyFloat(0.0000000000000000001F, false);
+        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(1e-19F, false);
+        blockEntity.ENERGY_STORAGE.extractEnergyFloat(1e-19F, false);
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
         if (level.isClientSide()) {
             return;
@@ -232,15 +253,20 @@ public class BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity exten
         Optional<BasicTechnologyVoidWorldCoordinateRecordingMachineRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyVoidWorldCoordinateRecordingMachineRecipe.Type.INSTANCE, inventory, level);
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && !isHaltDevice(blockEntity)
-                && hasNotReachedStackLimit(blockEntity)
-                && canInsertItemIntoOutputSlot(blockEntity)) {
+        if (blockEntity.forceHalt) {
+            blockEntity.counter = 0;
+            setChanged(level, pos, state);
+            return;
+        }
 
-            if (blockEntity.isPowered0) {
+        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity)
+                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
+
+            if (blockEntity.hologramLevel == 1) {
                 blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_1;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_1
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-            } else if (blockEntity.isFormed) {
+            } else if (blockEntity.hologramLevel == 0) {
                 blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
                 blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                         * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
@@ -308,6 +334,19 @@ public class BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity exten
                 && blockEntity.itemHandler.getStackInSlot(6).getCount() >= match.get().getInput6Item().getCount()
                 && blockEntity.itemHandler.getStackInSlot(7).getCount() >= match.get().getInput7Item().getCount()
                 && blockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
+    }
+
+    private static boolean hasEnergyRecipe(BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicTechnologyVoidWorldCoordinateRecordingMachineRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicTechnologyVoidWorldCoordinateRecordingMachineRecipe.Type.INSTANCE, inventory, level);
+
+        return blockEntity.ENERGY_STORAGE.getEnergyStoredFloat() >= match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F;
     }
 
     private static void craftItem(BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity blockEntity) {

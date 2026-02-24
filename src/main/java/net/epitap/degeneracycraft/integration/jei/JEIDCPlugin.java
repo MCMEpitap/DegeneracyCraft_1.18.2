@@ -845,20 +845,19 @@ public class JEIDCPlugin implements IModPlugin {
 
 
 
-
         registration.addRecipeTransferHandler(
                 new BasicTechnologyImitationMagicEngraverRecipeTransferHandler<>(
                         BasicTechnologyImitationMagicEngraverMenu.class,
                         0, 5,
-                        8, 36
+                        6, 36
                 ),
                 BasicTechnologyImitationMagicEngraverRecipeCategory.TYPE
         );
         registration.addRecipeTransferHandler(
                 new BasicTechnologySuspectedMagicCondenserRecipeTransferHandler<>(
                         BasicTechnologySuspectedMagicCondenserMenu.class,
-                        0, 2,
-                        5, 36
+                        0, 1,
+                        2, 36
                 ),
                 BasicTechnologySuspectedMagicCondenserRecipeCategory.TYPE
         );
@@ -866,7 +865,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicTechnologyVirtualSigilProcessorRecipeTransferHandler<>(
                         BasicTechnologyVirtualSigilProcessorMenu.class,
                         0, 5,
-                        8, 36
+                        6, 36
                 ),
                 BasicTechnologyVirtualSigilProcessorRecipeCategory.TYPE
         );
@@ -878,7 +877,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicTechnologyVoidWorldCoordinateRecordingMachineRecipeTransferHandler<>(
                         BasicTechnologyVoidWorldCoordinateRecordingMachineMenu.class,
                         0, 9,
-                        12, 36
+                        10, 36
                 ),
                 BasicTechnologyVoidWorldCoordinateRecordingMachineRecipeCategory.TYPE
         );
@@ -889,7 +888,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceRealityPhaseAdjustmentMachineRecipeTransferHandler<>(
                         BasicPerformanceRealityPhaseAdjustmentMachineMenu.class,
                         0, 9,
-                        12, 36
+                        10, 36
                 ),
                 BasicPerformanceRealityPhaseAdjustmentMachineRecipeCategory.TYPE
         );

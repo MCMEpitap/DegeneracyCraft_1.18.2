@@ -279,6 +279,26 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.PHOSPHORITE_ORESINTER.get(),"リン鉱石の焼結鉱");
         add(DCItems.PHOSPHORITE_INGOT.get(), "リン鉱石インゴット");
         //
+        add(DCItems.RAW_PYRITE_ORE.get(), "黄鉄鉱の原石");
+        add(DCItems.PYRITE_DUST.get(),"黄鉄鉱の粉");
+        add(DCItems.PYRITE_PUREDUST.get(),"黄鉄鉱の純粋な粉");
+        add(DCItems.PYRITE_LEACHATE.get(),"黄鉄鉱の浸出液");
+        add(DCItems.PYRITE_CONCENTRATE.get(),"黄鉄鉱の濃縮液");
+        add(DCItems.PYRITE_PLASMA.get(),"黄鉄鉱のプラズマ");
+        add(DCItems.PYRITE_DEGENERATEMATTER.get(),"黄鉄鉱の縮退物質");
+        add(DCItems.PYRITE_SOUP.get(),"黄鉄鉱のスープ");
+        add(DCItems.PYRITE_IMAGINARYMATTER.get(),"黄鉄鉱の虚数物質");
+        add(DCItems.STABLE_PYRITE_IMAGINARYMATTER.get(), "安定した黄鉄鉱の虚数物質");
+        add(DCItems.PYRITE_TACHYON.get(), "黄鉄鉱のタキオン");
+        add(DCItems.PYRITE_ANTIMATTER.get(), "黄鉄鉱の反物質");
+        add(DCItems.PYRITE_ULTRAHOTPLASMA.get(), "黄鉄鉱の超高温プラズマ");
+        add(DCItems.PYRITE_OVERFLUID.get(), "黄鉄鉱の過流動体");
+        add(DCItems.PYRITE_CRYSTAL.get(), "黄鉄鉱の結晶塊");
+        add(DCItems.PYRITE_PRECIPITATE.get(), "黄鉄鉱の沈殿物");
+        add(DCItems.PYRITE_WASHEDDUST.get(), "黄鉄鉱の洗浄された粉");
+        add(DCItems.PYRITE_ORESINTER.get(), "黄鉄鉱の焼結鉱");
+        add(DCItems.PYRITE_INGOT.get(), "黄鉄鉱インゴット");
+        //
         add(DCItems.RAW_PYROLUSITE_ORE.get(), "軟マンガン鉱の原石");
         add(DCItems.PYROLUSITE_DUST.get(),"軟マンガン鉱の粉");
         add(DCItems.PYROLUSITE_PUREDUST.get(),"軟マンガン鉱の純粋な粉");
@@ -797,7 +817,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.EMPTY_CONTAINER.get(), "空の容器");
         add(DCItems.WATER_CONTAINER.get(), "水容器");
 
-
+        add(DCItems.FERRIC_OXIDE_DUST.get(), "酸化鉄(Ⅲ)の粉");
+        add(DCItems.IRON_DISULFIDE_DUST.get(), "二硫化鉄の粉");
         add(DCItems.HYDROCHLORIC_ACID_SOLUTION.get(), "塩酸溶液");
         add(DCItems.HYDROGEN_CHLORIDE_GAS.get(), "塩化水素ガス");
         add(DCItems.POTASSIUM_CHLORIDE_DUST.get(), "塩化カリウムの粉");
@@ -1582,6 +1603,12 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "hydrogen" + ".boiling", "沸点:20.28 K");
         add("tooltip." + "degeneracycraft." + "hydrogen" + ".formula", "化学式:H");
 
+        add("tooltip." + "degeneracycraft." + "oxygen" + ".name", "元素名:酸素");
+        add("tooltip." + "degeneracycraft." + "oxygen" + ".number", "原子番号:8");
+        add("tooltip." + "degeneracycraft." + "oxygen" + ".weight", "原子量:16.00 g/mol");
+        add("tooltip." + "degeneracycraft." + "oxygen" + ".melting", "融点:54.8 K");
+        add("tooltip." + "degeneracycraft." + "oxygen" + ".boiling", "沸点:90.2 K");
+        add("tooltip." + "degeneracycraft." + "oxygen" + ".formula", "化学式:O");
 
         add("tooltip." + "degeneracycraft." + "silicon" + ".name", "元素名:ケイ素");
         add("tooltip." + "degeneracycraft." + "silicon" + ".number", "原子番号:14");
@@ -1614,8 +1641,8 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
         add("tooltip." + "degeneracycraft." + "water" + ".formula", "化学式:H₂O");
 
-
-
+        add("tooltip." + "degeneracycraft." + "ferric_oxide" + ".formula", "化学式:Fe₂O₃");
+        add("tooltip." + "degeneracycraft." + "iron_disulfide" + ".formula", "化学式:FeS₂");
         add("tooltip." + "degeneracycraft." + "hydrochloric_acid" + ".formula", "化学式:HCl");
         add("tooltip." + "degeneracycraft." + "hydrogen_chloride" + ".formula", "化学式:HCl");
         add("tooltip." + "degeneracycraft." + "potassium_chloride" + ".formula", "化学式:KCl");

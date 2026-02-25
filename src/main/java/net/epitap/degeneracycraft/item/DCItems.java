@@ -41,9 +41,9 @@ public class DCItems extends CreativeModeTab {
     public static final TagKey<Item> LATERITE_MULTIPLIED_ORE_MATERIAL =TagKey.create(Registry.ITEM_REGISTRY,new ResourceLocation(Degeneracycraft.MOD_ID,"laterite_multiplied_ore_material"));
     public static final TagKey<Item> LIMESTONE_MULTIPLIED_ORE_MATERIAL =TagKey.create(Registry.ITEM_REGISTRY,new ResourceLocation(Degeneracycraft.MOD_ID,"limestone_multiplied_ore_material"));
     public static final TagKey<Item> NITRATINE_MULTIPLIED_ORE_MATERIAL =TagKey.create(Registry.ITEM_REGISTRY,new ResourceLocation(Degeneracycraft.MOD_ID,"nitratine_multiplied_ore_material"));
-
-    public static final TagKey<Item> PHOSPHORITE_MULTIPLIED_ORE_MATERIAL =TagKey.create(Registry.ITEM_REGISTRY,new ResourceLocation(Degeneracycraft.MOD_ID,"phosphorite_multiplied_ore_material"));
     public static final TagKey<Item> PEGMATITE_MULTIPLIED_ORE_MATERIAL =TagKey.create(Registry.ITEM_REGISTRY,new ResourceLocation(Degeneracycraft.MOD_ID,"pegmatite_multiplied_ore_material"));
+    public static final TagKey<Item> PHOSPHORITE_MULTIPLIED_ORE_MATERIAL =TagKey.create(Registry.ITEM_REGISTRY,new ResourceLocation(Degeneracycraft.MOD_ID,"phosphorite_multiplied_ore_material"));
+    public static final TagKey<Item> PYRITE_MULTIPLIED_ORE_MATERIAL = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(Degeneracycraft.MOD_ID, "pyrite_multiplied_ore_material"));
     public static final TagKey<Item> PYROLUSITE_MULTIPLIED_ORE_MATERIAL = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(Degeneracycraft.MOD_ID, "pyrolusite_multiplied_ore_material"));
     public static final TagKey<Item> QUARTZ_MULTIPLIED_ORE_MATERIAL = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(Degeneracycraft.MOD_ID, "quartz_multiplied_ore_material"));
     public static final TagKey<Item> RUTILE_MULTIPLIED_ORE_MATERIAL = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(Degeneracycraft.MOD_ID, "rutile_multiplied_ore_material"));
@@ -341,7 +341,28 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> PHOSPHORITE_WASHEDDUST = ITEMS.register("phosphorite_washeddust",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> PHOSPHORITE_ORESINTER = ITEMS.register("phosphorite_oresinter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> PHOSPHORITE_INGOT = ITEMS.register("phosphorite_ingot", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_INGOT_TAB)));
-    
+
+    //Pyrite item group
+    public static final RegistryObject<Item> RAW_PYRITE_ORE = ITEMS.register("raw_pyrite_ore", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> PYRITE_DUST = ITEMS.register("pyrite_dust", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> PYRITE_PUREDUST = ITEMS.register("pyrite_puredust", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> PYRITE_LEACHATE = ITEMS.register("pyrite_leachate", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> PYRITE_CONCENTRATE = ITEMS.register("pyrite_concentrate", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> PYRITE_PLASMA = ITEMS.register("pyrite_plasma", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> PYRITE_DEGENERATEMATTER = ITEMS.register("pyrite_degeneratematter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> PYRITE_SOUP = ITEMS.register("pyrite_soup", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> PYRITE_IMAGINARYMATTER = ITEMS.register("pyrite_imaginarymatter",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> STABLE_PYRITE_IMAGINARYMATTER = ITEMS.register("stable_pyrite_imaginarymatter",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> PYRITE_TACHYON = ITEMS.register("pyrite_tachyon",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> PYRITE_ANTIMATTER = ITEMS.register("pyrite_antimatter",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> PYRITE_ULTRAHOTPLASMA = ITEMS.register("pyrite_ultrahotplasma", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> PYRITE_OVERFLUID = ITEMS.register("pyrite_overfluid", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> PYRITE_CRYSTAL = ITEMS.register("pyrite_crystal", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> PYRITE_PRECIPITATE = ITEMS.register("pyrite_precipitate",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> PYRITE_WASHEDDUST = ITEMS.register("pyrite_washeddust",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> PYRITE_ORESINTER = ITEMS.register("pyrite_oresinter", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
+    public static final RegistryObject<Item> PYRITE_INGOT = ITEMS.register("pyrite_ingot", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_INGOT_TAB)));
+
     //Pyrolusite item group
     public static final RegistryObject<Item> RAW_PYROLUSITE_ORE = ITEMS.register("raw_pyrolusite_ore",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
     public static final RegistryObject<Item> PYROLUSITE_DUST = ITEMS.register("pyrolusite_dust",()-> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MULTIPLIED_ORE_MATERIAL_TAB)));
@@ -493,9 +514,10 @@ public class DCItems extends CreativeModeTab {
 
     //Element Item
 
-    public static final RegistryObject<Item> HYDROGEN_GAS = registerAtomicItem("hydrogen_gas", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "hydrogen", "basic");
 
     public static final RegistryObject<Item> CHLORINE_GAS = registerAtomicItem("chlorine_gas", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "chlorine", "basic");
+    public static final RegistryObject<Item> HYDROGEN_GAS = registerAtomicItem("hydrogen_gas", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "hydrogen", "basic");
+    public static final RegistryObject<Item> OXYGEN_GAS = registerAtomicItem("oxygen_gas", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "oxygen", "basic");
 
 
     public static final RegistryObject<Item> SILICON_INGOT = registerAtomicItem("silicon_ingot", DCCreativeTab.DEGENERACYCRAFT_ELEMENT_ITEM_TAB, "silicon", "basic");
@@ -511,6 +533,8 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> EMPTY_CONTAINER = ITEMS.register("empty_container", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
     public static final RegistryObject<Item> WATER_CONTAINER = registerChemicalSubstanceItem("water_container", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "water", "basic");
 
+    public static final RegistryObject<Item> FERRIC_OXIDE_DUST = registerChemicalSubstanceItem("ferric_oxide_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "ferric_oxide", "basic");
+    public static final RegistryObject<Item> IRON_DISULFIDE_DUST = registerChemicalSubstanceItem("iron_disulfide_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "iron_disulfide", "basic");
     public static final RegistryObject<Item> HYDROCHLORIC_ACID_SOLUTION = registerChemicalSubstanceItem("hydrochloric_acid_solution", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrochloric_acid", "basic");
     public static final RegistryObject<Item> HYDROGEN_CHLORIDE_GAS = registerChemicalSubstanceItem("hydrogen_chloride_gas", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrogen_chloride", "basic");
     public static final RegistryObject<Item> POTASSIUM_CHLORIDE_DUST = registerChemicalSubstanceItem("potassium_chloride_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "potassium_chloride", "basic");
@@ -833,10 +857,10 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> SIMPLE_CHEMICAL_CONTAINER = ITEMS.register("simple_chemical_container", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> SIMPLE_CRYSTALLIZATION_SUBSTRATE_PLATE = ITEMS.register("simple_crystallization_substrate_plate", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
     public static final RegistryObject<Item> SIMPLE_LIQUID_NEUTRALIZATION_PROCESSOR = ITEMS.register("simple_liquid_neutralization_processor", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
+    public static final RegistryObject<Item> SIMPLE_TEMPERED_GLASS = ITEMS.register("simple_tempered_glass", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
 
     public static final RegistryObject<Item> SIMPLE_ORE_SORTING_FILTER = ITEMS.register("simple_ore_sorting_filter", () -> new FilterItem(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
-    public static final RegistryObject<Item> SIMPLE_TEMPERED_GLASS = ITEMS.register("simple_tempered_glass", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MACHINE_PART_TAB)));
 
 
 

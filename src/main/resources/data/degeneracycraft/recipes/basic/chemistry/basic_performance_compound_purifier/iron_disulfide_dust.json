@@ -3,7 +3,7 @@
   "energy": 1000.0,
   "time": 10.0,
   "input0": {
-    "item": "degeneracycraft:nitratine_ingot"
+    "item": "degeneracycraft:pyrite_ingot"
   },
   "input1": {
     "item": "degeneracycraft:water_container"
@@ -12,7 +12,7 @@
     "item": "minecraft:air"
   },
   "output0": {
-    "item": "degeneracycraft:sodium_nitrate_dust"
+    "item": "degeneracycraft:iron_disulfide_dust"
   },
   "output1": {
     "item": "minecraft:air"

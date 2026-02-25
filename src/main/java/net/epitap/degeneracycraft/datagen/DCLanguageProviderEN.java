@@ -278,6 +278,26 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.PHOSPHORITE_ORESINTER.get(),"Phosphorite Oresinter");
         add(DCItems.PHOSPHORITE_INGOT.get(), "Phosphorite Ingot");
         //
+        add(DCItems.RAW_PYRITE_ORE.get(), "Pyrite Raw Chunk");
+        add(DCItems.PYRITE_DUST.get(),"Pyrite Dust");
+        add(DCItems.PYRITE_PUREDUST.get(),"Pyrite Pure Dust");
+        add(DCItems.PYRITE_LEACHATE.get(),"Pyrite Leachate");
+        add(DCItems.PYRITE_CONCENTRATE.get(),"Pyrite Concentrate");
+        add(DCItems.PYRITE_PLASMA.get(),"Pyrite Plasma");
+        add(DCItems.PYRITE_DEGENERATEMATTER.get(),"Pyrite Degenerate Matter");
+        add(DCItems.PYRITE_SOUP.get(),"Pyrite Soup");
+        add(DCItems.PYRITE_IMAGINARYMATTER.get(),"Pyrite Imaginary Matter");
+        add(DCItems.STABLE_PYRITE_IMAGINARYMATTER.get(), "Stable Pyrite Imaginary Matter");
+        add(DCItems.PYRITE_TACHYON.get(), "Pyrite Tachyon");
+        add(DCItems.PYRITE_ANTIMATTER.get(), "Pyrite Antimatter");
+        add(DCItems.PYRITE_ULTRAHOTPLASMA.get(), "Pyrite Ultrahot Plasma");
+        add(DCItems.PYRITE_OVERFLUID.get(), "Pyrite Over Fluid");
+        add(DCItems.PYRITE_CRYSTAL.get(), "Pyrite Crystal");
+        add(DCItems.PYRITE_PRECIPITATE.get(), "Pyrite Precipitate");
+        add(DCItems.PYRITE_WASHEDDUST.get(), "Pyrite Washed Dust");
+        add(DCItems.PYRITE_ORESINTER.get(), "Pyrite Oresinter");
+        add(DCItems.PYRITE_INGOT.get(), "Pyrite Ingot");
+        //
         add(DCItems.RAW_PYROLUSITE_ORE.get(), "Pyrolusite Raw Chunk");
         add(DCItems.PYROLUSITE_DUST.get(),"Pyrolusite Dust");
         add(DCItems.PYROLUSITE_PUREDUST.get(),"Pyrolusite Pure Dust");
@@ -719,6 +739,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.EMPTY_CONTAINER.get(), "Empty Container");
         add(DCItems.WATER_CONTAINER.get(), "Water Container");
 
+        add(DCItems.FERRIC_OXIDE_DUST.get(), "Ferric Oxide Dust");
+        add(DCItems.IRON_DISULFIDE_DUST.get(), "Iron Disulfide Dust");
         add(DCItems.HYDROCHLORIC_ACID_SOLUTION.get(), "Hydrochloric Acid Solution");
         add(DCItems.HYDROGEN_CHLORIDE_GAS.get(), "Hydrogen Chloride Gas");
         add(DCItems.POTASSIUM_CHLORIDE_DUST.get(), "Pottassium Chloride Dust");
@@ -1559,7 +1581,14 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "hydrogen" + ".boiling", "Boiling Point:20.28 K");
         add("tooltip." + "degeneracycraft." + "hydrogen" + ".formula", "Chemical Formula:H");
 
-        add("tooltip." + "degeneracycraft." + "gold" + ".name", "Element Name:金");
+        add("tooltip." + "degeneracycraft." + "oxygen" + ".name", "Element Name:Oxygen");
+        add("tooltip." + "degeneracycraft." + "oxygen" + ".number", "Atomic Number:8");
+        add("tooltip." + "degeneracycraft." + "oxygen" + ".weight", "Atomic Weight:16.00 g/mol");
+        add("tooltip." + "degeneracycraft." + "oxygen" + ".melting", "Melting Point:54.8 K");
+        add("tooltip." + "degeneracycraft." + "oxygen" + ".boiling", "Boiling Point:90.2 K");
+        add("tooltip." + "degeneracycraft." + "oxygen" + ".formula", "Chemical Formula:O");
+
+        add("tooltip." + "degeneracycraft." + "gold" + ".name", "Element Name:Gold");
         add("tooltip." + "degeneracycraft." + "gold" + ".number", "Atomic Number:79");
         add("tooltip." + "degeneracycraft." + "gold" + ".weight", "Atomic Weight:199.97 g/mol");
         add("tooltip." + "degeneracycraft." + "gold" + ".melting", "Melting Point:1337 K");
@@ -1590,6 +1619,8 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add("tooltip." + "degeneracycraft." + "water" + ".formula", "Chemical Formula:H₂O");
 
+        add("tooltip." + "degeneracycraft." + "ferric_oxide" + ".formula", "Chemical Formula:Fe₂O₃");
+        add("tooltip." + "degeneracycraft." + "iron_disulfide" + ".formula", "Chemical Formula:FeS₂");
         add("tooltip." + "degeneracycraft." + "hydrochloric_acid" + ".formula", "Chemical Formula:HCl");
         add("tooltip." + "degeneracycraft." + "hydrogen_chloride" + ".formula", "Chemical Formula:HCl");
         add("tooltip." + "degeneracycraft." + "potassium_chloride" + ".formula", "Chemical Formula:KCl");

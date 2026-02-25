@@ -6,7 +6,8 @@
     "item": "minecraft:glass_pane"
   },
   "input1": {
-    "item": "minecraft:quartz"
+    "item": "minecraft:quartz",
+    "count": 16
   },
   "output0": {
     "item": "degeneracycraft:simple_starlight_splitter_prism"

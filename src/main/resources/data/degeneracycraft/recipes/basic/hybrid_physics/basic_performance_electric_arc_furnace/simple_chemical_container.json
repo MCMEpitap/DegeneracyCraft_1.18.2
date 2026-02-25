@@ -3,7 +3,7 @@
   "energy": 10000.0,
   "time": 50.0,
   "input0": {
-    "item": "minecraft:gold_ingot",
+    "item": "degeneracycraft:gold_wire",
     "count": 8
   },
   "input1": {

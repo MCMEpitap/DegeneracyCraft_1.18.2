@@ -43,6 +43,7 @@ public class DCItemModelProvider extends ItemModelProvider {
         ingotMaterialItem(DCItems.NITRATINE_INGOT.get());
         ingotMaterialItem(DCItems.PENTLANDITE_INGOT.get());
         ingotMaterialItem(DCItems.PHOSPHORITE_INGOT.get());
+        ingotMaterialItem(DCItems.PYRITE_INGOT.get());
         ingotMaterialItem(DCItems.PYROLUSITE_INGOT.get());
         ingotMaterialItem(DCItems.QUARTZ_INGOT.get());
         ingotMaterialItem(DCItems.RUTILE_INGOT.get());
@@ -300,6 +301,25 @@ public class DCItemModelProvider extends ItemModelProvider {
         oreMaterialPhosphoriteItem(DCItems.PHOSPHORITE_PRECIPITATE.get());
         oreMaterialPhosphoriteItem(DCItems.PHOSPHORITE_WASHEDDUST.get());
         oreMaterialPhosphoriteItem(DCItems.PHOSPHORITE_ORESINTER.get());
+        //
+        oreMaterialPyriteItem(DCItems.RAW_PYRITE_ORE.get());
+        oreMaterialPyriteItem(DCItems.PYRITE_DUST.get());
+        oreMaterialPyriteItem(DCItems.PYRITE_PUREDUST.get());
+        oreMaterialPyriteItem(DCItems.PYRITE_LEACHATE.get());
+        oreMaterialPyriteItem(DCItems.PYRITE_CONCENTRATE.get());
+        oreMaterialPyriteItem(DCItems.PYRITE_PLASMA.get());
+        oreMaterialPyriteItem(DCItems.PYRITE_DEGENERATEMATTER.get());
+        oreMaterialPyriteItem(DCItems.PYRITE_SOUP.get());
+        oreMaterialPyriteItem(DCItems.PYRITE_IMAGINARYMATTER.get());
+        oreMaterialPyriteItem(DCItems.STABLE_PYRITE_IMAGINARYMATTER.get());
+        oreMaterialPyriteItem(DCItems.PYRITE_TACHYON.get());
+        oreMaterialPyriteItem(DCItems.PYRITE_ANTIMATTER.get());
+        oreMaterialPyriteItem(DCItems.PYRITE_ULTRAHOTPLASMA.get());
+        oreMaterialPyriteItem(DCItems.PYRITE_OVERFLUID.get());
+        oreMaterialPyriteItem(DCItems.PYRITE_CRYSTAL.get());
+        oreMaterialPyriteItem(DCItems.PYRITE_PRECIPITATE.get());
+        oreMaterialPyriteItem(DCItems.PYRITE_WASHEDDUST.get());
+        oreMaterialPyriteItem(DCItems.PYRITE_ORESINTER.get());
         //
         oreMaterialPyrolusiteItem(DCItems.RAW_PYROLUSITE_ORE.get());
         oreMaterialPyrolusiteItem(DCItems.PYROLUSITE_DUST.get());
@@ -687,6 +707,8 @@ public class DCItemModelProvider extends ItemModelProvider {
         elementChlorineMaterialItem(DCItems.CHLORINE_GAS.get());
 
         elementHydrogenMaterialItem(DCItems.HYDROGEN_GAS.get());
+        elementOxygenMaterialItem(DCItems.OXYGEN_GAS.get());
+
 
         elementSiliconMaterialItem(DCItems.SILICON_INGOT.get());
         elementSiliconMaterialItem(DCItems.SILICON_NUGGET.get());
@@ -698,7 +720,8 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.TIN_BLOCK.getId().getPath(),
                 modLoc("block/tin_block"));
 
-
+        substanceItem(DCItems.FERRIC_OXIDE_DUST.get());
+        substanceItem(DCItems.IRON_DISULFIDE_DUST.get());
         substanceItem(DCItems.HYDROCHLORIC_ACID_SOLUTION.get());
         substanceItem(DCItems.HYDROGEN_CHLORIDE_GAS.get());
         substanceItem(DCItems.POTASSIUM_CHLORIDE_DUST.get());
@@ -1801,6 +1824,13 @@ public class DCItemModelProvider extends ItemModelProvider {
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/phosphorite/" + item.getRegistryName().getPath()));
     }
 
+    private ItemModelBuilder oreMaterialPyriteItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/multiplied_ore_material/pyrite/" + item.getRegistryName().getPath()));
+    }
+
+
     private ItemModelBuilder oreMaterialPyrolusiteItem(Item item) {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
@@ -1853,6 +1883,12 @@ public class DCItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getRegistryName().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",
                 new ResourceLocation(Degeneracycraft.MOD_ID, "item/material/element/hydrogen/" + item.getRegistryName().getPath()));
+    }
+
+    private ItemModelBuilder elementOxygenMaterialItem(Item item) {
+        return withExistingParent(item.getRegistryName().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(Degeneracycraft.MOD_ID, "item/material/element/oxygen/" + item.getRegistryName().getPath()));
     }
 
 

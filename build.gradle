@@ -55,9 +55,9 @@ apply plugin:'maven-publish'
 // This should be below the net.minecraftforge.gradle plugin
 
 
-version = '1.0'
+version = '0.0.0'
 group = 'net.epitap.degeneracycraft'
-archivesBaseName = 'degeneracycraft'
+archivesBaseName = 'DC-Forge1.18.2'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 

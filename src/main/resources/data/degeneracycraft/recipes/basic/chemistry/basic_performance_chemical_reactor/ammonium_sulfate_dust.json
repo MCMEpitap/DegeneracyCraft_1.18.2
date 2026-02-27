@@ -1,0 +1,34 @@
+{
+  "type": "degeneracycraft:basic_performance_chemical_reactor_recipe",
+  "energy": 1000.0,
+  "time": 10.0,
+  "input0": {
+    "item": "degeneracycraft:ammonia_gas",
+    "count": 4
+  },
+  "input1": {
+    "item": "degeneracycraft:sulfur_dioxide_gas",
+    "count": 2
+  },
+  "input2": {
+    "item": "degeneracycraft:oxygen_gas"
+  },
+  "input3": {
+    "item": "minecraft:air"
+  },
+  "input4": {
+    "item": "degeneracycraft:water_container",
+    "count": 2
+  },
+  "output0": {
+    "item": "degeneracycraft:ammonium_sulfate_dust",
+    "count": 2
+  },
+  "output1": {
+    "item": "degeneracycraft:empty_container",
+    "count": 7
+  },
+  "output2": {
+    "item": "minecraft:air"
+  }
+}

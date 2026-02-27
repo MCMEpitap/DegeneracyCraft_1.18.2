@@ -818,15 +818,19 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.WATER_CONTAINER.get(), "水容器");
 
         add(DCItems.AMMONIA_GAS.get(), "アンモニアガス");
+        add(DCItems.AMMONIUM_SULFATE_DUST.get(), "硫酸アンモニウムの粉");
+        add(DCItems.AMMONIUM_HYDROGEN_SULFATE_DUST.get(), "硫酸水素アンモニウムの粉");
         add(DCItems.FERRIC_OXIDE_DUST.get(), "酸化鉄(Ⅲ)の粉");
         add(DCItems.IRON_DISULFIDE_DUST.get(), "二硫化鉄の粉");
         add(DCItems.HYDROCHLORIC_ACID_SOLUTION.get(), "塩酸溶液");
         add(DCItems.HYDROGEN_CHLORIDE_GAS.get(), "塩化水素ガス");
+        add(DCItems.HYDROGEN_PEROXIDE_SOLUTION.get(), "過酸化水素溶液");
         add(DCItems.POTASSIUM_CHLORIDE_DUST.get(), "塩化カリウムの粉");
         add(DCItems.POTASSIUM_NITRATE_DUST.get(), "硝酸カリウムの粉");
         add(DCItems.SODIUM_CHLORIDE_DUST.get(), "塩化ナトリウムの粉");
         add(DCItems.SODIUM_NITRATE_DUST.get(), "塩化カリウムの粉");
         add(DCItems.SULFUR_DIOXIDE_GAS.get(), "二酸化硫黄ガス");
+        add(DCItems.SULFURIC_ACID_SOLUTION.get(), "硫酸溶液");
 
         add(DCBlocks.PULVERIZER_BLOCK.get(), "粉砕機");
 
@@ -1644,15 +1648,19 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "water" + ".formula", "化学式:H₂O");
 
         add("tooltip." + "degeneracycraft." + "ammonia" + ".formula", "化学式:NH₃");
+        add("tooltip." + "degeneracycraft." + "ammonium_sulfate" + ".formula", "化学式:(NH₄)₂SO₄");
+        add("tooltip." + "degeneracycraft." + "ammonium_hydrogen_sulfate" + ".formula", "化学式:NH₄HSO₄");
         add("tooltip." + "degeneracycraft." + "ferric_oxide" + ".formula", "化学式:Fe₂O₃");
         add("tooltip." + "degeneracycraft." + "iron_disulfide" + ".formula", "化学式:FeS₂");
         add("tooltip." + "degeneracycraft." + "hydrochloric_acid" + ".formula", "化学式:HCl");
         add("tooltip." + "degeneracycraft." + "hydrogen_chloride" + ".formula", "化学式:HCl");
+        add("tooltip." + "degeneracycraft." + "hydrogen_peroxide" + ".formula", "化学式:H₂O₂");
         add("tooltip." + "degeneracycraft." + "potassium_chloride" + ".formula", "化学式:KCl");
         add("tooltip." + "degeneracycraft." + "potassium_nitrate" + ".formula", "化学式:KNO₃");
         add("tooltip." + "degeneracycraft." + "sodium_chloride" + ".formula", "化学式:NaCl");
         add("tooltip." + "degeneracycraft." + "sodium_nitrate" + ".formula", "化学式:NaNO₃");
         add("tooltip." + "degeneracycraft." + "sulfur_dioxide" + ".formula", "化学式:SO₂");
+        add("tooltip." + "degeneracycraft." + "sulfuric_acid" + ".formula", "化学式:H₂SO₄");
 
 
         add("tooltip." + "degeneracycraft." + "requiredenergy." + "iron_bearing" + ".phase0", "要求電力総量:0 FE");

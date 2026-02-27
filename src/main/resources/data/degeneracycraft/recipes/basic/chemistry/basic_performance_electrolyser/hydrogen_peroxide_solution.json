@@ -1,0 +1,26 @@
+{
+  "type": "degeneracycraft:basic_performance_electrolyser_recipe",
+  "energy": 5000.0,
+  "time": 30.0,
+  "input0": {
+    "item": "degeneracycraft:ammonium_hydrogen_sulfate_dust",
+    "count": 2
+  },
+  "input1": {
+    "item": "degeneracycraft:water_container",
+    "count": 2
+  },
+  "input2": {
+    "item": "minecraft:air"
+  },
+  "output0": {
+    "item": "degeneracycraft:hydrogen_peroxide_solution"
+  },
+  "output1": {
+    "item": "degeneracycraft:ammonium_hydrogen_sulfate_dust",
+    "count": 2
+  },
+  "output2": {
+    "item": "degeneracycraft:hydrogen_gas"
+  }
+}

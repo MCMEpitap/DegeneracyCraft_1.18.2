@@ -722,15 +722,19 @@ public class DCItemModelProvider extends ItemModelProvider {
 
 
         substanceItem(DCItems.AMMONIA_GAS.get());
+        substanceItem(DCItems.AMMONIUM_SULFATE_DUST.get());
+        substanceItem(DCItems.AMMONIUM_HYDROGEN_SULFATE_DUST.get());
         substanceItem(DCItems.FERRIC_OXIDE_DUST.get());
         substanceItem(DCItems.IRON_DISULFIDE_DUST.get());
         substanceItem(DCItems.HYDROCHLORIC_ACID_SOLUTION.get());
         substanceItem(DCItems.HYDROGEN_CHLORIDE_GAS.get());
+        substanceItem(DCItems.HYDROGEN_PEROXIDE_SOLUTION.get());
         substanceItem(DCItems.POTASSIUM_CHLORIDE_DUST.get());
         substanceItem(DCItems.POTASSIUM_NITRATE_DUST.get());
         substanceItem(DCItems.SODIUM_CHLORIDE_DUST.get());
         substanceItem(DCItems.SODIUM_NITRATE_DUST.get());
         substanceItem(DCItems.SULFUR_DIOXIDE_GAS.get());
+        substanceItem(DCItems.SULFURIC_ACID_SOLUTION.get());
 
 
         basicInscribedCircuitItem(DCItems.BASIC_PRECISION_BOLT_INSCRIBED_CIRCUIT.get());

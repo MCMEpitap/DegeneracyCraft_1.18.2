@@ -1,0 +1,29 @@
+{
+  "type": "degeneracycraft:basic_performance_chemical_reactor_recipe",
+  "energy": 200.0,
+  "time": 5.0,
+  "input0": {
+    "item": "degeneracycraft:sulfur_dioxide_gas"
+  },
+  "input1": {
+    "item": "degeneracycraft:hydrogen_peroxide_solution"
+  },
+  "input2": {
+    "item": "minecraft:air"
+  },
+  "input3": {
+    "item": "minecraft:air"
+  },
+  "input4": {
+    "item": "minecraft:air"
+  },
+  "output0": {
+    "item": "degeneracycraft:sulfuric_acid_solution"
+  },
+  "output1": {
+    "item": "degeneracycraft:empty_container"
+  },
+  "output2": {
+    "item": "minecraft:air"
+  }
+}

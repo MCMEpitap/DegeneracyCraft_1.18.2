@@ -740,15 +740,19 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.WATER_CONTAINER.get(), "Water Container");
 
         add(DCItems.AMMONIA_GAS.get(), "Ammonia Gas");
+        add(DCItems.AMMONIUM_SULFATE_DUST.get(), "Ammonium Sulfate Dust");
+        add(DCItems.AMMONIUM_HYDROGEN_SULFATE_DUST.get(), "Ammonium Hydrogen Sulfate Dust");
         add(DCItems.FERRIC_OXIDE_DUST.get(), "Ferric Oxide Dust");
         add(DCItems.IRON_DISULFIDE_DUST.get(), "Iron Disulfide Dust");
         add(DCItems.HYDROCHLORIC_ACID_SOLUTION.get(), "Hydrochloric Acid Solution");
         add(DCItems.HYDROGEN_CHLORIDE_GAS.get(), "Hydrogen Chloride Gas");
+        add(DCItems.HYDROGEN_PEROXIDE_SOLUTION.get(), "Hydrogen Peroxide Solution");
         add(DCItems.POTASSIUM_CHLORIDE_DUST.get(), "Pottassium Chloride Dust");
         add(DCItems.POTASSIUM_NITRATE_DUST.get(), "Pottassium Nitrite Dust");
         add(DCItems.SODIUM_CHLORIDE_DUST.get(), "Sodium Chloride Dust");
         add(DCItems.SODIUM_NITRATE_DUST.get(), "Sodium Nitrate Dust");
         add(DCItems.SULFUR_DIOXIDE_GAS.get(), "Sulfur Dioxide Gas");
+        add(DCItems.SULFURIC_ACID_SOLUTION.get(), "Sulfuric Acid Solution");
 
 
         add(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "Multiblock Structure Hologram Visualizer");
@@ -1622,15 +1626,19 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "water" + ".formula", "Chemical Formula:H₂O");
 
         add("tooltip." + "degeneracycraft." + "ammonia" + ".formula", "Chemical Formula:NH₃");
+        add("tooltip." + "degeneracycraft." + "ammonium_sulfate" + ".formula", "Chemical Formula:(NH₄)₂SO₄");
+        add("tooltip." + "degeneracycraft." + "ammonium_hydrogen_sulfate" + ".formula", "Chemical Formula:NH₄HSO₄");
         add("tooltip." + "degeneracycraft." + "ferric_oxide" + ".formula", "Chemical Formula:Fe₂O₃");
         add("tooltip." + "degeneracycraft." + "iron_disulfide" + ".formula", "Chemical Formula:FeS₂");
         add("tooltip." + "degeneracycraft." + "hydrochloric_acid" + ".formula", "Chemical Formula:HCl");
         add("tooltip." + "degeneracycraft." + "hydrogen_chloride" + ".formula", "Chemical Formula:HCl");
+        add("tooltip." + "degeneracycraft." + "hydrogen_peroxide" + ".formula", "Chemical Formula:H₂O₂");
         add("tooltip." + "degeneracycraft." + "potassium_chloride" + ".formula", "Chemical Formula:KCl");
         add("tooltip." + "degeneracycraft." + "potassium_nitrate" + ".formula", "Chemical Formula:KNO₃");
         add("tooltip." + "degeneracycraft." + "sodium_chloride" + ".formula", "Chemical Formula:NaCl");
         add("tooltip." + "degeneracycraft." + "sodium_nitrate" + ".formula", "Chemical Formula:NaNO₃");
         add("tooltip." + "degeneracycraft." + "sulfur_dioxide" + ".formula", "Chemical Formula:SO₂");
+        add("tooltip." + "degeneracycraft." + "sulfuric_acid" + ".formula", "Chemical Formula:H₂SO₄");
 
 
 

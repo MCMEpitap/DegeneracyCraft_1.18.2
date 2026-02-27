@@ -534,15 +534,19 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> WATER_CONTAINER = registerChemicalSubstanceItem("water_container", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "water", "basic");
 
     public static final RegistryObject<Item> AMMONIA_GAS = registerChemicalSubstanceItem("ammonia_gas", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "ammonia", "basic");
+    public static final RegistryObject<Item> AMMONIUM_SULFATE_DUST = registerChemicalSubstanceItem("ammonium_sulfate_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "ammonium_sulfate", "basic");
+    public static final RegistryObject<Item> AMMONIUM_HYDROGEN_SULFATE_DUST = registerChemicalSubstanceItem("ammonium_hydrogen_sulfate_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "ammonium_hydrogen_sulfate", "basic");
     public static final RegistryObject<Item> FERRIC_OXIDE_DUST = registerChemicalSubstanceItem("ferric_oxide_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "ferric_oxide", "basic");
     public static final RegistryObject<Item> IRON_DISULFIDE_DUST = registerChemicalSubstanceItem("iron_disulfide_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "iron_disulfide", "basic");
     public static final RegistryObject<Item> HYDROCHLORIC_ACID_SOLUTION = registerChemicalSubstanceItem("hydrochloric_acid_solution", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrochloric_acid", "basic");
     public static final RegistryObject<Item> HYDROGEN_CHLORIDE_GAS = registerChemicalSubstanceItem("hydrogen_chloride_gas", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrogen_chloride", "basic");
+    public static final RegistryObject<Item> HYDROGEN_PEROXIDE_SOLUTION = registerChemicalSubstanceItem("hydrogen_peroxide_solution", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrogen_peroxide", "basic");
     public static final RegistryObject<Item> POTASSIUM_CHLORIDE_DUST = registerChemicalSubstanceItem("potassium_chloride_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "potassium_chloride", "basic");
     public static final RegistryObject<Item> POTASSIUM_NITRATE_DUST = registerChemicalSubstanceItem("potassium_nitrate_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "potassium_nitrate", "basic");
     public static final RegistryObject<Item> SODIUM_CHLORIDE_DUST = registerChemicalSubstanceItem("sodium_chloride_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "sodium_chloride", "basic");
     public static final RegistryObject<Item> SODIUM_NITRATE_DUST = registerChemicalSubstanceItem("sodium_nitrate_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "sodium_nitrate", "basic");
     public static final RegistryObject<Item> SULFUR_DIOXIDE_GAS = registerChemicalSubstanceItem("sulfur_dioxide_gas", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "sulfur_dioxide", "basic");
+    public static final RegistryObject<Item> SULFURIC_ACID_SOLUTION = registerChemicalSubstanceItem("sulfuric_acid_solution", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "sulfuric_acid", "basic");
 
     //Machine Component Group
 

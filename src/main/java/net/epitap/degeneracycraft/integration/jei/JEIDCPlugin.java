@@ -822,7 +822,7 @@ public class JEIDCPlugin implements IModPlugin {
                 new BasicPerformanceElectricArcFurnaceTransferHandler<>(
                         BasicPerformanceElectricArcFurnaceMenu.class,
                         0, 2,
-                        3, 36
+                        4, 36
                 ),
                 BasicPerformanceElectricArcFurnaceRecipeCategory.TYPE
         );

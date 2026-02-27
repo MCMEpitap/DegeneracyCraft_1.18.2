@@ -817,6 +817,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.EMPTY_CONTAINER.get(), "空の容器");
         add(DCItems.WATER_CONTAINER.get(), "水容器");
 
+        add(DCItems.AMMONIA_GAS.get(), "アンモニアガス");
         add(DCItems.FERRIC_OXIDE_DUST.get(), "酸化鉄(Ⅲ)の粉");
         add(DCItems.IRON_DISULFIDE_DUST.get(), "二硫化鉄の粉");
         add(DCItems.HYDROCHLORIC_ACID_SOLUTION.get(), "塩酸溶液");
@@ -825,6 +826,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.POTASSIUM_NITRATE_DUST.get(), "硝酸カリウムの粉");
         add(DCItems.SODIUM_CHLORIDE_DUST.get(), "塩化ナトリウムの粉");
         add(DCItems.SODIUM_NITRATE_DUST.get(), "塩化カリウムの粉");
+        add(DCItems.SULFUR_DIOXIDE_GAS.get(), "二酸化硫黄ガス");
 
         add(DCBlocks.PULVERIZER_BLOCK.get(), "粉砕機");
 
@@ -1641,6 +1643,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
 
         add("tooltip." + "degeneracycraft." + "water" + ".formula", "化学式:H₂O");
 
+        add("tooltip." + "degeneracycraft." + "ammonia" + ".formula", "化学式:NH₃");
         add("tooltip." + "degeneracycraft." + "ferric_oxide" + ".formula", "化学式:Fe₂O₃");
         add("tooltip." + "degeneracycraft." + "iron_disulfide" + ".formula", "化学式:FeS₂");
         add("tooltip." + "degeneracycraft." + "hydrochloric_acid" + ".formula", "化学式:HCl");
@@ -1649,6 +1652,7 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "potassium_nitrate" + ".formula", "化学式:KNO₃");
         add("tooltip." + "degeneracycraft." + "sodium_chloride" + ".formula", "化学式:NaCl");
         add("tooltip." + "degeneracycraft." + "sodium_nitrate" + ".formula", "化学式:NaNO₃");
+        add("tooltip." + "degeneracycraft." + "sulfur_dioxide" + ".formula", "化学式:SO₂");
 
 
         add("tooltip." + "degeneracycraft." + "requiredenergy." + "iron_bearing" + ".phase0", "要求電力総量:0 FE");

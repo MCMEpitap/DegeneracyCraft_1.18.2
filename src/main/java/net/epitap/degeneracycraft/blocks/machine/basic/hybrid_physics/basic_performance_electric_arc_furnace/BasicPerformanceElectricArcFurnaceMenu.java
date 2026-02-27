@@ -21,7 +21,7 @@ public class BasicPerformanceElectricArcFurnaceMenu extends AbstractContainerMen
     private static final int PLAYER_INVENTORY_SLOT_COUNT = PLAYER_INVENTORY_COLUMN_COUNT * PLAYER_INVENTORY_ROW_COUNT;
     private static final int VANILLA_SLOT_COUNT = HOTBAR_SLOT_COUNT + PLAYER_INVENTORY_SLOT_COUNT;
     private static final int TE_INVENTORY_FIRST_SLOT_INDEX = VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT;
-    private static final int TE_INVENTORY_SLOT_COUNT = 3;
+    private static final int TE_INVENTORY_SLOT_COUNT = 4;
     public final BasicPerformanceElectricArcFurnaceBlockEntity blockEntity;
     public final Level level;
     public final ContainerData data;
@@ -42,6 +42,7 @@ public class BasicPerformanceElectricArcFurnaceMenu extends AbstractContainerMen
             this.addSlot(new SlotItemHandler(handler, 0, 26, 7));
             this.addSlot(new SlotItemHandler(handler, 1, 26, 25));
             this.addSlot(new SlotItemHandler(handler, 2, 116, 25));
+            this.addSlot(new SlotItemHandler(handler, 3, 116, 43));
         });
         addDataSlots(data);
     }

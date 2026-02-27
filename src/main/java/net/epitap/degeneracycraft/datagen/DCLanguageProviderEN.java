@@ -739,6 +739,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.EMPTY_CONTAINER.get(), "Empty Container");
         add(DCItems.WATER_CONTAINER.get(), "Water Container");
 
+        add(DCItems.AMMONIA_GAS.get(), "Ammonia Gas");
         add(DCItems.FERRIC_OXIDE_DUST.get(), "Ferric Oxide Dust");
         add(DCItems.IRON_DISULFIDE_DUST.get(), "Iron Disulfide Dust");
         add(DCItems.HYDROCHLORIC_ACID_SOLUTION.get(), "Hydrochloric Acid Solution");
@@ -747,6 +748,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCItems.POTASSIUM_NITRATE_DUST.get(), "Pottassium Nitrite Dust");
         add(DCItems.SODIUM_CHLORIDE_DUST.get(), "Sodium Chloride Dust");
         add(DCItems.SODIUM_NITRATE_DUST.get(), "Sodium Nitrate Dust");
+        add(DCItems.SULFUR_DIOXIDE_GAS.get(), "Sulfur Dioxide Gas");
 
 
         add(DCItems.MULTIBLOCK_STRUCTURE_HOLOGRAM_VISUALIZER.get(), "Multiblock Structure Hologram Visualizer");
@@ -1619,6 +1621,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
 
         add("tooltip." + "degeneracycraft." + "water" + ".formula", "Chemical Formula:H₂O");
 
+        add("tooltip." + "degeneracycraft." + "ammonia" + ".formula", "Chemical Formula:NH₃");
         add("tooltip." + "degeneracycraft." + "ferric_oxide" + ".formula", "Chemical Formula:Fe₂O₃");
         add("tooltip." + "degeneracycraft." + "iron_disulfide" + ".formula", "Chemical Formula:FeS₂");
         add("tooltip." + "degeneracycraft." + "hydrochloric_acid" + ".formula", "Chemical Formula:HCl");
@@ -1627,6 +1630,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft." + "potassium_nitrate" + ".formula", "Chemical Formula:KNO₃");
         add("tooltip." + "degeneracycraft." + "sodium_chloride" + ".formula", "Chemical Formula:NaCl");
         add("tooltip." + "degeneracycraft." + "sodium_nitrate" + ".formula", "Chemical Formula:NaNO₃");
+        add("tooltip." + "degeneracycraft." + "sulfur_dioxide" + ".formula", "Chemical Formula:SO₂");
 
 
 

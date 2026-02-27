@@ -11,5 +11,8 @@
   },
   "output0": {
     "item": "degeneracycraft:simple_chemical_container"
+  },
+  "output1": {
+    "item": "minecraft:air"
   }
 }

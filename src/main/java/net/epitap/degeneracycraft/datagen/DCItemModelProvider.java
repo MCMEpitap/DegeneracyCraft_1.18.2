@@ -720,6 +720,8 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.TIN_BLOCK.getId().getPath(),
                 modLoc("block/tin_block"));
 
+
+        substanceItem(DCItems.AMMONIA_GAS.get());
         substanceItem(DCItems.FERRIC_OXIDE_DUST.get());
         substanceItem(DCItems.IRON_DISULFIDE_DUST.get());
         substanceItem(DCItems.HYDROCHLORIC_ACID_SOLUTION.get());
@@ -728,6 +730,8 @@ public class DCItemModelProvider extends ItemModelProvider {
         substanceItem(DCItems.POTASSIUM_NITRATE_DUST.get());
         substanceItem(DCItems.SODIUM_CHLORIDE_DUST.get());
         substanceItem(DCItems.SODIUM_NITRATE_DUST.get());
+        substanceItem(DCItems.SULFUR_DIOXIDE_GAS.get());
+
 
         basicInscribedCircuitItem(DCItems.BASIC_PRECISION_BOLT_INSCRIBED_CIRCUIT.get());
         basicInscribedCircuitItem(DCItems.BASIC_PRECISION_KEY_INSCRIBED_CIRCUIT.get());

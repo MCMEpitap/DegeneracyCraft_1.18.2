@@ -533,6 +533,7 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> EMPTY_CONTAINER = ITEMS.register("empty_container", () -> new Item(new Item.Properties().tab(DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB)));
     public static final RegistryObject<Item> WATER_CONTAINER = registerChemicalSubstanceItem("water_container", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "water", "basic");
 
+    public static final RegistryObject<Item> AMMONIA_GAS = registerChemicalSubstanceItem("ammonia_gas", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "ammonia", "basic");
     public static final RegistryObject<Item> FERRIC_OXIDE_DUST = registerChemicalSubstanceItem("ferric_oxide_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "ferric_oxide", "basic");
     public static final RegistryObject<Item> IRON_DISULFIDE_DUST = registerChemicalSubstanceItem("iron_disulfide_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "iron_disulfide", "basic");
     public static final RegistryObject<Item> HYDROCHLORIC_ACID_SOLUTION = registerChemicalSubstanceItem("hydrochloric_acid_solution", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "hydrochloric_acid", "basic");
@@ -541,6 +542,7 @@ public class DCItems extends CreativeModeTab {
     public static final RegistryObject<Item> POTASSIUM_NITRATE_DUST = registerChemicalSubstanceItem("potassium_nitrate_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "potassium_nitrate", "basic");
     public static final RegistryObject<Item> SODIUM_CHLORIDE_DUST = registerChemicalSubstanceItem("sodium_chloride_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "sodium_chloride", "basic");
     public static final RegistryObject<Item> SODIUM_NITRATE_DUST = registerChemicalSubstanceItem("sodium_nitrate_dust", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "sodium_nitrate", "basic");
+    public static final RegistryObject<Item> SULFUR_DIOXIDE_GAS = registerChemicalSubstanceItem("sulfur_dioxide_gas", DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB, "sulfur_dioxide", "basic");
 
     //Machine Component Group
 

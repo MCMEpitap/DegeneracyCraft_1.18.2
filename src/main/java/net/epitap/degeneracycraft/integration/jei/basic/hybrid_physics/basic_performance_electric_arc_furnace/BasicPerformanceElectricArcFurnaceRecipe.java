@@ -22,14 +22,16 @@ public class BasicPerformanceElectricArcFurnaceRecipe implements Recipe<SimpleCo
     final ItemStack input0;
     final ItemStack input1;
     final ItemStack output0;
+    final ItemStack output1;
 
-    public BasicPerformanceElectricArcFurnaceRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack input1, ItemStack output0) {
+    public BasicPerformanceElectricArcFurnaceRecipe(ResourceLocation id, float energy, float time, ItemStack input0, ItemStack input1, ItemStack output0, ItemStack output1) {
         this.id = id;
         this.energy = energy;
         this.time = time;
         this.input0 = input0;
         this.input1 = input1;
         this.output0 = output0;
+        this.output1 = output1;
     }
 
     @Override
@@ -68,6 +70,10 @@ public class BasicPerformanceElectricArcFurnaceRecipe implements Recipe<SimpleCo
     public ItemStack getOutput0Item() {
         return output0;
     }
+    public ItemStack getOutput1Item() {
+        return output1;
+    }
+
 
     @Override
     public ItemStack getResultItem() {
@@ -116,8 +122,10 @@ public class BasicPerformanceElectricArcFurnaceRecipe implements Recipe<SimpleCo
             ItemStack input0 = BasicPerformanceElectricArcFurnaceRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input0"));
             ItemStack input1 = BasicPerformanceElectricArcFurnaceRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "input1"));
             ItemStack output0 = BasicPerformanceElectricArcFurnaceRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output0"));
+            ItemStack output1 = BasicPerformanceElectricArcFurnaceRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(pJson, "output1"));
 
-            return new BasicPerformanceElectricArcFurnaceRecipe(pRecipeId, energy, time, input0, input1, output0);
+
+            return new BasicPerformanceElectricArcFurnaceRecipe(pRecipeId, energy, time, input0, input1, output0, output1);
         }
 
         @Override
@@ -127,8 +135,9 @@ public class BasicPerformanceElectricArcFurnaceRecipe implements Recipe<SimpleCo
             ItemStack input0 = pBuffer.readItem();
             ItemStack input1 = pBuffer.readItem();
             ItemStack output0 = pBuffer.readItem();
+            ItemStack output1 = pBuffer.readItem();
 
-            return new BasicPerformanceElectricArcFurnaceRecipe(pRecipeId, energy, time, input0, input1, output0);
+            return new BasicPerformanceElectricArcFurnaceRecipe(pRecipeId, energy, time, input0, input1, output0, output1);
         }
 
         @Override

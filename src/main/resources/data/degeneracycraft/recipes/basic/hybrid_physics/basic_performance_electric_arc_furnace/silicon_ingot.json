@@ -10,5 +10,8 @@
   },
   "output0": {
     "item": "degeneracycraft:silicon_ingot"
+  },
+  "output1": {
+    "item": "minecraft:air"
   }
 }

@@ -37,6 +37,7 @@ import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOn
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.menu.machine.PulverizerMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.bus.basic_strength_astronomy_multiblock_energy_input_bus.BasicStrengthAstronomyMultiblockEnergyInputBusBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.energy_storage.basic_strength_astronomy_multiblock_energy_storage.BasicStrengthAstronomyMultiblockEnergyStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.material_storage.basic_strength_astronomy_multiblock_material_storage.BasicStrengthAstronomyMultiblockMaterialStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.biology.energy_storage.basic_strength_biology_multiblock_energy_storage.BasicStrengthBiologyMultiblockEnergyStorageMenu;
@@ -81,6 +82,18 @@ public class DCMenuTypes {
             registerMenuType(BasicStrengthAstronomyMultiblockEnergyStorageMenu::new, "basic_strength_astronomy_multiblock_energy_storage_menu");
     public static final RegistryObject<MenuType<BasicStrengthAstronomyMultiblockMaterialStorageMenu>> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_MENU =
             registerMenuType(BasicStrengthAstronomyMultiblockMaterialStorageMenu::new, "basic_strength_astronomy_multiblock_material_storage_menu");
+    public static final RegistryObject<MenuType<BasicStrengthAstronomyMultiblockEnergyInputBusMenu>> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_INPUT_BUS_MENU =
+            registerMenuType(BasicStrengthAstronomyMultiblockEnergyInputBusMenu::new, "basic_strength_astronomy_multiblock_energy_input_bus_menu");
+    public static final RegistryObject<MenuType<BasicStrengthAstronomyMultiblockEnergyOutputBusMenu>> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_OUTPUT_BUS_MENU =
+            registerMenuType(BasicStrengthAstronomyMultiblockEnergyOutputBusMenu::new, "basic_strength_astronomy_multiblock_energy_output_bus_menu");
+    public static final RegistryObject<MenuType<BasicStrengthAstronomyMultiblockMaterialInputPortMenu>> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_INPUT_PORT_MENU =
+            registerMenuType(BasicStrengthAstronomyMultiblockMaterialInputPortMenu::new, "basic_strength_astronomy_multiblock_material_input_port_menu");
+    public static final RegistryObject<MenuType<BasicStrengthAstronomyMultiblockMaterialOutputPortMenu>> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_OUTPUT_PORT_MENU =
+            registerMenuType(BasicStrengthAstronomyMultiblockMaterialOutputPortMenu::new, "basic_strength_astronomy_multiblock_material_output_port_menu");
+
+
+
+
 
     public static final RegistryObject<MenuType<BasicStrengthBiologyMultiblockEnergyStorageMenu>> BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_STORAGE_MENU =
             registerMenuType(BasicStrengthBiologyMultiblockEnergyStorageMenu::new, "basic_strength_biology_multiblock_energy_storage_menu");

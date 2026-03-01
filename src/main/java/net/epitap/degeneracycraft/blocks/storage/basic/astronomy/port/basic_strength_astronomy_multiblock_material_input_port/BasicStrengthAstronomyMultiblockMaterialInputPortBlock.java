@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.storage.basic.astronomy.bus.basic_strength_astronomy_multiblock_input_bus;
+package net.epitap.degeneracycraft.blocks.storage.basic.astronomy.port.basic_strength_astronomy_multiblock_material_input_port;
 
 import net.epitap.degeneracycraft.blocks.base.BlockBase;
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
@@ -20,10 +20,10 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nullable;
 
-public class BasicStrengthAstronomyMultiblockEnergyStorageBlock extends BlockBase {
+public class BasicStrengthAstronomyMultiblockMaterialInputPortBlock extends BlockBase {
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
 
-    public BasicStrengthAstronomyMultiblockEnergyStorageBlock(Properties properties) {
+    public BasicStrengthAstronomyMultiblockMaterialInputPortBlock(Properties properties) {
         super(properties);
     }
 
@@ -31,8 +31,8 @@ public class BasicStrengthAstronomyMultiblockEnergyStorageBlock extends BlockBas
     public void onRemove(BlockState pState, Level level, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
         if (pState.getBlock() != pNewState.getBlock()) {
             BlockEntity blockEntity = level.getBlockEntity(pPos);
-            if (blockEntity instanceof BasicStrengthAstronomyMultiblockEnergyStorageBlockEntity) {
-                ((BasicStrengthAstronomyMultiblockEnergyStorageBlockEntity) blockEntity).drops();
+            if (blockEntity instanceof BasicStrengthAstronomyMultiblockMaterialInputPortBlockEntity) {
+                ((BasicStrengthAstronomyMultiblockMaterialInputPortBlockEntity) blockEntity).drops();
             }
         }
         super.onRemove(pState, level, pPos, pNewState, pIsMoving);
@@ -44,8 +44,8 @@ public class BasicStrengthAstronomyMultiblockEnergyStorageBlock extends BlockBas
         if (!level.isClientSide()) {
             BlockEntity entity = level.getBlockEntity(pPos);
 
-            if (entity instanceof BasicStrengthAstronomyMultiblockEnergyStorageBlockEntity) {
-                NetworkHooks.openGui(((ServerPlayer) pPlayer), (BasicStrengthAstronomyMultiblockEnergyStorageBlockEntity) entity, pPos);
+            if (entity instanceof BasicStrengthAstronomyMultiblockMaterialInputPortBlockEntity) {
+                NetworkHooks.openGui(((ServerPlayer) pPlayer), (BasicStrengthAstronomyMultiblockMaterialInputPortBlockEntity) entity, pPos);
             } else {
                 throw new IllegalStateException("Our Container provider is missing!");
             }
@@ -57,15 +57,15 @@ public class BasicStrengthAstronomyMultiblockEnergyStorageBlock extends BlockBas
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
-        return new BasicStrengthAstronomyMultiblockEnergyStorageBlockEntity(pos, state);
+        return new BasicStrengthAstronomyMultiblockMaterialInputPortBlockEntity(pos, state);
     }
 
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level level, @NotNull BlockState state,
                                                                   @NotNull BlockEntityType<T> type) {
-        return createTickerHelper(type, DCBlockEntities.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY.get(),
-                BasicStrengthAstronomyMultiblockEnergyStorageBlockEntity::tick);
+        return createTickerHelper(type, DCBlockEntities.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_INPUT_PORT_BLOCK_ENTITY.get(),
+                BasicStrengthAstronomyMultiblockMaterialInputPortBlockEntity::tick);
     }
 
     @Nullable

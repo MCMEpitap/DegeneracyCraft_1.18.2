@@ -38,6 +38,8 @@ import net.epitap.degeneracycraft.blocks.machine.basic.kaleidoscopic_reality_sci
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlock;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineBlock;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineBlock;
+import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.bus.basic_strength_astronomy_multiblock_energy_input_bus.BasicStrengthAstronomyMultiblockEnergyInputBusBlock;
+import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.bus.basic_strength_astronomy_multiblock_energy_output_bus.BasicStrengthAstronomyMultiblockEnergyOutputBusBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.energy_storage.basic_strength_astronomy_multiblock_energy_storage.BasicStrengthAstronomyMultiblockEnergyStorageBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.material_storage.basic_strength_astronomy_multiblock_material_storage.BasicStrengthAstronomyMultiblockMaterialStorageBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.biology.energy_storage.basic_strength_biology_multiblock_energy_storage.BasicStrengthBiologyMultiblockEnergyStorageBlock;
@@ -199,6 +201,25 @@ public class DCBlocks {
             new BasicStrengthAstronomyMultiblockMaterialStorageBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK = registerHoloBlock("basic_strength_astronomy_multiblock_material_storage_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK = registerBlock("basic_strength_astronomy_multiblock_energy_input_bus_block", () ->
+            new BasicStrengthAstronomyMultiblockEnergyInputBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK = registerHoloBlock("basic_strength_astronomy_multiblock_energy_input_bus_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK = registerBlock("basic_strength_astronomy_multiblock_energy_output_bus_block", () ->
+            new BasicStrengthAstronomyMultiblockEnergyOutputBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK = registerHoloBlock("basic_strength_astronomy_multiblock_energy_output_bus_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_INPUT_PORT_BLOCK = registerBlock("basic_strength_astronomy_multiblock_material_input_port_block", () ->
+            new BasicStrengthAstronomyMultiblockMaterialInputPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_INPUT_PORT_HOLO_BLOCK = registerHoloBlock("basic_strength_astronomy_multiblock_material_input_port_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_OUTPUT_PORT_BLOCK = registerBlock("basic_strength_astronomy_multiblock_material_output_port_block", () ->
+            new BasicStrengthAstronomyMultiblockMaterialOutputPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_OUTPUT_BUS_HOLO_BLOCK = registerHoloBlock("basic_strength_astronomy_multiblock_material_output_port_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+
+
+
 
     public static final RegistryObject<Block> BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_BASE_FRAME_BLOCK = registerBlock("basic_strength_biology_multiblock_base_frame_block", () ->
             new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);

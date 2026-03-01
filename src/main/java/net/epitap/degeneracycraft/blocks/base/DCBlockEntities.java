@@ -37,6 +37,7 @@ import net.epitap.degeneracycraft.blocks.machine.basic.kaleidoscopic_reality_sci
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.bus.basic_strength_astronomy_multiblock_energy_input_bus.BasicStrengthAstronomyMultiblockEnergyInputBusBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.energy_storage.basic_strength_astronomy_multiblock_energy_storage.BasicStrengthAstronomyMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.material_storage.basic_strength_astronomy_multiblock_material_storage.BasicStrengthAstronomyMultiblockMaterialStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.biology.energy_storage.basic_strength_biology_multiblock_energy_storage.BasicStrengthBiologyMultiblockEnergyStorageBlockEntity;
@@ -154,6 +155,19 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicStrengthAstronomyMultiblockMaterialStorageBlockEntity>> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_strength_astronomy_multiblock_material_storage_block_entity", () ->
                     BlockEntityType.Builder.of(BasicStrengthAstronomyMultiblockMaterialStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthAstronomyMultiblockEnergyInputBusBlockEntity>> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_astronomy_multiblock_energy_input_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthAstronomyMultiblockEnergyInputBusBlockEntity::new, DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthAstronomyMultiblockEnergyOutputBusBlockEntity>> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_astronomy_multiblock_energy_output_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthAstronomyMultiblockEnergyOutputBusBlockEntity::new, DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthAstronomyMultiblockMaterialInputPortBlockEntity>> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_INPUT_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_astronomy_multiblock_material_input_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthAstronomyMultiblockMaterialInputPortBlockEntity::new, DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_INPUT_PORT_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthAstronomyMultiblockMaterialOutputPortBlockEntity>> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_OUTPUT_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_astronomy_multiblock_material_output_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthAstronomyMultiblockMaterialOutputPortBlockEntity::new, DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_OUTPUT_PORT_BLOCK.get()).build(null));
+
 
     public static final RegistryObject<BlockEntityType<BasicStrengthBiologyMultiblockEnergyStorageBlockEntity>> BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_strength_biology_multiblock_energy_storage_block_entity", () ->

@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.blocks.storage.basic.astronomy.bus.basic_strength_astronomy_multiblock_input_bus;
+package net.epitap.degeneracycraft.blocks.storage.basic.astronomy.bus.basic_strength_astronomy_multiblock_energy_input_bus;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -15,12 +15,12 @@ import net.minecraft.world.entity.player.Inventory;
 
 import java.util.Optional;
 
-public class BasicStrengthAstronomyMultiblockEnergyStorageScreen extends AbstractContainerScreen<BasicStrengthAstronomyMultiblockEnergyStorageMenu> {
+public class BasicStrengthAstronomyMultiblockEnergyInputBusScreen extends AbstractContainerScreen<BasicStrengthAstronomyMultiblockEnergyInputBusMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_energy_storage/basic_strength_astronomy_multiblock_energy_storage_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_energy_input_bus/basic_strength_astronomy_multiblock_energy_input_bus_gui.png");
     private MultiblockEnergyStorageInfoArea energyInfoArea;
 
-    public BasicStrengthAstronomyMultiblockEnergyStorageScreen(BasicStrengthAstronomyMultiblockEnergyStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
+    public BasicStrengthAstronomyMultiblockEnergyInputBusScreen(BasicStrengthAstronomyMultiblockEnergyInputBusMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
         this.imageWidth = 176;
         this.imageHeight = 166;

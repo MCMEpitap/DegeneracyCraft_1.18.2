@@ -52,7 +52,7 @@ public class BasicStrengthAstronomyMultiblockEnergyOutputBusBlockEntity extends 
     private LazyOptional<DCIEnergyStorageFloat> lazyEnergyHandler = LazyOptional.empty();
 
     public BasicStrengthAstronomyMultiblockEnergyOutputBusBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK_ENTITYPUT_BUS_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+        super(DCBlockEntities.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int pIndex) {
@@ -78,7 +78,7 @@ public class BasicStrengthAstronomyMultiblockEnergyOutputBusBlockEntity extends 
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pInventory, Player pPlayer) {
-        return new BasicStrengthAstronomyMultiblockEnergyOutPutBusMenu(pContainerId, pInventory, this, this.data);
+        return new BasicStrengthAstronomyMultiblockEnergyOutputBusMenu(pContainerId, pInventory, this, this.data);
     }
 
     @Override

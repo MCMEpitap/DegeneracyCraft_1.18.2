@@ -3,7 +3,7 @@
   "energy": 10000.0,
   "time": 100.0,
   "input0": {
-    "item": "degeneracycraft:basic_astronomy_memory_circuit"
+    "item": "degeneracycraft:simple_astronomy_memory_circuit"
   },
   "input1": {
     "item": "degeneracycraft:designated_data_chip_moon"

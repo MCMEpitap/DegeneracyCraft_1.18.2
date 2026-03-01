@@ -229,27 +229,6 @@ public class BasicPerformanceAstronomicalTelescopeStructure {
         };
     }
 
-    public static int getSizeX0() {
-        return structure0[0][0].length;
-    }
 
-    public static int getSizeY0() {
-        return structure0.length;
-    }
 
-    public static int getSizeZ0() {
-        return structure0[0].length;
-    }
-
-    public static int getSizeX1() {
-        return structure1[0][0].length;
-    }
-
-    public static int getSizeY1() {
-        return structure1.length;
-    }
-
-    public static int getSizeZ1() {
-        return structure1[0].length;
-    }
 }

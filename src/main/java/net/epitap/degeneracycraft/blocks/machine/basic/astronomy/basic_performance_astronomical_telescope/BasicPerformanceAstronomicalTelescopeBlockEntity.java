@@ -34,10 +34,9 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
+
+import static net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeStructure.*;
 
 public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntity implements MenuProvider {
     public float MACHINE_CAPACITY = 50000F;
@@ -64,6 +63,13 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     public static final int DATA_FORCE_STOP   = 3;
     public static final int DATA_MULTIBLOCK   = 4;
 
+    public static final int IN_0   = 0;
+    public static final int IN_1   = 1;
+    public static final int OUT_0   = 2;
+
+    private static final List<IItemHandler> materialStorages = new ArrayList<>();
+    private static final List<DCIEnergyStorageFloat> energyStorages = new ArrayList<>();
+
     public final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -73,7 +79,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 2 -> false;
+                case OUT_0 -> false;
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -101,10 +107,10 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     private LazyOptional<DCIEnergyStorageFloat> lazyEnergyHandler = LazyOptional.empty();
 
     private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
-            Map.of(Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 2, (out, stack) -> false)));
+            Map.of(Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == IN_0, (in, stack) -> itemHandler.isItemValid(IN_0, stack))),
+                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == IN_0, (in, stack) -> itemHandler.isItemValid(IN_0, stack))),
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == IN_0, (in, stack) -> itemHandler.isItemValid(IN_0, stack))),
+                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == OUT_0, (out, stack) -> false)));
 
     public BasicPerformanceAstronomicalTelescopeBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(DCBlockEntities.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
@@ -230,22 +236,26 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
-        if(BasicPerformanceAstronomicalTelescopeStructure.isPowered1(level, pos, state, blockEntity)){
+        if(isPowered1(level, pos, state, blockEntity)){
             blockEntity.multiblockLevel = 1;
-        } else if(BasicPerformanceAstronomicalTelescopeStructure.isFormed(level, pos, state, blockEntity)){
+        } else if(isFormed(level, pos, state, blockEntity)){
             blockEntity.multiblockLevel = 0;
         } else {
             blockEntity.multiblockLevel = -1;
         }
+        blockEntity.scanMultiblockStorages(level, pos);
+        blockEntity.pullEnergyFromStorages();
+        blockEntity.pullItemsFromStorages();
+        blockEntity.pushOutputToStorages();
 
-        BasicPerformanceAstronomicalTelescopeStructure.hologram(level, pos, state, blockEntity);
+        hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
 
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(1e-19F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(1e-19F, false);
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
-        if (level.isClientSide()) {
-            return;
+        if (!level.isClientSide()) {
+
         }
 
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
@@ -283,11 +293,11 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
 //                blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
 //            }
             if(isTime(blockEntity) && isAboveAirBlock(blockEntity)) {
-                if (blockEntity.hologramLevel == 1) {
+                if (blockEntity.multiblockLevel == 1) {
                     blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_1;
                     blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_1
                             * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-                } else if (blockEntity.hologramLevel == 0) {
+                } else if (blockEntity.multiblockLevel == 0) {
                     blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
                     blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
                             * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
@@ -306,6 +316,115 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
             setChanged(level, pos, state);
         }
         setChanged(level, pos, state);
+    }
+
+    private void scanMultiblockStorages(Level level, BlockPos pos) {
+        materialStorages.clear();
+        energyStorages.clear();
+
+        if(this.multiblockLevel >= 0) {
+            for (int y = 0; y < structure0.length; y++) {
+                for (int z = 0; z < structure0[y].length; z++) {
+                    for (int x = 0; x < structure0[y][z].length; x++) {
+
+                        BlockPos targetPos = pos.offset(x + minX0, maxY0 - y, z + minZ0);
+                        BlockEntity targetEntity = level.getBlockEntity(targetPos);
+
+                        if (targetEntity == null || targetEntity == this) continue;
+
+                        // 🔹 アイテム
+                        targetEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+                                .ifPresent(materialStorages::add);
+
+                        // 🔹 エネルギー
+                        targetEntity.getCapability(CapabilityEnergy.ENERGY)
+                                .ifPresent(e -> {
+                                    if (e instanceof DCIEnergyStorageFloat f)
+                                        energyStorages.add(f);
+                                });
+                    }
+                }
+            }
+        }
+    }
+
+    private void pullEnergyFromStorages() {
+        float needed = MACHINE_CAPACITY - ENERGY_STORAGE.getEnergyStoredFloat();
+
+        for (DCIEnergyStorageFloat storage : energyStorages) {
+            if (needed <= 0) break;
+
+            float extracted = storage.extractEnergyFloat(needed, false);
+            ENERGY_STORAGE.receiveEnergyFloat(extracted, false);
+
+            needed -= extracted;
+        }
+    }
+
+    private void pullItemsFromStorages() {
+
+        for (IItemHandler storage : materialStorages) {
+
+            for (int storageSlot = 0; storageSlot < storage.getSlots(); storageSlot++) {
+
+                ItemStack stack = storage.getStackInSlot(storageSlot);
+                if (stack.isEmpty()) continue;
+
+                ItemStack remaining = stack.copy();
+                int totalInserted = 0;
+
+                // ===== スロット0 =====
+                ItemStack sim0 = itemHandler.insertItem(0, remaining, true);
+                int canInsert0 = remaining.getCount() - sim0.getCount();
+
+                if (canInsert0 > 0) {
+                    ItemStack extracted = storage.extractItem(storageSlot, canInsert0, false);
+                    ItemStack after0 = itemHandler.insertItem(0, extracted, false);
+                    totalInserted += extracted.getCount() - after0.getCount();
+                    remaining = sim0;
+                }
+
+                // ===== スロット1 =====
+                if (!remaining.isEmpty()) {
+
+                    ItemStack sim1 = itemHandler.insertItem(1, remaining, true);
+                    int canInsert1 = remaining.getCount() - sim1.getCount();
+
+                    if (canInsert1 > 0) {
+                        ItemStack extracted = storage.extractItem(storageSlot, canInsert1, false);
+                        ItemStack after1 = itemHandler.insertItem(1, extracted, false);
+                        totalInserted += extracted.getCount() - after1.getCount();
+                    }
+                }
+
+                // 何か入ったら終了（1tick1動作）
+                if (totalInserted > 0) return;
+            }
+        }
+    }
+
+    private void pushOutputToStorages() {
+
+        ItemStack output = itemHandler.getStackInSlot(2);
+        if (output.isEmpty()) return;
+
+        for (IItemHandler storage : materialStorages) {
+
+            for (int slot = 0; slot < storage.getSlots(); slot++) {
+
+                ItemStack leftover = storage.insertItem(slot, output.copy(), false);
+
+                if (leftover.isEmpty()) {
+                    itemHandler.setStackInSlot(2, ItemStack.EMPTY);
+                    return;
+                }
+
+                if (leftover.getCount() < output.getCount()) {
+                    itemHandler.setStackInSlot(2, leftover);
+                    return;
+                }
+            }
+        }
     }
 
     private static boolean hasAmountEnergyRecipe(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {

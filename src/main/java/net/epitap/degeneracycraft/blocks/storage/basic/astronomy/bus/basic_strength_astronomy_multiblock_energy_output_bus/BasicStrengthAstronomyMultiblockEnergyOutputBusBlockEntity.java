@@ -121,8 +121,8 @@ public class BasicStrengthAstronomyMultiblockEnergyOutputBusBlockEntity extends 
     }
 
     public static void tick(Level level, BlockPos pPos, BlockState pState, BasicStrengthAstronomyMultiblockEnergyOutputBusBlockEntity blockEntity) {
-        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(1e-19F, false);
-        blockEntity.ENERGY_STORAGE.extractEnergyFloat(1e-19F, false);
+        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(1e-20F, false);
+        blockEntity.ENERGY_STORAGE.extractEnergyFloat(1e-20F, false);
     }
 
 }

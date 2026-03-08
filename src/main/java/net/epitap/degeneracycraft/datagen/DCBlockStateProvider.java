@@ -44,6 +44,16 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthAstronomyMultiblockEnergyStorageHolo();
         registerBasicStrengthAstronomyMultiblockMaterialStorage();
         registerBasicStrengthAstronomyMultiblockMaterialStorageHolo();
+        registerBasicStrengthAstronomyMultiblockEnergyInputBus();
+        registerBasicStrengthAstronomyMultiblockEnergyInputBusHolo();
+        registerBasicStrengthAstronomyMultiblockEnergyOutputBus();
+        registerBasicStrengthAstronomyMultiblockEnergyOutputBusHolo();
+        registerBasicStrengthAstronomyMultiblockMaterialInputPort();
+        registerBasicStrengthAstronomyMultiblockMaterialInputPortHolo();
+        registerBasicStrengthAstronomyMultiblockMaterialOutputPort();
+        registerBasicStrengthAstronomyMultiblockMaterialOutputPortHolo();
+
+
 
         registerBasicStrengthBiologyMultiblockBaseFrame();
         registerBasicStrengthBiologyMultiblockBaseFrameHolo();
@@ -743,6 +753,121 @@ public class DCBlockStateProvider extends BlockStateProvider {
         orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
+
+    private void registerBasicStrengthAstronomyMultiblockEnergyInputBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_energy_input_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_input_bus/basic_strength_astronomy_multiblock_energy_input_bus_block"));
+        model.texture("up", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_input_bus/basic_strength_astronomy_multiblock_energy_input_bus_block"));
+        model.texture("north", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_input_bus/basic_strength_astronomy_multiblock_energy_input_bus_block"));
+        model.texture("south", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_input_bus/basic_strength_astronomy_multiblock_energy_input_bus_block"));
+        model.texture("east", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_input_bus/basic_strength_astronomy_multiblock_energy_input_bus_block"));
+        model.texture("west", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_input_bus/basic_strength_astronomy_multiblock_energy_input_bus_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_input_bus/basic_strength_astronomy_multiblock_energy_input_bus_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthAstronomyMultiblockEnergyInputBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_energy_input_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_input_bus/basic_strength_astronomy_multiblock_energy_input_bus_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_input_bus/basic_strength_astronomy_multiblock_energy_input_bus_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_input_bus/basic_strength_astronomy_multiblock_energy_input_bus_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_input_bus/basic_strength_astronomy_multiblock_energy_input_bus_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_input_bus/basic_strength_astronomy_multiblock_energy_input_bus_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_input_bus/basic_strength_astronomy_multiblock_energy_input_bus_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_input_bus/basic_strength_astronomy_multiblock_energy_input_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthAstronomyMultiblockEnergyOutputBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_energy_output_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_output_bus/basic_strength_astronomy_multiblock_energy_output_bus_block"));
+        model.texture("up", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_output_bus/basic_strength_astronomy_multiblock_energy_output_bus_block"));
+        model.texture("north", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_output_bus/basic_strength_astronomy_multiblock_energy_output_bus_block"));
+        model.texture("south", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_output_bus/basic_strength_astronomy_multiblock_energy_output_bus_block"));
+        model.texture("east", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_output_bus/basic_strength_astronomy_multiblock_energy_output_bus_block"));
+        model.texture("west", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_output_bus/basic_strength_astronomy_multiblock_energy_output_bus_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_output_bus/basic_strength_astronomy_multiblock_energy_output_bus_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthAstronomyMultiblockEnergyOutputBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_energy_output_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_output_bus/basic_strength_astronomy_multiblock_energy_output_bus_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_output_bus/basic_strength_astronomy_multiblock_energy_output_bus_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_output_bus/basic_strength_astronomy_multiblock_energy_output_bus_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_output_bus/basic_strength_astronomy_multiblock_energy_output_bus_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_output_bus/basic_strength_astronomy_multiblock_energy_output_bus_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_output_bus/basic_strength_astronomy_multiblock_energy_output_bus_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/bus/basic_strength_astronomy_multiblock_energy_output_bus/basic_strength_astronomy_multiblock_energy_output_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthAstronomyMultiblockMaterialInputPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_material_input_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_block"));
+        model.texture("up", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_block"));
+        model.texture("north", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_block"));
+        model.texture("south", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_block"));
+        model.texture("east", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_block"));
+        model.texture("west", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_INPUT_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthAstronomyMultiblockMaterialInputPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_material_input_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_INPUT_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthAstronomyMultiblockMaterialOutputPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_material_output_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_block"));
+        model.texture("up", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_block"));
+        model.texture("north", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_block"));
+        model.texture("south", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_block"));
+        model.texture("east", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_block"));
+        model.texture("west", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_OUTPUT_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthAstronomyMultiblockMaterialOutputPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_material_output_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_OUTPUT_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+    
+    
+    
 
     private void registerBasicStrengthBiologyMultiblockBaseFrame() {
         BlockModelBuilder model = models().getBuilder("block/basic_strength_biology_multiblock_base_frame_block");

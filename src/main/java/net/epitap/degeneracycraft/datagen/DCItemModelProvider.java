@@ -902,6 +902,25 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_strength_astronomy_multiblock_material_storage_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_astronomy_multiblock_material_storage_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_astronomy_multiblock_energy_input_bus_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_astronomy_multiblock_energy_input_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_astronomy_multiblock_energy_output_bus_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_astronomy_multiblock_energy_output_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_INPUT_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_astronomy_multiblock_material_input_port_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_INPUT_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_astronomy_multiblock_material_input_port_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_OUTPUT_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_astronomy_multiblock_material_output_port_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_OUTPUT_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_astronomy_multiblock_material_output_port_holo_block"));
+
+
+
 
         withExistingParent(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_BASE_FRAME_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_biology_multiblock_base_frame_block"));

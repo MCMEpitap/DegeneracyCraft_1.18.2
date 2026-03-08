@@ -118,7 +118,7 @@ public class BasicPerformanceElectrolyserRecipeCategory implements IRecipeCatego
         builder.addSlot(RecipeIngredientRole.INPUT, 44, 43).addItemStack(recipe.getInput2Item());
         builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 7).addItemStack(recipe.getOutput0Item());
         builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 25).addItemStack(recipe.getOutput1Item());
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 43).addItemStack(recipe.getOutput1Item());
+        builder.addSlot(RecipeIngredientRole.OUTPUT, 116, 43).addItemStack(recipe.getOutput2Item());
 
     }
 }

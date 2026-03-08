@@ -1,6 +1,10 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
+import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.bus.basic_strength_astronomy_multiblock_energy_input_bus.BasicStrengthAstronomyMultiblockEnergyInputBusBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.bus.basic_strength_astronomy_multiblock_energy_output_bus.BasicStrengthAstronomyMultiblockEnergyOutputBusBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.port.basic_strength_astronomy_multiblock_material_input_port.BasicStrengthAstronomyMultiblockMaterialInputPortBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.port.basic_strength_astronomy_multiblock_material_output_port.BasicStrengthAstronomyMultiblockMaterialOutputPortBlockEntity;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_astronomical_telescope.BasicPerformanceAstronomicalTelescopeRecipe;
@@ -67,8 +71,10 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     public static final int IN_1   = 1;
     public static final int OUT_0   = 2;
 
-    private static final List<IItemHandler> materialStorages = new ArrayList<>();
-    private static final List<DCIEnergyStorageFloat> energyStorages = new ArrayList<>();
+    private final List<DCIEnergyStorageFloat> energyInputs = new ArrayList<>();
+    private final List<DCIEnergyStorageFloat> energyOutputs = new ArrayList<>();
+    private final List<IItemHandler> itemInputs = new ArrayList<>();
+    private final List<IItemHandler> itemOutputs = new ArrayList<>();
 
     public final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
@@ -204,6 +210,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
 
     @Override
     protected void saveAdditional(@NotNull CompoundTag nbt) {
+        super.saveAdditional(nbt);
         nbt.put("inventory", itemHandler.serializeNBT());
         nbt.putFloat("energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
@@ -211,11 +218,11 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         nbt.putInt("hologramLevel", hologramLevel);
         nbt.putBoolean("forceHalt", forceHalt);
         nbt.putInt("multiblockLevel", multiblockLevel);
-        super.saveAdditional(nbt);
     }
 
     @Override
     public void load(CompoundTag nbt) {
+        super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("energy"));
         counter = nbt.getInt("counter");
@@ -223,9 +230,8 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         hologramLevel = nbt.getInt("hologramLevel");
         forceHalt = nbt.getBoolean("forceHalt");
         multiblockLevel = nbt.getInt("multiblockLevel");
-        super.load(nbt);
     }
-
+    
     public void drops() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
         for (int i = 0; i < itemHandler.getSlots(); i++) {
@@ -236,192 +242,211 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     }
 
     public static void tick(Level level, BlockPos pos, BlockState state, BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
-        if(isPowered1(level, pos, state, blockEntity)){
-            blockEntity.multiblockLevel = 1;
-        } else if(isFormed(level, pos, state, blockEntity)){
-            blockEntity.multiblockLevel = 0;
-        } else {
-            blockEntity.multiblockLevel = -1;
-        }
-        blockEntity.scanMultiblockStorages(level, pos);
-        blockEntity.pullEnergyFromStorages();
-        blockEntity.pullItemsFromStorages();
-        blockEntity.pushOutputToStorages();
+        if(!level.isClientSide) {
+            if (isPowered1(level, pos, state, blockEntity)) {
+                blockEntity.multiblockLevel = 1;
+            } else if (isFormed(level, pos, state, blockEntity)) {
+                blockEntity.multiblockLevel = 0;
+            } else {
+                blockEntity.multiblockLevel = -1;
+            }
 
-        hologram(level, pos, state, blockEntity);
-        blockEntity.getProgressPercent = 0;
+            hologram(level, pos, state, blockEntity);
+            blockEntity.getProgressPercent = 0;
 
-        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(1e-19F, false);
-        blockEntity.ENERGY_STORAGE.extractEnergyFloat(1e-19F, false);
-        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
-        if (!level.isClientSide()) {
+            blockEntity.scanMultiblockStorages(level, pos);
 
-        }
+            blockEntity.pullEnergyFromInputs();
+            blockEntity.pullItemsFromInputs();
 
-        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
-        }
-        Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
-
-        if (blockEntity.forceHalt) {
-            blockEntity.resetProgress();
             setChanged(level, pos, state);
-            return;
-        }
 
-        if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity)
-                && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
-//            blockEntity.getProgressRandom = (int) (Math.random() * 100);
+            blockEntity.ENERGY_STORAGE.receiveEnergyFloat(1e-20F, false);
+            blockEntity.ENERGY_STORAGE.extractEnergyFloat(1e-20F, false);
+            SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
 
-//            if (blockEntity.isPowered1) {
-//                if (blockEntity.getProgressRandom <= 1) {
-//                    blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_1;
-//                }
-//                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_1
-//                        * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-//            } else if (blockEntity.isFormed) {
-//                if (blockEntity.getProgressRandom <= 0) {
-//                    blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
-//                }
-//                blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
-//                        * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-//            } else {
-//                if (blockEntity.getProgressRandom <= 0) {
-//                    blockEntity.counter++;
-//                }
-//                blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
-//            }
-            if(isTime(blockEntity) && isAboveAirBlock(blockEntity)) {
-                if (blockEntity.multiblockLevel == 1) {
-                    blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_1;
-                    blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_1
-                            * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-                } else if (blockEntity.multiblockLevel == 0) {
-                    blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
-                    blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
-                            * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
-                } else {
-                    blockEntity.counter++;
-                    blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
+            for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+                inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+            }
+            Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
+                    .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
+
+            if (blockEntity.forceHalt) {
+                blockEntity.resetProgress();
+                setChanged(level, pos, state);
+                return;
+            }
+
+            if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasAmountEnergyRecipe(blockEntity)
+                    && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
+                if (isTime(blockEntity) && isAboveAirBlock(blockEntity)) {
+                    if (blockEntity.multiblockLevel == 1) {
+                        blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_POWERED_1;
+                        blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_POWERED_1
+                                * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
+                    } else if (blockEntity.multiblockLevel == 0) {
+                        blockEntity.counter += blockEntity.MACHINE_MANUFACTURING_SPEED_MODIFIER_FORMED;
+                        blockEntity.ENERGY_STORAGE.extractEnergyFloat(blockEntity.MACHINE_MANUFACTURING_ENERGY_USAGE_MODIFIER_FORMED
+                                * match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20F, false);
+                    } else {
+                        blockEntity.counter++;
+                        blockEntity.ENERGY_STORAGE.extractEnergyFloat(match.get().getRequiredEnergy() / match.get().getRequiredTime() / 20, false);
+                    }
+                    blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
                 }
-            blockEntity.getProgressPercent = (int) (blockEntity.counter / (match.get().getRequiredTime() * 20F) * 100F);
-            }
-            if (craftCheck(blockEntity)) {
-                craftItem(blockEntity);
+                if (craftCheck(blockEntity)) {
+                    craftItem(blockEntity);
+                }
+                setChanged(level, pos, state);
+            } else {
+                blockEntity.resetProgress();
+                setChanged(level, pos, state);
             }
             setChanged(level, pos, state);
-        } else {
-            blockEntity.resetProgress();
-            setChanged(level, pos, state);
+
+            if (!blockEntity.forceHalt) {
+                blockEntity.pushEnergyToOutputs();
+                blockEntity.pushItemsToOutputs();
+            }
         }
-        setChanged(level, pos, state);
     }
 
     private void scanMultiblockStorages(Level level, BlockPos pos) {
-        materialStorages.clear();
-        energyStorages.clear();
 
-        if(this.multiblockLevel >= 0) {
-            for (int y = 0; y < structure0.length; y++) {
-                for (int z = 0; z < structure0[y].length; z++) {
-                    for (int x = 0; x < structure0[y][z].length; x++) {
+        if (level.isClientSide) return;
+        if (multiblockLevel < 0) return;
 
-                        BlockPos targetPos = pos.offset(x + minX0, maxY0 - y, z + minZ0);
-                        BlockEntity targetEntity = level.getBlockEntity(targetPos);
+        energyInputs.clear();
+        energyOutputs.clear();
+        itemInputs.clear();
+        itemOutputs.clear();
 
-                        if (targetEntity == null || targetEntity == this) continue;
+        String[][][] structure =
+                (multiblockLevel == 1) ? structure1 : structure0;
 
-                        // 🔹 アイテム
-                        targetEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
-                                .ifPresent(materialStorages::add);
+        for (int y = 0; y < structure.length; y++) {
+            for (int z = 0; z < structure[y].length; z++) {
+                for (int x = 0; x < structure[y][z].length; x++) {
 
-                        // 🔹 エネルギー
-                        targetEntity.getCapability(CapabilityEnergy.ENERGY)
-                                .ifPresent(e -> {
-                                    if (e instanceof DCIEnergyStorageFloat f)
-                                        energyStorages.add(f);
-                                });
-                    }
+                    BlockPos targetPos =
+                            pos.offset(x + minX0, maxY0 - y, z + minZ0);
+
+                    BlockEntity be = level.getBlockEntity(targetPos);
+                    if (be == null || be == this) continue;
+
+                    // ===== Energy =====
+                    be.getCapability(CapabilityEnergy.ENERGY).ifPresent(storage -> {
+                        if (be instanceof BasicStrengthAstronomyMultiblockEnergyInputBusBlockEntity)
+                            energyInputs.add((DCIEnergyStorageFloat) storage);
+
+                        if (be instanceof BasicStrengthAstronomyMultiblockEnergyOutputBusBlockEntity)
+                            energyOutputs.add((DCIEnergyStorageFloat) storage);
+                    });
+
+                    // ===== Item =====
+                    be.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+                            .ifPresent(handler -> {
+
+                                if (be instanceof BasicStrengthAstronomyMultiblockMaterialInputPortBlockEntity)
+                                    itemInputs.add(handler);
+
+                                if (be instanceof BasicStrengthAstronomyMultiblockMaterialOutputPortBlockEntity)
+                                    itemOutputs.add(handler);
+                            });
                 }
             }
         }
     }
 
-    private void pullEnergyFromStorages() {
-        float needed = MACHINE_CAPACITY - ENERGY_STORAGE.getEnergyStoredFloat();
+    private void pullEnergyFromInputs() {
 
-        for (DCIEnergyStorageFloat storage : energyStorages) {
+        float needed = MACHINE_CAPACITY - ENERGY_STORAGE.getEnergyStoredFloat();
+        if (needed <= 0) return;
+
+        for (DCIEnergyStorageFloat input : energyInputs) {
+
             if (needed <= 0) break;
 
-            float extracted = storage.extractEnergyFloat(needed, false);
-            ENERGY_STORAGE.receiveEnergyFloat(extracted, false);
-
-            needed -= extracted;
-        }
-    }
-
-    private void pullItemsFromStorages() {
-
-        for (IItemHandler storage : materialStorages) {
-
-            for (int storageSlot = 0; storageSlot < storage.getSlots(); storageSlot++) {
-
-                ItemStack stack = storage.getStackInSlot(storageSlot);
-                if (stack.isEmpty()) continue;
-
-                ItemStack remaining = stack.copy();
-                int totalInserted = 0;
-
-                // ===== スロット0 =====
-                ItemStack sim0 = itemHandler.insertItem(0, remaining, true);
-                int canInsert0 = remaining.getCount() - sim0.getCount();
-
-                if (canInsert0 > 0) {
-                    ItemStack extracted = storage.extractItem(storageSlot, canInsert0, false);
-                    ItemStack after0 = itemHandler.insertItem(0, extracted, false);
-                    totalInserted += extracted.getCount() - after0.getCount();
-                    remaining = sim0;
-                }
-
-                // ===== スロット1 =====
-                if (!remaining.isEmpty()) {
-
-                    ItemStack sim1 = itemHandler.insertItem(1, remaining, true);
-                    int canInsert1 = remaining.getCount() - sim1.getCount();
-
-                    if (canInsert1 > 0) {
-                        ItemStack extracted = storage.extractItem(storageSlot, canInsert1, false);
-                        ItemStack after1 = itemHandler.insertItem(1, extracted, false);
-                        totalInserted += extracted.getCount() - after1.getCount();
-                    }
-                }
-
-                // 何か入ったら終了（1tick1動作）
-                if (totalInserted > 0) return;
+            float extracted = input.extractEnergyFloat(needed, false);
+            if (extracted > 0) {
+                ENERGY_STORAGE.receiveEnergyFloat(extracted, false);
+                needed -= extracted;
             }
         }
     }
 
-    private void pushOutputToStorages() {
+    private void pushEnergyToOutputs() {
 
-        ItemStack output = itemHandler.getStackInSlot(2);
-        if (output.isEmpty()) return;
+        float stored = ENERGY_STORAGE.getEnergyStoredFloat();
 
-        for (IItemHandler storage : materialStorages) {
+        // 最低保持量を設定（例：0にしない）
+        float reserve = this.MACHINE_CAPACITY - this.MACHINE_TRANSFER;
 
-            for (int slot = 0; slot < storage.getSlots(); slot++) {
+        float transferable = stored - reserve;
+        if (transferable <= 0) return;
 
-                ItemStack leftover = storage.insertItem(slot, output.copy(), false);
+        for (DCIEnergyStorageFloat output : energyOutputs) {
 
-                if (leftover.isEmpty()) {
-                    itemHandler.setStackInSlot(2, ItemStack.EMPTY);
-                    return;
+            if (transferable <= 0) break;
+
+            float accepted = output.receiveEnergyFloat(transferable, false);
+
+            if (accepted > 0) {
+                ENERGY_STORAGE.extractEnergyFloat(accepted, false);
+                transferable -= accepted;
+            }
+        }
+    }
+
+    private void pullItemsFromInputs() {
+
+        for (IItemHandler input : itemInputs) {
+
+            for (int inputSlot = 0; inputSlot < input.getSlots(); inputSlot++) {
+
+                ItemStack stack = input.getStackInSlot(inputSlot);
+                if (stack.isEmpty()) continue;
+
+                // 機械入力スロット 0〜1
+                for (int machineSlot = 0; machineSlot <= 1; machineSlot++) {
+
+                    ItemStack simulated = itemHandler.insertItem(machineSlot, stack.copy(), true);
+                    int insertable = stack.getCount() - simulated.getCount();
+
+                    if (insertable > 0) {
+
+                        ItemStack extracted = input.extractItem(inputSlot, insertable, false);
+                        itemHandler.insertItem(machineSlot, extracted, false);
+
+                        return; // 1tick1搬入
+                    }
                 }
+            }
+        }
+    }
 
-                if (leftover.getCount() < output.getCount()) {
-                    itemHandler.setStackInSlot(2, leftover);
-                    return;
+    private void pushItemsToOutputs() {
+
+        // 機械出力スロット 2〜3
+        for (int machineSlot = 2; machineSlot == 2; machineSlot++) {
+
+            ItemStack stack = itemHandler.getStackInSlot(machineSlot);
+            if (stack.isEmpty()) continue;
+
+            for (IItemHandler output : itemOutputs) {
+
+                for (int outputSlot = 0; outputSlot < output.getSlots(); outputSlot++) {
+
+                    ItemStack leftover = output.insertItem(outputSlot, stack.copy(), false);
+
+                    if (leftover.isEmpty()) {
+                        itemHandler.setStackInSlot(machineSlot, ItemStack.EMPTY);
+                        return;
+                    }
+                    else if (leftover.getCount() < stack.getCount()) {
+                        itemHandler.setStackInSlot(machineSlot, leftover);
+                        return;
+                    }
                 }
             }
         }
@@ -439,6 +464,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
 
         return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / (match.get().getRequiredTime() * 20F);
     }
+
 
 
     private static boolean isTime(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {

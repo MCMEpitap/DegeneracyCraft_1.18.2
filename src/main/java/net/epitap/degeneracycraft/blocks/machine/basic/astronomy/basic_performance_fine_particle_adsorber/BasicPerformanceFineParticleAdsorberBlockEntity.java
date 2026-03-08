@@ -63,7 +63,7 @@ public class BasicPerformanceFineParticleAdsorberBlockEntity extends BlockEntity
     public static final int DATA_FORCE_STOP   = 3;
     public static final int DATA_MULTIBLOCK   = 4;
 
-    public final ItemStackHandler itemHandler = new ItemStackHandler(6) {
+    public final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
@@ -106,7 +106,7 @@ public class BasicPerformanceFineParticleAdsorberBlockEntity extends BlockEntity
                     Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 2, (out, stack) -> false)));
 
     public BasicPerformanceFineParticleAdsorberBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
-        super(DCBlockEntities.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
+        super(DCBlockEntities.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
         this.data = new ContainerData() {
             @Override
             public int get(int index) {

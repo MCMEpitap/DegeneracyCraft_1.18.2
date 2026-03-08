@@ -241,8 +241,8 @@ public class BasicPowerSteamGeneratorBlockEntity extends BlockEntity implements 
         BasicPowerSteamGeneratorStructure.hologram(level, pos, state, blockEntity);
 
 
-        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(1e-19F, false);
-        blockEntity.ENERGY_STORAGE.extractEnergyFloat(1e-19F, false);
+        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(1e-20F, false);
+        blockEntity.ENERGY_STORAGE.extractEnergyFloat(1e-20F, false);
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
 
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {

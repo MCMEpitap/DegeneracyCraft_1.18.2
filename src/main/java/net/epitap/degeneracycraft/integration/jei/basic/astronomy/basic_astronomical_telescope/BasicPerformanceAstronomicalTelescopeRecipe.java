@@ -133,7 +133,6 @@ public class BasicPerformanceAstronomicalTelescopeRecipe implements Recipe<Simpl
 
         @Override
         public void toNetwork(FriendlyByteBuf pBuffer, BasicPerformanceAstronomicalTelescopeRecipe pRecipe) {
-
             pBuffer.writeFloat(pRecipe.energy);
             pBuffer.writeFloat(pRecipe.time);
             pBuffer.writeItem(pRecipe.input0.getContainerItem());

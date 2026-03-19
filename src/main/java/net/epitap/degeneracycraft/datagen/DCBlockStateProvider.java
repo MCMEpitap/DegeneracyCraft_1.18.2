@@ -42,16 +42,16 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthAstronomyMultiblockStructureGlassHolo();
         registerBasicStrengthAstronomyMultiblockEnergyStorage();
         registerBasicStrengthAstronomyMultiblockEnergyStorageHolo();
-        registerBasicStrengthAstronomyMultiblockMaterialStorage();
-        registerBasicStrengthAstronomyMultiblockMaterialStorageHolo();
+        registerBasicStrengthAstronomyMultiblockItemStorage();
+        registerBasicStrengthAstronomyMultiblockItemStorageHolo();
         registerBasicStrengthAstronomyMultiblockEnergyInputBus();
         registerBasicStrengthAstronomyMultiblockEnergyInputBusHolo();
         registerBasicStrengthAstronomyMultiblockEnergyOutputBus();
         registerBasicStrengthAstronomyMultiblockEnergyOutputBusHolo();
-        registerBasicStrengthAstronomyMultiblockMaterialInputPort();
-        registerBasicStrengthAstronomyMultiblockMaterialInputPortHolo();
-        registerBasicStrengthAstronomyMultiblockMaterialOutputPort();
-        registerBasicStrengthAstronomyMultiblockMaterialOutputPortHolo();
+        registerBasicStrengthAstronomyMultiblockItemInputPort();
+        registerBasicStrengthAstronomyMultiblockItemInputPortHolo();
+        registerBasicStrengthAstronomyMultiblockItemOutputPort();
+        registerBasicStrengthAstronomyMultiblockItemOutputPortHolo();
 
 
 
@@ -65,8 +65,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthBiologyMultiblockStructureGlassHolo();
         registerBasicStrengthBiologyMultiblockEnergyStorage();
         registerBasicStrengthBiologyMultiblockEnergyStorageHolo();
-        registerBasicStrengthBiologyMultiblockMaterialStorage();
-        registerBasicStrengthBiologyMultiblockMaterialStorageHolo();
+        registerBasicStrengthBiologyMultiblockItemStorage();
+        registerBasicStrengthBiologyMultiblockItemStorageHolo();
 
         registerBasicStrengthChemistryMultiblockBaseFrame();
         registerBasicStrengthChemistryMultiblockBaseFrameHolo();
@@ -78,8 +78,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthChemistryMultiblockStructureGlassHolo();
         registerBasicStrengthChemistryMultiblockEnergyStorage();
         registerBasicStrengthChemistryMultiblockEnergyStorageHolo();
-        registerBasicStrengthChemistryMultiblockMaterialStorage();
-        registerBasicStrengthChemistryMultiblockMaterialStorageHolo();
+        registerBasicStrengthChemistryMultiblockItemStorage();
+        registerBasicStrengthChemistryMultiblockItemStorageHolo();
 
         registerBasicStrengthDynamicEnergeticsMultiblockBaseFrame();
         registerBasicStrengthDynamicEnergeticsMultiblockBaseFrameHolo();
@@ -91,8 +91,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthDynamicEnergeticsMultiblockStructureGlassHolo();
         registerBasicStrengthDynamicEnergeticsMultiblockEnergyStorage();
         registerBasicStrengthDynamicEnergeticsMultiblockEnergyStorageHolo();
-        registerBasicStrengthDynamicEnergeticsMultiblockMaterialStorage();
-        registerBasicStrengthDynamicEnergeticsMultiblockMaterialStorageHolo();
+        registerBasicStrengthDynamicEnergeticsMultiblockItemStorage();
+        registerBasicStrengthDynamicEnergeticsMultiblockItemStorageHolo();
 
         registerBasicStrengthEngineeringMultiblockBaseFrame();
         registerBasicStrengthEngineeringMultiblockBaseFrameHolo();
@@ -104,8 +104,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthEngineeringMultiblockStructureGlassHolo();
         registerBasicStrengthEngineeringMultiblockEnergyStorage();
         registerBasicStrengthEngineeringMultiblockEnergyStorageHolo();
-        registerBasicStrengthEngineeringMultiblockMaterialStorage();
-        registerBasicStrengthEngineeringMultiblockMaterialStorageHolo();
+        registerBasicStrengthEngineeringMultiblockItemStorage();
+        registerBasicStrengthEngineeringMultiblockItemStorageHolo();
 
         registerBasicStrengthFormalScienceMultiblockBaseFrame();
         registerBasicStrengthFormalScienceMultiblockBaseFrameHolo();
@@ -117,8 +117,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthFormalScienceMultiblockStructureGlassHolo();
         registerBasicStrengthFormalScienceMultiblockEnergyStorage();
         registerBasicStrengthFormalScienceMultiblockEnergyStorageHolo();
-        registerBasicStrengthFormalScienceMultiblockMaterialStorage();
-        registerBasicStrengthFormalScienceMultiblockMaterialStorageHolo();
+        registerBasicStrengthFormalScienceMultiblockItemStorage();
+        registerBasicStrengthFormalScienceMultiblockItemStorageHolo();
 
         registerBasicStrengthGeoScienceMultiblockBaseFrame();
         registerBasicStrengthGeoScienceMultiblockBaseFrameHolo();
@@ -130,8 +130,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthGeoScienceMultiblockStructureGlassHolo();
         registerBasicStrengthGeoScienceMultiblockEnergyStorage();
         registerBasicStrengthGeoScienceMultiblockEnergyStorageHolo();
-        registerBasicStrengthGeoScienceMultiblockMaterialStorage();
-        registerBasicStrengthGeoScienceMultiblockMaterialStorageHolo();
+        registerBasicStrengthGeoScienceMultiblockItemStorage();
+        registerBasicStrengthGeoScienceMultiblockItemStorageHolo();
 
         registerBasicStrengthHybridPhysicsMultiblockBaseFrame();
         registerBasicStrengthHybridPhysicsMultiblockBaseFrameHolo();
@@ -143,8 +143,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthHybridPhysicsMultiblockStructureGlassHolo();
         registerBasicStrengthHybridPhysicsMultiblockEnergyStorage();
         registerBasicStrengthHybridPhysicsMultiblockEnergyStorageHolo();
-        registerBasicStrengthHybridPhysicsMultiblockMaterialStorage();
-        registerBasicStrengthHybridPhysicsMultiblockMaterialStorageHolo();
+        registerBasicStrengthHybridPhysicsMultiblockItemStorage();
+        registerBasicStrengthHybridPhysicsMultiblockItemStorageHolo();
 
         registerBasicStrengthImitationMagicEngineeringMultiblockBaseFrame();
         registerBasicStrengthImitationMagicEngineeringMultiblockBaseFrameHolo();
@@ -156,8 +156,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthImitationMagicEngineeringMultiblockStructureGlassHolo();
         registerBasicStrengthImitationMagicEngineeringMultiblockEnergyStorage();
         registerBasicStrengthImitationMagicEngineeringMultiblockEnergyStorageHolo();
-        registerBasicStrengthImitationMagicEngineeringMultiblockMaterialStorage();
-        registerBasicStrengthImitationMagicEngineeringMultiblockMaterialStorageHolo();
+        registerBasicStrengthImitationMagicEngineeringMultiblockItemStorage();
+        registerBasicStrengthImitationMagicEngineeringMultiblockItemStorageHolo();
 
         
         
@@ -171,8 +171,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthJenithVoidScienceMultiblockStructureGlassHolo();
         registerBasicStrengthJenithVoidScienceMultiblockEnergyStorage();
         registerBasicStrengthJenithVoidScienceMultiblockEnergyStorageHolo();
-        registerBasicStrengthJenithVoidScienceMultiblockMaterialStorage();
-        registerBasicStrengthJenithVoidScienceMultiblockMaterialStorageHolo();
+        registerBasicStrengthJenithVoidScienceMultiblockItemStorage();
+        registerBasicStrengthJenithVoidScienceMultiblockItemStorageHolo();
         
         
         
@@ -186,8 +186,8 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthKaleidoscopicRealityScienceMultiblockStructureGlassHolo();
         registerBasicStrengthKaleidoscopicRealityScienceMultiblockEnergyStorage();
         registerBasicStrengthKaleidoscopicRealityScienceMultiblockEnergyStorageHolo();
-        registerBasicStrengthKaleidoscopicRealityScienceMultiblockMaterialStorage();
-        registerBasicStrengthKaleidoscopicRealityScienceMultiblockMaterialStorageHolo();
+        registerBasicStrengthKaleidoscopicRealityScienceMultiblockItemStorage();
+        registerBasicStrengthKaleidoscopicRealityScienceMultiblockItemStorageHolo();
 
 
 
@@ -726,31 +726,31 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicStrengthAstronomyMultiblockMaterialStorage() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_material_storage_block");
+    private void registerBasicStrengthAstronomyMultiblockItemStorage() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_item_storage_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_block"));
-        model.texture("up", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_block"));
-        model.texture("north", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_block"));
-        model.texture("south", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_block"));
-        model.texture("east", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_block"));
-        model.texture("west", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_item_storage/basic_strength_astronomy_multiblock_item_storage_block"));
+        model.texture("up", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_item_storage/basic_strength_astronomy_multiblock_item_storage_block"));
+        model.texture("north", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_item_storage/basic_strength_astronomy_multiblock_item_storage_block"));
+        model.texture("south", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_item_storage/basic_strength_astronomy_multiblock_item_storage_block"));
+        model.texture("east", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_item_storage/basic_strength_astronomy_multiblock_item_storage_block"));
+        model.texture("west", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_item_storage/basic_strength_astronomy_multiblock_item_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_item_storage/basic_strength_astronomy_multiblock_item_storage_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicStrengthAstronomyMultiblockMaterialStorageHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_material_storage_holo_block");
+    private void registerBasicStrengthAstronomyMultiblockItemStorageHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_item_storage_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_holo_block"));
-        model.texture("up", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_holo_block"));
-        model.texture("north", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_holo_block"));
-        model.texture("south", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_holo_block"));
-        model.texture("east", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_holo_block"));
-        model.texture("west", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_holo_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_material_storage/basic_strength_astronomy_multiblock_material_storage_holo_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_item_storage/basic_strength_astronomy_multiblock_item_storage_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_item_storage/basic_strength_astronomy_multiblock_item_storage_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_item_storage/basic_strength_astronomy_multiblock_item_storage_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_item_storage/basic_strength_astronomy_multiblock_item_storage_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_item_storage/basic_strength_astronomy_multiblock_item_storage_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_item_storage/basic_strength_astronomy_multiblock_item_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/storage/basic_strength_astronomy_multiblock_item_storage/basic_strength_astronomy_multiblock_item_storage_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
 
@@ -810,59 +810,59 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicStrengthAstronomyMultiblockMaterialInputPort() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_material_input_port_block");
+    private void registerBasicStrengthAstronomyMultiblockItemInputPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_item_input_port_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_block"));
-        model.texture("up", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_block"));
-        model.texture("north", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_block"));
-        model.texture("south", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_block"));
-        model.texture("east", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_block"));
-        model.texture("west", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_INPUT_PORT_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_input_port/basic_strength_astronomy_multiblock_item_input_port_block"));
+        model.texture("up", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_input_port/basic_strength_astronomy_multiblock_item_input_port_block"));
+        model.texture("north", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_input_port/basic_strength_astronomy_multiblock_item_input_port_block"));
+        model.texture("south", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_input_port/basic_strength_astronomy_multiblock_item_input_port_block"));
+        model.texture("east", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_input_port/basic_strength_astronomy_multiblock_item_input_port_block"));
+        model.texture("west", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_input_port/basic_strength_astronomy_multiblock_item_input_port_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_input_port/basic_strength_astronomy_multiblock_item_input_port_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicStrengthAstronomyMultiblockMaterialInputPortHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_material_input_port_holo_block");
+    private void registerBasicStrengthAstronomyMultiblockItemInputPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_item_input_port_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_holo_block"));
-        model.texture("up", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_holo_block"));
-        model.texture("north", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_holo_block"));
-        model.texture("south", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_holo_block"));
-        model.texture("east", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_holo_block"));
-        model.texture("west", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_holo_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_holo_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_INPUT_PORT_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_input_port/basic_strength_astronomy_multiblock_item_input_port_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_input_port/basic_strength_astronomy_multiblock_item_input_port_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_input_port/basic_strength_astronomy_multiblock_item_input_port_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_input_port/basic_strength_astronomy_multiblock_item_input_port_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_input_port/basic_strength_astronomy_multiblock_item_input_port_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_input_port/basic_strength_astronomy_multiblock_item_input_port_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_input_port/basic_strength_astronomy_multiblock_item_input_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicStrengthAstronomyMultiblockMaterialOutputPort() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_material_output_port_block");
+    private void registerBasicStrengthAstronomyMultiblockItemOutputPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_item_output_port_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_block"));
-        model.texture("up", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_block"));
-        model.texture("north", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_block"));
-        model.texture("south", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_block"));
-        model.texture("east", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_block"));
-        model.texture("west", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_OUTPUT_PORT_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_output_port/basic_strength_astronomy_multiblock_item_output_port_block"));
+        model.texture("up", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_output_port/basic_strength_astronomy_multiblock_item_output_port_block"));
+        model.texture("north", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_output_port/basic_strength_astronomy_multiblock_item_output_port_block"));
+        model.texture("south", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_output_port/basic_strength_astronomy_multiblock_item_output_port_block"));
+        model.texture("east", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_output_port/basic_strength_astronomy_multiblock_item_output_port_block"));
+        model.texture("west", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_output_port/basic_strength_astronomy_multiblock_item_output_port_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_output_port/basic_strength_astronomy_multiblock_item_output_port_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicStrengthAstronomyMultiblockMaterialOutputPortHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_material_output_port_holo_block");
+    private void registerBasicStrengthAstronomyMultiblockItemOutputPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_astronomy_multiblock_item_output_port_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_holo_block"));
-        model.texture("up", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_holo_block"));
-        model.texture("north", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_holo_block"));
-        model.texture("south", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_holo_block"));
-        model.texture("east", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_holo_block"));
-        model.texture("west", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_holo_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_material_output_port/basic_strength_astronomy_multiblock_material_output_port_holo_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_OUTPUT_PORT_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_output_port/basic_strength_astronomy_multiblock_item_output_port_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_output_port/basic_strength_astronomy_multiblock_item_output_port_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_output_port/basic_strength_astronomy_multiblock_item_output_port_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_output_port/basic_strength_astronomy_multiblock_item_output_port_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_output_port/basic_strength_astronomy_multiblock_item_output_port_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_output_port/basic_strength_astronomy_multiblock_item_output_port_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/astronomy/port/basic_strength_astronomy_multiblock_item_output_port/basic_strength_astronomy_multiblock_item_output_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
     
@@ -1009,31 +1009,31 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicStrengthBiologyMultiblockMaterialStorage() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_biology_multiblock_material_storage_block");
+    private void registerBasicStrengthBiologyMultiblockItemStorage() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_biology_multiblock_item_storage_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_block"));
-        model.texture("up", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_block"));
-        model.texture("north", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_block"));
-        model.texture("south", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_block"));
-        model.texture("east", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_block"));
-        model.texture("west", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_item_storage/basic_strength_biology_multiblock_item_storage_block"));
+        model.texture("up", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_item_storage/basic_strength_biology_multiblock_item_storage_block"));
+        model.texture("north", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_item_storage/basic_strength_biology_multiblock_item_storage_block"));
+        model.texture("south", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_item_storage/basic_strength_biology_multiblock_item_storage_block"));
+        model.texture("east", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_item_storage/basic_strength_biology_multiblock_item_storage_block"));
+        model.texture("west", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_item_storage/basic_strength_biology_multiblock_item_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_item_storage/basic_strength_biology_multiblock_item_storage_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicStrengthBiologyMultiblockMaterialStorageHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_biology_multiblock_material_storage_holo_block");
+    private void registerBasicStrengthBiologyMultiblockItemStorageHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_biology_multiblock_item_storage_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_holo_block"));
-        model.texture("up", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_holo_block"));
-        model.texture("north", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_holo_block"));
-        model.texture("south", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_holo_block"));
-        model.texture("east", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_holo_block"));
-        model.texture("west", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_holo_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_material_storage/basic_strength_biology_multiblock_material_storage_holo_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_item_storage/basic_strength_biology_multiblock_item_storage_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_item_storage/basic_strength_biology_multiblock_item_storage_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_item_storage/basic_strength_biology_multiblock_item_storage_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_item_storage/basic_strength_biology_multiblock_item_storage_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_item_storage/basic_strength_biology_multiblock_item_storage_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_item_storage/basic_strength_biology_multiblock_item_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/biology/storage/basic_strength_biology_multiblock_item_storage/basic_strength_biology_multiblock_item_storage_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
 
@@ -1177,31 +1177,31 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicStrengthChemistryMultiblockMaterialStorage() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_chemistry_multiblock_material_storage_block");
+    private void registerBasicStrengthChemistryMultiblockItemStorage() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_chemistry_multiblock_item_storage_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_block"));
-        model.texture("up", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_block"));
-        model.texture("north", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_block"));
-        model.texture("south", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_block"));
-        model.texture("east", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_block"));
-        model.texture("west", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_item_storage/basic_strength_chemistry_multiblock_item_storage_block"));
+        model.texture("up", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_item_storage/basic_strength_chemistry_multiblock_item_storage_block"));
+        model.texture("north", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_item_storage/basic_strength_chemistry_multiblock_item_storage_block"));
+        model.texture("south", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_item_storage/basic_strength_chemistry_multiblock_item_storage_block"));
+        model.texture("east", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_item_storage/basic_strength_chemistry_multiblock_item_storage_block"));
+        model.texture("west", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_item_storage/basic_strength_chemistry_multiblock_item_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_item_storage/basic_strength_chemistry_multiblock_item_storage_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicStrengthChemistryMultiblockMaterialStorageHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_chemistry_multiblock_material_storage_holo_block");
+    private void registerBasicStrengthChemistryMultiblockItemStorageHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_chemistry_multiblock_item_storage_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_holo_block"));
-        model.texture("up", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_holo_block"));
-        model.texture("north", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_holo_block"));
-        model.texture("south", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_holo_block"));
-        model.texture("east", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_holo_block"));
-        model.texture("west", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_holo_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_material_storage/basic_strength_chemistry_multiblock_material_storage_holo_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_item_storage/basic_strength_chemistry_multiblock_item_storage_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_item_storage/basic_strength_chemistry_multiblock_item_storage_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_item_storage/basic_strength_chemistry_multiblock_item_storage_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_item_storage/basic_strength_chemistry_multiblock_item_storage_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_item_storage/basic_strength_chemistry_multiblock_item_storage_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_item_storage/basic_strength_chemistry_multiblock_item_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/chemistry/storage/basic_strength_chemistry_multiblock_item_storage/basic_strength_chemistry_multiblock_item_storage_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
 
@@ -1345,31 +1345,31 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicStrengthDynamicEnergeticsMultiblockMaterialStorage() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_dynamic_energetics_multiblock_material_storage_block");
+    private void registerBasicStrengthDynamicEnergeticsMultiblockItemStorage() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_dynamic_energetics_multiblock_item_storage_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_block"));
-        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_block"));
-        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_block"));
-        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_block"));
-        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_block"));
-        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_item_storage/basic_strength_dynamic_energetics_multiblock_item_storage_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_item_storage/basic_strength_dynamic_energetics_multiblock_item_storage_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_item_storage/basic_strength_dynamic_energetics_multiblock_item_storage_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_item_storage/basic_strength_dynamic_energetics_multiblock_item_storage_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_item_storage/basic_strength_dynamic_energetics_multiblock_item_storage_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_item_storage/basic_strength_dynamic_energetics_multiblock_item_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_item_storage/basic_strength_dynamic_energetics_multiblock_item_storage_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicStrengthDynamicEnergeticsMultiblockMaterialStorageHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_dynamic_energetics_multiblock_material_storage_holo_block");
+    private void registerBasicStrengthDynamicEnergeticsMultiblockItemStorageHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_dynamic_energetics_multiblock_item_storage_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_holo_block"));
-        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_holo_block"));
-        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_holo_block"));
-        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_holo_block"));
-        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_holo_block"));
-        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_holo_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_holo_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_item_storage/basic_strength_dynamic_energetics_multiblock_item_storage_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_item_storage/basic_strength_dynamic_energetics_multiblock_item_storage_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_item_storage/basic_strength_dynamic_energetics_multiblock_item_storage_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_item_storage/basic_strength_dynamic_energetics_multiblock_item_storage_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_item_storage/basic_strength_dynamic_energetics_multiblock_item_storage_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_item_storage/basic_strength_dynamic_energetics_multiblock_item_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/dynamic_energetics/storage/basic_strength_dynamic_energetics_multiblock_item_storage/basic_strength_dynamic_energetics_multiblock_item_storage_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
 
@@ -1513,31 +1513,31 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicStrengthEngineeringMultiblockMaterialStorage() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_engineering_multiblock_material_storage_block");
+    private void registerBasicStrengthEngineeringMultiblockItemStorage() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_engineering_multiblock_item_storage_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_block"));
-        model.texture("up", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_block"));
-        model.texture("north", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_block"));
-        model.texture("south", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_block"));
-        model.texture("east", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_block"));
-        model.texture("west", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_item_storage/basic_strength_engineering_multiblock_item_storage_block"));
+        model.texture("up", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_item_storage/basic_strength_engineering_multiblock_item_storage_block"));
+        model.texture("north", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_item_storage/basic_strength_engineering_multiblock_item_storage_block"));
+        model.texture("south", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_item_storage/basic_strength_engineering_multiblock_item_storage_block"));
+        model.texture("east", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_item_storage/basic_strength_engineering_multiblock_item_storage_block"));
+        model.texture("west", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_item_storage/basic_strength_engineering_multiblock_item_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_item_storage/basic_strength_engineering_multiblock_item_storage_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicStrengthEngineeringMultiblockMaterialStorageHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_engineering_multiblock_material_storage_holo_block");
+    private void registerBasicStrengthEngineeringMultiblockItemStorageHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_engineering_multiblock_item_storage_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_holo_block"));
-        model.texture("up", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_holo_block"));
-        model.texture("north", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_holo_block"));
-        model.texture("south", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_holo_block"));
-        model.texture("east", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_holo_block"));
-        model.texture("west", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_holo_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_material_storage/basic_strength_engineering_multiblock_material_storage_holo_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_item_storage/basic_strength_engineering_multiblock_item_storage_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_item_storage/basic_strength_engineering_multiblock_item_storage_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_item_storage/basic_strength_engineering_multiblock_item_storage_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_item_storage/basic_strength_engineering_multiblock_item_storage_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_item_storage/basic_strength_engineering_multiblock_item_storage_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_item_storage/basic_strength_engineering_multiblock_item_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/storage/basic_strength_engineering_multiblock_item_storage/basic_strength_engineering_multiblock_item_storage_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
 
@@ -1681,31 +1681,31 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicStrengthFormalScienceMultiblockMaterialStorage() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_formal_science_multiblock_material_storage_block");
+    private void registerBasicStrengthFormalScienceMultiblockItemStorage() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_formal_science_multiblock_item_storage_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_block"));
-        model.texture("up", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_block"));
-        model.texture("north", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_block"));
-        model.texture("south", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_block"));
-        model.texture("east", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_block"));
-        model.texture("west", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_item_storage/basic_strength_formal_science_multiblock_item_storage_block"));
+        model.texture("up", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_item_storage/basic_strength_formal_science_multiblock_item_storage_block"));
+        model.texture("north", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_item_storage/basic_strength_formal_science_multiblock_item_storage_block"));
+        model.texture("south", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_item_storage/basic_strength_formal_science_multiblock_item_storage_block"));
+        model.texture("east", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_item_storage/basic_strength_formal_science_multiblock_item_storage_block"));
+        model.texture("west", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_item_storage/basic_strength_formal_science_multiblock_item_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_item_storage/basic_strength_formal_science_multiblock_item_storage_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicStrengthFormalScienceMultiblockMaterialStorageHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_formal_science_multiblock_material_storage_holo_block");
+    private void registerBasicStrengthFormalScienceMultiblockItemStorageHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_formal_science_multiblock_item_storage_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_holo_block"));
-        model.texture("up", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_holo_block"));
-        model.texture("north", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_holo_block"));
-        model.texture("south", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_holo_block"));
-        model.texture("east", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_holo_block"));
-        model.texture("west", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_holo_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_holo_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_item_storage/basic_strength_formal_science_multiblock_item_storage_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_item_storage/basic_strength_formal_science_multiblock_item_storage_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_item_storage/basic_strength_formal_science_multiblock_item_storage_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_item_storage/basic_strength_formal_science_multiblock_item_storage_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_item_storage/basic_strength_formal_science_multiblock_item_storage_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_item_storage/basic_strength_formal_science_multiblock_item_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/formal_science/storage/basic_strength_formal_science_multiblock_item_storage/basic_strength_formal_science_multiblock_item_storage_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
 
@@ -1849,31 +1849,31 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicStrengthGeoScienceMultiblockMaterialStorage() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_geo_science_multiblock_material_storage_block");
+    private void registerBasicStrengthGeoScienceMultiblockItemStorage() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_geo_science_multiblock_item_storage_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_block"));
-        model.texture("up", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_block"));
-        model.texture("north", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_block"));
-        model.texture("south", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_block"));
-        model.texture("east", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_block"));
-        model.texture("west", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_item_storage/basic_strength_geo_science_multiblock_item_storage_block"));
+        model.texture("up", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_item_storage/basic_strength_geo_science_multiblock_item_storage_block"));
+        model.texture("north", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_item_storage/basic_strength_geo_science_multiblock_item_storage_block"));
+        model.texture("south", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_item_storage/basic_strength_geo_science_multiblock_item_storage_block"));
+        model.texture("east", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_item_storage/basic_strength_geo_science_multiblock_item_storage_block"));
+        model.texture("west", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_item_storage/basic_strength_geo_science_multiblock_item_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_item_storage/basic_strength_geo_science_multiblock_item_storage_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicStrengthGeoScienceMultiblockMaterialStorageHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_geo_science_multiblock_material_storage_holo_block");
+    private void registerBasicStrengthGeoScienceMultiblockItemStorageHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_geo_science_multiblock_item_storage_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_holo_block"));
-        model.texture("up", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_holo_block"));
-        model.texture("north", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_holo_block"));
-        model.texture("south", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_holo_block"));
-        model.texture("east", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_holo_block"));
-        model.texture("west", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_holo_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_holo_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_item_storage/basic_strength_geo_science_multiblock_item_storage_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_item_storage/basic_strength_geo_science_multiblock_item_storage_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_item_storage/basic_strength_geo_science_multiblock_item_storage_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_item_storage/basic_strength_geo_science_multiblock_item_storage_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_item_storage/basic_strength_geo_science_multiblock_item_storage_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_item_storage/basic_strength_geo_science_multiblock_item_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/geo_science/storage/basic_strength_geo_science_multiblock_item_storage/basic_strength_geo_science_multiblock_item_storage_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
 
@@ -2017,31 +2017,31 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicStrengthHybridPhysicsMultiblockMaterialStorage() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_hybrid_physics_multiblock_material_storage_block");
+    private void registerBasicStrengthHybridPhysicsMultiblockItemStorage() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_hybrid_physics_multiblock_item_storage_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_block"));
-        model.texture("up", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_block"));
-        model.texture("north", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_block"));
-        model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_block"));
-        model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_block"));
-        model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_item_storage/basic_strength_hybrid_physics_multiblock_item_storage_block"));
+        model.texture("up", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_item_storage/basic_strength_hybrid_physics_multiblock_item_storage_block"));
+        model.texture("north", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_item_storage/basic_strength_hybrid_physics_multiblock_item_storage_block"));
+        model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_item_storage/basic_strength_hybrid_physics_multiblock_item_storage_block"));
+        model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_item_storage/basic_strength_hybrid_physics_multiblock_item_storage_block"));
+        model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_item_storage/basic_strength_hybrid_physics_multiblock_item_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_item_storage/basic_strength_hybrid_physics_multiblock_item_storage_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicStrengthHybridPhysicsMultiblockMaterialStorageHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_hybrid_physics_multiblock_material_storage_holo_block");
+    private void registerBasicStrengthHybridPhysicsMultiblockItemStorageHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_hybrid_physics_multiblock_item_storage_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_holo_block"));
-        model.texture("up", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_holo_block"));
-        model.texture("north", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_holo_block"));
-        model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_holo_block"));
-        model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_holo_block"));
-        model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_holo_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_material_storage/basic_strength_hybrid_physics_multiblock_material_storage_holo_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_item_storage/basic_strength_hybrid_physics_multiblock_item_storage_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_item_storage/basic_strength_hybrid_physics_multiblock_item_storage_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_item_storage/basic_strength_hybrid_physics_multiblock_item_storage_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_item_storage/basic_strength_hybrid_physics_multiblock_item_storage_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_item_storage/basic_strength_hybrid_physics_multiblock_item_storage_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_item_storage/basic_strength_hybrid_physics_multiblock_item_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/storage/basic_strength_hybrid_physics_multiblock_item_storage/basic_strength_hybrid_physics_multiblock_item_storage_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
 
@@ -2185,31 +2185,31 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicStrengthImitationMagicEngineeringMultiblockMaterialStorage() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_imitation_magic_engineering_multiblock_material_storage_block");
+    private void registerBasicStrengthImitationMagicEngineeringMultiblockItemStorage() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_imitation_magic_engineering_multiblock_item_storage_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_block"));
-        model.texture("up", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_block"));
-        model.texture("north", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_block"));
-        model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_block"));
-        model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_block"));
-        model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_item_storage/basic_strength_imitation_magic_engineering_multiblock_item_storage_block"));
+        model.texture("up", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_item_storage/basic_strength_imitation_magic_engineering_multiblock_item_storage_block"));
+        model.texture("north", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_item_storage/basic_strength_imitation_magic_engineering_multiblock_item_storage_block"));
+        model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_item_storage/basic_strength_imitation_magic_engineering_multiblock_item_storage_block"));
+        model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_item_storage/basic_strength_imitation_magic_engineering_multiblock_item_storage_block"));
+        model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_item_storage/basic_strength_imitation_magic_engineering_multiblock_item_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_item_storage/basic_strength_imitation_magic_engineering_multiblock_item_storage_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicStrengthImitationMagicEngineeringMultiblockMaterialStorageHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_imitation_magic_engineering_multiblock_material_storage_holo_block");
+    private void registerBasicStrengthImitationMagicEngineeringMultiblockItemStorageHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_imitation_magic_engineering_multiblock_item_storage_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_holo_block"));
-        model.texture("up", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_holo_block"));
-        model.texture("north", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_holo_block"));
-        model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_holo_block"));
-        model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_holo_block"));
-        model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_holo_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_holo_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_item_storage/basic_strength_imitation_magic_engineering_multiblock_item_storage_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_item_storage/basic_strength_imitation_magic_engineering_multiblock_item_storage_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_item_storage/basic_strength_imitation_magic_engineering_multiblock_item_storage_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_item_storage/basic_strength_imitation_magic_engineering_multiblock_item_storage_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_item_storage/basic_strength_imitation_magic_engineering_multiblock_item_storage_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_item_storage/basic_strength_imitation_magic_engineering_multiblock_item_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/storage/basic_strength_imitation_magic_engineering_multiblock_item_storage/basic_strength_imitation_magic_engineering_multiblock_item_storage_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
 
@@ -2354,31 +2354,31 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicStrengthJenithVoidScienceMultiblockMaterialStorage() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_jenith_void_science_multiblock_material_storage_block");
+    private void registerBasicStrengthJenithVoidScienceMultiblockItemStorage() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_jenith_void_science_multiblock_item_storage_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_material_storage/basic_strength_jenith_void_science_multiblock_material_storage_block"));
-        model.texture("up", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_material_storage/basic_strength_jenith_void_science_multiblock_material_storage_block"));
-        model.texture("north", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_material_storage/basic_strength_jenith_void_science_multiblock_material_storage_block"));
-        model.texture("south", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_material_storage/basic_strength_jenith_void_science_multiblock_material_storage_block"));
-        model.texture("east", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_material_storage/basic_strength_jenith_void_science_multiblock_material_storage_block"));
-        model.texture("west", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_material_storage/basic_strength_jenith_void_science_multiblock_material_storage_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_material_storage/basic_strength_jenith_void_science_multiblock_material_storage_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_item_storage/basic_strength_jenith_void_science_multiblock_item_storage_block"));
+        model.texture("up", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_item_storage/basic_strength_jenith_void_science_multiblock_item_storage_block"));
+        model.texture("north", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_item_storage/basic_strength_jenith_void_science_multiblock_item_storage_block"));
+        model.texture("south", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_item_storage/basic_strength_jenith_void_science_multiblock_item_storage_block"));
+        model.texture("east", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_item_storage/basic_strength_jenith_void_science_multiblock_item_storage_block"));
+        model.texture("west", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_item_storage/basic_strength_jenith_void_science_multiblock_item_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_item_storage/basic_strength_jenith_void_science_multiblock_item_storage_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicStrengthJenithVoidScienceMultiblockMaterialStorageHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_jenith_void_science_multiblock_material_storage_holo_block");
+    private void registerBasicStrengthJenithVoidScienceMultiblockItemStorageHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_jenith_void_science_multiblock_item_storage_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_material_storage/basic_strength_jenith_void_science_multiblock_material_storage_holo_block"));
-        model.texture("up", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_material_storage/basic_strength_jenith_void_science_multiblock_material_storage_holo_block"));
-        model.texture("north", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_material_storage/basic_strength_jenith_void_science_multiblock_material_storage_holo_block"));
-        model.texture("south", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_material_storage/basic_strength_jenith_void_science_multiblock_material_storage_holo_block"));
-        model.texture("east", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_material_storage/basic_strength_jenith_void_science_multiblock_material_storage_holo_block"));
-        model.texture("west", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_material_storage/basic_strength_jenith_void_science_multiblock_material_storage_holo_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_material_storage/basic_strength_jenith_void_science_multiblock_material_storage_holo_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_item_storage/basic_strength_jenith_void_science_multiblock_item_storage_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_item_storage/basic_strength_jenith_void_science_multiblock_item_storage_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_item_storage/basic_strength_jenith_void_science_multiblock_item_storage_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_item_storage/basic_strength_jenith_void_science_multiblock_item_storage_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_item_storage/basic_strength_jenith_void_science_multiblock_item_storage_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_item_storage/basic_strength_jenith_void_science_multiblock_item_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/jenith_void_science/storage/basic_strength_jenith_void_science_multiblock_item_storage/basic_strength_jenith_void_science_multiblock_item_storage_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
 
@@ -2523,31 +2523,31 @@ public class DCBlockStateProvider extends BlockStateProvider {
                 state -> model);
     }
 
-    private void registerBasicStrengthKaleidoscopicRealityScienceMultiblockMaterialStorage() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_block");
+    private void registerBasicStrengthKaleidoscopicRealityScienceMultiblockItemStorage() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_block"));
-        model.texture("up", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_block"));
-        model.texture("north", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_block"));
-        model.texture("south", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_block"));
-        model.texture("east", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_block"));
-        model.texture("west", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_block"));
+        model.texture("up", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_block"));
+        model.texture("north", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_block"));
+        model.texture("south", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_block"));
+        model.texture("east", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_block"));
+        model.texture("west", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(),
                 state -> model);
     }
 
-    private void registerBasicStrengthKaleidoscopicRealityScienceMultiblockMaterialStorageHolo() {
-        BlockModelBuilder model = models().getBuilder("block/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_holo_block");
+    private void registerBasicStrengthKaleidoscopicRealityScienceMultiblockItemStorageHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_holo_block");
         model.parent(models().getExistingFile(mcLoc("cube")));
-        model.texture("down", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_holo_block"));
-        model.texture("up", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_holo_block"));
-        model.texture("north", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_holo_block"));
-        model.texture("south", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_holo_block"));
-        model.texture("east", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_holo_block"));
-        model.texture("west", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_holo_block"));
-        model.texture("particle", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_holo_block"));
-        orientedBlock(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get(),
+        model.texture("down", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
     

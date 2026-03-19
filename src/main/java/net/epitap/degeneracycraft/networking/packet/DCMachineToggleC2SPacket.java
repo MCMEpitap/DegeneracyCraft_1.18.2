@@ -44,6 +44,7 @@ public class DCMachineToggleC2SPacket {
 
     public static final int TOGGLE_HOLOGRAM = 0;
     public static final int TOGGLE_HALT = 1;
+    public static final int TOGGLE_LOCK = 2;
 
     public DCMachineToggleC2SPacket(FriendlyByteBuf buf) {
         this.pos = buf.readBlockPos();
@@ -77,6 +78,9 @@ public class DCMachineToggleC2SPacket {
 
                 if (type == TOGGLE_HALT) {
                     machine.forceHalt = !machine.forceHalt;
+                }
+                if (type == TOGGLE_LOCK) {
+                    machine.toggleInputLock();
                 }
                 machine.setChanged();
             }

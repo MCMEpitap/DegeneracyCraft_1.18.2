@@ -120,7 +120,7 @@ public class BasicPerformanceRockCrasherStructure {
         Map<String, Predicate<BlockState>> blockConditions = new HashMap<>();
         blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
         blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK.get()));
-        blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
+        blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_STORAGE_BLOCK.get()));
         blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_BLOCK.get()));
         blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
         blockConditions.put("I", blockState -> blockState.is(DCBlocks.BASIC_CRASHING_BASE_BLOCK.get()));
@@ -166,7 +166,7 @@ public class BasicPerformanceRockCrasherStructure {
         Map<String, Supplier<BlockState>> blockSuppliers = new HashMap<>();
         blockSuppliers.put("F", () -> DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("P", () -> DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("S", () -> DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("S", () -> DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("B", () -> DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("E", () -> DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("I", () -> DCBlocks.BASIC_CRASHING_BASE_HOLO_BLOCK.get().defaultBlockState());

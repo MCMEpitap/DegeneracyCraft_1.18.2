@@ -5,6 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
@@ -32,7 +33,7 @@ public class BasicPerformanceAstronomicalTelescopeStructure {
                     {"F", " ", "F"}
             },
             {
-                    {"1", "F", "2"},
+                    {"1", "F", "1"},
                     {"F", "F", "F"},
                     {"3", "F", "4"}
             }
@@ -49,7 +50,7 @@ public class BasicPerformanceAstronomicalTelescopeStructure {
                     {"F", " ", "F"}
             },
             {
-                    {"1", "F", "2"},
+                    {"1", "F", "1"},
                     {"F", "F", "F"},
                     {"3", "F", "4"}
             }
@@ -97,6 +98,10 @@ public class BasicPerformanceAstronomicalTelescopeStructure {
                     BlockState targetState = level.getBlockState(relativePos);
 
                     Predicate<BlockState> condition = blockConditions.get(expectedBlock);
+                    BlockEntity be = level.getBlockEntity(relativePos);
+
+
+
                     if (condition == null || !condition.test(targetState)) {
                         return false;
                     }
@@ -113,8 +118,8 @@ public class BasicPerformanceAstronomicalTelescopeStructure {
         blockConditions.put("L", blockState -> blockState.is(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_BLOCK.get()));
         blockConditions.put("1", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get()));
         blockConditions.put("2", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get()));
-        blockConditions.put("3", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_INPUT_PORT_BLOCK.get()));
-        blockConditions.put("4", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_OUTPUT_PORT_BLOCK.get()));
+        blockConditions.put("3", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get()));
+        blockConditions.put("4", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get()));
         return blockConditions;
     }
 
@@ -160,8 +165,8 @@ public class BasicPerformanceAstronomicalTelescopeStructure {
         blockSuppliers.put("L", () -> DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("1", () -> DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("2", () -> DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("3", () -> DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_INPUT_PORT_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("4", () -> DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_OUTPUT_PORT_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("3", () -> DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("4", () -> DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get().defaultBlockState());
         return blockSuppliers;
     }
 
@@ -219,7 +224,7 @@ public class BasicPerformanceAstronomicalTelescopeStructure {
         return false;
     }
 
-    private static BlockPos getRelativePos(BlockPos basePos, int x, int y, int z, Direction facing) {
+    public static BlockPos getRelativePos(BlockPos basePos, int x, int y, int z, Direction facing) {
         return switch (facing) {
             case NORTH -> basePos.relative(Direction.WEST, x).relative(Direction.UP, y).relative(Direction.NORTH, z);
             case SOUTH -> basePos.relative(Direction.EAST, x).relative(Direction.UP, y).relative(Direction.SOUTH, z);

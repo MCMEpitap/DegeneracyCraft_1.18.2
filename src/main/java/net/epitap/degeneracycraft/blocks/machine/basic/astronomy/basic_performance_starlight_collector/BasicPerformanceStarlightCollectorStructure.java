@@ -110,7 +110,7 @@ public class BasicPerformanceStarlightCollectorStructure {
         Map<String, Predicate<BlockState>> blockConditions = new HashMap<>();
         blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
         blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_BLOCK.get()));
-        blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_BLOCK.get()));
+        blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ITEM_STORAGE_BLOCK.get()));
         blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_BLOCK.get()));
         blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
         blockConditions.put("A", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_BLOCK.get()));
@@ -157,7 +157,7 @@ public class BasicPerformanceStarlightCollectorStructure {
         Map<String, Supplier<BlockState>> blockSuppliers = new HashMap<>();
         blockSuppliers.put("F",() -> DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("P",() -> DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("S", () -> DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_MATERIAL_STORAGE_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("S", () -> DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("B", () -> DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("E", () -> DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("A", () -> DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get().defaultBlockState());

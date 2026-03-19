@@ -1,10 +1,6 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.bus.basic_strength_astronomy_multiblock_energy_input_bus.BasicStrengthAstronomyMultiblockEnergyInputBusBlockEntity;
-import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.bus.basic_strength_astronomy_multiblock_energy_output_bus.BasicStrengthAstronomyMultiblockEnergyOutputBusBlockEntity;
-import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.port.basic_strength_astronomy_multiblock_material_input_port.BasicStrengthAstronomyMultiblockMaterialInputPortBlockEntity;
-import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.port.basic_strength_astronomy_multiblock_material_output_port.BasicStrengthAstronomyMultiblockMaterialOutputPortBlockEntity;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_astronomical_telescope.BasicPerformanceAstronomicalTelescopeRecipe;
@@ -60,12 +56,17 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     public int multiblockLevel = -1;
 
     public boolean forceHalt = false;
+    public static final int RECIPE_COUNT      = 2;
+
+    private final ItemStack[] inputLockedRecipe = new ItemStack[RECIPE_COUNT];
+    public boolean inputLocked = false;
 
     public static final int DATA_COUNTER      = 0;
     public static final int DATA_PROGRESS     = 1;
     public static final int DATA_HOLOGRAM     = 2;
     public static final int DATA_FORCE_STOP   = 3;
     public static final int DATA_MULTIBLOCK   = 4;
+    public static final int DATA_RECIPE_LOCK   = 5;
 
     public static final int IN_0   = 0;
     public static final int IN_1   = 1;
@@ -76,6 +77,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     private final List<IItemHandler> itemInputs = new ArrayList<>();
     private final List<IItemHandler> itemOutputs = new ArrayList<>();
 
+    {Arrays.fill(inputLockedRecipe, ItemStack.EMPTY);}
     public final ItemStackHandler itemHandler = new ItemStackHandler(3) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -129,6 +131,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
                     case DATA_HOLOGRAM   -> hologramLevel;
                     case DATA_FORCE_STOP -> forceHalt ? 1 : 0;
                     case DATA_MULTIBLOCK   -> multiblockLevel;
+                    case DATA_RECIPE_LOCK   -> inputLocked ? 1 : 0;
                     default -> 0;
                 };
             }
@@ -141,12 +144,13 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
                     case DATA_HOLOGRAM -> hologramLevel = value;
                     case DATA_FORCE_STOP -> forceHalt = value != 0;
                     case DATA_MULTIBLOCK -> multiblockLevel = value;
+                    case DATA_RECIPE_LOCK -> inputLocked = value != 0;
                 }
             }
 
             @Override
             public int getCount() {
-                return 5;
+                return 6;
             }
         };
     }
@@ -218,6 +222,12 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         nbt.putInt("hologramLevel", hologramLevel);
         nbt.putBoolean("forceHalt", forceHalt);
         nbt.putInt("multiblockLevel", multiblockLevel);
+        nbt.putBoolean("inputLocked", inputLocked);
+        for (int i = 0; i < inputLockedRecipe.length; i++) {
+            CompoundTag itemTag = new CompoundTag();
+            inputLockedRecipe[i].save(itemTag);
+            nbt.put("inputLockedRecipe" + i, itemTag);
+        }
     }
 
     @Override
@@ -230,8 +240,20 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         hologramLevel = nbt.getInt("hologramLevel");
         forceHalt = nbt.getBoolean("forceHalt");
         multiblockLevel = nbt.getInt("multiblockLevel");
+        inputLocked = nbt.getBoolean("inputLocked");
+        for (int i = 0; i < inputLockedRecipe.length; i++) {
+            if (nbt.contains("inputLockedRecipe" + i)) {
+                inputLockedRecipe[i] = ItemStack.of(nbt.getCompound("inputLockedRecipe" + i));
+            } else {
+                inputLockedRecipe[i] = ItemStack.EMPTY;
+            }
+
+            if (inputLockedRecipe[i] == null) {
+                inputLockedRecipe[i] = ItemStack.EMPTY;
+            }
+        }
     }
-    
+
     public void drops() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
         for (int i = 0; i < itemHandler.getSlots(); i++) {
@@ -258,6 +280,11 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
 
             blockEntity.pullEnergyFromInputs();
             blockEntity.pullItemsFromInputs();
+
+            if (!blockEntity.forceHalt) {
+                blockEntity.pushEnergyToOutputs();
+                blockEntity.pushItemsToOutputs();
+            }
 
             setChanged(level, pos, state);
 
@@ -304,10 +331,6 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
             }
             setChanged(level, pos, state);
 
-            if (!blockEntity.forceHalt) {
-                blockEntity.pushEnergyToOutputs();
-                blockEntity.pushItemsToOutputs();
-            }
         }
     }
 
@@ -316,6 +339,8 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         if (level.isClientSide) return;
         if (multiblockLevel < 0) return;
 
+        Direction facing = getBlockState().getValue(BasicPerformanceAstronomicalTelescopeBlock.FACING);
+        BlockPos basePos = this.getBlockPos();
         energyInputs.clear();
         energyOutputs.clear();
         itemInputs.clear();
@@ -327,32 +352,38 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         for (int y = 0; y < structure.length; y++) {
             for (int z = 0; z < structure[y].length; z++) {
                 for (int x = 0; x < structure[y][z].length; x++) {
+                    String key = structure[y][z][x];
 
-                    BlockPos targetPos =
-                            pos.offset(x + minX0, maxY0 - y, z + minZ0);
+                    BlockPos targetPos = getRelativePos(basePos,x + minX0, maxY0 - y, z + minZ0, facing);
 
                     BlockEntity be = level.getBlockEntity(targetPos);
                     if (be == null || be == this) continue;
 
-                    // ===== Energy =====
-                    be.getCapability(CapabilityEnergy.ENERGY).ifPresent(storage -> {
-                        if (be instanceof BasicStrengthAstronomyMultiblockEnergyInputBusBlockEntity)
-                            energyInputs.add((DCIEnergyStorageFloat) storage);
+                    if (!key.equals("1") && !key.equals("2") && !key.equals("3") && !key.equals("4")) continue;
 
-                        if (be instanceof BasicStrengthAstronomyMultiblockEnergyOutputBusBlockEntity)
-                            energyOutputs.add((DCIEnergyStorageFloat) storage);
-                    });
+                    switch (key) {
+                        case "1": // Energy Input
+                            be.getCapability(CapabilityEnergy.ENERGY)
+                                    .ifPresent(storage ->
+                                            energyInputs.add((DCIEnergyStorageFloat) storage));
+                            break;
 
-                    // ===== Item =====
-                    be.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
-                            .ifPresent(handler -> {
+                        case "2": // Energy Output
+                            be.getCapability(CapabilityEnergy.ENERGY)
+                                    .ifPresent(storage ->
+                                            energyOutputs.add((DCIEnergyStorageFloat) storage));
+                            break;
 
-                                if (be instanceof BasicStrengthAstronomyMultiblockMaterialInputPortBlockEntity)
-                                    itemInputs.add(handler);
+                        case "3": // Item Input
+                            be.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+                                    .ifPresent(itemInputs::add);
+                            break;
 
-                                if (be instanceof BasicStrengthAstronomyMultiblockMaterialOutputPortBlockEntity)
-                                    itemOutputs.add(handler);
-                            });
+                        case "4": // Item Output
+                            be.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+                                    .ifPresent(itemOutputs::add);
+                            break;
+                    }
                 }
             }
         }
@@ -398,6 +429,32 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         }
     }
 
+    public void toggleInputLock() {
+
+        inputLocked = !inputLocked;
+
+        if (inputLocked) {
+
+            for (int i = 0; i < itemHandler.getSlots(); i++) {
+
+                ItemStack stack = itemHandler.getStackInSlot(i);
+
+                if (!stack.isEmpty()) {
+                    inputLockedRecipe[i] = stack.copy();
+                } else {
+                    inputLockedRecipe[i] = ItemStack.EMPTY;
+                }
+            }
+
+        } else {
+
+            Arrays.fill(inputLockedRecipe, ItemStack.EMPTY);
+
+        }
+
+        setChanged();
+    }
+
     private void pullItemsFromInputs() {
 
         for (IItemHandler input : itemInputs) {
@@ -407,13 +464,44 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
                 ItemStack stack = input.getStackInSlot(inputSlot);
                 if (stack.isEmpty()) continue;
 
-                // 機械入力スロット 0〜1
+                // 機械入力スロット
                 for (int machineSlot = 0; machineSlot <= 1; machineSlot++) {
 
+                    // ===== Lockチェック =====
+                    if (inputLocked) {
+
+                        ItemStack lock = inputLockedRecipe[machineSlot];
+
+                        // 空なら搬入不可
+                        if (lock.isEmpty()) continue;
+
+                        // アイテム種類違い
+                        if (!ItemStack.isSameItemSameTags(stack, lock)) continue;
+
+                        if(lock == null) lock = ItemStack.EMPTY;
+
+                        // 個数制限
+                        int current = itemHandler.getStackInSlot(machineSlot).getCount();
+                        int limit = lock.getCount();
+
+                        if (current >= limit) continue;
+                    }
+
+                    // ===== 通常搬入チェック =====
                     ItemStack simulated = itemHandler.insertItem(machineSlot, stack.copy(), true);
                     int insertable = stack.getCount() - simulated.getCount();
 
                     if (insertable > 0) {
+
+                        // Lock状態なら制限量に調整
+                        if (inputLocked) {
+
+                            int current = itemHandler.getStackInSlot(machineSlot).getCount();
+                            int limit = inputLockedRecipe[machineSlot].getCount();
+                            int remain = limit - current;
+
+                            insertable = Math.min(insertable, remain);
+                        }
 
                         ItemStack extracted = input.extractItem(inputSlot, insertable, false);
                         itemHandler.insertItem(machineSlot, extracted, false);

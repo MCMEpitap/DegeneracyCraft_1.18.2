@@ -28,7 +28,7 @@ public class BasicPerformanceAstronomicalTelescopeMenu extends AbstractContainer
     private final ContainerData data;
 
     public BasicPerformanceAstronomicalTelescopeMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
+        this(pContainerId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
 
     public BasicPerformanceAstronomicalTelescopeMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -69,6 +69,11 @@ public class BasicPerformanceAstronomicalTelescopeMenu extends AbstractContainer
     public int getMultiblockLevel() {
         return data.get(4);
     }
+
+    public boolean isInputLocked() {
+        return data.get(5) != 0;
+    }
+
 
     public DCIEnergyStorageFloat getEnergy() {
         return blockEntity.getEnergyStorage();

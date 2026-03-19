@@ -17,5 +17,9 @@ public class ButtonComponent {
             new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/button/halt_on.png");
     public static final ResourceLocation HALT_OFF =
             new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/button/halt_off.png");
+    public static final ResourceLocation LOCK_ON =
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/button/lock_on.png");
+    public static final ResourceLocation LOCK_OFF =
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/button/lock_off.png");
 
 }

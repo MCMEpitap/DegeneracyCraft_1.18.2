@@ -30,7 +30,8 @@ public class BasicPerformanceFineParticleAdsorberScreen extends AbstractContaine
     private static final int HOLOGRAM_Y = 59;
     private static final int HALT_X = 98;
     private static final int HALT_Y = 62;
-
+    private static final int LOCK_X = 8;
+    private static final int LOCK_Y = 62;
     private static final int BUTTON_SIZE = 16;
 
     public BasicPerformanceFineParticleAdsorberScreen(BasicPerformanceFineParticleAdsorberMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
@@ -57,8 +58,6 @@ public class BasicPerformanceFineParticleAdsorberScreen extends AbstractContaine
         int y = (height - imageHeight) / 2;
 
         renderEnergyAreaTooltips(pPoseStack, pMouseX, pMouseY, x, y);
-        drawString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"),
-                15, 67, 0xFFFFFF);
 
         if (menu.isWorking()) {
             drawString(pPoseStack, Minecraft.getInstance().font, "Work!",
@@ -67,7 +66,6 @@ public class BasicPerformanceFineParticleAdsorberScreen extends AbstractContaine
             drawString(pPoseStack, Minecraft.getInstance().font, "Stop!",
                     67, 30, 0xFF0000);
         }
-
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, menu.getProgressPercent() + " %",
                 80, 11, 0xFFFFFF);
 
@@ -87,8 +85,15 @@ public class BasicPerformanceFineParticleAdsorberScreen extends AbstractContaine
                     80, 47, 0xFF0000);
         }
 
+        if (menu.isInputLocked()) {
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".lock"),
+                    43, 66, 0xFFFFFF);
+        }
+
         renderPowerModifierTooltips(pPoseStack, pMouseX, pMouseY, x, y);
         renderMultiblockInfoTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+        renderHaltTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+        renderLockTooltips(pPoseStack, pMouseX, pMouseY, x, y);
     }
 
     private void renderMultiblockInfoTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
@@ -130,6 +135,28 @@ public class BasicPerformanceFineParticleAdsorberScreen extends AbstractContaine
                 new TranslatableComponent("screen." + "degeneracycraft_machine" + ".energy_usage_modifier_1"));
     }
 
+    private void renderHaltTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
+        if (menu.isForceHalt()
+                && isMouseAboveArea(pMouseX, pMouseY, x, y, 117, 64, 30, 12))
+            renderTooltip(pPoseStack, this.haltTooltips(),
+                    Optional.empty(), pMouseX - x, pMouseY - y);
+    }
+
+    public List<Component> haltTooltips() {
+        return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".halt"));
+    }
+
+    private void renderLockTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
+        if (menu.isInputLocked()
+                && isMouseAboveArea(pMouseX, pMouseY, x, y, 27, 64, 30, 12))
+            renderTooltip(pPoseStack, this.lockTooltips(),
+                    Optional.empty(), pMouseX - x, pMouseY - y);
+    }
+
+    public List<Component> lockTooltips() {
+        return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".lock"));
+    }
+
     @Override
     protected void renderBg(PoseStack pPoseStack, float pPartialTick, int pMouseX, int pMouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
@@ -166,6 +193,15 @@ public class BasicPerformanceFineParticleAdsorberScreen extends AbstractContaine
                 BUTTON_SIZE, BUTTON_SIZE,
                 BUTTON_SIZE, BUTTON_SIZE
         );
+
+        RenderSystem.setShaderTexture(
+                0,
+                menu.isInputLocked() ? LOCK_ON : LOCK_OFF
+        );
+        blit(pPoseStack, guiX + LOCK_X, guiY + LOCK_Y, 0, 0,
+                BUTTON_SIZE, BUTTON_SIZE,
+                BUTTON_SIZE, BUTTON_SIZE
+        );
     }
 
     @Override
@@ -185,6 +221,12 @@ public class BasicPerformanceFineParticleAdsorberScreen extends AbstractContaine
         if (isMouseOver(mouseX, mouseY, x + HALT_X, y + HALT_Y)) {
             DCMessages.sendToServer(
                     new DCMachineToggleC2SPacket(menu.getBlockEntity().getBlockPos(), 1)
+            );
+            return true;
+        }
+        if (isMouseOver(mouseX, mouseY, x + LOCK_X, y + LOCK_Y)) {
+            DCMessages.sendToServer(
+                    new DCMachineToggleC2SPacket(menu.getBlockEntity().getBlockPos(), 2)
             );
             return true;
         }
@@ -214,5 +256,4 @@ public class BasicPerformanceFineParticleAdsorberScreen extends AbstractContaine
         super.render(pPoseStack, mouseX, mouseY, delta);
         renderTooltip(pPoseStack, mouseX, mouseY);
     }
-
 }

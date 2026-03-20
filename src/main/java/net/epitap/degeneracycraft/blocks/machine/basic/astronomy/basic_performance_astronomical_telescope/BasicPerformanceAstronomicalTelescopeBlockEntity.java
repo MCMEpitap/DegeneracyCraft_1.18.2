@@ -54,7 +54,10 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
 
     public int hologramLevel = -1;
     public int multiblockLevel = -1;
-
+    public int minX;
+    public int maxY;
+    public int minZ;
+    
     public boolean forceHalt = false;
     public static final int RECIPE_COUNT      = 2;
 
@@ -276,7 +279,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
             hologram(level, pos, state, blockEntity);
             blockEntity.getProgressPercent = 0;
 
-            blockEntity.scanMultiblockStorages(level, pos);
+            blockEntity.scanMultiblockStorages(level);
 
             blockEntity.pullEnergyFromInputs();
             blockEntity.pullItemsFromInputs();
@@ -330,12 +333,10 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
                 setChanged(level, pos, state);
             }
             setChanged(level, pos, state);
-
         }
     }
 
-    private void scanMultiblockStorages(Level level, BlockPos pos) {
-
+    private void scanMultiblockStorages(Level level) {
         if (level.isClientSide) return;
         if (multiblockLevel < 0) return;
 
@@ -346,15 +347,40 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         itemInputs.clear();
         itemOutputs.clear();
 
-        String[][][] structure =
-                (multiblockLevel == 1) ? structure1 : structure0;
+
+        String[][][] structure = switch (multiblockLevel) {
+            case 0 -> BasicPerformanceAstronomicalTelescopeStructure.structure0;
+            case 1 -> BasicPerformanceAstronomicalTelescopeStructure.structure1;
+            default -> new String[0][][];
+        };
+
+        this.minX = switch (multiblockLevel){
+            case 0 -> BasicPerformanceAstronomicalTelescopeStructure.minX0;
+            case 1 -> BasicPerformanceAstronomicalTelescopeStructure.minX1;
+            default -> 0;
+        };
+
+        this.maxY = switch (multiblockLevel){
+            case 0 -> BasicPerformanceAstronomicalTelescopeStructure.maxY0;
+            case 1 -> BasicPerformanceAstronomicalTelescopeStructure.maxY1;
+            default -> 0;
+        };
+
+        this.minZ = switch (multiblockLevel){
+            case 0 -> BasicPerformanceAstronomicalTelescopeStructure.maxZ0;
+            case 1 -> BasicPerformanceAstronomicalTelescopeStructure.maxZ1;
+            default -> 0;
+        };
 
         for (int y = 0; y < structure.length; y++) {
             for (int z = 0; z < structure[y].length; z++) {
                 for (int x = 0; x < structure[y][z].length; x++) {
                     String key = structure[y][z][x];
 
-                    BlockPos targetPos = getRelativePos(basePos,x + minX0, maxY0 - y, z + minZ0, facing);
+                    BlockPos targetPos = BasicPerformanceAstronomicalTelescopeStructure.getRelativePos(basePos,
+                            x + this.minX,
+                            this.maxY - y,
+                            z + this.minZ, facing);
 
                     BlockEntity be = level.getBlockEntity(targetPos);
                     if (be == null || be == this) continue;
@@ -362,24 +388,24 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
                     if (!key.equals("1") && !key.equals("2") && !key.equals("3") && !key.equals("4")) continue;
 
                     switch (key) {
-                        case "1": // Energy Input
+                        case "1":
                             be.getCapability(CapabilityEnergy.ENERGY)
                                     .ifPresent(storage ->
                                             energyInputs.add((DCIEnergyStorageFloat) storage));
                             break;
 
-                        case "2": // Energy Output
+                        case "2":
                             be.getCapability(CapabilityEnergy.ENERGY)
                                     .ifPresent(storage ->
                                             energyOutputs.add((DCIEnergyStorageFloat) storage));
                             break;
 
-                        case "3": // Item Input
+                        case "3":
                             be.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
                                     .ifPresent(itemInputs::add);
                             break;
 
-                        case "4": // Item Output
+                        case "4":
                             be.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
                                     .ifPresent(itemOutputs::add);
                             break;
@@ -390,7 +416,6 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     }
 
     private void pullEnergyFromInputs() {
-
         float needed = MACHINE_CAPACITY - ENERGY_STORAGE.getEnergyStoredFloat();
         if (needed <= 0) return;
 
@@ -407,10 +432,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     }
 
     private void pushEnergyToOutputs() {
-
         float stored = ENERGY_STORAGE.getEnergyStoredFloat();
-
-        // 最低保持量を設定（例：0にしない）
         float reserve = this.MACHINE_CAPACITY - this.MACHINE_TRANSFER;
 
         float transferable = stored - reserve;
@@ -430,70 +452,50 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     }
 
     public void toggleInputLock() {
-
         inputLocked = !inputLocked;
-
         if (inputLocked) {
-
             for (int i = 0; i < itemHandler.getSlots(); i++) {
-
                 ItemStack stack = itemHandler.getStackInSlot(i);
-
                 if (!stack.isEmpty()) {
                     inputLockedRecipe[i] = stack.copy();
                 } else {
                     inputLockedRecipe[i] = ItemStack.EMPTY;
                 }
             }
-
         } else {
-
             Arrays.fill(inputLockedRecipe, ItemStack.EMPTY);
-
         }
 
         setChanged();
     }
 
     private void pullItemsFromInputs() {
-
         for (IItemHandler input : itemInputs) {
-
             for (int inputSlot = 0; inputSlot < input.getSlots(); inputSlot++) {
-
                 ItemStack stack = input.getStackInSlot(inputSlot);
                 if (stack.isEmpty()) continue;
 
-                // 機械入力スロット
-                for (int machineSlot = 0; machineSlot <= 1; machineSlot++) {
-
-                    // ===== Lockチェック =====
+                for (int machineSlot = IN_0; machineSlot <= RECIPE_COUNT - 1; machineSlot++) {
                     if (inputLocked) {
 
                         ItemStack lock = inputLockedRecipe[machineSlot];
 
-                        // 空なら搬入不可
                         if (lock.isEmpty()) continue;
 
-                        // アイテム種類違い
                         if (!ItemStack.isSameItemSameTags(stack, lock)) continue;
 
                         if(lock == null) lock = ItemStack.EMPTY;
 
-                        // 個数制限
                         int current = itemHandler.getStackInSlot(machineSlot).getCount();
                         int limit = lock.getCount();
 
                         if (current >= limit) continue;
                     }
 
-                    // ===== 通常搬入チェック =====
                     ItemStack simulated = itemHandler.insertItem(machineSlot, stack.copy(), true);
                     int insertable = stack.getCount() - simulated.getCount();
 
                     if (insertable > 0) {
-
-                        // Lock状態なら制限量に調整
                         if (inputLocked) {
 
                             int current = itemHandler.getStackInSlot(machineSlot).getCount();
@@ -506,7 +508,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
                         ItemStack extracted = input.extractItem(inputSlot, insertable, false);
                         itemHandler.insertItem(machineSlot, extracted, false);
 
-                        return; // 1tick1搬入
+                        return;
                     }
                 }
             }
@@ -514,10 +516,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     }
 
     private void pushItemsToOutputs() {
-
-        // 機械出力スロット 2〜3
-        for (int machineSlot = 2; machineSlot == 2; machineSlot++) {
-
+        for (int machineSlot = OUT_0; machineSlot <= OUT_0; machineSlot++) {
             ItemStack stack = itemHandler.getStackInSlot(machineSlot);
             if (stack.isEmpty()) continue;
 
@@ -552,8 +551,6 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
 
         return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / (match.get().getRequiredTime() * 20F);
     }
-
-
 
     private static boolean isTime(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
         Level level = blockEntity.getLevel();
@@ -620,8 +617,8 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount();
+        return blockEntity.itemHandler.getStackInSlot(IN_0).getCount() >= match.get().getInput0Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(IN_1).getCount() >= match.get().getInput1Item().getCount();
     }
 
 
@@ -636,10 +633,10 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
                 .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
-            blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
-            blockEntity.itemHandler.setStackInSlot(2, new ItemStack(match.get().getOutput0Item().getItem(),
-                    blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount()));
+            blockEntity.itemHandler.extractItem(IN_0, match.get().getInput0Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(IN_1, match.get().getInput1Item().getCount(), false);
+            blockEntity.itemHandler.setStackInSlot(OUT_0, new ItemStack(match.get().getOutput0Item().getItem(),
+                    blockEntity.itemHandler.getStackInSlot(OUT_0).getCount() + match.get().getOutput0Item().getCount()));
 
             blockEntity.resetProgress();
         }
@@ -659,7 +656,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(2).getMaxStackSize();
+        return blockEntity.itemHandler.getStackInSlot(OUT_0).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(OUT_0).getMaxStackSize();
     }
 
     private static boolean canInsertItemIntoOutputSlot(BasicPerformanceAstronomicalTelescopeBlockEntity blockEntity) {
@@ -672,7 +669,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
 
-        return (blockEntity.itemHandler.getStackInSlot(2).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(2).isEmpty());
+        return (blockEntity.itemHandler.getStackInSlot(OUT_0).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(OUT_0).isEmpty());
     }
 
     public void insertRecipeInputsFromPlayer(Player player, Recipe<?> recipe, boolean shift) {

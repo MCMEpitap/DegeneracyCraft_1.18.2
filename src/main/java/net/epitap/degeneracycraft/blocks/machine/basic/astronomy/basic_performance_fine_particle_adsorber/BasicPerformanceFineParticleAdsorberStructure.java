@@ -15,10 +15,10 @@ import java.util.function.Supplier;
 
 public class BasicPerformanceFineParticleAdsorberStructure {
     static int minX0 = -1, maxX0 = 1;
-    static int minY0 = -1, maxY0 = 1;
+    static int minY0 = -1, maxY0 = 2;
     static int minZ0 = -2, maxZ0 = 0;
     static int minX1 = -1, maxX1 = 1;
-    static int minY1 = -1, maxY1 = 1;
+    static int minY1 = -1, maxY1 = 2;
     static int minZ1 = -2, maxZ1 = 0;
     public static String[][][] structure0 = new String[][][]{
             {

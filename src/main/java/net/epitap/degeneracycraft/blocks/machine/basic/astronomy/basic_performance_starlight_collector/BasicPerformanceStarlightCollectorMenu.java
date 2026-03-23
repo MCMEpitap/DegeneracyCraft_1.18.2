@@ -28,7 +28,7 @@ public class BasicPerformanceStarlightCollectorMenu extends AbstractContainerMen
     private final ContainerData data;
 
     public BasicPerformanceStarlightCollectorMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
+        this(pContainerId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
 
     public BasicPerformanceStarlightCollectorMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -70,11 +70,14 @@ public class BasicPerformanceStarlightCollectorMenu extends AbstractContainerMen
         return data.get(4);
     }
 
+    public boolean isInputLocked() {
+        return data.get(5) != 0;
+    }
+
     public DCIEnergyStorageFloat getEnergy() {
         return blockEntity.getEnergyStorage();
     }
-
-
+    
     public BasicPerformanceStarlightCollectorBlockEntity getBlockEntity() {
         return this.blockEntity;
     }

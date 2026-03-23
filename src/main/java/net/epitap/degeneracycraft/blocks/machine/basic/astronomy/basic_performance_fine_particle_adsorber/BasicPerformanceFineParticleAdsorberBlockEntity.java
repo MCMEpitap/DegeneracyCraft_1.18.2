@@ -1,7 +1,6 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_fine_particle_adsorber;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeBlock;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_performance_fine_particle_adsorber.BasicPerformanceFineParticleAdsorberRecipe;
@@ -334,7 +333,7 @@ public class BasicPerformanceFineParticleAdsorberBlockEntity extends BlockEntity
         if (level.isClientSide) return;
         if (multiblockLevel < 0) return;
 
-        Direction facing = getBlockState().getValue(BasicPerformanceAstronomicalTelescopeBlock.FACING);
+        Direction facing = getBlockState().getValue(BasicPerformanceFineParticleAdsorberBlock.FACING);
         BlockPos basePos = this.getBlockPos();
         energyInputs.clear();
         energyOutputs.clear();

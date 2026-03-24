@@ -43,8 +43,12 @@ import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.energy_storage.
 import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.item_storage.basic_strength_astronomy_multiblock_item_storage.BasicStrengthAstronomyMultiblockItemStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.port.basic_strength_astronomy_multiblock_item_input_port.BasicStrengthAstronomyMultiblockItemInputPortBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.port.basic_strength_astronomy_multiblock_item_output_port.BasicStrengthAstronomyMultiblockItemOutputPortBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.biology.bus.basic_strength_biology_multiblock_energy_input_bus.BasicStrengthBiologyMultiblockEnergyInputBusBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.biology.bus.basic_strength_biology_multiblock_energy_output_bus.BasicStrengthBiologyMultiblockEnergyOutputBusBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.biology.energy_storage.basic_strength_biology_multiblock_energy_storage.BasicStrengthBiologyMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.biology.item_storage.basic_strength_biology_multiblock_item_storage.BasicStrengthBiologyMultiblockItemStorageBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.biology.port.basic_strength_biology_multiblock_item_output_port.BasicStrengthBiologyMultiblockItemOutputPortBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.biology.port.basic_strength_biology_multiblock_item_input_port.BasicStrengthBiologyMultiblockItemInputPortBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.energy_storage.basic_strength_chemistry_multiblock_energy_storage.BasicStrengthChemistryMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.item_storage.basic_strength_chemistry_multiblock_item_storage.BasicStrengthChemistryMultiblockItemStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.energy_storage.basic_strength_dynamic_energetics_multiblock_energy_storage.BasicStrengthDynamicEnergeticsMultiblockEnergyStorageBlockEntity;
@@ -178,7 +182,23 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicStrengthBiologyMultiblockItemStorageBlockEntity>> BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_STORAGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_strength_biology_multiblock_item_storage_block_entity", () ->
                     BlockEntityType.Builder.of(BasicStrengthBiologyMultiblockItemStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_STORAGE_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthBiologyMultiblockEnergyInputBusBlockEntity>> BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_biology_multiblock_energy_input_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthBiologyMultiblockEnergyInputBusBlockEntity::new, DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthBiologyMultiblockEnergyOutputBusBlockEntity>> BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_biology_multiblock_energy_output_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthBiologyMultiblockEnergyOutputBusBlockEntity::new, DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthBiologyMultiblockItemInputPortBlockEntity>> BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_biology_multiblock_item_input_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthBiologyMultiblockItemInputPortBlockEntity::new, DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthBiologyMultiblockItemOutputPortBlockEntity>> BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_biology_multiblock_item_output_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthBiologyMultiblockItemOutputPortBlockEntity::new, DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get()).build(null));
 
+    
+    
+    
+    
     public static final RegistryObject<BlockEntityType<BasicStrengthChemistryMultiblockEnergyStorageBlockEntity>> BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_strength_chemistry_multiblock_energy_storage_block_entity", () ->
                     BlockEntityType.Builder.of(BasicStrengthChemistryMultiblockEnergyStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()).build(null));

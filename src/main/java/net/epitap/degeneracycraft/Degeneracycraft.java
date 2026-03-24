@@ -46,6 +46,10 @@ import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.port.basic_stre
 import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.port.basic_strength_astronomy_multiblock_item_output_port.BasicStrengthAstronomyMultiblockItemOutputPortScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.biology.energy_storage.basic_strength_biology_multiblock_energy_storage.BasicStrengthBiologyMultiblockEnergyStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.biology.item_storage.basic_strength_biology_multiblock_item_storage.BasicStrengthBiologyMultiblockItemStorageScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.biology.bus.basic_strength_biology_multiblock_energy_input_bus.BasicStrengthBiologyMultiblockEnergyInputBusScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.biology.bus.basic_strength_biology_multiblock_energy_output_bus.BasicStrengthBiologyMultiblockEnergyOutputBusScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.biology.port.basic_strength_biology_multiblock_item_input_port.BasicStrengthBiologyMultiblockItemInputPortScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.biology.port.basic_strength_biology_multiblock_item_output_port.BasicStrengthBiologyMultiblockItemOutputPortScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.energy_storage.basic_strength_chemistry_multiblock_energy_storage.BasicStrengthChemistryMultiblockEnergyStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.item_storage.basic_strength_chemistry_multiblock_item_storage.BasicStrengthChemistryMultiblockItemStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.energy_storage.basic_strength_dynamic_energetics_multiblock_energy_storage.BasicStrengthDynamicEnergeticsMultiblockEnergyStorageScreen;
@@ -294,7 +298,14 @@ public class Degeneracycraft {
 
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthBiologyMultiblockEnergyStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_STORAGE_MENU.get(), BasicStrengthBiologyMultiblockItemStorageScreen::new);
-
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_INPUT_BUS_MENU.get(), BasicStrengthBiologyMultiblockEnergyInputBusScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_OUTPUT_BUS_MENU.get(), BasicStrengthBiologyMultiblockEnergyOutputBusScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_INPUT_PORT_MENU.get(), BasicStrengthBiologyMultiblockItemInputPortScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_OUTPUT_PORT_MENU.get(), BasicStrengthBiologyMultiblockItemOutputPortScreen::new);
+        
+        
+        
+        
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthChemistryMultiblockEnergyStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_STORAGE_MENU.get(), BasicStrengthChemistryMultiblockItemStorageScreen::new);
 
@@ -417,7 +428,13 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
 
+        
+        
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_BASE_FRAME_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());

@@ -1,8 +1,6 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_starlight_collector;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeBlock;
-import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_fine_particle_adsorber.BasicPerformanceFineParticleAdsorberStructure;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
 import net.epitap.degeneracycraft.integration.jei.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorRecipe;
@@ -62,6 +60,7 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
 
     public boolean forceHalt = false;
     public static final int RECIPE_COUNT      = 2;
+    public static final int OUTPUT_COUNT      = 1;
 
     private final ItemStack[] inputLockedRecipe = new ItemStack[RECIPE_COUNT];
     public boolean inputLocked = false;
@@ -521,7 +520,7 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
     }
 
     private void pushItemsToOutputs() {
-        for (int machineSlot = OUT_0; machineSlot <= OUT_0; machineSlot++) {
+        for (int machineSlot = OUT_0; machineSlot <= OUT_0 + OUTPUT_COUNT - 1; machineSlot++) {
             ItemStack stack = itemHandler.getStackInSlot(machineSlot);
             if (stack.isEmpty()) continue;
 
@@ -543,20 +542,6 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
             }
         }
     }
-
-    private static boolean hasAmountEnergyRecipe(BasicPerformanceStarlightCollectorBlockEntity blockEntity) {
-        Level level = blockEntity.level;
-        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
-        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
-            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
-        }
-
-        Optional<BasicPerformanceStarlightCollectorRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceStarlightCollectorRecipe.Type.INSTANCE, inventory, level);
-
-        return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / (match.get().getRequiredTime() * 20F);
-    }
-
 
     private static boolean isTime(BasicPerformanceStarlightCollectorBlockEntity blockEntity) {
         Level level = blockEntity.getLevel();
@@ -625,6 +610,19 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
 
         return blockEntity.itemHandler.getStackInSlot(IN_0).getCount() >= match.get().getInput0Item().getCount()
                 && blockEntity.itemHandler.getStackInSlot(IN_1).getCount() >= match.get().getInput1Item().getCount();
+    }
+
+    private static boolean hasAmountEnergyRecipe(BasicPerformanceStarlightCollectorBlockEntity blockEntity) {
+        Level level = blockEntity.level;
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+        for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
+            inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
+        }
+
+        Optional<BasicPerformanceStarlightCollectorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceStarlightCollectorRecipe.Type.INSTANCE, inventory, level);
+
+        return blockEntity.getEnergyStorage().getEnergyStoredFloat() >= match.get().getRequiredEnergy() / (match.get().getRequiredTime() * 20F);
     }
 
 

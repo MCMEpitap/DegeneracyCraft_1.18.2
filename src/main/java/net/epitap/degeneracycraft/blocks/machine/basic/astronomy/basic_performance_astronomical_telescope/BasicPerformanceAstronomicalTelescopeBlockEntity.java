@@ -60,7 +60,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     
     public boolean forceHalt = false;
     public static final int RECIPE_COUNT      = 2;
-
+    public static final int OUTPUT_COUNT      = 1;
     private final ItemStack[] inputLockedRecipe = new ItemStack[RECIPE_COUNT];
     public boolean inputLocked = false;
 
@@ -516,7 +516,7 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
     }
 
     private void pushItemsToOutputs() {
-        for (int machineSlot = OUT_0; machineSlot <= OUT_0; machineSlot++) {
+        for (int machineSlot = OUT_0; machineSlot <= OUT_0 + OUTPUT_COUNT - 1; machineSlot++) {
             ItemStack stack = itemHandler.getStackInSlot(machineSlot);
             if (stack.isEmpty()) continue;
 

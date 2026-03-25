@@ -27,7 +27,7 @@ public class BasicPerformanceBioReactorMenu extends AbstractContainerMenu {
     public final ContainerData data;
 
     public BasicPerformanceBioReactorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
 
     public BasicPerformanceBioReactorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -46,7 +46,6 @@ public class BasicPerformanceBioReactorMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(handler, 4, 98, 25));
             this.addSlot(new SlotItemHandler(handler, 5, 116, 25));
             this.addSlot(new SlotItemHandler(handler, 6, 134, 25));
-
         });
         addDataSlots(data);
     }
@@ -69,6 +68,10 @@ public class BasicPerformanceBioReactorMenu extends AbstractContainerMenu {
 
     public int getMultiblockLevel() {
         return data.get(4);
+    }
+
+    public boolean isInputLocked() {
+        return data.get(5) != 0;
     }
 
     public DCIEnergyStorageFloat getEnergy() {

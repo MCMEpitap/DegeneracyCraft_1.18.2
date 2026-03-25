@@ -27,7 +27,7 @@ public class BasicPerformanceCellIncubatorMenu extends AbstractContainerMenu {
     public final ContainerData data;
 
     public BasicPerformanceCellIncubatorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
 
     public BasicPerformanceCellIncubatorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -43,7 +43,7 @@ public class BasicPerformanceCellIncubatorMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(handler, 1, 8, 25));
             this.addSlot(new SlotItemHandler(handler, 2, 26, 25));
             this.addSlot(new SlotItemHandler(handler, 3, 44, 25));
-            this.addSlot(new SlotItemHandler(handler, 4, 116, 25));;
+            this.addSlot(new SlotItemHandler(handler, 4, 116, 25));
         });
         addDataSlots(data);
     }
@@ -66,6 +66,10 @@ public class BasicPerformanceCellIncubatorMenu extends AbstractContainerMenu {
 
     public int getMultiblockLevel() {
         return data.get(4);
+    }
+
+    public boolean isInputLocked() {
+        return data.get(5) != 0;
     }
 
     public DCIEnergyStorageFloat getEnergy() {

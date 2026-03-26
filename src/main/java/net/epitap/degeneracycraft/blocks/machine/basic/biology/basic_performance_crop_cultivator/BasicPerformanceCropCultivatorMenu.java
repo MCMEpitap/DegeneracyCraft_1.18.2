@@ -27,7 +27,7 @@ public class BasicPerformanceCropCultivatorMenu extends AbstractContainerMenu {
     public final ContainerData data;
 
     public BasicPerformanceCropCultivatorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
 
     public BasicPerformanceCropCultivatorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -66,6 +66,10 @@ public class BasicPerformanceCropCultivatorMenu extends AbstractContainerMenu {
 
     public int getMultiblockLevel() {
         return data.get(4);
+    }
+
+    public boolean isInputLocked() {
+        return data.get(5) != 0;
     }
 
     public DCIEnergyStorageFloat getEnergy() {

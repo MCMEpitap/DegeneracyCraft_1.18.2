@@ -13,7 +13,7 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class BasicStrengthDynamicEnergeticsMultiblockItemStorageScreen extends AbstractContainerScreen<BasicStrengthDynamicEnergeticsMultiblockItemStorageMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_material_storage/basic_strength_dynamic_energetics_multiblock_material_storage_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/dynamic_energetics/basic_strength_dynamic_energetics_multiblock_item_storage/basic_strength_dynamic_energetics_multiblock_item_storage_gui.png");
 
 
     public BasicStrengthDynamicEnergeticsMultiblockItemStorageScreen(BasicStrengthDynamicEnergeticsMultiblockItemStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {

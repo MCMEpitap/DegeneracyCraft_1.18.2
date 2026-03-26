@@ -875,7 +875,17 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "基本強度生物学マルチブロック用エネルギーストレージ (ホログラム)");
         add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(), "基本強度生物学マルチブロック用アイテムストレージ");
         add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(), "基本強度生物学マルチブロック用アイテムストレージ (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get(), "基本強度生物学マルチブロック用エネルギー入力バス");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(), "基本強度生物学マルチブロック用エネルギー入力バス(ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get(), "基本強度生物学マルチブロック用エネルギー出力バス");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), "基本強度生物学マルチブロック用エネルギー出力バス(ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get(), "基本強度生物学マルチブロック用アイテム入力ポート");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), "基本強度生物学マルチブロック用アイテム入力ポート(ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get(), "基本強度生物学マルチブロック用アイテム出力ポート");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), "基本強度生物学マルチブロック用アイテム出力ポート(ホログラム)");
 
+        
+        
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "基本強度化学マルチブロック用基礎フレーム");
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "基本強度化学マルチブロック用基礎フレーム (ホログラム)");
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "基本強度化学マルチブロック用機械フレーム");
@@ -888,7 +898,17 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "基本強度化学マルチブロック用エネルギーストレージ (ホログラム)");
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(), "基本強度化学マルチブロック用アイテムストレージ");
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(), "基本強度化学マルチブロック用アイテムストレージ (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get(), "基本強度化学マルチブロック用エネルギー入力バス");
+        add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(), "基本強度化学マルチブロック用エネルギー入力バス(ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get(), "基本強度化学マルチブロック用エネルギー出力バス");
+        add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), "基本強度化学マルチブロック用エネルギー出力バス(ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get(), "基本強度化学マルチブロック用アイテム入力ポート");
+        add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), "基本強度化学マルチブロック用アイテム入力ポート(ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get(), "基本強度化学マルチブロック用アイテム出力ポート");
+        add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), "基本強度化学マルチブロック用アイテム出力ポート(ホログラム)");
 
+        
+        
         add(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "基本強度動的エネルギー学マルチブロック用基礎フレーム");
         add(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "基本強度動的エネルギー学マルチブロック用基礎フレーム (ホログラム)");
         add(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "基本強度動的エネルギー学マルチブロック用機械フレーム");

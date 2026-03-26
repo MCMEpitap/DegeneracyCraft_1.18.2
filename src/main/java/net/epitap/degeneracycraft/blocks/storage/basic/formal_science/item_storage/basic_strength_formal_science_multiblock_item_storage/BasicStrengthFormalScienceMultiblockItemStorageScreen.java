@@ -13,7 +13,7 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class BasicStrengthFormalScienceMultiblockItemStorageScreen extends AbstractContainerScreen<BasicStrengthFormalScienceMultiblockItemStorageMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_material_storage/basic_strength_formal_science_multiblock_material_storage_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/formal_science/basic_strength_formal_science_multiblock_item_storage/basic_strength_formal_science_multiblock_item_storage_gui.png");
 
 
     public BasicStrengthFormalScienceMultiblockItemStorageScreen(BasicStrengthFormalScienceMultiblockItemStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {

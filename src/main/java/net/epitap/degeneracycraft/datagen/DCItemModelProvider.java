@@ -946,7 +946,26 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_strength_biology_multiblock_item_storage_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_biology_multiblock_item_storage_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_biology_multiblock_energy_input_bus_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_biology_multiblock_energy_input_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_biology_multiblock_energy_output_bus_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_biology_multiblock_energy_output_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_biology_multiblock_item_input_port_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_biology_multiblock_item_input_port_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_biology_multiblock_item_output_port_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_biology_multiblock_item_output_port_holo_block"));
 
+        
+        
+        
         withExistingParent(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_BASE_FRAME_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_chemistry_multiblock_base_frame_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.getId().getPath(),
@@ -971,7 +990,26 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_strength_chemistry_multiblock_item_storage_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_chemistry_multiblock_item_storage_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_chemistry_multiblock_energy_input_bus_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_chemistry_multiblock_energy_input_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_chemistry_multiblock_energy_output_bus_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_chemistry_multiblock_energy_output_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_chemistry_multiblock_item_input_port_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_chemistry_multiblock_item_input_port_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_chemistry_multiblock_item_output_port_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_chemistry_multiblock_item_output_port_holo_block"));
 
+        
+        
+        
         withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_BASE_FRAME_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_dynamic_energetics_multiblock_base_frame_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.getId().getPath(),

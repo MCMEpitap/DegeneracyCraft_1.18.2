@@ -862,6 +862,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), "Basic Strength Astronomy Multiblock Item Output Port(Hologram)");
         
         
+        
         add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Biology Multiblock Base Frame");
         add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Biology Multiblock Base Frame (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Biology Multiblock Machine Frame");
@@ -874,6 +875,16 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "Basic Strength Biology Multiblock Energy Storage (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(), "Basic Strength Biology Multiblock Item Storage");
         add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(), "Basic Strength Biology Multiblock Item Storage (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get(), "Basic Strength Biology Multiblock Energy Input Bus");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(), "Basic Strength Biology Multiblock Energy Input Bus (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get(), "Basic Strength Biology Multiblock Energy Output Bus");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), "Basic Strength Biology Multiblock Energy Output Bus (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get(), "Basic Strength Biology Multiblock Item Input Port");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), "Basic Strength Biology Multiblock Item Input Port (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get(), "Basic Strength Biology Multiblock Item Output Port");
+        add(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), "Basic Strength Biology Multiblock Item Output Port(Hologram)");
+
+
 
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Chemistry Multiblock Base Frame");
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Chemistry Multiblock Base Frame (Hologram)");
@@ -887,6 +898,16 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "Basic Strength Chemistry Multiblock Energy Storage (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(), "Basic Strength Chemistry Multiblock Item Storage");
         add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(), "Basic Strength Chemistry Multiblock Item Storage (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get(), "Basic Strength Chemistry Multiblock Energy Input Bus");
+        add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(), "Basic Strength Chemistry Multiblock Energy Input Bus (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get(), "Basic Strength Chemistry Multiblock Energy Output Bus");
+        add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), "Basic Strength Chemistry Multiblock Energy Output Bus (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get(), "Basic Strength Chemistry Multiblock Item Input Port");
+        add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), "Basic Strength Chemistry Multiblock Item Input Port (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get(), "Basic Strength Chemistry Multiblock Item Output Port");
+        add(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), "Basic Strength Chemistry Multiblock Item Output Port(Hologram)");
+        
+
 
         add(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Dynamic Energetics Multiblock Base Frame");
         add(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Dynamic Energetics Multiblock Base Frame (Hologram)");

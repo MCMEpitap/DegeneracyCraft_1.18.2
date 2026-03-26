@@ -13,7 +13,7 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class BasicStrengthGeoScienceMultiblockItemStorageScreen extends AbstractContainerScreen<BasicStrengthGeoScienceMultiblockItemStorageMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_material_storage/basic_strength_geo_science_multiblock_material_storage_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/geo_science/basic_strength_geo_science_multiblock_item_storage/basic_strength_geo_science_multiblock_item_storage_gui.png");
 
 
     public BasicStrengthGeoScienceMultiblockItemStorageScreen(BasicStrengthGeoScienceMultiblockItemStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {

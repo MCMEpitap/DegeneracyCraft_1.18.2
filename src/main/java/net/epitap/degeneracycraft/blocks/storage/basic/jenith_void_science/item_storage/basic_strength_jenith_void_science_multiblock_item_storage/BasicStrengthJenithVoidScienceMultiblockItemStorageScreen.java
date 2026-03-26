@@ -13,7 +13,7 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class BasicStrengthJenithVoidScienceMultiblockItemStorageScreen extends AbstractContainerScreen<BasicStrengthJenithVoidScienceMultiblockItemStorageMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/jenith_void_science/basic_strength_jenith_void_science_multiblock_material_storage/basic_strength_kaleidoscopic_reality_science_multiblock_material_storage_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/jenith_void_science/basic_strength_jenith_void_science_multiblock_item_storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_gui.png");
 
 
     public BasicStrengthJenithVoidScienceMultiblockItemStorageScreen(BasicStrengthJenithVoidScienceMultiblockItemStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {

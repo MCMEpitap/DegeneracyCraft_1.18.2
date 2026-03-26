@@ -13,7 +13,7 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class BasicStrengthImitationMagicEngineeringMultiblockItemStorageScreen extends AbstractContainerScreen<BasicStrengthImitationMagicEngineeringMultiblockItemStorageMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_material_storage/basic_strength_imitation_magic_engineering_multiblock_material_storage_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/imitation_magic_engineering/basic_strength_imitation_magic_engineering_multiblock_item_storage/basic_strength_imitation_magic_engineering_multiblock_item_storage_gui.png");
 
 
     public BasicStrengthImitationMagicEngineeringMultiblockItemStorageScreen(BasicStrengthImitationMagicEngineeringMultiblockItemStorageMenu pMenu, Inventory pPlayerInventory, Component pTitle) {

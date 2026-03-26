@@ -11,7 +11,7 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class BasicStrengthBiologyMultiblockItemInputPortScreen extends AbstractContainerScreen<BasicStrengthBiologyMultiblockItemInputPortMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/biology/basic_strength_biology_multiblock_material_input_port/basic_strength_biology_multiblock_material_input_port_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/biology/basic_strength_biology_multiblock_item_input_port/basic_strength_biology_multiblock_item_input_port_gui.png");
 
 
     public BasicStrengthBiologyMultiblockItemInputPortScreen(BasicStrengthBiologyMultiblockItemInputPortMenu pMenu, Inventory pPlayerInventory, Component pTitle) {

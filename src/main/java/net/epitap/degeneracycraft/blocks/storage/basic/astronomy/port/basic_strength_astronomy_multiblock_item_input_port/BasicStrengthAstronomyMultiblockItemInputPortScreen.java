@@ -11,7 +11,7 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class BasicStrengthAstronomyMultiblockItemInputPortScreen extends AbstractContainerScreen<BasicStrengthAstronomyMultiblockItemInputPortMenu> {
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_material_input_port/basic_strength_astronomy_multiblock_material_input_port_gui.png");
+            new ResourceLocation(Degeneracycraft.MOD_ID, "textures/gui/multiblock/basic/astronomy/basic_strength_astronomy_multiblock_item_input_port/basic_strength_astronomy_multiblock_item_input_port_gui.png");
 
 
     public BasicStrengthAstronomyMultiblockItemInputPortScreen(BasicStrengthAstronomyMultiblockItemInputPortMenu pMenu, Inventory pPlayerInventory, Component pTitle) {

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/chemistry/bus/basic_strength_chemistry_multiblock_energy_input_bus/basic_strength_chemistry_multiblock_energy_input_bus_block",
+    "up": "degeneracycraft:block/multiblock/basic/chemistry/bus/basic_strength_chemistry_multiblock_energy_input_bus/basic_strength_chemistry_multiblock_energy_input_bus_block",
+    "north": "degeneracycraft:block/multiblock/basic/chemistry/bus/basic_strength_chemistry_multiblock_energy_input_bus/basic_strength_chemistry_multiblock_energy_input_bus_block",
+    "south": "degeneracycraft:block/multiblock/basic/chemistry/bus/basic_strength_chemistry_multiblock_energy_input_bus/basic_strength_chemistry_multiblock_energy_input_bus_block",
+    "east": "degeneracycraft:block/multiblock/basic/chemistry/bus/basic_strength_chemistry_multiblock_energy_input_bus/basic_strength_chemistry_multiblock_energy_input_bus_block",
+    "west": "degeneracycraft:block/multiblock/basic/chemistry/bus/basic_strength_chemistry_multiblock_energy_input_bus/basic_strength_chemistry_multiblock_energy_input_bus_block",
+    "particle": "degeneracycraft:block/multiblock/basic/chemistry/bus/basic_strength_chemistry_multiblock_energy_input_bus/basic_strength_chemistry_multiblock_energy_input_bus_block"
+  }
+}

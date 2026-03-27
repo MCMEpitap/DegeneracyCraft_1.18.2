@@ -1,11 +1,8 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.chemistry.basic_performance_chemical_reactor;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_crop_cultivator.BasicPerformanceCropCultivatorBlock;
-import net.epitap.degeneracycraft.blocks.machine.basic.biology.basic_performance_crop_cultivator.BasicPerformanceCropCultivatorStructure;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.biology.basic_performance_crop_cultivator.BasicPerformanceCropCultivatorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.chemistry.basic_performance_chemical_reactor.BasicPerformanceChemicalReactorRecipe;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -311,6 +308,7 @@ public class BasicPerformanceChemicalReactorBlockEntity extends BlockEntity impl
             setChanged(level, pos, state);
             return;
         }
+
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
 
@@ -342,7 +340,7 @@ public class BasicPerformanceChemicalReactorBlockEntity extends BlockEntity impl
         if (level.isClientSide) return;
         if (multiblockLevel < 0) return;
 
-        Direction facing = getBlockState().getValue(BasicPerformanceCropCultivatorBlock.FACING);
+        Direction facing = getBlockState().getValue(BasicPerformanceChemicalReactorBlock.FACING);
         BlockPos basePos = this.getBlockPos();
         energyInputs.clear();
         energyOutputs.clear();

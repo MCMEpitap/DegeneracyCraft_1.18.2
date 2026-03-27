@@ -24,34 +24,34 @@ public class BasicPerformanceCompoundPurifierStructure {
             {
                     {"F", "F", "F"},
                     {"F", "F", "F"},
-                    {"E", "B", "E"}
+                    {"1", "F", "1"}
             },
             {
                     {"F", "F", "F"},
                     {"F", " ", "F"},
-                    {"P", " ", "P"}
+                    {"F", " ", "F"}
             },
             {
                     {"F", "F", "F"},
                     {"F", "F", "F"},
-                    {"S", "F", "S"}
+                    {"3", "F", "4"}
             }
     };
     public static String[][][] structure1 = new String[][][]{
             {
                     {"F", "F", "F"},
                     {"F", "F", "F"},
-                    {"E", "B", "E"}
+                    {"1", "F", "1"}
             },
             {
                     {"F", "F", "F"},
                     {"F", "R", "F"},
-                    {"P", " ", "P"}
+                    {"F", " ", "F"}
             },
             {
                     {"F", "F", "F"},
                     {"F", "F", "F"},
-                    {"S", "F", "S"}
+                    {"3", "F", "4"}
             }
     };
 
@@ -109,12 +109,11 @@ public class BasicPerformanceCompoundPurifierStructure {
     private static @NotNull Map<String, Predicate<BlockState>> getBlockConditions() {
         Map<String, Predicate<BlockState>> blockConditions = new HashMap<>();
         blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
-        blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.get()));
-        blockConditions.put("H", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MACHINE_FRAME_BLOCK.get()));
-        blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_STORAGE_BLOCK.get()));
-        blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.get()));
-        blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
         blockConditions.put("R", blockState -> blockState.is(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_BLOCK.get()));
+        blockConditions.put("1", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get()));
+        blockConditions.put("2", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get()));
+        blockConditions.put("3", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get()));
+        blockConditions.put("4", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get()));
         return blockConditions;
     }
 
@@ -156,12 +155,11 @@ public class BasicPerformanceCompoundPurifierStructure {
     private static @NotNull Map<String, Supplier<BlockState>> getHoloBlockSuppliers() {
         Map<String, Supplier<BlockState>> blockSuppliers = new HashMap<>();
         blockSuppliers.put("F", () -> DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("P", () -> DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("H", () -> DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("S", () -> DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("B", () -> DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("E", () -> DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("R", () -> DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("1", () -> DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("2", () -> DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("3", () -> DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("4", () -> DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get().defaultBlockState());
         return blockSuppliers;
     }
 
@@ -218,7 +216,7 @@ public class BasicPerformanceCompoundPurifierStructure {
         return false;
     }
 
-    private static BlockPos getRelativePos(BlockPos basePos, int x, int y, int z, Direction facing) {
+    public static BlockPos getRelativePos(BlockPos basePos, int x, int y, int z, Direction facing) {
         return switch (facing) {
             case NORTH -> basePos.relative(Direction.WEST, x).relative(Direction.UP, y).relative(Direction.NORTH, z);
             case SOUTH -> basePos.relative(Direction.EAST, x).relative(Direction.UP, y).relative(Direction.SOUTH, z);

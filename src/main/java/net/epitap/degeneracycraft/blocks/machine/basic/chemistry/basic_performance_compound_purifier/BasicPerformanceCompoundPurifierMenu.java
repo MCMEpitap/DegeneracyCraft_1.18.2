@@ -27,7 +27,7 @@ public class BasicPerformanceCompoundPurifierMenu extends AbstractContainerMenu 
     public final ContainerData data;
 
     public BasicPerformanceCompoundPurifierMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(4));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
 
     public BasicPerformanceCompoundPurifierMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -66,6 +66,10 @@ public class BasicPerformanceCompoundPurifierMenu extends AbstractContainerMenu 
 
     public int getMultiblockLevel() {
         return data.get(4);
+    }
+
+    public boolean isInputLocked() {
+        return data.get(5) != 0;
     }
 
     public DCIEnergyStorageFloat getEnergy() {

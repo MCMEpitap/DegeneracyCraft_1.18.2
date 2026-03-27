@@ -158,6 +158,10 @@ public class BasicPerformanceCropCultivatorStructure {
         blockSuppliers.put("F", () -> DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("G", () -> DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("D", () -> DCBlocks.BASIC_EFFICIENCY_GROWTH_STABILIZER_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("1", () -> DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("2", () -> DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("3", () -> DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("4", () -> DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get().defaultBlockState());
         return blockSuppliers;
     }
 

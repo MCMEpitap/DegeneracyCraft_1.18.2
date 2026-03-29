@@ -30,7 +30,8 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
     private static final int HOLOGRAM_Y = 59;
     private static final int HALT_X = 98;
     private static final int HALT_Y = 62;
-
+    private static final int LOCK_X = 8;
+    private static final int LOCK_Y = 62;
     private static final int BUTTON_SIZE = 16;
     
     public BasicPowerSteamGeneratorScreen(BasicPowerSteamGeneratorMenu menu, Inventory inventory, Component component) {
@@ -49,19 +50,6 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
         energyInfoArea = new EnergyInfoArea(x + 157, y + 10, menu.getEnergy());
-    }
-
-    @Override
-    protected void renderBg(PoseStack pPoseStack, float pPartialTick, int pMouseX, int pMouseY) {
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-        RenderSystem.setShaderTexture(0, TEXTURE);
-        int x = (width - imageWidth) / 2;
-        int y = (height - imageHeight) / 2;
-
-        this.blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight);
-        energyInfoArea.draw(pPoseStack);
-        renderButtons(pPoseStack, x, y);
     }
 
     @Override
@@ -118,8 +106,10 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
         renderPowerModifierTooltips(pPoseStack, pMouseX, pMouseY, x, y);
         renderBurnTimeTooltips(pPoseStack, pMouseX, pMouseY, x, y);
         renderWaterTimeTooltips(pPoseStack, pMouseX, pMouseY, x, y);
-        renderWorkTooltips(pPoseStack, pMouseX, pMouseY, x, y);
-        renderMultiblockInfoTooltips(pPoseStack, pMouseX, pMouseY, x, y);    }
+        renderMultiblockInfoTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+        renderHaltTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+        renderLockTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+    }
 
     private void renderPowerOutputTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
         if (isMouseAboveArea(pMouseX, pMouseY, x, y, 100, 43, 48, 10))
@@ -128,9 +118,9 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
     }
 
     public List<Component> PowerOutputTooltips() {
-        if (menu.blockEntity.isPowered0) {
+        if (menu.getMultiblockLevel() == 1) {
             return List.of(Component.nullToEmpty(menu.blockEntity.MACHINE_OUTPUT_POWERED_0 + " FE/t"));
-        } else if (menu.blockEntity.isFormed) {
+        } else if (menu.getMultiblockLevel() == 0) {
             return List.of(Component.nullToEmpty(menu.blockEntity.MACHINE_OUTPUT_FORMED + " FE/t"));
         }
         return List.of(Component.nullToEmpty(menu.blockEntity.MACHINE_OUTPUT + " FE/t"));
@@ -143,26 +133,36 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
     }
 
     public List<Component> PowerModifierTooltips() {
-        if (menu.blockEntity.isPowered0) {
+        if (menu.getMultiblockLevel() == 1) {
             return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".power_modifier_3"));
-        } else if (menu.blockEntity.isFormed) {
+        } else if (menu.getMultiblockLevel() == 0) {
             return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".power_modifier_2"));
         }
         return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".power_modifier_1"));
     }
 
-    private void renderWorkTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
-        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 66, 28, 28, 10))
-            renderTooltip(pPoseStack, this.WorkTooltips(),
+    private void renderHaltTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
+        if (menu.isForceHalt()
+                && isMouseAboveArea(pMouseX, pMouseY, x, y, 117, 64, 30, 12))
+            renderTooltip(pPoseStack, this.haltTooltips(),
                     Optional.empty(), pMouseX - x, pMouseY - y);
     }
 
-    public List<Component> WorkTooltips() {
-        if (menu.isWorking()) {
-            return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".work"));
-        }
-        return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".stop"));
+    public List<Component> haltTooltips() {
+        return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".halt"));
     }
+
+    private void renderLockTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
+        if (menu.isInputLocked()
+                && isMouseAboveArea(pMouseX, pMouseY, x, y, 27, 64, 30, 12))
+            renderTooltip(pPoseStack, this.lockTooltips(),
+                    Optional.empty(), pMouseX - x, pMouseY - y);
+    }
+
+    public List<Component> lockTooltips() {
+        return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".lock"));
+    }
+
 
     private void renderBurnTimeTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
         if (isMouseAboveArea(pMouseX, pMouseY, x, y, 100, 23, 48, 10))
@@ -206,6 +206,19 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
                 new TranslatableComponent("screen." + "degeneracycraft_machine" + ".energy_usage_modifier_1"));
     }
 
+    @Override
+    protected void renderBg(PoseStack pPoseStack, float pPartialTick, int pMouseX, int pMouseY) {
+        RenderSystem.setShader(GameRenderer::getPositionTexShader);
+        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
+        RenderSystem.setShaderTexture(0, TEXTURE);
+        int x = (width - imageWidth) / 2;
+        int y = (height - imageHeight) / 2;
+
+        this.blit(pPoseStack, x, y, 0, 0, imageWidth, imageHeight);
+        energyInfoArea.draw(pPoseStack);
+        renderButtons(pPoseStack, x, y);
+    }
+
     private void renderButtons(PoseStack pPoseStack, int guiX, int guiY) {
         int holoLevel = menu.getHologramLevel();
 
@@ -229,6 +242,15 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
                 BUTTON_SIZE, BUTTON_SIZE,
                 BUTTON_SIZE, BUTTON_SIZE
         );
+
+        RenderSystem.setShaderTexture(
+                0,
+                menu.isInputLocked() ? LOCK_ON : LOCK_OFF
+        );
+        blit(pPoseStack, guiX + LOCK_X, guiY + LOCK_Y, 0, 0,
+                BUTTON_SIZE, BUTTON_SIZE,
+                BUTTON_SIZE, BUTTON_SIZE
+        );
     }
 
     @Override
@@ -248,6 +270,12 @@ public class BasicPowerSteamGeneratorScreen extends AbstractContainerScreen<Basi
         if (isMouseOver(mouseX, mouseY, x + HALT_X, y + HALT_Y)) {
             DCMessages.sendToServer(
                     new DCMachineToggleC2SPacket(menu.getBlockEntity().getBlockPos(), 1)
+            );
+            return true;
+        }
+        if (isMouseOver(mouseX, mouseY, x + LOCK_X, y + LOCK_Y)) {
+            DCMessages.sendToServer(
+                    new DCMachineToggleC2SPacket(menu.getBlockEntity().getBlockPos(), 2)
             );
             return true;
         }

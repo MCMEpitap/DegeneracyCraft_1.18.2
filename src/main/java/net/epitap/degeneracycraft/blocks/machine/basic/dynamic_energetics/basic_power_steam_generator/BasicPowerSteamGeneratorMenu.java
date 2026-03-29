@@ -27,7 +27,7 @@ public class BasicPowerSteamGeneratorMenu extends AbstractContainerMenu {
     private final ContainerData data;
 
     public BasicPowerSteamGeneratorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
 
     public BasicPowerSteamGeneratorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -42,9 +42,11 @@ public class BasicPowerSteamGeneratorMenu extends AbstractContainerMenu {
             this.addSlot(new SlotItemHandler(handler, 0, 8, 43));
             this.addSlot(new SlotItemHandler(handler, 1, 26, 43));
             this.addSlot(new SlotItemHandler(handler, 2, 44, 43));
-
         });
         addDataSlots(data);
+    }
+    public boolean isWorking() {
+        return this.data.get(0) > 0 && this.data.get(1) > 0;
     }
 
     public float getBurnTime() {
@@ -69,8 +71,8 @@ public class BasicPowerSteamGeneratorMenu extends AbstractContainerMenu {
         return data.get(4);
     }
 
-    public boolean isWorking() {
-        return this.data.get(0) > 0 && this.data.get(1) > 0;
+    public boolean isInputLocked() {
+        return data.get(5) != 0;
     }
 
     public int getMaxWaterTime() {

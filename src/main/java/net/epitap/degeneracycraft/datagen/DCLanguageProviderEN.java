@@ -921,7 +921,18 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "Basic Strength Dynamic Energetics Multiblock Energy Storage (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(), "Basic Strength Dynamic Energetics Multiblock Item Storage");
         add(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(), "Basic Strength Dynamic Energetics Multiblock Item Storage (Hologram)");
-        
+        add(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get(), "Basic Strength Dynamic Energetics Multiblock Energy Input Bus");
+        add(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(), "Basic Strength Dynamic Energetics Multiblock Energy Input Bus (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get(), "Basic Strength Dynamic Energetics Multiblock Energy Output Bus");
+        add(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), "Basic Strength Dynamic Energetics Multiblock Energy Output Bus (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get(), "Basic Strength Dynamic Energetics Multiblock Item Input Port");
+        add(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), "Basic Strength Dynamic Energetics Multiblock Item Input Port (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get(), "Basic Strength Dynamic Energetics Multiblock Item Output Port");
+        add(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), "Basic Strength Dynamic Energetics Multiblock Item Output Port(Hologram)");
+
+
+
+
         add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Engineering Multiblock Base Frame");
         add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Engineering Multiblock Base Frame (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Engineering Multiblock Machine Frame");

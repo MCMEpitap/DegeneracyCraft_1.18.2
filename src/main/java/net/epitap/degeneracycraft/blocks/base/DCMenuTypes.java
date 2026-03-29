@@ -55,8 +55,12 @@ import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.energy_storage.
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.item_storage.basic_strength_chemistry_multiblock_item_storage.BasicStrengthChemistryMultiblockItemStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.port.basic_strength_chemistry_multiblock_item_input_port.BasicStrengthChemistryMultiblockItemInputPortMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.port.basic_strength_chemistry_multiblock_item_output_port.BasicStrengthChemistryMultiblockItemOutputPortMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.bus.basic_strength_dynamic_energetics_multiblock_energy_input_bus.BasicStrengthDynamicEnergeticsMultiblockEnergyInputBusMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.bus.basic_strength_dynamic_energetics_multiblock_energy_output_bus.BasicStrengthDynamicEnergeticsMultiblockEnergyOutputBusMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.energy_storage.basic_strength_dynamic_energetics_multiblock_energy_storage.BasicStrengthDynamicEnergeticsMultiblockEnergyStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.item_storage.basic_strength_dynamic_energetics_multiblock_item_storage.BasicStrengthDynamicEnergeticsMultiblockItemStorageMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.port.basic_strength_dynamic_energetics_multiblock_item_input_port.BasicStrengthDynamicEnergeticsMultiblockItemInputPortMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.port.basic_strength_dynamic_energetics_multiblock_item_output_port.BasicStrengthDynamicEnergeticsMultiblockItemOutputPortMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.energy_storage.basic_strength_engineering_multiblock_energy_storage.BasicStrengthEngineeringMultiblockEnergyStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.item_storage.basic_strength_engineering_multiblock_item_storage.BasicStrengthEngineeringMultiblockItemStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.energy_storage.basic_strength_formal_science_multiblock_energy_storage.BasicStrengthFormalScienceMultiblockEnergyStorageMenu;
@@ -141,7 +145,18 @@ public class DCMenuTypes {
             registerMenuType(BasicStrengthDynamicEnergeticsMultiblockEnergyStorageMenu::new, "basic_strength_dynamic_energetics_multiblock_energy_storage_menu");
     public static final RegistryObject<MenuType<BasicStrengthDynamicEnergeticsMultiblockItemStorageMenu>> BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_STORAGE_MENU =
             registerMenuType(BasicStrengthDynamicEnergeticsMultiblockItemStorageMenu::new, "basic_strength_dynamic_energetics_multiblock_item_storage_menu");
+    public static final RegistryObject<MenuType<BasicStrengthDynamicEnergeticsMultiblockEnergyInputBusMenu>> BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_INPUT_BUS_MENU =
+            registerMenuType(BasicStrengthDynamicEnergeticsMultiblockEnergyInputBusMenu::new, "basic_strength_dynamic_energetics_multiblock_energy_input_bus_menu");
+    public static final RegistryObject<MenuType<BasicStrengthDynamicEnergeticsMultiblockEnergyOutputBusMenu>> BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_OUTPUT_BUS_MENU =
+            registerMenuType(BasicStrengthDynamicEnergeticsMultiblockEnergyOutputBusMenu::new, "basic_strength_dynamic_energetics_multiblock_energy_output_bus_menu");
+    public static final RegistryObject<MenuType<BasicStrengthDynamicEnergeticsMultiblockItemInputPortMenu>> BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_INPUT_PORT_MENU =
+            registerMenuType(BasicStrengthDynamicEnergeticsMultiblockItemInputPortMenu::new, "basic_strength_dynamic_energetics_multiblock_item_input_port_menu");
+    public static final RegistryObject<MenuType<BasicStrengthDynamicEnergeticsMultiblockItemOutputPortMenu>> BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_OUTPUT_PORT_MENU =
+            registerMenuType(BasicStrengthDynamicEnergeticsMultiblockItemOutputPortMenu::new, "basic_strength_dynamic_energetics_multiblock_item_output_port_menu");
 
+    
+    
+    
     public static final RegistryObject<MenuType<BasicStrengthEngineeringMultiblockEnergyStorageMenu>> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_MENU =
             registerMenuType(BasicStrengthEngineeringMultiblockEnergyStorageMenu::new, "basic_strength_multiblock_energy_storage_menu");
     public static final RegistryObject<MenuType<BasicStrengthEngineeringMultiblockItemStorageMenu>> BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ITEM_STORAGE_MENU =

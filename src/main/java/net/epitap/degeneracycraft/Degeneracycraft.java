@@ -56,6 +56,10 @@ import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.energy_storage.
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.item_storage.basic_strength_chemistry_multiblock_item_storage.BasicStrengthChemistryMultiblockItemStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.port.basic_strength_chemistry_multiblock_item_input_port.BasicStrengthChemistryMultiblockItemInputPortScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.port.basic_strength_chemistry_multiblock_item_output_port.BasicStrengthChemistryMultiblockItemOutputPortScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.bus.basic_strength_dynamic_energetics_multiblock_energy_input_bus.BasicStrengthDynamicEnergeticsMultiblockEnergyInputBusScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.bus.basic_strength_dynamic_energetics_multiblock_energy_output_bus.BasicStrengthDynamicEnergeticsMultiblockEnergyOutputBusScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.port.basic_strength_dynamic_energetics_multiblock_item_input_port.BasicStrengthDynamicEnergeticsMultiblockItemInputPortScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.port.basic_strength_dynamic_energetics_multiblock_item_output_port.BasicStrengthDynamicEnergeticsMultiblockItemOutputPortScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.energy_storage.basic_strength_dynamic_energetics_multiblock_energy_storage.BasicStrengthDynamicEnergeticsMultiblockEnergyStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.item_storage.basic_strength_dynamic_energetics_multiblock_item_storage.BasicStrengthDynamicEnergeticsMultiblockItemStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.energy_storage.basic_strength_engineering_multiblock_energy_storage.BasicStrengthEngineeringMultiblockEnergyStorageScreen;
@@ -156,7 +160,6 @@ public class Degeneracycraft {
         DCDimentions.register();
 
 
-
         eventBus.addGenericListener(Item.class, PipeBlocks::registerItems);
         eventBus.addGenericListener(Block.class, PipeBlocks::registerBlocks);
         eventBus.addGenericListener(BlockEntityType.class, PipeBlockEntities::registerBlockEntities);
@@ -204,11 +207,13 @@ public class Degeneracycraft {
     public void onSlashReload(AddReloadListenerEvent evt) {
         evt.addListener(new WorldGenVeinDataLoader());
     }
+
     @SubscribeEvent
     public void registerCaps(RegisterCapabilitiesEvent event) {
         event.register(VeinCheck.class);
         event.register(ChunkCheck.class);
     }
+
     @SubscribeEvent
     public void attachWorldCaps(AttachCapabilitiesEvent<Level> event) {
         if (event.getObject().isClientSide()) {
@@ -271,6 +276,7 @@ public class Degeneracycraft {
             throw new RuntimeException(e);
         }
     }
+
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
         @SubscribeEvent
@@ -278,7 +284,6 @@ public class Degeneracycraft {
             DCOresFeatures.register(featureRegistryEvent);
         }
     }
-
 
 
     private void clientSetup(final FMLClientSetupEvent event) {
@@ -299,16 +304,14 @@ public class Degeneracycraft {
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ITEM_OUTPUT_PORT_MENU.get(), BasicStrengthAstronomyMultiblockItemOutputPortScreen::new);
 
 
-
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthBiologyMultiblockEnergyStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_STORAGE_MENU.get(), BasicStrengthBiologyMultiblockItemStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_INPUT_BUS_MENU.get(), BasicStrengthBiologyMultiblockEnergyInputBusScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_OUTPUT_BUS_MENU.get(), BasicStrengthBiologyMultiblockEnergyOutputBusScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_INPUT_PORT_MENU.get(), BasicStrengthBiologyMultiblockItemInputPortScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_OUTPUT_PORT_MENU.get(), BasicStrengthBiologyMultiblockItemOutputPortScreen::new);
-        
-        
-        
+
+
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthChemistryMultiblockEnergyStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_STORAGE_MENU.get(), BasicStrengthChemistryMultiblockItemStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_INPUT_BUS_MENU.get(), BasicStrengthChemistryMultiblockEnergyInputBusScreen::new);
@@ -317,9 +320,13 @@ public class Degeneracycraft {
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_OUTPUT_PORT_MENU.get(), BasicStrengthChemistryMultiblockItemOutputPortScreen::new);
 
 
-
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthDynamicEnergeticsMultiblockEnergyStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_STORAGE_MENU.get(), BasicStrengthDynamicEnergeticsMultiblockItemStorageScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_INPUT_BUS_MENU.get(), BasicStrengthDynamicEnergeticsMultiblockEnergyInputBusScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_OUTPUT_BUS_MENU.get(), BasicStrengthDynamicEnergeticsMultiblockEnergyOutputBusScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_INPUT_PORT_MENU.get(), BasicStrengthDynamicEnergeticsMultiblockItemInputPortScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_OUTPUT_PORT_MENU.get(), BasicStrengthDynamicEnergeticsMultiblockItemOutputPortScreen::new);
+
 
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthEngineeringMultiblockEnergyStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ITEM_STORAGE_MENU.get(), BasicStrengthEngineeringMultiblockItemStorageScreen::new);
@@ -337,16 +344,12 @@ public class Degeneracycraft {
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ITEM_STORAGE_MENU.get(), BasicStrengthImitationMagicEngineeringMultiblockItemStorageScreen::new);
 
 
-
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthJenithVoidScienceMultiblockEnergyStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ITEM_STORAGE_MENU.get(), BasicStrengthJenithVoidScienceMultiblockItemStorageScreen::new);
 
 
-
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ITEM_STORAGE_MENU.get(), BasicStrengthKaleidoscopicRealityScienceMultiblockItemStorageScreen::new);
-
-
 
 
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_ASTROMICAL_TELESCOPE_MENU.get(), BasicPerformanceAstronomicalTelescopeScreen::new);
@@ -354,11 +357,9 @@ public class Degeneracycraft {
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_MENU.get(), BasicPerformanceStarlightCollectorScreen::new);
 
 
-
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_BIO_REACTOR_MENU.get(), BasicPerformanceBioReactorScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_CELL_INCUBATOR_MENU.get(), BasicPerformanceCellIncubatorScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_CROP_CULTIVATOR_MENU.get(), BasicPerformanceCropCultivatorScreen::new);
-
 
 
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_CHEMICAL_REACTOR_MENU.get(), BasicPerformanceChemicalReactorScreen::new);
@@ -366,11 +367,9 @@ public class Degeneracycraft {
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_ELECTROLYSER_MENU.get(), BasicPerformanceElectrolyserScreen::new);
 
 
-
         MenuScreens.register(DCMenuTypes.BASIC_POWER_STEAM_GENERATOR_MENU.get(), BasicPowerSteamGeneratorScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_MENU.get(), BasicTechnologyCompressionCondenserScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_MENU.get(), BasicTechnologyElectromagneticInductorScreen::new);
-
 
 
         MenuScreens.register(DCMenuTypes.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_MENU.get(), BasicTechnologyMachineManufacturerScreen::new);
@@ -383,11 +382,9 @@ public class Degeneracycraft {
         MenuScreens.register(DCMenuTypes.BASIC_PHASE_BOLT_MANUFACTURE_MACHINE_MENU.get(), BasicPhaseBoltManufactureMachineScreen::new);
 
 
-
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_CIRCUIT_BUILDER_MENU.get(), BasicPerformanceCircuitBuilderScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_MACHINE_DARA_INSTALLER_MENU.get(), BasicPerformanceMachineDataInstallerScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_MENU.get(), BasicPerformanceDesignatedDataInjectorScreen::new);
-
 
 
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_ORE_SORTER_MENU.get(), BasicPerformanceOreSorterScreen::new);
@@ -395,17 +392,14 @@ public class Degeneracycraft {
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_SOIL_PURIFIER_MENU.get(), BasicPerformanceSoilPurifierScreen::new);
 
 
-
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_MENU.get(), BasicPerformanceElectricArcFurnaceScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_FORMING_MACHINE_MENU.get(), BasicPerformanceFormingMachineScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_MENU.get(), BasicPerformanceMaterialSeparatorScreen::new);
 
 
-
         MenuScreens.register(DCMenuTypes.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_MENU.get(), BasicTechnologyImitationMagicEngraverScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_MENU.get(), BasicTechnologySuspectedMagicCondenserScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_MENU.get(), BasicTechnologyVirtualSigilProcessorScreen::new);
-
 
 
         MenuScreens.register(DCMenuTypes.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_MENU.get(), BasicTechnologyVoidWorldCoordinateRecordingMachineScreen::new);
@@ -426,7 +420,10 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
-
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
 
 
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_BASE_FRAME_BLOCK.get(), RenderType.translucent());
@@ -441,9 +438,12 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_BIOLOGY_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
 
-        
-        
+
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_BASE_FRAME_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
@@ -456,10 +456,12 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_CHEMISTRY_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
 
-        
-        
-        
+
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_BASE_FRAME_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
@@ -468,6 +470,11 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+
 
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
@@ -515,7 +522,6 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
 
 
-
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
@@ -524,8 +530,6 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
-
-
 
 
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK.get(), RenderType.translucent());
@@ -538,7 +542,6 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
 
 
-
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_HOLO_BLOCK.get(), RenderType.translucent());
@@ -547,7 +550,6 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_EFFICIENCY_FAINT_LIGHT_RESERVER_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_HOLO_BLOCK.get(), RenderType.translucent());
-
 
 
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_HOLO_BLOCK.get(), RenderType.translucent());
@@ -563,7 +565,6 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_HOLO_BLOCK.get(), RenderType.translucent());
 
 
-
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_RATE_COMPOUND_AGITATION_SYSTEM_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_PORT_HOLO_BLOCK.get(), RenderType.translucent());
@@ -575,7 +576,6 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(), RenderType.translucent());
-
 
 
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_BLOCK.get(), RenderType.translucent());
@@ -590,8 +590,6 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_DURABLE_INSULATED_CHAMBER_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_HOLO_BLOCK.get(), RenderType.translucent());
-
-
 
 
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_HOLO_BLOCK.get(), RenderType.translucent());
@@ -616,8 +614,6 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_HOLO_BLOCK.get(), RenderType.translucent());
 
 
-
-
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get(), RenderType.translucent());
@@ -631,7 +627,6 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_HOLO_BLOCK.get(), RenderType.translucent());
 
 
-
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_HOLO_BLOCK.get(), RenderType.translucent());
@@ -639,7 +634,6 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_CRASHING_BASE_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_HOLO_BLOCK.get(), RenderType.translucent());
-
 
 
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK.get(), RenderType.translucent());
@@ -655,7 +649,6 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_HOLO_BLOCK.get(), RenderType.translucent());
 
 
-
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_OUTPUT_MYSTIC_OPTICAL_PROJECTION_DEVICE_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BUS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_PORT_HOLO_BLOCK.get(), RenderType.translucent());
@@ -669,11 +662,9 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_HOLO_BLOCK.get(), RenderType.translucent());
 
 
-
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_EFFICIENCY_VOID_INTERFERENCE_FLAME_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_HOLO_BLOCK.get(), RenderType.translucent());
-
 
 
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_EFFICIENCY_PHASE_STABLE_FLAME_HOLO_BLOCK.get(), RenderType.translucent());

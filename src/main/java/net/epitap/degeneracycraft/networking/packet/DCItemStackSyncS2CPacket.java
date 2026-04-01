@@ -41,7 +41,11 @@ import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.item_storage.ba
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.port.basic_strength_chemistry_multiblock_item_input_port.BasicStrengthChemistryMultiblockItemInputPortBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.port.basic_strength_chemistry_multiblock_item_output_port.BasicStrengthChemistryMultiblockItemOutputPortBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.item_storage.basic_strength_dynamic_energetics_multiblock_item_storage.BasicStrengthDynamicEnergeticsMultiblockItemStorageBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.port.basic_strength_dynamic_energetics_multiblock_item_input_port.BasicStrengthDynamicEnergeticsMultiblockItemInputPortBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.port.basic_strength_dynamic_energetics_multiblock_item_output_port.BasicStrengthDynamicEnergeticsMultiblockItemOutputPortBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.item_storage.basic_strength_engineering_multiblock_item_storage.BasicStrengthEngineeringMultiblockItemStorageBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.engineering.port.basic_strength_engineering_multiblock_item_input_port.BasicStrengthEngineeringMultiblockItemInputPortBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.engineering.port.basic_strength_engineering_multiblock_item_output_port.BasicStrengthEngineeringMultiblockItemOutputPortBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.item_storage.basic_strength_formal_science_multiblock_item_storage.BasicStrengthFormalScienceMultiblockItemStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.item_storage.basic_strength_geo_science_multiblock_item_storage.BasicStrengthGeoScienceMultiblockItemStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.item_storage.basic_strength_hybrid_physics_multiblock_item_storage.BasicStrengthHybridPhysicsMultiblockItemStorageBlockEntity;
@@ -137,9 +141,32 @@ public class DCItemStackSyncS2CPacket {
             if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthDynamicEnergeticsMultiblockItemStorageBlockEntity blockEntity) {
                 blockEntity.setHandler(this.itemStackHandler);
             }
+
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthDynamicEnergeticsMultiblockItemInputPortBlockEntity blockEntity) {
+                blockEntity.setHandler(this.itemStackHandler);
+            }
+
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthDynamicEnergeticsMultiblockItemOutputPortBlockEntity blockEntity) {
+                blockEntity.setHandler(this.itemStackHandler);
+            }
+
+
+
+
             if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthEngineeringMultiblockItemStorageBlockEntity blockEntity) {
                 blockEntity.setHandler(this.itemStackHandler);
             }
+
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthEngineeringMultiblockItemInputPortBlockEntity blockEntity) {
+                blockEntity.setHandler(this.itemStackHandler);
+            }
+
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthEngineeringMultiblockItemOutputPortBlockEntity blockEntity) {
+                blockEntity.setHandler(this.itemStackHandler);
+            }
+
+
+
             if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthFormalScienceMultiblockItemStorageBlockEntity blockEntity) {
                 blockEntity.setHandler(this.itemStackHandler);
             }

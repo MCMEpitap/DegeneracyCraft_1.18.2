@@ -35,8 +35,7 @@ public class BasicStrengthKaleidoscopicRealityScienceMultiblockItemStorageScreen
 
     @Override
     public void renderLabels(PoseStack pPoseStack, int pMouseX, int pMouseY) {
-        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"),
-                35, 67, 0xFF0000);
+
     }
 
     @Override

@@ -80,8 +80,16 @@ import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.bus.basic_stren
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.bus.basic_strength_chemistry_multiblock_energy_output_bus.BasicStrengthChemistryMultiblockEnergyOutputBusMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.energy_storage.basic_strength_chemistry_multiblock_energy_storage.BasicStrengthChemistryMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.chemistry.energy_storage.basic_strength_chemistry_multiblock_energy_storage.BasicStrengthChemistryMultiblockEnergyStorageMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.bus.basic_strength_dynamic_energetics_multiblock_energy_input_bus.BasicStrengthDynamicEnergeticsMultiblockEnergyInputBusBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.bus.basic_strength_dynamic_energetics_multiblock_energy_input_bus.BasicStrengthDynamicEnergeticsMultiblockEnergyInputBusMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.bus.basic_strength_dynamic_energetics_multiblock_energy_output_bus.BasicStrengthDynamicEnergeticsMultiblockEnergyOutputBusBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.bus.basic_strength_dynamic_energetics_multiblock_energy_output_bus.BasicStrengthDynamicEnergeticsMultiblockEnergyOutputBusMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.energy_storage.basic_strength_dynamic_energetics_multiblock_energy_storage.BasicStrengthDynamicEnergeticsMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.dynamic_energetics.energy_storage.basic_strength_dynamic_energetics_multiblock_energy_storage.BasicStrengthDynamicEnergeticsMultiblockEnergyStorageMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.engineering.bus.basic_strength_engineering_multiblock_energy_input_bus.BasicStrengthEngineeringMultiblockEnergyInputBusBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.engineering.bus.basic_strength_engineering_multiblock_energy_input_bus.BasicStrengthEngineeringMultiblockEnergyInputBusMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.engineering.bus.basic_strength_engineering_multiblock_energy_output_bus.BasicStrengthEngineeringMultiblockEnergyOutputBusBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.engineering.bus.basic_strength_engineering_multiblock_energy_output_bus.BasicStrengthEngineeringMultiblockEnergyOutputBusMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.energy_storage.basic_strength_engineering_multiblock_energy_storage.BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.energy_storage.basic_strength_engineering_multiblock_energy_storage.BasicStrengthEngineeringMultiblockEnergyStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.energy_storage.basic_strength_formal_science_multiblock_energy_storage.BasicStrengthFormalScienceMultiblockEnergyStorageBlockEntity;
@@ -211,6 +219,25 @@ public class DCEnergySyncS2CPacket {
                     blockEntity.setEnergyLevel(energy);
                 }
             }
+
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthDynamicEnergeticsMultiblockEnergyInputBusBlockEntity blockEntity) {
+                blockEntity.setEnergyLevel(energy);
+                if (Minecraft.getInstance().player.containerMenu instanceof BasicStrengthDynamicEnergeticsMultiblockEnergyInputBusMenu menu &&
+                        menu.getBlockEntity().getBlockPos().equals(pos)) {
+                    blockEntity.setEnergyLevel(energy);
+                }
+            }
+
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthDynamicEnergeticsMultiblockEnergyOutputBusBlockEntity blockEntity) {
+                blockEntity.setEnergyLevel(energy);
+                if (Minecraft.getInstance().player.containerMenu instanceof BasicStrengthDynamicEnergeticsMultiblockEnergyOutputBusMenu menu &&
+                        menu.getBlockEntity().getBlockPos().equals(pos)) {
+                    blockEntity.setEnergyLevel(energy);
+                }
+            }
+            
+            
+            
             if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthEngineeringMultiblockEnergyStorageBlockEntity blockEntity) {
                 blockEntity.setEnergyLevel(energy);
                 if (Minecraft.getInstance().player.containerMenu instanceof BasicStrengthEngineeringMultiblockEnergyStorageMenu menu &&
@@ -218,6 +245,24 @@ public class DCEnergySyncS2CPacket {
                     blockEntity.setEnergyLevel(energy);
                 }
             }
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthEngineeringMultiblockEnergyInputBusBlockEntity blockEntity) {
+                blockEntity.setEnergyLevel(energy);
+                if (Minecraft.getInstance().player.containerMenu instanceof BasicStrengthEngineeringMultiblockEnergyInputBusMenu menu &&
+                        menu.getBlockEntity().getBlockPos().equals(pos)) {
+                    blockEntity.setEnergyLevel(energy);
+                }
+            }
+
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthEngineeringMultiblockEnergyOutputBusBlockEntity blockEntity) {
+                blockEntity.setEnergyLevel(energy);
+                if (Minecraft.getInstance().player.containerMenu instanceof BasicStrengthEngineeringMultiblockEnergyOutputBusMenu menu &&
+                        menu.getBlockEntity().getBlockPos().equals(pos)) {
+                    blockEntity.setEnergyLevel(energy);
+                }
+            }
+
+
+
             if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthFormalScienceMultiblockEnergyStorageBlockEntity blockEntity) {
                 blockEntity.setEnergyLevel(energy);
                 if (Minecraft.getInstance().player.containerMenu instanceof BasicStrengthFormalScienceMultiblockEnergyStorageMenu menu &&

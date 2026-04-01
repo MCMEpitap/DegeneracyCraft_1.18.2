@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_power_steam_generator;
+package net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_power_steam_generator;
 
 import com.google.gson.JsonObject;
 import net.epitap.degeneracycraft.Degeneracycraft;

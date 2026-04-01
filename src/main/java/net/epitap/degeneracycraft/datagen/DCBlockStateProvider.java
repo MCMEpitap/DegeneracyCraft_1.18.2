@@ -135,6 +135,16 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthEngineeringMultiblockEnergyStorageHolo();
         registerBasicStrengthEngineeringMultiblockItemStorage();
         registerBasicStrengthEngineeringMultiblockItemStorageHolo();
+        registerBasicStrengthEngineeringMultiblockEnergyInputBus();
+        registerBasicStrengthEngineeringMultiblockEnergyInputBusHolo();
+        registerBasicStrengthEngineeringMultiblockEnergyOutputBus();
+        registerBasicStrengthEngineeringMultiblockEnergyOutputBusHolo();
+        registerBasicStrengthEngineeringMultiblockItemInputPort();
+        registerBasicStrengthEngineeringMultiblockItemInputPortHolo();
+        registerBasicStrengthEngineeringMultiblockItemOutputPort();
+        registerBasicStrengthEngineeringMultiblockItemOutputPortHolo();
+        
+        
 
         registerBasicStrengthFormalScienceMultiblockBaseFrame();
         registerBasicStrengthFormalScienceMultiblockBaseFrameHolo();
@@ -1912,6 +1922,120 @@ public class DCBlockStateProvider extends BlockStateProvider {
         orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
+
+    private void registerBasicStrengthEngineeringMultiblockEnergyInputBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_engineering_multiblock_energy_input_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_input_bus/basic_strength_engineering_multiblock_energy_input_bus_block"));
+        model.texture("up", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_input_bus/basic_strength_engineering_multiblock_energy_input_bus_block"));
+        model.texture("north", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_input_bus/basic_strength_engineering_multiblock_energy_input_bus_block"));
+        model.texture("south", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_input_bus/basic_strength_engineering_multiblock_energy_input_bus_block"));
+        model.texture("east", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_input_bus/basic_strength_engineering_multiblock_energy_input_bus_block"));
+        model.texture("west", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_input_bus/basic_strength_engineering_multiblock_energy_input_bus_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_input_bus/basic_strength_engineering_multiblock_energy_input_bus_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthEngineeringMultiblockEnergyInputBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_engineering_multiblock_energy_input_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_input_bus/basic_strength_engineering_multiblock_energy_input_bus_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_input_bus/basic_strength_engineering_multiblock_energy_input_bus_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_input_bus/basic_strength_engineering_multiblock_energy_input_bus_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_input_bus/basic_strength_engineering_multiblock_energy_input_bus_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_input_bus/basic_strength_engineering_multiblock_energy_input_bus_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_input_bus/basic_strength_engineering_multiblock_energy_input_bus_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_input_bus/basic_strength_engineering_multiblock_energy_input_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthEngineeringMultiblockEnergyOutputBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_engineering_multiblock_energy_output_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_output_bus/basic_strength_engineering_multiblock_energy_output_bus_block"));
+        model.texture("up", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_output_bus/basic_strength_engineering_multiblock_energy_output_bus_block"));
+        model.texture("north", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_output_bus/basic_strength_engineering_multiblock_energy_output_bus_block"));
+        model.texture("south", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_output_bus/basic_strength_engineering_multiblock_energy_output_bus_block"));
+        model.texture("east", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_output_bus/basic_strength_engineering_multiblock_energy_output_bus_block"));
+        model.texture("west", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_output_bus/basic_strength_engineering_multiblock_energy_output_bus_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_output_bus/basic_strength_engineering_multiblock_energy_output_bus_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthEngineeringMultiblockEnergyOutputBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_engineering_multiblock_energy_output_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_output_bus/basic_strength_engineering_multiblock_energy_output_bus_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_output_bus/basic_strength_engineering_multiblock_energy_output_bus_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_output_bus/basic_strength_engineering_multiblock_energy_output_bus_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_output_bus/basic_strength_engineering_multiblock_energy_output_bus_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_output_bus/basic_strength_engineering_multiblock_energy_output_bus_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_output_bus/basic_strength_engineering_multiblock_energy_output_bus_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/bus/basic_strength_engineering_multiblock_energy_output_bus/basic_strength_engineering_multiblock_energy_output_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthEngineeringMultiblockItemInputPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_engineering_multiblock_item_input_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_input_port/basic_strength_engineering_multiblock_item_input_port_block"));
+        model.texture("up", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_input_port/basic_strength_engineering_multiblock_item_input_port_block"));
+        model.texture("north", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_input_port/basic_strength_engineering_multiblock_item_input_port_block"));
+        model.texture("south", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_input_port/basic_strength_engineering_multiblock_item_input_port_block"));
+        model.texture("east", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_input_port/basic_strength_engineering_multiblock_item_input_port_block"));
+        model.texture("west", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_input_port/basic_strength_engineering_multiblock_item_input_port_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_input_port/basic_strength_engineering_multiblock_item_input_port_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthEngineeringMultiblockItemInputPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_engineering_multiblock_item_input_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_input_port/basic_strength_engineering_multiblock_item_input_port_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_input_port/basic_strength_engineering_multiblock_item_input_port_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_input_port/basic_strength_engineering_multiblock_item_input_port_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_input_port/basic_strength_engineering_multiblock_item_input_port_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_input_port/basic_strength_engineering_multiblock_item_input_port_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_input_port/basic_strength_engineering_multiblock_item_input_port_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_input_port/basic_strength_engineering_multiblock_item_input_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthEngineeringMultiblockItemOutputPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_engineering_multiblock_item_output_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_output_port/basic_strength_engineering_multiblock_item_output_port_block"));
+        model.texture("up", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_output_port/basic_strength_engineering_multiblock_item_output_port_block"));
+        model.texture("north", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_output_port/basic_strength_engineering_multiblock_item_output_port_block"));
+        model.texture("south", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_output_port/basic_strength_engineering_multiblock_item_output_port_block"));
+        model.texture("east", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_output_port/basic_strength_engineering_multiblock_item_output_port_block"));
+        model.texture("west", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_output_port/basic_strength_engineering_multiblock_item_output_port_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_output_port/basic_strength_engineering_multiblock_item_output_port_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthEngineeringMultiblockItemOutputPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_engineering_multiblock_item_output_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_output_port/basic_strength_engineering_multiblock_item_output_port_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_output_port/basic_strength_engineering_multiblock_item_output_port_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_output_port/basic_strength_engineering_multiblock_item_output_port_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_output_port/basic_strength_engineering_multiblock_item_output_port_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_output_port/basic_strength_engineering_multiblock_item_output_port_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_output_port/basic_strength_engineering_multiblock_item_output_port_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/engineering/port/basic_strength_engineering_multiblock_item_output_port/basic_strength_engineering_multiblock_item_output_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+    
+    
 
     private void registerBasicStrengthFormalScienceMultiblockBaseFrame() {
         BlockModelBuilder model = models().getBuilder("block/basic_strength_formal_science_multiblock_base_frame_block");

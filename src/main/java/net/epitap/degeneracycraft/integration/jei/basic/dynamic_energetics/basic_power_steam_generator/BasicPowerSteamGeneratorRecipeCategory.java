@@ -1,4 +1,4 @@
-package net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_power_steam_generator;
+package net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_power_steam_generator;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.constants.VanillaTypes;

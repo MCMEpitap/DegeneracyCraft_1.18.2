@@ -55,8 +55,7 @@ public class BasicStrengthJenithVoidScienceMultiblockEnergyStorageScreen extends
         int x = (width - imageWidth) / 2;
         int y = (height - imageHeight) / 2;
 
-        drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"),
-                35, 67, 0xFF0000);
+
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".available"),
                 35, 15, 0xffffff);
         drawCenteredString(pPoseStack, Minecraft.getInstance().font, (int) (menu.getAvailableEnergy() / 1E3F) + " kFE",

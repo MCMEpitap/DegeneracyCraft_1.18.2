@@ -1,8 +1,11 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_electromagnetic_inductor;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
+import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserBlock;
+import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserStructure;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
+import net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_technology_compression_condenser.BasicTechnologyCompressionCondenserRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.BasicTechnologyElectromagneticInductorRecipe;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -35,10 +38,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class BasicTechnologyElectromagneticInductorBlockEntity extends BlockEntity implements MenuProvider {
     public float MACHINE_CAPACITY = 30000F;
@@ -53,13 +53,35 @@ public class BasicTechnologyElectromagneticInductorBlockEntity extends BlockEnti
     public int hologramLevel = -1;
     public int multiblockLevel = -1;
 
-    public boolean forceHalt = false;
+    public int minX;
+    public int maxY;
+    public int minZ;
 
+    public boolean forceHalt = false;
+    public static final int RECIPE_COUNT      = 6;
+    public static final int OUTPUT_COUNT      = 1;
+
+    private final ItemStack[] inputLockedRecipe = new ItemStack[RECIPE_COUNT];
+    public boolean inputLocked = false;
     public static final int DATA_COUNTER      = 0;
     public static final int DATA_PROGRESS     = 1;
     public static final int DATA_HOLOGRAM     = 2;
     public static final int DATA_FORCE_STOP   = 3;
     public static final int DATA_MULTIBLOCK   = 4;
+    public static final int DATA_RECIPE_LOCK   = 5;
+
+    public static final int IN_0   = 0;
+    public static final int IN_1   = 1;
+    public static final int IN_2   = 2;
+    public static final int IN_3   = 3;
+    public static final int IN_4   = 4;
+    public static final int IN_5   = 5;
+    public static final int OUT_0   = 6;
+
+    private final List<DCIEnergyStorageFloat> energyInputs = new ArrayList<>();
+    private final List<DCIEnergyStorageFloat> energyOutputs = new ArrayList<>();
+    private final List<IItemHandler> itemInputs = new ArrayList<>();
+    private final List<IItemHandler> itemOutputs = new ArrayList<>();
 
     public final ItemStackHandler itemHandler = new ItemStackHandler(7) {
         @Override
@@ -70,7 +92,7 @@ public class BasicTechnologyElectromagneticInductorBlockEntity extends BlockEnti
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 6 -> false;
+                case OUT_0 -> false;
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -97,12 +119,10 @@ public class BasicTechnologyElectromagneticInductorBlockEntity extends BlockEnti
     private LazyOptional<DCIEnergyStorageFloat> lazyEnergyHandler = LazyOptional.empty();
     private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
             Map.of(
-                    Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == 1 || out == 4 || out == 5,
-                            (out, stack) -> false)),
-                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0 || in == 2 || in == 3,
-                            (in, stack) -> itemHandler.isItemValid(0, stack) || itemHandler.isItemValid(2, stack) || itemHandler.isItemValid(3, stack)))
+                    Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == IN_0, (in, stack) -> itemHandler.isItemValid(IN_0, stack))),
+                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == IN_0, (in, stack) -> itemHandler.isItemValid(IN_0, stack))),
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == OUT_0, (out, stack) -> false)),
+                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == IN_0, (in, stack) -> itemHandler.isItemValid(IN_0, stack)))
             );
 
     public BasicTechnologyElectromagneticInductorBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
@@ -116,6 +136,7 @@ public class BasicTechnologyElectromagneticInductorBlockEntity extends BlockEnti
                     case DATA_HOLOGRAM   -> hologramLevel;
                     case DATA_FORCE_STOP -> forceHalt ? 1 : 0;
                     case DATA_MULTIBLOCK   -> multiblockLevel;
+                    case DATA_RECIPE_LOCK   -> inputLocked ? 1 : 0;
                     default -> 0;
                 };
             }
@@ -128,12 +149,13 @@ public class BasicTechnologyElectromagneticInductorBlockEntity extends BlockEnti
                     case DATA_HOLOGRAM -> hologramLevel = value;
                     case DATA_FORCE_STOP -> forceHalt = value != 0;
                     case DATA_MULTIBLOCK -> multiblockLevel = value;
+                    case DATA_RECIPE_LOCK -> inputLocked = value != 0;
                 }
             }
 
             @Override
             public int getCount() {
-                return 5;
+                return 6;
             }
         };
     }
@@ -196,6 +218,7 @@ public class BasicTechnologyElectromagneticInductorBlockEntity extends BlockEnti
 
     @Override
     protected void saveAdditional(CompoundTag nbt) {
+        super.saveAdditional(nbt);
         nbt.put("inventory", itemHandler.serializeNBT());
         nbt.putFloat("energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
@@ -203,11 +226,17 @@ public class BasicTechnologyElectromagneticInductorBlockEntity extends BlockEnti
         nbt.putInt("hologramLevel", hologramLevel);
         nbt.putBoolean("forceHalt", forceHalt);
         nbt.putInt("multiblockLevel", multiblockLevel);
-        super.saveAdditional(nbt);
+        nbt.putBoolean("inputLocked", inputLocked);
+        for (int i = 0; i < inputLockedRecipe.length; i++) {
+            CompoundTag itemTag = new CompoundTag();
+            inputLockedRecipe[i].save(itemTag);
+            nbt.put("inputLockedRecipe" + i, itemTag);
+        }
     }
 
     @Override
     public void load(CompoundTag nbt) {
+        super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("energy"));
         counter = nbt.getInt("counter");
@@ -215,7 +244,18 @@ public class BasicTechnologyElectromagneticInductorBlockEntity extends BlockEnti
         hologramLevel = nbt.getInt("hologramLevel");
         forceHalt = nbt.getBoolean("forceHalt");
         multiblockLevel = nbt.getInt("multiblockLevel");
-        super.load(nbt);
+        inputLocked = nbt.getBoolean("inputLocked");
+        for (int i = 0; i < inputLockedRecipe.length; i++) {
+            if (nbt.contains("inputLockedRecipe" + i)) {
+                inputLockedRecipe[i] = ItemStack.of(nbt.getCompound("inputLockedRecipe" + i));
+            } else {
+                inputLockedRecipe[i] = ItemStack.EMPTY;
+            }
+
+            if (inputLockedRecipe[i] == null) {
+                inputLockedRecipe[i] = ItemStack.EMPTY;
+            }
+        }
     }
 
     public void drops() {
@@ -239,23 +279,33 @@ public class BasicTechnologyElectromagneticInductorBlockEntity extends BlockEnti
         BasicTechnologyElectromagneticInductorStructure.hologram(level, pos, state, blockEntity);
         blockEntity.getProgressPercent = 0;
 
-        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(1e-20F, false);
-        blockEntity.ENERGY_STORAGE.extractEnergyFloat(1e-20F, false);
-        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
-        if (level.isClientSide()) {
-            return;
+        blockEntity.scanMultiblockStorages(level);
+
+        blockEntity.pullEnergyFromInputs();
+        blockEntity.pullItemsFromInputs();
+
+        if (!blockEntity.forceHalt) {
+            blockEntity.pushEnergyToOutputs();
+            blockEntity.pushItemsToOutputs();
         }
 
+        blockEntity.ENERGY_STORAGE.receiveEnergyFloat(1e-20F, false);
+        blockEntity.ENERGY_STORAGE.extractEnergyFloat(1e-20F, false);
+
+        SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+
+        if (level.isClientSide()) {
+            setChanged(level, pos, state);
+            return;
+        }
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
-
         Optional<BasicTechnologyElectromagneticInductorRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyElectromagneticInductorRecipe.Type.INSTANCE, inventory, level);
 
-
         if (blockEntity.forceHalt) {
-            blockEntity.counter = 0;
+            blockEntity.resetProgress();
             setChanged(level, pos, state);
             return;
         }
@@ -285,6 +335,209 @@ public class BasicTechnologyElectromagneticInductorBlockEntity extends BlockEnti
             setChanged(level, pos, state);
         }
         setChanged(level, pos, state);
+    }
+
+    private void scanMultiblockStorages(Level level) {
+        if (level.isClientSide) return;
+        if (multiblockLevel < 0) return;
+
+        Direction facing = getBlockState().getValue(BasicTechnologyElectromagneticInductorBlock.FACING);
+        BlockPos basePos = this.getBlockPos();
+        energyInputs.clear();
+        energyOutputs.clear();
+        itemInputs.clear();
+        itemOutputs.clear();
+
+
+        String[][][] structure = switch (multiblockLevel) {
+            case 0 -> BasicTechnologyElectromagneticInductorStructure.structure0;
+            case 1 -> BasicTechnologyElectromagneticInductorStructure.structure1;
+            default -> new String[0][][];
+        };
+
+        this.minX = switch (multiblockLevel){
+            case 0 -> BasicTechnologyElectromagneticInductorStructure.minX0;
+            case 1 -> BasicTechnologyElectromagneticInductorStructure.minX1;
+            default -> 0;
+        };
+
+        this.maxY = switch (multiblockLevel){
+            case 0 -> BasicTechnologyElectromagneticInductorStructure.maxY0;
+            case 1 -> BasicTechnologyElectromagneticInductorStructure.maxY1;
+            default -> 0;
+        };
+
+        this.minZ = switch (multiblockLevel){
+            case 0 -> BasicTechnologyElectromagneticInductorStructure.maxZ0;
+            case 1 -> BasicTechnologyElectromagneticInductorStructure.maxZ1;
+            default -> 0;
+        };
+
+        for (int y = 0; y < structure.length; y++) {
+            for (int z = 0; z < structure[y].length; z++) {
+                for (int x = 0; x < structure[y][z].length; x++) {
+                    String key = structure[y][z][x];
+
+                    BlockPos targetPos = BasicTechnologyElectromagneticInductorStructure.getRelativePos(basePos,
+                            x + this.minX,
+                            this.maxY - y,
+                            z + this.minZ, facing);
+
+                    BlockEntity be = level.getBlockEntity(targetPos);
+                    if (be == null || be == this) continue;
+
+                    if (!key.equals("1") && !key.equals("2") && !key.equals("3") && !key.equals("4")) continue;
+
+                    switch (key) {
+                        case "1":
+                            be.getCapability(CapabilityEnergy.ENERGY)
+                                    .ifPresent(storage ->
+                                            energyInputs.add((DCIEnergyStorageFloat) storage));
+                            break;
+
+                        case "2":
+                            be.getCapability(CapabilityEnergy.ENERGY)
+                                    .ifPresent(storage ->
+                                            energyOutputs.add((DCIEnergyStorageFloat) storage));
+                            break;
+
+                        case "3":
+                            be.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+                                    .ifPresent(itemInputs::add);
+                            break;
+
+                        case "4":
+                            be.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+                                    .ifPresent(itemOutputs::add);
+                            break;
+                    }
+                }
+            }
+        }
+    }
+
+    private void pullEnergyFromInputs() {
+        float needed = MACHINE_CAPACITY - ENERGY_STORAGE.getEnergyStoredFloat();
+        if (needed <= 0) return;
+
+        for (DCIEnergyStorageFloat input : energyInputs) {
+
+            if (needed <= 0) break;
+
+            float extracted = input.extractEnergyFloat(needed, false);
+            if (extracted > 0) {
+                ENERGY_STORAGE.receiveEnergyFloat(extracted, false);
+                needed -= extracted;
+            }
+        }
+    }
+
+    private void pushEnergyToOutputs() {
+        float stored = ENERGY_STORAGE.getEnergyStoredFloat();
+        float reserve = this.MACHINE_CAPACITY - this.MACHINE_TRANSFER;
+
+        float transferable = stored - reserve;
+        if (transferable <= 0) return;
+
+        for (DCIEnergyStorageFloat output : energyOutputs) {
+
+            if (transferable <= 0) break;
+
+            float accepted = output.receiveEnergyFloat(transferable, false);
+
+            if (accepted > 0) {
+                ENERGY_STORAGE.extractEnergyFloat(accepted, false);
+                transferable -= accepted;
+            }
+        }
+    }
+
+    public void toggleInputLock() {
+        inputLocked = !inputLocked;
+        if (inputLocked) {
+            for (int i = 0; i < itemHandler.getSlots(); i++) {
+                ItemStack stack = itemHandler.getStackInSlot(i);
+                if (!stack.isEmpty()) {
+                    inputLockedRecipe[i] = stack.copy();
+                } else {
+                    inputLockedRecipe[i] = ItemStack.EMPTY;
+                }
+            }
+        } else {
+            Arrays.fill(inputLockedRecipe, ItemStack.EMPTY);
+        }
+
+        setChanged();
+    }
+
+    private void pullItemsFromInputs() {
+        for (IItemHandler input : itemInputs) {
+            for (int inputSlot = 0; inputSlot < input.getSlots(); inputSlot++) {
+                ItemStack stack = input.getStackInSlot(inputSlot);
+                if (stack.isEmpty()) continue;
+
+                for (int machineSlot = IN_0; machineSlot <= RECIPE_COUNT - 1; machineSlot++) {
+                    if (inputLocked) {
+
+                        ItemStack lock = inputLockedRecipe[machineSlot];
+
+                        if (lock.isEmpty()) continue;
+
+                        if (!ItemStack.isSameItemSameTags(stack, lock)) continue;
+
+                        if(lock == null) lock = ItemStack.EMPTY;
+
+                        int current = itemHandler.getStackInSlot(machineSlot).getCount();
+                        int limit = lock.getCount();
+
+                        if (current >= limit) continue;
+                    }
+
+                    ItemStack simulated = itemHandler.insertItem(machineSlot, stack.copy(), true);
+                    int insertable = stack.getCount() - simulated.getCount();
+
+                    if (insertable > 0) {
+                        if (inputLocked) {
+
+                            int current = itemHandler.getStackInSlot(machineSlot).getCount();
+                            int limit = inputLockedRecipe[machineSlot].getCount();
+                            int remain = limit - current;
+
+                            insertable = Math.min(insertable, remain);
+                        }
+
+                        ItemStack extracted = input.extractItem(inputSlot, insertable, false);
+                        itemHandler.insertItem(machineSlot, extracted, false);
+
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
+    private void pushItemsToOutputs() {
+        for (int machineSlot = OUT_0; machineSlot <= OUT_0 + OUTPUT_COUNT - 1; machineSlot++) {
+            ItemStack stack = itemHandler.getStackInSlot(machineSlot);
+            if (stack.isEmpty()) continue;
+
+            for (IItemHandler output : itemOutputs) {
+
+                for (int outputSlot = 0; outputSlot < output.getSlots(); outputSlot++) {
+
+                    ItemStack leftover = output.insertItem(outputSlot, stack.copy(), false);
+
+                    if (leftover.isEmpty()) {
+                        itemHandler.setStackInSlot(machineSlot, ItemStack.EMPTY);
+                        return;
+                    }
+                    else if (leftover.getCount() < stack.getCount()) {
+                        itemHandler.setStackInSlot(machineSlot, leftover);
+                        return;
+                    }
+                }
+            }
+        }
     }
 
     public static boolean craftCheck(BasicTechnologyElectromagneticInductorBlockEntity blockEntity) {
@@ -326,12 +579,12 @@ public class BasicTechnologyElectromagneticInductorBlockEntity extends BlockEnti
         Optional<BasicTechnologyElectromagneticInductorRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyElectromagneticInductorRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(2).getCount() >= match.get().getInput2Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(3).getCount() >= match.get().getInput3Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(4).getCount() >= match.get().getInput4Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(5).getCount() >= match.get().getInput5Item().getCount();
+        return blockEntity.itemHandler.getStackInSlot(IN_0).getCount() >= match.get().getInput0Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(IN_1).getCount() >= match.get().getInput1Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(IN_2).getCount() >= match.get().getInput2Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(IN_3).getCount() >= match.get().getInput3Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(IN_4).getCount() >= match.get().getInput4Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(IN_5).getCount() >= match.get().getInput5Item().getCount();
     }
 
     private static boolean hasEnergyRecipe(BasicTechnologyElectromagneticInductorBlockEntity blockEntity) {
@@ -358,14 +611,14 @@ public class BasicTechnologyElectromagneticInductorBlockEntity extends BlockEnti
                 .getRecipeFor(BasicTechnologyElectromagneticInductorRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
-            blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(2, match.get().getInput2Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(3, match.get().getInput3Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(4, match.get().getInput4Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(5, match.get().getInput5Item().getCount(), false);
-            blockEntity.itemHandler.setStackInSlot(6, new ItemStack(match.get().getOutput0Item().getItem(),
-                    blockEntity.itemHandler.getStackInSlot(6).getCount() + match.get().getOutput0Item().getCount()));
+            blockEntity.itemHandler.extractItem(IN_0, match.get().getInput0Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(IN_1, match.get().getInput1Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(IN_2, match.get().getInput2Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(IN_3, match.get().getInput3Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(IN_4, match.get().getInput4Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(IN_5, match.get().getInput5Item().getCount(), false);
+            blockEntity.itemHandler.setStackInSlot(OUT_0, new ItemStack(match.get().getOutput0Item().getItem(),
+                    blockEntity.itemHandler.getStackInSlot(OUT_0).getCount() + match.get().getOutput0Item().getCount()));
             blockEntity.resetProgress();
         }
     }
@@ -384,7 +637,7 @@ public class BasicTechnologyElectromagneticInductorBlockEntity extends BlockEnti
         Optional<BasicTechnologyElectromagneticInductorRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyElectromagneticInductorRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(6).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(6).getMaxStackSize();
+        return blockEntity.itemHandler.getStackInSlot(OUT_0).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(OUT_0).getMaxStackSize();
 
     }
 
@@ -398,7 +651,7 @@ public class BasicTechnologyElectromagneticInductorBlockEntity extends BlockEnti
         Optional<BasicTechnologyElectromagneticInductorRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyElectromagneticInductorRecipe.Type.INSTANCE, inventory, level);
 
-        return (blockEntity.itemHandler.getStackInSlot(6).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(6).isEmpty());
+        return (blockEntity.itemHandler.getStackInSlot(OUT_0).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(OUT_0).isEmpty());
     }
 
     public void insertRecipeInputsFromPlayer(Player player, Recipe<?> recipe, boolean shift) {

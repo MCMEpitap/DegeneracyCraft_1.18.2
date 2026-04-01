@@ -24,17 +24,17 @@ public class BasicTechnologyElectromagneticInductorStructure {
             {
                     {"F", "F", "F"},
                     {"F", "F", "F"},
-                    {"E", "B", "E"}
+                    {"1", "F", "1"}
             },
             {
                     {"F", "F", "F"},
                     {"G", " ", "G"},
-                    {"P", " ", "P"}
+                    {"F", " ", "F"}
             },
             {
                     {"F", "F", "F"},
                     {"F", "F", "F"},
-                    {"S", "F", "S"}
+                    {"3", "F", "4"}
             }
     };
     ;
@@ -42,17 +42,17 @@ public class BasicTechnologyElectromagneticInductorStructure {
             {
                     {"F", "F", "F"},
                     {"F", "F", "F"},
-                    {"E", "B", "E"}
+                    {"1", "F", "1"}
             },
             {
                     {"F", "F", "F"},
                     {"G", "D", "G"},
-                    {"P", " ", "P"}
+                    {"F", " ", "F"}
             },
             {
                     {"F", "F", "F"},
                     {"F", "F", "F"},
-                    {"S", "F", "S"}
+                    {"3", "F", "4"}
             }
     };
 
@@ -111,11 +111,11 @@ public class BasicTechnologyElectromagneticInductorStructure {
         Map<String, Predicate<BlockState>> blockConditions = new HashMap<>();
         blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
         blockConditions.put("G", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get()));
-        blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_BLOCK.get()));
-        blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_STORAGE_BLOCK.get()));
-        blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_BLOCK.get()));
-        blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
         blockConditions.put("D", blockState -> blockState.is(DCBlocks.BASIC_DURABLE_INSULATED_CHAMBER_BLOCK.get()));
+        blockConditions.put("1", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get()));
+        blockConditions.put("2", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get()));
+        blockConditions.put("3", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get()));
+        blockConditions.put("4", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get()));
         return blockConditions;
     }
     
@@ -158,11 +158,11 @@ public class BasicTechnologyElectromagneticInductorStructure {
         Map<String, Supplier<BlockState>> blockSuppliers = new HashMap<>();
         blockSuppliers.put("F", () -> DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("G", () -> DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("P", () -> DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("S", () -> DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("B", () -> DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("E", () -> DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("D", () -> DCBlocks.BASIC_DURABLE_INSULATED_CHAMBER_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("1", () -> DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("2", () -> DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("3", () -> DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("4", () -> DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get().defaultBlockState());
         return blockSuppliers;
     }
 
@@ -219,7 +219,7 @@ public class BasicTechnologyElectromagneticInductorStructure {
         return false;
     }
 
-    private static BlockPos getRelativePos(BlockPos basePos, int x, int y, int z, Direction facing) {
+    public static BlockPos getRelativePos(BlockPos basePos, int x, int y, int z, Direction facing) {
         return switch (facing) {
             case NORTH -> basePos.relative(Direction.WEST, x).relative(Direction.UP, y).relative(Direction.NORTH, z);
             case SOUTH -> basePos.relative(Direction.EAST, x).relative(Direction.UP, y).relative(Direction.SOUTH, z);

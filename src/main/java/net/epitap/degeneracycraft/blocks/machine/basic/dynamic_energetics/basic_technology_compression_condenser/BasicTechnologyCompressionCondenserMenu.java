@@ -27,7 +27,7 @@ public class BasicTechnologyCompressionCondenserMenu extends AbstractContainerMe
     public final ContainerData data;
 
     public BasicTechnologyCompressionCondenserMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
 
     public BasicTechnologyCompressionCondenserMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -65,6 +65,10 @@ public class BasicTechnologyCompressionCondenserMenu extends AbstractContainerMe
 
     public int getMultiblockLevel() {
         return data.get(4);
+    }
+
+    public boolean isInputLocked() {
+        return data.get(5) != 0;
     }
 
     public DCIEnergyStorageFloat getEnergy() {

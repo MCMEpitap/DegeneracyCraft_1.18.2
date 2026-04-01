@@ -24,7 +24,7 @@ public class BasicPowerSteamGeneratorStructure {
             {
                     {"F", "F", "F"},
                     {"F", "F", "F"},
-                    {"4", "F", "4"}
+                    {"2", "F", "2"}
             },
             {
                     {"F", "G", "F"},
@@ -34,7 +34,7 @@ public class BasicPowerSteamGeneratorStructure {
             {
                     {"F", "F", "F"},
                     {"F", "F", "F"},
-                    {"1", "F", "2"}
+                    {"3", "F", "4"}
             }
     };
     ;
@@ -42,7 +42,7 @@ public class BasicPowerSteamGeneratorStructure {
             {
                     {"F", "F", "F"},
                     {"F", "F", "F"},
-                    {"4", "F", "4"}
+                    {"2", "F", "2"}
             },
             {
                     {"F", "G", "F"},
@@ -52,7 +52,7 @@ public class BasicPowerSteamGeneratorStructure {
             {
                     {"F", "F", "F"},
                     {"F", "F", "F"},
-                    {"1", "F", "2"}
+                    {"3", "F", "4"}
             }
     };
 

@@ -27,7 +27,7 @@ public class BasicTechnologyMultiblockEquipmentFabricatorMenu extends AbstractCo
     public final ContainerData data;
 
     public BasicTechnologyMultiblockEquipmentFabricatorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(2));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
 
     public BasicTechnologyMultiblockEquipmentFabricatorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -68,6 +68,10 @@ public class BasicTechnologyMultiblockEquipmentFabricatorMenu extends AbstractCo
 
     public int getMultiblockLevel() {
         return data.get(4);
+    }
+
+    public boolean isInputLocked() {
+        return data.get(5) != 0;
     }
 
     public DCIEnergyStorageFloat getEnergy() {

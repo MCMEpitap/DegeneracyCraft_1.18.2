@@ -75,6 +75,7 @@ public class BasicTechnologyMachineManufacturerRecipeCategory implements IRecipe
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"), 115, 87, 0xFFFFFF);
     }
+
     protected void drawRequiredEnergy(BasicTechnologyMachineManufacturerRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;

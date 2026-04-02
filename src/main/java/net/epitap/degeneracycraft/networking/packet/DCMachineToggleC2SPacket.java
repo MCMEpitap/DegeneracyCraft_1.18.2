@@ -327,9 +327,9 @@ public class DCMachineToggleC2SPacket {
                 if (type == TOGGLE_HALT) {
                     machine.forceHalt = !machine.forceHalt;
                 }
-//                if (type == TOGGLE_LOCK) {
-//                    machine.toggleInputLock();
-//                }
+                if (type == TOGGLE_LOCK) {
+                    machine.toggleInputLock();
+                }
                 machine.setChanged();
             }
             if (blockEntity instanceof BasicTechnologyMultiblockEquipmentFabricatorBlockEntity machine) {

@@ -28,7 +28,7 @@ public class BasicTechnologyMachineManufacturerMenu extends AbstractContainerMen
     private final ContainerData data;
 
     public BasicTechnologyMachineManufacturerMenu(int pContainerId, Inventory inv, FriendlyByteBuf extraData) {
-        this(pContainerId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
+        this(pContainerId, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
 
     public BasicTechnologyMachineManufacturerMenu(int pContainerId, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -71,6 +71,10 @@ public class BasicTechnologyMachineManufacturerMenu extends AbstractContainerMen
 
     public int getMultiblockLevel() {
         return data.get(4);
+    }
+
+    public boolean isInputLocked() {
+        return data.get(5) != 0;
     }
 
     public DCIEnergyStorageFloat getEnergy() {

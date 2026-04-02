@@ -73,18 +73,17 @@ public class BasicTechnologyMachineManufacturerRecipeCategory implements IRecipe
     protected void drawPhase(PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
-        fontRenderer.draw(poseStack, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"), 15, 67, 0xFF0000);
+        fontRenderer.draw(poseStack, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"), 115, 87, 0xFFFFFF);
     }
-
     protected void drawRequiredEnergy(BasicTechnologyMachineManufacturerRecipe recipe, PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergy."), 17, 87, 0xFFFFFF);
         float energyRequired = recipe.getRequiredEnergy();
         if (energyRequired >= 1E3F) {
-            fontRenderer.draw(poseStack, (energyRequired / 1E3F + " kFE/t"), 17, 97, 0xFFFFFF);
+            fontRenderer.draw(poseStack, (energyRequired / 1E3F + " kFE"), 17, 97, 0xFFFFFF);
         } else if (energyRequired >= 0F) {
-            fontRenderer.draw(poseStack, (energyRequired + " FE/t"), 17, 97, 0xFFFFFF);
+            fontRenderer.draw(poseStack, (energyRequired + " FE"), 17, 97, 0xFFFFFF);
         }
     }
 
@@ -100,7 +99,6 @@ public class BasicTechnologyMachineManufacturerRecipeCategory implements IRecipe
             fontRenderer.draw(poseStack, (energyUsage + " FE/t"), 17, 117, 0xFFFFFF);
         }
 
-//        fontRenderer.draw(poseStack, (recipe.getRequiredEnergy() / recipe.getRequiredTime() / 20F + " FE/t"), 17, 117, 0xFFFFFF);
     }
 
     protected void drawRequiredTime(BasicTechnologyMachineManufacturerRecipe recipe, PoseStack poseStack) {

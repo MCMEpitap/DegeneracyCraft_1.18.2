@@ -1,11 +1,8 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_machine_element_processor;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.BasicTechnologyElectromagneticInductorBlock;
-import net.epitap.degeneracycraft.blocks.machine.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.BasicTechnologyElectromagneticInductorStructure;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.BasicTechnologyElectromagneticInductorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_machine_element_processor.BasicTechnologyMachineElementProcessorRecipe;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -314,6 +311,7 @@ public class BasicTechnologyMachineElementProcessorBlockEntity extends BlockEnti
             setChanged(level, pos, state);
             return;
         }
+
         if (hasRecipe(blockEntity) && hasAmountRecipe(blockEntity) && hasEnergyRecipe(blockEntity)
                 && hasNotReachedStackLimit(blockEntity) && canInsertItemIntoOutputSlot(blockEntity)) {
 

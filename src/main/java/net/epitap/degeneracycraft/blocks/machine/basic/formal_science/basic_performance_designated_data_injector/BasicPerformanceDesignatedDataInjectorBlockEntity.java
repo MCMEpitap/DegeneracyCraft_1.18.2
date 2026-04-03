@@ -3,7 +3,6 @@ package net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_per
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_designated_data_injector.BasicPerformanceDesignatedDataInjectorRecipe;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -299,8 +298,8 @@ public class BasicPerformanceDesignatedDataInjectorBlockEntity extends BlockEnti
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
-        Optional<BasicPerformanceCircuitBuilderRecipe> match = level.getRecipeManager()
-                .getRecipeFor(BasicPerformanceCircuitBuilderRecipe.Type.INSTANCE, inventory, level);
+        Optional<BasicPerformanceDesignatedDataInjectorRecipe> match = level.getRecipeManager()
+                .getRecipeFor(BasicPerformanceDesignatedDataInjectorRecipe.Type.INSTANCE, inventory, level);
 
         if (blockEntity.forceHalt) {
             blockEntity.resetProgress();

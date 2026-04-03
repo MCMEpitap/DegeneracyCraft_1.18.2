@@ -27,7 +27,7 @@ public class BasicPerformanceMachineDataInstallerMenu extends AbstractContainerM
     public final ContainerData data;
 
     public BasicPerformanceMachineDataInstallerMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
 
     public BasicPerformanceMachineDataInstallerMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -65,6 +65,10 @@ public class BasicPerformanceMachineDataInstallerMenu extends AbstractContainerM
 
     public int getMultiblockLevel() {
         return data.get(4);
+    }
+
+    public boolean isInputLocked() {
+        return data.get(5) != 0;
     }
 
     public DCIEnergyStorageFloat getEnergy() {

@@ -24,34 +24,34 @@ public class BasicPerformanceMachineDataInstallerStructure {
             {
                     {"F", "F", "F"},
                     {"F", "F", "F"},
-                    {"E", "B", "E"}
+                    {"1", "F", "1"}
             },
             {
-                    {"F", "G", "F"},
-                    {"G", " ", "G"},
-                    {"P", " ", "P"}
+                    {"F", "F", "F"},
+                    {"F", " ", "F"},
+                    {"F", " ", "F"}
             },
             {
                     {"F", "F", "F"},
                     {"F", "F", "F"},
-                    {"S", "F", "S"}
+                    {"3", "F", "4"}
             }
     };;
     public static String[][][] structure1 = new String[][][]{
             {
                     {"F", "F", "F"},
                     {"F", "F", "F"},
-                    {"E", "B", "E"}
+                    {"1", "F", "1"}
             },
             {
-                    {"F", "G", "F"},
-                    {"G", "R", "G"},
-                    {"P", " ", "P"}
+                    {"F", "F", "F"},
+                    {"F", "C", "F"},
+                    {"F", " ", "F"}
             },
             {
                     {"F", "F", "F"},
                     {"F", "F", "F"},
-                    {"S", "F", "S"}
+                    {"3", "F", "4"}
             }
     };
 
@@ -218,7 +218,7 @@ public class BasicPerformanceMachineDataInstallerStructure {
         return false;
     }
 
-    private static BlockPos getRelativePos(BlockPos basePos, int x, int y, int z, Direction facing) {
+    public static BlockPos getRelativePos(BlockPos basePos, int x, int y, int z, Direction facing) {
         return switch (facing) {
             case NORTH -> basePos.relative(Direction.WEST, x).relative(Direction.UP, y).relative(Direction.NORTH, z);
             case SOUTH -> basePos.relative(Direction.EAST, x).relative(Direction.UP, y).relative(Direction.SOUTH, z);

@@ -27,7 +27,7 @@ public class BasicPerformanceDesignatedDataInjectorMenu extends AbstractContaine
     public final ContainerData data;
 
     public BasicPerformanceDesignatedDataInjectorMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
 
     public BasicPerformanceDesignatedDataInjectorMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -67,6 +67,10 @@ public class BasicPerformanceDesignatedDataInjectorMenu extends AbstractContaine
 
     public int getMultiblockLevel() {
         return data.get(4);
+    }
+
+    public boolean isInputLocked() {
+        return data.get(5) != 0;
     }
 
     public DCIEnergyStorageFloat getEnergy() {

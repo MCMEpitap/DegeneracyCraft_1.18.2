@@ -74,7 +74,7 @@ public class BasicPerformanceDesignatedDataInjectorRecipeCategory implements IRe
     protected void drawPhase(PoseStack poseStack) {
         Minecraft minecraft = Minecraft.getInstance();
         Font fontRenderer = minecraft.font;
-        fontRenderer.draw(poseStack, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"), 15, 67, 0xFF0000);
+        fontRenderer.draw(poseStack, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"), 115, 87, 0xFFFFFF);
     }
 
     protected void drawRequiredEnergy(BasicPerformanceDesignatedDataInjectorRecipe recipe, PoseStack poseStack) {
@@ -83,9 +83,9 @@ public class BasicPerformanceDesignatedDataInjectorRecipeCategory implements IRe
         fontRenderer.draw(poseStack, new TranslatableComponent("tooltip.degeneracycraft.requiredenergy."), 17, 87, 0xFFFFFF);
         float energyRequired = recipe.getRequiredEnergy();
         if (energyRequired >= 1E3F) {
-            fontRenderer.draw(poseStack, (energyRequired / 1E3F + " kFE/t"), 17, 97, 0xFFFFFF);
+            fontRenderer.draw(poseStack, (energyRequired / 1E3F + " kFE"), 17, 97, 0xFFFFFF);
         } else if (energyRequired >= 0F) {
-            fontRenderer.draw(poseStack, (energyRequired + " FE/t"), 17, 97, 0xFFFFFF);
+            fontRenderer.draw(poseStack, (energyRequired + " FE"), 17, 97, 0xFFFFFF);
         }
     }
 

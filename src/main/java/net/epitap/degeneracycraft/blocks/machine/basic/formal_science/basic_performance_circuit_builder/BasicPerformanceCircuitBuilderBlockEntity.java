@@ -1,11 +1,8 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.formal_science.basic_performance_circuit_builder;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorBlock;
-import net.epitap.degeneracycraft.blocks.machine.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorStructure;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.engineering.basic_technology_multiblock_equipment_fabricator.BasicTechnologyMultiblockEquipmentFabricatorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.formal_science.basic_performance_circuit_builder.BasicPerformanceCircuitBuilderRecipe;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -59,7 +56,7 @@ public class BasicPerformanceCircuitBuilderBlockEntity extends BlockEntity imple
     public int minZ;
 
     public boolean forceHalt = false;
-    public static final int RECIPE_COUNT      = 9;
+    public static final int RECIPE_COUNT      = 5;
     public static final int OUTPUT_COUNT      = 1;
 
     private final ItemStack[] inputLockedRecipe = new ItemStack[RECIPE_COUNT];

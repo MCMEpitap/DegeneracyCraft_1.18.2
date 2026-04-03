@@ -28,7 +28,7 @@ public class BasicPerformanceCircuitBuilderStructure {
             },
             {
                     {"F", "G", "F"},
-                    {"G", "C", "G"},
+                    {"G", " ", "G"},
                     {"F", " ", "F"}
             },
             {

@@ -957,7 +957,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         
         
         
-        
         add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Formal Science Multiblock Base Frame");
         add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Formal Science Multiblock Base Frame (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Formal Science Multiblock Machine Frame");
@@ -970,7 +969,18 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "Basic Strength Formal Science Multiblock Energy Storage (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(), "Basic Strength Formal Science Multiblock Item Storage");
         add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(), "Basic Strength Formal Science Multiblock Item Storage (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get(), "Basic Strength Formal Science Multiblock Energy Input Bus");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(), "Basic Strength Formal Science Multiblock Energy Input Bus (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get(), "Basic Strength Formal Science Multiblock Energy Output Bus");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), "Basic Strength Formal Science Multiblock Energy Output Bus (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get(), "Basic Strength Formal Science Multiblock Item Input Port");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), "Basic Strength Formal Science Multiblock Item Input Port (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get(), "Basic Strength Formal Science Multiblock Item Output Port");
+        add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), "Basic Strength Formal Science Multiblock Item Output Port(Hologram)");
 
+        
+        
+        
         add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Geo Science Multiblock Base Frame");
         add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Geo Science Multiblock Base Frame (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Geo Science Multiblock Machine Frame");
@@ -1232,19 +1242,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_HOLO_BLOCK.get(), "Basic Technology Machine Manufacturer Port (Hologram)");
         add(DCItems.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_CIRCUIT.get(), "Basic Technology Machine Manufacturer Circuit");
 
-        add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.get(), "Basic Technology Universal Assembler");
-        add("tooltip." + "degeneracycraft." + "basic_technology_universal_assembler_block",
-                "Basic Universal Assembler. Machine for creating industrial items.");
-        add(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_BLOCK.get(), "Basic Operation Assembling Chamber");
-        add("tooltip." + "degeneracycraft.ability" + "basic_technology_universal_assembler_block",
-                "For Basic Technology Universal Assembler");
-        add(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_HOLO_BLOCK.get(), "Basic Operation Assembling Chamber (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_BLOCK.get(), "Basic Technology Universal Assembler Bus");
-        add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_HOLO_BLOCK.get(), "Basic Technology Universal Assembler Bus (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_BLOCK.get(), "Basic Technology Universal Assembler Port");
-        add(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_HOLO_BLOCK.get(), "Basic Technology Universal Assembler Port (Hologram)");
-        add(DCItems.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_CIRCUIT.get(), "Basic Technology Universal Assembler Circuit");
-        
+          
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.get(), "Basic Technology Machine Element Processor");
         add("tooltip." + "degeneracycraft." + "basic_technology_machine_element_processor_block",
                 "Basic Machine Element Processor. Processing more difficult parts.");

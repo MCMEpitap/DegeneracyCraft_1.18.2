@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "degeneracycraft:block/multiblock/basic/formal_science/port/basic_strength_formal_science_multiblock_item_output_port/basic_strength_formal_science_multiblock_item_output_port_block",
+    "up": "degeneracycraft:block/multiblock/basic/formal_science/port/basic_strength_formal_science_multiblock_item_output_port/basic_strength_formal_science_multiblock_item_output_port_block",
+    "north": "degeneracycraft:block/multiblock/basic/formal_science/port/basic_strength_formal_science_multiblock_item_output_port/basic_strength_formal_science_multiblock_item_output_port_block",
+    "south": "degeneracycraft:block/multiblock/basic/formal_science/port/basic_strength_formal_science_multiblock_item_output_port/basic_strength_formal_science_multiblock_item_output_port_block",
+    "east": "degeneracycraft:block/multiblock/basic/formal_science/port/basic_strength_formal_science_multiblock_item_output_port/basic_strength_formal_science_multiblock_item_output_port_block",
+    "west": "degeneracycraft:block/multiblock/basic/formal_science/port/basic_strength_formal_science_multiblock_item_output_port/basic_strength_formal_science_multiblock_item_output_port_block",
+    "particle": "degeneracycraft:block/multiblock/basic/formal_science/port/basic_strength_formal_science_multiblock_item_output_port/basic_strength_formal_science_multiblock_item_output_port_block"
+  }
+}

@@ -1099,8 +1099,7 @@ public class DCItemModelProvider extends ItemModelProvider {
 
 
 
-
-
+        
         withExistingParent(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_formal_science_multiblock_base_frame_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.getId().getPath(),
@@ -1125,7 +1124,26 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_strength_formal_science_multiblock_item_storage_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_formal_science_multiblock_item_storage_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_formal_science_multiblock_energy_input_bus_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_formal_science_multiblock_energy_input_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_formal_science_multiblock_energy_output_bus_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_formal_science_multiblock_energy_output_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_formal_science_multiblock_item_input_port_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_formal_science_multiblock_item_input_port_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_formal_science_multiblock_item_output_port_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_formal_science_multiblock_item_output_port_holo_block"));
 
+        
+        
+        
         withExistingParent(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_geo_science_multiblock_base_frame_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.getId().getPath(),
@@ -1487,22 +1505,6 @@ public class DCItemModelProvider extends ItemModelProvider {
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_machine_manufacturer_port_holo_block"));
         basicMachineCircuitEngineeringItem(DCItems.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_CIRCUIT.get());
-
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_universal_assembler_block"));
-        withExistingParent(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_BLOCK.getId().getPath(),
-                modLoc("block/basic_operation_assembling_chamber_block"));
-        withExistingParent(DCBlocks.BASIC_OPERATION_ASSEMBLING_CHAMBER_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_operation_assembling_chamber_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_universal_assembler_bus_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_universal_assembler_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_universal_assembler_port_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_universal_assembler_port_holo_block"));
-        basicMachineCircuitEngineeringItem(DCItems.BASIC_TECHNOLOGY_UNIVERSAL_ASSEMBLER_CIRCUIT.get());
         
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.getId().getPath(),
                 modLoc("block/basic_technology_machine_element_processor_block"));

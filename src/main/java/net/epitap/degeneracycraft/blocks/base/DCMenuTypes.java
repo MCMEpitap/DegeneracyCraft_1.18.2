@@ -34,7 +34,6 @@ import net.epitap.degeneracycraft.blocks.machine.basic.kaleidoscopic_reality_sci
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineMenu;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineMenu;
-import net.epitap.degeneracycraft.blocks.menu.machine.PulverizerMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.bus.basic_strength_astronomy_multiblock_energy_input_bus.BasicStrengthAstronomyMultiblockEnergyInputBusMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.bus.basic_strength_astronomy_multiblock_energy_output_bus.BasicStrengthAstronomyMultiblockEnergyOutputBusMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.energy_storage.basic_strength_astronomy_multiblock_energy_storage.BasicStrengthAstronomyMultiblockEnergyStorageMenu;
@@ -71,8 +70,12 @@ import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.energy_sto
 import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.item_storage.basic_strength_formal_science_multiblock_item_storage.BasicStrengthFormalScienceMultiblockItemStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.port.basic_strength_formal_science_multiblock_item_input_port.BasicStrengthFormalScienceMultiblockItemInputPortMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.port.basic_strength_formal_science_multiblock_item_output_port.BasicStrengthFormalScienceMultiblockItemOutputPortMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.bus.basic_strength_geo_science_multiblock_energy_input_bus.BasicStrengthGeoScienceMultiblockEnergyInputBusMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.bus.basic_strength_geo_science_multiblock_energy_output_bus.BasicStrengthGeoScienceMultiblockEnergyOutputBusMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.energy_storage.basic_strength_geo_science_multiblock_energy_storage.BasicStrengthGeoScienceMultiblockEnergyStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.item_storage.basic_strength_geo_science_multiblock_item_storage.BasicStrengthGeoScienceMultiblockItemStorageMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.port.basic_strength_geo_science_multiblock_item_input_port.BasicStrengthGeoScienceMultiblockItemInputPortMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.port.basic_strength_geo_science_multiblock_item_output_port.BasicStrengthGeoScienceMultiblockItemOutputPortMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_storage.basic_strength_hybrid_physics_multiblock_energy_storage.BasicStrengthHybridPhysicsMultiblockEnergyStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.item_storage.basic_strength_hybrid_physics_multiblock_item_storage.BasicStrengthHybridPhysicsMultiblockItemStorageMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.energy_storage.basic_strength_imitation_magic_engineering_multiblock_energy_storage.BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageMenu;
@@ -95,9 +98,6 @@ public class DCMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENUS =
             DeferredRegister.create(ForgeRegistries.CONTAINERS, Degeneracycraft.MOD_ID);
 
-
-    public static final RegistryObject<MenuType<PulverizerMenu>> PULVERIZER_MENU =
-            registerMenuType(PulverizerMenu::new, "pulverizer_menu");
 
     public static final RegistryObject<MenuType<BasicStrengthAstronomyMultiblockEnergyStorageMenu>> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_ENERGY_STORAGE_MENU =
             registerMenuType(BasicStrengthAstronomyMultiblockEnergyStorageMenu::new, "basic_strength_astronomy_multiblock_energy_storage_menu");
@@ -200,7 +200,18 @@ public class DCMenuTypes {
             registerMenuType(BasicStrengthGeoScienceMultiblockEnergyStorageMenu::new, "basic_strength_geo_science_multiblock_energy_storage_menu");
     public static final RegistryObject<MenuType<BasicStrengthGeoScienceMultiblockItemStorageMenu>> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_STORAGE_MENU =
             registerMenuType(BasicStrengthGeoScienceMultiblockItemStorageMenu::new, "basic_strength_geo_science_multiblock_item_storage_menu");
+    public static final RegistryObject<MenuType<BasicStrengthGeoScienceMultiblockEnergyInputBusMenu>> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_MENU =
+            registerMenuType(BasicStrengthGeoScienceMultiblockEnergyInputBusMenu::new, "basic_strength_geo_science_multiblock_energy_input_bus_menu");
+    public static final RegistryObject<MenuType<BasicStrengthGeoScienceMultiblockEnergyOutputBusMenu>> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_MENU =
+            registerMenuType(BasicStrengthGeoScienceMultiblockEnergyOutputBusMenu::new, "basic_strength_geo_science_multiblock_energy_output_bus_menu");
+    public static final RegistryObject<MenuType<BasicStrengthGeoScienceMultiblockItemInputPortMenu>> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_MENU =
+            registerMenuType(BasicStrengthGeoScienceMultiblockItemInputPortMenu::new, "basic_strength_geo_science_multiblock_item_input_port_menu");
+    public static final RegistryObject<MenuType<BasicStrengthGeoScienceMultiblockItemOutputPortMenu>> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_MENU =
+            registerMenuType(BasicStrengthGeoScienceMultiblockItemOutputPortMenu::new, "basic_strength_geo_science_multiblock_item_output_port_menu");
 
+    
+    
+    
     public static final RegistryObject<MenuType<BasicStrengthHybridPhysicsMultiblockEnergyStorageMenu>> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_MENU =
             registerMenuType(BasicStrengthHybridPhysicsMultiblockEnergyStorageMenu::new, "basic_strength_hybrid_physics_multiblock_energy_storage_menu");
     public static final RegistryObject<MenuType<BasicStrengthHybridPhysicsMultiblockItemStorageMenu>> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ITEM_STORAGE_MENU =

@@ -182,10 +182,6 @@ public class JEIDCPlugin implements IModPlugin {
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
         registration.addRecipeCategories(new
-                PulverizationRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
-
-
-        registration.addRecipeCategories(new
                 BasicPerformanceAstronomicalTelescopeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
         registration.addRecipeCategories(new
                 BasicPerformanceFineParticleAdsorberRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
@@ -296,10 +292,6 @@ public class JEIDCPlugin implements IModPlugin {
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         RecipeManager rm = Objects.requireNonNull(Minecraft.getInstance().level).getRecipeManager();
-
-        List<Pulverization> recipes = rm.getAllRecipesFor(Pulverization.Type.INSTANCE);
-        registration.addRecipes(new RecipeType<>(PulverizationRecipeCategory.UID, Pulverization.class), recipes);
-
 
 
         List<BasicPerformanceAstronomicalTelescopeRecipe> basicPerformanceAstronomicalTelescopeRecipe =

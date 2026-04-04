@@ -2,7 +2,6 @@ package net.epitap.degeneracycraft.blocks.base;
 
 
 import net.epitap.degeneracycraft.Degeneracycraft;
-import net.epitap.degeneracycraft.blocks.block.machine.PulverizerBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_fine_particle_adsorber.BasicPerformanceFineParticleAdsorberBlock;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorBlock;
@@ -71,8 +70,12 @@ import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.energy_sto
 import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.item_storage.basic_strength_formal_science_multiblock_item_storage.BasicStrengthFormalScienceMultiblockItemStorageBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.port.basic_strength_formal_science_multiblock_item_input_port.BasicStrengthFormalScienceMultiblockItemInputPortBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.port.basic_strength_formal_science_multiblock_item_output_port.BasicStrengthFormalScienceMultiblockItemOutputPortBlock;
+import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.bus.basic_strength_geo_science_multiblock_energy_input_bus.BasicStrengthGeoScienceMultiblockEnergyInputBusBlock;
+import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.bus.basic_strength_geo_science_multiblock_energy_output_bus.BasicStrengthGeoScienceMultiblockEnergyOutputBusBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.energy_storage.basic_strength_geo_science_multiblock_energy_storage.BasicStrengthGeoScienceMultiblockEnergyStorageBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.item_storage.basic_strength_geo_science_multiblock_item_storage.BasicStrengthGeoScienceMultiblockItemStorageBlock;
+import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.port.basic_strength_geo_science_multiblock_item_input_port.BasicStrengthGeoScienceMultiblockItemInputPortBlock;
+import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.port.basic_strength_geo_science_multiblock_item_output_port.BasicStrengthGeoScienceMultiblockItemOutputPortBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_storage.basic_strength_hybrid_physics_multiblock_energy_storage.BasicStrengthHybridPhysicsMultiblockEnergyStorageBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.item_storage.basic_strength_hybrid_physics_multiblock_item_storage.BasicStrengthHybridPhysicsMultiblockItemStorageBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.energy_storage.basic_strength_imitation_magic_engineering_multiblock_energy_storage.BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageBlock;
@@ -190,9 +193,6 @@ public class DCBlocks {
     public static final RegistryObject<Block> REINFORCED_PLANKS = registerBlock("reinforced_planks", () -> new BlockBase(BlockBehaviour.Properties.of(Material.WOOD).strength(4.0f, 10.0f)),
             DCCreativeTab.DEGENERACYCRAFT_MATERIAL_TAB);
 
-
-    public static final RegistryObject<Block> PULVERIZER_BLOCK = registerBlock("pulverizer", () -> new PulverizerBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()),
-            DCCreativeTab.DEGENERACYCRAFT_TAB);
 
     public static final RegistryObject<Block> BASIC_STRENGTH_ASTRONOMY_MULTIBLOCK_BASE_FRAME_BLOCK = registerBlock("basic_strength_astronomy_multiblock_base_frame_block", () ->
             new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
@@ -488,7 +488,26 @@ public class DCBlocks {
             new BasicStrengthGeoScienceMultiblockItemStorageBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK = registerHoloBlock("basic_strength_geo_science_multiblock_item_storage_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK = registerBlock("basic_strength_geo_science_multiblock_energy_input_bus_block", () ->
+            new BasicStrengthGeoScienceMultiblockEnergyInputBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK = registerHoloBlock("basic_strength_geo_science_multiblock_energy_input_bus_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK = registerBlock("basic_strength_geo_science_multiblock_energy_output_bus_block", () ->
+            new BasicStrengthGeoScienceMultiblockEnergyOutputBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK = registerHoloBlock("basic_strength_geo_science_multiblock_energy_output_bus_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK = registerBlock("basic_strength_geo_science_multiblock_item_input_port_block", () ->
+            new BasicStrengthGeoScienceMultiblockItemInputPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK = registerHoloBlock("basic_strength_geo_science_multiblock_item_input_port_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK = registerBlock("basic_strength_geo_science_multiblock_item_output_port_block", () ->
+            new BasicStrengthGeoScienceMultiblockItemOutputPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK = registerHoloBlock("basic_strength_geo_science_multiblock_item_output_port_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
+    
+    
+    
     public static final RegistryObject<Block> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK = registerBlock("basic_strength_hybrid_physics_multiblock_base_frame_block", () ->
             new BlockBase(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK = registerHoloBlock("basic_strength_hybrid_physics_multiblock_base_frame_holo_block", () ->

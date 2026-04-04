@@ -1,7 +1,6 @@
 package net.epitap.degeneracycraft.blocks.base;
 
 import net.epitap.degeneracycraft.Degeneracycraft;
-import net.epitap.degeneracycraft.blocks.entity.machine.PulverizerBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_astronomical_telescope.BasicPerformanceAstronomicalTelescopeBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_fine_particle_adsorber.BasicPerformanceFineParticleAdsorberBlockEntity;
 import net.epitap.degeneracycraft.blocks.machine.basic.astronomy.basic_performance_starlight_collector.BasicPerformanceStarlightCollectorBlockEntity;
@@ -71,8 +70,12 @@ import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.energy_sto
 import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.item_storage.basic_strength_formal_science_multiblock_item_storage.BasicStrengthFormalScienceMultiblockItemStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.port.basic_strength_formal_science_multiblock_item_input_port.BasicStrengthFormalScienceMultiblockItemInputPortBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.port.basic_strength_formal_science_multiblock_item_output_port.BasicStrengthFormalScienceMultiblockItemOutputPortBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.bus.basic_strength_geo_science_multiblock_energy_input_bus.BasicStrengthGeoScienceMultiblockEnergyInputBusBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.bus.basic_strength_geo_science_multiblock_energy_output_bus.BasicStrengthGeoScienceMultiblockEnergyOutputBusBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.energy_storage.basic_strength_geo_science_multiblock_energy_storage.BasicStrengthGeoScienceMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.item_storage.basic_strength_geo_science_multiblock_item_storage.BasicStrengthGeoScienceMultiblockItemStorageBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.port.basic_strength_geo_science_multiblock_item_input_port.BasicStrengthGeoScienceMultiblockItemInputPortBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.port.basic_strength_geo_science_multiblock_item_output_port.BasicStrengthGeoScienceMultiblockItemOutputPortBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_storage.basic_strength_hybrid_physics_multiblock_energy_storage.BasicStrengthHybridPhysicsMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.item_storage.basic_strength_hybrid_physics_multiblock_item_storage.BasicStrengthHybridPhysicsMultiblockItemStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.energy_storage.basic_strength_imitation_magic_engineering_multiblock_energy_storage.BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageBlockEntity;
@@ -149,9 +152,6 @@ public class DCBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
             DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, Degeneracycraft.MOD_ID);
 
-    public static final RegistryObject<BlockEntityType<PulverizerBlockEntity>> PULVERIZER_BLOCK_ENTITY =
-            BLOCK_ENTITIES.register("pulverizer_block_entity", () ->
-                    BlockEntityType.Builder.of(PulverizerBlockEntity::new, DCBlocks.PULVERIZER_BLOCK.get()).build(null));
 
 
 //    public static final RegistryObject<BlockEntityType<UniversalAssemblerPhase2BlockEntity>> UNIVERSAL_ASSEMBLER_PHASE2_BLOCK_ENTITY =
@@ -305,7 +305,23 @@ public class DCBlockEntities {
     public static final RegistryObject<BlockEntityType<BasicStrengthGeoScienceMultiblockItemStorageBlockEntity>> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_STORAGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_strength_geo_science_multiblock_item_storage_block_entity", () ->
                     BlockEntityType.Builder.of(BasicStrengthGeoScienceMultiblockItemStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_STORAGE_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthGeoScienceMultiblockEnergyInputBusBlockEntity>> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_geo_science_multiblock_energy_input_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthGeoScienceMultiblockEnergyInputBusBlockEntity::new, DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthGeoScienceMultiblockEnergyOutputBusBlockEntity>> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_geo_science_multiblock_energy_output_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthGeoScienceMultiblockEnergyOutputBusBlockEntity::new, DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthGeoScienceMultiblockItemInputPortBlockEntity>> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_geo_science_multiblock_item_input_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthGeoScienceMultiblockItemInputPortBlockEntity::new, DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthGeoScienceMultiblockItemOutputPortBlockEntity>> BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_geo_science_multiblock_item_output_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthGeoScienceMultiblockItemOutputPortBlockEntity::new, DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get()).build(null));
 
+    
+    
+    
+    
     public static final RegistryObject<BlockEntityType<BasicStrengthHybridPhysicsMultiblockEnergyStorageBlockEntity>> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_strength_hybrid_physics_multiblock_item_storage_block_entity", () ->
                     BlockEntityType.Builder.of(BasicStrengthHybridPhysicsMultiblockEnergyStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()).build(null));

@@ -832,7 +832,6 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.SULFUR_DIOXIDE_GAS.get(), "二酸化硫黄ガス");
         add(DCItems.SULFURIC_ACID_SOLUTION.get(), "硫酸溶液");
 
-        add(DCBlocks.PULVERIZER_BLOCK.get(), "粉砕機");
 
 
         add(DCBlocks.OVERWORLD_GRAVITATION_ORE.get(),"重力波鉱石");
@@ -993,7 +992,18 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "基本強度地学マルチブロック用エネルギーストレージ (ホログラム)");
         add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(), "基本強度地学マルチブロック用アイテムストレージ");
         add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(), "基本強度地学マルチブロック用アイテムストレージ (ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get(), "基本強度地学マルチブロック用エネルギー入力バス");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(), "基本強度地学マルチブロック用エネルギー入力バス(ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get(), "基本強度地学マルチブロック用エネルギー出力バス");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), "基本強度地学マルチブロック用エネルギー出力バス(ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get(), "基本強度地学マルチブロック用アイテム入力ポート");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), "基本強度地学マルチブロック用アイテム入力ポート(ホログラム)");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get(), "基本強度地学マルチブロック用アイテム出力ポート");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), "基本強度地学マルチブロック用アイテム出力ポート(ホログラム)");
 
+        
+        
+        
         add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "基本強度複合物理学マルチブロック用基礎フレーム");
         add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "基本強度複合物理学マルチブロック用基礎フレーム (ホログラム)");
         add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "基本強度複合物理学マルチブロック用機械フレーム");

@@ -977,7 +977,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), "Basic Strength Formal Science Multiblock Item Input Port (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get(), "Basic Strength Formal Science Multiblock Item Output Port");
         add(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), "Basic Strength Formal Science Multiblock Item Output Port(Hologram)");
-
         
         
         
@@ -993,7 +992,18 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), "Basic Strength Geo Science Multiblock Energy Storage (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_STORAGE_BLOCK.get(), "Basic Strength Geo Science Multiblock Item Storage");
         add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(), "Basic Strength Geo Science Multiblock Item Storage (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get(), "Basic Strength Geo Science Multiblock Energy Input Bus");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(), "Basic Strength Geo Science Multiblock Energy Input Bus (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get(), "Basic Strength Geo Science Multiblock Energy Output Bus");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), "Basic Strength Geo Science Multiblock Energy Output Bus (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get(), "Basic Strength Geo Science Multiblock Item Input Port");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), "Basic Strength Geo Science Multiblock Item Input Port (Hologram)");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get(), "Basic Strength Geo Science Multiblock Item Output Port");
+        add(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), "Basic Strength Geo Science Multiblock Item Output Port(Hologram)");
 
+        
+        
+        
         add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Base Frame");
         add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Base Frame (Hologram)");
         add(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), "Basic Strength Hybrid Physics Multiblock Machine Frame");
@@ -1481,7 +1491,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCUniqueBlocks.SIMPLE_TELESCOPE_RIGHT_PILLAR.get(), "Simple Telescope Right Pillar");
         add(DCUniqueBlocks.SIMPLE_TELESCOPE_LEFT_PILLAR.get(), "Simple Telescope Left Pillar");
 
-        add(DCBlocks.PULVERIZER_BLOCK.get(), "Pulverizer");
 
         add("message." + "degeneracycraft_redstone_powered_machine_element_manufacture_machine", "Phase 0 Initial");
         add("screen." + "degeneracycraft_pulverizer", "Pulverizer Screen");

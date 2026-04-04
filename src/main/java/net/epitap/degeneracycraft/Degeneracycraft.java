@@ -35,7 +35,6 @@ import net.epitap.degeneracycraft.blocks.machine.basic.kaleidoscopic_reality_sci
 import net.epitap.degeneracycraft.blocks.machine.infinity.InfinityPoweredAllInOneCompressorMachineScreen;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_element_manufacture_machine.RedstonePoweredMachineElementManufactureMachineScreen;
 import net.epitap.degeneracycraft.blocks.machine.initial.redstone_powered_machine_part_manufacture_machine.RedstonePoweredMachinePartManufactureMachineScreen;
-import net.epitap.degeneracycraft.blocks.screen.PulverizerScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.bus.basic_strength_astronomy_multiblock_energy_input_bus.BasicStrengthAstronomyMultiblockEnergyInputBusScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.bus.basic_strength_astronomy_multiblock_energy_output_bus.BasicStrengthAstronomyMultiblockEnergyOutputBusScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.astronomy.energy_storage.basic_strength_astronomy_multiblock_energy_storage.BasicStrengthAstronomyMultiblockEnergyStorageScreen;
@@ -66,8 +65,16 @@ import net.epitap.degeneracycraft.blocks.storage.basic.engineering.energy_storag
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.item_storage.basic_strength_engineering_multiblock_item_storage.BasicStrengthEngineeringMultiblockItemStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.port.basic_strength_engineering_multiblock_item_input_port.BasicStrengthEngineeringMultiblockItemInputPortScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.engineering.port.basic_strength_engineering_multiblock_item_output_port.BasicStrengthEngineeringMultiblockItemOutputPortScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.bus.basic_strength_formal_science_multiblock_energy_input_bus.BasicStrengthFormalScienceMultiblockEnergyInputBusScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.bus.basic_strength_formal_science_multiblock_energy_output_bus.BasicStrengthFormalScienceMultiblockEnergyOutputBusScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.energy_storage.basic_strength_formal_science_multiblock_energy_storage.BasicStrengthFormalScienceMultiblockEnergyStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.item_storage.basic_strength_formal_science_multiblock_item_storage.BasicStrengthFormalScienceMultiblockItemStorageScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.port.basic_strength_formal_science_multiblock_item_input_port.BasicStrengthFormalScienceMultiblockItemInputPortScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.formal_science.port.basic_strength_formal_science_multiblock_item_output_port.BasicStrengthFormalScienceMultiblockItemOutputPortScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.bus.basic_strength_geo_science_multiblock_energy_input_bus.BasicStrengthGeoScienceMultiblockEnergyInputBusScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.bus.basic_strength_geo_science_multiblock_energy_output_bus.BasicStrengthGeoScienceMultiblockEnergyOutputBusScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.port.basic_strength_geo_science_multiblock_item_input_port.BasicStrengthGeoScienceMultiblockItemInputPortScreen;
+import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.port.basic_strength_geo_science_multiblock_item_output_port.BasicStrengthGeoScienceMultiblockItemOutputPortScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.energy_storage.basic_strength_geo_science_multiblock_energy_storage.BasicStrengthGeoScienceMultiblockEnergyStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.item_storage.basic_strength_geo_science_multiblock_item_storage.BasicStrengthGeoScienceMultiblockItemStorageScreen;
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_storage.basic_strength_hybrid_physics_multiblock_energy_storage.BasicStrengthHybridPhysicsMultiblockEnergyStorageScreen;
@@ -291,7 +298,6 @@ public class Degeneracycraft {
     private void clientSetup(final FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get(), RenderType.translucent());
 
-        MenuScreens.register(DCMenuTypes.PULVERIZER_MENU.get(), PulverizerScreen::new);
 
 
         MenuScreens.register(DCMenuTypes.REDSTONE_POWERED_MACHINE_ELEMENT_MANUFACTURE_MACHINE_MENU.get(), RedstonePoweredMachineElementManufactureMachineScreen::new);
@@ -340,9 +346,18 @@ public class Degeneracycraft {
         
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthFormalScienceMultiblockEnergyStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_STORAGE_MENU.get(), BasicStrengthFormalScienceMultiblockItemStorageScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_MENU.get(), BasicStrengthFormalScienceMultiblockEnergyInputBusScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_MENU.get(), BasicStrengthFormalScienceMultiblockEnergyOutputBusScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_MENU.get(), BasicStrengthFormalScienceMultiblockItemInputPortScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_MENU.get(), BasicStrengthFormalScienceMultiblockItemOutputPortScreen::new);
 
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthGeoScienceMultiblockEnergyStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_STORAGE_MENU.get(), BasicStrengthGeoScienceMultiblockItemStorageScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_MENU.get(), BasicStrengthGeoScienceMultiblockEnergyInputBusScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_MENU.get(), BasicStrengthGeoScienceMultiblockEnergyOutputBusScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_MENU.get(), BasicStrengthGeoScienceMultiblockItemInputPortScreen::new);
+        MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_MENU.get(), BasicStrengthGeoScienceMultiblockItemOutputPortScreen::new);
+
 
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_MENU.get(), BasicStrengthHybridPhysicsMultiblockEnergyStorageScreen::new);
         MenuScreens.register(DCMenuTypes.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ITEM_STORAGE_MENU.get(), BasicStrengthHybridPhysicsMultiblockItemStorageScreen::new);
@@ -481,6 +496,7 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
 
 
+        
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_MACHINE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
@@ -489,6 +505,12 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_ENGINEERING_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+
+        
 
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
@@ -498,6 +520,12 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+        
+        
 
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_BASE_FRAME_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());
@@ -507,6 +535,12 @@ public class Degeneracycraft {
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(), RenderType.translucent());
+        
+        
 
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.get(), RenderType.translucent());

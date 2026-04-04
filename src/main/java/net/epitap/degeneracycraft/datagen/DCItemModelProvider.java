@@ -1168,7 +1168,27 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_strength_geo_science_multiblock_item_storage_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_geo_science_multiblock_item_storage_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_geo_science_multiblock_energy_input_bus_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_geo_science_multiblock_energy_input_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_geo_science_multiblock_energy_output_bus_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_geo_science_multiblock_energy_output_bus_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_geo_science_multiblock_item_input_port_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_geo_science_multiblock_item_input_port_holo_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_geo_science_multiblock_item_output_port_block"));
+        withExistingParent(DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.getId().getPath(),
+                modLoc("block/basic_strength_geo_science_multiblock_item_output_port_holo_block"));
 
+        
+        
+        
+        
         withExistingParent(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_BLOCK.getId().getPath(),
                 modLoc("block/basic_strength_hybrid_physics_multiblock_base_frame_block"));
         withExistingParent(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_BASE_FRAME_HOLO_BLOCK.getId().getPath(),

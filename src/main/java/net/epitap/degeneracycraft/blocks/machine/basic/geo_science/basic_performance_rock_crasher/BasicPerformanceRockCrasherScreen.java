@@ -29,7 +29,8 @@ public class BasicPerformanceRockCrasherScreen extends AbstractContainerScreen<B
     private static final int HOLOGRAM_Y = 59;
     private static final int HALT_X = 98;
     private static final int HALT_Y = 62;
-
+    private static final int LOCK_X = 8;
+    private static final int LOCK_Y = 62;
     private static final int BUTTON_SIZE = 16;
 
     public BasicPerformanceRockCrasherScreen(BasicPerformanceRockCrasherMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
@@ -87,9 +88,12 @@ public class BasicPerformanceRockCrasherScreen extends AbstractContainerScreen<B
 
         renderPowerModifierTooltips(pPoseStack, pMouseX, pMouseY, x, y);
         renderMultiblockInfoTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+        renderHaltTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+        renderLockTooltips(pPoseStack, pMouseX, pMouseY, x, y);
         renderChance1Tooltips(pPoseStack, pMouseX, pMouseY, x, y);
         renderChance2Tooltips(pPoseStack, pMouseX, pMouseY, x, y);
     }
+
 
     private void renderMultiblockInfoTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
         if (isMouseAboveArea(pMouseX, pMouseY, x, y, 66, 28, 26, 10))
@@ -150,6 +154,28 @@ public class BasicPerformanceRockCrasherScreen extends AbstractContainerScreen<B
         return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".material" + ".chance" + "25"));
     }
 
+    private void renderHaltTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
+        if (menu.isForceHalt()
+                && isMouseAboveArea(pMouseX, pMouseY, x, y, 117, 64, 30, 12))
+            renderTooltip(pPoseStack, this.haltTooltips(),
+                    Optional.empty(), pMouseX - x, pMouseY - y);
+    }
+
+    public List<Component> haltTooltips() {
+        return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".halt"));
+    }
+
+    private void renderLockTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
+        if (menu.isInputLocked()
+                && isMouseAboveArea(pMouseX, pMouseY, x, y, 27, 64, 30, 12))
+            renderTooltip(pPoseStack, this.lockTooltips(),
+                    Optional.empty(), pMouseX - x, pMouseY - y);
+    }
+
+    public List<Component> lockTooltips() {
+        return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".lock"));
+    }
+
 
     @Override
     protected void renderBg(PoseStack pPoseStack, float pPartialTick, int pMouseX, int pMouseY) {
@@ -162,8 +188,6 @@ public class BasicPerformanceRockCrasherScreen extends AbstractContainerScreen<B
         energyInfoArea.draw(pPoseStack);
         renderButtons(pPoseStack, x, y);
     }
-
-
 
 
     private void renderButtons(PoseStack pPoseStack, int guiX, int guiY) {
@@ -189,6 +213,15 @@ public class BasicPerformanceRockCrasherScreen extends AbstractContainerScreen<B
                 BUTTON_SIZE, BUTTON_SIZE,
                 BUTTON_SIZE, BUTTON_SIZE
         );
+
+        RenderSystem.setShaderTexture(
+                0,
+                menu.isInputLocked() ? LOCK_ON : LOCK_OFF
+        );
+        blit(pPoseStack, guiX + LOCK_X, guiY + LOCK_Y, 0, 0,
+                BUTTON_SIZE, BUTTON_SIZE,
+                BUTTON_SIZE, BUTTON_SIZE
+        );
     }
 
     @Override
@@ -208,6 +241,13 @@ public class BasicPerformanceRockCrasherScreen extends AbstractContainerScreen<B
         if (isMouseOver(mouseX, mouseY, x + HALT_X, y + HALT_Y)) {
             DCMessages.sendToServer(
                     new DCMachineToggleC2SPacket(menu.getBlockEntity().getBlockPos(), 1)
+            );
+            return true;
+        }
+
+        if (isMouseOver(mouseX, mouseY, x + LOCK_X, y + LOCK_Y)) {
+            DCMessages.sendToServer(
+                    new DCMachineToggleC2SPacket(menu.getBlockEntity().getBlockPos(), 2)
             );
             return true;
         }

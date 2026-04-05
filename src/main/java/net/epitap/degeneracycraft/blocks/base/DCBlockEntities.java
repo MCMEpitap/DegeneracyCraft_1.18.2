@@ -76,8 +76,12 @@ import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.energy_storag
 import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.item_storage.basic_strength_geo_science_multiblock_item_storage.BasicStrengthGeoScienceMultiblockItemStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.port.basic_strength_geo_science_multiblock_item_input_port.BasicStrengthGeoScienceMultiblockItemInputPortBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.port.basic_strength_geo_science_multiblock_item_output_port.BasicStrengthGeoScienceMultiblockItemOutputPortBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.bus.basic_strength_hybrid_physics_multiblock_energy_input_bus.BasicStrengthHybridPhysicsMultiblockEnergyInputBusBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.bus.basic_strength_hybrid_physics_multiblock_energy_output_bus.BasicStrengthHybridPhysicsMultiblockEnergyOutputBusBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.energy_storage.basic_strength_hybrid_physics_multiblock_energy_storage.BasicStrengthHybridPhysicsMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.item_storage.basic_strength_hybrid_physics_multiblock_item_storage.BasicStrengthHybridPhysicsMultiblockItemStorageBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.port.basic_strength_hybrid_physics_multiblock_item_input_port.BasicStrengthHybridPhysicsMultiblockItemInputPortBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.port.basic_strength_hybrid_physics_multiblock_item_output_port.BasicStrengthHybridPhysicsMultiblockItemOutputPortBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.energy_storage.basic_strength_imitation_magic_engineering_multiblock_energy_storage.BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.item_storage.basic_strength_imitation_magic_engineering_multiblock_item_storage.BasicStrengthImitationMagicEngineeringMultiblockItemStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.energy_storage.basic_strength_jenith_void_science_multiblock_energy_storage.BasicStrengthJenithVoidScienceMultiblockEnergyStorageBlockEntity;
@@ -321,14 +325,28 @@ public class DCBlockEntities {
     
     
     
-    
     public static final RegistryObject<BlockEntityType<BasicStrengthHybridPhysicsMultiblockEnergyStorageBlockEntity>> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_strength_hybrid_physics_multiblock_item_storage_block_entity", () ->
                     BlockEntityType.Builder.of(BasicStrengthHybridPhysicsMultiblockEnergyStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()).build(null));
     public static final RegistryObject<BlockEntityType<BasicStrengthHybridPhysicsMultiblockItemStorageBlockEntity>> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ITEM_STORAGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_strength_hybrid_physics_multiblock_energy_storage_block_entity", () ->
                     BlockEntityType.Builder.of(BasicStrengthHybridPhysicsMultiblockItemStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ITEM_STORAGE_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthHybridPhysicsMultiblockEnergyInputBusBlockEntity>> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_hybrid_physics_multiblock_energy_input_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthHybridPhysicsMultiblockEnergyInputBusBlockEntity::new, DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthHybridPhysicsMultiblockEnergyOutputBusBlockEntity>> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_hybrid_physics_multiblock_energy_output_bus_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthHybridPhysicsMultiblockEnergyOutputBusBlockEntity::new, DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthHybridPhysicsMultiblockItemInputPortBlockEntity>> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_hybrid_physics_multiblock_item_input_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthHybridPhysicsMultiblockItemInputPortBlockEntity::new, DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get()).build(null));
+    public static final RegistryObject<BlockEntityType<BasicStrengthHybridPhysicsMultiblockItemOutputPortBlockEntity>> BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK_ENTITY =
+            BLOCK_ENTITIES.register("basic_strength_hybrid_physics_multiblock_item_output_port_block_entity", () ->
+                    BlockEntityType.Builder.of(BasicStrengthHybridPhysicsMultiblockItemOutputPortBlockEntity::new, DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get()).build(null));
 
+    
+    
+    
     public static final RegistryObject<BlockEntityType<BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageBlockEntity>> BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK_ENTITY =
             BLOCK_ENTITIES.register("basic_strength_imitation_magic_engineering_multiblock_energy_storage_block_entity", () ->
                     BlockEntityType.Builder.of(BasicStrengthImitationMagicEngineeringMultiblockEnergyStorageBlockEntity::new, DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()).build(null));

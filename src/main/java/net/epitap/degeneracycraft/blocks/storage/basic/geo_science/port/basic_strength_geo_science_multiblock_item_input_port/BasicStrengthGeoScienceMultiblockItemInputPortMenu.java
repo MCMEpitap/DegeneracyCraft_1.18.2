@@ -31,7 +31,7 @@ public class BasicStrengthGeoScienceMultiblockItemInputPortMenu extends Abstract
     }
 
     public BasicStrengthGeoScienceMultiblockItemInputPortMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
-        super(DCMenuTypes.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_MENU.get(), id);
+        super(DCMenuTypes.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_MENU.get(), id);
         blockEntity = (BasicStrengthGeoScienceMultiblockItemInputPortBlockEntity) entity;
         this.level = inv.player.level;
         this.data = data;
@@ -93,7 +93,7 @@ public class BasicStrengthGeoScienceMultiblockItemInputPortMenu extends Abstract
     @Override
     public boolean stillValid(Player player) {
         return stillValid(ContainerLevelAccess.create(level, blockEntity.getBlockPos()),
-                player, DCBlocks.BASIC_STRENGTH_FORMAL_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get());
+                player, DCBlocks.BASIC_STRENGTH_GEO_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get());
     }
 
     private void addPlayerInventory(Inventory playerInventory) {

@@ -52,6 +52,8 @@ import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.item_storage.
 import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.port.basic_strength_geo_science_multiblock_item_input_port.BasicStrengthGeoScienceMultiblockItemInputPortBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.geo_science.port.basic_strength_geo_science_multiblock_item_output_port.BasicStrengthGeoScienceMultiblockItemOutputPortBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.item_storage.basic_strength_hybrid_physics_multiblock_item_storage.BasicStrengthHybridPhysicsMultiblockItemStorageBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.port.basic_strength_hybrid_physics_multiblock_item_input_port.BasicStrengthHybridPhysicsMultiblockItemInputPortBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.hybrid_physics.port.basic_strength_hybrid_physics_multiblock_item_output_port.BasicStrengthHybridPhysicsMultiblockItemOutputPortBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.item_storage.basic_strength_imitation_magic_engineering_multiblock_item_storage.BasicStrengthImitationMagicEngineeringMultiblockItemStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.item_storage.basic_strength_jenith_void_science_multiblock_item_storage.BasicStrengthJenithVoidScienceMultiblockItemStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.item_storage.basic_strength_kaleidoscopic_reality_science_multiblock_item_storage.BasicStrengthKaleidoscopicRealityScienceMultiblockItemStorageBlockEntity;
@@ -201,6 +203,17 @@ public class DCItemStackSyncS2CPacket {
             if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthHybridPhysicsMultiblockItemStorageBlockEntity blockEntity) {
                 blockEntity.setHandler(this.itemStackHandler);
             }
+
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthHybridPhysicsMultiblockItemInputPortBlockEntity blockEntity) {
+                blockEntity.setHandler(this.itemStackHandler);
+            }
+
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthHybridPhysicsMultiblockItemOutputPortBlockEntity blockEntity) {
+                blockEntity.setHandler(this.itemStackHandler);
+            }
+            
+            
+            
             if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthImitationMagicEngineeringMultiblockItemStorageBlockEntity blockEntity) {
                 blockEntity.setHandler(this.itemStackHandler);
             }

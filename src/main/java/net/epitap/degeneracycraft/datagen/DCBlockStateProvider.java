@@ -204,6 +204,16 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthHybridPhysicsMultiblockEnergyStorageHolo();
         registerBasicStrengthHybridPhysicsMultiblockItemStorage();
         registerBasicStrengthHybridPhysicsMultiblockItemStorageHolo();
+        registerBasicStrengthHybridPhysicsMultiblockEnergyInputBus();
+        registerBasicStrengthHybridPhysicsMultiblockEnergyInputBusHolo();
+        registerBasicStrengthHybridPhysicsMultiblockEnergyOutputBus();
+        registerBasicStrengthHybridPhysicsMultiblockEnergyOutputBusHolo();
+        registerBasicStrengthHybridPhysicsMultiblockItemInputPort();
+        registerBasicStrengthHybridPhysicsMultiblockItemInputPortHolo();
+        registerBasicStrengthHybridPhysicsMultiblockItemOutputPort();
+        registerBasicStrengthHybridPhysicsMultiblockItemOutputPortHolo();
+
+
 
         registerBasicStrengthImitationMagicEngineeringMultiblockBaseFrame();
         registerBasicStrengthImitationMagicEngineeringMultiblockBaseFrameHolo();
@@ -2781,6 +2791,120 @@ public class DCBlockStateProvider extends BlockStateProvider {
         orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
+
+    private void registerBasicStrengthHybridPhysicsMultiblockEnergyInputBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_hybrid_physics_multiblock_energy_input_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_input_bus/basic_strength_hybrid_physics_multiblock_energy_input_bus_block"));
+        model.texture("up", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_input_bus/basic_strength_hybrid_physics_multiblock_energy_input_bus_block"));
+        model.texture("north", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_input_bus/basic_strength_hybrid_physics_multiblock_energy_input_bus_block"));
+        model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_input_bus/basic_strength_hybrid_physics_multiblock_energy_input_bus_block"));
+        model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_input_bus/basic_strength_hybrid_physics_multiblock_energy_input_bus_block"));
+        model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_input_bus/basic_strength_hybrid_physics_multiblock_energy_input_bus_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_input_bus/basic_strength_hybrid_physics_multiblock_energy_input_bus_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthHybridPhysicsMultiblockEnergyInputBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_hybrid_physics_multiblock_energy_input_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_input_bus/basic_strength_hybrid_physics_multiblock_energy_input_bus_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_input_bus/basic_strength_hybrid_physics_multiblock_energy_input_bus_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_input_bus/basic_strength_hybrid_physics_multiblock_energy_input_bus_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_input_bus/basic_strength_hybrid_physics_multiblock_energy_input_bus_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_input_bus/basic_strength_hybrid_physics_multiblock_energy_input_bus_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_input_bus/basic_strength_hybrid_physics_multiblock_energy_input_bus_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_input_bus/basic_strength_hybrid_physics_multiblock_energy_input_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthHybridPhysicsMultiblockEnergyOutputBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_hybrid_physics_multiblock_energy_output_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_output_bus/basic_strength_hybrid_physics_multiblock_energy_output_bus_block"));
+        model.texture("up", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_output_bus/basic_strength_hybrid_physics_multiblock_energy_output_bus_block"));
+        model.texture("north", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_output_bus/basic_strength_hybrid_physics_multiblock_energy_output_bus_block"));
+        model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_output_bus/basic_strength_hybrid_physics_multiblock_energy_output_bus_block"));
+        model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_output_bus/basic_strength_hybrid_physics_multiblock_energy_output_bus_block"));
+        model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_output_bus/basic_strength_hybrid_physics_multiblock_energy_output_bus_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_output_bus/basic_strength_hybrid_physics_multiblock_energy_output_bus_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthHybridPhysicsMultiblockEnergyOutputBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_hybrid_physics_multiblock_energy_output_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_output_bus/basic_strength_hybrid_physics_multiblock_energy_output_bus_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_output_bus/basic_strength_hybrid_physics_multiblock_energy_output_bus_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_output_bus/basic_strength_hybrid_physics_multiblock_energy_output_bus_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_output_bus/basic_strength_hybrid_physics_multiblock_energy_output_bus_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_output_bus/basic_strength_hybrid_physics_multiblock_energy_output_bus_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_output_bus/basic_strength_hybrid_physics_multiblock_energy_output_bus_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/bus/basic_strength_hybrid_physics_multiblock_energy_output_bus/basic_strength_hybrid_physics_multiblock_energy_output_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthHybridPhysicsMultiblockItemInputPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_hybrid_physics_multiblock_item_input_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_input_port/basic_strength_hybrid_physics_multiblock_item_input_port_block"));
+        model.texture("up", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_input_port/basic_strength_hybrid_physics_multiblock_item_input_port_block"));
+        model.texture("north", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_input_port/basic_strength_hybrid_physics_multiblock_item_input_port_block"));
+        model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_input_port/basic_strength_hybrid_physics_multiblock_item_input_port_block"));
+        model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_input_port/basic_strength_hybrid_physics_multiblock_item_input_port_block"));
+        model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_input_port/basic_strength_hybrid_physics_multiblock_item_input_port_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_input_port/basic_strength_hybrid_physics_multiblock_item_input_port_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthHybridPhysicsMultiblockItemInputPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_hybrid_physics_multiblock_item_input_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_input_port/basic_strength_hybrid_physics_multiblock_item_input_port_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_input_port/basic_strength_hybrid_physics_multiblock_item_input_port_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_input_port/basic_strength_hybrid_physics_multiblock_item_input_port_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_input_port/basic_strength_hybrid_physics_multiblock_item_input_port_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_input_port/basic_strength_hybrid_physics_multiblock_item_input_port_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_input_port/basic_strength_hybrid_physics_multiblock_item_input_port_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_input_port/basic_strength_hybrid_physics_multiblock_item_input_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthHybridPhysicsMultiblockItemOutputPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_hybrid_physics_multiblock_item_output_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_output_port/basic_strength_hybrid_physics_multiblock_item_output_port_block"));
+        model.texture("up", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_output_port/basic_strength_hybrid_physics_multiblock_item_output_port_block"));
+        model.texture("north", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_output_port/basic_strength_hybrid_physics_multiblock_item_output_port_block"));
+        model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_output_port/basic_strength_hybrid_physics_multiblock_item_output_port_block"));
+        model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_output_port/basic_strength_hybrid_physics_multiblock_item_output_port_block"));
+        model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_output_port/basic_strength_hybrid_physics_multiblock_item_output_port_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_output_port/basic_strength_hybrid_physics_multiblock_item_output_port_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthHybridPhysicsMultiblockItemOutputPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_hybrid_physics_multiblock_item_output_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_output_port/basic_strength_hybrid_physics_multiblock_item_output_port_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_output_port/basic_strength_hybrid_physics_multiblock_item_output_port_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_output_port/basic_strength_hybrid_physics_multiblock_item_output_port_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_output_port/basic_strength_hybrid_physics_multiblock_item_output_port_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_output_port/basic_strength_hybrid_physics_multiblock_item_output_port_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_output_port/basic_strength_hybrid_physics_multiblock_item_output_port_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/hybrid_physics/port/basic_strength_hybrid_physics_multiblock_item_output_port/basic_strength_hybrid_physics_multiblock_item_output_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_HYBRID_PHYSICS_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+    
+    
 
     private void registerBasicStrengthImitationMagicEngineeringMultiblockBaseFrame() {
         BlockModelBuilder model = models().getBuilder("block/basic_strength_imitation_magic_engineering_multiblock_base_frame_block");

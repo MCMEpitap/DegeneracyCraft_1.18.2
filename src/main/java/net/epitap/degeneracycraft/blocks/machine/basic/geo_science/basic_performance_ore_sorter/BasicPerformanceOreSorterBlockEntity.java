@@ -56,8 +56,8 @@ public class BasicPerformanceOreSorterBlockEntity extends BlockEntity implements
     public int minZ;
 
     public boolean forceHalt = false;
-    public static final int RECIPE_COUNT      = 3;
-    public static final int OUTPUT_COUNT      = 1;
+    public static final int RECIPE_COUNT      = 1;
+    public static final int OUTPUT_COUNT      = 3;
 
     private final ItemStack[] inputLockedRecipe = new ItemStack[RECIPE_COUNT];
     public boolean inputLocked = false;

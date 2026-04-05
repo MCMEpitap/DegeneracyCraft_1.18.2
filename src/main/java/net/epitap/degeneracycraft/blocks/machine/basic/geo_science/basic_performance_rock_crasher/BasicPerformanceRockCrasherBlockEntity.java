@@ -1,11 +1,8 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_rock_crasher;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_ore_sorter.BasicPerformanceOreSorterBlock;
-import net.epitap.degeneracycraft.blocks.machine.basic.geo_science.basic_performance_ore_sorter.BasicPerformanceOreSorterStructure;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_ore_sorter.BasicPerformanceOreSorterRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.geo_science.basic_performance_rock_crasher.BasicPerformanceRockCrasherRecipe;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
@@ -63,8 +60,8 @@ public class BasicPerformanceRockCrasherBlockEntity extends BlockEntity implemen
     public int minZ;
 
     public boolean forceHalt = false;
-    public static final int RECIPE_COUNT      = 3;
-    public static final int OUTPUT_COUNT      = 1;
+    public static final int RECIPE_COUNT      = 1;
+    public static final int OUTPUT_COUNT      = 3;
 
     private final ItemStack[] inputLockedRecipe = new ItemStack[RECIPE_COUNT];
     public boolean inputLocked = false;

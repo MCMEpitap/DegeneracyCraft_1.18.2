@@ -608,8 +608,8 @@ public class BasicPerformanceStarlightCollectorBlockEntity extends BlockEntity i
         Optional<BasicPerformanceStarlightCollectorRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceStarlightCollectorRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(IN_0).getCount() >= match.get().getInput0Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(IN_1).getCount() >= match.get().getInput1Item().getCount();
+        return (blockEntity.itemHandler.getStackInSlot(IN_0).getCount() >= match.get().getInput0Item().getCount())
+                && (blockEntity.itemHandler.getStackInSlot(IN_1).getCount() >= match.get().getInput1Item().getCount());
     }
 
     private static boolean hasAmountEnergyRecipe(BasicPerformanceStarlightCollectorBlockEntity blockEntity) {

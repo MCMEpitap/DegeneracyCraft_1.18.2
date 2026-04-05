@@ -653,9 +653,9 @@ public class BasicPerformanceRockCrasherBlockEntity extends BlockEntity implemen
         Optional<BasicPerformanceRockCrasherRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceRockCrasherRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(OUT_0).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(OUT_0).isEmpty()
-                && blockEntity.itemHandler.getStackInSlot(OUT_1).getItem() == match.get().getOutput1Item().getItem() || blockEntity.itemHandler.getStackInSlot(OUT_1).isEmpty()
-                && blockEntity.itemHandler.getStackInSlot(OUT_2).getItem() == match.get().getOutput2Item().getItem() || blockEntity.itemHandler.getStackInSlot(OUT_2).isEmpty();
+        return (blockEntity.itemHandler.getStackInSlot(OUT_0).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(OUT_0).isEmpty())
+                && (blockEntity.itemHandler.getStackInSlot(OUT_1).getItem() == match.get().getOutput1Item().getItem() || blockEntity.itemHandler.getStackInSlot(OUT_1).isEmpty())
+                && (blockEntity.itemHandler.getStackInSlot(OUT_2).getItem() == match.get().getOutput2Item().getItem() || blockEntity.itemHandler.getStackInSlot(OUT_2).isEmpty());
     }
 
     public void insertRecipeInputsFromPlayer(Player player, Recipe<?> recipe, boolean shift) {

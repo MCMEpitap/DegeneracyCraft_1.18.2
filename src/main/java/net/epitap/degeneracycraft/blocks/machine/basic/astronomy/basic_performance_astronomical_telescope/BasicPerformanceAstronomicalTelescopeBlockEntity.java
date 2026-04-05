@@ -617,8 +617,8 @@ public class BasicPerformanceAstronomicalTelescopeBlockEntity extends BlockEntit
         Optional<BasicPerformanceAstronomicalTelescopeRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceAstronomicalTelescopeRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(IN_0).getCount() >= match.get().getInput0Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(IN_1).getCount() >= match.get().getInput1Item().getCount();
+        return (blockEntity.itemHandler.getStackInSlot(IN_0).getCount() >= match.get().getInput0Item().getCount())
+                && (blockEntity.itemHandler.getStackInSlot(IN_1).getCount() >= match.get().getInput1Item().getCount());
     }
 
 

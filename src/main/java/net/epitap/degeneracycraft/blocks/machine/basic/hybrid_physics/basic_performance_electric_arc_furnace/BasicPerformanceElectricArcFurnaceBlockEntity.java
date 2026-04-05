@@ -35,10 +35,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity implements MenuProvider {
     public float MACHINE_CAPACITY = 50000F;
@@ -54,13 +51,32 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
     public int hologramLevel = -1;
     public int multiblockLevel = -1;
 
-    public boolean forceHalt = false;
+    public int minX;
+    public int maxY;
+    public int minZ;
 
+    public boolean forceHalt = false;
+    public static final int RECIPE_COUNT      = 2;
+    public static final int OUTPUT_COUNT      = 2;
+
+    private final ItemStack[] inputLockedRecipe = new ItemStack[RECIPE_COUNT];
+    public boolean inputLocked = false;
     public static final int DATA_COUNTER      = 0;
     public static final int DATA_PROGRESS     = 1;
     public static final int DATA_HOLOGRAM     = 2;
     public static final int DATA_FORCE_STOP   = 3;
     public static final int DATA_MULTIBLOCK   = 4;
+    public static final int DATA_RECIPE_LOCK   = 5;
+
+    public static final int IN_0   = 0;
+    public static final int IN_1   = 1;
+    public static final int OUT_0   = 2;
+    public static final int OUT_1   = 3;
+
+    private final List<DCIEnergyStorageFloat> energyInputs = new ArrayList<>();
+    private final List<DCIEnergyStorageFloat> energyOutputs = new ArrayList<>();
+    private final List<IItemHandler> itemInputs = new ArrayList<>();
+    private final List<IItemHandler> itemOutputs = new ArrayList<>();
 
     public final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
@@ -98,11 +114,11 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
     private LazyOptional<DCIEnergyStorageFloat> lazyEnergyHandler = LazyOptional.empty();
     private final Map<Direction, LazyOptional<WrappedHandler>> directionWrappedHandlerMap =
             Map.of(
-                    Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == 0, (in, stack) -> itemHandler.isItemValid(0, stack))),
-                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (outputSlot) -> outputSlot == 2 || outputSlot == 3, (outputSlot, stack) -> false)),
-                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (inputSlot) -> inputSlot == 0, (inputSlot, stack) ->
-                            itemHandler.isItemValid(0, stack))));
+                    Direction.NORTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == IN_0, (in, stack) -> itemHandler.isItemValid(IN_0, stack))),
+                    Direction.SOUTH, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == IN_0, (in, stack) -> itemHandler.isItemValid(IN_0, stack))),
+                    Direction.EAST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (out) -> out == OUT_0, (out, stack) -> false)),
+                    Direction.WEST, LazyOptional.of(() -> new WrappedHandler(itemHandler, (in) -> in == IN_0, (in, stack) -> itemHandler.isItemValid(IN_0, stack)))
+            );
 
     public BasicPerformanceElectricArcFurnaceBlockEntity(BlockPos pWorldPosition, BlockState pBlockState) {
         super(DCBlockEntities.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BLOCK_ENTITY.get(), pWorldPosition, pBlockState);
@@ -115,6 +131,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
                     case DATA_HOLOGRAM   -> hologramLevel;
                     case DATA_FORCE_STOP -> forceHalt ? 1 : 0;
                     case DATA_MULTIBLOCK   -> multiblockLevel;
+                    case DATA_RECIPE_LOCK   -> inputLocked ? 1 : 0;
                     default -> 0;
                 };
             }
@@ -127,12 +144,13 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
                     case DATA_HOLOGRAM -> hologramLevel = value;
                     case DATA_FORCE_STOP -> forceHalt = value != 0;
                     case DATA_MULTIBLOCK -> multiblockLevel = value;
+                    case DATA_RECIPE_LOCK -> inputLocked = value != 0;
                 }
             }
 
             @Override
             public int getCount() {
-                return 5;
+                return 6;
             }
         };
     }
@@ -195,6 +213,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
 
     @Override
     protected void saveAdditional(CompoundTag nbt) {
+        super.saveAdditional(nbt);
         nbt.put("inventory", itemHandler.serializeNBT());
         nbt.putFloat("energy", ENERGY_STORAGE.getEnergyStoredFloat());
         nbt.putInt("counter", counter);
@@ -202,11 +221,17 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         nbt.putInt("hologramLevel", hologramLevel);
         nbt.putBoolean("forceHalt", forceHalt);
         nbt.putInt("multiblockLevel", multiblockLevel);
-        super.saveAdditional(nbt);
+        nbt.putBoolean("inputLocked", inputLocked);
+        for (int i = 0; i < inputLockedRecipe.length; i++) {
+            CompoundTag itemTag = new CompoundTag();
+            inputLockedRecipe[i].save(itemTag);
+            nbt.put("inputLockedRecipe" + i, itemTag);
+        }
     }
 
     @Override
     public void load(CompoundTag nbt) {
+        super.load(nbt);
         itemHandler.deserializeNBT(nbt.getCompound("inventory"));
         ENERGY_STORAGE.setEnergyFloat(nbt.getFloat("energy"));
         counter = nbt.getInt("counter");
@@ -214,9 +239,20 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         hologramLevel = nbt.getInt("hologramLevel");
         forceHalt = nbt.getBoolean("forceHalt");
         multiblockLevel = nbt.getInt("multiblockLevel");
-        super.load(nbt);
-    }
+        inputLocked = nbt.getBoolean("inputLocked");
+        for (int i = 0; i < inputLockedRecipe.length; i++) {
+            if (nbt.contains("inputLockedRecipe" + i)) {
+                inputLockedRecipe[i] = ItemStack.of(nbt.getCompound("inputLockedRecipe" + i));
+            } else {
+                inputLockedRecipe[i] = ItemStack.EMPTY;
+            }
 
+            if (inputLockedRecipe[i] == null) {
+                inputLockedRecipe[i] = ItemStack.EMPTY;
+            }
+        }
+    }
+    
     public void drops() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
         for (int i = 0; i < itemHandler.getSlots(); i++) {
@@ -237,14 +273,26 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         BasicPerformanceElectricArcFurnaceStructure.hologram(level, pos, state, blockEntity);
 
         blockEntity.getProgressPercent = 0;
+        
+        blockEntity.scanMultiblockStorages(level);
+
+        blockEntity.pullEnergyFromInputs();
+        blockEntity.pullItemsFromInputs();
+
+        if (!blockEntity.forceHalt) {
+            blockEntity.pushEnergyToOutputs();
+            blockEntity.pushItemsToOutputs();
+        }
 
         blockEntity.ENERGY_STORAGE.receiveEnergyFloat(1e-20F, false);
         blockEntity.ENERGY_STORAGE.extractEnergyFloat(1e-20F, false);
+
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
+
         if (level.isClientSide()) {
+            setChanged(level, pos, state);
             return;
         }
-
         for (int i = 0; i < blockEntity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, blockEntity.itemHandler.getStackInSlot(i));
         }
@@ -252,7 +300,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
                 .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         if (blockEntity.forceHalt) {
-            blockEntity.counter = 0;
+            blockEntity.resetProgress();
             setChanged(level, pos, state);
             return;
         }
@@ -282,6 +330,209 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
             setChanged(level, pos, state);
         }
         setChanged(level, pos, state);
+    }
+
+    private void scanMultiblockStorages(Level level) {
+        if (level.isClientSide) return;
+        if (multiblockLevel < 0) return;
+
+        Direction facing = getBlockState().getValue(BasicPerformanceElectricArcFurnaceBlock.FACING);
+        BlockPos basePos = this.getBlockPos();
+        energyInputs.clear();
+        energyOutputs.clear();
+        itemInputs.clear();
+        itemOutputs.clear();
+
+
+        String[][][] structure = switch (multiblockLevel) {
+            case 0 -> BasicPerformanceElectricArcFurnaceStructure.structure0;
+            case 1 -> BasicPerformanceElectricArcFurnaceStructure.structure1;
+            default -> new String[0][][];
+        };
+
+        this.minX = switch (multiblockLevel){
+            case 0 -> BasicPerformanceElectricArcFurnaceStructure.minX0;
+            case 1 -> BasicPerformanceElectricArcFurnaceStructure.minX1;
+            default -> 0;
+        };
+
+        this.maxY = switch (multiblockLevel){
+            case 0 -> BasicPerformanceElectricArcFurnaceStructure.maxY0;
+            case 1 -> BasicPerformanceElectricArcFurnaceStructure.maxY1;
+            default -> 0;
+        };
+
+        this.minZ = switch (multiblockLevel){
+            case 0 -> BasicPerformanceElectricArcFurnaceStructure.maxZ0;
+            case 1 -> BasicPerformanceElectricArcFurnaceStructure.maxZ1;
+            default -> 0;
+        };
+
+        for (int y = 0; y < structure.length; y++) {
+            for (int z = 0; z < structure[y].length; z++) {
+                for (int x = 0; x < structure[y][z].length; x++) {
+                    String key = structure[y][z][x];
+
+                    BlockPos targetPos = BasicPerformanceElectricArcFurnaceStructure.getRelativePos(basePos,
+                            x + this.minX,
+                            this.maxY - y,
+                            z + this.minZ, facing);
+
+                    BlockEntity be = level.getBlockEntity(targetPos);
+                    if (be == null || be == this) continue;
+
+                    if (!key.equals("1") && !key.equals("2") && !key.equals("3") && !key.equals("4")) continue;
+
+                    switch (key) {
+                        case "1":
+                            be.getCapability(CapabilityEnergy.ENERGY)
+                                    .ifPresent(storage ->
+                                            energyInputs.add((DCIEnergyStorageFloat) storage));
+                            break;
+
+                        case "2":
+                            be.getCapability(CapabilityEnergy.ENERGY)
+                                    .ifPresent(storage ->
+                                            energyOutputs.add((DCIEnergyStorageFloat) storage));
+                            break;
+
+                        case "3":
+                            be.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+                                    .ifPresent(itemInputs::add);
+                            break;
+
+                        case "4":
+                            be.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+                                    .ifPresent(itemOutputs::add);
+                            break;
+                    }
+                }
+            }
+        }
+    }
+
+    private void pullEnergyFromInputs() {
+        float needed = MACHINE_CAPACITY - ENERGY_STORAGE.getEnergyStoredFloat();
+        if (needed <= 0) return;
+
+        for (DCIEnergyStorageFloat input : energyInputs) {
+
+            if (needed <= 0) break;
+
+            float extracted = input.extractEnergyFloat(needed, false);
+            if (extracted > 0) {
+                ENERGY_STORAGE.receiveEnergyFloat(extracted, false);
+                needed -= extracted;
+            }
+        }
+    }
+
+    private void pushEnergyToOutputs() {
+        float stored = ENERGY_STORAGE.getEnergyStoredFloat();
+        float reserve = this.MACHINE_CAPACITY - this.MACHINE_TRANSFER;
+
+        float transferable = stored - reserve;
+        if (transferable <= 0) return;
+
+        for (DCIEnergyStorageFloat output : energyOutputs) {
+
+            if (transferable <= 0) break;
+
+            float accepted = output.receiveEnergyFloat(transferable, false);
+
+            if (accepted > 0) {
+                ENERGY_STORAGE.extractEnergyFloat(accepted, false);
+                transferable -= accepted;
+            }
+        }
+    }
+
+    public void toggleInputLock() {
+        inputLocked = !inputLocked;
+        if (inputLocked) {
+            for (int i = 0; i < itemHandler.getSlots(); i++) {
+                ItemStack stack = itemHandler.getStackInSlot(i);
+                if (!stack.isEmpty()) {
+                    inputLockedRecipe[i] = stack.copy();
+                } else {
+                    inputLockedRecipe[i] = ItemStack.EMPTY;
+                }
+            }
+        } else {
+            Arrays.fill(inputLockedRecipe, ItemStack.EMPTY);
+        }
+
+        setChanged();
+    }
+
+    private void pullItemsFromInputs() {
+        for (IItemHandler input : itemInputs) {
+            for (int inputSlot = 0; inputSlot < input.getSlots(); inputSlot++) {
+                ItemStack stack = input.getStackInSlot(inputSlot);
+                if (stack.isEmpty()) continue;
+
+                for (int machineSlot = IN_0; machineSlot <= RECIPE_COUNT - 1; machineSlot++) {
+                    if (inputLocked) {
+
+                        ItemStack lock = inputLockedRecipe[machineSlot];
+
+                        if (lock.isEmpty()) continue;
+
+                        if (!ItemStack.isSameItemSameTags(stack, lock)) continue;
+
+                        if(lock == null) lock = ItemStack.EMPTY;
+
+                        int current = itemHandler.getStackInSlot(machineSlot).getCount();
+                        int limit = lock.getCount();
+
+                        if (current >= limit) continue;
+                    }
+
+                    ItemStack simulated = itemHandler.insertItem(machineSlot, stack.copy(), true);
+                    int insertable = stack.getCount() - simulated.getCount();
+
+                    if (insertable > 0) {
+                        if (inputLocked) {
+
+                            int current = itemHandler.getStackInSlot(machineSlot).getCount();
+                            int limit = inputLockedRecipe[machineSlot].getCount();
+                            int remain = limit - current;
+
+                            insertable = Math.min(insertable, remain);
+                        }
+
+                        ItemStack extracted = input.extractItem(inputSlot, insertable, false);
+                        itemHandler.insertItem(machineSlot, extracted, false);
+
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
+    private void pushItemsToOutputs() {
+        for (int machineSlot = OUT_0; machineSlot <= OUT_0 + OUTPUT_COUNT - 1; machineSlot++) {
+            ItemStack stack = itemHandler.getStackInSlot(machineSlot);
+            if (stack.isEmpty()) continue;
+
+            for (IItemHandler output : itemOutputs) {
+
+                for (int outputSlot = 0; outputSlot < output.getSlots(); outputSlot++) {
+
+                    ItemStack leftover = output.insertItem(outputSlot, stack.copy(), false);
+
+                    if (leftover.isEmpty()) {
+                        itemHandler.setStackInSlot(machineSlot, ItemStack.EMPTY);
+                        return;
+                    }
+                    else if (leftover.getCount() < stack.getCount()) {
+                        itemHandler.setStackInSlot(machineSlot, leftover);
+                        return;
+                    }
+                }
+            }
+        }
     }
 
     public static boolean craftCheck(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
@@ -323,8 +574,8 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount();
+        return (blockEntity.itemHandler.getStackInSlot(IN_0).getCount() >= match.get().getInput0Item().getCount())
+                && (blockEntity.itemHandler.getStackInSlot(IN_1).getCount() >= match.get().getInput1Item().getCount());
     }
 
     private static boolean hasEnergyRecipe(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
@@ -352,8 +603,12 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
                 .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
-            blockEntity.itemHandler.setStackInSlot(2, new ItemStack(match.get().getOutput0Item().getItem(),
-                    blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount()));
+            blockEntity.itemHandler.extractItem(IN_0, match.get().getInput0Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(IN_1, match.get().getInput1Item().getCount(), false);
+            blockEntity.itemHandler.setStackInSlot(OUT_0, new ItemStack(match.get().getOutput0Item().getItem(),
+                    blockEntity.itemHandler.getStackInSlot(OUT_0).getCount() + match.get().getOutput0Item().getCount()));
+            blockEntity.itemHandler.setStackInSlot(OUT_1, new ItemStack(match.get().getOutput1Item().getItem(),
+                    blockEntity.itemHandler.getStackInSlot(OUT_1).getCount() + match.get().getOutput1Item().getCount()));
             blockEntity.resetProgress();
         }
     }
@@ -372,8 +627,8 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(2).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(2).getMaxStackSize();
-    }
+        return blockEntity.itemHandler.getStackInSlot(OUT_0).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(OUT_0).getMaxStackSize()
+                && blockEntity.itemHandler.getStackInSlot(OUT_1).getCount() + match.get().getOutput1Item().getCount() <= blockEntity.itemHandler.getStackInSlot(OUT_1).getMaxStackSize();    }
 
     private static boolean canInsertItemIntoOutputSlot(BasicPerformanceElectricArcFurnaceBlockEntity blockEntity) {
         Level level = blockEntity.level;
@@ -385,7 +640,8 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         Optional<BasicPerformanceElectricArcFurnaceRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicPerformanceElectricArcFurnaceRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(2).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(2).isEmpty();
+        return (blockEntity.itemHandler.getStackInSlot(OUT_0).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(OUT_0).isEmpty())
+                && (blockEntity.itemHandler.getStackInSlot(OUT_1).getItem() == match.get().getOutput1Item().getItem() || blockEntity.itemHandler.getStackInSlot(OUT_1).isEmpty());
     }
 
     public void insertRecipeInputsFromPlayer(Player player, Recipe<?> recipe, boolean shift) {

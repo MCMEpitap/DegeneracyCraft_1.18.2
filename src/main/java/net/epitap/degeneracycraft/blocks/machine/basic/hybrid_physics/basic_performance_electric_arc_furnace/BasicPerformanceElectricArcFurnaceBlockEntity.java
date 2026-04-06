@@ -87,7 +87,7 @@ public class BasicPerformanceElectricArcFurnaceBlockEntity extends BlockEntity i
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 2,3 -> false;
+                case OUT_0,OUT_1 -> false;
                 default -> super.isItemValid(slot, stack);
             };
         }

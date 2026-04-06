@@ -27,7 +27,7 @@ public class BasicPerformanceFormingMachineMenu extends AbstractContainerMenu {
     public final ContainerData data;
 
     public BasicPerformanceFormingMachineMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(5));
+        this(id, inv, inv.player.level.getBlockEntity(extraData.readBlockPos()), new SimpleContainerData(6));
     }
 
     public BasicPerformanceFormingMachineMenu(int id, Inventory inv, BlockEntity entity, ContainerData data) {
@@ -64,6 +64,10 @@ public class BasicPerformanceFormingMachineMenu extends AbstractContainerMenu {
 
     public int getMultiblockLevel() {
         return data.get(4);
+    }
+
+    public boolean isInputLocked() {
+        return data.get(5) != 0;
     }
 
     public DCIEnergyStorageFloat getEnergy() {

@@ -29,7 +29,8 @@ public class BasicPerformanceMaterialSeparatorScreen extends AbstractContainerSc
     private static final int HOLOGRAM_Y = 59;
     private static final int HALT_X = 98;
     private static final int HALT_Y = 62;
-
+    private static final int LOCK_X = 8;
+    private static final int LOCK_Y = 62;
     private static final int BUTTON_SIZE = 16;
 
     public BasicPerformanceMaterialSeparatorScreen(BasicPerformanceMaterialSeparatorMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
@@ -56,8 +57,6 @@ public class BasicPerformanceMaterialSeparatorScreen extends AbstractContainerSc
         int y = (height - imageHeight) / 2;
 
         renderEnergyAreaTooltips(pPoseStack, pMouseX, pMouseY, x, y);
-        drawString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".phase1"),
-                15, 67, 0xFFFFFF);
 
         if (menu.isWorking()) {
             drawString(pPoseStack, Minecraft.getInstance().font, "Work!",
@@ -85,10 +84,15 @@ public class BasicPerformanceMaterialSeparatorScreen extends AbstractContainerSc
                     80, 47, 0xFF0000);
         }
 
+        if (menu.isInputLocked()) {
+            drawCenteredString(pPoseStack, Minecraft.getInstance().font, new TranslatableComponent("screen." + "degeneracycraft" + ".lock"),
+                    43, 66, 0xFFFFFF);
+        }
+
         renderPowerModifierTooltips(pPoseStack, pMouseX, pMouseY, x, y);
         renderMultiblockInfoTooltips(pPoseStack, pMouseX, pMouseY, x, y);
-        renderChance1Tooltips(pPoseStack, pMouseX, pMouseY, x, y);
-        renderChance2Tooltips(pPoseStack, pMouseX, pMouseY, x, y);
+        renderHaltTooltips(pPoseStack, pMouseX, pMouseY, x, y);
+        renderLockTooltips(pPoseStack, pMouseX, pMouseY, x, y);
     }
 
     private void renderMultiblockInfoTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
@@ -130,26 +134,27 @@ public class BasicPerformanceMaterialSeparatorScreen extends AbstractContainerSc
                 new TranslatableComponent("screen." + "degeneracycraft_machine" + ".energy_usage_modifier_1"));
     }
 
-    private void renderChance1Tooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
-        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 116, 7, 18, 18))
-            renderTooltip(pPoseStack, this.Chance1Tooltips(),
+    private void renderHaltTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
+        if (menu.isForceHalt()
+                && isMouseAboveArea(pMouseX, pMouseY, x, y, 117, 64, 30, 12))
+            renderTooltip(pPoseStack, this.haltTooltips(),
                     Optional.empty(), pMouseX - x, pMouseY - y);
     }
 
-    public List<Component> Chance1Tooltips() {
-        return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".material" + ".chance" + "50"));
+    public List<Component> haltTooltips() {
+        return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".halt"));
     }
 
-    private void renderChance2Tooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
-        if (isMouseAboveArea(pMouseX, pMouseY, x, y, 134, 7, 18, 18))
-            renderTooltip(pPoseStack, this.Chance2Tooltips(),
+    private void renderLockTooltips(PoseStack pPoseStack, int pMouseX, int pMouseY, int x, int y) {
+        if (menu.isInputLocked()
+                && isMouseAboveArea(pMouseX, pMouseY, x, y, 27, 64, 30, 12))
+            renderTooltip(pPoseStack, this.lockTooltips(),
                     Optional.empty(), pMouseX - x, pMouseY - y);
     }
 
-    public List<Component> Chance2Tooltips() {
-        return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".material" + ".chance" + "25"));
+    public List<Component> lockTooltips() {
+        return List.of(new TranslatableComponent("tooltip." + "degeneracycraft" + ".lock"));
     }
-
 
     @Override
     protected void renderBg(PoseStack pPoseStack, float pPartialTick, int pMouseX, int pMouseY) {
@@ -162,8 +167,6 @@ public class BasicPerformanceMaterialSeparatorScreen extends AbstractContainerSc
         energyInfoArea.draw(pPoseStack);
         renderButtons(pPoseStack, x, y);
     }
-
-
 
 
     private void renderButtons(PoseStack pPoseStack, int guiX, int guiY) {
@@ -189,6 +192,15 @@ public class BasicPerformanceMaterialSeparatorScreen extends AbstractContainerSc
                 BUTTON_SIZE, BUTTON_SIZE,
                 BUTTON_SIZE, BUTTON_SIZE
         );
+
+        RenderSystem.setShaderTexture(
+                0,
+                menu.isInputLocked() ? LOCK_ON : LOCK_OFF
+        );
+        blit(pPoseStack, guiX + LOCK_X, guiY + LOCK_Y, 0, 0,
+                BUTTON_SIZE, BUTTON_SIZE,
+                BUTTON_SIZE, BUTTON_SIZE
+        );
     }
 
     @Override
@@ -211,6 +223,12 @@ public class BasicPerformanceMaterialSeparatorScreen extends AbstractContainerSc
             );
             return true;
         }
+        if (isMouseOver(mouseX, mouseY, x + LOCK_X, y + LOCK_Y)) {
+            DCMessages.sendToServer(
+                    new DCMachineToggleC2SPacket(menu.getBlockEntity().getBlockPos(), 2)
+            );
+            return true;
+        }
 
         return super.mouseClicked(mouseX, mouseY, button);
     }
@@ -226,7 +244,6 @@ public class BasicPerformanceMaterialSeparatorScreen extends AbstractContainerSc
                     Optional.empty(), pMouseX - x, pMouseY - y);
         }
     }
-
 
     private boolean isMouseAboveArea(int pMouseX, int pMouseY, int x, int y, int offsetX, int offsetY, int width, int height) {
         return MouseUtil.isMouseOver(pMouseX, pMouseY, x + offsetX, y + offsetY, width, height);

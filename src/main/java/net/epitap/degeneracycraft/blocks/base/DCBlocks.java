@@ -88,8 +88,12 @@ import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineeri
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.item_storage.basic_strength_imitation_magic_engineering_multiblock_item_storage.BasicStrengthImitationMagicEngineeringMultiblockItemStorageBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.port.basic_strength_imitation_magic_engineering_multiblock_item_input_port.BasicStrengthImitationMagicEngineeringMultiblockItemInputPortBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.imitation_magic_engineering.port.basic_strength_imitation_magic_engineering_multiblock_item_output_port.BasicStrengthImitationMagicEngineeringMultiblockItemOutputPortBlock;
+import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.bus.basic_strength_jenith_void_science_multiblock_energy_input_bus.BasicStrengthJenithVoidScienceMultiblockEnergyInputBusBlock;
+import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.bus.basic_strength_jenith_void_science_multiblock_energy_output_bus.BasicStrengthJenithVoidScienceMultiblockEnergyOutputBusBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.energy_storage.basic_strength_jenith_void_science_multiblock_energy_storage.BasicStrengthJenithVoidScienceMultiblockEnergyStorageBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.item_storage.basic_strength_jenith_void_science_multiblock_item_storage.BasicStrengthJenithVoidScienceMultiblockItemStorageBlock;
+import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.port.basic_strength_jenith_void_science_multiblock_item_input_port.BasicStrengthJenithVoidScienceMultiblockItemInputPortBlock;
+import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.port.basic_strength_jenith_void_science_multiblock_item_output_port.BasicStrengthJenithVoidScienceMultiblockItemOutputPortBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.energy_storage.basic_strength_kaleidoscopic_reality_science_multiblock_energy_storage.BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyStorageBlock;
 import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.item_storage.basic_strength_kaleidoscopic_reality_science_multiblock_item_storage.BasicStrengthKaleidoscopicRealityScienceMultiblockItemStorageBlock;
 import net.epitap.degeneracycraft.item.DCCreativeTab;
@@ -627,6 +631,22 @@ public class DCBlocks {
     public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ITEM_STORAGE_BLOCK = registerBlock("basic_strength_jenith_void_science_multiblock_item_storage_block", () ->
             new BasicStrengthJenithVoidScienceMultiblockItemStorageBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK = registerHoloBlock("basic_strength_jenith_void_science_multiblock_item_storage_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK = registerBlock("basic_strength_jenith_void_science_multiblock_energy_input_bus_block", () ->
+            new BasicStrengthJenithVoidScienceMultiblockEnergyInputBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK = registerHoloBlock("basic_strength_jenith_void_science_multiblock_energy_input_bus_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK = registerBlock("basic_strength_jenith_void_science_multiblock_energy_output_bus_block", () ->
+            new BasicStrengthJenithVoidScienceMultiblockEnergyOutputBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK = registerHoloBlock("basic_strength_jenith_void_science_multiblock_energy_output_bus_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK = registerBlock("basic_strength_jenith_void_science_multiblock_item_input_port_block", () ->
+            new BasicStrengthJenithVoidScienceMultiblockItemInputPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK = registerHoloBlock("basic_strength_jenith_void_science_multiblock_item_input_port_holo_block", () ->
+            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK = registerBlock("basic_strength_jenith_void_science_multiblock_item_output_port_block", () ->
+            new BasicStrengthJenithVoidScienceMultiblockItemOutputPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
+    public static final RegistryObject<Block> BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK = registerHoloBlock("basic_strength_jenith_void_science_multiblock_item_output_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
 

@@ -227,8 +227,16 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthImitationMagicEngineeringMultiblockEnergyStorageHolo();
         registerBasicStrengthImitationMagicEngineeringMultiblockItemStorage();
         registerBasicStrengthImitationMagicEngineeringMultiblockItemStorageHolo();
+        registerBasicStrengthImitationMagicEngineeringMultiblockEnergyInputBus();
+        registerBasicStrengthImitationMagicEngineeringMultiblockEnergyInputBusHolo();
+        registerBasicStrengthImitationMagicEngineeringMultiblockEnergyOutputBus();
+        registerBasicStrengthImitationMagicEngineeringMultiblockEnergyOutputBusHolo();
+        registerBasicStrengthImitationMagicEngineeringMultiblockItemInputPort();
+        registerBasicStrengthImitationMagicEngineeringMultiblockItemInputPortHolo();
+        registerBasicStrengthImitationMagicEngineeringMultiblockItemOutputPort();
+        registerBasicStrengthImitationMagicEngineeringMultiblockItemOutputPortHolo();
 
-        
+
         
         registerBasicStrengthJenithVoidScienceMultiblockBaseFrame();
         registerBasicStrengthJenithVoidScienceMultiblockBaseFrameHolo();
@@ -3073,6 +3081,119 @@ public class DCBlockStateProvider extends BlockStateProvider {
         orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(),
                 state -> model);
     }
+
+    private void registerBasicStrengthImitationMagicEngineeringMultiblockEnergyInputBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus_block"));
+        model.texture("up", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus_block"));
+        model.texture("north", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus_block"));
+        model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus_block"));
+        model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus_block"));
+        model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthImitationMagicEngineeringMultiblockEnergyInputBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus/basic_strength_imitation_magic_engineering_multiblock_energy_input_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthImitationMagicEngineeringMultiblockEnergyOutputBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus_block"));
+        model.texture("up", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus_block"));
+        model.texture("north", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus_block"));
+        model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus_block"));
+        model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus_block"));
+        model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthImitationMagicEngineeringMultiblockEnergyOutputBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus/basic_strength_imitation_magic_engineering_multiblock_energy_output_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthImitationMagicEngineeringMultiblockItemInputPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_imitation_magic_engineering_multiblock_item_input_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_input_port/basic_strength_imitation_magic_engineering_multiblock_item_input_port_block"));
+        model.texture("up", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_input_port/basic_strength_imitation_magic_engineering_multiblock_item_input_port_block"));
+        model.texture("north", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_input_port/basic_strength_imitation_magic_engineering_multiblock_item_input_port_block"));
+        model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_input_port/basic_strength_imitation_magic_engineering_multiblock_item_input_port_block"));
+        model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_input_port/basic_strength_imitation_magic_engineering_multiblock_item_input_port_block"));
+        model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_input_port/basic_strength_imitation_magic_engineering_multiblock_item_input_port_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_input_port/basic_strength_imitation_magic_engineering_multiblock_item_input_port_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthImitationMagicEngineeringMultiblockItemInputPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_imitation_magic_engineering_multiblock_item_input_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_input_port/basic_strength_imitation_magic_engineering_multiblock_item_input_port_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_input_port/basic_strength_imitation_magic_engineering_multiblock_item_input_port_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_input_port/basic_strength_imitation_magic_engineering_multiblock_item_input_port_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_input_port/basic_strength_imitation_magic_engineering_multiblock_item_input_port_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_input_port/basic_strength_imitation_magic_engineering_multiblock_item_input_port_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_input_port/basic_strength_imitation_magic_engineering_multiblock_item_input_port_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_input_port/basic_strength_imitation_magic_engineering_multiblock_item_input_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthImitationMagicEngineeringMultiblockItemOutputPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_imitation_magic_engineering_multiblock_item_output_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_output_port/basic_strength_imitation_magic_engineering_multiblock_item_output_port_block"));
+        model.texture("up", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_output_port/basic_strength_imitation_magic_engineering_multiblock_item_output_port_block"));
+        model.texture("north", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_output_port/basic_strength_imitation_magic_engineering_multiblock_item_output_port_block"));
+        model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_output_port/basic_strength_imitation_magic_engineering_multiblock_item_output_port_block"));
+        model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_output_port/basic_strength_imitation_magic_engineering_multiblock_item_output_port_block"));
+        model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_output_port/basic_strength_imitation_magic_engineering_multiblock_item_output_port_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_output_port/basic_strength_imitation_magic_engineering_multiblock_item_output_port_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthImitationMagicEngineeringMultiblockItemOutputPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_imitation_magic_engineering_multiblock_item_output_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_output_port/basic_strength_imitation_magic_engineering_multiblock_item_output_port_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_output_port/basic_strength_imitation_magic_engineering_multiblock_item_output_port_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_output_port/basic_strength_imitation_magic_engineering_multiblock_item_output_port_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_output_port/basic_strength_imitation_magic_engineering_multiblock_item_output_port_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_output_port/basic_strength_imitation_magic_engineering_multiblock_item_output_port_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_output_port/basic_strength_imitation_magic_engineering_multiblock_item_output_port_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/imitation_magic_engineering/port/basic_strength_imitation_magic_engineering_multiblock_item_output_port/basic_strength_imitation_magic_engineering_multiblock_item_output_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_IMITATION_MAGIC_ENGINEERING_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+    
 
 
     private void registerBasicStrengthJenithVoidScienceMultiblockBaseFrame() {

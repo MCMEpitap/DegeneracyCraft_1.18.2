@@ -40,21 +40,21 @@ public class BasicTechnologyVoidWorldCoordinateRecordingMachineStructure {
                     {"G", " ", " ", " ", "G"},
                     {"F", " ", " ", " ", "F"},
                     {"G", " ", " ", " ", "G"},
-                    {"F", "E", "B", "E", "F"}
+                    {"F", "1", "F", "1", "F"}
             },
             {
                     {"F", "G", "F", "G", "F"},
                     {"G", " ", " ", " ", "G"},
                     {"F", " ", " ", " ", "F"},
                     {"G", " ", " ", " ", "G"},
-                    {"F", "P", " ", "P", "F"}
+                    {"F", "F", " ", "F", "F"}
             },
             {
                     {"F", "F", "F", "F", "F"},
                     {"F", "F", "F", "F", "F"},
                     {"F", "F", "F", "F", "F"},
                     {"F", "F", "F", "F", "F"},
-                    {"F", "S", "F", "S", "F"}
+                    {"F", "3", "F", "4", "F"}
             }
     };
     public static String[][][] structure1 = new String[][][]{
@@ -77,21 +77,21 @@ public class BasicTechnologyVoidWorldCoordinateRecordingMachineStructure {
                     {"G", "V", "V", "V", "G"},
                     {"F", "V", " ", "V", "F"},
                     {"G", "V", "V", "V", "G"},
-                    {"F", "E", "B", "E", "F"}
+                    {"F", "1", "F", "2", "F"}
             },
             {
                     {"F", "G", "F", "G", "F"},
                     {"G", "V", "V", "V", "G"},
                     {"F", "V", "V", "V", "F"},
                     {"G", "V", "V", "V", "G"},
-                    {"F", "P", " ", "P", "F"}
+                    {"F", "F", " ", "F", "F"}
             },
             {
                     {"F", "F", "F", "F", "F"},
                     {"F", "F", "F", "F", "F"},
                     {"F", "F", "F", "F", "F"},
                     {"F", "F", "F", "F", "F"},
-                    {"F", "S", "F", "S", "F"}
+                    {"F", "3", "F", "4", "F"}
             }
     };
 
@@ -150,11 +150,11 @@ public class BasicTechnologyVoidWorldCoordinateRecordingMachineStructure {
         Map<String, Predicate<BlockState>> blockConditions = new HashMap<>();
         blockConditions.put("F", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_BLOCK.get()));
         blockConditions.put("G", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_BLOCK.get()));
-        blockConditions.put("P", blockState -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_BLOCK.get()));
-        blockConditions.put("S", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ITEM_STORAGE_BLOCK.get()));
-        blockConditions.put("B", blockState -> blockState.is(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_BLOCK.get()));
-        blockConditions.put("E", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_BLOCK.get()));
         blockConditions.put("V", blockState -> blockState.is(DCBlocks.BASIC_EFFICIENCY_VOID_INTERFERENCE_FLAME_BLOCK.get()));
+        blockConditions.put("1", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get()));
+        blockConditions.put("2", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get()));
+        blockConditions.put("3", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get()));
+        blockConditions.put("4", blockState -> blockState.is(DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get()));
         return blockConditions;
     }
 
@@ -198,11 +198,11 @@ public class BasicTechnologyVoidWorldCoordinateRecordingMachineStructure {
         Map<String, Supplier<BlockState>> blockSuppliers = new HashMap<>();
         blockSuppliers.put("F", () -> DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_STRUCTURE_FRAME_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("G", () -> DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_STRUCTURE_GLASS_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("P", () -> DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("S", () -> DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("B", () -> DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_HOLO_BLOCK.get().defaultBlockState());
-        blockSuppliers.put("E", () -> DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_STORAGE_HOLO_BLOCK.get().defaultBlockState());
         blockSuppliers.put("V", () -> DCBlocks.BASIC_EFFICIENCY_VOID_INTERFERENCE_FLAME_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("1", () -> DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("2", () -> DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("3", () -> DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get().defaultBlockState());
+        blockSuppliers.put("4", () -> DCBlocks.BASIC_STRENGTH_JENITH_VOID_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get().defaultBlockState());
         return blockSuppliers;
     }
 
@@ -259,7 +259,7 @@ public class BasicTechnologyVoidWorldCoordinateRecordingMachineStructure {
         return false;
     }
 
-    private static BlockPos getRelativePos(BlockPos basePos, int x, int y, int z, Direction facing) {
+    public static BlockPos getRelativePos(BlockPos basePos, int x, int y, int z, Direction facing) {
         return switch (facing) {
             case NORTH -> basePos.relative(Direction.WEST, x).relative(Direction.UP, y).relative(Direction.NORTH, z);
             case SOUTH -> basePos.relative(Direction.EAST, x).relative(Direction.UP, y).relative(Direction.SOUTH, z);

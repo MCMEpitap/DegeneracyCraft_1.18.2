@@ -273,7 +273,14 @@ public class DCBlockStateProvider extends BlockStateProvider {
         registerBasicStrengthKaleidoscopicRealityScienceMultiblockEnergyStorageHolo();
         registerBasicStrengthKaleidoscopicRealityScienceMultiblockItemStorage();
         registerBasicStrengthKaleidoscopicRealityScienceMultiblockItemStorageHolo();
-
+        registerBasicStrengthKaleidoscopicRealityScienceMultiblockEnergyInputBus();
+        registerBasicStrengthKaleidoscopicRealityScienceMultiblockEnergyInputBusHolo();
+        registerBasicStrengthKaleidoscopicRealityScienceMultiblockEnergyOutputBus();
+        registerBasicStrengthKaleidoscopicRealityScienceMultiblockEnergyOutputBusHolo();
+        registerBasicStrengthKaleidoscopicRealityScienceMultiblockItemInputPort();
+        registerBasicStrengthKaleidoscopicRealityScienceMultiblockItemInputPortHolo();
+        registerBasicStrengthKaleidoscopicRealityScienceMultiblockItemOutputPort();
+        registerBasicStrengthKaleidoscopicRealityScienceMultiblockItemOutputPortHolo();
 
 
 
@@ -3651,6 +3658,118 @@ public class DCBlockStateProvider extends BlockStateProvider {
         model.texture("west", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_holo_block"));
         model.texture("particle", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage/basic_strength_kaleidoscopic_reality_science_multiblock_item_storage_holo_block"));
         orientedBlock(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ITEM_STORAGE_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthKaleidoscopicRealityScienceMultiblockEnergyInputBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus_block"));
+        model.texture("up", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus_block"));
+        model.texture("north", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus_block"));
+        model.texture("south", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus_block"));
+        model.texture("east", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus_block"));
+        model.texture("west", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthKaleidoscopicRealityScienceMultiblockEnergyInputBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ENERGY_INPUT_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthKaleidoscopicRealityScienceMultiblockEnergyOutputBus() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus_block"));
+        model.texture("up", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus_block"));
+        model.texture("north", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus_block"));
+        model.texture("south", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus_block"));
+        model.texture("east", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus_block"));
+        model.texture("west", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthKaleidoscopicRealityScienceMultiblockEnergyOutputBusHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus/basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ENERGY_OUTPUT_BUS_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthKaleidoscopicRealityScienceMultiblockItemInputPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port_block"));
+        model.texture("up", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port_block"));
+        model.texture("north", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port_block"));
+        model.texture("south", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port_block"));
+        model.texture("east", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port_block"));
+        model.texture("west", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthKaleidoscopicRealityScienceMultiblockItemInputPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_input_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ITEM_INPUT_PORT_HOLO_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthKaleidoscopicRealityScienceMultiblockItemOutputPort() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port_block"));
+        model.texture("up", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port_block"));
+        model.texture("north", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port_block"));
+        model.texture("south", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port_block"));
+        model.texture("east", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port_block"));
+        model.texture("west", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_BLOCK.get(),
+                state -> model);
+    }
+
+    private void registerBasicStrengthKaleidoscopicRealityScienceMultiblockItemOutputPortHolo() {
+        BlockModelBuilder model = models().getBuilder("block/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port_holo_block");
+        model.parent(models().getExistingFile(mcLoc("cube")));
+        model.texture("down", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port_holo_block"));
+        model.texture("up", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port_holo_block"));
+        model.texture("north", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port_holo_block"));
+        model.texture("south", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port_holo_block"));
+        model.texture("east", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port_holo_block"));
+        model.texture("west", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port_holo_block"));
+        model.texture("particle", modLoc("block/multiblock/basic/kaleidoscopic_reality_science/port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port/basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port_holo_block"));
+        orientedBlock(DCBlocks.BASIC_STRENGTH_KALEIDOSCOPIC_REALITY_SCIENCE_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK.get(),
                 state -> model);
     }
     

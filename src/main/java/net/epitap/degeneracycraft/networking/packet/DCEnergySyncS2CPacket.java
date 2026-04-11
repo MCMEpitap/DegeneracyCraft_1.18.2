@@ -120,6 +120,10 @@ import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.bus.b
 import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.bus.basic_strength_jenith_void_science_multiblock_energy_output_bus.BasicStrengthJenithVoidScienceMultiblockEnergyOutputBusMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.energy_storage.basic_strength_jenith_void_science_multiblock_energy_storage.BasicStrengthJenithVoidScienceMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.jenith_void_science.energy_storage.basic_strength_jenith_void_science_multiblock_energy_storage.BasicStrengthJenithVoidScienceMultiblockEnergyStorageMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.bus.basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus.BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyInputBusBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.bus.basic_strength_kaleidoscopic_reality_science_multiblock_energy_input_bus.BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyInputBusMenu;
+import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.bus.basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus.BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyOutputBusBlockEntity;
+import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.bus.basic_strength_kaleidoscopic_reality_science_multiblock_energy_output_bus.BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyOutputBusMenu;
 import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.energy_storage.basic_strength_kaleidoscopic_reality_science_multiblock_energy_storage.BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyStorageBlockEntity;
 import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.energy_storage.basic_strength_kaleidoscopic_reality_science_multiblock_energy_storage.BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyStorageMenu;
 import net.minecraft.client.Minecraft;
@@ -417,6 +421,23 @@ public class DCEnergySyncS2CPacket {
                     blockEntity.setEnergyLevel(energy);
                 }
             }
+
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyInputBusBlockEntity blockEntity) {
+                blockEntity.setEnergyLevel(energy);
+                if (Minecraft.getInstance().player.containerMenu instanceof BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyInputBusMenu menu &&
+                        menu.getBlockEntity().getBlockPos().equals(pos)) {
+                    blockEntity.setEnergyLevel(energy);
+                }
+            }
+
+            if (Minecraft.getInstance().level.getBlockEntity(pos) instanceof BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyOutputBusBlockEntity blockEntity) {
+                blockEntity.setEnergyLevel(energy);
+                if (Minecraft.getInstance().player.containerMenu instanceof BasicStrengthKaleidoscopicRealityScienceMultiblockEnergyOutputBusMenu menu &&
+                        menu.getBlockEntity().getBlockPos().equals(pos)) {
+                    blockEntity.setEnergyLevel(energy);
+                }
+            }
+
 
 
 

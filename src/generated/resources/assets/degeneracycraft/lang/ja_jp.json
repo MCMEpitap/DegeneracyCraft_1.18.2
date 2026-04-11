@@ -351,8 +351,6 @@
   "block.degeneracycraft.basic_technology_void_world_coordinate_recording_machine_block": "\u57FA\u672C\u6280\u8853\u865A\u754C\u5EA7\u6A19\u8A18\u9332\u6A5F",
   "block.degeneracycraft.deepslate_cassiterite_ore": "\u6DF1\u5C64\u932B\u77F3",
   "block.degeneracycraft.end_cassiterite_ore": "\u30A8\u30F3\u30C9\u932B\u77F3",
-  "block.degeneracycraft.low_strength_multiblock_structure_frame_block": "\u4F4E\u5F37\u5EA6\u591A\u69CB\u9020\u6A5F\u68B0\u7528\u30D5\u30EC\u30FC\u30E0",
-  "block.degeneracycraft.low_strength_multiblock_structure_glass_block": "\u4F4E\u5F37\u5EA6\u591A\u69CB\u9020\u6A5F\u68B0\u7528\u30AC\u30E9\u30B9",
   "block.degeneracycraft.nether_cassiterite_ore": "\u30CD\u30B6\u30FC\u932B\u77F3",
   "block.degeneracycraft.overworld_cassiterite_ore": "\u932B\u77F3",
   "block.degeneracycraft.overworld_gravitation_ore_block": "\u91CD\u529B\u6CE2\u9271\u77F3",

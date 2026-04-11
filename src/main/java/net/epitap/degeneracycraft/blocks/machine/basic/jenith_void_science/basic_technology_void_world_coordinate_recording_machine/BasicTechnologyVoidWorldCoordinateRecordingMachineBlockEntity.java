@@ -1,13 +1,9 @@
 package net.epitap.degeneracycraft.blocks.machine.basic.jenith_void_science.basic_technology_void_world_coordinate_recording_machine;
 
 import net.epitap.degeneracycraft.blocks.base.DCBlockEntities;
-import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorBlock;
-import net.epitap.degeneracycraft.blocks.machine.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorStructure;
 import net.epitap.degeneracycraft.energy.DCEnergyStorageFloatBase;
 import net.epitap.degeneracycraft.energy.DCIEnergyStorageFloat;
-import net.epitap.degeneracycraft.integration.jei.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.BasicTechnologyVirtualSigilProcessorRecipe;
 import net.epitap.degeneracycraft.integration.jei.basic.jenith_void_science.basic_technology_void_world_coordinate_recording_machine.BasicTechnologyVoidWorldCoordinateRecordingMachineRecipe;
-import net.epitap.degeneracycraft.item.DCItems;
 import net.epitap.degeneracycraft.networking.DCMessages;
 import net.epitap.degeneracycraft.networking.packet.DCEnergySyncS2CPacket;
 import net.epitap.degeneracycraft.util.WrappedHandler;
@@ -97,7 +93,7 @@ public class BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity exten
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return switch (slot) {
-                case 9 -> false;
+                case OUT_0 -> false;
                 default -> super.isItemValid(slot, stack);
             };
         }
@@ -586,15 +582,15 @@ public class BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity exten
         Optional<BasicTechnologyVoidWorldCoordinateRecordingMachineRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyVoidWorldCoordinateRecordingMachineRecipe.Type.INSTANCE, inventory, level);
 
-        return blockEntity.itemHandler.getStackInSlot(0).getCount() >= match.get().getInput0Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(1).getCount() >= match.get().getInput1Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(2).getCount() >= match.get().getInput2Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(3).getCount() >= match.get().getInput3Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(4).getCount() >= match.get().getInput4Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(5).getCount() >= match.get().getInput5Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(6).getCount() >= match.get().getInput6Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(7).getCount() >= match.get().getInput7Item().getCount()
-                && blockEntity.itemHandler.getStackInSlot(8).getCount() >= match.get().getInput8Item().getCount();
+        return blockEntity.itemHandler.getStackInSlot(IN_0).getCount() >= match.get().getInput0Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(IN_1).getCount() >= match.get().getInput1Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(IN_2).getCount() >= match.get().getInput2Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(IN_3).getCount() >= match.get().getInput3Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(IN_4).getCount() >= match.get().getInput4Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(IN_5).getCount() >= match.get().getInput5Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(IN_6).getCount() >= match.get().getInput6Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(IN_7).getCount() >= match.get().getInput7Item().getCount()
+                && blockEntity.itemHandler.getStackInSlot(IN_8).getCount() >= match.get().getInput8Item().getCount();
     }
 
     private static boolean hasEnergyRecipe(BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity blockEntity) {
@@ -621,17 +617,17 @@ public class BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity exten
                 .getRecipeFor(BasicTechnologyVoidWorldCoordinateRecordingMachineRecipe.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
-            blockEntity.itemHandler.extractItem(0, match.get().getInput0Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(1, match.get().getInput1Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(2, match.get().getInput2Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(3, match.get().getInput3Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(4, match.get().getInput4Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(5, match.get().getInput5Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(6, match.get().getInput6Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(7, match.get().getInput7Item().getCount(), false);
-            blockEntity.itemHandler.extractItem(8, match.get().getInput8Item().getCount(), false);
-            blockEntity.itemHandler.setStackInSlot(9, new ItemStack(match.get().getOutput0Item().getItem(),
-                    blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount()));
+            blockEntity.itemHandler.extractItem(IN_0, match.get().getInput0Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(IN_1, match.get().getInput1Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(IN_2, match.get().getInput2Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(IN_3, match.get().getInput3Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(IN_4, match.get().getInput4Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(IN_5, match.get().getInput5Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(IN_6, match.get().getInput6Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(IN_7, match.get().getInput7Item().getCount(), false);
+            blockEntity.itemHandler.extractItem(IN_8, match.get().getInput8Item().getCount(), false);
+            blockEntity.itemHandler.setStackInSlot(OUT_0, new ItemStack(match.get().getOutput0Item().getItem(),
+                    blockEntity.itemHandler.getStackInSlot(OUT_0).getCount() + match.get().getOutput0Item().getCount()));
 
             blockEntity.resetProgress();
         }
@@ -686,11 +682,6 @@ public class BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity exten
         this.counter = 0;
     }
 
-    public static boolean isHaltDevice(BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity blockEntity) {
-        return blockEntity.itemHandler.getStackInSlot(11).is(DCItems.MACHINE_HALT_DEVICE.get());
-    }
-
-
     private static boolean hasNotReachedStackLimit(BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity blockEntity) {
         Level level = blockEntity.level;
         SimpleContainer inventory = new SimpleContainer(blockEntity.itemHandler.getSlots());
@@ -702,7 +693,7 @@ public class BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity exten
                 .getRecipeFor(BasicTechnologyVoidWorldCoordinateRecordingMachineRecipe.Type.INSTANCE, inventory, level);
 
 
-        return blockEntity.itemHandler.getStackInSlot(9).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(9).getMaxStackSize();
+        return blockEntity.itemHandler.getStackInSlot(OUT_0).getCount() + match.get().getOutput0Item().getCount() <= blockEntity.itemHandler.getStackInSlot(OUT_0).getMaxStackSize();
     }
 
     private static boolean canInsertItemIntoOutputSlot(BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity blockEntity) {
@@ -715,7 +706,7 @@ public class BasicTechnologyVoidWorldCoordinateRecordingMachineBlockEntity exten
         Optional<BasicTechnologyVoidWorldCoordinateRecordingMachineRecipe> match = level.getRecipeManager()
                 .getRecipeFor(BasicTechnologyVoidWorldCoordinateRecordingMachineRecipe.Type.INSTANCE, inventory, level);
 
-        return (blockEntity.itemHandler.getStackInSlot(9).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(9).isEmpty());
+        return (blockEntity.itemHandler.getStackInSlot(OUT_0).getItem() == match.get().getOutput0Item().getItem() || blockEntity.itemHandler.getStackInSlot(OUT_0).isEmpty());
     }
 
     public void insertRecipeInputsFromPlayer(Player player, Recipe<?> recipe, boolean shift) {

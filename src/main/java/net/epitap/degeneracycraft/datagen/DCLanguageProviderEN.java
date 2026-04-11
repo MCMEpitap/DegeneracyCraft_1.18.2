@@ -1105,10 +1105,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add(DCBlocks.REINFORCED_PLANKS.get(), "Reinforced Planks");
 
 
-//        add(DCBlocks.LOW_STERNGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),"Low Strength Engineering Multiblock Machine Frame");
-        add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get(), "Low Strength Engineering Multiblock Structure Frame");
-        add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get(), "Low Strength Engineering Multiblock Structure Glass");
-
         add(PipeBlocks.BASIC_ITEM_PIPE_BLOCK, "Basic Item Pipe");
         add(PipeBlocks.BASIC_ENERGY_PIPE_BLOCK, "Basic Energy Pipe");
 

@@ -285,10 +285,6 @@ public class DCBlockLootTableProvider extends BlockLoot {
         this.add(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.REDSTONE_POWERED_MACHINE_PART_MANUFACTURE_MACHINE_BLOCK.get()));
         this.add(DCBlocks.REINFORCED_PLANKS.get(), block -> createSingleItemTable(DCBlocks.REINFORCED_PLANKS.get()));
 
-//        this.add(DCBlocks.LOW_STERNGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(), block -> createSingleItemTable(DCBlocks.LOW_STERNGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get()));
-        this.add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get(), block -> createSingleItemTable(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get()));
-        this.add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get()));
-
 
         this.add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BLOCK.get()));
         this.add(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_BLOCK.get(), block -> createSingleItemTable(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_BLOCK.get()));

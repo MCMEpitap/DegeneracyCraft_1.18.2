@@ -1406,13 +1406,6 @@ public class DCLanguageProviderJA extends LanguageProvider {
         add(DCItems.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_CIRCUIT.get(), "基本性能現実位相調整機回路");
 
 
-
-
-//        add(DCBlocks.LOW_STERNGTH_MULTIBLOCK_MACHINE_FRAME_BLOCK.get(),"低強度機械用フレーム");
-        add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK.get(), "低強度多構造機械用フレーム");
-        add(DCBlocks.LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK.get(), "低強度多構造機械用ガラス");
-
-
         add(DCUniqueBlocks.SIMPLE_TELESCOPE_RIGHT_PILLAR.get(), "簡易望遠鏡右支柱");
         add(DCUniqueBlocks.SIMPLE_TELESCOPE_LEFT_PILLAR.get(), "簡易望遠鏡左支柱");
 

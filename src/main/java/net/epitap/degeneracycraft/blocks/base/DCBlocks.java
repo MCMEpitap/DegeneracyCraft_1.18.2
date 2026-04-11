@@ -113,7 +113,6 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -322,14 +321,6 @@ public class DCBlocks {
             new BasicStrengthDynamicEnergeticsMultiblockItemOutputPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
     public static final RegistryObject<Block> BASIC_STRENGTH_DYNAMIC_ENERGETICS_MULTIBLOCK_ITEM_OUTPUT_PORT_HOLO_BLOCK = registerHoloBlock("basic_strength_dynamic_energetics_multiblock_item_output_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
-
-
-
-    public static final RegistryObject<Block> LOW_STRENGTH_MULTIBOOT_STRUCTURE_FRAME_BLOCK = registerBlock("low_strength_multiblock_structure_frame_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.METAL).strength(4.0f).requiresCorrectToolForDrops()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> LOW_STRENGTH_MULTIBOOT_STRUCTURE_GLASS_BLOCK = registerBlock("low_strength_multiblock_structure_glass_block",
-            () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).strength(4.0f).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
 
 
 

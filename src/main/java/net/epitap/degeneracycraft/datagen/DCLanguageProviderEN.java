@@ -1124,10 +1124,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_astronomical_telescope_block",
                 "For Basic Performance Astronomical Telescope");
         add(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_HOLO_BLOCK.get(), "Basic Precision Objective Lens (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK.get(), "Basic Performance Astronomical Telescope Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_HOLO_BLOCK.get(), "Basic Performance Astronomical Telescope Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK.get(), "Basic Performance Astronomical Telescope Port");
-        add(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.get(), "Basic Performance Astronomical Telescope Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT.get(), "Basic Performance Astronomical Telescope Circuit");
 
         add(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BLOCK.get(), "Basic Performance Fine Particle Adsorber");
@@ -1137,10 +1133,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_fine_particle_adsorber_block",
                 "For Basic Performance Fine Particle Adsorber");
         add(DCBlocks.BASIC_EFFICIENCY_FINE_PARTICLE_STORAGE_TANK_HOLO_BLOCK.get(), "Basic Efficiency Particle Storage Tank (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BUS_BLOCK.get(), "Basic Performance Fine Particle Adsorber Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BUS_HOLO_BLOCK.get(), "Basic Performance Fine Particle Adsorber Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_PORT_BLOCK.get(), "Basic Performance Fine Particle Adsorber Port");
-        add(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_PORT_HOLO_BLOCK.get(), "Basic Performance Fine Particle Adsorber Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_CIRCUIT.get(), "Basic Performance Fine Particle Adsorber Circuit");
         
         add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BLOCK.get(), "Basic Performance Starlight Collector");
@@ -1150,10 +1142,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_starlight_collector_block",
                 "For Basic Performance Starlight Collector");
         add(DCBlocks.BASIC_EFFICIENCY_FAINT_LIGHT_RESERVER_HOLO_BLOCK.get(), "Basic Efficiency Faint Light Receiver (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_BLOCK.get(), "Basic Performance Starlight Collector Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_HOLO_BLOCK.get(), "Basic Performance Starlight Collector Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_BLOCK.get(), "Basic Performance Starlight Collector Port");
-        add(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_HOLO_BLOCK.get(), "Basic Performance Starlight Collector Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_CIRCUIT.get(), "Basic Performance Starlight Collector Circuit");
         
 
@@ -1165,10 +1153,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_bio_reactor_block",
                 "For Basic Performance Bio Reactor");
         add(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_HOLO_BLOCK.get(), "Basic Speed Cultivation Greenhouse (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_BLOCK.get(), "Basic Performance Bio Reactor Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_HOLO_BLOCK.get(), "Basic Performance Bio Reactor Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_BLOCK.get(), "Basic Performance Bio Reactor Port");
-        add(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_HOLO_BLOCK.get(), "Basic Performance Bio Reactor Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_BIO_REACTOR_CIRCUIT.get(), "Basic Performance Bio Reactor Circuit");
 
         add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BLOCK.get(), "Basic Performance Cell Incubator");
@@ -1178,10 +1162,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_cell_incubator_block",
                 "For Basic Performance Cell Incubator");
         add(DCBlocks.BASIC_DURABILITY_INCUBATION_CONTAINER_HOLO_BLOCK.get(), "Basic Durability Incubation Container (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_BLOCK.get(), "Basic Performance Cell Incubator Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_HOLO_BLOCK.get(), "Basic Performance Cell Incubator Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_BLOCK.get(), "Basic Performance Cell Incubator Port");
-        add(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_HOLO_BLOCK.get(), "Basic Performance Cell Incubator Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_CELL_INCUBATOR_CIRCUIT.get(), "Basic Performance Cell Incubator Circuit");
 
         add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BLOCK.get(), "Basic Performance Crop Incubator");
@@ -1191,10 +1171,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_crop_incubator_block",
                 "For Basic Performance Crop Incubator");
         add(DCBlocks.BASIC_EFFICIENCY_GROWTH_STABILIZER_HOLO_BLOCK.get(), "Basic Efficiency Growth Stabilizer (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_BLOCK.get(), "Basic Performance Crop Incubator Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_HOLO_BLOCK.get(), "Basic Performance Crop Incubator Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_BLOCK.get(), "Basic Performance Crop Incubator Port");
-        add(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_HOLO_BLOCK.get(), "Basic Performance Crop Incubator Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_CROP_CULTIVATOR_CIRCUIT.get(), "Basic Performance Crop Incubator Circuit");
         
         
@@ -1206,10 +1182,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_chemical_reactor_block",
                 "For Basic Performance Chemical Reactor");
         add(DCBlocks.BASIC_RATE_COMPOUND_AGITATION_SYSTEM_HOLO_BLOCK.get(), "Basic Rate Compound Agitation System (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_BLOCK.get(), "Basic Performance Chemical Reactor Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_HOLO_BLOCK.get(), "Basic Performance Chemical Reactor Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_PORT_BLOCK.get(), "Basic Performance Chemical Reactor Port");
-        add(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_PORT_HOLO_BLOCK.get(), "Basic Performance Chemical Reactor Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_CHEMICAL_REACTOR_CIRCUIT.get(), "Basic Performance Chemical Reactor Circuit");
 
         add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.get(), "Basic Performance Compound Purifier");
@@ -1219,10 +1191,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_compound_purifier_block",
                 "For Basic Performance Compound Purifier");
         add(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_HOLO_BLOCK.get(), "Basic Durable High Speed Chemical Reactor (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.get(), "Basic Performance Compound Purifier Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_HOLO_BLOCK.get(), "Basic Performance Compound Purifier Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.get(), "Basic Performance Compound Purifier Port");
-        add(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_HOLO_BLOCK.get(), "Basic Performance Compound Purifier Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_COMPOUND_PURIFIER_CIRCUIT.get(), "Basic Performance Compound Purifier Circuit");
 
         add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.get(), "Basic Performance Electrolyser");
@@ -1232,10 +1200,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_electrolyser_block",
                 "For Basic Performance Electrolyser");
         add(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_HOLO_BLOCK.get(), "Basic Durable Expanded Electrolytic Cell (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.get(), "Basic Performance Electrolyser Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK.get(), "Basic Performance Electrolyser Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.get(), "Basic Performance Electrolyser Port");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.get(), "Basic Performance Electrolyser Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_ELECTROLYSER_CIRCUIT.get(), "Basic Performance Electrolyser Circuit");
 
         
@@ -1247,10 +1211,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_power_steam_generator_block",
                 "For Basic Power Steam Generator");
         add(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.get(), "Basic Endurance High Temperature Combustion Chamber (Hologram)");
-        add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.get(), "Basic Power Steam Generator Bus");
-        add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_HOLO_BLOCK.get(), "Basic Power Steam Generator Bus (Hologram)");
-        add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.get(), "Basic Power Steam Generator Port");
-        add(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.get(), "Basic Power Steam Generator Port (Hologram)");
         add(DCItems.BASIC_POWER_STEAM_GENERATOR_CIRCUIT.get(), "Basic Power Steam Generator Circuit");
 
         add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BLOCK.get(), "Basic TechnologyCompression Condenser");
@@ -1260,10 +1220,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_technology_compression_condenser_block",
                 "For Basic Technology Compression Condenser");
         add(DCBlocks.BASIC_PRESSURE_COMPRESSION_ASSIST_SYSTEM_HOLO_BLOCK.get(), "Basic Technology Compression Condenser (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_BLOCK.get(), "Basic TechnologyCompression Condenser Bus");
-        add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_HOLO_BLOCK.get(), "Basic TechnologyCompression Condenser Bus (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_BLOCK.get(), "Basic TechnologyCompression Condenser Port");
-        add(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_HOLO_BLOCK.get(), "Basic TechnologyCompression Condenser Port (Hologram)");
         add(DCItems.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_CIRCUIT.get(), "Basic TechnologyCompression Condenser Circuit");
 
         add(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BLOCK.get(), "Basic Technology Electromagnetic Inductor");
@@ -1273,10 +1229,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_technology_electromagnetic_inductor_block",
                 "For Basic Technology Electromagnetic Inductor");
         add(DCBlocks.BASIC_DURABLE_INSULATED_CHAMBER_HOLO_BLOCK.get(), "Basic Durable Insulated Chamber (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_BLOCK.get(), "Basic Technology Electromagnetic Inductor Bus");
-        add(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_HOLO_BLOCK.get(), "Basic Technology Electromagnetic Inductor Bus (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_BLOCK.get(), "Basic Technology Electromagnetic Inductor Port");
-        add(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_HOLO_BLOCK.get(), "Basic Technology Electromagnetic Inductor Port (Hologram)");
         add(DCItems.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_CIRCUIT.get(), "Basic Technology Electromagnetic Inductor Circuit");
         
         
@@ -1288,10 +1240,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_technology_machine_manufacturer_block",
                 "For Basic Technology Machine Manufacturer");
         add(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_HOLO_BLOCK.get(), "Basic Efficiency Machine Processing Chamber (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK.get(), "Basic Technology Machine Manufacturer Bus");
-        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_HOLO_BLOCK.get(), "Basic Technology Machine Manufacturer Bus (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK.get(), "Basic Technology Machine Manufacturer Port");
-        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_HOLO_BLOCK.get(), "Basic Technology Machine Manufacturer Port (Hologram)");
         add(DCItems.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_CIRCUIT.get(), "Basic Technology Machine Manufacturer Circuit");
 
           
@@ -1302,11 +1250,7 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_technology_machine_element_processor_block",
                 "For Basic Technology Machine Element Processor");
         add(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSING_CHAMBER_HOLO_BLOCK.get(), "Basic Efficiency Machine Element Processing Chamber (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK.get(), "Basic Technology Machine Element Processor Bus");
-        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_HOLO_BLOCK.get(), "Basic Technology Machine Element Processor Bus (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.get(), "Basic Technology Machine Element Processor Port");
-        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_HOLO_BLOCK.get(), "Basic Technology Machine Element Processor Port (Hologram)");
-        add(DCItems.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_CIRCUIT.get(), "Basic Technology Machine Element Processor Circuit");
+         add(DCItems.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_CIRCUIT.get(), "Basic Technology Machine Element Processor Circuit");
 
         add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BLOCK.get(), "Basic Technology Machine Part Processor");
         add("tooltip." + "degeneracycraft." + "basic_technology_machine_part_processor_block",
@@ -1315,10 +1259,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_technology_machine_part_processor_block",
                 "For Basic Technology Machine Part Processor");
         add(DCBlocks.BASIC_EFFICIENCY_MACHINE_PART_PROCESSING_CHAMBER_HOLO_BLOCK.get(), "Basic Efficiency Machine Part Processing Chamber (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BUS_BLOCK.get(), "Basic Technology Machine Part Processor Bus");
-        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BUS_HOLO_BLOCK.get(), "Basic Technology Machine Part Processor Bus (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_BLOCK.get(), "Basic Technology Machine Part Processor Port");
-        add(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_HOLO_BLOCK.get(), "Basic Technology Machine Part Processor Port (Hologram)");
         add(DCItems.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_CIRCUIT.get(), "Basic Technology Machine Part Processor Circuit");
 
         add(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BLOCK.get(), "Basic Technology Multiblock Equipment Fabricator");
@@ -1328,10 +1268,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_technology_multiblock_equipment_fabricator_block",
                 "For Basic Technology Multiblock Equipment Fabricator");
         add(DCBlocks.BASIC_EFFICIENCY_EQUIPMENT_PRODUCTION_AUXILIARY_SYSTEM_HOLO_BLOCK.get(), "Basic Efficiency Equipment Production Auxiliary System (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_BLOCK.get(), "Basic Technology Multiblock Equipment Fabricator Bus");
-        add(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_HOLO_BLOCK.get(), "Basic Technology Multiblock Equipment Fabricator Bus (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_BLOCK.get(), "Basic Technology Multiblock Equipment Fabricator Port");
-        add(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_HOLO_BLOCK.get(), "Basic Technology Multiblock Equipment Fabricator Port (Hologram)");
         add(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_CIRCUIT.get(), "Basic Technology Multiblock Equipment Fabricator Circuit");
 
 
@@ -1343,10 +1279,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_circuit_builder_block",
                 "For Basic Performance Circuit Builder");
         add(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_HOLO_BLOCK.get(), "Basic Performance Circuit Builder (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_BUS_BLOCK.get(), "Basic Performance Circuit Builder Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.get(), "Basic Performance Circuit Builder Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_PORT_BLOCK.get(), "Basic Performance Circuit Builder Port");
-        add(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.get(), "Basic Performance Circuit Builder Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_CIRCUIT_BUILDER_CIRCUIT.get(), "Basic Performance Circuit Builder Circuit");
 
         add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK.get(), "Basic Performance Machine Data Installer");
@@ -1356,10 +1288,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_machine_data_installer_block",
                 "For Basic Basic Performance Machine Data Installer");
         add(DCBlocks.BASIC_SPEED_DATA_READER_HOLO_BLOCK.get(), "Basic Speed Data Reader (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_BLOCK.get(), "Basic Performance Machine Data Installer Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_HOLO_BLOCK.get(), "Basic Performance Machine Data Installer Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_BLOCK.get(), "Basic Performance Machine Data Installer Port");
-        add(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK.get(), "Basic Performance Machine Data Installer Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_CIRCUIT.get(), "Basic Performance Machine Data Installer Circuit");
 
         add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BLOCK.get(), "Basic Performance Designated Data Injector");
@@ -1369,10 +1297,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_designated_data_injector_block",
                 "For Basic Performance Designated Data Injector");
         add(DCBlocks.BASIC_SPEED_CALCULATION_AUXILIARY_WRITE_DEVICE_HOLO_BLOCK.get(), "Basic Speed Calculation Auxiliary Write Device (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BUS_BLOCK.get(), "Basic Performance Designated Data Injector Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BUS_HOLO_BLOCK.get(), "Basic Performance Designated Data Injector Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_BLOCK.get(), "Basic Performance Designated Data Injector Port");
-        add(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_HOLO_BLOCK.get(), "Basic Performance Designated Data Injector Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_CIRCUIT.get(), "Basic Performance Designated Data Injector Circuit");
 
 
@@ -1384,10 +1308,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_ore_sorter_block",
                 "For Basic Performance Ore Sorter");
         add(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_HOLO_BLOCK.get(), "Basic Efficiency Ore Sorting Filter (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_BLOCK.get(), "Basic Performance Ore Sorter Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_HOLO_BLOCK.get(), "Basic Performance Ore Sorter Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_BLOCK.get(), "Basic Performance Ore Sorter Port");
-        add(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_HOLO_BLOCK.get(), "Basic Performance Ore Sorter Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_ORE_SORTER_CIRCUIT.get(), "Basic Performance Ore Sorter Circuit");
 
         add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.get(), "Basic Performance Rock Crasher");
@@ -1397,10 +1317,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_rock_crasher_block",
                 "For Basic Performance Rock Crasher");
         add(DCBlocks.BASIC_CRASHING_BASE_HOLO_BLOCK.get(), "Basic Crashing Base (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_BLOCK.get(), "Basic Performance Rock Crasher Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_HOLO_BLOCK.get(), "Basic Performance Rock Crasher Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK.get(), "Basic Performance Rock Crasher Port");
-        add(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_HOLO_BLOCK.get(), "Basic Performance Rock Crasher Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_ROCK_CRASHER_CIRCUIT.get(), "Basic Performance Rock Crasher Circuit");
 
         add(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_BLOCK.get(), "Basic Performance Soil Purifier");
@@ -1410,10 +1326,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_soil_purifier_block",
                 "For Basic Performance Soil Purifier");
         add(DCBlocks.BASIC_EFFICIENCY_PARTICLE_MIXING_CHAMBER_HOLO_BLOCK.get(), "Basic Efficiency Particle Mixing Chamber (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_BUS_BLOCK.get(), "Basic Performance Soil Purifier Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_BUS_HOLO_BLOCK.get(), "Basic Performance Soil Purifier Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_PORT_BLOCK.get(), "Basic Performance Soil Purifier Port");
-        add(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_PORT_HOLO_BLOCK.get(), "Basic Performance Soil Purifier Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_SOIL_PURIFIER_CIRCUIT.get(), "Basic Performance Soil Purifier Circuit");
         
 
@@ -1424,10 +1336,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_electric_arc_furnace_block",
                 "For Basic Performance Electric Arc Furnace");
         add(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK.get(), "Basic Flow Cooling System (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK.get(), "Basic Performance Electric Arc Furnace Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_HOLO_BLOCK.get(), "Basic Performance Electric Arc Furnace Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK.get(), "Basic Performance Electric Arc Furnace Port");
-        add(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK.get(), "Basic Performance Electric Arc Furnace Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_CIRCUIT.get(), "asic Performance Electric Arc Furnace Circuit");
 
         add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK.get(), "Basic Performance Forming Machine");
@@ -1437,10 +1345,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_forming_machine_block",
                 "Basic Performance Forming Machine");
         add(DCBlocks.BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_HOLO_BLOCK.get(), "Basic Precision Extrusion Assist System (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_BLOCK.get(), "Basic Performance Forming Machine Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_HOLO_BLOCK.get(), "Basic Performance Forming Machine Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK.get(), "Basic Performance Forming Machine Port");
-        add(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_HOLO_BLOCK.get(), "Basic Performance Forming Machine Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_FORMING_MACHINE_CIRCUIT.get(), "Basic Performance Forming Machine Circuit");
 
 
@@ -1451,10 +1355,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_material_separator_block",
                 "For Basic Performance Material Separator");
         add(DCBlocks.BASIC_DURABILITY_VIBRATION_CONTROL_BASE_HOLO_BLOCK.get(), "Basic Durability Vibration Control Base (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_BLOCK.get(), "Basic Performance Material Separator Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_HOLO_BLOCK.get(), "Basic Performance Material Separator Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_BLOCK.get(), "Basic Performance Material Separator Port");
-        add(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_HOLO_BLOCK.get(), "Basic Performance Material Separator Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_CIRCUIT.get(), "Basic Performance Material Separator Circuit");
 
 
@@ -1466,10 +1366,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_technology_imitation_magic_engraver_block",
                 "For Basic Technology Imitation Magic Engraver");
         add(DCBlocks.BASIC_OUTPUT_MYSTIC_OPTICAL_PROJECTION_DEVICE_HOLO_BLOCK.get(), "Basic Output Mystic Optical Projection Device (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BUS_BLOCK.get(), "Basic Technology Imitation Magic Engraver Bus");
-        add(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BUS_HOLO_BLOCK.get(), "Basic Technology Imitation Magic Engraver Bus (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_PORT_BLOCK.get(), "Basic Technology Imitation Magic Engraver Port");
-        add(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_PORT_HOLO_BLOCK.get(), "Basic Technology Imitation Magic Engraver Port (Hologram)");
         add(DCItems.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_CIRCUIT.get(), "Basic Technology Imitation Magic Engraver Circuit");
         
         add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BLOCK.get(), "Basic Technology Suspected Magic Condenser");
@@ -1479,10 +1375,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_technology_suspected_magic_condenser_block",
                 "For Basic Technology Suspected Magic Condenser");
         add(DCBlocks.BASIC_EFFICIENCY_SEALED_EXTRACTION_CASE_HOLO_BLOCK.get(), "Basic Efficiency Sealed Extraction Case (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_BLOCK.get(), "Basic Technology Suspected Magic Condenser Bus");
-        add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_HOLO_BLOCK.get(), "Basic Technology Suspected Magic Condenser Bus (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_BLOCK.get(), "Basic Technology Suspected Magic Condenser Port");
-        add(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_HOLO_BLOCK.get(), "Basic Technology Suspected Magic Condenser Port (Hologram)");
         add(DCItems.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_CIRCUIT.get(), "Basic Technology Suspected Magic Condenser回路");
 
         add(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BLOCK.get(), "Basic Technology Virtual Sigil Processor");
@@ -1492,10 +1384,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_technology_virtual_sigil_processor_block",
                 "For Basic Technology Virtual Sigil Processor");
         add(DCBlocks.BASIC_SPEED_PATTERN_TRANSFER_SYSTEM_HOLO_BLOCK.get(), "Basic Speed Pattern Transfer System (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BUS_BLOCK.get(), "Basic Technology Virtual Sigil Processor Bus");
-        add(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BUS_HOLO_BLOCK.get(), "Basic Technology Virtual Sigil Processor Bus (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_BLOCK.get(), "Basic Technology Virtual Sigil Processor Port");
-        add(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_HOLO_BLOCK.get(), "Basic Technology Virtual Sigil Processor Port (Hologram)");
         add(DCItems.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_CIRCUIT.get(), "Basic Technology Virtual Sigil Processor Circuit");
 
         
@@ -1507,10 +1395,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_technology_void_world_coordinate_recording_machine_block",
                 "Basic Technology Void World Coordinate Recording Machine");
         add(DCBlocks.BASIC_EFFICIENCY_VOID_INTERFERENCE_FLAME_HOLO_BLOCK.get(), "Basic Efficiency Void Interference Frame (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_BLOCK.get(), "Basic Technology Void World Coordinate Recording Machine Bus");
-        add(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_HOLO_BLOCK.get(), "Basic Technology Void World Coordinate Recording Machine Bus (Hologram)");
-        add(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_BLOCK.get(), "Basic Technology Void World Coordinate Recording Machine Port");
-        add(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_HOLO_BLOCK.get(), "Basic Technology Void World Coordinate Recording Machine Port (Hologram)");
         add(DCItems.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_CIRCUIT.get(), "Basic Technology Void World Coordinate Recording Machine Circuit");
 
 
@@ -1523,10 +1407,6 @@ public class DCLanguageProviderEN extends LanguageProvider {
         add("tooltip." + "degeneracycraft.ability" + "basic_performance_reality_phase_adjustment_machine_block",
                 "For Basic Performance Reality Phase Adjustment Machine");
         add(DCBlocks.BASIC_EFFICIENCY_PHASE_STABLE_FLAME_HOLO_BLOCK.get(), "Basic Efficiency Phase Stable Frame (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BUS_BLOCK.get(), "Basic Performance Reality Phase Adjustment Machine Bus");
-        add(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BUS_HOLO_BLOCK.get(), "Basic Performance Reality Phase Adjustment Machine Bus (Hologram)");
-        add(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_PORT_BLOCK.get(), "Basic Performance Reality Phase Adjustment Machine Port");
-        add(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_PORT_HOLO_BLOCK.get(), "Basic Performance Reality Phase Adjustment Machine Port (Hologram)");
         add(DCItems.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_CIRCUIT.get(), "Basic Performance Reality Phase Adjustment Machine Circuit");
 
 

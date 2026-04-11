@@ -102,65 +102,6 @@ import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_sci
 import net.epitap.degeneracycraft.blocks.storage.basic.kaleidoscopic_reality_science.port.basic_strength_kaleidoscopic_reality_science_multiblock_item_output_port.BasicStrengthKaleidoscopicRealityScienceMultiblockItemOutputPortBlock;
 import net.epitap.degeneracycraft.item.DCCreativeTab;
 import net.epitap.degeneracycraft.item.DCItems;
-import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.bus.BasicPerformanceAstronomicalTelescopeBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_astronomical_telescope.port.BasicPerformanceAstronomicalTelescopePortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_fine_particle_adsorber.bus.BasicPerformanceFineParticleAdsorberBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_fine_particle_adsorber.port.BasicPerformanceFineParticleAdsorberPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_starlight_collector.bus.BasicPerformanceStarlightCollectorBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.astronomy.basic_performance_starlight_collector.port.BasicPerformanceStarlightCollectorPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.bus.BasicPerformanceBioReactorBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_bio_reactor.port.BasicPerformanceBioReactorPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_cell_incubator.port.BasicPerformanceCellIncubatorPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_crop_cultivator.bus.BasicPerformanceCropCultivatorBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.biology.basic_performance_crop_cultivator.port.BasicPerformanceCropCultivatorPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.bus.BasicPerformanceChemicalReactorBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_chemical_reactor.port.BasicPerformanceChemicalReactorPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_compound_purifier.bus.BasicPerformanceCompoundPurifierBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_compound_purifier.port.BasicPerformanceCompoundPurifierPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.bus.BasicPerformanceElectrolyserBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.chemistry.basic_performance_electrolyser.port.BasicPerformanceElectrolyserPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_power_steam_generator.bus.BasicPowerSteamGeneratorBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_power_steam_generator.port.BasicPowerSteamGeneratorPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_technology_compression_condenser.bus.BasicTechnologyCompressionCondenserBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_technology_compression_condenser.port.BasicTechnologyCompressionCondenserPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.bus.BasicTechnologyElectromagneticInductorBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.dynamic_energetics.basic_technology_electromagnetic_inductor.port.BasicTechnologyElectromagneticInductorPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_element_processor.bus.BasicTechnologyMachineElementProcessorBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_element_processor.port.BasicTechnologyMachineElementProcessorPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_manufacturer.bus.BasicTechnologyMachineManufacturerBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_manufacturer.port.BasicTechnologyMachineManufacturerPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_part_processor.bus.BasicTechnologyMachinePartProcessorBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_machine_part_processor.port.BasicTechnologyMachinePartProcessorPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_multiblock_equipment_fabricator.bus.BasicTechnologyMultiblockEquipmentFabricatorBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.engineering.basic_technology_multiblock_equipment_fabricator.port.BasicTechnologyMultiblockEquipmentFabricatorPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_circuit_builder.bus.BasicPerformanceCircuitBuilderBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_circuit_builder.port.BasicPerformanceCircuitBuilderPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_designated_data_injector.bus.BasicPerformanceDesignatedDataInjectorBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_designated_data_injector.port.BasicPerformanceDesignatedDataInjectorPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_machine_data_installer.bus.BasicPerformanceMachineDataInstallerBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.formal_science.basic_performance_machine_data_installer.port.BasicPerformanceMachineDataInstallerPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_ore_sorter.bus.BasicPerformanceOreSorterBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_ore_sorter.port.BasicPerformanceOreSorterPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_rock_crasher.bus.BasicPerformanceRockCrasherBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_rock_crasher.port.BasicPerformanceRockCrasherPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_soil_purifier_block.bus.BasicPerformanceSoilPurifierBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.geo_science.basic_performance_soil_purifier_block.port.BasicPerformanceSoilPurifierPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_electric_arc_furnace.bus.BasicPerformanceElectricArcFurnaceBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_electric_arc_furnace.port.BasicPerformanceElectricArcFurnacePortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.bus.BasicPerformanceFormingMachineBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_forming_machine.port.BasicPerformanceFormingMachinePortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_material_separator.bus.BasicPerformanceMaterialSeparatorBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.hybrid_physics.basic_performance_material_separator.port.BasicPerformanceMaterialSeparatorPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.bus.BasicTechnologyImitationMagicEngraverBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_imitation_magic_engraver.port.BasicTechnologyImitationMagicEngraverPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.bus.BasicTechnologySuspectedMagicCondenserBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_suspected_magic_condenser.port.BasicTechnologySuspectedMagicCondenserPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.bus.BasicTechnologyVirtualSigilProcessorBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.imitation_magic_engineering.basic_technology_virtual_sigil_processor.port.BasicTechnologyVirtualSigilProcessorPortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.jenith_void_science.basic_technology_void_world_coordinate_recording_machine.bus.BasicTechnologyVoidWorldCoordinateRecordingMachineBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.jenith_void_science.basic_technology_void_world_coordinate_recording_machine.port.BasicTechnologyVoidWorldCoordinateRecordingMachinePortBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.bus.BasicPerformanceRealityPhaseAdjustmentMachineBusBlock;
-import net.epitap.degeneracycraft.transport.bus_port.basic.kaleidoscopic_reality_science.basic_performance_reality_phase_adjustment_machine.port.BasicPerformanceRealityPhaseAdjustmentMachinePortBlock;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.Registry;
@@ -740,14 +681,6 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_PRECISION_OBJECTIVE_LENS_HOLO_BLOCK = registerHoloBlock("basic_precision_objective_lens_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK = registerBlock("basic_performance_astronomical_telescope_bus_block", () ->
-            new BasicPerformanceAstronomicalTelescopeBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_astronomical_telescope_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK = registerBlock("basic_performance_astronomical_telescope_port_block", () ->
-            new BasicPerformanceAstronomicalTelescopePortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_astronomical_telescope_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BLOCK = registerTooltipBasicMachineBlock("basic_performance_fine_particle_adsorber_block", () ->
                     new BasicPerformanceFineParticleAdsorberBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
@@ -764,14 +697,6 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_EFFICIENCY_FINE_PARTICLE_STORAGE_TANK_HOLO_BLOCK = registerHoloBlock("basic_efficiency_particle_storage_tank_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BUS_BLOCK = registerBlock("basic_performance_fine_particle_adsorber_bus_block", () ->
-            new BasicPerformanceFineParticleAdsorberBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_fine_particle_adsorber_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_PORT_BLOCK = registerBlock("basic_performance_fine_particle_adsorber_port_block", () ->
-            new BasicPerformanceFineParticleAdsorberPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_fine_particle_adsorber_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BLOCK = registerTooltipBasicMachineBlock("basic_performance_starlight_collector_block", () ->
                     new BasicPerformanceStarlightCollectorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
@@ -787,14 +712,6 @@ public class DCBlocks {
             "astronomy",
             "basic");
     public static final RegistryObject<Block> BASIC_EFFICIENCY_FAINT_LIGHT_RESERVER_HOLO_BLOCK = registerHoloBlock("basic_efficiency_faint_light_receiver_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_BLOCK = registerBlock("basic_performance_starlight_collector_bus_block", () ->
-            new BasicPerformanceStarlightCollectorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_starlight_collector_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_BLOCK = registerBlock("basic_performance_starlight_collector_port_block", () ->
-            new BasicPerformanceStarlightCollectorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_starlight_collector_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
 
@@ -815,14 +732,6 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_SPEED_CULTIVATION_GREENHOUSE_HOLO_BLOCK = registerHoloBlock("basic_speed_cultivation_greenhouse_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_BIO_REACTOR_BUS_BLOCK = registerBlock("basic_performance_bio_reactor_bus_block", () ->
-            new BasicPerformanceBioReactorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_BIO_REACTOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_bio_reactor_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_BIO_REACTOR_PORT_BLOCK = registerBlock("basic_performance_bio_reactor_port_block", () ->
-            new BasicPerformanceBioReactorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_BIO_REACTOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_bio_reactor_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_CELL_INCUBATOR_BLOCK = registerTooltipBasicMachineBlock("basic_performance_cell_incubator_block", () ->
                     new BasicPerformanceCellIncubatorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
@@ -839,14 +748,6 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_DURABILITY_INCUBATION_CONTAINER_HOLO_BLOCK = registerHoloBlock("basic_durability_incubation_container_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_BLOCK = registerBlock("basic_performance_cell_incubator_bus_block", () ->
-            new BasicPerformanceCropCultivatorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_cell_incubator_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_BLOCK = registerBlock("basic_performance_cell_incubator_port_block", () ->
-            new BasicPerformanceCellIncubatorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_cell_incubator_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_CROP_CULTIVATOR_BLOCK = registerTooltipBasicMachineBlock("basic_performance_crop_cultivator_block", () ->
                     new BasicPerformanceCropCultivatorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
@@ -862,14 +763,6 @@ public class DCBlocks {
             "biology",
             "basic");
     public static final RegistryObject<Block> BASIC_EFFICIENCY_GROWTH_STABILIZER_HOLO_BLOCK = registerHoloBlock("basic_efficiency_growth_stabilizer_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_BLOCK = registerBlock("basic_performance_crop_cultivator_bus_block", () ->
-            new BasicPerformanceCropCultivatorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_crop_cultivator_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_BLOCK = registerBlock("basic_performance_crop_cultivator_port_block", () ->
-            new BasicPerformanceCropCultivatorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_crop_cultivator_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
 
@@ -891,15 +784,6 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_RATE_COMPOUND_AGITATION_SYSTEM_HOLO_BLOCK = registerHoloBlock("basic_rate_compound_agitation_system_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_BLOCK = registerBlock("basic_performance_chemical_reactor_bus_block", () ->
-            new BasicPerformanceChemicalReactorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_chemical_reactor_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_CHEMICAL_REACTOR_PORT_BLOCK = registerBlock("basic_performance_chemical_reactor_port_block", () ->
-            new BasicPerformanceChemicalReactorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_CHEMICAL_REACTOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_chemical_reactor_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK = registerTooltipBasicMachineBlock("basic_performance_compound_purifier_block", () ->
                     new BasicPerformanceCompoundPurifierBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
@@ -916,15 +800,6 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_HOLO_BLOCK = registerHoloBlock("basic_durable_high_speed_chemical_reactor_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK = registerBlock("basic_performance_compound_purifier_bus_block", () ->
-            new BasicPerformanceCompoundPurifierBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_compound_purifier_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK = registerBlock("basic_performance_compound_purifier_port_block", () ->
-            new BasicPerformanceCompoundPurifierPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_compound_purifier_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTROLYSER_BLOCK = registerTooltipBasicMachineBlock("basic_performance_electrolyser_block", () ->
                     new BasicPerformanceElectrolyserBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
@@ -941,17 +816,6 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_HOLO_BLOCK = registerHoloBlock("basic_durable_expanded_electrolytic_cell_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK = registerBlock("basic_performance_electrolyser_bus_block", () ->
-            new BasicPerformanceElectrolyserBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_electrolyser_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK = registerBlock("basic_performance_electrolyser_port_block", () ->
-            new BasicPerformanceElectrolyserPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_electrolyser_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
-
-
 
 
 
@@ -973,14 +837,6 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK = registerHoloBlock("basic_endurance_high_temperature_combustion_chamber_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK = registerBlock("basic_power_steam_generator_bus_block", () ->
-            new BasicPowerSteamGeneratorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_POWER_STEAM_GENERATOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_power_steam_generator_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK = registerBlock("basic_power_steam_generator_port_block", () ->
-            new BasicPowerSteamGeneratorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_power_steam_generator_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BLOCK = registerTooltipBasicMachineBlock("basic_technology_compression_condenser_block", () ->
                     new BasicTechnologyCompressionCondenserBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
@@ -997,14 +853,6 @@ public class DCBlocks {
             "dynamic_energetics",
             "basic");
     public static final RegistryObject<Block> BASIC_PRESSURE_COMPRESSION_ASSIST_SYSTEM_HOLO_BLOCK = registerHoloBlock("basic_pressure_compression_assist_system_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_BLOCK = registerBlock("basic_technology_compression_condenser_bus_block", () ->
-            new BasicTechnologyCompressionCondenserBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_HOLO_BLOCK = registerHoloBlock("basic_technology_compression_condenser_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_BLOCK = registerBlock("basic_technology_compression_condenser_port_block", () ->
-            new BasicTechnologyCompressionCondenserPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_HOLO_BLOCK = registerHoloBlock("basic_technology_compression_condenser_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BLOCK = registerTooltipBasicMachineBlock("basic_technology_electromagnetic_inductor_block", () ->
@@ -1023,14 +871,8 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_DURABLE_INSULATED_CHAMBER_HOLO_BLOCK = registerHoloBlock("basic_durable_insulated_chamber_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_BLOCK = registerBlock("basic_technology_electromagnetic_inductor_bus_block", () ->
-            new BasicTechnologyElectromagneticInductorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_technology_electromagnetic_inductor_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_BLOCK = registerBlock("basic_technology_electromagnetic_inductor_port_block", () ->
-            new BasicTechnologyElectromagneticInductorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_technology_electromagnetic_inductor_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
+
+
 
     // BasicEngineering
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BLOCK = registerTooltipBasicMachineBlock("basic_technology_machine_manufacturer_block", () ->
@@ -1047,14 +889,6 @@ public class DCBlocks {
             "engineering",
             "basic");
     public static final RegistryObject<Block> BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_HOLO_BLOCK = registerHoloBlock("basic_efficiency_machine_processing_chamber_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK = registerBlock("basic_technology_machine_manufacturer_bus_block", () ->
-            new BasicTechnologyMachineManufacturerBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_HOLO_BLOCK = registerHoloBlock("basic_technology_machine_manufacturer_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK = registerBlock("basic_technology_machine_manufacturer_port_block", () ->
-            new BasicTechnologyMachineManufacturerPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_HOLO_BLOCK = registerHoloBlock("basic_technology_machine_manufacturer_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK = registerTooltipBasicMachineBlock("basic_technology_machine_element_processor_block", () ->
@@ -1073,15 +907,6 @@ public class DCBlocks {
     public static final RegistryObject<Block> BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSING_CHAMBER_HOLO_BLOCK = registerHoloBlock("basic_efficiency_machine_element_processing_chamber_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK = registerBlock("basic_technology_machine_element_processor_bus_block", () ->
-            new BasicTechnologyMachineElementProcessorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_technology_machine_element_processor_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK = registerBlock("basic_technology_machine_element_processor_port_block", () ->
-            new BasicTechnologyMachineElementProcessorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_technology_machine_element_processor_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BLOCK = registerTooltipBasicMachineBlock("basic_technology_machine_part_processor_block", () ->
                     new BasicTechnologyMachinePartProcessorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "Lv0:3×3×3",
@@ -1098,15 +923,6 @@ public class DCBlocks {
     public static final RegistryObject<Block> BASIC_EFFICIENCY_MACHINE_PART_PROCESSING_CHAMBER_HOLO_BLOCK = registerHoloBlock("basic_efficiency_machine_part_processing_chamber_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BUS_BLOCK = registerBlock("basic_technology_machine_part_processor_bus_block", () ->
-            new BasicTechnologyMachinePartProcessorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_technology_machine_part_processor_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_BLOCK = registerBlock("basic_technology_machine_part_processor_port_block", () ->
-            new BasicTechnologyMachinePartProcessorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_technology_machine_part_processor_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BLOCK = registerTooltipBasicMachineBlock("basic_technology_multiblock_equipment_fabricator_block", () ->
                     new BasicTechnologyMultiblockEquipmentFabricatorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "Lv0:3×3×3",
@@ -1120,22 +936,8 @@ public class DCBlocks {
             "basic_technology_multiblock_equipment_fabricator_block",
             "engineering",
             "basic");
-
     public static final RegistryObject<Block> BASIC_EFFICIENCY_EQUIPMENT_PRODUCTION_AUXILIARY_SYSTEM_HOLO_BLOCK = registerHoloBlock("basic_efficiency_equipment_production_auxiliary_system_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_BLOCK = registerBlock("basic_technology_multiblock_equipment_fabricator_bus_block", () ->
-            new BasicTechnologyMultiblockEquipmentFabricatorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_technology_multiblock_equipment_fabricator_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_BLOCK = registerBlock("basic_technology_multiblock_equipment_fabricator_port_block", () ->
-            new BasicTechnologyMultiblockEquipmentFabricatorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_technology_multiblock_equipment_fabricator_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
-
-
-
 
 
 
@@ -1156,14 +958,6 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_PURITY_CIRCUIT_CLEAN_ROOM_HOLO_BLOCK = registerHoloBlock("basic_purity_circuit_clean_room_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_CIRCUIT_BUILDER_BUS_BLOCK = registerBlock("basic_performance_circuit_builder_bus_block", () ->
-            new BasicPerformanceCircuitBuilderBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_CIRCUIT_BUILDER_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_circuit_builder_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_CIRCUIT_BUILDER_PORT_BLOCK = registerBlock("basic_performance_circuit_builder_port_block", () ->
-            new BasicPerformanceCircuitBuilderPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_CIRCUIT_BUILDER_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_circuit_builder_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK = registerTooltipBasicMachineBlock("basic_performance_machine_data_installer_block", () ->
                     new BasicPerformanceMachineDataInstallerBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
@@ -1181,15 +975,6 @@ public class DCBlocks {
     public static final RegistryObject<Block> BASIC_SPEED_DATA_READER_HOLO_BLOCK = registerHoloBlock("basic_speed_data_reader_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_BLOCK = registerBlock("basic_performance_machine_data_installer_bus_block", () ->
-            new BasicPerformanceMachineDataInstallerBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_machine_data_installer_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_BLOCK = registerBlock("basic_performance_machine_data_installer_port_block", () ->
-            new BasicPerformanceMachineDataInstallerPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_machine_data_installer_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
     public static final RegistryObject<Block> BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BLOCK = registerTooltipBasicMachineBlock("basic_performance_designated_data_injector_block", () ->
                     new BasicPerformanceDesignatedDataInjectorBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "Lv0:3×3×3",
@@ -1205,20 +990,6 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_SPEED_CALCULATION_AUXILIARY_WRITE_DEVICE_HOLO_BLOCK = registerHoloBlock("basic_speed_calculation_auxiliary_coder_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BUS_BLOCK = registerBlock("basic_performance_designated_data_injector_bus_block", () ->
-            new BasicPerformanceDesignatedDataInjectorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_designated_data_injector_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_BLOCK = registerBlock("basic_performance_designated_data_injector_port_block", () ->
-            new BasicPerformanceDesignatedDataInjectorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_designated_data_injector_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
-
-
-
-
-
 
 
 
@@ -1240,15 +1011,6 @@ public class DCBlocks {
     public static final RegistryObject<Block> BASIC_EFFICIENCY_ORE_SORTING_FILTER_HOLO_BLOCK = registerHoloBlock("basic_efficiency_ore_sorting_filter_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ORE_SORTER_BUS_BLOCK = registerBlock("basic_performance_ore_sorter_bus_block", () ->
-            new BasicPerformanceOreSorterBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ORE_SORTER_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_ore_sorter_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ORE_SORTER_PORT_BLOCK = registerBlock("basic_performance_ore_sorter_port_block", () ->
-            new BasicPerformanceOreSorterPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ORE_SORTER_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_ore_sorter_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
     public static final RegistryObject<Block> BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK = registerTooltipBasicMachineBlock("basic_performance_rock_crasher_block", () ->
                     new BasicPerformanceRockCrasherBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
             "Lv0:3×4×3",
@@ -1263,15 +1025,6 @@ public class DCBlocks {
             "geo_science",
             "basic");
     public static final RegistryObject<Block> BASIC_CRASHING_BASE_HOLO_BLOCK = registerHoloBlock("basic_crashing_base_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ROCK_CRASHER_BUS_BLOCK = registerBlock("basic_performance_rock_crasher_bus_block", () ->
-            new BasicPerformanceRockCrasherBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ROCK_CRASHER_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_rock_crasher_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK = registerBlock("basic_performance_rock_crasher_port_block", () ->
-            new BasicPerformanceRockCrasherPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ROCK_CRASHER_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_rock_crasher_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_SOIL_PURIFIER_BLOCK = registerTooltipBasicMachineBlock("basic_performance_soil_purifier_block", () ->
@@ -1289,24 +1042,6 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_EFFICIENCY_PARTICLE_MIXING_CHAMBER_HOLO_BLOCK = registerHoloBlock("basic_efficiency_particle_mixing_chamber_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_SOIL_PURIFIER_BUS_BLOCK = registerBlock("basic_performance_soil_purifier_bus_block", () ->
-            new BasicPerformanceSoilPurifierBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_SOIL_PURIFIER_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_soil_purifier_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_SOIL_PURIFIER_PORT_BLOCK = registerBlock("basic_performance_soil_purifier_port_block", () ->
-            new BasicPerformanceSoilPurifierPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_SOIL_PURIFIER_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_soil_purifier_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1327,14 +1062,6 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK = registerHoloBlock("basic_flow_cooling_system_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK = registerBlock("basic_performance_electric_arc_furnace_bus_block", () ->
-            new BasicPerformanceElectricArcFurnaceBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_electric_arc_furnace_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK = registerBlock("basic_performance_electric_arc_furnace_port_block", () ->
-            new BasicPerformanceElectricArcFurnacePortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_electric_arc_furnace_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK = registerTooltipBasicMachineBlock("basic_performance_forming_machine_block", () ->
                     new BasicPerformanceFormingMachineBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
@@ -1350,14 +1077,6 @@ public class DCBlocks {
             "hybrid_physics",
             "basic");
     public static final RegistryObject<Block> BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_HOLO_BLOCK = registerHoloBlock("basic_precision_extrusion_assist_system_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_FORMING_MACHINE_BUS_BLOCK = registerBlock("basic_performance_forming_machine_bus_block", () ->
-            new BasicPerformanceFormingMachineBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_FORMING_MACHINE_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_forming_machine_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK = registerBlock("basic_performance_forming_machine_port_block", () ->
-            new BasicPerformanceFormingMachinePortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_FORMING_MACHINE_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_forming_machine_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BLOCK = registerTooltipBasicMachineBlock("basic_performance_material_separator_block", () ->
@@ -1375,18 +1094,6 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_DURABILITY_VIBRATION_CONTROL_BASE_HOLO_BLOCK = registerHoloBlock("basic_durability_vibration_control_base_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_BLOCK = registerBlock("basic_performance_material_separator_bus_block", () ->
-            new BasicPerformanceMaterialSeparatorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_material_separator_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_BLOCK = registerBlock("basic_performance_material_separator_port_block", () ->
-            new BasicPerformanceMaterialSeparatorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_material_separator_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
-
-
-
 
     // Basic Imitation Magic Engineering
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BLOCK = registerTooltipBasicMachineBlock("basic_technology_imitation_magic_engraver_block", () ->
@@ -1404,14 +1111,6 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_OUTPUT_MYSTIC_OPTICAL_PROJECTION_DEVICE_HOLO_BLOCK = registerHoloBlock("basic_output_mystic_optical_projection_device_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BUS_BLOCK = registerBlock("basic_technology_imitation_magic_engraver_bus_block", () ->
-            new BasicTechnologyImitationMagicEngraverBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BUS_HOLO_BLOCK = registerHoloBlock("basic_technology_imitation_magic_engraver_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_PORT_BLOCK = registerBlock("basic_technology_imitation_magic_engraver_port_block", () ->
-            new BasicTechnologyImitationMagicEngraverPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_PORT_HOLO_BLOCK = registerHoloBlock("basic_technology_imitation_magic_engraver_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BLOCK = registerTooltipBasicMachineBlock("basic_technology_suspected_magic_condenser_block", () ->
                     new BasicTechnologySuspectedMagicCondenserBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
@@ -1427,14 +1126,6 @@ public class DCBlocks {
             "imitation_magic_engineering",
             "basic");
     public static final RegistryObject<Block> BASIC_EFFICIENCY_SEALED_EXTRACTION_CASE_HOLO_BLOCK = registerHoloBlock("basic_efficiency_sealed_extraction_case_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_BLOCK = registerBlock("basic_technology_suspected_magic_condenser_bus_block", () ->
-            new BasicTechnologySuspectedMagicCondenserBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_HOLO_BLOCK = registerHoloBlock("basic_technology_suspected_magic_condenser_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_BLOCK = registerBlock("basic_technology_suspected_magic_condenser_port_block", () ->
-            new BasicTechnologySuspectedMagicCondenserPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_HOLO_BLOCK = registerHoloBlock("basic_technology_suspected_magic_condenser_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BLOCK = registerTooltipBasicMachineBlock("basic_technology_virtual_sigil_processor_block", () ->
@@ -1452,15 +1143,6 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_SPEED_PATTERN_TRANSFER_SYSTEM_HOLO_BLOCK = registerHoloBlock("basic_speed_pattern_transfer_system_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BUS_BLOCK = registerBlock("basic_technology_virtual_sigil_processor_bus_block", () ->
-            new BasicTechnologyVirtualSigilProcessorBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BUS_HOLO_BLOCK = registerHoloBlock("basic_technology_virtual_sigil_processor_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_BLOCK = registerBlock("basic_technology_virtual_sigil_processor_port_block", () ->
-            new BasicTechnologyVirtualSigilProcessorPortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_HOLO_BLOCK = registerHoloBlock("basic_technology_virtual_sigil_processor_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
 
     public static final RegistryObject<Block> BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BLOCK = registerTooltipBasicMachineBlock("basic_technology_void_world_coordinate_recording_machine_block", () ->
                     new BasicTechnologyVoidWorldCoordinateRecordingMachineBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
@@ -1477,15 +1159,6 @@ public class DCBlocks {
             "basic");
     public static final RegistryObject<Block> BASIC_EFFICIENCY_VOID_INTERFERENCE_FLAME_HOLO_BLOCK = registerHoloBlock("basic_efficiency_void_interference_frame_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_BLOCK = registerBlock("basic_technology_void_world_coordinate_recording_machine_bus_block", () ->
-            new BasicTechnologyVoidWorldCoordinateRecordingMachineBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_HOLO_BLOCK = registerHoloBlock("basic_technology_void_world_coordinate_recording_machine_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_BLOCK = registerBlock("basic_technology_void_world_coordinate_recording_machine_port_block", () ->
-            new BasicTechnologyVoidWorldCoordinateRecordingMachinePortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_HOLO_BLOCK = registerHoloBlock("basic_technology_void_world_coordinate_recording_machine_port_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-
 
     public static final RegistryObject<Block> BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BLOCK = registerTooltipBasicMachineBlock("basic_performance_reality_phase_adjustment_machine_block", () ->
                     new BasicPerformanceRealityPhaseAdjustmentMachineBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB,
@@ -1501,14 +1174,6 @@ public class DCBlocks {
             "kaleidoscopic_reality_science",
             "basic");
     public static final RegistryObject<Block> BASIC_EFFICIENCY_PHASE_STABLE_FLAME_HOLO_BLOCK = registerHoloBlock("basic_efficiency_phase_stable_frame_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BUS_BLOCK = registerBlock("basic_performance_reality_phase_adjustment_machine_bus_block", () ->
-            new BasicPerformanceRealityPhaseAdjustmentMachineBusBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BUS_HOLO_BLOCK = registerHoloBlock("basic_performance_reality_phase_adjustment_machine_bus_holo_block", () ->
-            new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_PORT_BLOCK = registerBlock("basic_performance_reality_phase_adjustment_machine_port_block", () ->
-            new BasicPerformanceRealityPhaseAdjustmentMachinePortBlock(BlockBehaviour.Properties.of(Material.METAL).noOcclusion()), DCCreativeTab.DEGENERACYCRAFT_MACHINE_TAB);
-    public static final RegistryObject<Block> BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_PORT_HOLO_BLOCK = registerHoloBlock("basic_performance_reality_phase_adjustment_machine_port_holo_block", () ->
             new DCHoloBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).destroyTime(0.0F).strength(0.0F)));
 
 //    public static final RegistryObject<Block> TEST_BLOCK = registerBlock("test_pipe", () ->

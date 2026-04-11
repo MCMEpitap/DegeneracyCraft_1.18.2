@@ -1371,14 +1371,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_precision_objective_lens_block"));
         withExistingParent(DCBlocks.BASIC_PRECISION_OBJECTIVE_LENS_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_precision_objective_lens_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_astronomical_telescope_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_astronomical_telescope_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_astronomical_telescope_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_astronomical_telescope_port_holo_block"));
         basicMachineCircuitAstronomyItem(DCItems.BASIC_PERFORMANCE_ASTRONOMICAL_TELESCOPE_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BLOCK.getId().getPath(),
@@ -1387,14 +1379,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_efficiency_particle_storage_tank_block"));
         withExistingParent(DCBlocks.BASIC_EFFICIENCY_FINE_PARTICLE_STORAGE_TANK_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_efficiency_particle_storage_tank_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_fine_particle_adsorber_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_fine_particle_adsorber_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_fine_particle_adsorber_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_fine_particle_adsorber_port_holo_block"));
         basicMachineCircuitAstronomyItem(DCItems.BASIC_PERFORMANCE_FINE_PARTICLE_ADSORBER_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BLOCK.getId().getPath(),
@@ -1403,14 +1387,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_efficiency_faint_light_receiver_block"));
         withExistingParent(DCBlocks.BASIC_EFFICIENCY_FAINT_LIGHT_RESERVER_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_efficiency_faint_light_receiver_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_starlight_collector_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_starlight_collector_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_starlight_collector_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_starlight_collector_port_holo_block"));
         basicMachineCircuitAstronomyItem(DCItems.BASIC_PERFORMANCE_STARLIGHT_COLLECTOR_CIRCUIT.get());
 
 
@@ -1421,15 +1397,7 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_speed_cultivation_greenhouse_block"));
         withExistingParent(DCBlocks.BASIC_SPEED_CULTIVATION_GREENHOUSE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_speed_cultivation_greenhouse_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_bio_reactor_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_bio_reactor_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_bio_reactor_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_BIO_REACTOR_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_bio_reactor_port_holo_block"));
-        basicMachineCircuitBiologyItem(DCItems.BASIC_PERFORMANCE_BIO_REACTOR_CIRCUIT.get());
+       basicMachineCircuitBiologyItem(DCItems.BASIC_PERFORMANCE_BIO_REACTOR_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BLOCK.getId().getPath(),
                 modLoc("block/basic_performance_cell_incubator_block"));
@@ -1437,14 +1405,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_durability_incubation_container_block"));
         withExistingParent(DCBlocks.BASIC_DURABILITY_INCUBATION_CONTAINER_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_durability_incubation_container_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_cell_incubator_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_cell_incubator_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_cell_incubator_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CELL_INCUBATOR_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_cell_incubator_port_holo_block"));
         basicMachineCircuitBiologyItem(DCItems.BASIC_PERFORMANCE_CELL_INCUBATOR_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BLOCK.getId().getPath(),
@@ -1453,14 +1413,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_efficiency_growth_stabilizer_block"));
         withExistingParent(DCBlocks.BASIC_EFFICIENCY_GROWTH_STABILIZER_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_efficiency_growth_stabilizer_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_crop_cultivator_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_crop_cultivator_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_crop_cultivator_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CROP_CULTIVATOR_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_crop_cultivator_port_holo_block"));
         basicMachineCircuitBiologyItem(DCItems.BASIC_PERFORMANCE_CROP_CULTIVATOR_CIRCUIT.get());
         
         
@@ -1471,14 +1423,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_rate_compound_agitation_system_block"));
         withExistingParent(DCBlocks.BASIC_RATE_COMPOUND_AGITATION_SYSTEM_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_rate_compound_agitation_system_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_chemical_reactor_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_chemical_reactor_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_chemical_reactor_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CHEMICAL_REACTOR_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_chemical_reactor_port_holo_block"));
         basicMachineCircuitChemistryItem(DCItems.BASIC_PERFORMANCE_CHEMICAL_REACTOR_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BLOCK.getId().getPath(),
@@ -1487,14 +1431,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_durable_high_speed_chemical_reactor_block"));
         withExistingParent(DCBlocks.BASIC_DURABLE_HIGH_SPPED_CHEMICAL_REACTOR_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_durable_high_speed_chemical_reactor_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_compound_purifier_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_compound_purifier_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_compound_purifier_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_COMPOUND_PURIFIER_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_compound_purifier_port_holo_block"));
         basicMachineCircuitChemistryItem(DCItems.BASIC_PERFORMANCE_COMPOUND_PURIFIER_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BLOCK.getId().getPath(),
@@ -1503,14 +1439,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_durable_expanded_electrolytic_cell_block"));
         withExistingParent(DCBlocks.BASIC_DURABLE_EXPANDED_ELECTROLYTIC_CELL_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_durable_expanded_electrolytic_cell_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_electrolyser_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_electrolyser_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_electrolyser_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTROLYSER_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_electrolyser_port_holo_block"));
         basicMachineCircuitChemistryItem(DCItems.BASIC_PERFORMANCE_ELECTROLYSER_CIRCUIT.get());
 
 
@@ -1538,14 +1466,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_endurance_high_temperature_combustion_chamber_block"));
         withExistingParent(DCBlocks.BASIC_ENDURANCE_HIGH_TEMPERATURE_COMBUSTION_CHAMBER_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_endurance_high_temperature_combustion_chamber_holo_block"));
-        withExistingParent(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_power_steam_generator_bus_block"));
-        withExistingParent(DCBlocks.BASIC_POWER_STEAM_GENERATOR_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_power_steam_generator_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_power_steam_generator_port_block"));
-        withExistingParent(DCBlocks.BASIC_POWER_STEAM_GENERATOR_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_power_steam_generator_port_holo_block"));
         basicMachineCircuitDynamicEnergeticsItem(DCItems.BASIC_POWER_STEAM_GENERATOR_CIRCUIT.get());
         
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BLOCK.getId().getPath(),
@@ -1554,14 +1474,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_pressure_compression_assist_system_block"));
         withExistingParent(DCBlocks.BASIC_PRESSURE_COMPRESSION_ASSIST_SYSTEM_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_pressure_compression_assist_system_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_compression_condenser_bus_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_compression_condenser_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_compression_condenser_port_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_compression_condenser_port_holo_block"));
         basicMachineCircuitDynamicEnergeticsItem(DCItems.BASIC_TECHNOLOGY_COMPRESSION_CONDENSER_CIRCUIT.get());
        
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BLOCK.getId().getPath(),
@@ -1570,14 +1482,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_durable_insulated_chamber_block"));
         withExistingParent(DCBlocks.BASIC_DURABLE_INSULATED_CHAMBER_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_durable_insulated_chamber_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_electromagnetic_inductor_bus_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_electromagnetic_inductor_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_electromagnetic_inductor_port_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_electromagnetic_inductor_port_holo_block"));
         basicMachineCircuitDynamicEnergeticsItem(DCItems.BASIC_TECHNOLOGY_ELECTROMAGNETIC_INDUCTOR_CIRCUIT.get());
 
 
@@ -1590,14 +1494,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_efficiency_machine_processing_chamber_block"));
         withExistingParent(DCBlocks.BASIC_EFFICIENCY_MACHINE_PROCESSING_CHAMBER_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_efficiency_machine_processing_chamber_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_machine_manufacturer_bus_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_machine_manufacturer_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_machine_manufacturer_port_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_machine_manufacturer_port_holo_block"));
         basicMachineCircuitEngineeringItem(DCItems.BASIC_TECHNOLOGY_MACHINE_MANUFACTURER_CIRCUIT.get());
         
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BLOCK.getId().getPath(),
@@ -1606,14 +1502,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_efficiency_machine_element_processing_chamber_block"));
         withExistingParent(DCBlocks.BASIC_EFFICIENCY_MACHINE_ELEMENT_PROCESSING_CHAMBER_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_efficiency_machine_element_processing_chamber_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_machine_element_processor_bus_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_machine_element_processor_bus_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_machine_element_processor_port_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_machine_element_processor_port_holo_block"));
         basicMachineCircuitEngineeringItem(DCItems.BASIC_TECHNOLOGY_MACHINE_ELEMENT_PROCESSOR_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BLOCK.getId().getPath(),
@@ -1622,14 +1510,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_efficiency_machine_part_processing_chamber_block"));
         withExistingParent(DCBlocks.BASIC_EFFICIENCY_MACHINE_PART_PROCESSING_CHAMBER_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_efficiency_machine_part_processing_chamber_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_machine_part_processor_bus_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_machine_part_processor_bus_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_machine_part_processor_port_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_machine_part_processor_port_holo_block"));
         basicMachineCircuitEngineeringItem(DCItems.BASIC_TECHNOLOGY_MACHINE_PART_PROCESSOR_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BLOCK.getId().getPath(),
@@ -1638,14 +1518,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_efficiency_equipment_production_auxiliary_system_block"));
         withExistingParent(DCBlocks.BASIC_EFFICIENCY_EQUIPMENT_PRODUCTION_AUXILIARY_SYSTEM_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_efficiency_equipment_production_auxiliary_system_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_multiblock_equipment_fabricator_bus_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_multiblock_equipment_fabricator_bus_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_multiblock_equipment_fabricator_port_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_multiblock_equipment_fabricator_port_holo_block"));
         basicMachineCircuitEngineeringItem(DCItems.BASIC_TECHNOLOGY_MULTIBLOCK_EQUIPMENT_FABRICATOR_CIRCUIT.get());
 
 
@@ -1656,14 +1528,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_purity_circuit_clean_room_block"));
         withExistingParent(DCBlocks.BASIC_PURITY_CIRCUIT_CLEAN_ROOM_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_purity_circuit_clean_room_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_circuit_builder_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_circuit_builder_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_circuit_builder_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_CIRCUIT_BUILDER_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_circuit_builder_port_holo_block"));
         basicMachineCircuitFormalScienceItem(DCItems.BASIC_PERFORMANCE_CIRCUIT_BUILDER_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BLOCK.getId().getPath(),
@@ -1672,14 +1536,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_speed_data_reader_block"));
         withExistingParent(DCBlocks.BASIC_SPEED_DATA_READER_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_speed_data_reader_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_machine_data_installer_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_machine_data_installer_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_machine_data_installer_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_machine_data_installer_port_holo_block"));
         basicMachineCircuitFormalScienceItem(DCItems.BASIC_PERFORMANCE_MACHINE_DATA_INSTALLER_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BLOCK.getId().getPath(),
@@ -1688,14 +1544,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_speed_calculation_auxiliary_write_device_block"));
         withExistingParent(DCBlocks.BASIC_SPEED_CALCULATION_AUXILIARY_WRITE_DEVICE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_speed_calculation_auxiliary_write_device_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_designated_data_injector_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_designated_data_injector_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_designated_data_injector_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_designated_data_injector_port_holo_block"));
         basicMachineCircuitFormalScienceItem(DCItems.BASIC_PERFORMANCE_DESIGNATED_DATA_INJECTOR_CIRCUIT.get());
 
 
@@ -1705,14 +1553,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_efficiency_ore_sorting_filter_block"));
         withExistingParent(DCBlocks.BASIC_EFFICIENCY_ORE_SORTING_FILTER_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_efficiency_ore_sorting_filter_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_ore_sorter_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_ore_sorter_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_ore_sorter_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ORE_SORTER_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_ore_sorter_port_holo_block"));
         basicMachineCircuitGeoScienceItem(DCItems.BASIC_PERFORMANCE_ORE_SORTER_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BLOCK.getId().getPath(),
@@ -1721,14 +1561,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_crashing_base_block"));
         withExistingParent(DCBlocks.BASIC_CRASHING_BASE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_crashing_base_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_rock_crasher_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_rock_crasher_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_rock_crasher_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ROCK_CRASHER_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_rock_crasher_port_holo_block"));
         basicMachineCircuitGeoScienceItem(DCItems.BASIC_PERFORMANCE_ROCK_CRASHER_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_BLOCK.getId().getPath(),
@@ -1737,14 +1569,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_efficiency_particle_mixing_chamber_block"));
         withExistingParent(DCBlocks.BASIC_EFFICIENCY_PARTICLE_MIXING_CHAMBER_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_efficiency_particle_mixing_chamber_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_soil_purifier_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_soil_purifier_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_soil_purifier_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_SOIL_PURIFIER_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_soil_purifier_port_holo_block"));
         basicMachineCircuitGeoScienceItem(DCItems.BASIC_PERFORMANCE_SOIL_PURIFIER_CIRCUIT.get());
 
 
@@ -1755,14 +1579,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_flow_cooling_system_block"));
         withExistingParent(DCBlocks.BASIC_FLOW_COOLING_SYSTEM_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_flow_cooling_system_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_electric_arc_furnace_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_electric_arc_furnace_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_electric_arc_furnace_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_electric_arc_furnace_port_holo_block"));
         basicMachineCircuitHybridPhysicsItem(DCItems.BASIC_PERFORMANCE_ELECTRIC_ARC_FURNACE_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BLOCK.getId().getPath(),
@@ -1771,14 +1587,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_precision_extrusion_assist_system_block"));
         withExistingParent(DCBlocks.BASIC_PRECISION_EXTRUSION_ASSIST_SYSTEM_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_precision_extrusion_assist_system_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_forming_machine_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_forming_machine_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_forming_machine_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_FORMING_MACHINE_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_forming_machine_port_holo_block"));
         basicMachineCircuitHybridPhysicsItem(DCItems.BASIC_PERFORMANCE_FORMING_MACHINE_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BLOCK.getId().getPath(),
@@ -1787,14 +1595,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_durability_vibration_control_base_block"));
         withExistingParent(DCBlocks.BASIC_DURABILITY_VIBRATION_CONTROL_BASE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_durability_vibration_control_base_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_material_separator_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_material_separator_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_material_separator_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_material_separator_port_holo_block"));
         basicMachineCircuitHybridPhysicsItem(DCItems.BASIC_PERFORMANCE_MATERIAL_SEPARATOR_CIRCUIT.get());
 
 
@@ -1804,14 +1604,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_output_mystic_optical_projection_device_block"));
         withExistingParent(DCBlocks.BASIC_OUTPUT_MYSTIC_OPTICAL_PROJECTION_DEVICE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_output_mystic_optical_projection_device_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_imitation_magic_engraver_bus_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_imitation_magic_engraver_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_imitation_magic_engraver_port_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_imitation_magic_engraver_port_holo_block"));
         basicMachineCircuitImitationEngineeringItem(DCItems.BASIC_TECHNOLOGY_IMITATION_MAGIC_ENGRAVER_CIRCUIT.get());
 
 
@@ -1821,14 +1613,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_efficiency_sealed_extraction_case_block"));
         withExistingParent(DCBlocks.BASIC_EFFICIENCY_SEALED_EXTRACTION_CASE_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_efficiency_sealed_extraction_case_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_suspected_magic_condenser_bus_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_suspected_magic_condenser_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_suspected_magic_condenser_port_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_suspected_magic_condenser_port_holo_block"));
         basicMachineCircuitImitationEngineeringItem(DCItems.BASIC_TECHNOLOGY_SUSPECTED_MAGIC_CONDENSER_CIRCUIT.get());
 
         withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BLOCK.getId().getPath(),
@@ -1837,14 +1621,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_speed_pattern_transfer_system_block"));
         withExistingParent(DCBlocks.BASIC_SPEED_PATTERN_TRANSFER_SYSTEM_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_speed_pattern_transfer_system_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_virtual_sigil_processor_bus_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_virtual_sigil_processor_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_virtual_sigil_processor_port_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_virtual_sigil_processor_port_holo_block"));
         basicMachineCircuitImitationEngineeringItem(DCItems.BASIC_TECHNOLOGY_VIRTUAL_SIGIL_PROCESSOR_CIRCUIT.get());
 
 
@@ -1855,14 +1631,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_efficiency_void_interference_frame_block"));
         withExistingParent(DCBlocks.BASIC_EFFICIENCY_VOID_INTERFERENCE_FLAME_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_efficiency_void_interference_frame_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_void_world_coordinate_recording_machine_bus_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_void_world_coordinate_recording_machine_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_void_world_coordinate_recording_machine_port_block"));
-        withExistingParent(DCBlocks.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_technology_void_world_coordinate_recording_machine_port_holo_block"));
         basicMachineCircuitJenithVoidScienceItem(DCItems.BASIC_TECHNOLOGY_VOID_WORLD_COORDINATE_RECORDING_MACHINE_CIRCUIT.get());
 
 
@@ -1873,14 +1641,6 @@ public class DCItemModelProvider extends ItemModelProvider {
                 modLoc("block/basic_efficiency_phase_stable_frame_block"));
         withExistingParent(DCBlocks.BASIC_EFFICIENCY_PHASE_STABLE_FLAME_HOLO_BLOCK.getId().getPath(),
                 modLoc("block/basic_efficiency_phase_stable_frame_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BUS_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_reality_phase_adjustment_machine_bus_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_BUS_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_reality_phase_adjustment_machine_bus_holo_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_PORT_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_reality_phase_adjustment_machine_port_block"));
-        withExistingParent(DCBlocks.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_PORT_HOLO_BLOCK.getId().getPath(),
-                modLoc("block/basic_performance_reality_phase_adjustment_machine_port_holo_block"));
         basicMachineCircuitKaleidoscopicRealityScienceItem(DCItems.BASIC_PERFORMANCE_REALITY_PHASE_ADJUSTMENT_MACHINE_CIRCUIT.get());
 
 

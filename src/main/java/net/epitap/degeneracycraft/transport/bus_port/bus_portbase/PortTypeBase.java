@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 public abstract class PortTypeBase<T> {
     public abstract String getKey();
 
-    public abstract void tick(PortWorkBlockEntity blockEntity);
+//    public abstract void tick(PortWorkBlockEntity blockEntity);
 
     public abstract float getTickRate();
 
@@ -17,7 +17,7 @@ public abstract class PortTypeBase<T> {
 
     public abstract ItemStack getIcon();
 
-    public float getTickRate(PortWorkBlockEntity blockEntity, Direction direction) {
-        return getTickRate();
-    }
+//    public float getTickRate(PortWorkBlockEntity blockEntity, Direction direction) {
+//        return getTickRate();
+//    }
 }
